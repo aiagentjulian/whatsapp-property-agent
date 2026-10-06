@@ -1,0 +1,241 @@
+{
+  "scenario_id": "PEA-001",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T16:51:35.908199+00:00",
+  "status": "COMPLETED",
+  "turns": 8,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Base prices start from RM328k before any current rebates or packages. I’ll get the latest effective price confirmed for you so I don’t give you an outdated figure.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you also check the Type A size and give me a rough idea of the monthly instalment? We’re trying to see if it’ll be manageable.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Type A is 900 sq ft, with 3 bedrooms and 2 bathrooms. The monthly instalment depends on the final package price, down payment, loan tenure and bank rate, so I’ll have my colleague check a realistic estimate along with the latest price rather than guess. What loan tenure would you roughly consider?",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Probably around 30 years, but it depends on the monthly amount. We’re hoping to stay in the RM3xxk range, so a realistic estimate would help us see if it’s manageable.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted — I’ll pass on the 30-year tenure and your RM3xxk target so my colleague can check a realistic instalment alongside the latest package, rather than give you a rough figure that could mislead.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. It’s for me, my spouse and our young child, so we’re a bit worried 900 sq ft might feel small for family living. If you can share how the Type A layout uses the space, that’d help us judge it alongside the monthly estimate.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Type A is 900 sq ft, with about 405 sq ft for the open living, dining and kitchen area. The bedrooms are approximately 143, 117 and 103 sq ft; the project materials describe all three as able to fit a queen-sized bed, with an efficient layout and no long internal corridor. It may still feel compact for a family of three, so how it works will depend on your furniture and daily routine. I’ve also passed your 30-year tenure and RM3xxk target to my colleague to check a realistic monthly estimate.",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, that gives us a better idea. It still feels a bit tight on paper, so a floor plan would help. Once your colleague confirms the monthly estimate and package, we could consider viewing it with my spouse to see how the layout feels in person.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "I’ll ask my colleague to include the floor plan with the confirmed package and 30-year instalment estimate. Once you’ve had a chance to review them, you and your spouse can decide whether you’d like to view.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the floor plan and confirmed package/instalment estimate when you have them. We’ll go through it together and then see if a viewing makes sense.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Noted — the floor plan and confirmed package/30-year instalment estimate are being checked. We’ll share them once confirmed, so you and your spouse can review them before deciding about a viewing.",
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you have the floor plan and the realistic monthly estimate—we’ll review them together first, then decide about viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Noted — I’ll follow up with the floor plan and confirmed package/30-year instalment estimate once they’re verified. You and your spouse can review them first, then decide whether a viewing makes sense.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. We’ll wait for the floor plan and confirmed monthly estimate, then discuss whether to arrange a viewing with my spouse.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "Understood — we’ll update you once the floor plan and confirmed 30-year instalment estimate are ready, so you and your spouse can review them before deciding about a viewing.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Alright, thanks. We’ll wait for the floor plan and confirmed estimate, then discuss it together.",
+      "appointment_state": "VIEWING_INTEREST"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 5,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 7,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Okay, thanks. Could you also check the Type A size and give me a rough idea of the monthly instalment? We’re trying to see if it’ll be manageable.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Probably around 30 years, but it depends on the monthly amount. We’re hoping to stay in the RM3xxk range, so a realistic estimate would help us see if it’s manageable.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, appreciate you checking. It’s for me, my spouse and our young child, so we’re a bit worried 900 sq ft might feel small for family living. If you can share how the Type A layout uses the space, that’d help us judge it alongside the monthly estimate.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, that gives us a better idea. It still feels a bit tight on paper, so a floor plan would help. Once your colleague confirms the monthly estimate and package, we could consider viewing it with my spouse to see how the layout feels in person.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay, thanks. Please send the floor plan and confirmed package/instalment estimate when you have them. We’ll go through it together and then see if a viewing makes sense.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, thanks. Please update me once you have the floor plan and the realistic monthly estimate—we’ll review them together first, then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, appreciate it. We’ll wait for the floor plan and confirmed monthly estimate, then discuss whether to arrange a viewing with my spouse.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

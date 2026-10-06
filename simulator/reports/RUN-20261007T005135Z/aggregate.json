@@ -1,0 +1,238 @@
+{
+  "run_id": "RUN-20261007T005135Z",
+  "models": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "total_scenarios": 12,
+  "completed_scenarios": 12,
+  "failed_runs": [],
+  "genuinely_convertible_scenarios": 11,
+  "confirmed_appointments": 0,
+  "appointment_interest_cases": 1,
+  "appointment_conversion_rate_among_convertible": 0.0,
+  "good_judgment_rate": 0.833,
+  "bad_fit_correctly_identified_count": 1,
+  "critical_failure_count": 4,
+  "critical_failures": [
+    {
+      "flag": "FAILED_REQUIRED_HANDOFF",
+      "evidence": "The buyer repeatedly asks for confirmation and an update. The agent repeatedly promises to ask a colleague, but the conversation ends without a concrete handoff confirmation, named follow-up owner, or agreed update time.",
+      "turn": 2
+    },
+    {
+      "flag": "MISSED_STRONG_BUYING_SIGNAL",
+      "evidence": "The buyer gave a specific Saturday 2pm preference, said his wife would attend, and stated they could lock it in once details were verified. The agent did not turn this into a confirmed next step.",
+      "turn": 1
+    },
+    {
+      "flag": "FAILED_TO_CLOSE_HIGH_INTENT",
+      "evidence": "The buyer was willing to book after verification, but the conversation remained at APPOINTMENT_IN_PROGRESS without a confirmed slot or a concrete follow-up commitment.",
+      "turn": 4
+    },
+    {
+      "flag": "FAILED_REQUIRED_HANDOFF",
+      "evidence": "After the buyer explicitly asked to be connected directly with the colleague handling the verification, the transcript ends without a connection or agent response.",
+      "turn": 4
+    }
+  ],
+  "average_judge_scores": {
+    "customer_understanding": 4.67,
+    "latest_message_responsiveness": 4.08,
+    "qualification_discipline": 4.67,
+    "selling_angle_relevance": 3.83,
+    "objection_handling": 4.58,
+    "unit_fit_judgment": 3.92,
+    "buying_signal_detection": 3.75,
+    "appointment_judgment": 4.25,
+    "factual_accuracy": 3.83,
+    "sales_naturalness": 3.5,
+    "handoff_judgment": 3.5,
+    "commercial_progression": 2.83
+  },
+  "strongest_agent_behaviors": [
+    [
+      "customer_understanding",
+      4.67
+    ],
+    [
+      "qualification_discipline",
+      4.67
+    ],
+    [
+      "objection_handling",
+      4.58
+    ]
+  ],
+  "weakest_agent_behaviors": [
+    [
+      "commercial_progression",
+      2.83
+    ],
+    [
+      "sales_naturalness",
+      3.5
+    ],
+    [
+      "handoff_judgment",
+      3.5
+    ]
+  ],
+  "common_failure_patterns": {
+    "Sales Judgment": 8,
+    "Response Style": 8,
+    "Retrieval": 5,
+    "Knowledge": 3,
+    "Implementation Bug": 1
+  },
+  "weakest_behaviors": [
+    "PEA-001: From turns 5–8, the agent repeated that the buyer could decide after reviewing the documents, but did not agree a useful follow-up step or timeframe.",
+    "PEA-002: No major wrong move. The handoff was honest but could be more actionable by stating who will send the slots and when the buyer can expect them.",
+    "PEA-003: The repeated post-handoff acknowledgments were redundant and did not advance the conversation. A clear follow-up owner and realistic timeframe would have been more useful.",
+    "PEA-004: The maintenance fee was stated as a definite figure without the required source caveat. The later acknowledgements also repeated the same handoff message without adding a useful update.",
+    "PEA-005: The agent repeated the same handoff promise across several turns instead of making the handoff concrete. The specific RM1 million eligibility claim also needed clear sourcing and qualification.",
+    "PEA-006: After the buyer clearly specified the information needed and asked for an update, the agent repeated the same acknowledgment twice without showing that a concrete verification handoff had been initiated or setting a dependable follow-up expectation.",
+    "PEA-007: The final replies repeat that the request was noted and a colleague will follow up, without specifying when or making the handoff concrete. The repeated acknowledgments feel somewhat mechanical.",
+    "PEA-008: The agent repeated the handoff commitment instead of setting a clear expectation for when and how the confirmed options would be shared.",
+    "PEA-009: No material wrong move. The final acknowledgment repeats the one-contact preference without adding a specific next step or expected confirmation timing; however, inventing a timeframe would be inappropriate.",
+    "PEA-010: Repeatedly saying a colleague was coordinating or would confirm the details without producing an update or executing the requested direct connection. The blank turn also left the buyer without a response after they gave the requested time and party size.",
+    "PEA-011: The turn 6 response repeats the follow-up promise after the buyer had already said that was all they needed. This is a minor conversational loop, not a material sales error.",
+    "PEA-012: No material sales error. The reference to Phase 1 homes and two bathrooms adds detail that is not established in the supplied scenario facts and should be verified against the retrieved project sources."
+  ],
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [
+    "PEA-001: At turn 4, the buyer said they could consider viewing with their spouse once the package and monthly estimate were confirmed. This was conditional interest, not appointment confirmation; the agent appropriately did not treat it as a booking, but could have arranged a permission-based follow-up.",
+    "PEA-005: The buyer said they hope to purchase this year; acknowledge this as a meaningful timeline and use it to prioritize a clear financing follow-up, without treating it as viewing consent.",
+    "PEA-006: The buyer said they could decide whether viewing is worthwhile once the access and lift-lobby arrangement is known. This is conditional interest, not a confirmed appointment; the agent acknowledged it but did not turn it into a clear follow-up step.",
+    "PEA-007: The buyer disclosed a family-home purpose and asked for evidence to support a decision. This is a meaningful evaluation signal, but not a signal to book a viewing before the evidence review.",
+    "PEA-010: The buyer offered to view on Saturday in the opening message.",
+    "PEA-010: The buyer selected around 2pm and confirmed his wife would attend.",
+    "PEA-010: The buyer said they could lock in once the package and slot were verified.",
+    "PEA-010: The buyer explicitly asked to speak directly with the colleague handling verification.",
+    "PEA-011: The buyer showed a modest research signal by asking about price and package inclusions, but explicitly disclaimed visit intent. The agent appropriately treated this as an information-follow-up opportunity, not an appointment signal."
+  ],
+  "premature_close_cases": [],
+  "delayed_close_cases": [],
+  "unsupported_factual_claims": [
+    "PEA-001: The RM328k starting price and its treatment of rebates/packages should be checked against the current pricing source before being repeated.",
+    "PEA-001: The Type A area breakdown, bedroom dimensions, queen-bed fit, and corridor/layout descriptions should be checked against the project layout materials. The transcript's retrieval trace includes the relevant unit-and-layout file, but its contents are not provided here for independent verification.",
+    "PEA-002: The exact living/dining/kitchen and bedroom areas, and the claim that each bedroom can fit a queen bed, should be checked against the cited unit-and-layout source. The queen-bed statement is attributed to project materials, which is a useful qualifier.",
+    "PEA-002: The statement that there is limited wasted corridor space should be verified against project material; it is presented without a source qualifier.",
+    "PEA-003: The precise sea-facing mapping to Block 1C Levels 1–38 and Block 1D Levels 1–37, and the statement that ground-floor units are garden units, should be checked against the retrieved unit-and-layout source and applicable orientation schedule before being relied on. The transcript alone does not establish whether these claims are accurate.",
+    "PEA-004: The RM0.18/sq.ft. maintenance fee including sinking fund is consistent with the scenario-provided fact, but was presented without the required source caveat; confirm and cite the approved source before relying on it.",
+    "PEA-005: “The current project reference lists eligibility up to RM1 million.” This precise limit needs confirmation against the retrieved LPPSA and project financing sources, including whether it describes LPPSA eligibility, project eligibility, or another financing limit.",
+    "PEA-006: The three-tower layout, floor unit counts (15 in Blocks 1B and 1C; 18 in 1D), four passenger lifts per block, and link bridges at specified levels are not independently verifiable from the transcript. Confirm each against the retrieved project sources before relying on it.",
+    "PEA-007: The statement that the river is maintained by JPS with flood-gate/freeboard control should be checked against a retrieved, authoritative source before being presented as fact.",
+    "PEA-007: The 2.4 m figure is consistent with the scenario’s stated fact, but the exact wording that the finished floor level is planned at about 2.4 m above sea level should be verified against the project source.",
+    "PEA-010: The statements that a colleague was coordinating the request and was handling confirmation are operational claims that should only be made if the handoff was actually accepted and in progress.",
+    "PEA-011: Pearlmont is freehold and located in Seberang Jaya, Penang; verify against the retrieved overview source.",
+    "PEA-011: The homes are 900 sq ft with 3 bedrooms, 2 bathrooms, and a balcony; verify against the retrieved unit-and-layout source.",
+    "PEA-011: Base-price references of roughly RM328k–RM362k, including the stated price variables; verify against the retrieved pricing source and current validity.",
+    "PEA-011: The pricing references include unit price and applicable car-park premium, and some units may have applicable extras and a RM10k upgrading package; verify against the retrieved pricing and sales-package sources.",
+    "PEA-012: The broader claim that Pearlmont’s Phase 1 homes are all three-bedroom units should be confirmed against the retrieved unit-and-layout or overview source; the supplied critical fact specifically establishes Type A as three-bedroom.",
+    "PEA-012: The claim that the homes have two bathrooms is not established in the supplied scenario facts and should be checked against the retrieved unit-and-layout source."
+  ],
+  "retrieval_misses": [
+    "PEA-002: The buyer specifically asked about foyer and room clearances. The agent appropriately did not guess, but no confirmed scaled plan or clearance information was supplied; whether this reflects unavailable material or a retrieval gap cannot be determined from the trace.",
+    "PEA-005: The conversation does not surface verified guidance from the retrieved LPPSA materials on whether Pearlmont can be purchased using LPPSA or what information is required for an eligibility check; the agent defers both questions to a colleague.",
+    "PEA-006: The buyer's central question was whether lift lobbies and access are residents-only or shared between blocks. The agent did not provide the relevant sourced access-separation facts, although the retrieval trace shows project overview and unit/layout sources were consulted.",
+    "PEA-007: The buyer requested the source document behind the 36 m/20 m figures and any independent flood assessment or past site flood records. The agent appropriately admitted it could not provide these, but the conversation did not establish whether the retrieved FAQ contains a shareable source or whether the requested independent records exist.",
+    "PEA-009: Turn 2 retrieved unit/layout, viewing-close, and unit-fit material that was not relevant to the registration and agent-ownership concern. The agent nevertheless chose the appropriate handoff.",
+    "PEA-010: The transcript does not show verified current package/price information or live Saturday slot availability being returned. These details appropriately remained unconfirmed, but the agent should have routed the buyer to someone able to verify them."
+  ],
+  "handoff_errors": [
+    "PEA-005",
+    "PEA-010"
+  ],
+  "unit_fit_mistakes": [],
+  "implementation_bugs_fixed": [],
+  "reruns_required": [],
+  "provider_calls": 128,
+  "provider_retries": [],
+  "brain_knowledge_unchanged": true,
+  "top_recommended_improvement_priorities": [
+    {
+      "scenario_id": "PEA-001",
+      "category": "Sales Judgment",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Clarify how to progress conditional viewing interest without pressure: agree a permission-based follow-up after requested information is delivered, and avoid repeating the same acknowledgment across turns."
+    },
+    {
+      "scenario_id": "PEA-002",
+      "category": "Handoff follow-through",
+      "target_file": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+      "reason": "Encourage a clear owner and realistic follow-up timeframe when a buyer asks for slots that require colleague confirmation, while preserving the distinction between viewing interest and a booked appointment."
+    },
+    {
+      "scenario_id": "PEA-003",
+      "category": "Response Style",
+      "target_file": "post-handoff acknowledgment and follow-up guidance",
+      "reason": "Guide the agent to avoid repeating acknowledgments after a handoff and to set a clear, truthful follow-up expectation when the buyer is waiting for verified options."
+    },
+    {
+      "scenario_id": "PEA-004",
+      "category": "Factual sourcing and concise handoff",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Reinforce the source caveat required when quoting maintenance costs and encourage one clear follow-up commitment rather than repeated acknowledgements."
+    },
+    {
+      "scenario_id": "PEA-005",
+      "category": "Sales Judgment",
+      "target_file": "Sales handoff and follow-up policy",
+      "reason": "When a buyer requests financing verification, require a concrete handoff or a specific next-update commitment, and avoid repeating acknowledgments without advancing the follow-up."
+    },
+    {
+      "scenario_id": "PEA-006",
+      "category": "Retrieval",
+      "target_file": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+      "reason": "Make the verified lift-lobby and access-separation arrangement easy to retrieve alongside tower, floor, and lift details; if the project documentation does not establish the arrangement, provide a clear escalation and follow-up process."
+    },
+    {
+      "scenario_id": "PEA-007",
+      "category": "Sales Judgment",
+      "target_file": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+      "reason": "Add an evidence-first follow-up pattern for safety objections: distinguish sourced project statements from unverified claims, make a concrete internal handoff with a realistic follow-up time, and defer any viewing invitation until the buyer is ready."
+    },
+    {
+      "scenario_id": "PEA-008",
+      "category": "Sales Judgment",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "After an appropriate conditional handoff, prompt the agent to give a clear follow-up expectation and avoid repeating generic maintenance messages."
+    },
+    {
+      "scenario_id": "PEA-009",
+      "category": "Retrieval",
+      "target_file": "Retrieval routing for agent-ownership and registration-conflict questions",
+      "reason": "Route these questions to the ownership/conflict handoff path instead of retrieving unit-fit and viewing-close guidance."
+    },
+    {
+      "scenario_id": "PEA-010",
+      "category": "Handoff execution and appointment progression",
+      "target_file": "handoff and appointment orchestration",
+      "reason": "Ensure a handoff action results in an acknowledged connection or a concrete follow-up commitment, and prioritize direct routing when a high-intent buyer asks to speak with the person who can verify price and availability."
+    },
+    {
+      "scenario_id": "PEA-011",
+      "category": "Response Style",
+      "target_file": "post-handoff follow-up behavior",
+      "reason": "Avoid repeating an acknowledgement after the buyer has confirmed the plan and ended the exchange; reserve the next message for the verified information they requested."
+    },
+    {
+      "scenario_id": "PEA-012",
+      "category": "Knowledge",
+      "target_file": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+      "reason": "Verify that the retrieved source supports the Phase 1-wide bedroom statement and the two-bathroom detail; prefer precise unit-type wording when only Type A facts are confirmed."
+    }
+  ],
+  "executive_summary": "Completed 12/12 scenarios; confirmed 0 appointments among 11 convertible scenarios (0.0). Good judgment 0.833; critical flags 4. Review scenario reports for buyer-fit and accuracy findings."
+}

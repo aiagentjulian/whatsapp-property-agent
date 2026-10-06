@@ -1,0 +1,339 @@
+{
+  "scenario_id": "PEA-001",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:07:56.076803+00:00",
+  "status": "COMPLETED",
+  "turns": 12,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "The base price starts from RM328,000, before any current rebate or package. I’ll get the latest effective starting price confirmed for you so I don’t give you an outdated figure.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, RM328k starting might be within our range. We’re looking around RM3xxk, but the downpayment and monthly instalment matter a lot. Do you know if the Type A is 900 sqft, and what the estimated monthly might be?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Yes, Type A is 900 sq ft, with 3 bedrooms and 2 bathrooms. I can’t give a reliable monthly estimate without the loan amount, tenure and bank rate; the final figure also depends on the lender’s assessment.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, 3 bedrooms and 2 bathrooms could work for us. It’s me, my wife and our young child, so I’m a bit unsure whether 900 sqft would feel cramped. Do you have the Type A layout and any confirmed info on downpayment or current packages?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Type A is 900 sq ft with 3 bedrooms and 2 bathrooms. The project materials describe all three bedrooms as able to fit a queen-sized bed, with about 405 sq ft for the living, dining and kitchen area combined. Whether it feels spacious enough for your family is best judged from the actual layout. I don’t have confirmed downpayment or current package details, so I’ll get my colleague to check the latest information for you.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks—please check the confirmed downpayment and package for us. If the upfront cost looks manageable, we’d be open to viewing the Type A layout to see if the space works for our family.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "I’ll have my colleague confirm the downpayment and current package for you. If the upfront cost works, we can arrange a viewing of the Type A layout so you and your wife can see how the space feels for your family.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Alright, thanks. Please send through the confirmed downpayment/package and Type A floor plan when you have them. I’ll check with my wife, and if the upfront cost works we can arrange a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Noted—I’ll have my colleague send the confirmed downpayment/package details and Type A floor plan. Once you’ve reviewed them with your wife, we can take it from there on a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks—roughly when should I expect the confirmed package and floor plan? We’ll review them together and then decide about viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "I don’t have a confirmed timing yet, so I don’t want to guess. I’ll check with my colleague when they can send the confirmed package and Type A floor plan, then update you.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you’ve confirmed the timing and have the package details and Type A floor plan. We’ll review them together before deciding on a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Understood—I’ll update you once the package details, Type A floor plan and timing are confirmed. You can review them together first, then decide about a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, appreciate it. Please send them through once you’ve got them—we’ll review with my wife first and then decide about viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "Understood—we’ll share the confirmed package/downpayment details and Type A floor plan once available. You and your wife can review them first, then decide about viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Okay, thanks. We’ll wait for the confirmed figures and floor plan before deciding about a viewing—please message me when you have them.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 9,
+      "speaker": "agent",
+      "message": "Understood—I’ll message you once the confirmed package/downpayment details and Type A floor plan are available, before you decide about a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Thanks, that works. We’ll review the confirmed costs and floor plan with my wife first, then get back to you about viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 10,
+      "speaker": "agent",
+      "message": "Of course—review them together first. We can pick up the viewing once you’ve seen the confirmed figures and Type A floor plan.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 10,
+      "speaker": "customer",
+      "message": "Thanks. We’ve gone over this a few times, so no need to keep checking in until there’s something confirmed. Please send the actual package/downpayment details and Type A floor plan when you have them; we’ll review with my wife and decide about viewing then.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 11,
+      "speaker": "agent",
+      "message": "Understood. I won’t check in again until there’s something confirmed. I’ll send the package/downpayment details and Type A floor plan when they’re ready, so you and your wife can review them before deciding about a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 11,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. I’ll wait for the confirmed details and floor plan, then we’ll review them together and decide about viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 12,
+      "speaker": "agent",
+      "message": "Understood—we’ll wait until the confirmed package/downpayment details and Type A floor plan are available before following up. You can review them together and decide about viewing then.",
+      "action": "MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 7,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 9,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 10,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 11,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 12,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Okay, RM328k starting might be within our range. We’re looking around RM3xxk, but the downpayment and monthly instalment matter a lot. Do you know if the Type A is 900 sqft, and what the estimated monthly might be?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, 3 bedrooms and 2 bathrooms could work for us. It’s me, my wife and our young child, so I’m a bit unsure whether 900 sqft would feel cramped. Do you have the Type A layout and any confirmed info on downpayment or current packages?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks—please check the confirmed downpayment and package for us. If the upfront cost looks manageable, we’d be open to viewing the Type A layout to see if the space works for our family.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Alright, thanks. Please send through the confirmed downpayment/package and Type A floor plan when you have them. I’ll check with my wife, and if the upfront cost works we can arrange a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks—roughly when should I expect the confirmed package and floor plan? We’ll review them together and then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, thanks. Please update me once you’ve confirmed the timing and have the package details and Type A floor plan. We’ll review them together before deciding on a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Okay, appreciate it. Please send them through once you’ve got them—we’ll review with my wife first and then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Okay, thanks. We’ll wait for the confirmed figures and floor plan before deciding about a viewing—please message me when you have them.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 10,
+      "trigger_message": "Thanks, that works. We’ll review the confirmed costs and floor plan with my wife first, then get back to you about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 11,
+      "trigger_message": "Thanks. We’ve gone over this a few times, so no need to keep checking in until there’s something confirmed. Please send the actual package/downpayment details and Type A floor plan when you have them; we’ll review with my wife and decide about viewing then.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 12,
+      "trigger_message": "Thanks, appreciate it. I’ll wait for the confirmed details and floor plan, then we’ll review them together and decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

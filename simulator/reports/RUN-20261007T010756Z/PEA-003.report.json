@@ -1,0 +1,342 @@
+{
+  "scenario_id": "PEA-003",
+  "title": "Two-car household",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-003.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Sea-facing units are in Block 1C, Levels 1–38, and Block 1D, Levels 1–37. I can’t confirm from this information which of those have 2 carparks, so the exact floor and carpark combination needs checking against the unit schedule.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks. Two carparks is a must-have, and sea-facing is my preference. Can you check which available units have both?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’ll have the latest unit schedule checked for available sea-facing units with 2 carparks, as availability needs confirmation. I’ll get my colleague to follow up with the options.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, please ask them to send me the available options with 2 carparks, sea-facing direction, floor and current price. If there’s a suitable one, I’m open to arranging a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted — I’ve passed on that you’d like the available options to include 2 carparks, sea-facing direction, floor and current price. If one suits, you’re open to arranging a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, please let me know roughly when they can check the schedule. If there’s a suitable one at the current price, I’m happy to arrange a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "I don’t have a confirmed timeframe yet, so I don’t want to guess. Your request is with my colleague to check the latest schedule and prices; I’ll ask them to confirm when they can update you. If an option suits, we can arrange a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you know when they can check it—I’m keen to review any options that meet the 2-carpark requirement, with sea-facing direction and current price before deciding on a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood — I’ll update you once my colleague confirms when they can check the schedule. I’ve noted that you’d like to review options with 2 carparks, sea-facing direction, floor and current price before deciding on a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Alright, thanks. Please update me once they’ve checked the schedule and current prices—I’ll review the options first, then we can arrange a viewing if one fits.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Understood — my colleague is checking the latest schedule and prices for options with 2 carparks and a sea-facing direction. You can review the floor and price first, then decide about a viewing if one suits.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you ask your colleague to contact me directly once they’ve checked the actual options and prices? I’ll decide about a viewing after I see whether anything fits.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Noted — I’ve passed on that you’d like my colleague to contact you directly once they’ve confirmed the available options and current prices. You can decide about a viewing after reviewing them.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please have your colleague WhatsApp me once they’ve verified the available options and current prices. I’ll review first, then decide about a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "Understood — I’ve passed on that you’d like your colleague to WhatsApp you once they’ve verified the available options and current prices. You can review them first and decide about a viewing after.",
+      "action": "MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks. Two carparks is a must-have, and sea-facing is my preference. Can you check which available units have both?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, please ask them to send me the available options with 2 carparks, sea-facing direction, floor and current price. If there’s a suitable one, I’m open to arranging a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, please let me know roughly when they can check the schedule. If there’s a suitable one at the current price, I’m happy to arrange a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, thanks. Please update me once you know when they can check it—I’m keen to review any options that meet the 2-carpark requirement, with sea-facing direction and current price before deciding on a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Alright, thanks. Please update me once they’ve checked the schedule and current prices—I’ll review the options first, then we can arrange a viewing if one fits.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, thanks. Could you ask your colleague to contact me directly once they’ve checked the actual options and prices? I’ll decide about a viewing after I see whether anything fits.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, appreciate it. Please have your colleague WhatsApp me once they’ve verified the available options and current prices. I’ll review first, then decide about a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "appointment_state": "VIEWING_INTEREST",
+  "appointment_outcome": "APPOINTMENT_INTEREST",
+  "final_lead_intent": "High intent, conditional on finding a suitable available unit with 2 carparks, sea-facing orientation, and acceptable current price. Buyer wants to review verified options before deciding on a viewing.",
+  "judge": {
+    "appointment_state": "VIEWING_INTEREST",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "High intent, conditional on finding an available unit with 2 carparks, sea-facing orientation and an acceptable current price. The buyer wants to review verified options before deciding on a viewing.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 4,
+      "factual_accuracy": 5,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "Answered the sea-facing floor question with the sourced Block 1C and 1D floor ranges.",
+        "Recognized that the exact combination of availability, orientation and carparks required checking the live unit schedule.",
+        "Initiated a colleague handoff and accurately recorded the buyer's requested details.",
+        "Did not pressure the buyer to book a viewing before they had reviewed suitable options."
+      ],
+      "what_reduced_conversion_probability": [
+        "Repeatedly restated the handoff and the buyer's requirements without adding a concrete next step or new information.",
+        "Did not give a specific follow-up timeframe, though it appropriately said one was not confirmed and offered to ask the colleague."
+      ],
+      "where_conversion_was_won_or_lost": "The agent preserved the opportunity by routing a genuine high-intent, inventory-dependent enquiry for verification. The buyer remains interested but has not committed to a viewing; progress now depends on the colleague returning verified options and current prices."
+    },
+    "what_agent_did_well": [
+      "Gave a concise, relevant answer to the initial sea-facing floor question.",
+      "Did not infer exact unit-number-to-facing or carpark combinations from general orientation information.",
+      "Treated the 2-carpark requirement as mandatory and sea-facing as a preference.",
+      "Used a handoff for current inventory and pricing rather than inventing availability or quoting unsupported current prices.",
+      "Respected the buyer's stated sequence: review suitable options first, then decide on a viewing."
+    ],
+    "weak_or_wrong_sales_move": "After the handoff, the agent fell into repetitive acknowledgements. It could have confirmed the next action once, said it would ask the colleague for an update timeframe, and then stopped repeating the same summary.",
+    "better_next_move": "Confirm once that the colleague has been asked to WhatsApp the buyer with verified available options, floor, sea-facing direction, 2-carpark allocation and current price, and to confirm an update timeframe. Then wait for the verified options; invite the buyer to arrange a viewing only if one fits.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Response Style",
+      "Sales Judgment"
+    ],
+    "recommended_improvement": {
+      "category": "Response Style",
+      "target_file": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+      "reason": "The supplied unit-fit guidance supports verifying exact availability and progressing interested buyers toward a viewing. Reinforce a concise handoff pattern that confirms ownership and the next update once, then avoids repetitive maintenance messages while the buyer awaits verified options."
+    },
+    "summary": "A sound, factually safe response to a high-intent but conditional enquiry. The agent correctly answered the sourced facing question, avoided claiming that a suitable unit was available, and handed off the live schedule and price check. The buyer expressed viewing interest rather than confirming an appointment, so waiting for suitable verified options was appropriate. The main weakness was repetitive follow-up language without a confirmed timeframe."
+  },
+  "error": null,
+  "judge_history": [
+    {
+      "appointment_state": "VIEWING_INTEREST",
+      "scenario_success": true,
+      "good_judgment": true,
+      "final_lead_intent": "High intent, conditional on finding a suitable available unit with 2 carparks, sea-facing orientation, and acceptable current price. Buyer wants to review verified options before deciding on a viewing.",
+      "scores": {
+        "customer_understanding": 5,
+        "latest_message_responsiveness": 2,
+        "qualification_discipline": 5,
+        "selling_angle_relevance": 4,
+        "objection_handling": 4,
+        "unit_fit_judgment": 4,
+        "buying_signal_detection": 4,
+        "appointment_judgment": 5,
+        "factual_accuracy": 3,
+        "sales_naturalness": 2,
+        "handoff_judgment": 4,
+        "commercial_progression": 3
+      },
+      "critical_flags": [],
+      "conversion_analysis": {
+        "what_moved_buyer_forward": [
+          "The agent recognized the 2-carpark requirement and did not claim to know which available units met both requirements.",
+          "The agent arranged a human check of the live schedule and pricing, which was appropriate because availability was unverified.",
+          "The buyer was allowed to review verified options before deciding whether to view."
+        ],
+        "what_reduced_conversion_probability": [
+          "After the handoff, the agent repeated essentially the same acknowledgment over several turns without adding a concrete update or next step.",
+          "The agent could have made the follow-up ownership and timing clearer once the buyer asked when to expect an update."
+        ],
+        "where_conversion_was_won_or_lost": "The initial response and schedule-check handoff preserved trust and advanced the buyer to conditional viewing interest. Progress then stalled in repetitive acknowledgments. The buyer has not rejected a viewing; the decision appropriately depends on verified unit fit and price."
+      },
+      "what_agent_did_well": [
+        "Treated two carparks as a hard requirement and sea-facing as a preference.",
+        "Did not invent a unit-level match or claim live availability.",
+        "Recognized that a human needed to verify the schedule and current prices.",
+        "Did not pressure the buyer to book a viewing before seeing suitable options."
+      ],
+      "weak_or_wrong_sales_move": "The agent kept echoing the buyer’s request after the handoff instead of closing the loop once with a clear owner and follow-up expectation. The statement that the colleague was checking the schedule should only be used if that work had actually started.",
+      "better_next_move": "After the handoff, confirm once that the colleague will WhatsApp the buyer with verified options, floor, orientation, and current price. Since no ETA is confirmed, say so plainly and offer to update the buyer when the colleague confirms timing. Then stop repeating the same acknowledgment.",
+      "close_timing": "appropriate",
+      "missed_buying_signals": [
+        "The buyer repeatedly said they were open to arranging a viewing if a suitable option met the 2-carpark requirement and current price."
+      ],
+      "unnecessary_qualification": [],
+      "unsupported_factual_claims": [
+        "The specific sea-facing locations—Block 1C Levels 1–38 and Block 1D Levels 1–37—need confirmation against the retrieved orientation schedule.",
+        "At turn 6, the claim that the colleague was checking the latest schedule and prices should be confirmed as an actual status update, not just an intended handoff."
+      ],
+      "retrieval_misses": [],
+      "likely_issue_sources": [
+        "Response Style",
+        "Sales Judgment"
+      ],
+      "recommended_improvement": {
+        "category": "Response Style",
+        "target_file": "agent follow-up and handoff response guidance",
+        "reason": "Teach the agent to make one concise handoff confirmation, avoid repeated acknowledgments, and distinguish a requested follow-up from a confirmed task status or ETA."
+      },
+      "summary": "Appropriate conditional handoff for a high-intent buyer whose must-have unit fit and current price require live verification. Viewing interest is present, but no appointment is confirmed or yet appropriate. The main quality issue is repetitive follow-up; verify the specific sea-facing floor claims and any statement that the colleague is actively checking."
+    }
+  ]
+}

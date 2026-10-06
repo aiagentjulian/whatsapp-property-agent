@@ -1,0 +1,36 @@
+{
+  "scenario_id": "PEA-009",
+  "status": "RUN_FAILED",
+  "error": "JSONDecodeError: Extra data: line 1 column 592 (char 591)",
+  "failure_stage": "Customer Simulator output parsing on turn 2",
+  "recovered_by": "JSON extraction was changed to decode the first valid object and ignore trailing text; PEA-009 completed in RUN-20261007T012359Z.",
+  "partial_transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes, I can still help with Pearlmont. If you’re already discussing things with the other agent, I can avoid repeating what you’ve covered. What would you like to clarify?"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "I mainly want to avoid duplicate follow-up. Could you check whether my details are already registered with them? I haven’t booked anything yet, as far as I know.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "files": ["knowledge/project/pearlmont/01_facts/overview.md"]
+    },
+    {
+      "turn": 2,
+      "files": []
+    }
+  ]
+}

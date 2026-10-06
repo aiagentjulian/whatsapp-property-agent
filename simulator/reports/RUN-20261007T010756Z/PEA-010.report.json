@@ -1,0 +1,234 @@
+{
+  "scenario_id": "PEA-010",
+  "title": "High-intent exact package and weekend viewing",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-010.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I’ll get the latest package and exact unit price confirmed so I don’t give you outdated details. I’ll also have my colleague coordinate a viewing this Saturday. What time works for you?",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Saturday around 11am works for me, for two of us—my spouse and I. Please check if that slot’s available and send the confirmed latest package and price too, thanks.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Noted—Saturday around 11am for you and your spouse. I’ll have my colleague check whether the slot is available and confirm the latest package and price before confirming the visit.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, please update me once you’ve confirmed the 11am slot and latest package/price. 🙏",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted, thanks — the team will update you once the 11am slot and latest package/price are confirmed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. I’ll wait for your update on the slot and package.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Noted, thanks — we’ll update you once the Saturday 11am slot and latest package/price are confirmed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Saturday around 11am works for me, for two of us—my spouse and I. Please check if that slot’s available and send the confirmed latest package and price too, thanks.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, please update me once you’ve confirmed the 11am slot and latest package/price. 🙏",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks. I’ll wait for your update on the slot and package.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_state": "APPOINTMENT_IN_PROGRESS",
+  "appointment_outcome": "APPOINTMENT_INTEREST",
+  "final_lead_intent": "High intent; buyer and spouse want to view Saturday around 11am and are waiting for human confirmation of the slot and latest package/price.",
+  "judge": {
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "High intent. Buyer and spouse want to view on Saturday around 11am and are waiting for human confirmation of the slot and latest package/price.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 3,
+      "handoff_judgment": 4,
+      "commercial_progression": 4
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent acknowledged the request for current exact terms and appropriately said they would verify rather than invent a price or package.",
+        "The agent acted on the explicit Saturday viewing signal by asking for a preferred time.",
+        "The buyer supplied 11am and confirmed that both spouses would attend; the agent recorded these details and handed off for live slot and package verification."
+      ],
+      "what_reduced_conversion_probability": [
+        "The later acknowledgments repeat that the team will update the buyer but add no new information or progress."
+      ],
+      "where_conversion_was_won_or_lost": "Progression was achieved in turns 1–2: the buyer moved from requesting a Saturday viewing to providing a preferred time and party size, with confirmation correctly left pending live verification. The appointment was not confirmed, and the agent did not claim that it was."
+    },
+    "what_agent_did_well": [
+      "Responded directly to the buyer's price/package and weekend-viewing request.",
+      "Handled dynamic commercial and availability information safely by promising verification instead of presenting unverified terms or a confirmed slot.",
+      "Asked one practical scheduling question rather than continuing generic qualification.",
+      "Recognized the spouse as a decision participant and captured that both would attend.",
+      "Used a human handoff for exact package and live slot confirmation."
+    ],
+    "weak_or_wrong_sales_move": "The acknowledgments at turns 3 and 4 are redundant. After the buyer had been told that the team would verify and follow up, repeating the same update created no additional commercial progress.",
+    "better_next_move": "After the turn 2 handoff, stop sending repetitive automated acknowledgments and have the human team follow up with the verified slot and latest package/price. Keep the appointment marked in progress until those details are confirmed.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Response Style",
+      "Implementation Bug"
+    ],
+    "recommended_improvement": {
+      "category": "Implementation Bug",
+      "target_file": "MISSING_SOURCE",
+      "reason": "The supplied viewing-close guidance says AI auto-send stops once ownership transfers to a human, but no runtime ownership or message-suppression implementation file was supplied. The repeated automated acknowledgments after handoff should be prevented or routed through the human follow-up workflow."
+    },
+    "summary": "A well-judged high-intent progression: the agent requested a preferred viewing time, captured the spouse's attendance, and handed off rather than fabricating current commercial terms or live availability. The Saturday 11am visit remains in progress, not confirmed. The main weakness is repetitive post-handoff acknowledgment, not the absence of an immediate confirmation."
+  },
+  "error": null,
+  "judge_history": [
+    {
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "scenario_success": true,
+      "good_judgment": true,
+      "final_lead_intent": "High intent; buyer and spouse want to view Saturday around 11am and are waiting for human confirmation of the slot and latest package/price.",
+      "scores": {
+        "customer_understanding": 5,
+        "latest_message_responsiveness": 4,
+        "qualification_discipline": 5,
+        "selling_angle_relevance": 4,
+        "objection_handling": 5,
+        "unit_fit_judgment": 3,
+        "buying_signal_detection": 5,
+        "appointment_judgment": 5,
+        "factual_accuracy": 5,
+        "sales_naturalness": 3,
+        "handoff_judgment": 5,
+        "commercial_progression": 4
+      },
+      "critical_flags": [],
+      "conversion_analysis": {
+        "what_moved_buyer_forward": [
+          "Acknowledged the request for current pricing and avoided giving unverified commercial details.",
+          "Immediately asked for a preferred Saturday time.",
+          "Accepted the buyer's proposed 11am slot and captured that two people would attend.",
+          "Handed off both slot availability and package/price verification to a human without implying the appointment was confirmed."
+        ],
+        "what_reduced_conversion_probability": [
+          "The final two agent replies repeat the same acknowledgment without adding a concrete update or next-step expectation."
+        ],
+        "where_conversion_was_won_or_lost": "The agent progressed the high-intent request to a specific viewing request and appropriate human confirmation. Conversion is not yet complete: the slot and package/price remain pending, so the viewing must not be represented as confirmed."
+      },
+      "what_agent_did_well": [
+        "Responded to the buyer's explicit interest in both current pricing and a Saturday viewing.",
+        "Clearly stated that exact price and package details would be confirmed rather than guessed.",
+        "Promptly elicited a preferred time and then captured the party size when the buyer supplied it.",
+        "Used a human handoff for facts and live availability that required verification.",
+        "Maintained the correct appointment state and did not falsely claim a confirmed booking."
+      ],
+      "weak_or_wrong_sales_move": "The repeated acknowledgments at turns 3 and 4 are redundant. After the first confirmation that the team would update the buyer, repeating it did not advance the conversation.",
+      "better_next_move": "After the buyer supplied the time and party size, make the handoff and give one concise acknowledgment that the 11am request for two and package/price check have been sent for confirmation. Then wait for the human-confirmed update; do not mark the viewing confirmed until availability is verified.",
+      "close_timing": "appropriate",
+      "missed_buying_signals": [],
+      "unnecessary_qualification": [],
+      "unsupported_factual_claims": [],
+      "retrieval_misses": [],
+      "likely_issue_sources": [
+        "Response Style"
+      ],
+      "recommended_improvement": {
+        "category": "Response Style",
+        "target_file": "handoff acknowledgment and follow-up response guidance",
+        "reason": "Avoid repeated acknowledgment-only messages after a clear human handoff; provide one concise status update while preserving the distinction between a requested and confirmed appointment."
+      },
+      "summary": "A sound, honest response to a highly convertible buyer. The agent captured a specific Saturday viewing request for two and handed off the unverified slot and commercial details appropriately. The appointment remains in progress, not confirmed. The main weakness is redundant follow-up wording, not sales judgment or factual safety."
+    }
+  ]
+}

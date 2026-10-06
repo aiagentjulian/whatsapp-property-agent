@@ -1,0 +1,209 @@
+{
+  "scenario_id": "PEA-002",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:10:49.370637+00:00",
+  "status": "COMPLETED",
+  "turns": 7,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "900 sqft for a family sounds quite small leh."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Fair concern—900 sqft can feel compact depending on the family. Pearlmont’s layout has 3 bedrooms and 2 bathrooms, with limited wasted corridor space; project materials say all three bedrooms can fit a queen-size bed. How many people would be living there?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Four of us—me, my partner and two kids. I’m mainly worried the bedrooms might feel tight once beds and wardrobes are in, and whether there’s enough shared space to move around comfortably.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "That’s a fair concern. The bedrooms are about 143, 117 and 103 sq ft; the project materials say each can fit a queen bed, though wardrobe and walking space will depend on the furniture layout. The living, dining and kitchen area together is about 405 sq ft, with no long internal corridor. Do your kids need separate bedrooms?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "They can share for now, but I’d like some flexibility as they get older. The 103 sq ft room especially sounds like it could get tight with a bed and wardrobe. Does the layout have a foyer, and is the living/dining area open-plan? I’m trying to picture how the space flows.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Yes, there’s a foyer of about 26 sq ft, so the entrance isn’t directly exposed to the living/dining area. The kitchen is integrated with the living and dining space—about 405 sq ft combined—and project materials say it can potentially be enclosed with a sliding door. Furniture placement will still affect how spacious the circulation feels.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, that helps. Our current place is a bit bigger, so I’m trying to picture whether the rooms and shared space will work once our furniture’s in. Hard to judge the flow from the plan—do you have a show unit we could walk through?",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "That’s exactly the kind of thing that’s easier to judge in person. I’ll check whether the show unit is available to walk through and have my colleague confirm the viewing details with you.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay thanks, can ask your colleague to let me know what show-unit slots are available? Weekend would be easier for us to come together and check the room sizes and flow.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Of course—I’ll have my colleague check the available weekend show-unit slots and get back to you. It’ll be helpful for both of you to see the room sizes and layout flow in person.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, we’ll wait to hear what weekend slots are available. We’ll come together if one works for us.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Thanks, noted—my colleague will follow up with the available weekend slots.",
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks, will wait for your colleague to get back to us with the weekend slots.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Thanks, noted.",
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 7,
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Four of us—me, my partner and two kids. I’m mainly worried the bedrooms might feel tight once beds and wardrobes are in, and whether there’s enough shared space to move around comfortably.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "They can share for now, but I’d like some flexibility as they get older. The 103 sq ft room especially sounds like it could get tight with a bed and wardrobe. Does the layout have a foyer, and is the living/dining area open-plan? I’m trying to picture how the space flows.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, that helps. Our current place is a bit bigger, so I’m trying to picture whether the rooms and shared space will work once our furniture’s in. Hard to judge the flow from the plan—do you have a show unit we could walk through?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay thanks, can ask your colleague to let me know what show-unit slots are available? Weekend would be easier for us to come together and check the room sizes and flow.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, we’ll wait to hear what weekend slots are available. We’ll come together if one works for us.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks, will wait for your colleague to get back to us with the weekend slots.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

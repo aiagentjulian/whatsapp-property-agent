@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-002",
+  "project": "pearlmont",
+  "title": "Family buyer worried 900 sqft is too small",
+  "channel": "inbound",
+  "starting_message": "900 sqft for a family sounds quite small leh.",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Family of four; needs 3 bedrooms and is comparing usable layout rather than headline area.",
+    "hidden_motivation": "Find a practical family home with workable bedroom/common space.",
+    "hidden_objections": "Fear that 900 sqft means cramped circulation and bedrooms.",
+    "reveal_conditions": "Reveal household composition and furniture concern if Agent asks what feels tight; share current home comparison if Agent discusses usable layout.",
+    "hard_requirements": "900 sqft Type A, room sizes, foyer, open living/dining, layout claims source qualifiers",
+    "decision_makers": "as described in profile",
+    "initial_intent": "medium"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Defending size, dismissing concern, dumping amenities, promising roomy without basis.",
+    "responds_well_to": "Acknowledge trade-off; discuss documented layout details selectively; invite them to inspect show unit if the actual flow is the unresolved uncertainty."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Convertible if layout suits after in-person assessment.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 12
+  },
+  "critical_facts": "900 sqft Type A, room sizes, foyer, open living/dining, layout claims source qualifiers"
+}

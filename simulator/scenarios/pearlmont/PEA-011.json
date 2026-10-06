@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-011",
+  "project": "pearlmont",
+  "title": "Just looking low-intent buyer",
+  "channel": "inbound",
+  "starting_message": "Just browsing only, not planning to buy yet.",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Low-intent curious browser; may be early research and not ready for an appointment.",
+    "hidden_motivation": "Understand project generally, no active purchase plan.",
+    "hidden_objections": "Commitment/time pressure and low relevance.",
+    "reveal_conditions": "Reveal purpose or trigger if one useful light question is asked; intent may rise with one relevant concise answer.",
+    "hard_requirements": "Project overview and no obligation; preserve property reveal strategy where practical",
+    "decision_makers": "as described in profile",
+    "initial_intent": "low"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Hard close, form-like qualification, overloading facts.",
+    "responds_well_to": "Offer brief useful orientation and invite a low-pressure specific question; stop if no genuine need."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Appointment potential low; convertible only if interest emerges but do not force.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 10
+  },
+  "critical_facts": "Project overview and no obligation; preserve property reveal strategy where practical"
+}

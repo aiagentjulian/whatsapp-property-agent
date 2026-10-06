@@ -1,0 +1,232 @@
+{
+  "scenario_id": "PEA-003",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:12:19.947736+00:00",
+  "status": "COMPLETED",
+  "turns": 8,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Sea-facing units are in Block 1C, Levels 1–38, and Block 1D, Levels 1–37. I can’t confirm from this information which of those have 2 carparks, so the exact floor and carpark combination needs checking against the unit schedule.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks. Two carparks is a must-have, and sea-facing is my preference. Can you check which available units have both?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’ll have the latest unit schedule checked for available sea-facing units with 2 carparks, as availability needs confirmation. I’ll get my colleague to follow up with the options.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, please ask them to send me the available options with 2 carparks, sea-facing direction, floor and current price. If there’s a suitable one, I’m open to arranging a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted — I’ve passed on that you’d like the available options to include 2 carparks, sea-facing direction, floor and current price. If one suits, you’re open to arranging a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, please let me know roughly when they can check the schedule. If there’s a suitable one at the current price, I’m happy to arrange a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "I don’t have a confirmed timeframe yet, so I don’t want to guess. Your request is with my colleague to check the latest schedule and prices; I’ll ask them to confirm when they can update you. If an option suits, we can arrange a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you know when they can check it—I’m keen to review any options that meet the 2-carpark requirement, with sea-facing direction and current price before deciding on a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood — I’ll update you once my colleague confirms when they can check the schedule. I’ve noted that you’d like to review options with 2 carparks, sea-facing direction, floor and current price before deciding on a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Alright, thanks. Please update me once they’ve checked the schedule and current prices—I’ll review the options first, then we can arrange a viewing if one fits.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Understood — my colleague is checking the latest schedule and prices for options with 2 carparks and a sea-facing direction. You can review the floor and price first, then decide about a viewing if one suits.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you ask your colleague to contact me directly once they’ve checked the actual options and prices? I’ll decide about a viewing after I see whether anything fits.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Noted — I’ve passed on that you’d like my colleague to contact you directly once they’ve confirmed the available options and current prices. You can decide about a viewing after reviewing them.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please have your colleague WhatsApp me once they’ve verified the available options and current prices. I’ll review first, then decide about a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "Understood — I’ve passed on that you’d like your colleague to WhatsApp you once they’ve verified the available options and current prices. You can review them first and decide about a viewing after.",
+      "action": "MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks. Two carparks is a must-have, and sea-facing is my preference. Can you check which available units have both?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, please ask them to send me the available options with 2 carparks, sea-facing direction, floor and current price. If there’s a suitable one, I’m open to arranging a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, please let me know roughly when they can check the schedule. If there’s a suitable one at the current price, I’m happy to arrange a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, thanks. Please update me once you know when they can check it—I’m keen to review any options that meet the 2-carpark requirement, with sea-facing direction and current price before deciding on a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Alright, thanks. Please update me once they’ve checked the schedule and current prices—I’ll review the options first, then we can arrange a viewing if one fits.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, thanks. Could you ask your colleague to contact me directly once they’ve checked the actual options and prices? I’ll decide about a viewing after I see whether anything fits.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, appreciate it. Please have your colleague WhatsApp me once they’ve verified the available options and current prices. I’ll review first, then decide about a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

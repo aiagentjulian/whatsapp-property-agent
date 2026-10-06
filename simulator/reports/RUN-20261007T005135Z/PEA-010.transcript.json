@@ -1,0 +1,137 @@
+{
+  "scenario_id": "PEA-010",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:03:25.220319+00:00",
+  "status": "COMPLETED",
+  "turns": 4,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I’ll get the latest package and price confirmed, and have my colleague coordinate a viewing with you for Saturday. What time would suit you?",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Saturday around 2pm works, my wife will come along. Please get the latest package/price and confirm if that slot is available ya.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Hi, just checking in—any update on the latest package/price and whether Saturday around 2pm is available for me and my wife?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Thanks for checking in. I don’t have confirmation yet on the latest package/price or the Saturday 2pm slot, so I don’t want to confirm either before it’s verified. My colleague is coordinating this and will update you.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Could you check with your colleague and update me today if possible? My wife and I are planning for Saturday around 2pm—once the package and slot are verified, we can lock it in.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "I’ve noted that you’re hoping for an update today. The latest package/price and Saturday around 2pm still need to be verified, so I can’t confirm them yet. My colleague handling this will need to confirm both before you can lock it in.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Got it, but I’ve already asked for an update today and still don’t have one. Could you connect me directly with the colleague handling this so we can verify the package and Saturday 2pm slot?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Saturday around 2pm works, my wife will come along. Please get the latest package/price and confirm if that slot is available ya.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Hi, just checking in—any update on the latest package/price and whether Saturday around 2pm is available for me and my wife?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks for being upfront. Could you check with your colleague and update me today if possible? My wife and I are planning for Saturday around 2pm—once the package and slot are verified, we can lock it in.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-009",
+  "project": "pearlmont",
+  "title": "Already contacted by another property agent",
+  "channel": "inbound",
+  "starting_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Interested lead but existing agent may own relationship; wishes to avoid duplicate/conflicting follow-up.",
+    "hidden_motivation": "Get accurate answers without being pressured or creating agent conflict.",
+    "hidden_objections": "Agent ownership and prior commitments unclear.",
+    "reveal_conditions": "Reveal whether already registered/booked only if asked naturally; provide agent/company context if useful.",
+    "hard_requirements": "No explicit ownership policy present; human handoff for conflict/registration questions",
+    "decision_makers": "as described in profile",
+    "initial_intent": "medium"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Checklist interrogation, undermining other agent, continuing outreach against explicit preference.",
+    "responds_well_to": "Respect existing relationship, ask one relevant ownership/consent question, hand off internally if ownership conflict needs human resolution."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Potentially convertible, but only if appropriate relationship/ownership is clear.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 12
+  },
+  "critical_facts": "No explicit ownership policy present; human handoff for conflict/registration questions"
+}

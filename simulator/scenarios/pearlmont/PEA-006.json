@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-006",
+  "project": "pearlmont",
+  "title": "Buyer dislikes project density",
+  "channel": "inbound",
+  "starting_message": "1846 units sounds too dense. I don’t like crowded condos.",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Buyer values quiet/private circulation, not necessarily opposed to all high-rise living.",
+    "hidden_motivation": "Avoid crowding and loss of privacy.",
+    "hidden_objections": "Whether towers, lifts, podium or traffic feel crowded.",
+    "reveal_conditions": "Reveal primary source of discomfort if Agent asks one focused question; may soften if answer addresses exact concern.",
+    "hard_requirements": "1,846 units; towers/lifts and access separation source facts; no noise/crowding guarantees",
+    "decision_makers": "as described in profile",
+    "initial_intent": "medium"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Dismissing density, claiming uncrowded/quiet guarantee, feature dump.",
+    "responds_well_to": "Acknowledge 1,846 Phase 1 units and identify the specific concern; explain documented access/lift facts if relevant; viewing can test comfort."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Convertible only if actual concern is addressable; otherwise good non-conversion.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 12
+  },
+  "critical_facts": "1,846 units; towers/lifts and access separation source facts; no noise/crowding guarantees"
+}

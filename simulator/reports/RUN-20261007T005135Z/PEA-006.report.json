@@ -1,0 +1,190 @@
+{
+  "scenario_id": "PEA-006",
+  "title": "Buyer dislikes project density",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-006.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "That’s a fair concern. The 1,846 units are spread across three towers; typical floors have 15 units in Blocks 1B and 1C, and 18 in 1D. Each block has four passenger lifts. Is your main concern lift traffic or the overall number of residents?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "More the shared areas and privacy—people constantly coming and going, especially around the lifts. How are the lift and access areas separated between the blocks?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Each block has its own four passenger lifts, and there are link bridges between some blocks at specified levels. The details on whether lift lobbies and access control are fully separated aren’t clear in the information I have, so I’ll get that confirmed rather than guess.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks for checking rather than guessing. Main thing for me is whether each block’s lift lobby and access are residents-only or shared between blocks. Once I know that, I can decide if it’s worth viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Understood—that’s the specific point to confirm: whether each block’s lift lobby and access are residents-only or shared. I’ll have the team verify it so you can decide about viewing based on that.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, please let me know once they’ve confirmed whether the lift lobbies and access are separate or shared. I’ll decide about viewing after that.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Of course—I’ve noted that this is the point you need confirmed. I’ll let you know once the team confirms whether the lift lobbies and access are separate or shared; I won’t guess in the meantime.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. I’ll wait for your update on the lift lobby and access setup before deciding about a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "More the shared areas and privacy—people constantly coming and going, especially around the lifts. How are the lift and access areas separated between the blocks?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks for checking rather than guessing. Main thing for me is whether each block’s lift lobby and access are residents-only or shared between blocks. Once I know that, I can decide if it’s worth viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, please let me know once they’ve confirmed whether the lift lobbies and access are separate or shared. I’ll decide about viewing after that.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "appointment_state": "NO_VIEWING_INTENT",
+  "final_lead_intent": "Conditional viewing interest: the buyer will decide whether to view after learning whether lift lobbies and access are separate or shared.",
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Conditional viewing interest: the buyer will decide whether to view after learning whether lift lobbies and access are separate or shared.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 3,
+      "commercial_progression": 2
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "Acknowledged the density concern without dismissing it.",
+        "Asked one focused question that surfaced the real issue: shared areas, privacy, and lift/access separation.",
+        "Admitted uncertainty instead of inventing a claim about residents-only access.",
+        "The buyer appreciated the caution and stated that viewing could be considered once the issue is clarified."
+      ],
+      "what_reduced_conversion_probability": [
+        "The key access-separation question remained unanswered, so the buyer could not make a viewing decision.",
+        "The agent repeated the same promise to check without giving an operational next step, owner, or reliable update timeframe.",
+        "The specific tower, floor-density, lift-count, and link-bridge claims should be checked against the retrieved project sources."
+      ],
+      "where_conversion_was_won_or_lost": "The agent preserved trust by not guessing, but progression stalled after the buyer expressed conditional viewing interest. The immediate objective was a verified answer and follow-up, not booking an appointment before the buyer's stated prerequisite was resolved."
+    },
+    "what_agent_did_well": [
+      "Responded directly to the density objection and identified the buyer's specific concern.",
+      "Used relevant circulation facts rather than launching into an unrelated feature pitch.",
+      "Was transparent about not knowing whether lobbies and access are separated.",
+      "Did not pressure the buyer to view or imply that crowding or noise could be guaranteed away."
+    ],
+    "weak_or_wrong_sales_move": "After the buyer clearly specified the information needed and asked for an update, the agent repeated the same acknowledgment twice without showing that a concrete verification handoff had been initiated or setting a dependable follow-up expectation.",
+    "better_next_move": "Confirm that the access-separation question is being checked with the project team, give a realistic update timeframe only if one can be honored, and return with the sourced answer. Then ask whether the answer makes the buyer comfortable enough to consider a viewing.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [
+      "The buyer said they could decide whether viewing is worthwhile once the access and lift-lobby arrangement is known. This is conditional interest, not a confirmed appointment; the agent acknowledged it but did not turn it into a clear follow-up step."
+    ],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The three-tower layout, floor unit counts (15 in Blocks 1B and 1C; 18 in 1D), four passenger lifts per block, and link bridges at specified levels are not independently verifiable from the transcript. Confirm each against the retrieved project sources before relying on it."
+    ],
+    "retrieval_misses": [
+      "The buyer's central question was whether lift lobbies and access are residents-only or shared between blocks. The agent did not provide the relevant sourced access-separation facts, although the retrieval trace shows project overview and unit/layout sources were consulted."
+    ],
+    "likely_issue_sources": [
+      "Retrieval",
+      "Sales Judgment",
+      "Response Style"
+    ],
+    "recommended_improvement": {
+      "category": "Retrieval",
+      "target_file": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+      "reason": "Make the verified lift-lobby and access-separation arrangement easy to retrieve alongside tower, floor, and lift details; if the project documentation does not establish the arrangement, provide a clear escalation and follow-up process."
+    },
+    "summary": "Trustworthy objection handling: the agent understood that privacy and circulation, not just the headline unit count, were the buyer's concern and avoided guessing about access separation. The buyer showed conditional viewing interest, but no appointment was requested or confirmed. The main weakness was stalled follow-through: repeated acknowledgments replaced a concrete verification handoff and update expectation."
+  },
+  "error": null
+}

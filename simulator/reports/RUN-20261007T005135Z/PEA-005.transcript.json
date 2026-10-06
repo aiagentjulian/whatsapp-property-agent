@@ -1,0 +1,211 @@
+{
+  "scenario_id": "PEA-005",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T16:57:35.562739+00:00",
+  "status": "COMPLETED",
+  "turns": 7,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "LPPSA may be an option for eligible government servants, but I can’t confirm approval from your job alone—LPPSA assesses each application under its terms. The current project reference lists eligibility up to RM1 million, subject to those terms. Is this your first LPPSA financing, or do you already have one?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "First LPPSA, haven’t applied before. Can someone confirm whether this project can be purchased using LPPSA and check my eligibility?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Noted, this would be your first LPPSA application. I’ll have my colleague confirm whether Pearlmont can be purchased through LPPSA and help check what’s needed to assess your eligibility. Approval would still be subject to LPPSA’s assessment.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please get them to confirm whether Pearlmont can be bought using LPPSA and what details they need from me to check eligibility. I’d rather clarify the financing first before arranging a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted. I’ll ask my colleague to confirm whether Pearlmont can be purchased using LPPSA and what details they need to assess your eligibility. We can clarify the financing first—no need to arrange a viewing yet.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, please update me once they’ve confirmed the LPPSA part and what details they need. I’ll hold off on viewing for now.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Noted — I’ll follow up on the LPPSA confirmation and what details are needed to assess eligibility. We’ll keep the viewing on hold for now.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please update me once you’ve confirmed.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Will do — I’ll update you once the LPPSA details are confirmed. We’ll keep the viewing on hold for now.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "For context, I’m still in government service and hoping to buy sometime this year, but I’d like to sort out the LPPSA part first. Let me know if they need any details from me.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Noted—you’re hoping to buy this year and would like to clarify the LPPSA requirements first. We’ll keep the viewing on hold; you don’t need to send anything until my colleague confirms what details are needed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks. Roughly when do you think they can get back to me? I’m hoping to buy this year, so just want to know when I can plan around it.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "I don’t have a confirmed timeframe yet, so I don’t want to guess. I’ll check with my colleague and update you once I have an ETA. We’ll keep the viewing on hold for now.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you have an ETA, and when they’ve confirmed the LPPSA details too. I’ll hold off on viewing until then.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "action": "HANDOFF"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "First LPPSA, haven’t applied before. Can someone confirm whether this project can be purchased using LPPSA and check my eligibility?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks. Please get them to confirm whether Pearlmont can be bought using LPPSA and what details they need from me to check eligibility. I’d rather clarify the financing first before arranging a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, please update me once they’ve confirmed the LPPSA part and what details they need. I’ll hold off on viewing for now.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, appreciate it. Please update me once you’ve confirmed.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "For context, I’m still in government service and hoping to buy sometime this year, but I’d like to sort out the LPPSA part first. Let me know if they need any details from me.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks. Roughly when do you think they can get back to me? I’m hoping to buy this year, so just want to know when I can plan around it.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

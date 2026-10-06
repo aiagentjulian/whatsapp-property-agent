@@ -1,0 +1,77 @@
+{
+  "scenario_id": "PEA-012",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:23:01.438448+00:00",
+  "status": "COMPLETED",
+  "turns": 2,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I need to move in next month and need four bedrooms. Any unit?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Pearlmont probably won’t fit your timing or bedroom requirement: Phase 1 units are all 3-bedroom, and completion is expected in Q4 2029, so they won’t be ready to move into next month. Is either the move-in date or the 4-bedroom requirement flexible?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Neither is flexible, sorry. I need 4 bedrooms and to move in next month, so Pearlmont won’t work for me. Thanks for clarifying.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Understood—Pearlmont won’t meet your move-in date or 4-bedroom requirement. Thanks for clarifying, and I hope you find a suitable place in time.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I need to move in next month and need four bedrooms. Any unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Neither is flexible, sorry. I need 4 bedrooms and to move in next month, so Pearlmont won’t work for me. Thanks for clarifying.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

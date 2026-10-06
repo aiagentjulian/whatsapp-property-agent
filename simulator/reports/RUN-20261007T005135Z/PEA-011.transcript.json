@@ -1,0 +1,189 @@
+{
+  "scenario_id": "PEA-011",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:04:31.247863+00:00",
+  "status": "COMPLETED",
+  "turns": 6,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "No worries—browse at your own pace. If you’d like a quick overview of Pearlmont or have any questions later, just message me.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks! Just curious, what kind of homes is Pearlmont and roughly where is it?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Pearlmont is a freehold condominium project in Seberang Jaya, Penang. The homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, that gives me a rough idea. Do you know the general price range? Just comparing options, not looking to arrange a visit or anything yet.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "The base-price references are roughly RM328k–RM362k, depending on block, floor and facing. That’s before any applicable price components or current package, so the effective price may differ; I’d need to confirm the latest package for that.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Got it, thanks! I’m just comparing rough ranges for now. When you get the latest package info, could you also let me know what’s included in the price?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Yes—I’ll get the latest package checked and confirm what’s included. The project pricing references include the unit price and applicable car-park premium; some units may also have applicable extras and a RM10k upgrading package. The exact inclusions depend on the unit and current package, so I’ll have those details verified before giving you a definite breakdown.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, no rush—just send it over when you’ve confirmed. I’m still only comparing for now 🙂",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Of course 🙂 I’ll share the confirmed price breakdown and inclusions once they’ve been checked. No rush while you’re comparing.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it 🙂 No rush—just send it over when you’ve got the confirmed details.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "You’re welcome 🙂 I’ll share the confirmed breakdown once it’s available.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Sounds good, that’s all I need for now—thanks 🙂",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks! Just curious, what kind of homes is Pearlmont and roughly where is it?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, that gives me a rough idea. Do you know the general price range? Just comparing options, not looking to arrange a visit or anything yet.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Got it, thanks! I’m just comparing rough ranges for now. When you get the latest package info, could you also let me know what’s included in the price?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, no rush—just send it over when you’ve confirmed. I’m still only comparing for now 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, appreciate it 🙂 No rush—just send it over when you’ve got the confirmed details.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

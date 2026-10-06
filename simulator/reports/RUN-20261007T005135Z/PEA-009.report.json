@@ -1,0 +1,145 @@
+{
+  "scenario_id": "PEA-009",
+  "title": "Already contacted by another property agent",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-009.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Yes, of course—I can still help. What would you like to know about Pearlmont?",
+      "action": "ASK"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly just want to avoid getting registered twice or having both agents follow up. Could you check if I’m already on record before we go further? I haven’t booked a viewing or committed to anything yet.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’ll have the team check whether you’re already on record and confirm who should follow up before we go any further. No need to register again for now—I’ve noted that you haven’t booked a viewing or committed to anything.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking first. Just let me know once you’ve confirmed who should follow up—I’d prefer to keep it to one contact for now.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "You’re welcome. I’ve noted that you’d prefer just one point of contact, and that the team should confirm who’ll follow up before anything goes further.",
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. I’ll wait for the confirmation first—just keep it to one contact for now please.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ASK"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly just want to avoid getting registered twice or having both agents follow up. Could you check if I’m already on record before we go further? I haven’t booked a viewing or committed to anything yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, appreciate you checking first. Just let me know once you’ve confirmed who should follow up—I’d prefer to keep it to one contact for now.",
+      "files": []
+    }
+  ],
+  "appointment_state": "NO_VIEWING_INTENT",
+  "final_lead_intent": "Wants the team to confirm whether they are already registered and identify one appropriate contact before any further follow-up; no viewing commitment.",
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Wants the team to confirm whether they are already registered and identify one appropriate contact before any further follow-up; no viewing commitment.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 3,
+      "objection_handling": 5,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 3
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent accepted the buyer's concern and committed to checking registration and follow-up ownership before proceeding.",
+        "The agent acknowledged the buyer's preference for a single contact and did not push for a viewing."
+      ],
+      "what_reduced_conversion_probability": [
+        "No material conversion risk was introduced; the buyer explicitly wanted to wait for confirmation before further contact."
+      ],
+      "where_conversion_was_won_or_lost": "The immediate objective was appropriately limited to resolving the agent-ownership concern. The handoff preserved trust, but no appointment was sought or secured, appropriately."
+    },
+    "what_agent_did_well": [
+      "Responded directly and respectfully to the concern about an existing agent.",
+      "Recognized that registration and ownership questions require internal confirmation rather than guessing.",
+      "Made the handoff before further sales activity and respected the request for one contact.",
+      "Did not mistake the buyer's willingness to wait for confirmation as viewing intent."
+    ],
+    "weak_or_wrong_sales_move": "No material wrong move. The final acknowledgment repeats the one-contact preference without adding a specific next step or expected confirmation timing; however, inventing a timeframe would be inappropriate.",
+    "better_next_move": "After the internal check, have one confirmed contact update the buyer on their registration and who will follow up. Until then, avoid duplicate outreach and do not pitch a viewing.",
+    "close_timing": "not_applicable",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [
+      "Turn 2 retrieved unit/layout, viewing-close, and unit-fit material that was not relevant to the registration and agent-ownership concern. The agent nevertheless chose the appropriate handoff."
+    ],
+    "likely_issue_sources": [
+      "Retrieval"
+    ],
+    "recommended_improvement": {
+      "category": "Retrieval",
+      "target_file": "Retrieval routing for agent-ownership and registration-conflict questions",
+      "reason": "Route these questions to the ownership/conflict handoff path instead of retrieving unit-fit and viewing-close guidance."
+    },
+    "summary": "A sound, trust-preserving response to an agent-ownership concern. The agent appropriately handed the matter to the team, respected the buyer's one-contact preference, and did not pressure them toward a viewing. No appointment is confirmed or intended at this stage."
+  },
+  "error": null
+}

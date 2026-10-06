@@ -1,0 +1,163 @@
+{
+  "scenario_id": "PEA-004",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T16:56:15.627881+00:00",
+  "status": "COMPLETED",
+  "turns": 5,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I wouldn’t want to quote a yield or appreciation figure without verified rental comparables and current unit pricing. I don’t have reliable projections for either, and appreciation isn’t guaranteed. Are you mainly weighing rental income or longer-term value growth?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Both, but I’d look at net rental after maintenance and other holding costs first, then whether there’s a sensible exit in maybe 5–7 years. Got any verified rental comps or the maintenance fee?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "The maintenance fee is RM0.18/sq.ft. including sinking fund—about RM162/month for a 900 sq.ft. unit, before other holding costs. I don’t have verified rental comparables to estimate net rent or assess a 5–7-year exit reliably. I’ll get the team to check what evidence is available rather than guess.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate the straight answer. Could you also check the phase unit supply and any itemised holding costs beyond maintenance? I’m comparing it with my existing rentals, so I’d rather see the actual numbers before deciding if it’s worth a visit.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Understood—I’ll add the current phase/unit supply and an itemised breakdown of holding costs beyond the RM0.18/sq.ft. maintenance fee to the team’s check. I don’t have verified figures for those yet, so I won’t guess. Makes sense to review the actual numbers before deciding on a visit.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Sounds good, please send the verified figures when you have them. I’ll compare them with my existing rentals first, then decide whether a visit makes sense.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood—I’ll share the verified phase supply and itemised holding costs once the team confirms them. Makes sense to compare the actual figures before deciding on a visit.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, please let me know when you have the verified figures. I’ll compare them first and hold off deciding on a visit till then.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood—I’ll share the verified figures once the team confirms them. You can compare them first, then decide whether a visit makes sense.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, no need to keep checking in—just send the verified figures when you have them and I’ll compare first.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Both, but I’d look at net rental after maintenance and other holding costs first, then whether there’s a sensible exit in maybe 5–7 years. Got any verified rental comps or the maintenance fee?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, appreciate the straight answer. Could you also check the phase unit supply and any itemised holding costs beyond maintenance? I’m comparing it with my existing rentals, so I’d rather see the actual numbers before deciding if it’s worth a visit.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Sounds good, please send the verified figures when you have them. I’ll compare them with my existing rentals first, then decide whether a visit makes sense.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, please let me know when you have the verified figures. I’ll compare them first and hold off deciding on a visit till then.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

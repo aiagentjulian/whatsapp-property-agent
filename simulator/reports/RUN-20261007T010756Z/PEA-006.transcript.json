@@ -1,0 +1,261 @@
+{
+  "scenario_id": "PEA-006",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:16:12.110072+00:00",
+  "status": "COMPLETED",
+  "turns": 9,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "That’s a fair concern—1,846 units is a substantial number. They’re across 3 towers, with 15–18 units per typical floor and 4 passenger lifts per block, plus a Bomba lift. I wouldn’t judge the day-to-day feel from the total alone. Is your main concern lift waiting or crowded shared facilities?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "More the lift and corridor traffic, plus people constantly passing near my unit. 15–18 units per floor sounds like quite a lot—how are the lifts and access arranged between the towers?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Each tower has its own lift bank: 4 passenger lifts plus 1 Bomba lift. The blocks are connected by link bridges at designated levels—1B and 1C at Levels 2, 4, 6, 8 and 9; 1D at Levels 3, 4, 6, 8 and 9. I don’t have confirmed details on how resident access is controlled between towers or the exact lift-to-corridor arrangement, so I’ll get the access plan checked for you.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks for checking. The access separation is the key thing for me—especially whether residents can move between towers freely and how the lift lobbies connect to the corridors near the units. Send me the confirmed plan when you have it, then I can see whether it’s worth viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Understood—the access separation is the key point. I’ve asked the team to confirm whether residents can move freely between towers and how the lift lobbies connect to the unit corridors. I’ll share the confirmed plan before you decide whether to view.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, please send me the confirmed plan when you have it. I’ll decide about viewing once I can see how the access and corridors are arranged.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood—I’ll share the confirmed access and corridor plan once the team verifies it. You can decide about viewing after you’ve had a chance to review it.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send it over once confirmed—I’ll decide about viewing after I’ve checked the access and corridor layout.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood—I’ll share the confirmed access and corridor plan once it’s available, so you can decide about viewing after you’ve reviewed it.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, got it — I’ll wait for the confirmed plan. Not ready to arrange a viewing until I’ve checked the access and corridor layout.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Understood. I’ll share the confirmed access and corridor plan once it’s available; no need to decide about a viewing before then.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks. I’ll hold off on a viewing until I can review the confirmed access and corridor layout. Please send it over when you have it.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Understood. I’ll share the verified access and corridor plan once the team confirms it, so you can review it before deciding about a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, understood. I’ll wait for the confirmed plan—no need to repeat it; I’ll decide about viewing once I’ve reviewed the layout.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "Understood.",
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Thanks, I’ll wait for the confirmed layout before deciding about a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 9,
+      "speaker": "agent",
+      "message": "Noted — I’ll share the confirmed layout once it’s available.",
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 9,
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "More the lift and corridor traffic, plus people constantly passing near my unit. 15–18 units per floor sounds like quite a lot—how are the lifts and access arranged between the towers?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks for checking. The access separation is the key thing for me—especially whether residents can move between towers freely and how the lift lobbies connect to the corridors near the units. Send me the confirmed plan when you have it, then I can see whether it’s worth viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, please send me the confirmed plan when you have it. I’ll decide about viewing once I can see how the access and corridors are arranged.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, thanks. Please send it over once confirmed—I’ll decide about viewing after I’ve checked the access and corridor layout.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, got it — I’ll wait for the confirmed plan. Not ready to arrange a viewing until I’ve checked the access and corridor layout.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks. I’ll hold off on a viewing until I can review the confirmed access and corridor layout. Please send it over when you have it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, understood. I’ll wait for the confirmed plan—no need to repeat it; I’ll decide about viewing once I’ve reviewed the layout.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Thanks, I’ll wait for the confirmed layout before deciding about a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

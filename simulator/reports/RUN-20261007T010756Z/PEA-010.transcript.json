@@ -1,0 +1,131 @@
+{
+  "scenario_id": "PEA-010",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:20:51.380434+00:00",
+  "status": "COMPLETED",
+  "turns": 4,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I’ll get the latest package and exact unit price confirmed so I don’t give you outdated details. I’ll also have my colleague coordinate a viewing this Saturday. What time works for you?",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Saturday around 11am works for me, for two of us—my spouse and I. Please check if that slot’s available and send the confirmed latest package and price too, thanks.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Noted—Saturday around 11am for you and your spouse. I’ll have my colleague check whether the slot is available and confirm the latest package and price before confirming the visit.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, please update me once you’ve confirmed the 11am slot and latest package/price. 🙏",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted, thanks — the team will update you once the 11am slot and latest package/price are confirmed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. I’ll wait for your update on the slot and package.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Noted, thanks — we’ll update you once the Saturday 11am slot and latest package/price are confirmed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Saturday around 11am works for me, for two of us—my spouse and I. Please check if that slot’s available and send the confirmed latest package and price too, thanks.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, please update me once you’ve confirmed the 11am slot and latest package/price. 🙏",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks. I’ll wait for your update on the slot and package.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

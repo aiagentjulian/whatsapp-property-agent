@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-003",
+  "project": "pearlmont",
+  "title": "Two-car household",
+  "channel": "inbound",
+  "starting_message": "Need 2 carparks. Also which floor got sea facing?",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Dual-car household; asks about exact category/facing. Budget flexible within reason; floor/facing priority high.",
+    "hidden_motivation": "Secure a usable two-car unit with preferred orientation.",
+    "hidden_objections": "Risk that two carparks or desired facing are unavailable/current price differs.",
+    "reveal_conditions": "Reveal floor flexibility if asked; ask whether facing or two bays takes priority.",
+    "hard_requirements": "carparks by unit/category; orientation schedule limits exact mapping; availability unverified",
+    "decision_makers": "as described in profile",
+    "initial_intent": "high"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Generic demographic qualification, inventing availability, asserting exact unit mapping.",
+    "responds_well_to": "Recognize strong buying signal, narrow the trade-off and offer human verification of live inventory."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Convertible; appointment or handoff useful after requirements and availability checked.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 12
+  },
+  "critical_facts": "carparks by unit/category; orientation schedule limits exact mapping; availability unverified"
+}

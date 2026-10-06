@@ -1,0 +1,136 @@
+{
+  "scenario_id": "PEA-007",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:00:23.989802+00:00",
+  "status": "COMPLETED",
+  "turns": 4,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "It’s a fair concern. The project FAQ states that Block 1B is about 36 m from the high-tension cable, against a stated 20 m minimum-distance requirement; that distance shouldn’t be assumed for every block or unit. For flooding, the development’s finished floor level is planned at about 2.4 m above sea level, and the river is maintained by JPS with flood-gate/freeboard control. These are mitigation measures, not a guarantee of zero flood risk. Are you looking at a particular block or unit?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you being clear it’s not a zero-risk guarantee. We’re looking for a home for my family, but haven’t shortlisted a block yet. Before viewing, could you share the source for the 36m/20m figures and any independent flood-risk assessment or past flood records for the site? I’d want to review those with my family first.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "That makes sense, especially when you’re reviewing it with your family. The 36 m and 20 m figures are stated in Pearlmont’s project FAQ, but I don’t have the supporting source document or any independent flood assessment or past flood records to share here. I’ll ask my colleague to confirm what documentation is available before you make your assessment.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send through any verified documents or flood records your colleague can confirm. We’ll review them with the family first, then decide about viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Of course—I’ve noted your request for the source behind the 36 m/20 m figures and any independent flood assessment or site flood records that can be verified. My colleague will confirm what’s available; I won’t assume those documents exist. You can review them with your family before deciding about a viewing.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking what’s actually available. We’ll wait for the verified documents and review them with the family before deciding on a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood. I’ve noted that you’d like to review any verified documents or records with your family before deciding about a viewing. My colleague will follow up with what can be confirmed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, we’ll wait for your colleague to share whatever verified documents are available, then discuss it as a family before deciding about a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks, appreciate you being clear it’s not a zero-risk guarantee. We’re looking for a home for my family, but haven’t shortlisted a block yet. Before viewing, could you share the source for the 36m/20m figures and any independent flood-risk assessment or past flood records for the site? I’d want to review those with my family first.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks. Please send through any verified documents or flood records your colleague can confirm. We’ll review them with the family first, then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, appreciate you checking what’s actually available. We’ll wait for the verified documents and review them with the family before deciding on a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

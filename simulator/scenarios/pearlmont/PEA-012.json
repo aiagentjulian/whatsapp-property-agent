@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-012",
+  "project": "pearlmont",
+  "title": "Hard mismatch: immediate move-in and 4 bedrooms",
+  "channel": "inbound",
+  "starting_message": "I need to move in next month and need four bedrooms. Any unit?",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Hard requirements: move-in next month and four bedrooms. Pearlmont Type A has 3 bedrooms, expected completion Q4 2029. No intent to compromise.",
+    "hidden_motivation": "Find immediately available 4-bedroom home.",
+    "hidden_objections": "Completion timing and bedroom count are hard blockers.",
+    "reveal_conditions": "Requirements clear upfront; no further personal details necessary.",
+    "hard_requirements": "Q4 2029 expected completion; Type A 3 bedrooms; no immediate move-in",
+    "decision_makers": "as described in profile",
+    "initial_intent": "none"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Pushing viewing, claiming units can be modified/ready, ignoring mismatch.",
+    "responds_well_to": "State mismatch respectfully with supported facts, do not push visit, offer to help if requirements change / human can suggest alternatives only if appropriate."
+  },
+  "conversion": {
+    "convertible": false,
+    "expected_appointment_potential": "Non-convertible; best judgment is no Pearlmont appointment.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 6
+  },
+  "critical_facts": "Q4 2029 expected completion; Type A 3 bedrooms; no immediate move-in"
+}

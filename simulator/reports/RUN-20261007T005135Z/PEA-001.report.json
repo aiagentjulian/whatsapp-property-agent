@@ -1,0 +1,292 @@
+{
+  "scenario_id": "PEA-001",
+  "title": "Budget-sensitive first-home couple",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-001.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Base prices start from RM328k before any current rebates or packages. I’ll get the latest effective price confirmed for you so I don’t give you an outdated figure.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you also check the Type A size and give me a rough idea of the monthly instalment? We’re trying to see if it’ll be manageable.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Type A is 900 sq ft, with 3 bedrooms and 2 bathrooms. The monthly instalment depends on the final package price, down payment, loan tenure and bank rate, so I’ll have my colleague check a realistic estimate along with the latest price rather than guess. What loan tenure would you roughly consider?",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Probably around 30 years, but it depends on the monthly amount. We’re hoping to stay in the RM3xxk range, so a realistic estimate would help us see if it’s manageable.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted — I’ll pass on the 30-year tenure and your RM3xxk target so my colleague can check a realistic instalment alongside the latest package, rather than give you a rough figure that could mislead.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. It’s for me, my spouse and our young child, so we’re a bit worried 900 sq ft might feel small for family living. If you can share how the Type A layout uses the space, that’d help us judge it alongside the monthly estimate.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Type A is 900 sq ft, with about 405 sq ft for the open living, dining and kitchen area. The bedrooms are approximately 143, 117 and 103 sq ft; the project materials describe all three as able to fit a queen-sized bed, with an efficient layout and no long internal corridor. It may still feel compact for a family of three, so how it works will depend on your furniture and daily routine. I’ve also passed your 30-year tenure and RM3xxk target to my colleague to check a realistic monthly estimate.",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, that gives us a better idea. It still feels a bit tight on paper, so a floor plan would help. Once your colleague confirms the monthly estimate and package, we could consider viewing it with my spouse to see how the layout feels in person.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "I’ll ask my colleague to include the floor plan with the confirmed package and 30-year instalment estimate. Once you’ve had a chance to review them, you and your spouse can decide whether you’d like to view.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the floor plan and confirmed package/instalment estimate when you have them. We’ll go through it together and then see if a viewing makes sense.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Noted — the floor plan and confirmed package/30-year instalment estimate are being checked. We’ll share them once confirmed, so you and your spouse can review them before deciding about a viewing.",
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you have the floor plan and the realistic monthly estimate—we’ll review them together first, then decide about viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Noted — I’ll follow up with the floor plan and confirmed package/30-year instalment estimate once they’re verified. You and your spouse can review them first, then decide whether a viewing makes sense.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. We’ll wait for the floor plan and confirmed monthly estimate, then discuss whether to arrange a viewing with my spouse.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "Understood — we’ll update you once the floor plan and confirmed 30-year instalment estimate are ready, so you and your spouse can review them before deciding about a viewing.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Alright, thanks. We’ll wait for the floor plan and confirmed estimate, then discuss it together.",
+      "appointment_state": "VIEWING_INTEREST"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 5,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE"
+    },
+    {
+      "turn": 7,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Okay, thanks. Could you also check the Type A size and give me a rough idea of the monthly instalment? We’re trying to see if it’ll be manageable.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Probably around 30 years, but it depends on the monthly amount. We’re hoping to stay in the RM3xxk range, so a realistic estimate would help us see if it’s manageable.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, appreciate you checking. It’s for me, my spouse and our young child, so we’re a bit worried 900 sq ft might feel small for family living. If you can share how the Type A layout uses the space, that’d help us judge it alongside the monthly estimate.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, that gives us a better idea. It still feels a bit tight on paper, so a floor plan would help. Once your colleague confirms the monthly estimate and package, we could consider viewing it with my spouse to see how the layout feels in person.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay, thanks. Please send the floor plan and confirmed package/instalment estimate when you have them. We’ll go through it together and then see if a viewing makes sense.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, thanks. Please update me once you have the floor plan and the realistic monthly estimate—we’ll review them together first, then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, appreciate it. We’ll wait for the floor plan and confirmed monthly estimate, then discuss whether to arrange a viewing with my spouse.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "appointment_state": "VIEWING_INTEREST_NOT_CONFIRMED",
+  "final_lead_intent": "Interested in a possible viewing with spouse, but wants to review the floor plan and confirmed package/instalment estimate first.",
+  "judge": {
+    "appointment_state": "VIEWING_INTEREST_NOT_CONFIRMED",
+    "scenario_success": false,
+    "good_judgment": true,
+    "final_lead_intent": "Interested in a possible viewing with spouse, but wants to review the floor plan and confirmed package/instalment estimate first.",
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "factual_accuracy": 4,
+      "sales_naturalness": 2,
+      "handoff_judgment": 3,
+      "commercial_progression": 2
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "Gave a starting price while clearly distinguishing it from a confirmed current package.",
+        "Shared Type A layout details relevant to the family's concern about usable space.",
+        "Acknowledged that 900 sq ft may feel compact rather than overselling the fit.",
+        "Recognised that the buyer needs a realistic payment estimate and spouse review before deciding."
+      ],
+      "what_reduced_conversion_probability": [
+        "Repeatedly restated that the buyer should review the documents before deciding, without agreeing a clear, non-pressuring follow-up.",
+        "No delivery timeframe or specific next contact was established for the requested floor plan and estimate.",
+        "The repeated acknowledgments added little after the buyer had already stated the same condition."
+      ],
+      "where_conversion_was_won_or_lost": "The agent earned conditional viewing interest by addressing the layout concern honestly. The lead was not converted to a confirmed appointment: the buyer explicitly wanted to review affordability and the floor plan first, and the agent did not secure a permission-based follow-up after those items are sent."
+    },
+    "what_agent_did_well": [
+      "Responded directly to the initial price question and avoided presenting an unverified effective price as final.",
+      "Asked for a relevant loan-tenure assumption and passed the buyer's budget target to the colleague checking affordability.",
+      "Addressed the household's size objection with practical layout information and a candid caveat.",
+      "Did not pressure the buyer to book before the spouse had reviewed the information."
+    ],
+    "weak_or_wrong_sales_move": "From turns 5–8, the agent repeated that the buyer could decide after reviewing the documents, but did not agree a useful follow-up step or timeframe.",
+    "better_next_move": "Confirm that the floor plan and verified estimate are being checked, then ask permission to follow up once they are sent: “Sure, I’ll send both once confirmed. Would you like me to check back after you and your spouse have had a chance to review them?”",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [
+      "At turn 4, the buyer said they could consider viewing with their spouse once the package and monthly estimate were confirmed. This was conditional interest, not appointment confirmation; the agent appropriately did not treat it as a booking, but could have arranged a permission-based follow-up."
+    ],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The RM328k starting price and its treatment of rebates/packages should be checked against the current pricing source before being repeated.",
+      "The Type A area breakdown, bedroom dimensions, queen-bed fit, and corridor/layout descriptions should be checked against the project layout materials. The transcript's retrieval trace includes the relevant unit-and-layout file, but its contents are not provided here for independent verification."
+    ],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Sales Judgment",
+      "Response Style"
+    ],
+    "recommended_improvement": {
+      "category": "Sales Judgment",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Clarify how to progress conditional viewing interest without pressure: agree a permission-based follow-up after requested information is delivered, and avoid repeating the same acknowledgment across turns."
+    },
+    "summary": "The agent was cautious, relevant, and honest about the family's space concern and the need to verify affordability. The buyer showed conditional viewing interest, but no appointment was confirmed. The main weakness was repetitive maintenance instead of setting a simple follow-up after the requested documents are ready."
+  },
+  "error": null
+}

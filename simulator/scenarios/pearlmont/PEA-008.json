@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-008",
+  "project": "pearlmont",
+  "title": "High-floor sea view with tight budget",
+  "channel": "inbound",
+  "starting_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Own-stay buyer prioritizes sea view but has hard budget sensitivity; open to floor/view compromise.",
+    "hidden_motivation": "Balance view preference with affordability.",
+    "hidden_objections": "High floor premium / exact availability / orientation mapping unknown.",
+    "reveal_conditions": "Reveal budget ceiling or willingness to compromise if Agent explores trade-off.",
+    "hard_requirements": "Block 1C/1D sea-facing ranges in source; exact mapping and inventory require current schedule",
+    "decision_makers": "as described in profile",
+    "initial_intent": "high"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Claiming exact best/available unit, assuming all sea-facing units same view, pushing upgrade.",
+    "responds_well_to": "Recognize strong unit-fit signal; clarify priority trade-off and verify exact layout, current price and availability with human."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Convertible if alternatives exist; viewing valuable to compare orientation/view.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 12
+  },
+  "critical_facts": "Block 1C/1D sea-facing ranges in source; exact mapping and inventory require current schedule"
+}

@@ -1,0 +1,207 @@
+{
+  "scenario_id": "PEA-010",
+  "title": "High-intent exact package and weekend viewing",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-010.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I’ll get the latest package and price confirmed, and have my colleague coordinate a viewing with you for Saturday. What time would suit you?",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Saturday around 2pm works, my wife will come along. Please get the latest package/price and confirm if that slot is available ya.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Hi, just checking in—any update on the latest package/price and whether Saturday around 2pm is available for me and my wife?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Thanks for checking in. I don’t have confirmation yet on the latest package/price or the Saturday 2pm slot, so I don’t want to confirm either before it’s verified. My colleague is coordinating this and will update you.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Could you check with your colleague and update me today if possible? My wife and I are planning for Saturday around 2pm—once the package and slot are verified, we can lock it in.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "I’ve noted that you’re hoping for an update today. The latest package/price and Saturday around 2pm still need to be verified, so I can’t confirm them yet. My colleague handling this will need to confirm both before you can lock it in.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Got it, but I’ve already asked for an update today and still don’t have one. Could you connect me directly with the colleague handling this so we can verify the package and Saturday 2pm slot?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 3,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Saturday around 2pm works, my wife will come along. Please get the latest package/price and confirm if that slot is available ya.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Hi, just checking in—any update on the latest package/price and whether Saturday around 2pm is available for me and my wife?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks for being upfront. Could you check with your colleague and update me today if possible? My wife and I are planning for Saturday around 2pm—once the package and slot are verified, we can lock it in.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_state": "APPOINTMENT_IN_PROGRESS",
+  "final_lead_intent": "High intent; buyer and spouse are ready to view Saturday around 2pm once the current package and slot are verified.",
+  "judge": {
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "scenario_success": false,
+    "good_judgment": false,
+    "final_lead_intent": "High intent; buyer and spouse are ready to view Saturday around 2pm once the current package and slot are verified.",
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 1,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 2,
+      "appointment_judgment": 2,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 1,
+      "commercial_progression": 1
+    },
+    "critical_flags": [
+      {
+        "flag": "MISSED_STRONG_BUYING_SIGNAL",
+        "evidence": "The buyer gave a specific Saturday 2pm preference, said his wife would attend, and stated they could lock it in once details were verified. The agent did not turn this into a confirmed next step.",
+        "turn": 1
+      },
+      {
+        "flag": "FAILED_TO_CLOSE_HIGH_INTENT",
+        "evidence": "The buyer was willing to book after verification, but the conversation remained at APPOINTMENT_IN_PROGRESS without a confirmed slot or a concrete follow-up commitment.",
+        "turn": 4
+      },
+      {
+        "flag": "FAILED_REQUIRED_HANDOFF",
+        "evidence": "After the buyer explicitly asked to be connected directly with the colleague handling the verification, the transcript ends without a connection or agent response.",
+        "turn": 4
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent acknowledged the request for current pricing and package details without inventing them.",
+        "Asking for a preferred viewing time elicited a specific Saturday 2pm preference and revealed that the buyer's wife would attend."
+      ],
+      "what_reduced_conversion_probability": [
+        "The agent did not provide a substantive update after the buyer requested one that day.",
+        "The agent repeated that a colleague would confirm the details rather than arranging a direct connection or giving a concrete follow-up action.",
+        "The blank response after the buyer supplied the preferred time created an avoidable service gap."
+      ],
+      "where_conversion_was_won_or_lost": "The initial response created appointment momentum, and the buyer remained willing to proceed subject to verification. Conversion was not completed: the agent failed to advance the specific slot and package checks, especially after the direct connection request."
+    },
+    "what_agent_did_well": [
+      "Responded promptly to the original request with a relevant next step by asking what time suited the buyer.",
+      "Did not fabricate a price, package, or live viewing-slot availability.",
+      "Was transparent that the commercial terms and slot were not yet confirmed.",
+      "Avoided unnecessary qualification despite the buyer already showing clear intent."
+    ],
+    "weak_or_wrong_sales_move": "Repeatedly saying a colleague was coordinating or would confirm the details without producing an update or executing the requested direct connection. The blank turn also left the buyer without a response after they gave the requested time and party size.",
+    "better_next_move": "Connect the buyer directly to the colleague who can verify current package terms and Saturday availability. If that connection cannot happen immediately, acknowledge the request, state a realistic time for a same-day update only if it can be met, and follow through. Keep the Saturday 2pm slot explicitly provisional until verified.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [
+      "The buyer offered to view on Saturday in the opening message.",
+      "The buyer selected around 2pm and confirmed his wife would attend.",
+      "The buyer said they could lock in once the package and slot were verified.",
+      "The buyer explicitly asked to speak directly with the colleague handling verification."
+    ],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The statements that a colleague was coordinating the request and was handling confirmation are operational claims that should only be made if the handoff was actually accepted and in progress."
+    ],
+    "retrieval_misses": [
+      "The transcript does not show verified current package/price information or live Saturday slot availability being returned. These details appropriately remained unconfirmed, but the agent should have routed the buyer to someone able to verify them."
+    ],
+    "likely_issue_sources": [
+      "Sales Judgment",
+      "Implementation Bug",
+      "Response Style"
+    ],
+    "recommended_improvement": {
+      "category": "Handoff execution and appointment progression",
+      "target_file": "handoff and appointment orchestration",
+      "reason": "Ensure a handoff action results in an acknowledged connection or a concrete follow-up commitment, and prioritize direct routing when a high-intent buyer asks to speak with the person who can verify price and availability."
+    },
+    "summary": "The agent was appropriately cautious about unverified pricing and availability, and its initial question secured a useful Saturday preference. However, it failed to execute the handoff, provide the requested same-day update, or respond to the buyer's final request for a direct connection. The lead remains high intent but the appointment is not confirmed."
+  },
+  "error": null
+}

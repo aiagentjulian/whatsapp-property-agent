@@ -1,0 +1,240 @@
+{
+  "scenario_id": "PEA-002",
+  "title": "Family buyer worried 900 sqft is too small",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-002.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "900 sqft for a family sounds quite small leh."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Fair concern—900 sqft can feel compact. The layout has 3 bedrooms and 2 bathrooms, with limited wasted corridor space. How many people would be living there?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Four of us, two kids. We do need 3 bedrooms, but I’m worried the bedrooms and living area might feel squeezed once our furniture is in.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Fair concern—whether it feels roomy will depend on your furniture. The plan allocates about 404.7 sqft to the living/dining/kitchen area, and the bedrooms are about 143.4, 117.4 and 103.3 sqft. Project materials say each can fit a queen bed, but I wouldn’t want to promise every furniture setup will feel spacious. Which pieces are you most concerned about fitting?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Mainly our sofa and dining table in the living area, plus whether the kids’ beds and study desks can fit without making the bedrooms hard to move around in. Our current place is bigger, so I’m trying to picture the actual usable space, not just the 900 sqft figure.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "That makes sense, especially coming from a bigger home. The living/dining/kitchen area is about 404.7 sqft, and the bedrooms are about 143.4, 117.4 and 103.3 sqft. Those figures alone can’t confirm whether your sofa, dining table, beds and desks will fit comfortably with enough room to move around, so I wouldn’t want to promise that. If you know the approximate sizes of your sofa and dining table, I can help you assess the layout more practically.",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Sofa is roughly 2.2m, dining table about 1.4 by 0.8m, and the kids would need single beds plus compact study desks. I don’t have the exact desk sizes with me. Do you have a scaled floor plan with the foyer and room clearances? If not, seeing the actual layout might help me judge the flow better.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "I don’t have a scaled floor plan showing the foyer and room clearances confirmed, so I don’t want to guess. Seeing the actual layout should help you judge the flow with your sofa, dining table and the kids’ furniture. Would you like me to arrange a viewing?",
+      "action": "CLOSE_VIEWING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Yeah, that’d be useful to see the actual flow. What slots do you have this weekend? I’ll check with my partner before confirming.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "I’ll get my colleague to confirm the available weekend slots for you. Once you’ve checked with your partner, let me know which day works and we can coordinate—nothing’s booked yet.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay thanks, I’ll check with my partner and get back to you once we’ve figured out which day works. Please send me the available slots when you hear back.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Noted — I’ll have the confirmed weekend slots sent over once they’re available. Take your time checking with your partner; nothing’s booked yet.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks, will wait for the slots and check with my partner in the meantime 🙂",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 4,
+      "action": "CLOSE_VIEWING"
+    },
+    {
+      "turn": 5,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Four of us, two kids. We do need 3 bedrooms, but I’m worried the bedrooms and living area might feel squeezed once our furniture is in.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Mainly our sofa and dining table in the living area, plus whether the kids’ beds and study desks can fit without making the bedrooms hard to move around in. Our current place is bigger, so I’m trying to picture the actual usable space, not just the 900 sqft figure.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Sofa is roughly 2.2m, dining table about 1.4 by 0.8m, and the kids would need single beds plus compact study desks. I don’t have the exact desk sizes with me. Do you have a scaled floor plan with the foyer and room clearances? If not, seeing the actual layout might help me judge the flow better.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Yeah, that’d be useful to see the actual flow. What slots do you have this weekend? I’ll check with my partner before confirming.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay thanks, I’ll check with my partner and get back to you once we’ve figured out which day works. Please send me the available slots when you hear back.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ]
+    }
+  ],
+  "appointment_state": "APPOINTMENT_IN_PROGRESS — the buyer wants to view and asks for weekend slots, but no date or time is confirmed; they will check with their partner.",
+  "final_lead_intent": "Strong interest in viewing the actual layout to assess furniture fit; partner input is pending.",
+  "judge": {
+    "appointment_state": "APPOINTMENT_IN_PROGRESS — the buyer wants to view and asks for weekend slots, but no date or time is confirmed; they will check with their partner.",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Strong interest in viewing the actual layout to assess furniture fit; partner input is pending.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 5,
+      "handoff_judgment": 4,
+      "commercial_progression": 4
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "Acknowledged that 900 sqft could feel compact instead of dismissing the concern.",
+        "Asked about household size, then focused on the family's actual furniture and circulation concerns.",
+        "Used layout figures while clearly cautioning that area measurements alone cannot guarantee comfortable furniture fit.",
+        "Responded honestly that a scaled plan with foyer and room clearances was not confirmed, then offered a viewing as a practical way to assess flow."
+      ],
+      "what_reduced_conversion_probability": [
+        "The buyer still needs partner agreement, so a viewing is not yet confirmed.",
+        "The handoff did not give an expected time for when weekend slots would be sent."
+      ],
+      "where_conversion_was_won_or_lost": "The agent converted a size objection into genuine viewing interest by grounding the discussion in the buyer's furniture and being candid about uncertainty. The lead remains in progress rather than booked; the next handoff and timely slot follow-up will determine whether the interest converts."
+    },
+    "what_agent_did_well": [
+      "Showed empathy without claiming that the unit would definitely feel spacious.",
+      "Qualified household needs and furniture concerns in a relevant, non-mechanical way.",
+      "Used the buyer's details to keep the discussion specific to usable space.",
+      "Recognized the buyer's explicit viewing interest and did not mislabel it as a confirmed appointment.",
+      "Avoided guessing about a scaled floor plan or room clearances."
+    ],
+    "weak_or_wrong_sales_move": "No major wrong move. The handoff was honest but could be more actionable by stating who will send the slots and when the buyer can expect them.",
+    "better_next_move": "Confirm that the colleague will send the available weekend slots, give a realistic follow-up timeframe, and offer to share any confirmed scaled plan or clearance information alongside them. Keep the viewing unbooked until the buyer and partner select a slot.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The exact living/dining/kitchen and bedroom areas, and the claim that each bedroom can fit a queen bed, should be checked against the cited unit-and-layout source. The queen-bed statement is attributed to project materials, which is a useful qualifier.",
+      "The statement that there is limited wasted corridor space should be verified against project material; it is presented without a source qualifier."
+    ],
+    "retrieval_misses": [
+      "The buyer specifically asked about foyer and room clearances. The agent appropriately did not guess, but no confirmed scaled plan or clearance information was supplied; whether this reflects unavailable material or a retrieval gap cannot be determined from the trace."
+    ],
+    "likely_issue_sources": [
+      "Sales Judgment",
+      "Retrieval"
+    ],
+    "recommended_improvement": {
+      "category": "Handoff follow-through",
+      "target_file": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+      "reason": "Encourage a clear owner and realistic follow-up timeframe when a buyer asks for slots that require colleague confirmation, while preserving the distinction between viewing interest and a booked appointment."
+    },
+    "summary": "Strong, buyer-centered handling of a practical unit-fit objection. The agent used the family's furniture concerns to make the layout discussion relevant, avoided promising comfort, and appropriately moved to a viewing when the buyer invited that option. The buyer is interested but has not confirmed a slot. Follow-up on weekend availability should be timely and explicit; verify the precise layout claims against retrieved project sources."
+  },
+  "error": null
+}

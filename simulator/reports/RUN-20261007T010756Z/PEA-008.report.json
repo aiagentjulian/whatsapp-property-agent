@@ -1,0 +1,291 @@
+{
+  "scenario_id": "PEA-008",
+  "title": "High-floor sea view with tight budget",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-008.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "For sea view, I’d focus on Block 1C or 1D; both have sea-facing units on multiple floors. With your budget in mind, we should check the current high-floor options and exact prices before choosing. What’s your maximum budget?",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Around RM800k max, ideally below that. Can consider a slightly lower floor if the sea view is still decent—just don’t want to pay high-floor premium unnecessarily.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Then I’d compare lower-to-mid-floor sea-facing options in 1C/1D first, rather than paying extra just for height. Both blocks have sea-facing units across multiple floors, but the actual outlook and current price need checking for each unit. Would you be comfortable considering a mid-floor option if the sea view is still good?",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, mid-floor can work if the sea view is still decent and it stays within RM800k. Can you check the actual orientation, price and available units in 1C/1D before recommending one?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Generally, 1C’s south-facing side and 1D’s south/southwest-facing side are sea-facing. I’ll have my colleague check the latest unit-by-unit orientation, availability and prices against your RM800k limit before recommending one.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay thanks, please ask them to shortlist the actual mid-floor options under RM800k with the orientation and price. If one looks like a decent sea view, I’m open to arranging a viewing to compare.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Noted—I’ll have my colleague check the actual mid-floor options in 1C/1D under RM800k, including orientation and price, before recommending one. If there’s a suitable sea-view option, they can help arrange a viewing for you to compare.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, please let me know once they have the shortlist. No need to arrange a viewing until we know there’s a suitable one within budget 🙂",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, I’ll wait for the verified shortlist first. If there’s a suitable option within RM800k, then we can discuss a viewing 🙂",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Understood—we’ll check the verified shortlist first. No viewing arrangement until there’s a suitable option within RM800k.",
+      "action": "MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Around RM800k max, ideally below that. Can consider a slightly lower floor if the sea view is still decent—just don’t want to pay high-floor premium unnecessarily.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, mid-floor can work if the sea view is still decent and it stays within RM800k. Can you check the actual orientation, price and available units in 1C/1D before recommending one?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay thanks, please ask them to shortlist the actual mid-floor options under RM800k with the orientation and price. If one looks like a decent sea view, I’m open to arranging a viewing to compare.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, please let me know once they have the shortlist. No need to arrange a viewing until we know there’s a suitable one within budget 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, I’ll wait for the verified shortlist first. If there’s a suitable option within RM800k, then we can discuss a viewing 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    }
+  ],
+  "appointment_state": "VIEWING_INTEREST",
+  "appointment_outcome": "APPOINTMENT_INTEREST",
+  "final_lead_intent": "Interested in discussing a viewing only after a suitable mid-floor sea-facing unit under RM800k is verified.",
+  "judge": {
+    "appointment_state": "VIEWING_INTEREST",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Interested in discussing a viewing only if a verified mid-floor sea-facing option is available within RM800k; wants the shortlist first.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 4,
+      "commercial_progression": 4
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "Identified Blocks 1C and 1D as relevant sea-facing options and correctly avoided claiming an exact best unit.",
+        "Asked for the budget ceiling, then adapted the recommendation toward lower-to-mid-floor options when the buyer accepted a floor compromise.",
+        "Acknowledged that exact orientation, price, and inventory need verification and handed the request to a colleague.",
+        "Respected the buyer's request to wait for a suitable shortlist before arranging a viewing."
+      ],
+      "what_reduced_conversion_probability": [
+        "The handoff was repeated with similar wording, and one agent turn was blank; neither gave the buyer a clearer follow-up expectation."
+      ],
+      "where_conversion_was_won_or_lost": "The agent earned conditional viewing interest by matching the buyer's view-versus-budget trade-off and offering verification. A viewing was not ready to book because suitability under the stated budget remains unverified, and the buyer explicitly asked to wait."
+    },
+    "what_agent_did_well": [
+      "Responded directly to the request for a suitable unit and the buyer's budget sensitivity.",
+      "Used the documented sea-facing blocks and accurately described the general facing while preserving the need to verify unit-level mapping.",
+      "Did not invent a price, availability, or view quality for a specific unit.",
+      "Recognized the buyer's mid-floor compromise and treated the conditional viewing statement as interest, not a confirmed appointment.",
+      "Honored the buyer's stated preference not to arrange a viewing until a qualifying option is found."
+    ],
+    "weak_or_wrong_sales_move": "The follow-up repeats the same handoff commitment, and one turn is empty. The agent could have confirmed a simple follow-up expectation without implying a viewing was being arranged.",
+    "better_next_move": "Confirm that the colleague will check the current unit schedule for mid-floor 1C/1D options under RM800k, including orientation and price, and say the buyer can decide about a viewing once the shortlist is ready. Do not book or pressure for a viewing now.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Response Style"
+    ],
+    "recommended_improvement": {
+      "category": "Response Style",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Encourage a concise, concrete handoff follow-up and prevent blank or repetitive maintenance replies when a buyer is waiting for verified unit information."
+    },
+    "summary": "Good unit-fit and budget judgment with accurate, appropriately qualified claims. The agent secured conditional viewing interest and correctly deferred booking until the buyer's hard budget constraint can be checked. Minor repetition and a blank turn reduce polish, but no appointment was wrongly presented as confirmed."
+  },
+  "error": null,
+  "judge_history": [
+    {
+      "appointment_state": "VIEWING_INTEREST",
+      "scenario_success": true,
+      "good_judgment": true,
+      "final_lead_intent": "Interested in discussing a viewing only after a suitable mid-floor sea-facing unit under RM800k is verified.",
+      "scores": {
+        "customer_understanding": 5,
+        "latest_message_responsiveness": 4,
+        "qualification_discipline": 5,
+        "selling_angle_relevance": 5,
+        "objection_handling": 5,
+        "unit_fit_judgment": 5,
+        "buying_signal_detection": 4,
+        "appointment_judgment": 5,
+        "factual_accuracy": 3,
+        "sales_naturalness": 4,
+        "handoff_judgment": 4,
+        "commercial_progression": 4
+      },
+      "critical_flags": [],
+      "conversion_analysis": {
+        "what_moved_buyer_forward": [
+          "The agent addressed the budget/view trade-off and suggested comparing lower-to-mid-floor sea-facing options rather than paying for height unnecessarily.",
+          "The agent elicited a clear budget ceiling of RM800k and confirmed the buyer would consider a mid-floor option if the view remained decent.",
+          "The buyer agreed to consider a viewing if a suitable option is verified, creating a clear next step for the human follow-up."
+        ],
+        "what_reduced_conversion_probability": [
+          "No verified unit-level shortlist, price, availability or view information was supplied in the conversation.",
+          "The specific compass-orientation detail was not established in the supplied scenario and needs source confirmation."
+        ],
+        "where_conversion_was_won_or_lost": "The agent earned permission for a conditional viewing by matching the buyer’s budget and compromise criteria, then correctly respected the buyer’s request to verify options first. The next conversion opportunity depends on the human returning with a credible shortlist."
+      },
+      "what_agent_did_well": [
+        "Recognized the buyer’s actual trade-off: sea view matters, but not enough to justify an unnecessary high-floor premium.",
+        "Asked one relevant budget question and used the answer to narrow the unit search.",
+        "Did not claim a specific unit was available, within budget, or guaranteed to have a good view.",
+        "Acknowledged the buyer’s explicit request for verified orientation, price and availability before recommending a unit.",
+        "Preserved conditional viewing interest without pressuring the buyer to book prematurely."
+      ],
+      "weak_or_wrong_sales_move": "The agent gave specific south and south/southwest orientation details without those directions being confirmed by the supplied scenario. The blank agent message at turn 5 is also a response-quality lapse, though the next turn clarified the plan.",
+      "better_next_move": "Have the colleague verify the current 1C/1D mid-floor shortlist against the RM800k ceiling, including exact unit orientation and price. Return with the best-fitting options and ask whether the buyer would like to arrange a viewing only if one meets their criteria.",
+      "close_timing": "appropriate",
+      "missed_buying_signals": [],
+      "unnecessary_qualification": [],
+      "unsupported_factual_claims": [
+        "Turn 3: “1C’s south-facing side and 1D’s south/southwest-facing side are sea-facing.” Confirm these compass directions against the project’s retrieved orientation plan or current unit schedule before stating them."
+      ],
+      "retrieval_misses": [
+        "No current unit-level schedule or verified shortlist was surfaced in the conversation for availability, price and exact orientation; the agent appropriately referred these checks to a colleague."
+      ],
+      "likely_issue_sources": [
+        "Retrieval",
+        "Response Style"
+      ],
+      "recommended_improvement": {
+        "category": "Retrieval",
+        "target_file": "knowledge/project/pearlmont/01_facts/unit-and-layout.md and the current unit schedule",
+        "reason": "Make exact block, facing and unit-level availability claims traceable to a current source; if the schedule is unavailable, keep the response at block-level and explicitly defer verification."
+      },
+      "summary": "A strong, buyer-led exchange: the agent qualified the budget, adapted the recommendation to the buyer’s willingness to compromise on floor, and correctly deferred a viewing until suitable options are verified. The lead has conditional viewing interest, not a confirmed appointment. Confirm the specific orientation claim before using it."
+    }
+  ]
+}

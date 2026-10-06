@@ -1,0 +1,145 @@
+{
+  "scenario_id": "PEA-009",
+  "title": "Already contacted by another property agent",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-009.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Yes, I can still help with Pearlmont. If you’ve already discussed something with the other agent, just let me know what you need and I’ll pick it up from there.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks. I mainly want to avoid duplicate follow-up—could you check whether I’m already registered under them? I haven’t booked a viewing or anything yet.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I can’t check the registration from here, so I’ll ask the team to verify whether you’re already registered and avoid duplicate follow-up. Noted that you haven’t booked a viewing.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please let me know once the team has checked—I'd rather avoid any viewing follow-up until then.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted — we’ll hold off on any viewing follow-up until the team has checked your registration. I’ll let you know once they’ve confirmed.",
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks. I mainly want to avoid duplicate follow-up—could you check whether I’m already registered under them? I haven’t booked a viewing or anything yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, appreciate it. Please let me know once the team has checked—I'd rather avoid any viewing follow-up until then.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "appointment_state": "NO_VIEWING_INTENT",
+  "appointment_outcome": "NO_APPOINTMENT_BUT_GOOD_JUDGMENT",
+  "final_lead_intent": "Medium interest; wants registration checked first and has explicitly asked to avoid viewing follow-up until then.",
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Medium interest; wants registration checked first and has explicitly asked to avoid viewing follow-up until then.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 3,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 4
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent acknowledged it could still help without criticizing or undermining the other agent.",
+        "It recognized that registration status required internal verification and handed the question to the team.",
+        "It explicitly respected the buyer's request to pause viewing follow-up until the registration check is complete."
+      ],
+      "what_reduced_conversion_probability": [
+        "No viewing was pursued, but that was appropriate given the buyer's explicit request and unresolved agent-registration question."
+      ],
+      "where_conversion_was_won_or_lost": "The immediate objective was preserving trust and resolving the ownership concern, not booking a viewing. The agent appropriately secured a next step through internal verification while leaving viewing discussion on hold."
+    },
+    "what_agent_did_well": [
+      "Answered the opening question directly and offered help without creating agent conflict.",
+      "Made the relevant handoff when asked to verify registration, rather than guessing or claiming access.",
+      "Acknowledged that no viewing had been booked and honored the request to avoid viewing follow-up.",
+      "Kept the exchange concise and natural."
+    ],
+    "weak_or_wrong_sales_move": "No material sales error. The agent should ensure the promised team check and update actually happen.",
+    "better_next_move": "Have the team verify registration, then update the buyer as promised. Ask whether they would like any further help only after providing the result; do not initiate viewing follow-up unless they consent.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [
+      "The turn 2 and turn 3 retrievals loaded unit/layout and viewing-close material that was not relevant to the registration-conflict request. No ownership policy was available; the agent appropriately handed the issue to the team instead of inferring a policy."
+    ],
+    "likely_issue_sources": [
+      "Retrieval"
+    ],
+    "recommended_improvement": {
+      "category": "Knowledge",
+      "target_file": "knowledge/project/pearlmont/03_sales/agent_registration_and_conflict.md",
+      "reason": "Document the approved registration-check and agent-conflict escalation process, including what the customer should be told while verification is pending."
+    },
+    "summary": "Successful handling of an agent-ownership concern. The agent made no unsupported claims, routed the registration check to the team, and respected the buyer's explicit pause on viewing follow-up. No appointment interest or confirmation was established."
+  },
+  "error": null
+}

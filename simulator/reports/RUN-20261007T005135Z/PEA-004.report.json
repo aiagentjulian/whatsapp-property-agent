@@ -1,0 +1,208 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-004.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I wouldn’t want to quote a yield or appreciation figure without verified rental comparables and current unit pricing. I don’t have reliable projections for either, and appreciation isn’t guaranteed. Are you mainly weighing rental income or longer-term value growth?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Both, but I’d look at net rental after maintenance and other holding costs first, then whether there’s a sensible exit in maybe 5–7 years. Got any verified rental comps or the maintenance fee?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "The maintenance fee is RM0.18/sq.ft. including sinking fund—about RM162/month for a 900 sq.ft. unit, before other holding costs. I don’t have verified rental comparables to estimate net rent or assess a 5–7-year exit reliably. I’ll get the team to check what evidence is available rather than guess.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate the straight answer. Could you also check the phase unit supply and any itemised holding costs beyond maintenance? I’m comparing it with my existing rentals, so I’d rather see the actual numbers before deciding if it’s worth a visit.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Understood—I’ll add the current phase/unit supply and an itemised breakdown of holding costs beyond the RM0.18/sq.ft. maintenance fee to the team’s check. I don’t have verified figures for those yet, so I won’t guess. Makes sense to review the actual numbers before deciding on a visit.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Sounds good, please send the verified figures when you have them. I’ll compare them with my existing rentals first, then decide whether a visit makes sense.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood—I’ll share the verified phase supply and itemised holding costs once the team confirms them. Makes sense to compare the actual figures before deciding on a visit.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, please let me know when you have the verified figures. I’ll compare them first and hold off deciding on a visit till then.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood—I’ll share the verified figures once the team confirms them. You can compare them first, then decide whether a visit makes sense.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, no need to keep checking in—just send the verified figures when you have them and I’ll compare first.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Both, but I’d look at net rental after maintenance and other holding costs first, then whether there’s a sensible exit in maybe 5–7 years. Got any verified rental comps or the maintenance fee?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, appreciate the straight answer. Could you also check the phase unit supply and any itemised holding costs beyond maintenance? I’m comparing it with my existing rentals, so I’d rather see the actual numbers before deciding if it’s worth a visit.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Sounds good, please send the verified figures when you have them. I’ll compare them with my existing rentals first, then decide whether a visit makes sense.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, please let me know when you have the verified figures. I’ll compare them first and hold off deciding on a visit till then.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "appointment_state": "NO_VIEWING_INTENT",
+  "final_lead_intent": "Interested in reviewing verified investment figures, but explicitly deferring any visit until after comparing them with existing rentals.",
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Interested in reviewing verified investment figures, but explicitly deferring any visit until after comparing them with existing rentals.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 4,
+      "commercial_progression": 3
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent candidly declined to invent rental yield or appreciation projections, which matched the buyer’s preference for realistic evidence.",
+        "It answered the maintenance-cost question and agreed to check phase supply and other holding costs."
+      ],
+      "what_reduced_conversion_probability": [
+        "The buyer’s decision is explicitly gated on receiving and comparing figures; no verified rental comparables or other holding-cost figures were available in the conversation.",
+        "Repeated acknowledgements added little after the handoff and made the exchange somewhat repetitive."
+      ],
+      "where_conversion_was_won_or_lost": "Trust and permission to follow up with verified information were secured. A visit was not won, but the buyer clearly said they would decide only after reviewing the figures, so not pushing for an appointment was appropriate."
+    },
+    "what_agent_did_well": [
+      "Directly addressed yield and appreciation without making unsupported projections or guarantees.",
+      "Asked a relevant early question about the buyer’s investment objective; the buyer then volunteered their 5–7-year horizon and net-cost priorities.",
+      "Responded to the maintenance question with a useful illustrative calculation and acknowledged limits on assessing net rent and exit prospects.",
+      "Accepted the buyer’s request to wait for actual figures before considering a visit, without applying viewing pressure."
+    ],
+    "weak_or_wrong_sales_move": "The maintenance fee was stated as a definite figure without the required source caveat. The later acknowledgements also repeated the same handoff message without adding a useful update.",
+    "better_next_move": "Confirm the RM0.18/sq.ft. maintenance figure with its source caveat, then make one concise handoff covering verified rental evidence, phase unit supply, and itemised holding costs. Tell the buyer you will send the results when confirmed and leave the visit decision with them.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The RM0.18/sq.ft. maintenance fee including sinking fund is consistent with the scenario-provided fact, but was presented without the required source caveat; confirm and cite the approved source before relying on it."
+    ],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Knowledge",
+      "Response Style"
+    ],
+    "recommended_improvement": {
+      "category": "Factual sourcing and concise handoff",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Reinforce the source caveat required when quoting maintenance costs and encourage one clear follow-up commitment rather than repeated acknowledgements."
+    },
+    "summary": "A credible, appropriately restrained investment conversation. The agent handled the buyer’s return questions honestly, responded to the requested cost information, and did not mistake a request for figures for viewing intent. The main improvement is to include the required maintenance-fee source caveat and reduce repetitive acknowledgements."
+  },
+  "error": null
+}

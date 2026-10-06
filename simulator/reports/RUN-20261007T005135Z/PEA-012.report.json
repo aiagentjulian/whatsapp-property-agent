@@ -1,0 +1,102 @@
+{
+  "scenario_id": "PEA-012",
+  "title": "Hard mismatch: immediate move-in and 4 bedrooms",
+  "convertible": false,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-012.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I need to move in next month and need four bedrooms. Any unit?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Pearlmont’s Phase 1 homes are 3-bedroom, 2-bathroom units, and expected completion is Q4 2029—so it wouldn’t meet a four-bedroom, move-in-next-month requirement. Are either the timing or bedroom count flexible?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Neither is flexible unfortunately, so Pearlmont won’t work for me. Thanks for clarifying.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I need to move in next month and need four bedrooms. Any unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    }
+  ],
+  "appointment_state": "NO_VIEWING_INTENT",
+  "final_lead_intent": "No Pearlmont interest: the buyer has inflexible requirements that the project does not meet.",
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "No Pearlmont interest: the buyer has inflexible requirements that the project does not meet.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 4,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 5
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent directly compared the stated move-in date and bedroom requirement with Pearlmont’s stated completion timing and bedroom count.",
+        "The agent checked whether either requirement was flexible without pushing a viewing."
+      ],
+      "what_reduced_conversion_probability": [
+        "No sales move materially reduced conversion probability; the buyer’s hard requirements made Pearlmont unsuitable."
+      ],
+      "where_conversion_was_won_or_lost": "A Pearlmont appointment was correctly not pursued. The buyer confirmed neither requirement was flexible, so the non-conversion was driven by the genuine fit mismatch."
+    },
+    "what_agent_did_well": [
+      "Answered the availability question with a clear explanation of why Pearlmont would not fit.",
+      "Used the relevant bedroom-count and completion facts rather than trying to reframe the mismatch.",
+      "Asked one directly relevant flexibility question and accepted the buyer’s answer.",
+      "Did not pressure the buyer to view or imply that a unit could be made available sooner or converted to four bedrooms."
+    ],
+    "weak_or_wrong_sales_move": "No material sales error. The reference to Phase 1 homes and two bathrooms adds detail that is not established in the supplied scenario facts and should be verified against the retrieved project sources.",
+    "better_next_move": "After the buyer says neither requirement is flexible, acknowledge that Pearlmont is not suitable and close politely. Offer to help with other options only if the agent is authorized and has a reliable route to do so.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The broader claim that Pearlmont’s Phase 1 homes are all three-bedroom units should be confirmed against the retrieved unit-and-layout or overview source; the supplied critical fact specifically establishes Type A as three-bedroom.",
+      "The claim that the homes have two bathrooms is not established in the supplied scenario facts and should be checked against the retrieved unit-and-layout source."
+    ],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Knowledge"
+    ],
+    "recommended_improvement": {
+      "category": "Knowledge",
+      "target_file": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+      "reason": "Verify that the retrieved source supports the Phase 1-wide bedroom statement and the two-bathroom detail; prefer precise unit-type wording when only Type A facts are confirmed."
+    },
+    "summary": "The agent handled a clear hard mismatch well: it gave the buyer the relevant completion and bedroom information, checked flexibility once, and did not push for an appointment after the buyer declined. The absence of a Pearlmont appointment is the correct outcome for this non-convertible lead. Verify the added Phase 1 and bathroom details against the retrieved sources."
+  },
+  "error": null
+}

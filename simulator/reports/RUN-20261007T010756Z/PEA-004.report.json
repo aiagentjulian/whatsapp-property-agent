@@ -1,0 +1,266 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-004.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I don’t have verified rental figures or a reliable price-appreciation forecast for Pearlmont, so I wouldn’t want to quote a yield or promise growth. Actual returns depend on factors like rent achieved, purchase price and market conditions. Are you mainly focused on rental income or long-term value growth?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly rental income, but I’d look at net numbers after maintenance and vacancy, not just gross yield. How much is the maintenance fee, and how many units are coming in this phase?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "The maintenance fee is RM0.18 per sq ft, inclusive of sinking fund—RM162/month for a 900 sq ft unit. Phase 1 has 1,846 residential units across three towers. I don’t have verified rental or vacancy figures to calculate a reliable net yield.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks. 1,846 units in Phase 1 is a meaningful amount of supply to factor in. Is the RM0.18 psf from the official maintenance schedule? And do you have any sourced rental comparables or nearby competing supply figures? I’m not looking for a forecast, just enough to assess the net case realistically.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "The project information I have lists RM0.18 psf inclusive of sinking fund, but I can’t verify whether that’s the official maintenance schedule. I also don’t have sourced rental comparables or nearby competing-supply figures, so I won’t guess. I’ll have the team check what verified material is available for you.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the official maintenance schedule and any sourced rental comps or nearby supply data once the team has checked. Without those, I can’t assess the net rental case properly yet.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood. I’ll have the team check for the official maintenance schedule and sourced rental comparables or nearby supply data, and share what’s verified. I don’t have those materials confirmed yet, so I won’t estimate the net rental case.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Alright, please follow up when you’ve checked. I’ll review the verified figures first before deciding whether it’s worth taking things further.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood. The team will follow up with the official schedule and any verified rental or nearby supply data once checked. I won’t estimate the net rental case without those figures.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly rental income, but I’d look at net numbers after maintenance and vacancy, not just gross yield. How much is the maintenance fee, and how many units are coming in this phase?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks. 1,846 units in Phase 1 is a meaningful amount of supply to factor in. Is the RM0.18 psf from the official maintenance schedule? And do you have any sourced rental comparables or nearby competing supply figures? I’m not looking for a forecast, just enough to assess the net case realistically.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks. Please send the official maintenance schedule and any sourced rental comps or nearby supply data once the team has checked. Without those, I can’t assess the net rental case properly yet.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Alright, please follow up when you’ve checked. I’ll review the verified figures first before deciding whether it’s worth taking things further.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    }
+  ],
+  "appointment_state": "NO_VIEWING_INTENT",
+  "appointment_outcome": "NO_APPOINTMENT_BUT_GOOD_JUDGMENT",
+  "final_lead_intent": "Medium intent; wants verified investment diligence before deciding whether to proceed, with no expressed viewing interest.",
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Medium intent; wants verified maintenance, rental-comparable and nearby-supply information before deciding whether to proceed. No viewing interest expressed.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent answered the direct questions with sourced maintenance and Phase 1 supply figures.",
+        "It candidly distinguished the listed maintenance rate from a verified official schedule and did not invent rental, vacancy or appreciation figures.",
+        "It agreed to check for the requested verified materials, which matches the buyer's stated next step."
+      ],
+      "what_reduced_conversion_probability": [
+        "The same follow-up commitment was repeated across several turns without adding a concrete process or useful new information.",
+        "The agent did not establish the buyer's holding horizon or target return, which could help assess fit once the requested diligence is available."
+      ],
+      "where_conversion_was_won_or_lost": "Trust was preserved through accurate caveats and restraint. Conversion remains pending: the buyer explicitly needs verified investment data before deciding whether to take things further, so a viewing close was not yet warranted."
+    },
+    "what_agent_did_well": [
+      "Answered the opening yield and appreciation question directly and rejected unsupported forecasts.",
+      "Correctly stated the RM0.18 psf maintenance rate inclusive of sinking fund and the 1,846-unit Phase 1 supply; the RM162 monthly example for 900 sq ft is arithmetically correct.",
+      "Handled the official-schedule question with an appropriate caveat rather than presenting the listed figure as independently verified.",
+      "Did not treat facilities or project features as proof of rental demand.",
+      "Respected the buyer's request to review verified figures before deciding and did not pressure them into a viewing."
+    ],
+    "weak_or_wrong_sales_move": "The repeated handoff acknowledgments became redundant and did not add a specific follow-up process. The agent could have confirmed the requested materials and, without delaying the direct answers, identified the buyer's holding horizon or target return for a more relevant follow-up.",
+    "better_next_move": "Briefly confirm that the team will check the official maintenance schedule and any sourced rental or nearby-supply data, then close without repeating the same promise. When following up with verified material, ask the buyer's intended holding period or target return to assess whether Pearlmont fits their investment case.",
+    "close_timing": "not_applicable",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Sales Judgment",
+      "Response Style"
+    ],
+    "recommended_improvement": {
+      "category": "Response Style",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Encourage concise, non-repetitive follow-up acknowledgments after a handoff, with a useful next step rather than restating the same commitment across turns."
+    },
+    "summary": "A factually careful, trust-preserving exchange with appropriate restraint on viewing. The agent answered the sourced questions, acknowledged what it could not verify, and accepted the buyer's diligence-first decision process. The main weakness was repetitive handoff messaging; the lead remains medium intent and no appointment was appropriate yet."
+  },
+  "error": null,
+  "judge_history": [
+    {
+      "appointment_state": "NO_VIEWING_INTENT",
+      "scenario_success": true,
+      "good_judgment": true,
+      "final_lead_intent": "Medium intent; wants verified investment diligence before deciding whether to proceed, with no expressed viewing interest.",
+      "scores": {
+        "customer_understanding": 5,
+        "latest_message_responsiveness": 5,
+        "qualification_discipline": 4,
+        "selling_angle_relevance": 4,
+        "objection_handling": 5,
+        "unit_fit_judgment": 3,
+        "buying_signal_detection": 4,
+        "appointment_judgment": 5,
+        "factual_accuracy": 4,
+        "sales_naturalness": 4,
+        "handoff_judgment": 4,
+        "commercial_progression": 3
+      },
+      "critical_flags": [],
+      "conversion_analysis": {
+        "what_moved_buyer_forward": [
+          "Clearly declined to invent rental yield or appreciation figures.",
+          "Answered the maintenance and phase-supply questions and acknowledged that the buyer needs net figures, not just gross yield.",
+          "Agreed to check for the official schedule and sourced rental or competing-supply data."
+        ],
+        "what_reduced_conversion_probability": [
+          "The requested investment evidence remains unavailable, so the buyer cannot assess the net case.",
+          "The handoff was repeated across several turns without a clear follow-up timeframe or confirmation of who would provide the materials."
+        ],
+        "where_conversion_was_won_or_lost": "The agent preserved credibility by being candid, but progression is now dependent on delivering the promised verified diligence. The buyer explicitly deferred any decision until reviewing it; pressing for a viewing would have been premature."
+      },
+      "what_agent_did_well": [
+        "Directly answered the opening question without unsupported yield or appreciation claims.",
+        "Responded to the buyer’s net-return concerns with the stated maintenance figure and phase supply information.",
+        "Clearly distinguished project information from an official maintenance schedule.",
+        "Accepted the buyer’s evidence-first decision process and did not pressure for a viewing."
+      ],
+      "weak_or_wrong_sales_move": "Repeated the same handoff commitment rather than consolidating it into one clear follow-up plan with an owner and expected timing.",
+      "better_next_move": "Confirm that the team will check the official maintenance schedule and sourced rental and nearby-supply data, give a realistic follow-up timeframe if known, and send only verified material. Do not suggest a viewing until the buyer has reviewed the figures or indicates interest.",
+      "close_timing": "appropriate",
+      "missed_buying_signals": [],
+      "unnecessary_qualification": [],
+      "unsupported_factual_claims": [
+        "The exact Phase 1 count of 1,846 residential units across three towers should be checked against a retrieved project source before relying on it in investment discussion.",
+        "The RM0.18 psf figure was appropriately caveated as unverified against the official schedule, but should be confirmed from that schedule before being presented as an authoritative cost."
+      ],
+      "retrieval_misses": [
+        "No verified rental comparables or nearby competing-supply figures were surfaced; the agent correctly disclosed this and committed to checking, but those materials remain outstanding."
+      ],
+      "likely_issue_sources": [
+        "Retrieval",
+        "Response Style"
+      ],
+      "recommended_improvement": {
+        "category": "Response Style",
+        "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "reason": "Guide agents to make one specific, accountable follow-up commitment for requested diligence rather than repeating a generic handoff acknowledgment."
+      },
+      "summary": "A credible, appropriately cautious response to an investor who explicitly needs verified net-return inputs before deciding. The agent avoided hype and correctly did not push a viewing. The main improvement is to make the promised follow-up more concrete; verify the exact phase-supply figure and maintenance charge against authoritative sources."
+    }
+  ]
+}

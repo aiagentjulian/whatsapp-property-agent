@@ -1,0 +1,157 @@
+{
+  "scenario_id": "PEA-004",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:14:13.568796+00:00",
+  "status": "COMPLETED",
+  "turns": 5,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I don’t have verified rental figures or a reliable price-appreciation forecast for Pearlmont, so I wouldn’t want to quote a yield or promise growth. Actual returns depend on factors like rent achieved, purchase price and market conditions. Are you mainly focused on rental income or long-term value growth?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly rental income, but I’d look at net numbers after maintenance and vacancy, not just gross yield. How much is the maintenance fee, and how many units are coming in this phase?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "The maintenance fee is RM0.18 per sq ft, inclusive of sinking fund—RM162/month for a 900 sq ft unit. Phase 1 has 1,846 residential units across three towers. I don’t have verified rental or vacancy figures to calculate a reliable net yield.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks. 1,846 units in Phase 1 is a meaningful amount of supply to factor in. Is the RM0.18 psf from the official maintenance schedule? And do you have any sourced rental comparables or nearby competing supply figures? I’m not looking for a forecast, just enough to assess the net case realistically.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "The project information I have lists RM0.18 psf inclusive of sinking fund, but I can’t verify whether that’s the official maintenance schedule. I also don’t have sourced rental comparables or nearby competing-supply figures, so I won’t guess. I’ll have the team check what verified material is available for you.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the official maintenance schedule and any sourced rental comps or nearby supply data once the team has checked. Without those, I can’t assess the net rental case properly yet.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood. I’ll have the team check for the official maintenance schedule and sourced rental comparables or nearby supply data, and share what’s verified. I don’t have those materials confirmed yet, so I won’t estimate the net rental case.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Alright, please follow up when you’ve checked. I’ll review the verified figures first before deciding whether it’s worth taking things further.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Understood. The team will follow up with the official schedule and any verified rental or nearby supply data once checked. I won’t estimate the net rental case without those figures.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly rental income, but I’d look at net numbers after maintenance and vacancy, not just gross yield. How much is the maintenance fee, and how many units are coming in this phase?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks. 1,846 units in Phase 1 is a meaningful amount of supply to factor in. Is the RM0.18 psf from the official maintenance schedule? And do you have any sourced rental comparables or nearby competing supply figures? I’m not looking for a forecast, just enough to assess the net case realistically.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks. Please send the official maintenance schedule and any sourced rental comps or nearby supply data once the team has checked. Without those, I can’t assess the net rental case properly yet.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Alright, please follow up when you’ve checked. I’ll review the verified figures first before deciding whether it’s worth taking things further.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

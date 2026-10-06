@@ -1,0 +1,100 @@
+{
+  "scenario_id": "PEA-009",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:23:59.267335+00:00",
+  "status": "COMPLETED",
+  "turns": 3,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Yes, I can still help with Pearlmont. If you’ve already discussed something with the other agent, just let me know what you need and I’ll pick it up from there.",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks. I mainly want to avoid duplicate follow-up—could you check whether I’m already registered under them? I haven’t booked a viewing or anything yet.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I can’t check the registration from here, so I’ll ask the team to verify whether you’re already registered and avoid duplicate follow-up. Noted that you haven’t booked a viewing.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please let me know once the team has checked—I'd rather avoid any viewing follow-up until then.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted — we’ll hold off on any viewing follow-up until the team has checked your registration. I’ll let you know once they’ve confirmed.",
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks. I mainly want to avoid duplicate follow-up—could you check whether I’m already registered under them? I haven’t booked a viewing or anything yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, appreciate it. Please let me know once the team has checked—I'd rather avoid any viewing follow-up until then.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

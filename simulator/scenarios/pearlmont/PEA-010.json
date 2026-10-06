@@ -1,0 +1,35 @@
+{
+  "scenario_id": "PEA-010",
+  "project": "pearlmont",
+  "title": "High-intent exact package and weekend viewing",
+  "channel": "inbound",
+  "starting_message": "Can share latest package and price? I’m free Saturday to view.",
+  "buyer": {
+    "language_style": "casual_malaysian_english",
+    "hidden_profile": "Ready buyer; has compared alternatives; decision with spouse; expects current price/package and Saturday slot.",
+    "hidden_motivation": "Verify package then see show unit this weekend.",
+    "hidden_objections": "Exact commercial terms and live slot availability unverified.",
+    "reveal_conditions": "May share preferred Saturday time and party size if Agent promptly moves to arranging.",
+    "hard_requirements": "Current package/price and viewing slot must be verified; no fabrication",
+    "decision_makers": "as described in profile",
+    "initial_intent": "high"
+  },
+  "behavior": {
+    "openness": 0.6,
+    "patience": 0.6,
+    "reacts_badly_to": "Continuing generic qualification, inventing price/rebate, slow close.",
+    "responds_well_to": "Acknowledge intent, clearly say current exact package/live viewing slot need verification, collect preferred time/number and arrange human confirmation."
+  },
+  "conversion": {
+    "convertible": true,
+    "expected_appointment_potential": "Highly convertible; appointment progression is immediate next move.",
+    "success_condition": "Follow the scenario-specific sales judgment and commitment standard; do not equate a suggestion with confirmation.",
+    "failure_conditions": [
+      "unsupported factual or commercial claims",
+      "mechanical/repetitive qualification",
+      "pressuring after mismatch or clear refusal"
+    ],
+    "reasonable_max_turn_limit": 8
+  },
+  "critical_facts": "Current package/price and viewing slot must be verified; no fabrication"
+}

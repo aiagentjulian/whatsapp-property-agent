@@ -1,0 +1,100 @@
+{
+  "run_id": "RUN-20261007T012359Z",
+  "models": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "total_scenarios": 1,
+  "completed_scenarios": 1,
+  "failed_runs": [],
+  "genuinely_convertible_scenarios": 1,
+  "confirmed_appointments": 0,
+  "appointment_interest_cases": 0,
+  "appointment_conversion_rate_among_convertible": 0.0,
+  "good_judgment_rate": 1.0,
+  "bad_fit_correctly_identified_count": 0,
+  "critical_failure_count": 0,
+  "critical_failures": [],
+  "average_judge_scores": {
+    "customer_understanding": 5.0,
+    "latest_message_responsiveness": 5.0,
+    "qualification_discipline": 5.0,
+    "selling_angle_relevance": 3.0,
+    "objection_handling": 5.0,
+    "unit_fit_judgment": 4.0,
+    "buying_signal_detection": 5.0,
+    "appointment_judgment": 5.0,
+    "factual_accuracy": 5.0,
+    "sales_naturalness": 4.0,
+    "handoff_judgment": 5.0,
+    "commercial_progression": 4.0
+  },
+  "strongest_agent_behaviors": [
+    [
+      "customer_understanding",
+      5.0
+    ],
+    [
+      "latest_message_responsiveness",
+      5.0
+    ],
+    [
+      "qualification_discipline",
+      5.0
+    ]
+  ],
+  "weakest_agent_behaviors": [
+    [
+      "selling_angle_relevance",
+      3.0
+    ],
+    [
+      "unit_fit_judgment",
+      4.0
+    ],
+    [
+      "sales_naturalness",
+      4.0
+    ]
+  ],
+  "common_failure_patterns": {
+    "Retrieval": 1
+  },
+  "weakest_behaviors": [
+    "PEA-009: No material sales error. The agent should ensure the promised team check and update actually happen."
+  ],
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "premature_close_cases": [],
+  "delayed_close_cases": [],
+  "unsupported_factual_claims": [],
+  "retrieval_misses": [
+    "PEA-009: The turn 2 and turn 3 retrievals loaded unit/layout and viewing-close material that was not relevant to the registration-conflict request. No ownership policy was available; the agent appropriately handed the issue to the team instead of inferring a policy."
+  ],
+  "handoff_errors": [],
+  "unit_fit_mistakes": [],
+  "implementation_bugs_fixed": [],
+  "reruns_required": [],
+  "provider_calls": 6,
+  "provider_retries": [],
+  "brain_knowledge_unchanged": true,
+  "top_recommended_improvement_priorities": [
+    {
+      "scenario_id": "PEA-009",
+      "category": "Knowledge",
+      "target_file": "knowledge/project/pearlmont/03_sales/agent_registration_and_conflict.md",
+      "reason": "Document the approved registration-check and agent-conflict escalation process, including what the customer should be told while verification is pending."
+    }
+  ],
+  "executive_summary": "Completed 1/1 scenarios; confirmed 0 appointments among 1 convertible scenarios (0.0). Good judgment 1.0; critical flags 0. Review scenario reports for buyer-fit and accuracy findings."
+}

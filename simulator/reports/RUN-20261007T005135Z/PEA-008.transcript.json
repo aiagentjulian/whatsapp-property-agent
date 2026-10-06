@@ -1,0 +1,163 @@
+{
+  "scenario_id": "PEA-008",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:01:30.665345+00:00",
+  "status": "COMPLETED",
+  "turns": 5,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "For a high-floor sea view, I’d start with the sea-facing units in Blocks 1C and 1D. Since your budget is tight, what’s the maximum you’d like to stay within? I can narrow the options around that, subject to confirming current availability and pricing.",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Maybe around RM700k max, don’t really want to stretch. Can consider mid floor if still get a decent sea view—just don’t want to pay high-floor premium for a view that’s not actually better.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’d first compare mid-floor sea-facing units in 1C or 1D, rather than pay extra for a high floor unless the outlook is clearly better. I’d need to check the exact unit prices and view before recommending one within RM700k.",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, that makes sense. Can you check if there are any mid-floor sea-facing options under RM700k and compare the view with a higher floor? If there’s a worthwhile option, I’d be open to viewing it.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "I’ll get the current mid-floor sea-facing options and prices checked, and confirm how their outlook compares with the higher floors. I don’t want to guess on availability or the actual view; my colleague can follow up with the confirmed options, and if one looks worthwhile we can arrange a viewing.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, please check the current options and let me know the prices and how the view compares. If one looks worthwhile within RM700k, I’m open to viewing it.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood — I’ve noted your RM700k limit and that you’d consider a viewing only if a confirmed mid-floor option offers a worthwhile sea view compared with the higher floors.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you’ve confirmed the prices and view comparison—if there’s a good option within RM700k, I’m happy to come view it.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Noted — my colleague will update you once the current prices and view comparison are confirmed. If there’s a worthwhile option within RM700k, we can arrange a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, I’ll wait for the confirmed options and view comparison before deciding on a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Maybe around RM700k max, don’t really want to stretch. Can consider mid floor if still get a decent sea view—just don’t want to pay high-floor premium for a view that’s not actually better.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, that makes sense. Can you check if there are any mid-floor sea-facing options under RM700k and compare the view with a higher floor? If there’s a worthwhile option, I’d be open to viewing it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, please check the current options and let me know the prices and how the view compares. If one looks worthwhile within RM700k, I’m open to viewing it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, thanks. Please update me once you’ve confirmed the prices and view comparison—if there’s a good option within RM700k, I’m happy to come view it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

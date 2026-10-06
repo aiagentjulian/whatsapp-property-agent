@@ -1,0 +1,183 @@
+{
+  "scenario_id": "PEA-008",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:19:05.837443+00:00",
+  "status": "COMPLETED",
+  "turns": 6,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "For sea view, I’d focus on Block 1C or 1D; both have sea-facing units on multiple floors. With your budget in mind, we should check the current high-floor options and exact prices before choosing. What’s your maximum budget?",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Around RM800k max, ideally below that. Can consider a slightly lower floor if the sea view is still decent—just don’t want to pay high-floor premium unnecessarily.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Then I’d compare lower-to-mid-floor sea-facing options in 1C/1D first, rather than paying extra just for height. Both blocks have sea-facing units across multiple floors, but the actual outlook and current price need checking for each unit. Would you be comfortable considering a mid-floor option if the sea view is still good?",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, mid-floor can work if the sea view is still decent and it stays within RM800k. Can you check the actual orientation, price and available units in 1C/1D before recommending one?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Generally, 1C’s south-facing side and 1D’s south/southwest-facing side are sea-facing. I’ll have my colleague check the latest unit-by-unit orientation, availability and prices against your RM800k limit before recommending one.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay thanks, please ask them to shortlist the actual mid-floor options under RM800k with the orientation and price. If one looks like a decent sea view, I’m open to arranging a viewing to compare.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Noted—I’ll have my colleague check the actual mid-floor options in 1C/1D under RM800k, including orientation and price, before recommending one. If there’s a suitable sea-view option, they can help arrange a viewing for you to compare.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, please let me know once they have the shortlist. No need to arrange a viewing until we know there’s a suitable one within budget 🙂",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, I’ll wait for the verified shortlist first. If there’s a suitable option within RM800k, then we can discuss a viewing 🙂",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Understood—we’ll check the verified shortlist first. No viewing arrangement until there’s a suitable option within RM800k.",
+      "action": "MAINTAIN"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Around RM800k max, ideally below that. Can consider a slightly lower floor if the sea view is still decent—just don’t want to pay high-floor premium unnecessarily.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, mid-floor can work if the sea view is still decent and it stays within RM800k. Can you check the actual orientation, price and available units in 1C/1D before recommending one?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay thanks, please ask them to shortlist the actual mid-floor options under RM800k with the orientation and price. If one looks like a decent sea view, I’m open to arranging a viewing to compare.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, please let me know once they have the shortlist. No need to arrange a viewing until we know there’s a suitable one within budget 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, I’ll wait for the verified shortlist first. If there’s a suitable option within RM800k, then we can discuss a viewing 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

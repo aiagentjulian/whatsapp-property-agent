@@ -1,0 +1,137 @@
+{
+  "scenario_id": "PEA-006",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T16:59:13.523120+00:00",
+  "status": "COMPLETED",
+  "turns": 4,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "That’s a fair concern. The 1,846 units are spread across three towers; typical floors have 15 units in Blocks 1B and 1C, and 18 in 1D. Each block has four passenger lifts. Is your main concern lift traffic or the overall number of residents?",
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "More the shared areas and privacy—people constantly coming and going, especially around the lifts. How are the lift and access areas separated between the blocks?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Each block has its own four passenger lifts, and there are link bridges between some blocks at specified levels. The details on whether lift lobbies and access control are fully separated aren’t clear in the information I have, so I’ll get that confirmed rather than guess.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks for checking rather than guessing. Main thing for me is whether each block’s lift lobby and access are residents-only or shared between blocks. Once I know that, I can decide if it’s worth viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Understood—that’s the specific point to confirm: whether each block’s lift lobby and access are residents-only or shared. I’ll have the team verify it so you can decide about viewing based on that.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, please let me know once they’ve confirmed whether the lift lobbies and access are separate or shared. I’ll decide about viewing after that.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Of course—I’ve noted that this is the point you need confirmed. I’ll let you know once the team confirms whether the lift lobbies and access are separate or shared; I won’t guess in the meantime.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. I’ll wait for your update on the lift lobby and access setup before deciding about a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "More the shared areas and privacy—people constantly coming and going, especially around the lifts. How are the lift and access areas separated between the blocks?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks for checking rather than guessing. Main thing for me is whether each block’s lift lobby and access are residents-only or shared between blocks. Once I know that, I can decide if it’s worth viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, please let me know once they’ve confirmed whether the lift lobbies and access are separate or shared. I’ll decide about viewing after that.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

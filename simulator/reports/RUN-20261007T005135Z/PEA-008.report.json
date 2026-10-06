@@ -1,0 +1,208 @@
+{
+  "scenario_id": "PEA-008",
+  "title": "High-floor sea view with tight budget",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-008.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "For a high-floor sea view, I’d start with the sea-facing units in Blocks 1C and 1D. Since your budget is tight, what’s the maximum you’d like to stay within? I can narrow the options around that, subject to confirming current availability and pricing.",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Maybe around RM700k max, don’t really want to stretch. Can consider mid floor if still get a decent sea view—just don’t want to pay high-floor premium for a view that’s not actually better.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’d first compare mid-floor sea-facing units in 1C or 1D, rather than pay extra for a high floor unless the outlook is clearly better. I’d need to check the exact unit prices and view before recommending one within RM700k.",
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, that makes sense. Can you check if there are any mid-floor sea-facing options under RM700k and compare the view with a higher floor? If there’s a worthwhile option, I’d be open to viewing it.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "I’ll get the current mid-floor sea-facing options and prices checked, and confirm how their outlook compares with the higher floors. I don’t want to guess on availability or the actual view; my colleague can follow up with the confirmed options, and if one looks worthwhile we can arrange a viewing.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, please check the current options and let me know the prices and how the view compares. If one looks worthwhile within RM700k, I’m open to viewing it.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Understood — I’ve noted your RM700k limit and that you’d consider a viewing only if a confirmed mid-floor option offers a worthwhile sea view compared with the higher floors.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you’ve confirmed the prices and view comparison—if there’s a good option within RM700k, I’m happy to come view it.",
+      "appointment_state": "VIEWING_INTEREST"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Noted — my colleague will update you once the current prices and view comparison are confirmed. If there’s a worthwhile option within RM700k, we can arrange a viewing.",
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, I’ll wait for the confirmed options and view comparison before deciding on a viewing.",
+      "appointment_state": "VIEWING_INTEREST"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 2,
+      "action": "NARROW_UNIT"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "MAINTAIN"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Maybe around RM700k max, don’t really want to stretch. Can consider mid floor if still get a decent sea view—just don’t want to pay high-floor premium for a view that’s not actually better.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, that makes sense. Can you check if there are any mid-floor sea-facing options under RM700k and compare the view with a higher floor? If there’s a worthwhile option, I’d be open to viewing it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, please check the current options and let me know the prices and how the view compares. If one looks worthwhile within RM700k, I’m open to viewing it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, thanks. Please update me once you’ve confirmed the prices and view comparison—if there’s a good option within RM700k, I’m happy to come view it.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "appointment_state": "Conditional viewing interest; no appointment confirmed",
+  "final_lead_intent": "Open to viewing a confirmed mid-floor sea-facing option if it is within RM700k and offers a worthwhile view compared with a higher floor.",
+  "judge": {
+    "appointment_state": "Conditional viewing interest; no appointment confirmed",
+    "scenario_success": true,
+    "good_judgment": true,
+    "final_lead_intent": "Open to viewing a confirmed mid-floor sea-facing option if it is within RM700k and offers a worthwhile view compared with a higher floor.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 5,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 4,
+      "commercial_progression": 3
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent recognized the trade-off between sea view and budget, then adapted the recommendation from high floors to mid-floor sea-facing options.",
+        "The agent respected the RM700k ceiling and did not invent prices, availability, or view comparisons.",
+        "The buyer's conditional viewing interest was acknowledged without being treated as a confirmed appointment."
+      ],
+      "what_reduced_conversion_probability": [
+        "The follow-up was not given a clear timeframe or a specific confirmation process.",
+        "The final two agent messages repeat the same commitment without adding a concrete next step."
+      ],
+      "where_conversion_was_won_or_lost": "The buyer remained engaged and agreed to consider a viewing after a confirmed comparison, so the lead was preserved. Conversion was not yet secured; the appropriate next step is a timely, specific follow-up with verified options, not an immediate appointment claim."
+    },
+    "what_agent_did_well": [
+      "Asked for the budget ceiling directly and used the buyer's stated RM700k limit.",
+      "Recommended comparing mid-floor options before paying a high-floor premium.",
+      "Recognized that exact pricing, availability, and view quality require verification.",
+      "Used the supported Block 1C/1D sea-facing guidance without claiming a specific unit was available or best.",
+      "Handled conditional viewing interest appropriately and avoided pressure."
+    ],
+    "weak_or_wrong_sales_move": "The agent repeated the handoff commitment instead of setting a clear expectation for when and how the confirmed options would be shared.",
+    "better_next_move": "Confirm that the request is being checked and give a realistic follow-up timeframe. Then share verified mid-floor options within RM700k with an honest view comparison; if one meets the buyer's criteria, offer to arrange a viewing.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "Response Style",
+      "Sales Judgment"
+    ],
+    "recommended_improvement": {
+      "category": "Sales Judgment",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "After an appropriate conditional handoff, prompt the agent to give a clear follow-up expectation and avoid repeating generic maintenance messages."
+    },
+    "summary": "A sound, buyer-centered exchange. The agent matched the unit direction to the buyer's budget and view priorities, stayed cautious about facts requiring a current schedule, and correctly left the viewing conditional. The main opportunity is stronger follow-through: state when the verified comparison will be provided rather than repeating the same handoff."
+  },
+  "error": null
+}

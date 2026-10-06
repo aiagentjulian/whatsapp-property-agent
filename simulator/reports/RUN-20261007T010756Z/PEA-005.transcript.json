@@ -1,0 +1,78 @@
+{
+  "scenario_id": "PEA-005",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-06T17:15:29.611474+00:00",
+  "status": "COMPLETED",
+  "turns": 2,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "LPPSA may be an option for government servants, but I can’t tell from that alone whether you’ll be approved—LPPSA assesses each application and its terms. The current reference mentions financing eligibility up to RM1 million, subject to LPPSA’s conditions. I’ll have our team help confirm the right next steps for checking your eligibility.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, could someone from your team help me check the LPPSA route? It’s for own stay and I’m trying to confirm financing fit first. What details would they need from me?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Yes, I’ll have the team help you check the LPPSA route. They can guide you on the exact details needed; the assessment may depend on your income, existing commitments and the property financing details. No approval can be confirmed from chat alone.",
+      "action": "HANDOFF"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Okay, could someone from your team help me check the LPPSA route? It’s for own stay and I’m trying to confirm financing fit first. What details would they need from me?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ]
+    }
+  ],
+  "retries": [],
+  "error": null
+}

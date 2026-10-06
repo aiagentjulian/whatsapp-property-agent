@@ -1,0 +1,269 @@
+{
+  "scenario_id": "PEA-005",
+  "title": "LPPSA government servant",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript_file": "PEA-005.transcript.json",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "LPPSA may be an option for eligible government servants, but I can’t confirm approval from your job alone—LPPSA assesses each application under its terms. The current project reference lists eligibility up to RM1 million, subject to those terms. Is this your first LPPSA financing, or do you already have one?",
+      "action": "ANSWER"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "First LPPSA, haven’t applied before. Can someone confirm whether this project can be purchased using LPPSA and check my eligibility?",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Noted, this would be your first LPPSA application. I’ll have my colleague confirm whether Pearlmont can be purchased through LPPSA and help check what’s needed to assess your eligibility. Approval would still be subject to LPPSA’s assessment.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please get them to confirm whether Pearlmont can be bought using LPPSA and what details they need from me to check eligibility. I’d rather clarify the financing first before arranging a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "Noted. I’ll ask my colleague to confirm whether Pearlmont can be purchased using LPPSA and what details they need to assess your eligibility. We can clarify the financing first—no need to arrange a viewing yet.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, please update me once they’ve confirmed the LPPSA part and what details they need. I’ll hold off on viewing for now.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Noted — I’ll follow up on the LPPSA confirmation and what details are needed to assess eligibility. We’ll keep the viewing on hold for now.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please update me once you’ve confirmed.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "Will do — I’ll update you once the LPPSA details are confirmed. We’ll keep the viewing on hold for now.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "For context, I’m still in government service and hoping to buy sometime this year, but I’d like to sort out the LPPSA part first. Let me know if they need any details from me.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Noted—you’re hoping to buy this year and would like to clarify the LPPSA requirements first. We’ll keep the viewing on hold; you don’t need to send anything until my colleague confirms what details are needed.",
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks. Roughly when do you think they can get back to me? I’m hoping to buy this year, so just want to know when I can plan around it.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "I don’t have a confirmed timeframe yet, so I don’t want to guess. I’ll check with my colleague and update you once I have an ETA. We’ll keep the viewing on hold for now.",
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please update me once you have an ETA, and when they’ve confirmed the LPPSA details too. I’ll hold off on viewing until then.",
+      "appointment_state": "NO_VIEWING_INTENT"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN"
+    },
+    {
+      "turn": 7,
+      "action": "HANDOFF"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "First LPPSA, haven’t applied before. Can someone confirm whether this project can be purchased using LPPSA and check my eligibility?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks. Please get them to confirm whether Pearlmont can be bought using LPPSA and what details they need from me to check eligibility. I’d rather clarify the financing first before arranging a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, please update me once they’ve confirmed the LPPSA part and what details they need. I’ll hold off on viewing for now.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, appreciate it. Please update me once you’ve confirmed.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "trigger_message": "For context, I’m still in government service and hoping to buy sometime this year, but I’d like to sort out the LPPSA part first. Let me know if they need any details from me.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks. Roughly when do you think they can get back to me? I’m hoping to buy this year, so just want to know when I can plan around it.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "appointment_state": "No viewing intent; the buyer wants LPPSA clarification first. No appointment is confirmed.",
+  "final_lead_intent": "Medium-intent, financing-gated own-stay buyer hoping to purchase this year; requests a human to confirm LPPSA compatibility and eligibility requirements before considering a viewing.",
+  "judge": {
+    "appointment_state": "No viewing intent; the buyer wants LPPSA clarification first. No appointment is confirmed.",
+    "scenario_success": false,
+    "good_judgment": false,
+    "final_lead_intent": "Medium-intent, financing-gated own-stay buyer hoping to purchase this year; requests a human to confirm LPPSA compatibility and eligibility requirements before considering a viewing.",
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 4,
+      "factual_accuracy": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 2,
+      "commercial_progression": 2
+    },
+    "critical_flags": [
+      {
+        "flag": "FAILED_REQUIRED_HANDOFF",
+        "evidence": "The buyer repeatedly asks for confirmation and an update. The agent repeatedly promises to ask a colleague, but the conversation ends without a concrete handoff confirmation, named follow-up owner, or agreed update time.",
+        "turn": 2
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The agent correctly said that government employment alone does not establish LPPSA approval.",
+        "The agent offered a colleague to confirm project compatibility and eligibility requirements.",
+        "The agent respected the buyer’s preference to clarify financing before arranging a viewing."
+      ],
+      "what_reduced_conversion_probability": [
+        "The RM1 million eligibility statement is not substantiated in the transcript and could mislead if it is not current and applicable.",
+        "Repeated acknowledgments and promises to follow up did not provide the buyer with a concrete next step or timing.",
+        "The requested financing clarification remained unresolved, so the buyer had no basis to progress toward a viewing."
+      ],
+      "where_conversion_was_won_or_lost": "Trust was partly maintained by avoiding an approval promise and not pushing a viewing. Progress stalled after the agent committed to obtain LPPSA guidance but did not establish a clear, actionable follow-up."
+    },
+    "what_agent_did_well": [
+      "Set an appropriate boundary around approval: it depends on LPPSA assessment, not employment status alone.",
+      "Asked one relevant qualification question about whether this was the buyer’s first LPPSA financing.",
+      "Recognized that financing was the buyer’s gating issue and did not pressure them to view.",
+      "Did not guess an ETA when one was not confirmed."
+    ],
+    "weak_or_wrong_sales_move": "The agent repeated the same handoff promise across several turns instead of making the handoff concrete. The specific RM1 million eligibility claim also needed clear sourcing and qualification.",
+    "better_next_move": "Confirm that the buyer’s LPPSA question has been assigned to a financing-competent colleague, state when the agent will provide an update or when an ETA will be obtained, and relay only verified project compatibility and eligibility-document guidance. Keep viewing optional until the financing question is clarified.",
+    "close_timing": "appropriate",
+    "missed_buying_signals": [
+      "The buyer said they hope to purchase this year; acknowledge this as a meaningful timeline and use it to prioritize a clear financing follow-up, without treating it as viewing consent."
+    ],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "“The current project reference lists eligibility up to RM1 million.” This precise limit needs confirmation against the retrieved LPPSA and project financing sources, including whether it describes LPPSA eligibility, project eligibility, or another financing limit."
+    ],
+    "retrieval_misses": [
+      "The conversation does not surface verified guidance from the retrieved LPPSA materials on whether Pearlmont can be purchased using LPPSA or what information is required for an eligibility check; the agent defers both questions to a colleague."
+    ],
+    "likely_issue_sources": [
+      "Sales Judgment",
+      "Knowledge",
+      "Retrieval"
+    ],
+    "recommended_improvement": {
+      "category": "Sales Judgment",
+      "target_file": "Sales handoff and follow-up policy",
+      "reason": "When a buyer requests financing verification, require a concrete handoff or a specific next-update commitment, and avoid repeating acknowledgments without advancing the follow-up."
+    },
+    "summary": "The agent handled approval uncertainty cautiously and correctly respected the buyer’s financing-first preference. However, the buyer’s requested LPPSA confirmation was not resolved, the follow-up remained vague despite repeated requests, and the RM1 million claim needs source verification. No viewing was requested or confirmed; the main opportunity is a reliable human financing follow-up."
+  },
+  "error": null
+}
