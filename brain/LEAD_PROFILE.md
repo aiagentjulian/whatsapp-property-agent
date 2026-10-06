@@ -26,6 +26,41 @@ The profile exists to improve sales judgment, not to maximise data collection.
 
 ---
 
+## Lead Creation Rule
+
+A contact becomes a Lead only when a real two-way conversation begins.
+
+For INBOUND:
+
+- the customer's first inbound message creates the Lead Profile.
+
+For OUTBOUND:
+
+- sending an outbound campaign message does not create a Lead Profile,
+- the outbound contact remains only in the outbound contact source/list until they reply,
+- the prospect's first reply creates the Lead Profile,
+- after creation, the Lead Profile continues as the single customer state for that prospect.
+
+Therefore:
+
+`OUTBOUND MESSAGE SENT != LEAD`
+
+`OUTBOUND CUSTOMER REPLIED = CREATE LEAD`
+
+Outbound contact-list data is operational campaign data and should not automatically be supplied to the LLM as customer context unless it becomes relevant after the prospect replies.
+
+---
+
+## One Customer, One Current Profile
+
+For the same property project, one customer should normally have one current Lead Profile.
+
+Do not create separate profiles simply because the customer appears through more than one touchpoint.
+
+If a known prospect first came from an outbound campaign and later re-enters through an inbound link or enquiry, preserve the existing profile and update the relevant source context rather than creating a duplicate Lead.
+
+---
+
 ## Profile Structure
 
 The Lead Profile should be organised into the following groups:
@@ -87,17 +122,42 @@ Do not force a language preference question.
 
 ## `lead_source`
 
-How the prospect entered the conversation.
+How the prospect entered the real two-way sales conversation.
 
-Suggested values:
+Allowed values:
 
 - INBOUND
 - OUTBOUND
-- UNKNOWN
+
+`lead_source` must be assigned deterministically by the messaging/acquisition system.
+
+The LLM must not guess, infer, rewrite or override this field based on conversation content.
+
+Rules:
+
+- customer sends the first message -> `INBOUND`
+- business sends the first outbound campaign message and customer later replies -> `OUTBOUND`
+
+If the runtime genuinely cannot determine the source, the system should preserve the technical uncertainty rather than asking the LLM to guess.
+
+## `source_detail`
+
+Optional operational detail describing the source channel or origin.
+
+Examples:
+
+- WhatsApp inbound
+- Meta ad
+- property portal
+- referral
+- outbound contact list
+- campaign landing link
+
+This should normally come from system metadata when available.
 
 ## `campaign_source`
 
-Optional identifier for the campaign, ad, link, hook, referral source, or outbound list that produced the conversation.
+Optional identifier for the campaign, hook, list, ad, or outreach effort that produced the conversation.
 
 Examples:
 
@@ -106,7 +166,9 @@ Examples:
 - property portal
 - referral
 - outbound campaign A
-- unknown
+- Project A launch October
+
+For outbound leads, preserve the campaign identifier from the outbound sending system when available.
 
 Do not ask the customer for information that is already known from the acquisition channel.
 
@@ -223,7 +285,7 @@ Prefer a range over false precision.
 Examples:
 
 - below RM500k
-- RM700k–RM900k
+- RM700k-RM900k
 - around RM1.2m
 - unknown
 
@@ -453,6 +515,17 @@ There should normally be one primary next objective, not a list of questions.
 
 # 10. Handoff and Follow-up
 
+## `owner`
+
+Who currently owns the live customer conversation.
+
+Suggested values:
+
+- AI
+- HUMAN
+
+A handoff changes conversation ownership; it does not create a second customer profile.
+
 ## `handoff_status`
 
 Suggested values:
@@ -474,6 +547,30 @@ Examples:
 - financing question beyond available knowledge
 - unusual negotiation
 - customer is highly qualified and human involvement may help close
+
+## `last_progress`
+
+Concise description of where the sales conversation has reached.
+
+Examples:
+
+- discussed 3-bedroom investment fit and indicative pricing
+- customer compared two layouts and prefers larger unit
+- customer asked about current promotion after discussing weekend viewing
+
+This is intended to help a human quickly understand what has already happened without reading the full transcript.
+
+## `next_action`
+
+The most useful operational next step.
+
+Examples:
+
+- confirm latest promotion
+- arrange viewing
+- answer outstanding unit availability question
+- wait for customer after spouse discussion
+- continue qualification on financing context
 
 ## `follow_up_needed`
 
@@ -541,6 +638,48 @@ This helps prevent repetitive responses.
 
 ---
 
+# Google Sheet Representation
+
+The V1 human-readable CRM may be maintained in one Google Sheet tab named `Leads`.
+
+Both inbound and outbound Leads should use the same tab and the same schema.
+
+Use `lead_source` to distinguish them rather than creating separate inbound and outbound lead tables.
+
+A practical column set may include:
+
+- Lead ID
+- Phone
+- Name
+- Source
+- Source Detail
+- Campaign
+- Purpose
+- Budget
+- Timeline
+- Stage
+- Intent
+- Need
+- Concerns
+- Last Progress
+- Next Action
+- Owner
+- Handoff Status
+- Handoff Reason
+- Last Updated
+
+The `Leads` tab should contain only contacts that have become real Leads through a two-way conversation.
+
+The outbound source/contact list should remain separate from `Leads`.
+
+It may live in another tab or source file such as `Outbound Contacts`.
+
+Sending to an outbound contact must not create a row in `Leads`.
+
+The row should be created only after that contact replies and becomes a Lead.
+
+---
+
 # Unknown, Uncertain and Inferred Information
 
 The agent must distinguish between known facts and interpretations.
@@ -592,7 +731,10 @@ The update should follow this order:
 5. Reassess intent level.
 6. Update fit assessment only when new evidence changes it.
 7. Set the single most useful next objective.
-8. Refresh the conversation summary.
+8. Update `last_progress` and `next_action` when the conversation meaningfully advances.
+9. Refresh the conversation summary.
+
+System-controlled metadata such as `lead_source`, technical identifiers, acquisition metadata and conversation ownership must not be rewritten by the LLM unless the runtime explicitly authorises that action.
 
 Do not rewrite stable information unnecessarily.
 
@@ -608,7 +750,7 @@ Example:
 
 Earlier:
 
-`budget_range = RM700k–RM800k`
+`budget_range = RM700k-RM800k`
 
 Later customer statement:
 
