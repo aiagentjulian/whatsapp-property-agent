@@ -367,10 +367,12 @@ AI resumes after result
 
 ```text
 owner = HUMAN
-AI status = PAUSED
-AI stops active sales conversation
-Human owns the next customer interaction
+ai_session_status = ENDED
+AI stops active sales conversation permanently for this session
+Human owns all subsequent customer interaction
 ```
+
+Formal Handoff is one-way in V1. There is no Human → AI return for the same AI sales session.
 
 Never convert a normal Support Request into a Handoff merely because Human information is needed.
 
@@ -495,6 +497,7 @@ Future changes must preserve:
 
 - AI ownership during normal support;
 - formal Human ownership only after Handoff;
+- formal Handoff ends the current AI sales session permanently;
 - no duplicate request for an equivalent OPEN issue;
 - no duplicate request when a usable RESOLVED result exists;
 - no unsupported factual strengthening;
