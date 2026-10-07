@@ -2,19 +2,17 @@
 
 ## Purpose
 
-This skill decides the single most useful next sales action after each meaningful customer message.
+This skill decides the single most useful next sales action after each meaningful customer message or resolved Human Support result.
 
 It does not write the final customer-facing reply.
 
 It does not rewrite the Lead Profile.
 
-It does not modify any Brain or Knowledge Markdown files.
-
-Its job is to answer one question:
+Its job is to answer:
 
 > What is the most valuable next move in this conversation right now?
 
-The output should guide the agent without turning the sales process into a rigid script.
+The answer should guide a flexible sales process, not a rigid state machine.
 
 ---
 
@@ -22,15 +20,11 @@ The output should guide the agent without turning the sales process into a rigid
 
 Choose one primary next action.
 
-Do not produce a list of tasks.
+Do not choose an action because a Lead Profile field is empty.
 
-Do not ask what information is still missing from the Lead Profile.
+Choose it because it is the best move for this customer now.
 
-Ask instead:
-
-> What action would move this specific conversation forward most effectively now?
-
-The next action should reflect the customer's latest message, current sales context, active concerns, intent level and handoff status.
+The latest customer message, current blocker, buying intent, support state and ownership state all matter.
 
 ---
 
@@ -39,516 +33,349 @@ The next action should reflect the customer's latest message, current sales cont
 This skill may consider:
 
 - latest customer message
+- conversation history or summary
 - current Lead Profile
-- current sales stage
-- current intent level
+- current stage
+- current intent / appointment-readiness state
 - active concerns
+- relevant trusted project Knowledge
+- retrieved Knowledge
+- prior Human Support requests and results
+- current support status
+- current owner
+- handoff state
 - last progress
-- current next objective, if one already exists
-- current handoff status and owner
-- relevant project knowledge available to the agent
-- conversation summary
+- current next objective
 
-System-controlled fields such as `lead_source` are context only and must not be inferred or changed by this skill.
+System-controlled fields such as lead source must not be inferred or changed by this skill.
+
+---
+
+## Primary Action Taxonomy
+
+Choose one primary action family:
+
+- `ASK`
+- `ANSWER`
+- `POSITION`
+- `HANDLE_OBJECTION`
+- `NARROW_UNIT`
+- `REQUEST_SUPPORT`
+- `CLOSE_VIEWING`
+- `APPOINTMENT_HANDOFF`
+- `MANDATORY_HANDOFF`
+- `ACKNOWLEDGE_MAINTAIN`
+
+The implementation may use a more specific action name, but it should map to one of these families.
 
 ---
 
 ## Output
 
-Return exactly one primary next action plus one short internal reason.
+Return one primary next action plus one short internal reason.
 
 Example:
 
 ```json
 {
-  "next_action": "clarify_investment_priority",
-  "reason": "Customer has stated investment purpose and budget, but the main investment objective is still unclear."
+  "action_type": "REQUEST_SUPPORT",
+  "next_action": "verify_current_two_carpark_availability",
+  "reason": "Two car parks are a hard requirement and current availability is not verified."
 }
 ```
 
-The `reason` exists for debugging, review and future Experience Ledger analysis.
+Keep the reason short and decision-useful.
 
-It should be short.
-
-Do not store long reasoning chains.
-
-The long-term Lead Profile should normally persist only `next_action`, not the reasoning text.
+Do not expose the internal reason to the customer.
 
 ---
 
-## Action Priority
+## Decision Order
 
-Use this priority order when deciding what comes next.
+### 1. Respect ownership first
 
-### 1. Handle the customer's current message first
+If owner is already `HUMAN`, do not generate another AI sales action.
 
-The latest customer message has priority over the internal sales agenda.
+If a Mandatory Handoff is required, choose `MANDATORY_HANDOFF`.
 
-If the customer asks a question, the next action should normally address that question before qualification or closing.
+If an Appointment Handoff has completed, stop AI sales progression.
 
-Example:
-
-Customer:
-
-> What is the maintenance fee?
-
-Correct next action:
-
-`answer_maintenance_fee`
-
-Not:
-
-`ask_purchase_timeline`
-
-Do not ignore what the customer just asked simply because another sales field is incomplete.
+A normal pending Support Request does NOT change ownership.
 
 ---
 
-### 2. Resolve a blocking concern when one exists
+### 2. Handle the latest customer message first
 
-If an active concern is preventing progress, handle it before adding new sales questions.
+If the customer asks a direct question, answer it before pursuing the internal sales agenda when the answer is available.
+
+Do not ignore the latest message to complete qualification.
+
+---
+
+### 3. Use trusted Knowledge before requesting Human Support
+
+If the answer is available and sufficiently current in trusted Knowledge:
+
+choose `ANSWER`, `POSITION`, `HANDLE_OBJECTION` or `NARROW_UNIT` as appropriate.
+
+Do not ask a Human to verify something the AI already knows.
+
+---
+
+### 4. Request Human Support when a material answer is missing
+
+Choose `REQUEST_SUPPORT` when:
+
+- the AI should remain sales owner;
+- the information materially affects the conversation;
+- the answer is not safely available from trusted Knowledge;
+- verification would let the conversation continue.
 
 Examples:
 
-- price concern
-- location concern
-- financing concern
-- oversupply concern
-- developer concern
-- comparison with another project
+- live unit availability
+- exact current package for a specific unit
+- unit-facing / car-park confirmation
+- missing detailed plan information
+- project-side financing process clarification
+- technical/document verification
 
-Possible next action:
+A Support Request is not a handoff.
 
-`address_price_concern`
-
-or
-
-`compare_relevant_project_strength`
-
-Do not move toward closing while a major unresolved concern is still blocking the customer.
+After the support result returns, reassess the next action from the new context.
 
 ---
 
-### 3. Clarify the most decision-useful gap
+### 5. Use resolved Support Results
 
-If the conversation needs more understanding, choose only the information that materially affects fit, positioning or the next recommendation.
+If a relevant support result already exists:
+
+do not request it again.
+
+Use it.
+
+Choose the next sales move based on the verified result.
+
+Normally:
+
+`ANSWER` / `POSITION` / `HANDLE_OBJECTION` / `NARROW_UNIT` / `CLOSE_VIEWING`
+
+Do not merely relay the Human answer and end the conversation.
+
+---
+
+### 6. Resolve meaningful blockers
+
+If a concern is preventing progress, handle it before adding unrelated qualification.
 
 Examples:
 
-`clarify_purchase_purpose`
+- budget
+- layout
+- density
+- location
+- financing
+- safety concern
+- investment evidence
+- unit fit
 
-`clarify_budget_range`
-
-`clarify_unit_preference`
-
-`clarify_purchase_timeline`
-
-`clarify_investment_priority`
-
-Do not ask simply because a profile field is empty.
-
-Do not stack multiple qualification questions into one next action.
+Ask one clarifying question only if it changes how the concern should be handled.
 
 ---
 
-### 4. Position the project when enough context exists
+### 7. Clarify only decision-useful gaps
 
-When the customer's needs are sufficiently clear, stop collecting information and use relevant knowledge to position the project.
+Ask only what materially affects fit, positioning, objection handling or the next recommendation.
 
 Examples:
 
-`position_for_own_stay`
+- purchase purpose
+- budget range
+- hard unit requirement
+- timeline
+- financing context when relevant
+- investment objective
+- decision-maker context when it matters
 
-`position_for_investment`
-
-`position_specific_unit_type`
-
-`explain_location_fit`
-
-`explain_rental_case`
-
-The positioning angle should follow the customer's actual priorities, not a generic sales script.
+Do not complete the profile for its own sake.
 
 ---
 
-### 5. Move toward close when intent is strong
+### 8. Position when enough context exists
 
-If the customer shows strong buying signals, reduce unnecessary qualification.
+When the buyer's priorities are sufficiently clear, stop collecting and sell.
 
-Possible next actions:
-
-`soft_close`
-
-`move_to_viewing`
-
-`move_to_appointment`
-
-`confirm_readiness_to_proceed`
-
-A customer who is ready to move should not be delayed because the profile is incomplete.
+Use the most relevant value proposition rather than a feature dump.
 
 ---
 
-### 6. Stop AI progression when handoff is required
+### 9. Recognize Appointment Ready
 
-If handoff rules indicate that the AI should no longer own the conversation, the next action must reflect that.
+Strong signals include:
 
-Possible next action:
+- asks to view
+- asks when they can come
+- asks for weekend availability
+- asks which specific units remain
+- asks about exact floor / facing / car-park combinations
+- asks for package or price tied to a specific purchase decision
+- says they would view if a remaining condition is satisfied
+- accepts a suitable unit direction and wants the next step
 
-`handoff_to_human`
+When the buyer is ready:
 
-Do not continue selling after ownership has moved to a human.
+reduce discovery.
+
+Do not return to basic qualification without a genuine reason.
 
 ---
 
-## Stage-Aware Guidance
+### 10. Close or hand off correctly
 
-The current sales stage should guide judgment, but it must not override the customer's latest message.
+Choose `CLOSE_VIEWING` when the AI can naturally test or advance viewing intent.
+
+Choose `APPOINTMENT_HANDOFF` when:
+
+- buyer is Appointment Ready or stronger;
+- most sales work is done;
+- remaining work is mainly appointment execution.
+
+Examples:
+
+- slot confirmation
+- final visit logistics
+- exact unit to show
+- appointment coordination
+
+Choose `MANDATORY_HANDOFF` when policy requires Human ownership regardless of readiness.
+
+Examples:
+
+- ownership / agent conflict
+- explicit Human request
+- complaint or dispute
+- authority-sensitive situation
+
+Do not classify Mandatory Handoff as an early Appointment Handoff.
+
+---
+
+## Stage Guidance
 
 ### UNDERSTAND
 
-Primary objective:
+Learn why the buyer is here and what matters.
 
-Understand why the customer is here and what they are trying to achieve.
-
-Typical next actions:
-
-- clarify purchase purpose
-- clarify reason for enquiry
-- identify broad need
-
-Do not over-qualify.
-
----
+Avoid over-qualification.
 
 ### QUALIFY
 
-Primary objective:
-
-Clarify the few facts that materially affect fit.
-
-Typical next actions:
-
-- clarify budget
-- clarify timeline
-- clarify unit preference
-- clarify financing context when relevant
-
-Do not treat qualification as a form to complete.
-
----
+Clarify only facts that materially affect fit.
 
 ### POSITION
 
-Primary objective:
-
-Connect project facts to the customer's priorities.
-
-Typical next actions:
-
-- position for own stay
-- position for investment
-- recommend relevant unit type
-- explain why a specific project feature matters to this customer
-
-Do not repeat generic brochure language.
-
----
+Connect the project's relevant strengths to the buyer's priorities.
 
 ### HANDLE
 
-Primary objective:
-
-Resolve the concern currently preventing progress.
-
-Typical next actions:
-
-- address objection
-- answer comparison question
-- clarify uncertainty
-- retrieve project knowledge
-- recommend human handoff if the issue exceeds AI authority
-
-Do not change topic before the concern is handled.
-
----
+Resolve the real concern. Use Support Request if a material verification is missing.
 
 ### INTENT
 
-Primary objective:
-
-Judge whether the customer is moving toward a real action.
-
-Typical next actions:
-
-- test readiness naturally
-- answer specific purchase questions
-- remove final blockers
-- move toward viewing when justified
-
-Do not force a close from weak engagement alone.
-
----
+Detect whether the buyer is moving toward real action.
 
 ### CLOSE
 
-Primary objective:
+Move a ready buyer toward viewing or Appointment Handoff.
 
-Move a ready customer toward the next real-world action.
-
-Typical next actions:
-
-- move to viewing
-- move to appointment
-- handoff for booking or confirmation
-
-Do not restart discovery unless the customer introduces genuinely new information that changes fit.
+Do not restart broad discovery at this stage.
 
 ---
 
-## Intent-Aware Guidance
+## Intent Guidance
 
 ### LOW
 
-Prefer:
+Prefer useful answers and light discovery.
 
-- answer current question
-- provide useful information
-- understand broad need
-
-Avoid:
-
-- hard close
-- repeated qualification
-- aggressive appointment pushes
-
----
+Avoid hard closing.
 
 ### MEDIUM
 
-Prefer:
-
-- clarify one important gap
-- position based on known needs
-- handle early concerns
-
-Avoid:
-
-- asking several questions at once
-- assuming the customer is ready to proceed
-
----
+Clarify one important gap, position, and handle early concerns.
 
 ### HIGH
 
-Prefer:
-
-- answer specific purchase questions
-- resolve blockers
-- reduce discovery
-- soft close where appropriate
-
-Avoid:
-
-- returning to basic qualification without a clear reason
-
----
+Reduce discovery, answer practical questions quickly, resolve blockers and test viewing.
 
 ### READY_FOR_APPOINTMENT
 
 Prefer:
 
-- move directly toward appointment or human handoff
+- `CLOSE_VIEWING`
+- `APPOINTMENT_HANDOFF`
 
-Avoid:
-
-- unnecessary education
-- profile completion
-- unrelated discovery questions
+Avoid unrelated qualification.
 
 ---
 
-## Strong Buying Signal Rule
+## Duplicate Support Rule
 
-If the latest customer message includes a clear buying signal, this should heavily influence the next action.
+Before choosing `REQUEST_SUPPORT`, inspect prior requests.
 
-Examples:
+If the same task was already resolved, reuse the result.
 
-- asks to view the project
-- asks when they can come
-- asks what is needed to reserve
-- asks which units remain available
-- asks about financing for a specific unit
-- says a particular time works for them
-
-In such cases, do not choose a basic qualification action unless the missing information is genuinely required to proceed.
-
----
-
-## Weak Engagement Rule
-
-Do not confuse activity with purchase intent.
-
-Examples that do not automatically justify closing:
-
-- many messages
-- quick replies
-- saying "interesting"
-- asking general project questions
-- reacting positively to marketing language
-
-Choose the next action based on evidence of purchase progression, not conversation volume.
-
----
-
-## No Forced Progression
-
-Do not force the conversation to advance one stage every turn.
-
-The best next action may sometimes be:
-
-`answer_current_question`
-
-or
-
-`provide_requested_information`
-
-without changing stage.
-
-A good sales conversation is not a conveyor belt.
-
----
-
-## No Mandatory Question Rule
-
-The next action does not need to be a question.
-
-Sometimes the correct action is simply:
-
-- answer
-- explain
-- position
-- reassure
-- clarify
-- close
-- handoff
-
-Do not manufacture a question merely to keep the conversation going.
+If it was previously requested and the new request is not materially different, do not request it again.
 
 ---
 
 ## One Action Only
 
-Bad output:
+Bad:
 
-```text
-Ask budget, explain location, ask timeline, then suggest viewing.
-```
-
-Good output:
-
-```text
-clarify_budget_range
-```
-
-or
-
-```text
-answer_location_question
-```
-
-or
-
-```text
-move_to_viewing
-```
-
-The agent may naturally combine a short answer and one question in the final response, but the internal sales objective should remain singular.
-
----
-
-## Reason Field
-
-The internal `reason` should explain the immediate decision in one concise sentence.
+> Ask budget, explain layout, verify unit, then suggest viewing.
 
 Good:
 
-> Customer has already provided purpose and budget, so the most useful remaining gap is the investment objective.
+`verify_current_two_carpark_availability`
 
-Bad:
+or
 
-> The customer may perhaps maybe be interested in investment because they asked several questions and therefore the system should consider a number of possibilities before deciding whether to continue qualifying or potentially position the project.
+`position_layout_for_family`
 
-Keep reasoning compact and decision-useful.
+or
 
-Do not expose it to the customer.
+`move_to_viewing`
 
-Do not store it in the long-term Lead Profile.
-
-It may later be recorded in an Experience Ledger for analysis.
+The final response may naturally answer plus ask one useful question, but the internal objective should remain singular.
 
 ---
 
-## Relationship to Lead Profile
+## Relationship to Other Skills
 
-The selected `next_action` may be written into the Lead Profile as the current `next_objective` or equivalent runtime field.
+`update-lead-profile.md` owns Lead Profile updates.
 
-The short `reason` should not normally be persisted there.
+`request-human-support.md` defines Support Request behavior.
 
-Do not modify other Lead Profile fields through this skill.
+`handoff-to-human.md` and `HANDOFF_RULES.md` govern ownership transfer.
 
-Profile changes belong to `update-lead-profile.md`.
-
----
-
-## Relationship to Response Generation
-
-This skill decides the objective.
-
-`RESPONSE_RULES.md` governs how that objective is expressed naturally to the customer.
-
-Example:
-
-Next action:
-
-`clarify_investment_priority`
-
-Customer-facing response may become:
-
-> If you're looking at this mainly for investment, are you more focused on steady rental income or longer-term appreciation?
-
-The action and the wording are separate concerns.
-
----
-
-## Relationship to Handoff
-
-If handoff status is `REQUIRED`, or ownership is already `HUMAN`, this skill must not continue normal AI sales progression.
-
-When handoff is required:
-
-`next_action = handoff_to_human`
-
-When owner is already human:
-
-Do not generate a new AI sales action.
+`RESPONSE_RULES.md` governs customer-facing wording.
 
 ---
 
 ## Do Not Do
 
-This skill must not:
+Do not:
 
-- generate multiple primary next actions
-- rewrite the whole Lead Profile
-- infer or change system-controlled lead source
-- invent customer facts
-- generate long reasoning
-- modify Markdown files
-- force stage progression
-- force a question every turn
-- close merely because the customer is engaged
-- continue AI sales after human takeover
+- generate multiple primary actions
+- invent facts
+- request support for known information
+- repeat resolved support requests
+- treat Support Request as ownership transfer
+- continue AI sales after formal Human takeover
+- force appointment from weak engagement
+- keep qualifying after a clear readiness signal
+- choose an action merely because a profile field is empty
 
 ---
 
@@ -558,8 +385,10 @@ Do not ask what is missing.
 
 Ask what matters next.
 
-Choose one action that best serves the current customer conversation.
+If the AI can handle it, handle it.
 
-The latest customer message comes first.
+If it needs one verified answer, request support and continue.
 
-The sales framework guides judgment, but should never override common sense.
+If the buyer is ready, move to appointment.
+
+If ownership must change, hand off for the correct reason.
