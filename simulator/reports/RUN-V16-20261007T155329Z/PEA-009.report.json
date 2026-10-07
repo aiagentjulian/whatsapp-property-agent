@@ -1,0 +1,69 @@
+{
+  "scenario_id": "PEA-009",
+  "title": "Already contacted by another property agent",
+  "convertible": true,
+  "status": "RUN_FAILED",
+  "error": "HTTPError: HTTP Error 429: Too Many Requests",
+  "ai_outcome": "RUN_FAILED",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "support_trace": [],
+  "support_attempt_trace": [],
+  "support_request_count": 0,
+  "support_resolved_count": 0,
+  "support_attempt_count": 0,
+  "duplicate_support_request_attempts": 0,
+  "support_resume_success_count": null,
+  "support_results_used": false,
+  "support_result_only_relayed": null,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": false,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "human_operational_task_completed": false,
+  "judge": {},
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-009:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    }
+  ],
+  "transcript_file": "PEA-009.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "agent_actions": [],
+  "version": "1.6"
+}

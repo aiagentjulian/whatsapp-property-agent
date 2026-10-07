@@ -1,0 +1,1700 @@
+{
+  "scenario_id": "PEA-005",
+  "title": "LPPSA government servant",
+  "convertible": true,
+  "status": "RUN_FAILED",
+  "error": "HTTPError: HTTP Error 429: Too Many Requests",
+  "ai_outcome": "RUN_FAILED",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "support_trace": [
+    {
+      "support_request_id": "PEA-005-SUP-001",
+      "lead_id": "PEA-005",
+      "turn": 2,
+      "request": "Please confirm whether SkyWorld Pearlmont Phase 1 accepts LPPSA financing for eligible buyers, and whether any project-specific conditions or process steps apply. The buyer has not used LPPSA before, has been in government service for about 7 years, and hopes to buy within the next few months. Do not assess or guarantee the buyer’s individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer whether Pearlmont can be financed through LPPSA, then continue helping the buyer assess the financing route without implying approval.",
+        "unresolved_customer_need": "Buyer needs confirmation that LPPSA can be used to finance a Pearlmont purchase."
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 2
+    }
+  ],
+  "support_attempt_trace": [
+    {
+      "turn": 2,
+      "request": "Please confirm whether SkyWorld Pearlmont Phase 1 accepts LPPSA financing for eligible buyers, and whether any project-specific conditions or process steps apply. The buyer has not used LPPSA before, has been in government service for about 7 years, and hopes to buy within the next few months. Do not assess or guarantee the buyer’s individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer whether Pearlmont can be financed through LPPSA, then continue helping the buyer assess the financing route without implying approval.",
+        "unresolved_customer_need": "Buyer needs confirmation that LPPSA can be used to finance a Pearlmont purchase."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-005-SUP-001"
+    },
+    {
+      "turn": 4,
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, including any relevant caveat on package validity. The buyer is considering own-stay, hopes to purchase within the next few months, and wants to assess whether the financing route is workable before choosing a unit. Do not estimate individual LPPSA eligibility.",
+      "fixture_key": "lppsa_pricing",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the confirmed current price context, connect it to the buyer’s own-stay and LPPSA planning, then help narrow a suitable unit/category without implying financing approval.",
+        "unresolved_customer_need": "Buyer wants Pearlmont’s current price range and the project-side requirements for an LPPSA application before choosing a unit. The project-side LPPSA starting requirements are already confirmed as a selected unit/category and its current price schedule; LPPSA determines personal eligibility and applicant documents."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 5,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range, including whether the package is currently valid and any category or unit caveats. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the confirmed current price context, then help the buyer narrow a suitable unit/category for own stay and LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs a current price range before choosing a unit; LPPSA acceptance and the project-side starting requirements have already been confirmed."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 6,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range for own-stay buyers, including current package validity and any category, floor-band, or car-park caveats. The buyer hopes to purchase within the next few months and needs price context before choosing a unit and planning an LPPSA application. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa_pricing",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the confirmed current price context, then help the buyer narrow a suitable own-stay unit/category and understand the project-side steps for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs current price context to assess whether a Pearlmont purchase is workable through LPPSA before choosing a unit."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 7,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range for an own-stay buyer, including current package validity and any category, floor-band, or car-park caveats. The buyer needs price context before choosing a unit/category and planning an LPPSA application. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa_pricing",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Provide the confirmed current price context, then help the buyer narrow a suitable own-stay unit/category for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range before deciding whether the purchase and LPPSA route are workable.",
+        "appointment_readiness": "NOT_READY"
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 8,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective price entry point or broad price range for own-stay buyers, and whether the 14 August 2026 package is still valid. Include any category, floor-band or car-park conditions that affect the quoted entry point. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context, then help narrow a suitable own-stay unit/category for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs current price context before choosing a unit and assessing whether the financing route is workable."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 9,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is still valid and any category, floor-band, or car-park conditions affecting the entry point. The buyer needs price context before choosing a unit/category for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share verified current price context, then help the buyer narrow a suitable own-stay unit/category for LPPSA planning without implying individual eligibility or approval.",
+        "unresolved_customer_need": "The buyer needs current Pearlmont price context and confirmation of what is needed on the project side to start an LPPSA case."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 10,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, whether the 14 August 2026 package is still valid, and any category, floor-band, or car-park conditions affecting that entry point. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context, then help narrow a suitable own-stay unit/category for LPPSA planning using the already-confirmed project-side process.",
+        "unresolved_customer_need": "The buyer needs current price context before choosing a unit and wants to know what Pearlmont needs to start an LPPSA case; the resolved support result confirms a selected unit/category and current price schedule are needed, while LPPSA determines applicant documents and individual eligibility."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 11,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category, floor-band, or car-park conditions affecting the quoted entry point. Do not reassess LPPSA acceptance or the buyer’s individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context, then help narrow a suitable own-stay unit/category for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs the current price range and the project-side information needed to begin an LPPSA case before choosing a unit. The existing verified LPPSA result confirms a selected unit/category and its current price schedule are needed; LPPSA determines documents and personal eligibility."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 12,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective price entry point or broad price range, including whether the 14 August 2026 package is currently valid and any applicable category or unit caveats. The buyer is considering own-stay and needs price context before choosing a unit for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer current price context alongside the confirmed LPPSA project process, then help them assess whether a suitable unit and financing route fit their plans.",
+        "unresolved_customer_need": "Buyer needs Pearlmont’s current price range and project-side LPPSA application requirements before choosing a unit."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 13,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category or unit caveats affecting the entry point. The buyer needs price context before choosing a unit for LPPSA planning. Do not reassess LPPSA acceptance or individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Provide verified current price context, then help the buyer understand the project-side steps for starting an LPPSA case without implying personal eligibility or approval.",
+        "unresolved_customer_need": "The buyer wants the current price range and Pearlmont’s requirements for starting an LPPSA application so she can assess whether the financing route is workable."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 14,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, and whether the 14 August 2026 package is still valid. Include any category or unit conditions that affect the quoted entry point. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning; do not assess individual LPPSA eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer an accurate current price range, then help them assess a suitable unit/category and the project-side LPPSA steps without implying individual approval.",
+        "unresolved_customer_need": "The buyer needs current Pearlmont price context and LPPSA application requirements to assess whether the financing route is workable before choosing a unit."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 15,
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the current package is valid, and any category or unit conditions affecting the quoted price. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning. Do not reassess individual LPPSA eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer verified current price context and explain how selecting a unit/category and obtaining its current price schedule supports starting a project-side LPPSA case.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range to assess whether the LPPSA route is workable before choosing a unit."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 16,
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, and whether the 14 August 2026 package is currently valid. Include any category or unit conditions that affect the quoted entry point. The buyer wants price context before selecting a unit for LPPSA planning. Do not reassess LPPSA acceptance or the buyer’s individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer a supportable current price range, explain how it informs selecting a unit/category and starting a project-side LPPSA case, then continue helping them assess the financing route without implying approval.",
+        "unresolved_customer_need": "The buyer needs current price context and package-validity information before choosing a unit; LPPSA acceptance and the project-side checklist have already been confirmed."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 17,
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the current package is valid, and any category or unit conditions affecting the quoted price. The buyer is purchasing for own stay and needs price context before selecting a unit for LPPSA planning. Do not reassess individual LPPSA eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer supported current price context and explain the verified project-side LPPSA starting requirement so they can assess the financing route before choosing a unit.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range and LPPSA application requirements before deciding whether to select a unit/category."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 18,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, including package validity and any category or unit caveats. Buyer is considering own-stay and needs price context before selecting a unit for LPPSA planning. Do not reassess LPPSA eligibility.",
+      "fixture_key": "lppsa_pricing",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer current price context alongside the already verified LPPSA route and project-side starting steps, then help assess whether the financing route is workable before they choose a unit.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range before selecting a unit for LPPSA planning; the project accepts LPPSA applications from eligible applicants, and starting a project-side case requires a selected unit/category and its current price schedule."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 19,
+      "request": "{'support_type': 'PACKAGE_VERIFICATION', 'requested_fact': 'Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the 14 August 2026 package remains valid, and any category or unit conditions affecting the quoted entry point. Do not recheck LPPSA acceptance or assess individual eligibility.', 'subject': 'Pearlmont Phase 1 current pricing/package'}",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the verified current price context and explain how it relates to the buyer’s LPPSA planning; the project accepts applications from eligible applicants, and a selected unit/category plus current price schedule are needed to start a project-side case.",
+        "unresolved_customer_need": "Buyer wants a current price range and the project-side LPPSA starting requirements before choosing a unit."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 20,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the package dated 14 August 2026 remains valid, and any category or unit conditions affecting the entry price. Do not recheck LPPSA acceptance or the project-side application steps; those are already confirmed.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer current price context, explain the confirmed project-side LPPSA starting steps, and help assess whether the financing route is workable for an own-stay purchase without implying personal eligibility or approval.",
+        "unresolved_customer_need": "The buyer needs a current price range before choosing a unit and planning an LPPSA application; they also want to know what Pearlmont requires to start the project-side process."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 21,
+      "request": "{'support_type': 'PACKAGE_VERIFICATION', 'requested_fact': 'Confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the package dated 14 August 2026 is currently valid, and any category or unit conditions affecting the quoted price. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed.', 'subject': 'Pearlmont Phase 1 current pricing and package'}",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer verified current price context, reiterate the confirmed project-side LPPSA starting steps, and help them assess the financing route without implying individual eligibility or approval.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range before choosing a unit and wants to know what is needed to start the project-side LPPSA case."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 22,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category or unit conditions that affect the entry price. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed. Do not assess the buyer’s individual LPPSA eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s price question alongside the already-confirmed LPPSA process steps, then help them assess whether the route is workable before choosing a unit.",
+        "unresolved_customer_need": "The buyer needs current price context before selecting a unit and planning an LPPSA application."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 23,
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the current package is valid, and any category or unit caveats that affect the quoted price. The buyer is considering an own-stay purchase within the next few months and needs price context to assess LPPSA financing before choosing a unit. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed, and do not assess individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer a supportable current price range, explain how it fits with the confirmed Pearlmont LPPSA route, and help them decide whether to narrow down a unit/category.",
+        "unresolved_customer_need": "The buyer needs current price context and the confirmed project-side LPPSA steps to judge whether the financing route is workable before selecting a unit."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    },
+    {
+      "turn": 24,
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, whether the 14 August 2026 package is currently valid, and any category or unit conditions that affect the quoted entry point. The buyer needs price context to assess LPPSA financing before selecting a unit. Do not reassess LPPSA acceptance, project-side application steps, or individual eligibility.",
+      "fixture_key": "lppsa",
+      "support_identity": [
+        [
+          "project_lppsa_route"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context and explain how it supports their LPPSA planning, without implying individual eligibility or approval.",
+        "unresolved_customer_need": "Current Pearlmont price range/package validity; buyer also wants to understand the project-side steps for an LPPSA application."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-005-SUP-001",
+      "disposition": "REUSE_RESOLVED"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_attempt_count": 22,
+  "duplicate_support_request_attempts": 21,
+  "support_resume_success_count": null,
+  "support_results_used": false,
+  "support_result_only_relayed": null,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": false,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "human_operational_task_completed": false,
+  "judge": {},
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-005:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "LPPSA may be an option for you as a government servant, but I can’t confirm approval from that alone—it depends on LPPSA’s terms and your individual assessment. The supplied reference states financing may be up to RM1 million; if your first LPPSA financing is still active, a second may be allowed, with financing of up to 90%. It also lists 4.00% up to RM750,000 and 4.50% only on the portion above that. Is your first LPPSA financing still active?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No, I haven’t used LPPSA before. I’ve been in government service about 7 years, and hoping to buy in the next few months. But need to know if Pearlmont can be financed through LPPSA first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm whether SkyWorld Pearlmont Phase 1 accepts LPPSA financing for eligible buyers, and whether any project-specific conditions or process steps apply. The buyer has not used LPPSA before, has been in government service for about 7 years, and hopes to buy within the next few months. Do not assess or guarantee the buyer’s individual eligibility.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer whether Pearlmont can be financed through LPPSA, then continue helping the buyer assess the financing route without implying approval.",
+        "unresolved_customer_need": "Buyer needs confirmation that LPPSA can be used to finance a Pearlmont purchase."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm whether SkyWorld Pearlmont Phase 1 accepts LPPSA financing for eligible buyers, and whether any project-specific conditions or process steps apply. The buyer has not used LPPSA before, has been in government service for about 7 years, and hopes to buy within the next few months. Do not assess or guarantee the buyer’s individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer whether Pearlmont can be financed through LPPSA, then continue helping the buyer assess the financing route without implying approval.",
+        "unresolved_customer_need": "Buyer needs confirmation that LPPSA can be used to finance a Pearlmont purchase."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. To start a project-side case, you’ll need a selected unit/category and its current price schedule; LPPSA determines the required documents and your individual eligibility, so approval can’t be guaranteed. Since this would be your first LPPSA financing, the note about an active first facility doesn’t apply to your situation. Are you looking at Pearlmont mainly for own stay or investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, including any relevant caveat on package validity. The buyer is considering own-stay, hopes to purchase within the next few months, and wants to assess whether the financing route is workable before choosing a unit. Do not estimate individual LPPSA eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range, including whether the package is currently valid and any category or unit caveats. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range for own-stay buyers, including current package validity and any category, floor-band, or car-park caveats. The buyer hopes to purchase within the next few months and needs price context before choosing a unit and planning an LPPSA application. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range for an own-stay buyer, including current package validity and any category, floor-band, or car-park caveats. The buyer needs price context before choosing a unit/category and planning an LPPSA application. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective price entry point or broad price range for own-stay buyers, and whether the 14 August 2026 package is still valid. Include any category, floor-band or car-park conditions that affect the quoted entry point. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is still valid and any category, floor-band, or car-park conditions affecting the entry point. The buyer needs price context before choosing a unit/category for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 10,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, whether the 14 August 2026 package is still valid, and any category, floor-band, or car-park conditions affecting that entry point. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 11,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category, floor-band, or car-park conditions affecting the quoted entry point. Do not reassess LPPSA acceptance or the buyer’s individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 12,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective price entry point or broad price range, including whether the 14 August 2026 package is currently valid and any applicable category or unit caveats. The buyer is considering own-stay and needs price context before choosing a unit for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 13,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category or unit caveats affecting the entry point. The buyer needs price context before choosing a unit for LPPSA planning. Do not reassess LPPSA acceptance or individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 14,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, and whether the 14 August 2026 package is still valid. Include any category or unit conditions that affect the quoted entry point. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning; do not assess individual LPPSA eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 15,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the current package is valid, and any category or unit conditions affecting the quoted price. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning. Do not reassess individual LPPSA eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 16,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, and whether the 14 August 2026 package is currently valid. Include any category or unit conditions that affect the quoted entry point. The buyer wants price context before selecting a unit for LPPSA planning. Do not reassess LPPSA acceptance or the buyer’s individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 17,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the current package is valid, and any category or unit conditions affecting the quoted price. The buyer is purchasing for own stay and needs price context before selecting a unit for LPPSA planning. Do not reassess individual LPPSA eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 18,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, including package validity and any category or unit caveats. Buyer is considering own-stay and needs price context before selecting a unit for LPPSA planning. Do not reassess LPPSA eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 19,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "{'support_type': 'PACKAGE_VERIFICATION', 'requested_fact': 'Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the 14 August 2026 package remains valid, and any category or unit conditions affecting the quoted entry point. Do not recheck LPPSA acceptance or assess individual eligibility.', 'subject': 'Pearlmont Phase 1 current pricing/package'}",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 20,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the package dated 14 August 2026 remains valid, and any category or unit conditions affecting the entry price. Do not recheck LPPSA acceptance or the project-side application steps; those are already confirmed.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 21,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "{'support_type': 'PACKAGE_VERIFICATION', 'requested_fact': 'Confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the package dated 14 August 2026 is currently valid, and any category or unit conditions affecting the quoted price. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed.', 'subject': 'Pearlmont Phase 1 current pricing and package'}",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 22,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category or unit conditions that affect the entry price. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed. Do not assess the buyer’s individual LPPSA eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 23,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Please confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the current package is valid, and any category or unit caveats that affect the quoted price. The buyer is considering an own-stay purchase within the next few months and needs price context to assess LPPSA financing before choosing a unit. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed, and do not assess individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    },
+    {
+      "turn": 24,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-005-SUP-001",
+      "request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, whether the 14 August 2026 package is currently valid, and any category or unit conditions that affect the quoted entry point. The buyer needs price context to assess LPPSA financing before selecting a unit. Do not reassess LPPSA acceptance, project-side application steps, or individual eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-005:AI-SESSION-1"
+    }
+  ],
+  "transcript_file": "PEA-005.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No, I haven’t used LPPSA before. I’ve been in government service about 7 years, and hoping to buy in the next few months. But need to know if Pearlmont can be financed through LPPSA first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "No, I haven’t used LPPSA before. I’ve been in government service about 7 years, and hoping to buy in the next few months. But need to know if Pearlmont can be financed through LPPSA first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 10,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 11,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 12,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 13,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 14,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 15,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 16,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 17,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 18,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 19,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 20,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 21,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 22,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 23,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 24,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 25,
+      "trigger_message": "Own stay. Before choosing a unit, can someone confirm the current price range and what Pearlmont needs for an LPPSA application? I want to check the financing route is workable first.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm whether SkyWorld Pearlmont Phase 1 accepts LPPSA financing for eligible buyers, and whether any project-specific conditions or process steps apply. The buyer has not used LPPSA before, has been in government service for about 7 years, and hopes to buy within the next few months. Do not assess or guarantee the buyer’s individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer whether Pearlmont can be financed through LPPSA, then continue helping the buyer assess the financing route without implying approval.",
+        "unresolved_customer_need": "Buyer needs confirmation that LPPSA can be used to finance a Pearlmont purchase."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, including any relevant caveat on package validity. The buyer is considering own-stay, hopes to purchase within the next few months, and wants to assess whether the financing route is workable before choosing a unit. Do not estimate individual LPPSA eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the confirmed current price context, connect it to the buyer’s own-stay and LPPSA planning, then help narrow a suitable unit/category without implying financing approval.",
+        "unresolved_customer_need": "Buyer wants Pearlmont’s current price range and the project-side requirements for an LPPSA application before choosing a unit. The project-side LPPSA starting requirements are already confirmed as a selected unit/category and its current price schedule; LPPSA determines personal eligibility and applicant documents."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range, including whether the package is currently valid and any category or unit caveats. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the confirmed current price context, then help the buyer narrow a suitable unit/category for own stay and LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs a current price range before choosing a unit; LPPSA acceptance and the project-side starting requirements have already been confirmed."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range for own-stay buyers, including current package validity and any category, floor-band, or car-park caveats. The buyer hopes to purchase within the next few months and needs price context before choosing a unit and planning an LPPSA application. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the confirmed current price context, then help the buyer narrow a suitable own-stay unit/category and understand the project-side steps for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs current price context to assess whether a Pearlmont purchase is workable through LPPSA before choosing a unit."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 7,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective package entry point or broad price range for an own-stay buyer, including current package validity and any category, floor-band, or car-park caveats. The buyer needs price context before choosing a unit/category and planning an LPPSA application. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Provide the confirmed current price context, then help the buyer narrow a suitable own-stay unit/category for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range before deciding whether the purchase and LPPSA route are workable.",
+        "appointment_readiness": "NOT_READY"
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 8,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective price entry point or broad price range for own-stay buyers, and whether the 14 August 2026 package is still valid. Include any category, floor-band or car-park conditions that affect the quoted entry point. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context, then help narrow a suitable own-stay unit/category for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs current price context before choosing a unit and assessing whether the financing route is workable."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 9,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is still valid and any category, floor-band, or car-park conditions affecting the entry point. The buyer needs price context before choosing a unit/category for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share verified current price context, then help the buyer narrow a suitable own-stay unit/category for LPPSA planning without implying individual eligibility or approval.",
+        "unresolved_customer_need": "The buyer needs current Pearlmont price context and confirmation of what is needed on the project side to start an LPPSA case."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 10,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, whether the 14 August 2026 package is still valid, and any category, floor-band, or car-park conditions affecting that entry point. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context, then help narrow a suitable own-stay unit/category for LPPSA planning using the already-confirmed project-side process.",
+        "unresolved_customer_need": "The buyer needs current price context before choosing a unit and wants to know what Pearlmont needs to start an LPPSA case; the resolved support result confirms a selected unit/category and current price schedule are needed, while LPPSA determines applicant documents and individual eligibility."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 11,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category, floor-band, or car-park conditions affecting the quoted entry point. Do not reassess LPPSA acceptance or the buyer’s individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context, then help narrow a suitable own-stay unit/category for LPPSA planning.",
+        "unresolved_customer_need": "The buyer needs the current price range and the project-side information needed to begin an LPPSA case before choosing a unit. The existing verified LPPSA result confirms a selected unit/category and its current price schedule are needed; LPPSA determines documents and personal eligibility."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 12,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective price entry point or broad price range, including whether the 14 August 2026 package is currently valid and any applicable category or unit caveats. The buyer is considering own-stay and needs price context before choosing a unit for LPPSA planning. Do not recheck LPPSA acceptance or assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer current price context alongside the confirmed LPPSA project process, then help them assess whether a suitable unit and financing route fit their plans.",
+        "unresolved_customer_need": "Buyer needs Pearlmont’s current price range and project-side LPPSA application requirements before choosing a unit."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 13,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category or unit caveats affecting the entry point. The buyer needs price context before choosing a unit for LPPSA planning. Do not reassess LPPSA acceptance or individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Provide verified current price context, then help the buyer understand the project-side steps for starting an LPPSA case without implying personal eligibility or approval.",
+        "unresolved_customer_need": "The buyer wants the current price range and Pearlmont’s requirements for starting an LPPSA application so she can assess whether the financing route is workable."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 14,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, and whether the 14 August 2026 package is still valid. Include any category or unit conditions that affect the quoted entry point. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning; do not assess individual LPPSA eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer an accurate current price range, then help them assess a suitable unit/category and the project-side LPPSA steps without implying individual approval.",
+        "unresolved_customer_need": "The buyer needs current Pearlmont price context and LPPSA application requirements to assess whether the financing route is workable before choosing a unit."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 15,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the current package is valid, and any category or unit conditions affecting the quoted price. The buyer is purchasing for own stay and needs price context before choosing a unit for LPPSA planning. Do not reassess individual LPPSA eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer verified current price context and explain how selecting a unit/category and obtaining its current price schedule supports starting a project-side LPPSA case.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range to assess whether the LPPSA route is workable before choosing a unit."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 16,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, and whether the 14 August 2026 package is currently valid. Include any category or unit conditions that affect the quoted entry point. The buyer wants price context before selecting a unit for LPPSA planning. Do not reassess LPPSA acceptance or the buyer’s individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer a supportable current price range, explain how it informs selecting a unit/category and starting a project-side LPPSA case, then continue helping them assess the financing route without implying approval.",
+        "unresolved_customer_need": "The buyer needs current price context and package-validity information before choosing a unit; LPPSA acceptance and the project-side checklist have already been confirmed."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 17,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the current package is valid, and any category or unit conditions affecting the quoted price. The buyer is purchasing for own stay and needs price context before selecting a unit for LPPSA planning. Do not reassess individual LPPSA eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer supported current price context and explain the verified project-side LPPSA starting requirement so they can assess the financing route before choosing a unit.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range and LPPSA application requirements before deciding whether to select a unit/category."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 18,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, including package validity and any category or unit caveats. Buyer is considering own-stay and needs price context before selecting a unit for LPPSA planning. Do not reassess LPPSA eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer current price context alongside the already verified LPPSA route and project-side starting steps, then help assess whether the financing route is workable before they choose a unit.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range before selecting a unit for LPPSA planning; the project accepts LPPSA applications from eligible applicants, and starting a project-side case requires a selected unit/category and its current price schedule."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 19,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "{'support_type': 'PACKAGE_VERIFICATION', 'requested_fact': 'Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the 14 August 2026 package remains valid, and any category or unit conditions affecting the quoted entry point. Do not recheck LPPSA acceptance or assess individual eligibility.', 'subject': 'Pearlmont Phase 1 current pricing/package'}",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Share the verified current price context and explain how it relates to the buyer’s LPPSA planning; the project accepts applications from eligible applicants, and a selected unit/category plus current price schedule are needed to start a project-side case.",
+        "unresolved_customer_need": "Buyer wants a current price range and the project-side LPPSA starting requirements before choosing a unit."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 20,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the package dated 14 August 2026 remains valid, and any category or unit conditions affecting the entry price. Do not recheck LPPSA acceptance or the project-side application steps; those are already confirmed.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer current price context, explain the confirmed project-side LPPSA starting steps, and help assess whether the financing route is workable for an own-stay purchase without implying personal eligibility or approval.",
+        "unresolved_customer_need": "The buyer needs a current price range before choosing a unit and planning an LPPSA application; they also want to know what Pearlmont requires to start the project-side process."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 21,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "{'support_type': 'PACKAGE_VERIFICATION', 'requested_fact': 'Confirm Pearlmont Phase 1’s current customer-facing price range or effective package entry point, whether the package dated 14 August 2026 is currently valid, and any category or unit conditions affecting the quoted price. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed.', 'subject': 'Pearlmont Phase 1 current pricing and package'}",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer verified current price context, reiterate the confirmed project-side LPPSA starting steps, and help them assess the financing route without implying individual eligibility or approval.",
+        "unresolved_customer_need": "The buyer needs Pearlmont’s current price range before choosing a unit and wants to know what is needed to start the project-side LPPSA case."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 22,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, including whether the 14 August 2026 package is currently valid and any category or unit conditions that affect the entry price. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed. Do not assess the buyer’s individual LPPSA eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s price question alongside the already-confirmed LPPSA process steps, then help them assess whether the route is workable before choosing a unit.",
+        "unresolved_customer_need": "The buyer needs current price context before selecting a unit and planning an LPPSA application."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 23,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range, whether the current package is valid, and any category or unit caveats that affect the quoted price. The buyer is considering an own-stay purchase within the next few months and needs price context to assess LPPSA financing before choosing a unit. Do not recheck LPPSA acceptance or project-side application steps; those are already confirmed, and do not assess individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer a supportable current price range, explain how it fits with the confirmed Pearlmont LPPSA route, and help them decide whether to narrow down a unit/category.",
+        "unresolved_customer_need": "The buyer needs current price context and the confirmed project-side LPPSA steps to judge whether the financing route is workable before selecting a unit."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 24,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Confirm Pearlmont Phase 1’s current customer-facing effective entry price or broad price range for an own-stay buyer, whether the 14 August 2026 package is currently valid, and any category or unit conditions that affect the quoted entry point. The buyer needs price context to assess LPPSA financing before selecting a unit. Do not reassess LPPSA acceptance, project-side application steps, or individual eligibility.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Give the buyer reliable current price context and explain how it supports their LPPSA planning, without implying individual eligibility or approval.",
+        "unresolved_customer_need": "Current Pearlmont price range/package validity; buyer also wants to understand the project-side steps for an LPPSA application."
+      },
+      "support_request_attempt": true
+    }
+  ],
+  "version": "1.6"
+}

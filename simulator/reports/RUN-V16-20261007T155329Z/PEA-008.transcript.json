@@ -1,0 +1,159 @@
+{
+  "scenario_id": "PEA-008",
+  "version": "1.6",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T16:07:48.125077+00:00",
+  "status": "RUN_FAILED",
+  "turns": {
+    "customer": 1,
+    "ai": 0,
+    "human_handoff_executor": 0,
+    "human_support": 0
+  },
+  "owner_final": "AI",
+  "ai_session_status_final": "ACTIVE",
+  "ai_session_id": "PEA-008:AI-SESSION-1",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [],
+  "agent_actions": [],
+  "human_handoff_executor_trace": [],
+  "support_trace": [],
+  "support_attempt_trace": [],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-008:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    }
+  ],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": false,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-008:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    }
+  ],
+  "provider_calls": 1,
+  "retries": [
+    {
+      "role": "sales_agent",
+      "attempt": 1,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 2,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 3,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 1,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 2,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 3,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 1,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 2,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 3,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 1,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 2,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "role": "sales_agent",
+      "attempt": 3,
+      "error": "HTTP Error 429: Too Many Requests"
+    }
+  ],
+  "error": "HTTPError: HTTP Error 429: Too Many Requests",
+  "provider_calls_total": 91
+}

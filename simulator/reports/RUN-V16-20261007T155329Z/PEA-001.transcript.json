@@ -1,0 +1,804 @@
+{
+  "scenario_id": "PEA-001",
+  "version": "1.6",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T15:53:29.730187+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 8,
+    "ai": 8,
+    "human_handoff_executor": 1,
+    "human_support": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_session_status_final": "ENDED",
+  "ai_session_id": "PEA-001:AI-SESSION-1",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 8,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "HUMAN",
+      "ai_session_status_after_action": "ENDED"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "support_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 7,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_session_status_after_turn": "ENDED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 9,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "ai_session_id": "PEA-001:AI-SESSION-1",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "support_request_id": "PEA-001-SUP-001",
+      "lead_id": "PEA-001",
+      "turn": 2,
+      "request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "upfront_costs"
+        ],
+        [
+          "rm:328000"
+        ]
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 2
+    },
+    {
+      "support_request_id": "PEA-001-SUP-002",
+      "lead_id": "PEA-001",
+      "turn": 6,
+      "request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "fixture_key": "payment_example",
+      "support_identity": [
+        [
+          "monthly_payment_illustration",
+          "upfront_costs"
+        ],
+        [
+          "rm:302000",
+          "type:a"
+        ]
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 6
+    }
+  ],
+  "support_attempt_trace": [
+    {
+      "turn": 2,
+      "request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "upfront_costs"
+        ],
+        [
+          "rm:328000"
+        ]
+      ],
+      "resume_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-001-SUP-001"
+    },
+    {
+      "turn": 6,
+      "request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "fixture_key": "payment_example",
+      "support_identity": [
+        [
+          "monthly_payment_illustration",
+          "upfront_costs"
+        ],
+        [
+          "rm:302000",
+          "type:a"
+        ]
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-001-SUP-002"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Own stay, for me, my spouse and our little one. We’re hoping to stay around RM3xxk if possible—does the 328k starting price include everything, or does it depend on the unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Own stay, for me, my spouse and our little one. We’re hoping to stay around RM3xxk if possible—does the 328k starting price include everything, or does it depend on the unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "One carpark should be okay for us for now. The 3 bedrooms sound useful, but I’m still a bit worried 900 sqft might feel small with our little one—how’s the layout in practice?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "More the living area lah—once got sofa, dining table and the little one’s things, takut it feels cramped. Also not sure about the monthly instalment and upfront costs yet. Can you give a rough idea based on the RM302k one-carpark option, with the usual caveat that it depends on bank approval?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "More the living area lah—once got sofa, dining table and the little one’s things, takut it feels cramped. Also not sure about the monthly instalment and upfront costs yet. Can you give a rough idea based on the RM302k one-carpark option, with the usual caveat that it depends on bank approval?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Probably a normal 3-seater sofa and a 4-person dining table, but hard to tell without seeing the layout. Maybe better to view the Type A in person and check the space—could you also get the upfront-cost breakdown for that RM302k option?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-001:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-001-SUP-001",
+      "request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-001-SUP-001",
+      "request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package fixture to support early affordability discussion.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-001-SUP-002",
+      "request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-001-SUP-002",
+      "request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "result": {
+        "fixture_key": "payment_example",
+        "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic mortgage illustration with assumptions stated; not financial advice or a real lender quote.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    }
+  ],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": true,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-001:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont Phase 1 base prices start from RM328,000. The package information lists 5%–8% rebates for eligible unit categories, so the effective price depends on the unit, floor and car parks; I’d need to confirm the latest package for an exact figure. Are you looking for your own stay or as an investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Own stay, for me, my spouse and our little one. We’re hoping to stay around RM3xxk if possible—does the 328k starting price include everything, or does it depend on the unit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-001-SUP-001",
+      "request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-001-SUP-001",
+      "request": "For the RM328,000 starting-price category, confirm what the base price includes and what mandatory purchase costs or unit components may be additional (including car-park configuration and upgrading package, if applicable). Also confirm whether any current package applies to an eligible entry-level unit and its indicative effective price. Do not estimate unverified fees or unit pricing.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package fixture to support early affordability discussion.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "QUALIFY",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Clarify the price inclusions and whether a suitable entry-level option could fit the buyer’s RM3xxk budget for family own-stay.",
+        "unresolved_customer_need": "Buyer wants to know whether the RM328,000 starting price is all-in or varies by unit and additional costs."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "RM328,000 is a base-price reference, not necessarily an all-in final amount; pricing varies by floor, facing and car-park configuration. The package reference for the Type A 900 sq.ft. layout (3 bedrooms, 2 bathrooms) starts from RM302,000 for the one-carpark category, subject to floor, facing and final unit-level confirmation. I can’t confirm that this includes every purchase cost, so an exact all-in figure would need a unit-specific breakdown. For your family, would one carpark be workable, or do you need two?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No rush. The RM302,000 package reference is for the one-carpark category, so we can narrow down what may suit your family once you know whether one car park would work.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "One carpark should be okay for us for now. The 3 bedrooms sound useful, but I’m still a bit worried 900 sqft might feel small with our little one—how’s the layout in practice?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "It’s fair to check—900 sq.ft. is still a compact home, but the layout is designed to use the space efficiently, without a long internal corridor. The living, dining and kitchen area is about 405 sq.ft.; the three bedrooms are about 143, 117 and 103 sq.ft. Project materials describe all three as able to fit a queen-sized bed. For your family, that gives you flexibility, though furniture and storage choices will affect how spacious it feels. Are you more concerned about the living area or the bedrooms?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "More the living area lah—once got sofa, dining table and the little one’s things, takut it feels cramped. Also not sure about the monthly instalment and upfront costs yet. Can you give a rough idea based on the RM302k one-carpark option, with the usual caveat that it depends on bank approval?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-001-SUP-002",
+      "request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-001-SUP-002",
+      "request": "Please provide an approved illustrative monthly instalment and upfront-cash/cost breakdown for the RM302,000 Type A 900 sq.ft. one-carpark package reference. State the assumptions used (loan amount or margin, rate and tenure), what upfront costs are included or excluded, and any caveats. Do not infer bank approval or invent fees; the price remains subject to floor, facing and final unit-level confirmation.",
+      "result": {
+        "fixture_key": "payment_example",
+        "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic mortgage illustration with assumptions stated; not financial advice or a real lender quote.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s affordability question accurately, then address their concern about fitting family furniture and belongings in the living area using the verified layout details.",
+        "unresolved_customer_need": "Buyer wants a rough monthly instalment and upfront-cost picture based on the RM302,000 one-carpark option, and is concerned the living area may feel cramped."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "For the RM302,000 one-carpark reference, the illustration is about RM1,245/month for principal and interest, assuming 90% financing, 35 years and 4.2% annual interest. It’s not a bank quote or eligibility assessment. I don’t have a verified upfront-cost total yet, so I don’t want to guess—this monthly figure doesn’t tell us exactly how much cash you’d need upfront.\n\nOn space, the living, dining and kitchen share about 405 sq.ft. in an open-plan area. It’s a compact layout, so the sofa and dining-table sizes will make a difference; the figure isn’t living-room space alone. If you have a rough sofa and table setup in mind, I can help think through whether it may fit.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Probably a normal 3-seater sofa and a 4-person dining table, but hard to tell without seeing the layout. Maybe better to view the Type A in person and check the space—could you also get the upfront-cost breakdown for that RM302k option?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That makes sense—seeing the Type A layout should help you judge the space for your sofa and dining table. I’ll arrange the viewing coordination and ask for an itemised upfront-cost breakdown for the RM302k reference as well. The RM1,245 figure we discussed is only an illustrative principal-and-interest estimate; it doesn’t confirm upfront costs.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "ai_session_id": "PEA-001:AI-SESSION-1"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Okay thanks—please send me some available viewing slots and the upfront-cost breakdown once you’ve confirmed them. I’ll check the timing with my spouse too.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "human",
+      "message": "I can’t verify actual viewing availability or confirm a booking: no live calendar is connected. The simulator fixture says the Type A show unit may be viewed by appointment Saturday or Sunday, 10:00 am–5:00 pm, subject to gallery confirmation; no specific slot is held. The itemised upfront-cost breakdown for the RM302,000 option is also unverified in the available fixture.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Weekend daytime might work, but I need to check with my spouse first, so please don’t book anything yet. Could you share a confirmed slot and the upfront-cost breakdown once they’re available?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 16,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 17
+}

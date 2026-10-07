@@ -1,0 +1,922 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "buyer_primary_need": "A credible investment assessment: dated, sourced nearby rental comparables and vacancy evidence, plus current package and Phase 1 unit-count information, to assess net yield after maintenance.",
+  "key_information_learned": [
+    "The buyer is an experienced small investor comparing net holding costs and realistic demand, and is wary of hype.",
+    "The buyer considers 1,846 Phase 1 units a significant supply concern.",
+    "The buyer will not arrange a viewing without rental and vacancy evidence sufficient to assess the investment case."
+  ],
+  "important_information_missed": [
+    "The AI did not explore the buyer's holding horizon or target return, though the buyer's immediate evidence request remained the main blocker."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-004:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I wouldn’t want to give you a made-up yield or appreciation figure—those depend on the actual purchase price, achievable rent, vacancy and costs, and future price growth can’t be guaranteed. What I can confirm is Pearlmont’s 900 sq ft, 3-bedroom layout, freehold tenure and maintenance fee of RM0.18 per sq ft, inclusive of sinking fund. Would you like me to check current rental comparables and the latest package so we can build an indicative yield estimate?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Yes, please check actual rental comparables and the latest price/package, with the source and date if possible. Also how many units are in this phase? I’m comparing net yield after vacancy and the RM0.18 psf maintenance fee, not just headline rent.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-001",
+      "request": "For the buyer’s investment assessment, provide current rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq ft units, with source and date, clearly distinguishing achieved rents from asking rents and noting any vacancy evidence or limitations. Also verify the latest valid Pearlmont Phase 1 price/package and effective entry-price context for relevant unit categories, including the package source date and any applicability caveats. Do not estimate net yield unless the rent, price and vacancy assumptions are supported; the buyer will account for RM0.18 psf monthly maintenance (RM162/month for 900 sq ft).",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment questions using sourced rental comparables and current package information, explain the net-yield inputs and limitations, and continue assessing fit without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer wants sourced, dated rental comparables and the latest price/package to assess net yield after vacancy and RM0.18 psf maintenance; also asked how many units are in this phase."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-001",
+      "request": "For the buyer’s investment assessment, provide current rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq ft units, with source and date, clearly distinguishing achieved rents from asking rents and noting any vacancy evidence or limitations. Also verify the latest valid Pearlmont Phase 1 price/package and effective entry-price context for relevant unit categories, including the package source date and any applicability caveats. Do not estimate net yield unless the rent, price and vacancy assumptions are supported; the buyer will account for RM0.18 psf monthly maintenance (RM162/month for 900 sq ft).",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment questions using sourced rental comparables and current package information, explain the net-yield inputs and limitations, and continue assessing fit without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer wants sourced, dated rental comparables and the latest price/package to assess net yield after vacancy and RM0.18 psf maintenance; also asked how many units are in this phase."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Any update on the rental comps, current price/package and phase unit count? Need the sources and dates to compare net yield properly—otherwise I can’t assess it yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Provide dated rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq.ft. units. Include source and capture date, distinguish achieved rents from asking rents, and state whether vacancy evidence is available and any limitations. The prior resolved result supplied package pricing only; do not re-check pricing or estimate net yield without supported rent and vacancy assumptions.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment comparison using sourced rental evidence, the already verified package price, and trusted Phase 1 unit count; explain any limits on estimating net yield and continue assessing fit without pushing for a viewing.",
+        "unresolved_customer_need": "Buyer still needs dated, sourced rental comparables and vacancy evidence to assess net yield after maintenance; the package price is already verified and Phase 1 unit count is available in trusted project knowledge."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Provide dated rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq.ft. units. Include source and capture date, distinguish achieved rents from asking rents, and state whether vacancy evidence is available and any limitations. The prior resolved result supplied package pricing only; do not re-check pricing or estimate net yield without supported rent and vacancy assumptions.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment comparison using sourced rental evidence, the already verified package price, and trusted Phase 1 unit count; explain any limits on estimating net yield and continue assessing fit without pushing for a viewing.",
+        "unresolved_customer_need": "Buyer still needs dated, sourced rental comparables and vacancy evidence to assess net yield after maintenance; the package price is already verified and Phase 1 unit count is available in trusted project knowledge."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The checked package starts from RM302,000 for a Type A 900 sq.ft. unit with one car park; the exact price depends on floor, facing, car-park allocation and package applicability. The package reference is dated 14 Aug 2026. Phase 1 has 1,846 units, according to the project FAQ updated 17 Sep 2026.\n\nI still don’t have dated, sourced rental comparables or vacancy evidence to support a net-yield estimate, so I can’t give you a defensible figure yet. The RM0.18 psf maintenance is RM162/month (RM1,944/year) for 900 sq.ft.; vacancy and other costs would also need to be included.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, that maintenance calculation is useful. 1,846 units in the phase is quite a lot of supply, so I’d want to see actual nearby rental comps and vacancy evidence before treating the rent as achievable. Could you share the dated source documents or links for the package and unit count too? Without rental evidence I still can’t compare the net yield properly.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-003",
+      "request": "Please obtain dated, source-backed rental comparables for nearby 3-bedroom units around 900 sq.ft., distinguishing achieved from asking rents and stating whether vacancy evidence is available and its limitations. Provide source documents or shareable links and capture dates. Also provide shareable links or copies, if available, for the package document dated 14 Aug 2026 and the Phase 1 FAQ updated 17 Sep 2026. The prior results confirmed package pricing but provided no rental evidence or document links; do not re-check the price or unit count, and do not estimate net yield without supported rent and vacancy assumptions.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Respond with dated, source-backed rental and vacancy evidence and available document links; explain any evidence limitations and continue assessing the buyer’s investment case without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer needs actual nearby rental comparables and vacancy evidence to assess net yield, plus dated source documents or links for the package and Phase 1 unit count."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-003",
+      "request": "Please obtain dated, source-backed rental comparables for nearby 3-bedroom units around 900 sq.ft., distinguishing achieved from asking rents and stating whether vacancy evidence is available and its limitations. Provide source documents or shareable links and capture dates. Also provide shareable links or copies, if available, for the package document dated 14 Aug 2026 and the Phase 1 FAQ updated 17 Sep 2026. The prior results confirmed package pricing but provided no rental evidence or document links; do not re-check the price or unit count, and do not estimate net yield without supported rent and vacancy assumptions.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Respond with dated, source-backed rental and vacancy evidence and available document links; explain any evidence limitations and continue assessing the buyer’s investment case without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer needs actual nearby rental comparables and vacancy evidence to assess net yield, plus dated source documents or links for the package and Phase 1 unit count."
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "For reference, the checked Type A 900 sq ft package starts from RM302,000 for the one-carpark category; the exact price depends on floor, facing, car-park allocation and package applicability. The source reference is the Phase 1 Sales Packages document dated 14 Aug 2026. The 1,846-unit Phase 1 count is from the project FAQ updated 17 Sep 2026. I don’t have shareable links or copies of those documents to send here.\n\nI still don’t have dated, source-backed nearby rental comparables or vacancy evidence, so I can’t give you a defensible net-yield estimate. The package and unit-count references don’t establish achievable rent or vacancy.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Fair enough—without the source docs or rental evidence, I can’t underwrite it properly yet. If you’re able to get dated nearby rental comps and vacancy data, send them over and I’ll compare against the net holding costs; I’m not ready to arrange a viewing just on the current info.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood. I don’t have dated nearby rental comparables or vacancy evidence to share, so I can’t substantiate achievable rent or net yield; I also don’t have shareable copies or links for those references. I won’t suggest a viewing based on the information available so far. If you find a dated comparable, feel free to send it over and I can help assess it against the known holding costs.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Thanks, that’s fair. I’ll hold off for now until there’s dated rental and vacancy evidence to assess.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood. I won’t push for a viewing. If dated rental and vacancy evidence becomes available, I’ll share it so you can assess the net yield properly.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-004.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Yes, please check actual rental comparables and the latest price/package, with the source and date if possible. Also how many units are in this phase? I’m comparing net yield after vacancy and the RM0.18 psf maintenance fee, not just headline rent.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, please check actual rental comparables and the latest price/package, with the source and date if possible. Also how many units are in this phase? I’m comparing net yield after vacancy and the RM0.18 psf maintenance fee, not just headline rent.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Any update on the rental comps, current price/package and phase unit count? Need the sources and dates to compare net yield properly—otherwise I can’t assess it yet.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Any update on the rental comps, current price/package and phase unit count? Need the sources and dates to compare net yield properly—otherwise I can’t assess it yet.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, that maintenance calculation is useful. 1,846 units in the phase is quite a lot of supply, so I’d want to see actual nearby rental comps and vacancy evidence before treating the rent as achievable. Could you share the dated source documents or links for the package and unit count too? Without rental evidence I still can’t compare the net yield properly.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks, that maintenance calculation is useful. 1,846 units in the phase is quite a lot of supply, so I’d want to see actual nearby rental comps and vacancy evidence before treating the rent as achievable. Could you share the dated source documents or links for the package and unit count too? Without rental evidence I still can’t compare the net yield properly.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Fair enough—without the source docs or rental evidence, I can’t underwrite it properly yet. If you’re able to get dated nearby rental comps and vacancy data, send them over and I’ll compare against the net holding costs; I’m not ready to arrange a viewing just on the current info.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Thanks, that’s fair. I’ll hold off for now until there’s dated rental and vacancy evidence to assess.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "For the buyer’s investment assessment, provide current rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq ft units, with source and date, clearly distinguishing achieved rents from asking rents and noting any vacancy evidence or limitations. Also verify the latest valid Pearlmont Phase 1 price/package and effective entry-price context for relevant unit categories, including the package source date and any applicability caveats. Do not estimate net yield unless the rent, price and vacancy assumptions are supported; the buyer will account for RM0.18 psf monthly maintenance (RM162/month for 900 sq ft).",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment questions using sourced rental comparables and current package information, explain the net-yield inputs and limitations, and continue assessing fit without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer wants sourced, dated rental comparables and the latest price/package to assess net yield after vacancy and RM0.18 psf maintenance; also asked how many units are in this phase."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 3,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Provide dated rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq.ft. units. Include source and capture date, distinguish achieved rents from asking rents, and state whether vacancy evidence is available and any limitations. The prior resolved result supplied package pricing only; do not re-check pricing or estimate net yield without supported rent and vacancy assumptions.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment comparison using sourced rental evidence, the already verified package price, and trusted Phase 1 unit count; explain any limits on estimating net yield and continue assessing fit without pushing for a viewing.",
+        "unresolved_customer_need": "Buyer still needs dated, sourced rental comparables and vacancy evidence to assess net yield after maintenance; the package price is already verified and Phase 1 unit count is available in trusted project knowledge."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 5,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please obtain dated, source-backed rental comparables for nearby 3-bedroom units around 900 sq.ft., distinguishing achieved from asking rents and stating whether vacancy evidence is available and its limitations. Provide source documents or shareable links and capture dates. Also provide shareable links or copies, if available, for the package document dated 14 Aug 2026 and the Phase 1 FAQ updated 17 Sep 2026. The prior results confirmed package pricing but provided no rental evidence or document links; do not re-check the price or unit count, and do not estimate net yield without supported rent and vacancy assumptions.",
+      "support_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Respond with dated, source-backed rental and vacancy evidence and available document links; explain any evidence limitations and continue assessing the buyer’s investment case without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer needs actual nearby rental comparables and vacancy evidence to assess net yield, plus dated source documents or links for the package and Phase 1 unit count."
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 7,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": "NONE",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "A credible investment assessment: dated, sourced nearby rental comparables and vacancy evidence, plus current package and Phase 1 unit-count information, to assess net yield after maintenance.",
+    "key_information_learned": [
+      "The buyer is an experienced small investor comparing net holding costs and realistic demand, and is wary of hype.",
+      "The buyer considers 1,846 Phase 1 units a significant supply concern.",
+      "The buyer will not arrange a viewing without rental and vacancy evidence sufficient to assess the investment case."
+    ],
+    "important_information_missed": [
+      "The AI did not explore the buyer's holding horizon or target return, though the buyer's immediate evidence request remained the main blocker."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_type": "NO_FORMAL_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": "NONE",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 3,
+    "support_requests_resolved": 3,
+    "support_resume_success_count": 0,
+    "support_results_used": true,
+    "support_result_only_relayed": true,
+    "failed_to_resume_selling": true,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [
+      "SUPPORT_RESULT_ONLY_RELAYED",
+      "FAILED_TO_RESUME_SELLING"
+    ],
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 5,
+      "commercial_progression": 2,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 4,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 2,
+      "retrieved_knowledge_utilization": 4,
+      "support_request_judgment": 3,
+      "support_result_utilization": 2,
+      "support_resume_quality": 1
+    },
+    "strongest_ai_move": "At turn 1, declined to invent yield or appreciation figures, explained relevant uncertainties, and cited the RM0.18 psf maintenance fee inclusive of sinking fund.",
+    "weakest_ai_move": "After the first support result, turn 3 produced an empty AI message rather than a customer-facing response. Later replies repeated the package figure but did not resolve the rental-evidence blocker or progress the investment discussion.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "The AI could have acknowledged the buyer's supply concern directly and explored holding horizon or target return while clearly explaining that sourced rent and vacancy evidence was unavailable. It was correct not to push a viewing after the buyer explicitly said they were not ready."
+    ],
+    "commercial_progression_evidence": "The AI gave a useful RM162/month maintenance calculation for 900 sq.ft. and the Phase 1 count, but made no meaningful progress toward viewing readiness. The buyer repeatedly stated that dated rental and vacancy evidence was needed first and explicitly declined a viewing.",
+    "retrieval_misses": [
+      "No retrieved source supplied dated rental comparables, achieved-versus-asking rent distinctions, or vacancy evidence.",
+      "No shareable links or copies for the cited package and FAQ documents were available in the supplied material."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Dated, sourced nearby rental comparables and vacancy evidence: MISSING_SOURCE.",
+      "Shareable source documents or links for the package and Phase 1 unit count: MISSING_SOURCE."
+    ],
+    "critical_flags": [
+      {
+        "flag": "FAILED_TO_RESUME_SELLING",
+        "evidence": "After support request PEA-004-SUP-001 resolved at turn 2, the turn 3 Agent action was ACKNOWLEDGE / MAINTAIN with an empty message. No customer-facing response resumed the saved investment-assessment objective at that point.",
+        "turn": 3
+      }
+    ],
+    "summary": "The AI handled the return-risk question candidly, used sourced maintenance and Phase 1 facts, and correctly recognized that this buyer was not appointment ready. It did not make a premature handoff or pressure a viewing. However, this run does not show reliable support-enabled selling: three requests resolved, but the fixtures supplied only a simulator-only package-price answer, not rental or vacancy evidence. The AI initially failed to resume after support and later mainly relayed/repeated the package information without advancing the buyer's assessment. Direct answer to the primary question: not reliably in this run. The RM302,000 package figure is simulator-only verified fixture evidence, not Pearlmont Knowledge or evidence of a real live pricing system; the 1,846-unit count and maintenance facts came from retrieved Knowledge.",
+    "improvement_recommendation": "After each resolved support request, send a clear customer-facing response that distinguishes what was verified from what remains unavailable, applies the information to the buyer's net-yield question, acknowledges the supply concern, and offers a relevant next step without implying unsupported rental evidence. Avoid requesting the already confirmed package price again. Rental comparables, vacancy evidence, and shareable source documents were not present in the supplied sources; target MISSING_SOURCE rather than recommending a Brain or Knowledge change.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 3,
+    "support_resolved_count": 3,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "one_way_handoff_checks": {
+    "formal_handoff_present": false,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "error": null,
+  "version": "1.6",
+  "support_trace": [
+    {
+      "support_request_id": "PEA-004-SUP-001",
+      "lead_id": "PEA-004",
+      "turn": 2,
+      "request": "For the buyer’s investment assessment, provide current rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq ft units, with source and date, clearly distinguishing achieved rents from asking rents and noting any vacancy evidence or limitations. Also verify the latest valid Pearlmont Phase 1 price/package and effective entry-price context for relevant unit categories, including the package source date and any applicability caveats. Do not estimate net yield unless the rent, price and vacancy assumptions are supported; the buyer will account for RM0.18 psf monthly maintenance (RM162/month for 900 sq ft).",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing"
+        ],
+        [
+          "rm:0",
+          "rm:162"
+        ]
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment questions using sourced rental comparables and current package information, explain the net-yield inputs and limitations, and continue assessing fit without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer wants sourced, dated rental comparables and the latest price/package to assess net yield after vacancy and RM0.18 psf maintenance; also asked how many units are in this phase."
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 2
+    },
+    {
+      "support_request_id": "PEA-004-SUP-002",
+      "lead_id": "PEA-004",
+      "turn": 4,
+      "request": "Provide dated rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq.ft. units. Include source and capture date, distinguish achieved rents from asking rents, and state whether vacancy evidence is available and any limitations. The prior resolved result supplied package pricing only; do not re-check pricing or estimate net yield without supported rent and vacancy assumptions.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing"
+        ],
+        []
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment comparison using sourced rental evidence, the already verified package price, and trusted Phase 1 unit count; explain any limits on estimating net yield and continue assessing fit without pushing for a viewing.",
+        "unresolved_customer_need": "Buyer still needs dated, sourced rental comparables and vacancy evidence to assess net yield after maintenance; the package price is already verified and Phase 1 unit count is available in trusted project knowledge."
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 4
+    },
+    {
+      "support_request_id": "PEA-004-SUP-003",
+      "lead_id": "PEA-004",
+      "turn": 6,
+      "request": "Please obtain dated, source-backed rental comparables for nearby 3-bedroom units around 900 sq.ft., distinguishing achieved from asking rents and stating whether vacancy evidence is available and its limitations. Provide source documents or shareable links and capture dates. Also provide shareable links or copies, if available, for the package document dated 14 Aug 2026 and the Phase 1 FAQ updated 17 Sep 2026. The prior results confirmed package pricing but provided no rental evidence or document links; do not re-check the price or unit count, and do not estimate net yield without supported rent and vacancy assumptions.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing",
+          "shareable_document"
+        ],
+        []
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Respond with dated, source-backed rental and vacancy evidence and available document links; explain any evidence limitations and continue assessing the buyer’s investment case without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer needs actual nearby rental comparables and vacancy evidence to assess net yield, plus dated source documents or links for the package and Phase 1 unit count."
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 6
+    }
+  ],
+  "support_attempt_trace": [
+    {
+      "turn": 2,
+      "request": "For the buyer’s investment assessment, provide current rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq ft units, with source and date, clearly distinguishing achieved rents from asking rents and noting any vacancy evidence or limitations. Also verify the latest valid Pearlmont Phase 1 price/package and effective entry-price context for relevant unit categories, including the package source date and any applicability caveats. Do not estimate net yield unless the rent, price and vacancy assumptions are supported; the buyer will account for RM0.18 psf monthly maintenance (RM162/month for 900 sq ft).",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing"
+        ],
+        [
+          "rm:0",
+          "rm:162"
+        ]
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment questions using sourced rental comparables and current package information, explain the net-yield inputs and limitations, and continue assessing fit without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer wants sourced, dated rental comparables and the latest price/package to assess net yield after vacancy and RM0.18 psf maintenance; also asked how many units are in this phase."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-004-SUP-001"
+    },
+    {
+      "turn": 4,
+      "request": "Provide dated rental comparables for Pearlmont or the closest relevant 3-bedroom, approximately 900 sq.ft. units. Include source and capture date, distinguish achieved rents from asking rents, and state whether vacancy evidence is available and any limitations. The prior resolved result supplied package pricing only; do not re-check pricing or estimate net yield without supported rent and vacancy assumptions.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer’s investment comparison using sourced rental evidence, the already verified package price, and trusted Phase 1 unit count; explain any limits on estimating net yield and continue assessing fit without pushing for a viewing.",
+        "unresolved_customer_need": "Buyer still needs dated, sourced rental comparables and vacancy evidence to assess net yield after maintenance; the package price is already verified and Phase 1 unit count is available in trusted project knowledge."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-004-SUP-002"
+    },
+    {
+      "turn": 6,
+      "request": "Please obtain dated, source-backed rental comparables for nearby 3-bedroom units around 900 sq.ft., distinguishing achieved from asking rents and stating whether vacancy evidence is available and its limitations. Provide source documents or shareable links and capture dates. Also provide shareable links or copies, if available, for the package document dated 14 Aug 2026 and the Phase 1 FAQ updated 17 Sep 2026. The prior results confirmed package pricing but provided no rental evidence or document links; do not re-check the price or unit count, and do not estimate net yield without supported rent and vacancy assumptions.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing",
+          "shareable_document"
+        ],
+        []
+      ],
+      "resume_context": {
+        "sales_stage": "HANDLE",
+        "resume_stage": "HANDLE",
+        "resume_objective": "Respond with dated, source-backed rental and vacancy evidence and available document links; explain any evidence limitations and continue assessing the buyer’s investment case without pushing for a viewing prematurely.",
+        "unresolved_customer_need": "Buyer needs actual nearby rental comparables and vacancy evidence to assess net yield, plus dated source documents or links for the package and Phase 1 unit count."
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-004-SUP-003"
+    }
+  ],
+  "support_attempt_count": 3,
+  "duplicate_support_request_attempts": 0,
+  "support_request_count": 3,
+  "support_resolved_count": 3,
+  "support_resume_success_count": 0,
+  "support_results_used": true,
+  "support_result_only_relayed": true,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [
+    "SUPPORT_RESULT_ONLY_RELAYED",
+    "FAILED_TO_RESUME_SELLING"
+  ],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No rental comparables, yield, or appreciation fixture is supplied.",
+      "Synthetic support fixture 'investment' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "investment_data": "NOT_CONNECTED",
+    "support_fixtures": {
+      "investment": {
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable."
+      },
+      "pricing": {
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "At turn 1, declined to invent yield or appreciation figures, explained relevant uncertainties, and cited the RM0.18 psf maintenance fee inclusive of sinking fund.",
+  "weakest_ai_move": "After the first support result, turn 3 produced an empty AI message rather than a customer-facing response. Later replies repeated the package figure but did not resolve the rental-evidence blocker or progress the investment discussion.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "The AI could have acknowledged the buyer's supply concern directly and explored holding horizon or target return while clearly explaining that sourced rent and vacancy evidence was unavailable. It was correct not to push a viewing after the buyer explicitly said they were not ready."
+  ],
+  "retrieval_misses": [
+    "No retrieved source supplied dated rental comparables, achieved-versus-asking rent distinctions, or vacancy evidence.",
+    "No shareable links or copies for the cited package and FAQ documents were available in the supplied material."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "After each resolved support request, send a clear customer-facing response that distinguishes what was verified from what remains unavailable, applies the information to the buyer's net-yield question, acknowledges the supply concern, and offers a relevant next step without implying unsupported rental evidence. Avoid requesting the already confirmed package price again. Rental comparables, vacancy evidence, and shareable source documents were not present in the supplied sources; target MISSING_SOURCE rather than recommending a Brain or Knowledge change."
+}
