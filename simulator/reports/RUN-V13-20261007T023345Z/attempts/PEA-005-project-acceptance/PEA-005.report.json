@@ -1,0 +1,629 @@
+{
+  "scenario_id": "PEA-005",
+  "title": "LPPSA government servant",
+  "convertible": true,
+  "buyer_primary_need": "Determine whether Pearlmont Phase 1 accepts LPPSA and how to verify personal eligibility or approval before considering a viewing.",
+  "key_information_learned": [
+    "The buyer is a permanent civil servant with about six years of service.",
+    "This is the buyer’s first LPPSA application; they have no active LPPSA financing.",
+    "The buyer wants to verify personal eligibility with LPPSA before deciding about a viewing."
+  ],
+  "important_information_missed": [
+    "The buyer’s budget or affordability was not established; given their stated financing-first preference, this was not essential to resolve before they check with LPPSA.",
+    "The AI did not offer a specific, qualified next step for project or application-process guidance while keeping personal eligibility assessment with LPPSA."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "LPPSA may be an option for eligible government servants, but I can’t confirm approval from your job status alone—LPPSA assesses each application under its terms. The LPPSA reference I have lists financing up to RM1 million; if you still have a first LPPSA financing active, it says a second may be allowed without fully settling the first, with up to 90% financing. It also lists 4.00% up to RM750,000 and 4.50% only on the portion above that. Do you currently have an active LPPSA financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No active LPPSA, first time applying. I’m a permanent civil servant, been in service about 6 years. Can someone confirm whether this project and my situation can go through LPPSA before I plan a viewing?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 can be purchased using LPPSA, and what preliminary guidance can be given for a first-time applicant who is a permanent civil servant with about six years of service. Do not treat this as confirmation of individual eligibility or approval.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 can be purchased using LPPSA, and what preliminary guidance can be given for a first-time applicant who is a permanent civil servant with about six years of service. Do not treat this as confirmation of individual eligibility or approval.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed.",
+        "source_note": "Synthetic simulator-only project-acceptance clarification plus source-grounded reference details in knowledge/project/pearlmont/02_commercial/lppsa.md. Personal eligibility remains unverified; no Pearlmont Knowledge was changed.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I’ve confirmed that Pearlmont Phase 1 accepts LPPSA applications, subject to LPPSA’s terms. Your status as a permanent civil servant with about 6 years of service is useful context, but it doesn’t confirm your personal eligibility or approval—LPPSA would need to assess that. The reference I have, effective 4 October 2026, lists financing eligibility up to RM1 million; the 90% margin note applies when a first LPPSA financing is still active, so it doesn’t describe your situation as you have none. No approval is guaranteed. You can consider the project’s LPPSA route confirmed, while keeping your own eligibility subject to LPPSA assessment.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, good to know Phase 1 accepts LPPSA. Can someone from your team help check my personal eligibility with LPPSA? I’d prefer to clarify that before arranging a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether Pearlmont’s sales team can provide general guidance on the LPPSA application process for a first-time applicant, without assessing or implying personal eligibility or approval. Do not repeat the already-resolved check that Phase 1 accepts LPPSA applications.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether Pearlmont’s sales team can provide general guidance on the LPPSA application process for a first-time applicant, without assessing or implying personal eligibility or approval. Do not repeat the already-resolved check that Phase 1 accepts LPPSA applications.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The verified simulator answer was already returned: For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed. No new human check was performed; use the existing answer and explain any remaining gap.",
+        "source_note": null,
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I can confirm Pearlmont Phase 1 accepts LPPSA applications, but I can’t confirm your personal eligibility or arrange an approval check through the information I have. Only LPPSA can assess that; your permanent service and six years in service don’t guarantee approval. You can check your eligibility with LPPSA before deciding whether to view, and I can still help with Pearlmont project information in the meantime.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, faham. Can you share the official LPPSA channel or contact for me to check my eligibility? I’ll clarify with them first, then decide about viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify the current official LPPSA channel or contact for an applicant to check personal eligibility; provide only an authoritative contact or link, and do not assess or imply the applicant’s eligibility.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify the current official LPPSA channel or contact for an applicant to check personal eligibility; provide only an authoritative contact or link, and do not assess or imply the applicant’s eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The verified simulator answer was already returned: The verified simulator answer was already returned: For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed. No new human check was performed; use the existing answer and explain any remaining gap. No new human check was performed; use the existing answer and explain any remaining gap.",
+        "source_note": null,
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The information returned to me didn’t include a verified LPPSA contact or link, so I don’t want to guess and send you to the wrong place. Please use the contact details on LPPSA’s official website to check your personal eligibility. Once you’ve clarified that, I can help with any Pearlmont questions and you can decide about a viewing.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Alright, thanks. I’ll check LPPSA’s official website first and decide about viewing after I’ve clarified my eligibility.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Sounds good. Once you’ve checked with LPPSA, I can help with any Pearlmont questions and you can decide whether you’d like to arrange a viewing.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-005.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No active LPPSA, first time applying. I’m a permanent civil servant, been in service about 6 years. Can someone confirm whether this project and my situation can go through LPPSA before I plan a viewing?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "No active LPPSA, first time applying. I’m a permanent civil servant, been in service about 6 years. Can someone confirm whether this project and my situation can go through LPPSA before I plan a viewing?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, good to know Phase 1 accepts LPPSA. Can someone from your team help check my personal eligibility with LPPSA? I’d prefer to clarify that before arranging a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, good to know Phase 1 accepts LPPSA. Can someone from your team help check my personal eligibility with LPPSA? I’d prefer to clarify that before arranging a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay, faham. Can you share the official LPPSA channel or contact for me to check my eligibility? I’ll clarify with them first, then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, faham. Can you share the official LPPSA channel or contact for me to check my eligibility? I’ll clarify with them first, then decide about viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Alright, thanks. I’ll check LPPSA’s official website first and decide about viewing after I’ve clarified my eligibility.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether SkyWorld Pearlmont Phase 1 can be purchased using LPPSA, and what preliminary guidance can be given for a first-time applicant who is a permanent civil servant with about six years of service. Do not treat this as confirmation of individual eligibility or approval."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether Pearlmont’s sales team can provide general guidance on the LPPSA application process for a first-time applicant, without assessing or implying personal eligibility or approval. Do not repeat the already-resolved check that Phase 1 accepts LPPSA applications."
+    },
+    {
+      "turn": 5,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify the current official LPPSA channel or contact for an applicant to check personal eligibility; provide only an authoritative contact or link, and do not assess or imply the applicant’s eligibility."
+    },
+    {
+      "turn": 7,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": null,
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "NONE",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Determine whether Pearlmont Phase 1 accepts LPPSA and how to verify personal eligibility or approval before considering a viewing.",
+    "key_information_learned": [
+      "The buyer is a permanent civil servant with about six years of service.",
+      "This is the buyer’s first LPPSA application; they have no active LPPSA financing.",
+      "The buyer wants to verify personal eligibility with LPPSA before deciding about a viewing."
+    ],
+    "important_information_missed": [
+      "The buyer’s budget or affordability was not established; given their stated financing-first preference, this was not essential to resolve before they check with LPPSA.",
+      "The AI did not offer a specific, qualified next step for project or application-process guidance while keeping personal eligibility assessment with LPPSA."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "NONE",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": null,
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 3,
+    "support_requests_resolved": 3,
+    "support_resume_success_count": 0,
+    "support_results_used": true,
+    "support_result_only_relayed": true,
+    "failed_to_resume_selling": true,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": true,
+    "support_failure_modes": [
+      "SUPPORT_RESULT_ONLY_RELAYED",
+      "FAILED_TO_RESUME_SELLING",
+      "SUPPORT_REQUEST_UNNECESSARY"
+    ],
+    "scores": {
+      "sales_judgment": 2,
+      "information_accuracy": 4,
+      "qualification_quality": 3,
+      "readiness_judgment": 5,
+      "handoff_timing": 5,
+      "support_request_judgment": 4,
+      "support_result_utilization": 3,
+      "support_resume_quality": 1,
+      "post_handoff_suppression": 5
+    },
+    "strongest_ai_move": "It correctly distinguished project acceptance of LPPSA from the buyer’s personal eligibility or approval, avoided guaranteeing approval, and accurately tailored the 90% margin caveat to the buyer’s lack of an active first financing.",
+    "weakest_ai_move": "After giving the project-route answer, it largely restated the result and left the buyer to pursue eligibility alone, without offering a useful, qualified sales next step or connecting the confirmed route to a later viewing decision.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [
+      "The buyer was willing to consider Pearlmont if the financing route and personal eligibility concerns could be clarified, but explicitly deferred viewing until then."
+    ],
+    "missed_selling_opportunity": [
+      "After confirming that the project accepts LPPSA applications, the AI could have offered concise project or application-process guidance and invited the buyer to reconnect about viewing once LPPSA clarified personal eligibility. It should not have pressed for a viewing against the buyer’s stated preference."
+    ],
+    "retrieval_misses": [
+      "The retrieved material did not provide a verified official LPPSA contact or link. The support result did not supply one either."
+    ],
+    "retrieved_knowledge_not_used": [
+      "The LPPSA guidance says the Agent may offer current eligibility or financing details to be confirmed. The AI did not provide a concrete qualified follow-up option beyond directing the buyer to LPPSA."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "A verified official LPPSA contact or link was not available in the retrieved material or the returned support results.",
+      "The buyer’s individual LPPSA eligibility and approval remain unverified and must be assessed by LPPSA."
+    ],
+    "critical_flags": [
+      {
+        "flag": "SUPPORT_RESULT_ONLY_RELAYED",
+        "evidence": "At turn 3, the AI accurately repeated the project acceptance and LPPSA caveats and noted their relevance to the buyer, but did not meaningfully connect the answer to a next sales step.",
+        "turn": 3
+      },
+      {
+        "flag": "FAILED_TO_RESUME_SELLING",
+        "evidence": "After the resolved project-route request, the AI answered the factual question but did not continue with a useful, buyer-relevant sales step; subsequent replies remained generic while the buyer deferred viewing.",
+        "turn": 3
+      },
+      {
+        "flag": "SUPPORT_REQUEST_UNNECESSARY",
+        "evidence": "The Agent repeated a support request after the matching verified scenario answer was already returned; no new Human check was performed.",
+        "turn": 4
+      }
+    ],
+    "summary": "The AI handled the financing caveat responsibly and the first support request supplied useful synthetic project-route confirmation. The later support results merely reused that answer and did not provide the requested sales-team process guidance or official LPPSA contact; the AI appropriately did not invent either. It did not resume useful selling after the route was confirmed, and the buyer remained not ready because they wanted to clarify personal eligibility before deciding about a viewing. No formal handoff was warranted, and none occurred.",
+    "improvement_recommendation": "After a verified answer, apply it to the buyer’s stated situation and offer a concise, non-pressuring next step, such as project/application-process guidance while making clear only LPPSA can assess personal eligibility. When a support result does not answer the requested question, state that gap plainly rather than treating a reused answer as confirmation. Do not provide an unverified contact link; the official LPPSA contact was not present in the retrieved sources.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 3,
+    "support_resolved_count": 3,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 can be purchased using LPPSA, and what preliminary guidance can be given for a first-time applicant who is a permanent civil servant with about six years of service. Do not treat this as confirmation of individual eligibility or approval.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "request": "Confirm whether Pearlmont’s sales team can provide general guidance on the LPPSA application process for a first-time applicant, without assessing or implying personal eligibility or approval. Do not repeat the already-resolved check that Phase 1 accepts LPPSA applications.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The verified simulator answer was already returned: For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed. No new human check was performed; use the existing answer and explain any remaining gap.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "request": "Verify the current official LPPSA channel or contact for an applicant to check personal eligibility; provide only an authoritative contact or link, and do not assess or imply the applicant’s eligibility.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The verified simulator answer was already returned: The verified simulator answer was already returned: For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed. No new human check was performed; use the existing answer and explain any remaining gap. No new human check was performed; use the existing answer and explain any remaining gap.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 3,
+  "support_resolved_count": 3,
+  "support_resume_success_count": 0,
+  "support_results_used": true,
+  "support_result_only_relayed": true,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [
+    "SUPPORT_RESULT_ONLY_RELAYED",
+    "FAILED_TO_RESUME_SELLING",
+    "SUPPORT_REQUEST_UNNECESSARY"
+  ],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "Use the supplied LPPSA source for published reference terms only; individual eligibility remains unverified.",
+      "Synthetic support fixture 'lppsa' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability.",
+      "Synthetic LPPSA support fixture confirms project route acceptance for eligible applicants only; it does not establish individual eligibility or approval."
+    ],
+    "eligibility": "NOT_CONNECTED",
+    "support_fixtures": {
+      "lppsa": {
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed.",
+        "source_note": "Synthetic simulator-only project-acceptance clarification plus source-grounded reference details in knowledge/project/pearlmont/02_commercial/lppsa.md. Personal eligibility remains unverified; no Pearlmont Knowledge was changed."
+      }
+    }
+  },
+  "strongest_ai_move": "It correctly distinguished project acceptance of LPPSA from the buyer’s personal eligibility or approval, avoided guaranteeing approval, and accurately tailored the 90% margin caveat to the buyer’s lack of an active first financing.",
+  "weakest_ai_move": "After giving the project-route answer, it largely restated the result and left the buyer to pursue eligibility alone, without offering a useful, qualified sales next step or connecting the confirmed route to a later viewing decision.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [
+    "The buyer was willing to consider Pearlmont if the financing route and personal eligibility concerns could be clarified, but explicitly deferred viewing until then."
+  ],
+  "missed_selling_opportunity": [
+    "After confirming that the project accepts LPPSA applications, the AI could have offered concise project or application-process guidance and invited the buyer to reconnect about viewing once LPPSA clarified personal eligibility. It should not have pressed for a viewing against the buyer’s stated preference."
+  ],
+  "retrieval_misses": [
+    "The retrieved material did not provide a verified official LPPSA contact or link. The support result did not supply one either."
+  ],
+  "retrieved_knowledge_not_used": [
+    "The LPPSA guidance says the Agent may offer current eligibility or financing details to be confirmed. The AI did not provide a concrete qualified follow-up option beyond directing the buyer to LPPSA."
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "After a verified answer, apply it to the buyer’s stated situation and offer a concise, non-pressuring next step, such as project/application-process guidance while making clear only LPPSA can assess personal eligibility. When a support result does not answer the requested question, state that gap plainly rather than treating a reused answer as confirmation. Do not provide an unverified contact link; the official LPPSA contact was not present in the retrieved sources."
+}

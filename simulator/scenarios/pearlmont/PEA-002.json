@@ -33,10 +33,17 @@
   },
   "critical_facts": "900 sqft Type A, room sizes, foyer, open living/dining, layout claims source qualifiers",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
     "specific_verified_facts": [
-      "No unit-level availability fixture is supplied."
+      "No unit-level availability fixture is supplied.",
+      "Synthetic support fixture 'layout' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
     ],
-    "appointment_slots": "NOT_CONNECTED"
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "layout": {
+        "verified_answer": "The simulator-only Type A plan overlay gives Bedroom 2 interior dimensions of approximately 3.05m by 3.15m. The mock furniture check fits a 1.5m by 2.0m queen bed, with about 0.75m clear on one side and 0.65m at the foot before wardrobe placement; a full-depth wardrobe opposite the bed would make circulation tight. The plan also shows no long internal corridor. Treat these measurements as this scenario fixture only; viewing the show unit is the practical way to judge the family layout.",
+        "source_note": "Synthetic simulator-only dimensioned Type A plan overlay; the general Type A configuration and no-long-corridor description also appear in knowledge/project/pearlmont/01_facts/unit-and-layout.md. Dimensions and furniture overlay are not added to Pearlmont Knowledge."
+      }
+    }
   }
 }

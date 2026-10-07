@@ -33,11 +33,18 @@
   },
   "critical_facts": "carparks by unit/category; orientation schedule limits exact mapping; availability unverified",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
     "specific_verified_facts": [
-      "No live unit inventory or unit-number schedule fixture is supplied."
+      "No live unit inventory or unit-number schedule fixture is supplied.",
+      "Synthetic support fixture 'two_carpark' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
     ],
     "unit_availability": "NOT_CONNECTED",
-    "appointment_slots": "NOT_CONNECTED"
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "two_carpark": {
+        "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; category/facing context aligns with knowledge/project/pearlmont/02_commercial/sales-package.md. Unit number, exact availability, and fixture package are not Pearlmont Knowledge."
+      }
+    }
   }
 }

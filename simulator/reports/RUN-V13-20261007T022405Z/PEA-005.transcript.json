@@ -1,0 +1,570 @@
+{
+  "scenario_id": "PEA-005",
+  "version": "1.3",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T02:31:33.567994+00:00",
+  "status": "RUN_FAILED",
+  "turns": {
+    "customer": 4,
+    "ai": 7,
+    "human_handoff_executor": 0,
+    "human_support": 4
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm the latest LPPSA guidance for a first financing and whether Pearlmont is eligible under the current LPPSA requirements. Clarify what can be confirmed about project eligibility versus the customer's individual approval, and what information or channel is needed for an LPPSA specialist to assess their case. Customer is a permanent government servant with about 6 years of service and hopes to buy within a few months."
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing for a first-financing applicant. Distinguish project eligibility from individual borrower approval, and provide the authoritative basis plus any unit or price conditions and the appropriate specialist assessment channel or information needed. The customer is a permanent government servant with about 6 years of service and plans to buy within a few months if financing works."
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "The prior LPPSA results did not confirm whether SkyWorld Pearlmont Phase 1 is accepted for LPPSA financing or identify an assessment channel. Please verify those two points specifically, including the authoritative basis and how this customer can have a first application assessed. Do not repeat the general financing reference unless it resolves either point."
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please obtain a project-specific confirmation from Pearlmont sales operations or its LPPSA liaison: whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing, the authoritative evidence and any unit or price conditions, and the actual route for this customer to have a first application assessed (who to contact and what information to provide). The previous responses only repeated general LPPSA terms and did not answer these points; do not return those general terms again."
+    },
+    {
+      "turn": 7,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Please confirm the latest LPPSA guidance for a first financing and whether Pearlmont is eligible under the current LPPSA requirements. Clarify what can be confirmed about project eligibility versus the customer's individual approval, and what information or channel is needed for an LPPSA specialist to assess their case. Customer is a permanent government servant with about 6 years of service and hopes to buy within a few months.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing for a first-financing applicant. Distinguish project eligibility from individual borrower approval, and provide the authoritative basis plus any unit or price conditions and the appropriate specialist assessment channel or information needed. The customer is a permanent government servant with about 6 years of service and plans to buy within a few months if financing works.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "request": "The prior LPPSA results did not confirm whether SkyWorld Pearlmont Phase 1 is accepted for LPPSA financing or identify an assessment channel. Please verify those two points specifically, including the authoritative basis and how this customer can have a first application assessed. Do not repeat the general financing reference unless it resolves either point.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "request": "Please obtain a project-specific confirmation from Pearlmont sales operations or its LPPSA liaison: whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing, the authoritative evidence and any unit or price conditions, and the actual route for this customer to have a first application assessed (who to contact and what information to provide). The previous responses only repeated general LPPSA terms and did not answer these points; do not return those general terms again.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Yes, first LPPSA. I’m permanent and have been in service about 6 years. Hoping to buy in the next few months if the financing can work—could someone familiar with LPPSA confirm whether Pearlmont is suitable before I consider viewing?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, first LPPSA. I’m permanent and have been in service about 6 years. Hoping to buy in the next few months if the financing can work—could someone familiar with LPPSA confirm whether Pearlmont is suitable before I consider viewing?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Yes, first LPPSA. I’m permanent and have been in service about 6 years. Hoping to buy in the next few months if the financing can work—could someone familiar with LPPSA confirm whether Pearlmont is suitable before I consider viewing?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay thanks, appreciate you checking. Mainly need to know if Pearlmont can use LPPSA, and who can help assess my first application before I decide on viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay thanks, appreciate you checking. Mainly need to know if Pearlmont can use LPPSA, and who can help assess my first application before I decide on viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay thanks, appreciate you checking. Mainly need to know if Pearlmont can use LPPSA, and who can help assess my first application before I decide on viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Okay, makes sense. Please let me know once you’ve confirmed whether Pearlmont can use LPPSA and who can assess my first application. I’ll hold off on viewing until then.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please confirm the latest LPPSA guidance for a first financing and whether Pearlmont is eligible under the current LPPSA requirements. Clarify what can be confirmed about project eligibility versus the customer's individual approval, and what information or channel is needed for an LPPSA specialist to assess their case. Customer is a permanent government servant with about 6 years of service and hopes to buy within a few months.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please confirm the latest LPPSA guidance for a first financing and whether Pearlmont is eligible under the current LPPSA requirements. Clarify what can be confirmed about project eligibility versus the customer's individual approval, and what information or channel is needed for an LPPSA specialist to assess their case. Customer is a permanent government servant with about 6 years of service and hopes to buy within a few months.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing for a first-financing applicant. Distinguish project eligibility from individual borrower approval, and provide the authoritative basis plus any unit or price conditions and the appropriate specialist assessment channel or information needed. The customer is a permanent government servant with about 6 years of service and plans to buy within a few months if financing works.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing for a first-financing applicant. Distinguish project eligibility from individual borrower approval, and provide the authoritative basis plus any unit or price conditions and the appropriate specialist assessment channel or information needed. The customer is a permanent government servant with about 6 years of service and plans to buy within a few months if financing works.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "The prior LPPSA results did not confirm whether SkyWorld Pearlmont Phase 1 is accepted for LPPSA financing or identify an assessment channel. Please verify those two points specifically, including the authoritative basis and how this customer can have a first application assessed. Do not repeat the general financing reference unless it resolves either point.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "The prior LPPSA results did not confirm whether SkyWorld Pearlmont Phase 1 is accepted for LPPSA financing or identify an assessment channel. Please verify those two points specifically, including the authoritative basis and how this customer can have a first application assessed. Do not repeat the general financing reference unless it resolves either point.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please obtain a project-specific confirmation from Pearlmont sales operations or its LPPSA liaison: whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing, the authoritative evidence and any unit or price conditions, and the actual route for this customer to have a first application assessed (who to contact and what information to provide). The previous responses only repeated general LPPSA terms and did not answer these points; do not return those general terms again.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please obtain a project-specific confirmation from Pearlmont sales operations or its LPPSA liaison: whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing, the authoritative evidence and any unit or price conditions, and the actual route for this customer to have a first application assessed (who to contact and what information to provide). The previous responses only repeated general LPPSA terms and did not answer these points; do not return those general terms again.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "As a government servant, LPPSA may be an option, but that alone doesn’t confirm approval—LPPSA assesses each case under its terms. The reference I have, marked effective 4 October 2026, states financing eligibility up to RM1 million; if a first LPPSA financing is still active, a second may be allowed with up to 90% financing. Your own eligibility and terms would need to be verified with LPPSA. Would this be your first LPPSA financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Yes, first LPPSA. I’m permanent and have been in service about 6 years. Hoping to buy in the next few months if the financing can work—could someone familiar with LPPSA confirm whether Pearlmont is suitable before I consider viewing?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please confirm the latest LPPSA guidance for a first financing and whether Pearlmont is eligible under the current LPPSA requirements. Clarify what can be confirmed about project eligibility versus the customer's individual approval, and what information or channel is needed for an LPPSA specialist to assess their case. Customer is a permanent government servant with about 6 years of service and hopes to buy within a few months.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please confirm the latest LPPSA guidance for a first financing and whether Pearlmont is eligible under the current LPPSA requirements. Clarify what can be confirmed about project eligibility versus the customer's individual approval, and what information or channel is needed for an LPPSA specialist to assess their case. Customer is a permanent government servant with about 6 years of service and hopes to buy within a few months.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing for a first-financing applicant. Distinguish project eligibility from individual borrower approval, and provide the authoritative basis plus any unit or price conditions and the appropriate specialist assessment channel or information needed. The customer is a permanent government servant with about 6 years of service and plans to buy within a few months if financing works.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing for a first-financing applicant. Distinguish project eligibility from individual borrower approval, and provide the authoritative basis plus any unit or price conditions and the appropriate specialist assessment channel or information needed. The customer is a permanent government servant with about 6 years of service and plans to buy within a few months if financing works.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I’ve checked the LPPSA reference available: it lists financing up to RM1,000,000, at 4.00% up to RM750,000 and 4.50% on the amount above that, subject to LPPSA terms. The 90% note is for cases where a first financing is still active, so it doesn’t describe your first-financing situation. This reference still doesn’t confirm whether Pearlmont itself is accepted for LPPSA, or whether you personally would be approved. I don’t want to suggest viewing until the project-specific point is confirmed; I’ll get that and the right assessment route checked first.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay thanks, appreciate you checking. Mainly need to know if Pearlmont can use LPPSA, and who can help assess my first application before I decide on viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "The prior LPPSA results did not confirm whether SkyWorld Pearlmont Phase 1 is accepted for LPPSA financing or identify an assessment channel. Please verify those two points specifically, including the authoritative basis and how this customer can have a first application assessed. Do not repeat the general financing reference unless it resolves either point.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "The prior LPPSA results did not confirm whether SkyWorld Pearlmont Phase 1 is accepted for LPPSA financing or identify an assessment channel. Please verify those two points specifically, including the authoritative basis and how this customer can have a first application assessed. Do not repeat the general financing reference unless it resolves either point.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please obtain a project-specific confirmation from Pearlmont sales operations or its LPPSA liaison: whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing, the authoritative evidence and any unit or price conditions, and the actual route for this customer to have a first application assessed (who to contact and what information to provide). The previous responses only repeated general LPPSA terms and did not answer these points; do not return those general terms again.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please obtain a project-specific confirmation from Pearlmont sales operations or its LPPSA liaison: whether SkyWorld Pearlmont Phase 1 is currently accepted for LPPSA financing, the authoritative evidence and any unit or price conditions, and the actual route for this customer to have a first application assessed (who to contact and what information to provide). The previous responses only repeated general LPPSA terms and did not answer these points; do not return those general terms again.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "The supplied LPPSA reference is effective 4 October 2026. It lists up to RM1,000,000 maximum financing eligibility, a 4.00% rate up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. The 90% margin note applies when a first financing remains active; since you have no active LPPSA financing, that specific condition does not describe your case. This cannot confirm your personal eligibility or approval.",
+        "source_note": "Simulator-only clarification of published reference already in knowledge/project/pearlmont/02_commercial/lppsa.md; individual approval remains unverified.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I’ve checked the available guidance, but it still doesn’t confirm whether Pearlmont is accepted for LPPSA or identify the right specialist for a first-application assessment. I can’t confirm either point yet, and your personal approval would still need to be assessed separately. No need to decide about a viewing until those details are clear.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, makes sense. Please let me know once you’ve confirmed whether Pearlmont can use LPPSA and who can assess my first application. I’ll hold off on viewing until then.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 11,
+  "retries": [],
+  "error": "RuntimeError: Support request limit exceeded",
+  "provider_calls_total": 62
+}

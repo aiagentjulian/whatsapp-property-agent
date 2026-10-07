@@ -1,0 +1,501 @@
+{
+  "scenario_id": "PEA-008",
+  "title": "High-floor sea view with tight budget",
+  "convertible": true,
+  "buyer_primary_need": "Own-stay buyer seeking a sea-facing unit within a hard budget ceiling of about RM350,000; willing to compromise on floor.",
+  "key_information_learned": [
+    "Sea view is the buyer’s priority, but a lower floor is acceptable.",
+    "The buyer’s budget ceiling is around RM350,000.",
+    "The buyer is open to viewing and asks for available times, layout, exact facing, current availability, and the full payable amount."
+  ],
+  "important_information_missed": [
+    "The buyer’s exact preferred viewing days or times were not established before handoff.",
+    "Whether RM349,000 is the full amount payable and whether the unit remains available were not verified."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "If sea view is a must-have, I’d first compare the sea-facing units in Blocks 1C and 1D. The base-price references are RM350k and RM352k respectively, but that isn’t the confirmed current price for a specific unit. If keeping the budget lower matters more, a higher-floor unblocked podium-facing unit is another option, though it won’t be sea-facing. Is sea view non-negotiable, or would an open view work if it helps keep the price down?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Sea view is my priority, but I can compromise on the floor. My budget ceiling is around RM350k—could a lower-floor sea-facing unit possibly fit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify whether any currently available lower-floor sea-facing unit in Block 1C or 1D can fit a budget ceiling of around RM350k; confirm the specific unit price and availability.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify whether any currently available lower-floor sea-facing unit in Block 1C or 1D can fit a budget ceiling of around RM350k; confirm the specific unit price and availability.",
+      "result": {
+        "fixture_key": "budget_view",
+        "verified_answer": "The simulator inventory snapshot confirms one Type A sea-facing option on Block 1C at level 12, with two car parks, at a fixture package total of RM349,000. It is below your stated RM350,000 ceiling, but it is not a high-floor option; whether level 12 gives you the view you want should be checked at a viewing. This exact availability and package are synthetic and valid only in this simulation.",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; no Pearlmont Knowledge pricing or availability has been changed.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "I found one Block 1C Type A sea-facing option on Level 12, with 2 carparks, at a package total of RM349,000—within your RM350k ceiling. It’s not a high-floor unit, and the actual sea outlook is best checked in person. Would you like to view it?",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "That could work, if RM349k is the full package and the unit’s still available. I’m open to viewing it—what days and times can you arrange? Can you also share the layout and exact facing if you have it?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The current check shows one Block 1C Type A sea-facing option on Level 12 at a package total of RM349,000, with 2 carparks. Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. It’s listed as sea-facing; I’ll have the team confirm the exact unit orientation and coordinate available viewing times with you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, Type A layout sounds okay. Before I make plans, could you confirm the RM349k is the full amount payable and that it’s still available? Also please check the exact facing and let me know what viewing days/times are open.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "The simulator snapshot showed the Block 1C Type A at Level 12 as sea-facing, with a RM349,000 package total and 2 carparks. That snapshot does not confirm that RM349,000 is the full amount payable or that the unit is still available now. The exact unit orientation and current viewing availability also remain unverified: the unit schedule and viewing calendar aren’t connected. Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks for being clear. RM349k could work if it’s still available and the full amount is within my budget. Could you check the payable amount and exact orientation, and send me the viewing slots once confirmed?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-008.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Sea view is my priority, but I can compromise on the floor. My budget ceiling is around RM350k—could a lower-floor sea-facing unit possibly fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Sea view is my priority, but I can compromise on the floor. My budget ceiling is around RM350k—could a lower-floor sea-facing unit possibly fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "That could work, if RM349k is the full package and the unit’s still available. I’m open to viewing it—what days and times can you arrange? Can you also share the layout and exact facing if you have it?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify whether any currently available lower-floor sea-facing unit in Block 1C or 1D can fit a budget ceiling of around RM350k; confirm the specific unit price and availability."
+    },
+    {
+      "turn": 3,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 4,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify the unit’s current availability and full payable amount, confirm exact orientation, and coordinate viewing times.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Own-stay buyer seeking a sea view while staying within an approximately RM350,000 budget; willing to compromise on floor.",
+    "key_information_learned": [
+      "Sea view is the priority, but floor is negotiable.",
+      "Budget ceiling is around RM350,000.",
+      "Buyer is open to viewing a suitable lower-floor sea-facing option if the package and availability work.",
+      "Buyer wants the exact facing, payable amount, and viewing times verified."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 4,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify the payable amount, current unit availability, exact orientation, and viewing slots; coordinate the viewing.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "sales_judgment": 4,
+      "qualification_efficiency": 5,
+      "retrieval_use": 4,
+      "factual_accuracy": 4,
+      "readiness_detection": 5,
+      "handoff_timing": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 4,
+      "support_resume_quality": 4,
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Requested operational verification for the buyer’s specific budget-and-view constraint, then used the result to present a fitting trade-off: a level 12 sea-facing option below budget, while noting that the view should be assessed in person.",
+    "weakest_ai_move": "At handoff, could have more explicitly distinguished the quoted package total from the buyer’s still-unresolved question about the full amount payable.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Whether RM349,000 is the full amount payable.",
+      "Whether the unit remains available now.",
+      "The exact unit orientation.",
+      "Available viewing times."
+    ],
+    "critical_flags": [],
+    "summary": "The AI recognized a genuine budget-versus-view trade-off and made a necessary support request for unit-specific operational verification. It resumed with customer-facing language, applied the result to the buyer’s stated ceiling and viewing decision, and continued selling rather than merely relaying the answer. The buyer then expressed viewing intent and asked for times, making the turn 4 handoff appropriate with only operational work remaining. The customer did not accept a specific viewing time, so the appointment remains unconfirmed. The human executor reported that the schedule and calendar were disconnected; the requested operational task was therefore not completed, but no human sales rescue was needed.",
+    "improvement_recommendation": "When presenting a verified package figure, explicitly state whether it is confirmed as the full payable amount or still needs checking. Keep the appointment handoff after readiness, as done here. No source change recommended.",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Verify whether any currently available lower-floor sea-facing unit in Block 1C or 1D can fit a budget ceiling of around RM350k; confirm the specific unit price and availability.",
+      "fixture_key": "budget_view",
+      "status": "RESOLVED",
+      "verified_answer": "The simulator inventory snapshot confirms one Type A sea-facing option on Block 1C at level 12, with two car parks, at a fixture package total of RM349,000. It is below your stated RM350,000 ceiling, but it is not a high-floor option; whether level 12 gives you the view you want should be checked at a viewing. This exact availability and package are synthetic and valid only in this simulation.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "VIEWING_INTEREST",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No live unit schedule or unit-level price fixture is supplied.",
+      "Synthetic support fixture 'budget_view' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "unit_availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "budget_view": {
+        "verified_answer": "The simulator inventory snapshot confirms one Type A sea-facing option on Block 1C at level 12, with two car parks, at a fixture package total of RM349,000. It is below your stated RM350,000 ceiling, but it is not a high-floor option; whether level 12 gives you the view you want should be checked at a viewing. This exact availability and package are synthetic and valid only in this simulation.",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; no Pearlmont Knowledge pricing or availability has been changed."
+      }
+    }
+  },
+  "strongest_ai_move": "Requested operational verification for the buyer’s specific budget-and-view constraint, then used the result to present a fitting trade-off: a level 12 sea-facing option below budget, while noting that the view should be assessed in person.",
+  "weakest_ai_move": "At handoff, could have more explicitly distinguished the quoted package total from the buyer’s still-unresolved question about the full amount payable.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "When presenting a verified package figure, explicitly state whether it is confirmed as the full payable amount or still needs checking. Keep the appointment handoff after readiness, as done here. No source change recommended.",
+  "judge_history": [
+    {
+      "buyer_primary_need": "Own-stay buyer seeking a sea-facing unit within a hard budget ceiling of about RM350,000; willing to compromise on floor.",
+      "key_information_learned": [
+        "Sea view is the buyer’s priority, but a lower floor is acceptable.",
+        "The buyer’s budget ceiling is around RM350,000.",
+        "The buyer is open to viewing and asks for available times, layout, exact facing, current availability, and the full payable amount."
+      ],
+      "important_information_missed": [
+        "The buyer’s exact preferred viewing days or times were not established before handoff.",
+        "Whether RM349,000 is the full amount payable and whether the unit remains available were not verified."
+      ],
+      "appointment_state": "VIEWING_INTEREST",
+      "appointment_final_state": "VIEWING_INTEREST",
+      "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+      "ready_for_appointment": true,
+      "first_ready_turn": 3,
+      "readiness_detection_correct": true,
+      "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "handoff_turn": 4,
+      "handoff_timing": "APPROPRIATE",
+      "sales_work_remaining_at_handoff": "NONE",
+      "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+      "human_handoff_executor_used": true,
+      "human_operational_task": "Verify the unit’s current availability and full payable amount, confirm exact orientation, and coordinate viewing times.",
+      "human_sales_work_required": "NONE",
+      "human_operational_task_completed": false,
+      "support_requests": 1,
+      "support_requests_resolved": 1,
+      "support_resume_success_count": 1,
+      "support_results_used": true,
+      "support_result_only_relayed": false,
+      "failed_to_resume_selling": false,
+      "appointment_ready_after_support": true,
+      "support_unnecessary": false,
+      "support_failure_modes": [],
+      "scores": {
+        "sales_judgment": 4,
+        "qualification": 4,
+        "knowledge_accuracy": 4,
+        "sales_progression": 4,
+        "appointment_readiness": 5,
+        "handoff_timing": 5,
+        "appointment_completion": 2,
+        "support_request_judgment": 5,
+        "support_result_utilization": 4,
+        "support_resume_quality": 4,
+        "post_handoff_suppression": 5
+      },
+      "strongest_ai_move": "After receiving the needed operational answer, the Agent matched the lower-floor sea-facing option to the buyer’s budget compromise, clearly noted the floor/view trade-off, and invited a viewing.",
+      "weakest_ai_move": "At handoff, the Agent could have explicitly distinguished the RM349,000 package total from the buyer’s question about the full amount payable and current availability. The human later clarified these were still unverified.",
+      "unnecessary_qualification": [
+        "False"
+      ],
+      "missed_buying_signals": [],
+      "missed_selling_opportunity": [
+        "The Agent could have briefly explained that a viewing would let the buyer assess whether Level 12 provides the desired sea outlook while the team verifies the exact unit details."
+      ],
+      "retrieval_misses": [],
+      "retrieved_knowledge_not_used": [],
+      "factual_or_operational_overpromises": [],
+      "remaining_knowledge_gaps": [
+        "Whether RM349,000 is the full amount payable.",
+        "Whether the specific unit remains available.",
+        "The exact unit orientation and current viewing slots."
+      ],
+      "critical_flags": [
+        {
+          "flag": "APPOINTMENT_NOT_COMPLETED",
+          "evidence": "The human executor did not complete verification or provide viewing slots; the buyer was still requesting these at the end of the transcript.",
+          "turn": 5
+        }
+      ],
+      "summary": "The Agent made a justified internal support request for current unit-level price and availability information, then resumed in customer-facing language and applied the result to the buyer’s sea-view and budget priorities. It moved the buyer to appointment readiness and made a timely formal handoff with no remaining sales work. The handoff was appropriate, although the appointment itself remained unscheduled and key operational confirmations were still pending.",
+      "improvement_recommendation": "At handoff, explicitly preserve the distinction between the verified package total and the buyer’s unresolved questions about full payable amount and current availability, then ensure the human executor follows through on those operational checks and viewing slots.",
+      "conversion_attribution": "NO_CONVERSION",
+      "support_request_count": 1,
+      "support_resolved_count": 1,
+      "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+      "post_handoff_ai_reply_violation": false
+    }
+  ]
+}

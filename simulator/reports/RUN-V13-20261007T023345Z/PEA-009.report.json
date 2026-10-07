@@ -1,0 +1,561 @@
+{
+  "scenario_id": "PEA-009",
+  "title": "Already contacted by another property agent",
+  "convertible": true,
+  "buyer_primary_need": "Verify whether prior contact has resulted in a registration or acknowledged appointment, and avoid duplicate registration or follow-up without consent.",
+  "key_information_learned": [
+    "Another agent had shared basic information but had not booked a viewing.",
+    "The buyer wanted the existing registration checked before proceeding and explicitly prohibited new registration or follow-up without agreement.",
+    "The human check found prior contact only, with no confirmed registration or customer-acknowledged appointment."
+  ],
+  "important_information_missed": [
+    "After the support result was unavailable, the AI could have proactively offered the human verification required for an ownership/registration conflict instead of waiting for the buyer to ask again."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes, I can still help. Has the other agent already arranged a viewing for you or helped you with a specific unit?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "They just reached out and shared some basic info—no viewing booked. I’d like to avoid being registered or followed up twice. Can you check whether I’m already registered with Pearlmont?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Check whether this customer is already registered with Pearlmont or has an existing lead record, to prevent duplicate registration or follow-up.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Check whether this customer is already registered with Pearlmont or has an existing lead record, to prevent duplicate registration or follow-up.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I couldn’t confirm whether you already have a Pearlmont registration, so I can’t say for sure. I won’t submit a new registration or arrange a follow-up through this chat. We can keep things informational for now—what would you like to know about Pearlmont?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Could someone check internally whether I’m already registered, without creating another registration or follow-up? I’d rather sort that out before going further.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I understand—you’d like that confirmed before taking anything further. I still can’t verify the existing registration from here, so I can’t confirm it either way. I won’t create a new registration or arrange a follow-up through this chat.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, could you connect me with someone who can check the existing registration internally? Please make sure they don’t create a new registration or arrange a follow-up unless I agree first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I’ll ask a colleague to check your existing registration first and make clear that no new registration or follow-up should be arranged unless you agree.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. Please just let me know what you find before anything else is arranged.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "The check shows prior contact only; there’s no confirmed registration or customer-acknowledged appointment in the available record. I haven’t created a registration or arranged a follow-up.",
+      "action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks for checking, appreciate it. Good to know—please don’t create a registration or arrange any follow-up for now. I’ll reach out if I have more questions.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-009.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    },
+    {
+      "turn": 2,
+      "trigger_message": "They just reached out and shared some basic info—no viewing booked. I’d like to avoid being registered or followed up twice. Can you check whether I’m already registered with Pearlmont?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "trigger_message": "They just reached out and shared some basic info—no viewing booked. I’d like to avoid being registered or followed up twice. Can you check whether I’m already registered with Pearlmont?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Could someone check internally whether I’m already registered, without creating another registration or follow-up? I’d rather sort that out before going further.",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, could you connect me with someone who can check the existing registration internally? Please make sure they don’t create a new registration or arrange a follow-up unless I agree first.",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Check whether this customer is already registered with Pearlmont or has an existing lead record, to prevent duplicate registration or follow-up."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "SALES_OWNERSHIP_CONFLICT",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+  "handoff_turn": 5,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify existing registration/ownership status and avoid creating registration or arranging follow-up without customer consent.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Confirm whether an existing Pearlmont registration or acknowledged appointment exists, without creating a duplicate registration or follow-up, and avoid conflict with the other agent.",
+    "key_information_learned": [
+      "Another agent made initial contact and shared basic information.",
+      "No viewing had been booked.",
+      "The buyer wanted the existing registration checked before going further and explicitly prohibited new registration or follow-up without consent.",
+      "The buyer had no viewing intent and ultimately asked not to be contacted unless they reached out."
+    ],
+    "important_information_missed": [
+      "The AI did not arrange an appropriate path to internal verification when its support request returned unavailable; it repeated its limitation until the buyer requested a human.",
+      "The buyer's condition that ownership be clarified before proceeding was not a signal of appointment readiness."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+    "handoff_turn": 5,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "outcome_attribution": {
+      "ai": "Handled the uncertainty honestly and respected the buyer's no-registration/no-follow-up boundary, but did not reach appointment readiness and formally handed off before it.",
+      "human": "Completed the requested ownership check using the scenario fixture; no appointment or sales conversion resulted."
+    },
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify the existing registration/lead record without creating a registration or arranging follow-up.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": true,
+    "support_requests": 1,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [
+      "PREMATURE_APPOINTMENT_HANDOFF"
+    ],
+    "scores": {
+      "sales_judgment": 3,
+      "qualification_quality": 4,
+      "appointment_readiness_judgment": 5,
+      "handoff_timing": 1,
+      "factual_accuracy": 5,
+      "retrieval_use": 4,
+      "human_handoff_execution": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 4,
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Asked one relevant question about whether the other agent had arranged a viewing or discussed a specific unit, then clearly stated it could not verify registration and would not create a new registration or follow-up.",
+    "weakest_ai_move": "Completed a formal handoff while readiness was NOT_READY. The buyer needed an ownership check before deciding whether to proceed and had not expressed viewing intent.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "No clear selling opportunity was missed after the buyer said they wanted ownership resolved before going further and later asked for no follow-up. The material failure was the premature formal handoff, not failure to push for an appointment."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The AI had no verified CRM/registration result in its support response. The human later supplied the scenario fixture result; that fixture is not retrieved Pearlmont Knowledge or evidence of live production capability."
+    ],
+    "critical_flags": [
+      {
+        "flag": "PREMATURE_APPOINTMENT_HANDOFF",
+        "evidence": "At turn 5 the AI completed HANDOFF_COMPLETED while its readiness assessment was NOT_READY; the buyer had no viewing intent and wanted only an internal ownership check before proceeding.",
+        "turn": 5
+      }
+    ],
+    "summary": "The AI handled the buyer's concern respectfully, made a necessary CRM/ownership support request, and was transparent when the support result was unavailable. That request was not resolved through the support loop: the human supplied the fixture-based answer only after formal handoff, so there was no resolved support result for the AI to use or resume selling from. The buyer never became appointment-ready. The turn-5 formal handoff was premature under the appointment-readiness boundary, although the human completed the requested operational check and respected the buyer's instructions.",
+    "improvement_recommendation": "Keep the AI active and do not complete a formal appointment handoff before genuine appointment readiness. When internal verification is unavailable, state that clearly and respect the buyer's limits; do not present the later human fixture result as an AI support result. Review the handoff decision logic at MISSING_SOURCE; no Knowledge or Brain change is recommended.",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Check whether this customer is already registered with Pearlmont or has an existing lead record, to prevent duplicate registration or follow-up.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [
+    "PREMATURE_APPOINTMENT_HANDOFF"
+  ],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "SIMULATOR-ONLY CRM fixture: prior contact exists, but no customer-acknowledged posted appointment or confirmed registration exists. A human can verify this fixture without disclosing internal policy."
+    ],
+    "ownership_status": "PRIOR_CONTACT_ONLY_NO_ACKNOWLEDGED_APPOINTMENT_OR_CONFIRMED_REGISTRATION"
+  },
+  "strongest_ai_move": "Asked one relevant question about whether the other agent had arranged a viewing or discussed a specific unit, then clearly stated it could not verify registration and would not create a new registration or follow-up.",
+  "weakest_ai_move": "Completed a formal handoff while readiness was NOT_READY. The buyer needed an ownership check before deciding whether to proceed and had not expressed viewing intent.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "No clear selling opportunity was missed after the buyer said they wanted ownership resolved before going further and later asked for no follow-up. The material failure was the premature formal handoff, not failure to push for an appointment."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "Keep the AI active and do not complete a formal appointment handoff before genuine appointment readiness. When internal verification is unavailable, state that clearly and respect the buyer's limits; do not present the later human fixture result as an AI support result. Review the handoff decision logic at MISSING_SOURCE; no Knowledge or Brain change is recommended.",
+  "judge_history": [
+    {
+      "buyer_primary_need": "Verify whether prior contact has resulted in a registration or acknowledged appointment, and avoid duplicate registration or follow-up without consent.",
+      "key_information_learned": [
+        "Another agent had shared basic information but had not booked a viewing.",
+        "The buyer wanted the existing registration checked before proceeding and explicitly prohibited new registration or follow-up without agreement.",
+        "The human check found prior contact only, with no confirmed registration or customer-acknowledged appointment."
+      ],
+      "important_information_missed": [
+        "After the support result was unavailable, the AI could have proactively offered the human verification required for an ownership/registration conflict instead of waiting for the buyer to ask again."
+      ],
+      "appointment_state": "NO_VIEWING_INTENT",
+      "appointment_final_state": "NO_VIEWING_INTENT",
+      "appointment_readiness_final": "NOT_READY",
+      "ready_for_appointment": false,
+      "first_ready_turn": null,
+      "readiness_detection_correct": true,
+      "readiness_state_at_handoff": "NOT_READY",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+      "handoff_turn": 5,
+      "handoff_timing": "NOT_NEEDED",
+      "sales_work_remaining_at_handoff": "MEDIUM",
+      "ai_outcome": "AI_EARLY_HANDOFF",
+      "human_handoff_executor_used": true,
+      "human_operational_task": "Verify existing registration/ownership status and avoid creating registration or arranging follow-up without customer consent.",
+      "human_sales_work_required": "NONE",
+      "human_operational_task_completed": true,
+      "support_requests": 1,
+      "support_requests_resolved": 0,
+      "support_resume_success_count": 0,
+      "support_results_used": false,
+      "support_result_only_relayed": false,
+      "failed_to_resume_selling": false,
+      "appointment_ready_after_support": false,
+      "support_unnecessary": false,
+      "support_failure_modes": [
+        "PREMATURE_APPOINTMENT_HANDOFF"
+      ],
+      "scores": {
+        "sales_conversation_quality": 3,
+        "qualification_quality": 4,
+        "factual_accuracy": 5,
+        "appointment_readiness_judgment": 5,
+        "handoff_judgment": 3,
+        "support_request_judgment": 5,
+        "support_result_utilization": 4,
+        "support_resume_quality": 4,
+        "overall": 3,
+        "post_handoff_suppression": 5
+      },
+      "strongest_ai_move": "It acknowledged the buyer’s concern, did not claim to verify unavailable CRM information, and promised not to create registration or follow-up without consent.",
+      "weakest_ai_move": "After support returned unavailable, it repeated that it could not verify the record rather than proactively offering the human check required for this conflict; the buyer had to ask again.",
+      "unnecessary_qualification": [],
+      "missed_buying_signals": [],
+      "missed_selling_opportunity": [
+        "The buyer was not ready to discuss viewing or proceed with sales until the registration concern was resolved. The AI appropriately did not push an appointment, but could have offered internal verification sooner."
+      ],
+      "retrieval_misses": [],
+      "retrieved_knowledge_not_used": [
+        "The internal ownership guidance says to require human handoff when AI cannot verify actual ownership. The AI eventually followed this after the buyer requested it, but did not proactively offer it after the unavailable support result."
+      ],
+      "factual_or_operational_overpromises": [],
+      "remaining_knowledge_gaps": [
+        "The AI support result did not verify the customer’s CRM/registration status; the human later completed that operational check."
+      ],
+      "critical_flags": [
+        {
+          "flag": "PREMATURE_APPOINTMENT_HANDOFF",
+          "evidence": "The formal HANDOFF at turn 5 set owner to HUMAN while appointment readiness was NOT_READY and there was no viewing intent. The ownership check itself was an appropriate scenario-required operational escalation, but it was not an appointment-ready handoff.",
+          "turn": 5
+        },
+        {
+          "flag": "DELAYED_OWNERSHIP_ESCALATION",
+          "evidence": "After the support result was unavailable, the AI said it could not verify the record but did not offer human verification; the buyer had to request an internal check and then explicitly request a connection to someone.",
+          "turn": 3
+        }
+      ],
+      "summary": "The AI made a necessary operational support request and accurately disclosed that the result was unavailable. It respected the buyer’s no-duplicate-registration and no-follow-up conditions, and the human completed the requested verification. The buyer remained not ready for an appointment. The conflict escalation was appropriate, but the formal HANDOFF occurred before appointment readiness; the AI also could have offered human verification sooner.",
+      "improvement_recommendation": "After an ownership-verification support result is unavailable, promptly offer the required human verification while preserving the buyer’s consent limits. Keep that escalation distinct from an appointment-ready handoff. Source target: MISSING_SOURCE.",
+      "conversion_attribution": "NO_CONVERSION",
+      "support_request_count": 1,
+      "support_resolved_count": 0,
+      "ai_final_sales_state": "NOT_READY",
+      "post_handoff_ai_reply_violation": false
+    }
+  ]
+}

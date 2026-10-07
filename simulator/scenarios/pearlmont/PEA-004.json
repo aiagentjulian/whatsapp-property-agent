@@ -33,10 +33,17 @@
   },
   "critical_facts": "RM0.18 psf maintenance incl sinking fund source caveat; no yield/appr data; phase unit supply",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
     "specific_verified_facts": [
-      "No rental comparables, yield, or appreciation fixture is supplied."
+      "No rental comparables, yield, or appreciation fixture is supplied.",
+      "Synthetic support fixture 'investment' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
     ],
-    "investment_data": "NOT_CONNECTED"
+    "investment_data": "NOT_CONNECTED",
+    "support_fixtures": {
+      "investment": {
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable."
+      }
+    }
   }
 }

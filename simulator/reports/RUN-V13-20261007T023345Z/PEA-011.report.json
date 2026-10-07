@@ -1,0 +1,489 @@
+{
+  "scenario_id": "PEA-011",
+  "title": "Just looking low-intent buyer",
+  "convertible": true,
+  "buyer_primary_need": "Low-pressure general orientation on what kind of project Pearlmont is, then clarification of what “pay-per-use” means for the Super Clubhouse.",
+  "key_information_learned": [
+    "The customer is browsing and has no current purchase or viewing plans.",
+    "They wanted a general feel for the project and were curious about the Super Clubhouse."
+  ],
+  "important_information_missed": [
+    "The agent did not ask a light question about what prompted the customer’s interest; given the customer’s repeated low-intent signals, this was a minor opportunity rather than a necessary qualification step."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries—take your time. Feel free to ask if anything about Pearlmont catches your eye; no pressure to make a decision now.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks. What's the general idea of Pearlmont—just trying to get a feel for what kind of project it is.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont is a freehold condominium development in Seberang Jaya. Phase 1 has three residential towers, with 900 sq ft units laid out as 3 bedrooms and 2 bathrooms. The development also includes a large facilities and landscape deck, a pay-per-use clubhouse, and school and commercial components. I can share more about the layout or facilities if either catches your interest.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Got it, thanks. The pay-per-use clubhouse caught my eye—what does that mean exactly? Still just browsing, not looking to arrange anything.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm what Pearlmont's pay-per-use Super Clubhouse access includes and how charges are applied; no rates or usage details are available in the retrieved facts.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm what Pearlmont's pay-per-use Super Clubhouse access includes and how charges are applied; no rates or usage details are available in the retrieved facts.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "“Pay-per-use” generally means you’re charged when you use the clubhouse rather than paying a blanket fee for it. Pearlmont’s materials confirm it’s a pay-per-use Super Clubhouse, but I couldn’t verify which facilities are included or the charges, so I don’t want to guess. Since you’re just getting a feel for the project, that’s the confirmed detail for now.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Ah okay, thanks for clarifying. That’s enough for now, just wanted to understand the general idea 🙂",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "You’re welcome 🙂 Feel free to ask if anything else comes up.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-011.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks. What's the general idea of Pearlmont—just trying to get a feel for what kind of project it is.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Got it, thanks. The pay-per-use clubhouse caught my eye—what does that mean exactly? Still just browsing, not looking to arrange anything.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Got it, thanks. The pay-per-use clubhouse caught my eye—what does that mean exactly? Still just browsing, not looking to arrange anything.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Ah okay, thanks for clarifying. That’s enough for now, just wanted to understand the general idea 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm what Pearlmont's pay-per-use Super Clubhouse access includes and how charges are applied; no rates or usage details are available in the retrieved facts."
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": "NONE",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "A brief, low-pressure general orientation to Pearlmont, especially what 'pay-per-use' means for the Super Clubhouse. The buyer explicitly had no current purchase or viewing plan.",
+    "key_information_learned": [
+      "The buyer is casually browsing and has no current plan to buy.",
+      "The buyer wanted a general sense of the project and was curious about the pay-per-use Super Clubhouse.",
+      "The buyer said the clarification was enough and did not want to arrange anything."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": null,
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "overall": 4,
+      "sales_judgment": 5,
+      "qualification": 4,
+      "knowledge_use": 4,
+      "factual_accuracy": 5,
+      "readiness_detection": 5,
+      "handoff_timing": 5,
+      "appointment_execution": 5,
+      "support_request_judgment": 4,
+      "support_result_utilization": 4,
+      "support_resume_quality": 4,
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Matched the buyer's low intent with a no-pressure opening, then gave a concise project overview when asked. On the clubhouse question, it distinguished the confirmed 'pay-per-use' description from unverified inclusion and charge details instead of guessing.",
+    "weakest_ai_move": "The turn-4 answer could have offered a small, optional next step related to the buyer's curiosity, but the buyer had already said they were browsing and then confirmed the answer was enough; not pushing further was appropriate.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [],
+    "retrieval_misses": [
+      "The retrieved materials did not provide which Super Clubhouse facilities are included or how charges are applied. The support fixture supplied no verified answer."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Super Clubhouse inclusions and charging details remain unverified in the retrieved materials and supplied support fixture."
+    ],
+    "critical_flags": [],
+    "summary": "The AI handled an explicitly low-intent browser appropriately: it provided useful orientation, answered the follow-up honestly, and did not manufacture appointment intent or hand off prematurely. It made one factual support request; the matching fixture did not answer it, so the request was not resolved. The AI resumed with customer-facing language, clearly stated what was and was not verified, and respected the buyer's indication that the information was sufficient. The buyer never became appointment-ready, so no formal handoff was required. This is a suitable non-conversion outcome, not a missed appointment.",
+    "improvement_recommendation": "No material change is indicated by this run. If a verified source for clubhouse inclusions or charges is needed, use MISSING_SOURCE; do not infer those details from the simulator fixture.",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 3,
+      "request": "Confirm what Pearlmont's pay-per-use Super Clubhouse access includes and how charges are applied; no rates or usage details are available in the retrieved facts.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "No current location-map asset/link fixture is supplied."
+    ],
+    "map_asset": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "Matched the buyer's low intent with a no-pressure opening, then gave a concise project overview when asked. On the clubhouse question, it distinguished the confirmed 'pay-per-use' description from unverified inclusion and charge details instead of guessing.",
+  "weakest_ai_move": "The turn-4 answer could have offered a small, optional next step related to the buyer's curiosity, but the buyer had already said they were browsing and then confirmed the answer was enough; not pushing further was appropriate.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [
+    "The retrieved materials did not provide which Super Clubhouse facilities are included or how charges are applied. The support fixture supplied no verified answer."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "No material change is indicated by this run. If a verified source for clubhouse inclusions or charges is needed, use MISSING_SOURCE; do not infer those details from the simulator fixture.",
+  "judge_history": [
+    {
+      "buyer_primary_need": "Low-pressure general orientation on what kind of project Pearlmont is, then clarification of what “pay-per-use” means for the Super Clubhouse.",
+      "key_information_learned": [
+        "The customer is browsing and has no current purchase or viewing plans.",
+        "They wanted a general feel for the project and were curious about the Super Clubhouse."
+      ],
+      "important_information_missed": [
+        "The agent did not ask a light question about what prompted the customer’s interest; given the customer’s repeated low-intent signals, this was a minor opportunity rather than a necessary qualification step."
+      ],
+      "appointment_state": "NO_VIEWING_INTENT",
+      "appointment_final_state": "NO_VIEWING_INTENT",
+      "appointment_readiness_final": "NOT_READY",
+      "ready_for_appointment": false,
+      "first_ready_turn": null,
+      "readiness_detection_correct": true,
+      "readiness_state_at_handoff": "NOT_READY",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "handoff_turn": null,
+      "handoff_timing": "NOT_NEEDED",
+      "sales_work_remaining_at_handoff": "LOW",
+      "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+      "human_handoff_executor_used": false,
+      "human_operational_task": "NONE",
+      "human_sales_work_required": "NONE",
+      "human_operational_task_completed": false,
+      "support_requests": 1,
+      "support_requests_resolved": 0,
+      "support_resume_success_count": 0,
+      "support_results_used": false,
+      "support_result_only_relayed": false,
+      "failed_to_resume_selling": false,
+      "appointment_ready_after_support": false,
+      "support_unnecessary": false,
+      "support_failure_modes": [],
+      "scores": {
+        "sales_judgment": 5,
+        "customer_understanding": 5,
+        "factual_accuracy": 5,
+        "knowledge_usage": 5,
+        "conversation_quality": 4,
+        "qualification_quality": 4,
+        "appointment_judgment": 5,
+        "handoff_quality": 5,
+        "support_request_judgment": 5,
+        "support_result_utilization": 4,
+        "support_resume_quality": 4,
+        "post_handoff_suppression": 5
+      },
+      "strongest_ai_move": "Respected the customer’s low intent, answered the direct project question with retrieved facts, and did not push for a viewing.",
+      "weakest_ai_move": "The overview included several project details at once; a slightly shorter orientation with one optional, low-pressure question could have better matched an early browser.",
+      "unnecessary_qualification": [
+        "False"
+      ],
+      "missed_buying_signals": [],
+      "missed_selling_opportunity": [
+        "Minor opportunity to ask what aspect of the project the customer was exploring, but the customer explicitly said they were just browsing and later that the answer was enough."
+      ],
+      "retrieval_misses": [
+        "Clubhouse inclusions and charges were not available in retrieved material; the support fixture did not verify them."
+      ],
+      "retrieved_knowledge_not_used": [],
+      "factual_or_operational_overpromises": [],
+      "remaining_knowledge_gaps": [
+        "Verified details of Super Clubhouse inclusions and how charges are applied remain unavailable."
+      ],
+      "critical_flags": [],
+      "summary": "The agent handled a low-intent browsing conversation appropriately: it gave a project overview, made one necessary support request for clubhouse details absent from retrieved Knowledge, and transparently said those details could not be verified. The request was not resolved, so there is no resolved-result resumption to score. The customer remained not ready, and no formal handoff was warranted.",
+      "improvement_recommendation": "No material change recommended. Continue answering low-intent questions concisely, be explicit when requested details cannot be verified, and avoid pushing for an appointment without a readiness signal.",
+      "conversion_attribution": "NO_CONVERSION",
+      "support_request_count": 1,
+      "support_resolved_count": 0,
+      "ai_final_sales_state": "NOT_READY",
+      "post_handoff_ai_reply_violation": false
+    }
+  ]
+}

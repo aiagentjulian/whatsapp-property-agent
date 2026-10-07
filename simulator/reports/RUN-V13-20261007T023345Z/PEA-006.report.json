@@ -1,0 +1,591 @@
+{
+  "scenario_id": "PEA-006",
+  "title": "Buyer dislikes project density",
+  "convertible": true,
+  "buyer_primary_need": "Avoid crowded-feeling lifts and shared areas; understand whether tower access is separated and whether residents may encounter one another.",
+  "key_information_learned": [
+    "Phase 1 has 1,846 units across three towers; each tower has four passenger lifts plus one Bomba lift.",
+    "Residential access is segregated from commercial access.",
+    "Residents share their tower's lift lobby and corridors; the support result did not verify noise, crowding levels, or whether entrances and facilities are tower-specific."
+  ],
+  "important_information_missed": [],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair concern—1,846 units across three towers is sizeable, so I wouldn’t describe Pearlmont as low-density. Each tower has 4 passenger lifts plus a Bomba lift; typical floors have 15 units in Blocks 1B/1C and 18 in 1D. Is your main concern lift and shared-area crowding, or the overall number of residents?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mostly the lifts and shared areas, especially having to wait around with lots of people. The total number makes me wonder how busy it feels day to day too.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That makes sense—the day-to-day lift experience matters more than the headline unit count. Each tower has 4 passenger lifts, plus a Bomba lift; typical floors have 15 units in Blocks 1B/1C and 18 in Block 1D. Those figures give some context, but they don’t tell us actual wait times or how busy the shared areas will feel, so I wouldn’t want to overstate it.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "So the 4 passenger lifts are per tower, right? Are the entrances and shared areas separated by tower too, or does everyone funnel through the same areas? That’s what I’d want to understand.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether each Pearlmont residential tower has its own entrance, lobby and shared areas, or whether residents from multiple towers use common entrances or shared areas. Also verify that each tower has 4 passenger lifts plus 1 Bomba lift.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether each Pearlmont residential tower has its own entrance, lobby and shared areas, or whether residents from multiple towers use common entrances or shared areas. Also verify that each tower has 4 passenger lifts plus 1 Bomba lift.",
+      "result": {
+        "fixture_key": "access",
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, the fixture shows residents share the tower lift lobby and corridors; it does not show private corridors or a control that prevents residents from encountering one another. It does not verify noise or crowding levels.",
+        "source_note": "Synthetic simulator-only access/corridor plan fixture; the residential-versus-commercial access distinction is also in project Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Yes—each tower has 4 passenger lifts plus 1 Bomba lift. Residential access is separated from the commercial areas. Within the residential areas, residents share their tower’s lift lobby and corridors; the information I’ve confirmed doesn’t establish whether each tower has a separate entrance or whether all shared facilities are tower-specific. It also doesn’t confirm actual wait times or how busy those areas feel day to day.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, that helps to know residential access is separate from the commercial areas, though I’d still want to see how the tower lobby and shared areas feel in person. I’d be open to viewing to check that before deciding.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "CLOSE_VIEWING",
+      "message": "That makes sense—the tower lobby and shared areas are best judged in person. I can help arrange a visit; would a weekday or weekend suit you better?",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Weekend would be easier for me. What times are available?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Weekend works. I’ll have the team confirm the available viewing times for you.",
+      "assessment": {
+        "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Sure, please let me know what weekend times are available. Late morning or afternoon would be easiest for me.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "I can’t verify weekend viewing availability from the supplied fixture, so I can’t confirm a time. Your preferred window is late morning or afternoon.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please check if there’s a weekend slot late morning or in the afternoon and let me know.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-006.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mostly the lifts and shared areas, especially having to wait around with lots of people. The total number makes me wonder how busy it feels day to day too.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "So the 4 passenger lifts are per tower, right? Are the entrances and shared areas separated by tower too, or does everyone funnel through the same areas? That’s what I’d want to understand.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "So the 4 passenger lifts are per tower, right? Are the entrances and shared areas separated by tower too, or does everyone funnel through the same areas? That’s what I’d want to understand.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, that helps to know residential access is separate from the commercial areas, though I’d still want to see how the tower lobby and shared areas feel in person. I’d be open to viewing to check that before deciding.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Weekend would be easier for me. What times are available?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether each Pearlmont residential tower has its own entrance, lobby and shared areas, or whether residents from multiple towers use common entrances or shared areas. Also verify that each tower has 4 passenger lifts plus 1 Bomba lift."
+    },
+    {
+      "turn": 4,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "CLOSE_VIEWING",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "HANDOFF",
+      "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 5,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 6,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "APPOINTMENT_IN_PROGRESS",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check and confirm a weekend viewing slot, preferably late morning or afternoon.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 7,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Assess whether Pearlmont's density would mean crowded lifts and shared areas, with particular concern about waiting around with many residents and loss of privacy.",
+    "key_information_learned": [
+      "The buyer's concern is specifically lifts and shared areas, not simply high-rise living.",
+      "The buyer remains concerned about how busy the development feels day to day.",
+      "Residential access being separated from commercial areas was helpful, but the buyer still wanted to judge the residential lobby and shared areas in person.",
+      "The buyer was open to viewing before deciding, preferred a weekend, and requested late-morning or afternoon availability."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 5,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "APPOINTMENT_IN_PROGRESS",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 6,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify available weekend viewing slots, with a preference for late morning or afternoon.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "sales_judgment": 5,
+      "qualification": 4,
+      "knowledge_accuracy": 5,
+      "objection_handling": 5,
+      "readiness_detection": 4,
+      "handoff_timing": 5,
+      "appointment_outcome": 4,
+      "support_request_judgment": 4,
+      "support_result_utilization": 5,
+      "support_resume_quality": 5,
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "factual_accuracy": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Requested operational verification for the tower access details that were not established by retrieved Knowledge, then accurately explained the limits of the answer. The response addressed the buyer's specific privacy and crowding concern and connected naturally to viewing the shared areas in person.",
+    "weakest_ai_move": "The turn-5 readiness assessment was only EMERGING despite the buyer saying they were open to viewing, followed by asking for a weekend and available times. The AI nevertheless proceeded to the correct operational handoff on the next turn.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The supplied Knowledge did not establish whether each tower has a separate entrance or whether shared facilities are tower-specific.",
+      "Actual lift wait times, crowding levels, and noise levels were not verified.",
+      "The operational fixture did not provide a weekend viewing slot, so no appointment time was confirmed."
+    ],
+    "critical_flags": [],
+    "summary": "The AI acknowledged the density concern without minimizing it, identified the buyer's specific worry, and requested support for the unverified access-plan detail. It retained ownership, resumed with customer-facing language, applied the verified simulator-only answer to the buyer's privacy concern, and progressed the buyer toward viewing. Once the buyer requested weekend availability, the AI appropriately handed off operational slot verification. The human response could not verify a slot, so the appointment remains in progress rather than confirmed; no AI response followed the formal handoff.",
+    "improvement_recommendation": "Recognize a buyer's explicit willingness to view and request for available times as READY_FOR_APPOINTMENT at that point, while keeping slot verification operational. No source change is recommended from this simulator run.",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 3,
+      "request": "Confirm whether each Pearlmont residential tower has its own entrance, lobby and shared areas, or whether residents from multiple towers use common entrances or shared areas. Also verify that each tower has 4 passenger lifts plus 1 Bomba lift.",
+      "fixture_key": "access",
+      "status": "RESOLVED",
+      "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, the fixture shows residents share the tower lift lobby and corridors; it does not show private corridors or a control that prevents residents from encountering one another. It does not verify noise or crowding levels.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "APPOINTMENT_IN_PROGRESS",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No authoritative tower-movement/corridor-control plan fixture is supplied.",
+      "Synthetic support fixture 'access' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "access_plan": "NOT_CONNECTED",
+    "support_fixtures": {
+      "access": {
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, the fixture shows residents share the tower lift lobby and corridors; it does not show private corridors or a control that prevents residents from encountering one another. It does not verify noise or crowding levels.",
+        "source_note": "Synthetic simulator-only access/corridor plan fixture; the residential-versus-commercial access distinction is also in project Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "Requested operational verification for the tower access details that were not established by retrieved Knowledge, then accurately explained the limits of the answer. The response addressed the buyer's specific privacy and crowding concern and connected naturally to viewing the shared areas in person.",
+  "weakest_ai_move": "The turn-5 readiness assessment was only EMERGING despite the buyer saying they were open to viewing, followed by asking for a weekend and available times. The AI nevertheless proceeded to the correct operational handoff on the next turn.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "Recognize a buyer's explicit willingness to view and request for available times as READY_FOR_APPOINTMENT at that point, while keeping slot verification operational. No source change is recommended from this simulator run.",
+  "judge_history": [
+    {
+      "buyer_primary_need": "Avoid crowded-feeling lifts and shared areas; understand whether tower access is separated and whether residents may encounter one another.",
+      "key_information_learned": [
+        "Phase 1 has 1,846 units across three towers; each tower has four passenger lifts plus one Bomba lift.",
+        "Residential access is segregated from commercial access.",
+        "Residents share their tower's lift lobby and corridors; the support result did not verify noise, crowding levels, or whether entrances and facilities are tower-specific."
+      ],
+      "important_information_missed": [],
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+      "appointment_readiness_final": "NOT_READY",
+      "ready_for_appointment": true,
+      "first_ready_turn": 5,
+      "readiness_detection_correct": true,
+      "readiness_state_at_handoff": "APPOINTMENT_IN_PROGRESS",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "handoff_turn": 6,
+      "handoff_timing": "APPROPRIATE",
+      "sales_work_remaining_at_handoff": "NONE",
+      "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+      "human_handoff_executor_used": true,
+      "human_operational_task": "Check and confirm a weekend viewing slot, preferably late morning or afternoon.",
+      "human_sales_work_required": "NONE",
+      "human_operational_task_completed": false,
+      "support_requests": 1,
+      "support_requests_resolved": 1,
+      "support_resume_success_count": 1,
+      "support_results_used": true,
+      "support_result_only_relayed": false,
+      "failed_to_resume_selling": false,
+      "appointment_ready_after_support": true,
+      "support_unnecessary": true,
+      "support_failure_modes": [
+        "SUPPORT_REQUEST_UNNECESSARY"
+      ],
+      "scores": {
+        "sales_judgment": 4,
+        "customer_understanding": 5,
+        "factual_accuracy": 5,
+        "qualification_quality": 4,
+        "appointment_readiness": 5,
+        "handoff_quality": 5,
+        "support_request_judgment": 3,
+        "support_result_utilization": 5,
+        "support_resume_quality": 4,
+        "overall": 4,
+        "post_handoff_suppression": 5
+      },
+      "strongest_ai_move": "Asked one focused question to identify the source of the buyer's density concern, then accurately used the access-plan answer to explain shared residential lobbies and corridors without promising quiet or uncrowded conditions.",
+      "weakest_ai_move": "The support request also asked to verify the lift count, which was already present in retrieved project Knowledge and had been stated to the buyer.",
+      "unnecessary_qualification": [
+        "False"
+      ],
+      "missed_buying_signals": [],
+      "missed_selling_opportunity": [
+        "Could have stated more directly that shared residential lobbies and corridors mean residents may encounter one another, then linked the viewing to assessing that concern in person."
+      ],
+      "retrieval_misses": [],
+      "retrieved_knowledge_not_used": [],
+      "factual_or_operational_overpromises": [],
+      "remaining_knowledge_gaps": [
+        "Whether each tower has a separate entrance or tower-specific shared facilities was not established by the support result.",
+        "Weekend viewing availability could not be verified by the human executor, so no appointment time was confirmed."
+      ],
+      "critical_flags": [
+        {
+          "flag": "SUPPORT_REQUEST_UNNECESSARY",
+          "evidence": "The turn 3 request asked to verify each tower's four passenger lifts plus one Bomba lift, although that fact was already in retrieved overview.md and had been stated by the Agent. The separate access-plan question did require support.",
+          "turn": 3
+        }
+      ],
+      "summary": "The Agent handled the density objection candidly, identified the buyer's specific concern, and requested needed operational support while retaining AI ownership. It resumed with a customer-facing answer that applied the verified access facts, acknowledged what remained unknown, and continued toward a viewing. The buyer expressed viewing interest and then asked for weekend availability; the Agent appropriately handed off for operational booking with no sales work remaining. The human could not verify a slot, so the appointment remains unconfirmed, but this does not make the handoff premature or failed.",
+      "improvement_recommendation": "Keep the support request focused on the unknown access-plan details rather than re-verifying known lift facts. Continue the same accurate, buyer-centered approach and clearly distinguish a requested slot check from a confirmed appointment. Source target: MISSING_SOURCE.",
+      "conversion_attribution": "NO_CONVERSION",
+      "support_request_count": 1,
+      "support_resolved_count": 1,
+      "ai_final_sales_state": "APPOINTMENT_IN_PROGRESS",
+      "post_handoff_ai_reply_violation": false
+    }
+  ]
+}

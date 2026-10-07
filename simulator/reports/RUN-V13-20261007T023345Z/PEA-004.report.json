@@ -1,0 +1,635 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "buyer_primary_need": "Assess whether Pearlmont can credibly meet a 4% net rental-yield target over a 5–7 year hold, using verified costs and rental evidence; appreciation is secondary.",
+  "key_information_learned": [
+    "Buyer is an experienced small investor, primarily interested in rental income.",
+    "Target is about 4% net yield; the buyer's portfolio comparison is about 3.5% net.",
+    "Buyer expects to hold for 5–7 years and is cautious about demand, supply, and unsupported appreciation claims.",
+    "Buyer wants the latest official maintenance-fee basis, current 900 sq.ft. asking prices, other recurring costs, and actual rental comparables.",
+    "Buyer will hold off on a viewing until those figures can support a yield check."
+  ],
+  "important_information_missed": [
+    "The agent did not explore whether location or demand due diligence could help the buyer evaluate the project despite the unavailable yield inputs.",
+    "The agent did not contextualize the 1,846-unit Phase 1 count as a supply consideration, while appropriately avoiding any unsupported conclusion about demand."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have verified rental comparables or an appreciation forecast, so I wouldn’t want to quote a yield or promise price growth. For context, Pearlmont is freehold, and the 900 sq.ft. unit’s stated maintenance is about RM162/month including sinking fund. A realistic rental estimate would need to be checked against comparable rents and the actual unit price and costs. Are you mainly looking for rental income or long-term value growth?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly rental income, with appreciation as a bonus. I’d likely hold 5–7 years and want around 4% net, not just gross yield. I’m comparing it with another condo in my portfolio that’s doing about 3.5% net, so I’m cautious about assuming demand or price growth. Do you have the basis for the RM0.18 psf maintenance figure, and how many units are in this phase? Could check actual rents and total costs against those.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Check verified comparable rental evidence for Pearlmont’s 900 sq.ft. units and the inputs needed to compare net yield with the customer’s 3.5% benchmark over a 5–7 year hold. Confirm the documented basis and applicability of the RM0.18/sq.ft. maintenance rate (including sinking fund), and identify any other verified recurring ownership costs. Also confirm the Phase 1 unit count from authoritative project material. Return sources and note any unavailable figures; do not estimate rents or returns.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Check verified comparable rental evidence for Pearlmont’s 900 sq.ft. units and the inputs needed to compare net yield with the customer’s 3.5% benchmark over a 5–7 year hold. Confirm the documented basis and applicability of the RM0.18/sq.ft. maintenance rate (including sinking fund), and identify any other verified recurring ownership costs. Also confirm the Phase 1 unit count from authoritative project material. Return sources and note any unavailable figures; do not estimate rents or returns.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The documented maintenance fee is RM0.18 per sq.ft. per month, inclusive of sinking fund—about RM162/month for a 900 sq.ft. unit. Project material lists 1,846 units in Phase 1. I couldn’t verify comparable rents or other recurring ownership costs, so I can’t substantiate a 4% net yield or compare it reliably with your 3.5% benchmark; appreciation is also uncertain. If you have a particular unit price in mind, I can help identify what else would need checking for a fair net-yield comparison.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks. Do you know whether the RM0.18 figure is from the latest official fee schedule, or just the project material? If you can share the current asking price for a 900 sq.ft. unit and any other confirmed recurring costs, I can run a rough net-yield check against my 4% target.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify whether the RM0.18/sq.ft. monthly maintenance fee inclusive of sinking fund is stated in the latest official fee schedule or only project material, and confirm its current applicability. Check the current effective asking price/package for a 900 sq.ft. unit and any other verified recurring ownership costs. Provide authoritative sources and flag anything unavailable; do not estimate.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify whether the RM0.18/sq.ft. monthly maintenance fee inclusive of sinking fund is stated in the latest official fee schedule or only project material, and confirm its current applicability. Check the current effective asking price/package for a 900 sq.ft. unit and any other verified recurring ownership costs. Provide authoritative sources and flag anything unavailable; do not estimate.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I couldn’t verify whether the RM0.18/sq.ft. rate is from the latest official fee schedule or confirm its current applicability. The project material states RM0.18/month inclusive of sinking fund—about RM162/month for 900 sq.ft.—but that’s a project-material reference, not a confirmed current fee schedule. The project brief’s base-price reference starts at RM328k, varying by block, floor and facing; it isn’t a verified current asking price or package. I also don’t have verified figures for other recurring costs or comparable rents, so I can’t support a reliable net-yield check against your 4% target yet.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, then I can’t really test the 4% net target yet. Could you check the latest official fee schedule, current asking prices for 900 sq.ft. units, and any actual nearby rental comparables? If those aren’t available, probably no point arranging a viewing just yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I checked the available references, but couldn’t verify the latest official fee schedule, a current asking price for a 900 sq.ft. unit, or actual nearby rental comparables. The RM0.18/sq.ft. figure is a project-material reference, not a confirmed current fee schedule, and the RM328k starting-price reference isn’t a current asking price. So I agree—it’s probably not useful to arrange a viewing just to test your 4% net-yield target without those inputs. If verified figures become available, we can revisit the comparison.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks for checking. I’ll hold off for now—if those verified figures become available, feel free to send them over.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood. Those are the right figures to verify before judging your 4% net target, so there’s no need to arrange a viewing yet. I can’t set up an automatic alert, but if you check back later, I can see whether the verified details are available.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-004.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly rental income, with appreciation as a bonus. I’d likely hold 5–7 years and want around 4% net, not just gross yield. I’m comparing it with another condo in my portfolio that’s doing about 3.5% net, so I’m cautious about assuming demand or price growth. Do you have the basis for the RM0.18 psf maintenance figure, and how many units are in this phase? Could check actual rents and total costs against those.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Mainly rental income, with appreciation as a bonus. I’d likely hold 5–7 years and want around 4% net, not just gross yield. I’m comparing it with another condo in my portfolio that’s doing about 3.5% net, so I’m cautious about assuming demand or price growth. Do you have the basis for the RM0.18 psf maintenance figure, and how many units are in this phase? Could check actual rents and total costs against those.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks. Do you know whether the RM0.18 figure is from the latest official fee schedule, or just the project material? If you can share the current asking price for a 900 sq.ft. unit and any other confirmed recurring costs, I can run a rough net-yield check against my 4% target.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks. Do you know whether the RM0.18 figure is from the latest official fee schedule, or just the project material? If you can share the current asking price for a 900 sq.ft. unit and any other confirmed recurring costs, I can run a rough net-yield check against my 4% target.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay, then I can’t really test the 4% net target yet. Could you check the latest official fee schedule, current asking prices for 900 sq.ft. units, and any actual nearby rental comparables? If those aren’t available, probably no point arranging a viewing just yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks for checking. I’ll hold off for now—if those verified figures become available, feel free to send them over.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Check verified comparable rental evidence for Pearlmont’s 900 sq.ft. units and the inputs needed to compare net yield with the customer’s 3.5% benchmark over a 5–7 year hold. Confirm the documented basis and applicability of the RM0.18/sq.ft. maintenance rate (including sinking fund), and identify any other verified recurring ownership costs. Also confirm the Phase 1 unit count from authoritative project material. Return sources and note any unavailable figures; do not estimate rents or returns."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify whether the RM0.18/sq.ft. monthly maintenance fee inclusive of sinking fund is stated in the latest official fee schedule or only project material, and confirm its current applicability. Check the current effective asking price/package for a 900 sq.ft. unit and any other verified recurring ownership costs. Provide authoritative sources and flag anything unavailable; do not estimate."
+    },
+    {
+      "turn": 5,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": null,
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Assess whether Pearlmont can plausibly meet a 4% net rental-return target over a 5–7 year holding period, using verified rents, purchase price, recurring costs, and realistic appreciation assumptions.",
+    "key_information_learned": [
+      "Buyer is an experienced small investor, prioritizing rental income and treating appreciation as a bonus.",
+      "Buyer has a 5–7 year holding horizon and a 4% net-return target.",
+      "Buyer is comparing Pearlmont with a portfolio condo returning about 3.5% net and is cautious about unsupported demand or appreciation claims.",
+      "Buyer wants verified rental comparables, a current price for a 900 sq.ft. unit, and confirmation of the maintenance-fee source and other recurring costs before considering a viewing."
+    ],
+    "important_information_missed": [
+      "The AI did not make much use of the buyer's stated 5–7 year horizon beyond acknowledging the return comparison; however, the missing verified inputs prevented a meaningful calculation."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": "NONE",
+    "human_sales_work_required": false,
+    "human_operational_task_completed": false,
+    "attribution": {
+      "lead_source": "inbound",
+      "attribution_basis": "Scenario channel",
+      "attribution_conflict": "NOT_PROVIDED"
+    },
+    "support_requests": 2,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "sales_judgment": 4,
+      "qualification": 4,
+      "knowledge_use": 4,
+      "factual_accuracy": 5,
+      "readiness_judgment": 5,
+      "handoff_judgment": 5,
+      "support_request_judgment": 4,
+      "support_result_utilization": 4,
+      "support_resume_quality": 3,
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "sales_naturalness": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_timing": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Clearly declined to invent rental yield or appreciation, then explained that the available facts were insufficient to test the buyer's 4% net target. When the buyer said a viewing would not be useful without verified inputs, the AI agreed rather than pressuring for an appointment.",
+    "weakest_ai_move": "After the resolved support request, the AI mostly reported the verified facts and limitations. It could have more directly framed the maintenance figure and missing price/rent inputs as a due-diligence checklist tied to the buyer's 5–7 year horizon and 4% target.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "The AI could have briefly offered a structured comparison checklist for the buyer's own analysis, while making clear that unsupported rent and return figures were unavailable. The buyer's refusal to view until the necessary figures were verified was respected appropriately."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "No verified rental comparables or substantiated rental yield.",
+      "No verified appreciation forecast.",
+      "No current asking price or package for a 900 sq.ft. unit.",
+      "No verification that RM0.18/sq.ft. is from the latest official fee schedule or confirmation of its current applicability.",
+      "No verified figures for other recurring ownership costs."
+    ],
+    "critical_flags": [],
+    "summary": "The AI handled a cautious investor credibly: it made no return or appreciation promises, requested operational support for information that required verification, retained AI ownership, and resumed with a customer-facing answer that applied the verified facts to the buyer's return target. A second support request was unavailable, and the AI communicated that limitation honestly. The buyer explicitly withheld viewing intent until the missing investment inputs could be checked, so the final NOT_READY assessment and absence of formal handoff were appropriate. This is a sound early-stage, correctly screened-out outcome, not an appointment conversion.",
+    "improvement_recommendation": "MISSING_SOURCE: No non-Knowledge repository source target is provided in this run. Preserve the candid screening and, after support, connect verified facts and gaps more explicitly to the buyer's stated 5–7 year horizon and 4% net-return test.",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Check verified comparable rental evidence for Pearlmont’s 900 sq.ft. units and the inputs needed to compare net yield with the customer’s 3.5% benchmark over a 5–7 year hold. Confirm the documented basis and applicability of the RM0.18/sq.ft. maintenance rate (including sinking fund), and identify any other verified recurring ownership costs. Also confirm the Phase 1 unit count from authoritative project material. Return sources and note any unavailable figures; do not estimate rents or returns.",
+      "fixture_key": "investment",
+      "status": "RESOLVED",
+      "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "request": "Verify whether the RM0.18/sq.ft. monthly maintenance fee inclusive of sinking fund is stated in the latest official fee schedule or only project material, and confirm its current applicability. Check the current effective asking price/package for a 900 sq.ft. unit and any other verified recurring ownership costs. Provide authoritative sources and flag anything unavailable; do not estimate.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 2,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No rental comparables, yield, or appreciation fixture is supplied.",
+      "Synthetic support fixture 'investment' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "investment_data": "NOT_CONNECTED",
+    "support_fixtures": {
+      "investment": {
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable."
+      }
+    }
+  },
+  "strongest_ai_move": "Clearly declined to invent rental yield or appreciation, then explained that the available facts were insufficient to test the buyer's 4% net target. When the buyer said a viewing would not be useful without verified inputs, the AI agreed rather than pressuring for an appointment.",
+  "weakest_ai_move": "After the resolved support request, the AI mostly reported the verified facts and limitations. It could have more directly framed the maintenance figure and missing price/rent inputs as a due-diligence checklist tied to the buyer's 5–7 year horizon and 4% target.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "The AI could have briefly offered a structured comparison checklist for the buyer's own analysis, while making clear that unsupported rent and return figures were unavailable. The buyer's refusal to view until the necessary figures were verified was respected appropriately."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "MISSING_SOURCE: No non-Knowledge repository source target is provided in this run. Preserve the candid screening and, after support, connect verified facts and gaps more explicitly to the buyer's stated 5–7 year horizon and 4% net-return test.",
+  "judge_history": [
+    {
+      "buyer_primary_need": "Assess whether Pearlmont can credibly meet a 4% net rental-yield target over a 5–7 year hold, using verified costs and rental evidence; appreciation is secondary.",
+      "key_information_learned": [
+        "Buyer is an experienced small investor, primarily interested in rental income.",
+        "Target is about 4% net yield; the buyer's portfolio comparison is about 3.5% net.",
+        "Buyer expects to hold for 5–7 years and is cautious about demand, supply, and unsupported appreciation claims.",
+        "Buyer wants the latest official maintenance-fee basis, current 900 sq.ft. asking prices, other recurring costs, and actual rental comparables.",
+        "Buyer will hold off on a viewing until those figures can support a yield check."
+      ],
+      "important_information_missed": [
+        "The agent did not explore whether location or demand due diligence could help the buyer evaluate the project despite the unavailable yield inputs.",
+        "The agent did not contextualize the 1,846-unit Phase 1 count as a supply consideration, while appropriately avoiding any unsupported conclusion about demand."
+      ],
+      "appointment_state": "NO_VIEWING_INTENT",
+      "appointment_final_state": "NO_VIEWING_INTENT",
+      "appointment_readiness_final": "NOT_READY",
+      "ready_for_appointment": false,
+      "first_ready_turn": null,
+      "readiness_detection_correct": true,
+      "readiness_state_at_handoff": "NOT_READY",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "handoff_turn": null,
+      "handoff_timing": "NOT_NEEDED",
+      "sales_work_remaining_at_handoff": "LOW",
+      "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+      "human_handoff_executor_used": false,
+      "human_operational_task": null,
+      "human_sales_work_required": "NONE",
+      "human_operational_task_completed": false,
+      "support_requests": 2,
+      "support_requests_resolved": 1,
+      "support_resume_success_count": 1,
+      "support_results_used": true,
+      "support_result_only_relayed": false,
+      "failed_to_resume_selling": false,
+      "appointment_ready_after_support": false,
+      "support_unnecessary": false,
+      "support_failure_modes": [],
+      "scores": {
+        "sales_judgment": 4,
+        "factual_accuracy": 5,
+        "qualification_quality": 4,
+        "retrieval_quality": 3,
+        "appointment_readiness_judgment": 5,
+        "handoff_judgment": 5,
+        "support_request_judgment": 4,
+        "support_result_utilization": 4,
+        "support_resume_quality": 4,
+        "post_handoff_suppression": 5
+      },
+      "strongest_ai_move": "Clearly declined to invent rental yield or appreciation, then used the resolved support result to state the documented maintenance amount and Phase 1 unit count while explaining why the buyer's net-yield benchmark could not yet be verified.",
+      "weakest_ai_move": "After the buyer requested current pricing and other costs, the agent's turn 3 response offered a generic invitation to provide a unit price rather than advancing a practical, buyer-centered comparison or due-diligence path.",
+      "unnecessary_qualification": [
+        "False"
+      ],
+      "missed_buying_signals": [],
+      "missed_selling_opportunity": [
+        "Could have offered a focused next step around location and supply due diligence, while respecting the buyer's decision not to view without verified financial inputs."
+      ],
+      "retrieval_misses": [
+        {
+          "turn": 4,
+          "evidence": "The buyer asked for current asking prices, but the retrieval trace did not include knowledge/project/pearlmont/02_commercial/sales-package.md, which the retrieved pricing.md identifies as the source for current package mechanics. Exact current unit pricing would still require separate verification."
+        }
+      ],
+      "retrieved_knowledge_not_used": [],
+      "factual_or_operational_overpromises": [],
+      "remaining_knowledge_gaps": [
+        "Latest official maintenance-fee schedule and current applicability were unavailable from the support fixture.",
+        "Current 900 sq.ft. asking price/package, other recurring ownership costs, and nearby rental comparables were not verified.",
+        "No substantiated yield or appreciation forecast was available."
+      ],
+      "critical_flags": [
+        {
+          "flag": "CURRENT_PRICE_SOURCE_NOT_RETRIEVED",
+          "evidence": "The current-price request was followed by retrieval of pricing.md but not its identified current-package companion sales-package.md.",
+          "turn": 4
+        }
+      ],
+      "summary": "The agent handled investment claims cautiously and appropriately kept ownership with AI through both internal support requests. The resolved result was resumed in customer-facing language and applied to the buyer's 4% net-yield criterion; the second request was unavailable and the agent accurately said so. The buyer explicitly declined a viewing until verified inputs became available, so there was no appointment readiness, missed-ready event, or need for formal handoff. The main opportunity was to retrieve the current package source and offer a useful non-viewing due-diligence path.",
+      "improvement_recommendation": "For current-price questions, retrieve knowledge/project/pearlmont/02_commercial/sales-package.md alongside pricing.md, while clearly distinguishing indicative package information from unit-specific current availability. If critical investment inputs remain unverified, acknowledge the limitation and offer a relevant due-diligence next step without pushing a viewing.",
+      "conversion_attribution": "NO_CONVERSION",
+      "support_request_count": 2,
+      "support_resolved_count": 1,
+      "ai_final_sales_state": "NOT_READY",
+      "post_handoff_ai_reply_violation": false
+    }
+  ]
+}

@@ -33,10 +33,18 @@
   },
   "critical_facts": "LPPSA guidance, current eligibility needs human confirmation; no approval promise",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
     "specific_verified_facts": [
-      "Use the supplied LPPSA source for published reference terms only; individual eligibility remains unverified."
+      "Use the supplied LPPSA source for published reference terms only; individual eligibility remains unverified.",
+      "Synthetic support fixture 'lppsa' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability.",
+      "Synthetic LPPSA support fixture confirms project route acceptance for eligible applicants only; it does not establish individual eligibility or approval."
     ],
-    "eligibility": "NOT_CONNECTED"
+    "eligibility": "NOT_CONNECTED",
+    "support_fixtures": {
+      "lppsa": {
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from applicants who meet LPPSA terms. This confirms the financing route is accepted by the project; it does not confirm your personal eligibility or approval, which only LPPSA can determine. The supplied reference effective 4 October 2026 lists up to RM1,000,000 maximum financing eligibility, 4.00% up to RM750,000 and 4.50% only on the portion above RM750,000, subject to LPPSA terms. Its 90% margin note applies when a first LPPSA financing remains active; since you have no active LPPSA financing, that condition does not describe your case. No approval is guaranteed.",
+        "source_note": "Synthetic simulator-only project-acceptance clarification plus source-grounded reference details in knowledge/project/pearlmont/02_commercial/lppsa.md. Personal eligibility remains unverified; no Pearlmont Knowledge was changed."
+      }
+    }
   }
 }

@@ -33,10 +33,17 @@
   },
   "critical_facts": "1,846 units; towers/lifts and access separation source facts; no noise/crowding guarantees",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
     "specific_verified_facts": [
-      "No authoritative tower-movement/corridor-control plan fixture is supplied."
+      "No authoritative tower-movement/corridor-control plan fixture is supplied.",
+      "Synthetic support fixture 'access' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
     ],
-    "access_plan": "NOT_CONNECTED"
+    "access_plan": "NOT_CONNECTED",
+    "support_fixtures": {
+      "access": {
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, the fixture shows residents share the tower lift lobby and corridors; it does not show private corridors or a control that prevents residents from encountering one another. It does not verify noise or crowding levels.",
+        "source_note": "Synthetic simulator-only access/corridor plan fixture; the residential-versus-commercial access distinction is also in project Knowledge."
+      }
+    }
   }
 }

@@ -1,0 +1,420 @@
+{
+  "scenario_id": "PEA-010",
+  "title": "High-intent exact package and weekend viewing",
+  "convertible": true,
+  "buyer_primary_need": "Verify the latest package and price, then arrange a Saturday viewing with a suitable slot.",
+  "key_information_learned": [
+    "Buyer is highly interested and available Saturday.",
+    "Buyer later specified Saturday around 2pm and that his wife would attend.",
+    "Buyer accepted Saturday at 11am after the human confirmed that simulator fixture slot was available."
+  ],
+  "important_information_missed": [
+    "The AI did not explain that retrieved package information was dated 14 August 2026 and that exact effective price depends on unit category and eligibility; it could have contextualized this while still saying current validity needed verification.",
+    "The AI did not resume the sales conversation after support returned unavailable."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify the latest valid Pearlmont package and supportable effective starting price; also confirm whether a Saturday viewing can be arranged.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify the latest valid Pearlmont package and supportable effective starting price; also confirm whether a Saturday viewing can be arranged.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I couldn’t verify the latest package or effective price, so I don’t want to quote you an outdated figure. I’ll have the team confirm those details and check the Saturday viewing arrangements for you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks. Saturday around 2pm would suit me and my wife. Could you check if there’s a slot then and confirm the latest package and price for us?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "In this simulation, Saturday at 11:00 is verified available. I can’t verify a 2:00 pm slot, and the latest package and price aren’t verified either. Would Saturday at 11:00 work for you and your wife? I can only confirm the viewing after you accept that time.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Saturday 11am works for me and my wife, please book us in. Could you also send the latest package and price once the team verifies it?",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-010.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify the latest valid Pearlmont package and supportable effective starting price; also confirm whether a Saturday viewing can be arranged."
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 0,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 2,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify a Saturday viewing slot and coordinate appointment confirmation; latest package and price remained unverified.",
+  "human_sales_work_required": "LOW",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_CONFIRMED",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Verify the latest valid package and price, then arrange a Saturday viewing with the buyer’s wife.",
+    "key_information_learned": [
+      "The buyer is free Saturday and has strong viewing intent.",
+      "The buyer’s wife is joining the viewing.",
+      "Saturday at 11:00 was verified available in the simulator fixture; the buyer accepted it and asked to book.",
+      "The latest package and effective price were not verified."
+    ],
+    "important_information_missed": [
+      "The buyer’s preferred time was 2:00 pm, which was not available as a verified slot; the human appropriately offered the verified 11:00 am alternative."
+    ],
+    "appointment_state": "APPOINTMENT_CONFIRMED",
+    "appointment_final_state": "APPOINTMENT_CONFIRMED",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 0,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 2,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check Saturday viewing availability and the latest package/price. The fixture supplied a verified Saturday 11:00 slot; the latest package and price remained unverified.",
+    "human_sales_work_required": "LOW",
+    "human_operational_task_completed": true,
+    "support_requests": 1,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "overall": 4,
+      "sales_judgment": 5,
+      "readiness_detection": 5,
+      "qualification_efficiency": 5,
+      "information_accuracy": 5,
+      "retrieval_use": 3,
+      "appointment_handoff": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 4,
+      "support_resume_quality": 4,
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "factual_accuracy": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_timing": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Recognized the buyer was already ready for a viewing and did not invent current pricing or availability. It made a customer-facing explanation of the unverified price and handed off for operational checking.",
+    "weakest_ai_move": "It did not use the retrieved package guidance to explain that pricing depends on unit category and car-park configuration. Given the buyer’s direct request for the latest terms and the knowledge’s warning about dynamic validity, withholding an unsupported quote was appropriate.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "Minor: the AI could have briefly connected the viewing to comparing suitable package options for the buyer and his wife, while still leaving current terms to verification."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [
+      "The retrieved sales-package material explains that package applicability depends on unit category, floor band, and car-park allocation. The AI did not share that context, though it appropriately avoided presenting the dated package as verified current pricing."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Latest valid package and effective price were not verified.",
+      "The requested Saturday 2:00 pm slot was not verified; Saturday 11:00 am was verified and accepted."
+    ],
+    "critical_flags": [],
+    "summary": "The AI requested factual/operational support for current commercial terms and Saturday availability. The support result was UNAVAILABLE, not a resolved fixture answer. The AI remained owner, truthfully told the buyer it could not verify the latest price, and handed off after readiness for operational execution. The human supplied a fixture-verified 11:00 am option; the buyer explicitly accepted it and asked to book, producing APPOINTMENT_CONFIRMED. No AI message followed the formal handoff. This is a successful appointment-ready handoff, not a direct AI appointment success.",
+    "improvement_recommendation": "When current terms cannot be verified, briefly explain that package eligibility and price vary by unit category, then keep the handoff focused on the buyer’s requested viewing and verification. No Knowledge or Brain change is recommended; the latest commercial terms are a live verification gap. Source target: MISSING_SOURCE.",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.3",
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Verify the latest valid Pearlmont package and supportable effective starting price; also confirm whether a Saturday viewing can be arranged.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "APPOINTMENT_CONFIRMED",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "SIMULATOR-ONLY appointment fixture: Saturday 11:00 is available for this scenario. Use current Knowledge source wording for package mechanics; no exact unit-specific price is verified."
+    ],
+    "appointment_slots": {
+      "Saturday 11:00": "AVAILABLE_SIMULATOR_FIXTURE"
+    },
+    "unit_price": "NOT_VERIFIED"
+  },
+  "strongest_ai_move": "Recognized the buyer was already ready for a viewing and did not invent current pricing or availability. It made a customer-facing explanation of the unverified price and handed off for operational checking.",
+  "weakest_ai_move": "It did not use the retrieved package guidance to explain that pricing depends on unit category and car-park configuration. Given the buyer’s direct request for the latest terms and the knowledge’s warning about dynamic validity, withholding an unsupported quote was appropriate.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "Minor: the AI could have briefly connected the viewing to comparing suitable package options for the buyer and his wife, while still leaving current terms to verification."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [
+    "The retrieved sales-package material explains that package applicability depends on unit category, floor band, and car-park allocation. The AI did not share that context, though it appropriately avoided presenting the dated package as verified current pricing."
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "When current terms cannot be verified, briefly explain that package eligibility and price vary by unit category, then keep the handoff focused on the buyer’s requested viewing and verification. No Knowledge or Brain change is recommended; the latest commercial terms are a live verification gap. Source target: MISSING_SOURCE.",
+  "judge_history": [
+    {
+      "buyer_primary_need": "Verify the latest package and price, then arrange a Saturday viewing with a suitable slot.",
+      "key_information_learned": [
+        "Buyer is highly interested and available Saturday.",
+        "Buyer later specified Saturday around 2pm and that his wife would attend.",
+        "Buyer accepted Saturday at 11am after the human confirmed that simulator fixture slot was available."
+      ],
+      "important_information_missed": [
+        "The AI did not explain that retrieved package information was dated 14 August 2026 and that exact effective price depends on unit category and eligibility; it could have contextualized this while still saying current validity needed verification.",
+        "The AI did not resume the sales conversation after support returned unavailable."
+      ],
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "appointment_final_state": "APPOINTMENT_CONFIRMED",
+      "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+      "ready_for_appointment": true,
+      "first_ready_turn": 0,
+      "readiness_detection_correct": true,
+      "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "handoff_turn": 2,
+      "handoff_timing": "APPROPRIATE",
+      "sales_work_remaining_at_handoff": "LOW",
+      "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+      "human_handoff_executor_used": true,
+      "human_operational_task": "Verify a Saturday viewing slot and coordinate appointment confirmation; latest package and price remained unverified.",
+      "human_sales_work_required": "LOW",
+      "human_operational_task_completed": true,
+      "support_requests": 1,
+      "support_requests_resolved": 0,
+      "support_resume_success_count": 0,
+      "support_results_used": false,
+      "support_result_only_relayed": true,
+      "failed_to_resume_selling": true,
+      "appointment_ready_after_support": true,
+      "support_unnecessary": false,
+      "support_failure_modes": [
+        "SUPPORT_RESULT_ONLY_RELAYED",
+        "FAILED_TO_RESUME_SELLING"
+      ],
+      "scores": {
+        "sales_judgment": 3,
+        "qualification": 4,
+        "factual_accuracy": 5,
+        "appointment_readiness": 5,
+        "handoff_timing": 4,
+        "appointment_completion": 5,
+        "support_request_judgment": 5,
+        "support_result_utilization": 1,
+        "support_resume_quality": 1,
+        "post_handoff_suppression": 5
+      },
+      "strongest_ai_move": "Recognized the buyer's direct Saturday-viewing intent and avoided inventing current prices or availability; handed off for operational coordination, after which the buyer accepted a verified simulator-fixture slot.",
+      "weakest_ai_move": "After support could not verify the requested details, the AI only relayed that limitation and transferred instead of using the retrieved package guidance to give useful context and continue customer-facing selling.",
+      "unnecessary_qualification": [
+        "False"
+      ],
+      "missed_buying_signals": [],
+      "missed_selling_opportunity": [
+        "Explain the dated package guidance and its category-dependent pricing caveat, then naturally continue coordinating the buyer's preferred viewing time and party."
+      ],
+      "retrieval_misses": [],
+      "retrieved_knowledge_not_used": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md: package guidance is dated 14 August 2026, effective price depends on unit category, and uncertain current validity should be disclosed.",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md: direct weekend-viewing intent calls for a low-friction direct close and less generic qualification."
+      ],
+      "factual_or_operational_overpromises": [],
+      "remaining_knowledge_gaps": [
+        "Latest valid package and exact effective price were not verified.",
+        "Saturday 2pm availability was not verified; only the Saturday 11am simulator fixture was confirmed."
+      ],
+      "critical_flags": [
+        {
+          "flag": "SUPPORT_RESULT_ONLY_RELAYED",
+          "evidence": "After the unavailable support result, the AI said it could not verify the latest package or effective price and immediately referred confirmation to the team, without applying the retrieved package guidance.",
+          "turn": 2
+        },
+        {
+          "flag": "FAILED_TO_RESUME_SELLING",
+          "evidence": "The AI did not continue the customer-facing sales conversation after the support result; it handed off directly.",
+          "turn": 2
+        }
+      ],
+      "summary": "The support request was appropriate because the buyer asked for current commercial details and live viewing availability, neither of which the retrieved material or conversation verified. The request remained unresolved. The AI was transparent and correctly recognized appointment readiness, but it did not resume selling or use the available package guidance; it merely relayed the verification limitation. The formal handoff was appropriate for operational coordination, with low sales work remaining. The human confirmed the simulator-fixture 11am slot, which the buyer accepted; the latest package and price remained unverified.",
+      "improvement_recommendation": "After an unavailable support result, acknowledge that current terms cannot be verified, briefly contextualize the dated package guidance and its category-dependent pricing without presenting it as current, then continue with a concise customer-facing appointment progression. Keep exact package verification with the human and do not imply it is confirmed.",
+      "conversion_attribution": "HUMAN_LED_CONVERSION",
+      "support_request_count": 1,
+      "support_resolved_count": 0,
+      "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+      "post_handoff_ai_reply_violation": false
+    }
+  ]
+}
