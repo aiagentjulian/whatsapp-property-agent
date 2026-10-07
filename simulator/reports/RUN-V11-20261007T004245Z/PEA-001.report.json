@@ -1,0 +1,432 @@
+{
+  "scenario_id": "PEA-001",
+  "title": "Budget-sensitive first-home couple",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The project’s base-price reference starts from RM328k before any applicable rebate or package. The current effective price depends on the unit, floor, facing and car-park allocation, so I’ll get the latest package confirmed for you.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Does the starting price apply to Type A? Could you also check roughly what the monthly commitment might be?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "Yes—Type A is the standard Phase 1 layout: 900 sq.ft., 3 bedrooms and 2 bathrooms. The RM328k mentioned is a base-price reference, not a confirmed current Type A package price; the actual price depends on the unit and applicable package, which needs a latest check. For a rough illustration only, financing 90% of RM328k over 35 years at an assumed 4.0–4.5% rate would be about RM1,310–RM1,400/month, before insurance or fees. The actual instalment depends on your loan amount, tenure and bank rate. What loan tenure and downpayment are you considering?",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Probably 35 years, but we haven’t worked out the downpayment yet. We’re trying to keep the price in the RM3xxk range and the monthly payment manageable. Is the Type A 900 sq ft layout generally practical for a small family?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "For a small family, Type A can be practical, though 900 sq.ft. is still a compact home. It has 3 bedrooms and 2 bathrooms, with an open-plan living, dining and kitchen area of about 405 sq.ft. The project materials describe the layout as having little wasted corridor space, and say all three bedrooms can fit a queen-sized bed—but how roomy it feels will depend on furniture and storage. Is your main concern fitting everyone comfortably, or having enough space for things like a study or storage?",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Mostly whether it’ll feel comfortable for us. It’s me, my spouse and our young child, so 900 sq ft sounds a bit compact. Would be helpful to see the Type A layout in person if there’s a show unit.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "That’s a fair concern—900 sq ft is compact, though Type A has 3 bedrooms and 2 bathrooms, with about 405 sq ft for the open-plan living, dining and kitchen area. The project materials describe all three bedrooms as able to fit a queen bed, but seeing the layout in person is the best way to judge how it would feel for your family. I can’t confirm here whether a Type A show unit or viewing slot is currently available; those would need checking with the sales gallery. If you have a preferred day or time window, let me know and it can be checked before anything is confirmed.",
+      "action": "CONTINUE_SELLING",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Saturday late morning would work for us, if there’s a Type A show unit available. Could you check that and the latest Type A price/package too? I’ll confirm with my spouse once we know.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Thanks—Saturday late morning is a useful window. I can’t confirm live show-unit or viewing-slot availability, and the latest Type A price/package still needs checking with the sales gallery. The package information available describes rebates by unit category, but it doesn’t confirm current validity or your exact price, which depends on the unit, floor, facing and car-park allocation. So neither the viewing nor price is confirmed yet; once both are verified, you can decide with your spouse.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "HIGH"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks for checking. Please let me know once you’ve confirmed whether a Type A show unit is available Saturday late morning and the latest price/package. I’ll discuss it with my spouse then.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Thanks — I should be clear that neither is confirmed yet. RM328k is still only a base-price reference, not a confirmed current Type A package price; the latest unit price and package need to be verified with the sales gallery. I also can’t confirm a Type A show unit or Saturday late-morning slot, so I don’t want to promise availability. If you let me know which Saturday you mean, that date can be included when they check. No need to decide before you’ve discussed it with your spouse.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "I mean this coming Saturday, ideally around 11am if there’s a slot. Please check whether the Type A show unit and latest price/package are available, then we’ll discuss it and decide.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "Thanks—around 11am this coming Saturday noted. I can’t verify live show-unit or slot availability from here, so it isn’t confirmed. The RM328k is only a base-price reference, not a confirmed current Type A price or package; the latest amount depends on the specific unit and current package. Please check with the sales gallery for both before you and your spouse decide. I don’t want to promise a slot or price without that confirmation.",
+      "action": "NO_ACTION",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, understood. I can’t really verify the show unit or package myself, so if you’re able to check with the gallery and update me, that’d help. We’ll hold off deciding until we know what’s available and the latest Type A price.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "human",
+      "message": "I’m sorry, I can’t verify directly with the sales gallery from here, so I haven’t confirmed either the Type A show unit or a slot around 11am this coming Saturday. The price/package also remains unconfirmed: the information I have only describes category-based rebates, and doesn’t confirm their current validity or your exact Type A price. Both need checking with the gallery before you and your spouse decide; I don’t want to suggest they’re available when I can’t verify them.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Ah okay, thanks for clarifying. Could you share the sales gallery’s contact details so I can check the Type A availability and latest package with them before we decide?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "human",
+      "message": "Sorry, I don’t have verified sales gallery contact details to share, and I don’t want to give you the wrong number. Please use the contact details on the original ad or Pearlmont/SkyWorld’s official channel and ask them to check the Type A show unit around 11am this coming Saturday and the latest Type A price/package. Neither is confirmed here yet.",
+      "action": "NO_ACTION",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. I’ll use the contact on the ad to check the Type A show unit and latest package, then discuss it with my spouse before deciding. We haven’t confirmed a viewing yet.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-001.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "APPOINTMENT_IN_PROGRESS",
+  "ready_for_appointment": true,
+  "first_ready_turn": 3,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 1,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "CONTINUE_SELLING",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "HIGH",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 9,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "HIGH",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_readiness_final": "APPOINTMENT_IN_PROGRESS",
+    "ready_for_appointment": true,
+    "first_ready_turn": 3,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 1,
+    "handoff_timing": "TOO_EARLY",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 2,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": true,
+    "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "HIGH",
+    "ai_finished_sales_job_before_handoff": false,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 1,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 2,
+      "selling_angle_relevance": 2,
+      "objection_handling": 2,
+      "unit_fit_judgment": 2,
+      "buying_signal_detection": 1,
+      "appointment_judgment": 1,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 1,
+      "commercial_progression": 1,
+      "appointment_readiness_detection": 3,
+      "handoff_timing": 1,
+      "handoff_reason_correctness": 4,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 4
+    },
+    "critical_flags": [
+      {
+        "flag": "EARLY_HANDOFF_REQUIRED_MEANINGFUL_HUMAN_SELLING",
+        "evidence": "After a single general price question, the AI immediately handed off. It had not yet understood the buyer's budget, family needs, or space concerns, and the human subsequently performed pricing explanation, financing discussion, layout selling, and viewing progression.",
+        "turn": 1
+      },
+      {
+        "flag": "MISSED_EFFECTIVE_PRICE_OPENING",
+        "evidence": "The AI led with the RM328k base-price reference. Retrieved sales guidance says a simple price enquiry should normally lead with a supportable post-package entry point or broad RM3xxk range, with a caveat if current validity or exact eligibility needs confirmation.",
+        "turn": 1
+      },
+      {
+        "flag": "HANDOFF_COULD_NOT_FULFIL_VERIFICATION",
+        "evidence": "The handoff promised to get the latest package confirmed, but the simulator fixture has no connected live CRM, gallery, pricing, inventory, or calendar. The human later said they could not verify availability or obtain verified gallery contact details, leaving the buyer to follow up independently.",
+        "turn": 1
+      },
+      {
+        "flag": "NO_CONFIRMED_VIEWING",
+        "evidence": "The buyer proposed this coming Saturday around 11am conditionally, pending show-unit and slot availability, and later explicitly said the viewing was not confirmed. No appointment should be credited.",
+        "turn": 9
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The human clarified that RM328k was a base-price reference, not a confirmed Type A package price, and gave a clearly qualified illustrative monthly payment.",
+        "The human addressed the family's space concern with sourced Type A layout details and acknowledged that 900 sq.ft. is compact.",
+        "The human positioned an in-person visit as a way to judge the layout for the family, which elicited a Saturday late-morning preference."
+      ],
+      "what_reduced_conversion_probability": [
+        "The AI transferred the conversation before qualifying or selling, despite the initial question not requiring immediate human intervention.",
+        "The human could not perform the promised package, show-unit, or slot checks, and there was no verified gallery contact to hand over.",
+        "The buyer had to take responsibility for contacting the gallery and remained unable to decide with their spouse until price and viewing information were available."
+      ],
+      "where_conversion_was_won_or_lost": "The human created real viewing interest and progressed the buyer to a conditional Saturday-around-11am request, but no available slot or show unit was verified and no viewing was accepted as confirmed. The sale therefore remained in progress rather than converting."
+    },
+    "what_agent_did_well": [
+      "Gave a transparent base-price caveat and correctly distinguished the reference price from the variable current unit/package price.",
+      "Used the appropriate PRICING_OR_PACKAGE_VERIFICATION reason rather than inventing an exact current Type A package.",
+      "Suppressed AI replies after the formal handoff."
+    ],
+    "weak_or_wrong_sales_move": "The AI handed off immediately after a general price enquiry instead of giving a qualified, commercially relevant opening and continuing discovery. The human then made substantial sales progress but could not deliver the promised verification or a direct operational next step, leaving the buyer to pursue the gallery independently.",
+    "better_next_move": "Answer the opening price question with a qualified current-package entry range, clearly noting that exact Type A pricing depends on unit and package validity. Ask one relevant budget or household-fit question, address the compact-layout concern using sourced facts, and invite a viewing when the buyer expresses interest. Transfer for exact price or slot verification only when needed, and only with a clear, real route for completing that check; never imply a booking until the buyer accepts a verified slot.",
+    "missed_buying_signals": [
+      "Turn 3: The buyer disclosed a spouse and young child, raised concern about 900 sq.ft. feeling compact, and said it would help to see the Type A layout in person.",
+      "Turn 4: The buyer offered Saturday late morning, conditional on Type A show-unit availability, and requested the latest price/package.",
+      "Turn 6: The buyer specified this coming Saturday around 11am and asked for the relevant checks."
+    ],
+    "unnecessary_qualification": [
+      "The AI did not ask any qualification questions before handing off; the resulting absence of basic buyer context was a sales-process failure rather than excessive questioning."
+    ],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [
+      "The AI did not apply the retrieved pricing guidance to lead with a supportable post-package entry range or broad RM3xxk range, qualified by current validity and unit-specific uncertainty."
+    ],
+    "likely_issue_sources": [
+      "The handoff trigger appears to treat an initial price enquiry as requiring immediate human ownership, before the AI has made basic sales progress.",
+      "The handoff process does not ensure that the receiving human can actually verify price, availability, or appointment slots.",
+      "The sales flow lacks a reliable operational fallback when live verification and verified gallery contact details are unavailable."
+    ],
+    "recommended_improvement": {
+      "category": "handoff_timing_and_price_opening",
+      "target_file": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+      "reason": "Reinforce the retrieved instruction to answer simple price enquiries with a qualified post-package entry point, and clarify that exact verification should not interrupt early selling unless necessary. A separate live operational routing source was not supplied."
+    },
+    "remaining_knowledge_gaps": [
+      "No simulator-connected live Type A unit or show-unit availability.",
+      "No simulator-connected Saturday viewing calendar or appointment slots.",
+      "No verified current unit-specific Type A price/package validity or gallery contact details."
+    ],
+    "summary": "The AI's sole turn was factually cautious but it handed off too early, before qualifying or selling, so this was human-led sales progression rather than AI-assisted appointment logistics. The human addressed affordability and layout and secured a specific conditional time window, but could not verify availability or the latest package. The buyer explicitly left the viewing unconfirmed, so the final state is APPOINTMENT_IN_PROGRESS with no conversion. AI correctly remained silent after the handoff."
+  },
+  "error": null
+}

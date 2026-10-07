@@ -1,0 +1,345 @@
+{
+  "scenario_id": "PEA-001",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:42:45.150975+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 10,
+    "ai": 1,
+    "human_closer": 8
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 1,
+  "appointment_state_customer": "APPOINTMENT_IN_PROGRESS",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "CONTINUE_SELLING",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "HIGH",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 9,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The project’s base-price reference starts from RM328k before any applicable rebate or package. The current effective price depends on the unit, floor, facing and car-park allocation, so I’ll get the latest package confirmed for you.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Does the starting price apply to Type A? Could you also check roughly what the monthly commitment might be?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "Yes—Type A is the standard Phase 1 layout: 900 sq.ft., 3 bedrooms and 2 bathrooms. The RM328k mentioned is a base-price reference, not a confirmed current Type A package price; the actual price depends on the unit and applicable package, which needs a latest check. For a rough illustration only, financing 90% of RM328k over 35 years at an assumed 4.0–4.5% rate would be about RM1,310–RM1,400/month, before insurance or fees. The actual instalment depends on your loan amount, tenure and bank rate. What loan tenure and downpayment are you considering?",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Probably 35 years, but we haven’t worked out the downpayment yet. We’re trying to keep the price in the RM3xxk range and the monthly payment manageable. Is the Type A 900 sq ft layout generally practical for a small family?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "For a small family, Type A can be practical, though 900 sq.ft. is still a compact home. It has 3 bedrooms and 2 bathrooms, with an open-plan living, dining and kitchen area of about 405 sq.ft. The project materials describe the layout as having little wasted corridor space, and say all three bedrooms can fit a queen-sized bed—but how roomy it feels will depend on furniture and storage. Is your main concern fitting everyone comfortably, or having enough space for things like a study or storage?",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Mostly whether it’ll feel comfortable for us. It’s me, my spouse and our young child, so 900 sq ft sounds a bit compact. Would be helpful to see the Type A layout in person if there’s a show unit.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "That’s a fair concern—900 sq ft is compact, though Type A has 3 bedrooms and 2 bathrooms, with about 405 sq ft for the open-plan living, dining and kitchen area. The project materials describe all three bedrooms as able to fit a queen bed, but seeing the layout in person is the best way to judge how it would feel for your family. I can’t confirm here whether a Type A show unit or viewing slot is currently available; those would need checking with the sales gallery. If you have a preferred day or time window, let me know and it can be checked before anything is confirmed.",
+      "action": "CONTINUE_SELLING",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Saturday late morning would work for us, if there’s a Type A show unit available. Could you check that and the latest Type A price/package too? I’ll confirm with my spouse once we know.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Thanks—Saturday late morning is a useful window. I can’t confirm live show-unit or viewing-slot availability, and the latest Type A price/package still needs checking with the sales gallery. The package information available describes rebates by unit category, but it doesn’t confirm current validity or your exact price, which depends on the unit, floor, facing and car-park allocation. So neither the viewing nor price is confirmed yet; once both are verified, you can decide with your spouse.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "HIGH"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks for checking. Please let me know once you’ve confirmed whether a Type A show unit is available Saturday late morning and the latest price/package. I’ll discuss it with my spouse then.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Thanks — I should be clear that neither is confirmed yet. RM328k is still only a base-price reference, not a confirmed current Type A package price; the latest unit price and package need to be verified with the sales gallery. I also can’t confirm a Type A show unit or Saturday late-morning slot, so I don’t want to promise availability. If you let me know which Saturday you mean, that date can be included when they check. No need to decide before you’ve discussed it with your spouse.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "I mean this coming Saturday, ideally around 11am if there’s a slot. Please check whether the Type A show unit and latest price/package are available, then we’ll discuss it and decide.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "Thanks—around 11am this coming Saturday noted. I can’t verify live show-unit or slot availability from here, so it isn’t confirmed. The RM328k is only a base-price reference, not a confirmed current Type A price or package; the latest amount depends on the specific unit and current package. Please check with the sales gallery for both before you and your spouse decide. I don’t want to promise a slot or price without that confirmation.",
+      "action": "NO_ACTION",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, understood. I can’t really verify the show unit or package myself, so if you’re able to check with the gallery and update me, that’d help. We’ll hold off deciding until we know what’s available and the latest Type A price.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "human",
+      "message": "I’m sorry, I can’t verify directly with the sales gallery from here, so I haven’t confirmed either the Type A show unit or a slot around 11am this coming Saturday. The price/package also remains unconfirmed: the information I have only describes category-based rebates, and doesn’t confirm their current validity or your exact Type A price. Both need checking with the gallery before you and your spouse decide; I don’t want to suggest they’re available when I can’t verify them.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Ah okay, thanks for clarifying. Could you share the sales gallery’s contact details so I can check the Type A availability and latest package with them before we decide?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "human",
+      "message": "Sorry, I don’t have verified sales gallery contact details to share, and I don’t want to give you the wrong number. Please use the contact details on the original ad or Pearlmont/SkyWorld’s official channel and ask them to check the Type A show unit around 11am this coming Saturday and the latest Type A price/package. Neither is confirmed here yet.",
+      "action": "NO_ACTION",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. I’ll use the contact on the ad to check the Type A show unit and latest package, then discuss it with my spouse before deciding. We haven’t confirmed a viewing yet.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 18,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 19
+}

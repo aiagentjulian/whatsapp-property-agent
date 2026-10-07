@@ -1,0 +1,224 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:53:37.321076+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 2,
+    "human_closer": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+  "handoff_turn": 2,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly looking at Block 1B, buying for my family so I need to be careful. The 36m figure is helpful, but can you share the source or a site plan showing which tower it applies to, and any official flood-level/drainage info? I’d want to check it independently too—understand it can’t be guaranteed zero risk.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a fair concern. The project FAQ states Block 1B is about 36m from the high-tension cable, compared with a stated minimum distance requirement of 20m; that distance shouldn’t be assumed for every tower or unit. For flood mitigation, the overall development’s finished floor level is planned to be about 2.4m above sea level, and the river is stated to be maintained by JPS with flood-gate/freeboard control. These measures aren’t a guarantee of zero flood risk. Are you looking at a particular block or unit?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly looking at Block 1B, buying for my family so I need to be careful. The 36m figure is helpful, but can you share the source or a site plan showing which tower it applies to, and any official flood-level/drainage info? I’d want to check it independently too—understand it can’t be guaranteed zero risk.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The project FAQ I have notes an approximate 36m distance from the high-tension cable for Block 1B, and says the overall development’s finished floor level is planned at about 2.4m above sea level, with the river under JPS maintenance and flood-gate/freeboard control. I don’t have the tower-specific site plan or official flood/drainage documents to share, so I don’t want to present that summary as a substitute. I’ll have my colleague check what approved documents can be provided for you to review independently.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. Please send the tower-specific site plan and any approved flood/drainage documents you can share when you have them. We’ll review those as a family first; the viewing won’t answer the technical questions for us.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Of course—reviewing it as a family first makes sense, and a viewing wouldn’t answer those technical questions. The source I have is the project FAQ: it gives an approximate 120 ft / 36 m distance for Phase 1 Block 1B and references a 20 m minimum distance requirement; for flooding, it states the overall development’s finished floor level is planned at about 2.4 m above sea level and refers to JPS river maintenance and flood-gate/freeboard control. That’s FAQ information, not a tower-specific plan or an official engineering/flood assessment, and it isn’t a guarantee of zero risk. I don’t have approved site-plan or flood/drainage documents available to share now, so I’d need to verify with the project team what can be provided before sending anything. I don’t want to imply those documents are available until confirmed.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear about what you have. Please check with the project team and let me know if any approved plans or flood/drainage documents can be shared. We’ll review as a family first and hold off on viewing for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "Thanks, understood—we’ll hold off on viewing. I can’t contact the project team or verify document availability from here, so I can’t confirm whether approved plans or flood/drainage documents can be shared. The only information I can verify here is the project FAQ summary already shared; it isn’t a substitute for the tower-specific plan or an official flood/drainage assessment. Please check directly with the project team for those documents before relying on them.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. We’ll check with the project team directly and review as a family before considering a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 8,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 99
+}

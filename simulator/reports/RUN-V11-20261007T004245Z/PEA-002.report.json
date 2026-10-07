@@ -1,0 +1,391 @@
+{
+  "scenario_id": "PEA-002",
+  "title": "Family buyer worried 900 sqft is too small",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "900 sqft for a family sounds quite small leh."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair concern—900 sqft can feel compact for some families. The layout has 3 bedrooms and 2 bathrooms, with limited wasted corridor space, but whether it works really depends on who’ll be using the rooms. How many people would be living there?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Four of us—me, my partner and two kids. Mainly worried whether the bedrooms can fit proper beds and wardrobes, and if the living/dining area will feel cramped with our furniture.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "For a family of four, the layout info says all three bedrooms are designed to fit a queen-sized bed, and the master is described as having room for a walk-in wardrobe concept. The living, dining and kitchen area is about 404.7 sq ft combined. I can’t guarantee your exact wardrobes and furniture will fit comfortably from those figures alone—the show unit would give you a much better feel for the proportions, if you’d like to see it.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Hmm, that combined figure includes the kitchen too, right? Do you have the actual bedroom dimensions and foyer layout? We’d need to see how our beds and wardrobes fit, not just the total area.",
+      "appointment_state": "VIEWING_SUGGESTED",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—the 404.7 sq ft figure includes the kitchen. The areas I have are: master bedroom 143.4 sq ft, Bedroom 1 117.4 sq ft, Bedroom 2 103.3 sq ft, and foyer about 25.9 sq ft. I don’t have the wall-to-wall bedroom measurements or detailed foyer dimensions here, so I don’t want to guess. For checking your beds and wardrobes, the floor plan or show unit would give a more reliable sense of fit.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, those room areas are more useful. In our current place the kids have proper beds and wardrobes, so we’re trying to see if those can fit without squeezing the living area. Could you share the Type A floor plan? If it’s still hard to judge, we’d be open to seeing the show unit—what days or times are available?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I’ll have my colleague share the Type A floor plan and confirm the available show-unit viewing days and times with you, so you can check the layout against your furniture.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks—please send the Type A floor plan and the available viewing days/times when you can. We’ll compare it with our furniture first.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Sure. I don’t have the Type A floor-plan image or a confirmed viewing schedule in the information available here, so I can’t send the plan or quote days/times accurately. The approximate areas I have are: master 143.4 sq ft, Bedroom 1 117.4 sq ft, Bedroom 2 103.3 sq ft, foyer 25.9 sq ft, and living/dining/kitchen 404.7 sq ft combined (including the kitchen). The project materials describe all three bedrooms as able to fit a queen-sized bed, but that doesn’t confirm your beds and wardrobes will fit comfortably. You’d need the actual plan dimensions to check that properly.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "No worries, thanks for being upfront. Could you check whether you can get the Type A floor plan with actual dimensions? That’s what we need to compare with our beds and wardrobes. Once we’ve seen it, we can decide if a show-unit visit would help.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "I can’t verify or retrieve the actual-dimension Type A plan from the information available here, so I don’t want to say I can get it or guess the measurements. The room areas I shared are approximate; wall-to-wall dimensions and door/wardrobe positions are what you’d need to check your furniture properly. Once you have the official dimensioned plan, you can compare it first and decide whether a show-unit visit would still help.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, understood. If you’re able to get the official dimensioned Type A plan later, please send it over. We’ll compare it with our furniture first and decide from there about a show-unit visit.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-002.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Four of us—me, my partner and two kids. Mainly worried whether the bedrooms can fit proper beds and wardrobes, and if the living/dining area will feel cramped with our furniture.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Hmm, that combined figure includes the kitchen too, right? Do you have the actual bedroom dimensions and foyer layout? We’d need to see how our beds and wardrobes fit, not just the total area.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, those room areas are more useful. In our current place the kids have proper beds and wardrobes, so we’re trying to see if those can fit without squeezing the living area. Could you share the Type A floor plan? If it’s still hard to judge, we’d be open to seeing the show unit—what days or times are available?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "EMERGING",
+  "ready_for_appointment": false,
+  "first_ready_turn": 3,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": true,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "EMERGING",
+    "ready_for_appointment": false,
+    "first_ready_turn": 3,
+    "readiness_detection_correct": false,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 3,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "human_closer_used": true,
+    "appointment_final_state": "VIEWING_INTEREST",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_finished_sales_job_before_handoff": true,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 4,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 2,
+      "handoff_timing": 4,
+      "handoff_reason_correctness": 4,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [
+      {
+        "flag": "UNSUPPORTED_DELIVERABLE_PROMISE",
+        "evidence": "The AI said its colleague would share the Type A floor plan, although the retrieved material did not include the plan and the human later said it was unavailable.",
+        "turn": 4
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI acknowledged the space concern without arguing that 900 sqft was large.",
+        "It asked a relevant household-size question, then used documented bedroom and combined-area figures to address the family's specific concerns.",
+        "It did not invent wall-to-wall dimensions and explained why the show unit could help assess furniture fit.",
+        "The buyer volunteered openness to a viewing and asked about available days or times."
+      ],
+      "what_reduced_conversion_probability": [
+        "The AI marked readiness as only emerging at turn 3 despite the buyer asking about viewing availability.",
+        "It promised that a colleague would share a floor plan that was not available in the supplied information.",
+        "The human could not provide the dimensioned plan or viewing schedule, so the buyer deferred deciding about a visit."
+      ],
+      "where_conversion_was_won_or_lost": "The AI earned meaningful, conditional viewing interest and appropriately handed off the schedule question. No specific available time was offered and accepted, and the buyer's latest position was to compare the plan first and then decide whether to visit, so no appointment was confirmed."
+    },
+    "what_agent_did_well": [
+      "Acknowledged the concern and avoided dismissing the possibility that 900 sqft could feel compact.",
+      "Asked a useful, limited qualification question about household size.",
+      "Connected the documented layout details to the family's concerns about beds, wardrobes, and living space.",
+      "Clearly distinguished approximate area information from unavailable wall-to-wall dimensions.",
+      "Suggested an in-person assessment for the unresolved furniture-fit question without claiming the layout would suit every family.",
+      "Recognized readiness at the handoff turn and did not send any AI reply after the formal handoff."
+    ],
+    "weak_or_wrong_sales_move": "At turn 3, the buyer asked for the Type A plan, said they would be open to seeing the show unit if the plan did not resolve the uncertainty, and asked what viewing days or times were available. The AI under-assessed readiness as EMERGING. At handoff, it also promised that a colleague would share a plan that the supplied sources did not establish was available.",
+    "better_next_move": "At turn 3, recognize appointment readiness and respond that the available material contains approximate room areas but not the dimensioned plan. Explain that the buyer can compare any official plan if obtained, while the show unit can help assess proportions; then hand off only to verify viewing options, without promising the plan or any unverified slot.",
+    "missed_buying_signals": [
+      "Turn 3: The buyer discussed current furniture fit, expressed conditional openness to a show-unit visit, and directly asked what days or times were available."
+    ],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "Turn 4: The promise that a colleague would share the Type A floor plan was unsupported by the supplied knowledge and contradicted by the human's later response."
+    ],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "The turn-level readiness assessment did not treat a conditional willingness to view plus a direct availability question as READY_FOR_APPOINTMENT.",
+      "The handoff wording committed to providing an unverified plan rather than separating known layout facts from missing materials."
+    ],
+    "recommended_improvement": {
+      "category": "Handoff and appointment-readiness handling",
+      "target_file": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+      "reason": "Reinforce that asking for viewing availability with stated intent is a readiness signal, while handoff language must not promise an unverified plan, schedule, or other deliverable."
+    },
+    "remaining_knowledge_gaps": [
+      "The official Type A floor-plan image and actual wall-to-wall bedroom, foyer, door, and wardrobe-position dimensions were not supplied.",
+      "No verified viewing slots or connected calendar were supplied."
+    ],
+    "summary": "The AI handled the family-space objection accurately and earned conditional viewing interest. Readiness was appropriate by turn 3, but the AI recognized it only at turn 4. The operational handoff was reasonable; however, the AI should not have promised a floor plan not established as available. The human did not persuade or rescue a conversion, and no appointment was confirmed."
+  },
+  "error": null
+}

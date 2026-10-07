@@ -1,0 +1,260 @@
+{
+  "scenario_id": "PEA-005",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:50:09.544226+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 7,
+    "ai": 1,
+    "human_closer": 5
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+  "handoff_turn": 1,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "LPPSA may be an option for government servants, but I can’t confirm approval from your employment status alone—it depends on LPPSA’s current terms and your individual assessment. I’ll get a colleague to help check what may apply to you.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks. I’m a permanent government servant and hoping to buy in the next few months. Can your colleague check whether LPPSA could apply for this project, and what details they’d need from me?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "Yes, LPPSA may be relevant for an eligible government-sector buyer, but I can’t verify from the information available whether the current LPPSA terms apply to Pearlmont or whether you’d be approved. The supplied Pearlmont reference is marked effective 4 October 2026 and lists financing up to RM1,000,000; if a first LPPSA financing is still active, it mentions up to 90% financing, subject to LPPSA terms. Please have the latest terms confirmed before relying on those figures.\n\nFor an initial discussion, useful details would be your approximate budget or target property price, whether you already have an LPPSA financing (and if it’s still active), and—if you’re comfortable sharing—your approximate monthly income and existing commitments. That’s not a formal eligibility checklist, and no approval can be promised from chat. No need to send ID numbers or documents here. Do you have an existing LPPSA financing, and roughly what budget are you considering?",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "I don’t have any existing LPPSA financing. Budget is still something I’m working out, but roughly RM600k–700k would be more comfortable, depending on the unit and monthly commitment. I’d rather confirm what details are actually needed before sharing income info.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Thanks, that’s helpful. No need to share your income or documents at this stage. I can’t verify the exact official information or document checklist LPPSA would require, so I wouldn’t want to present a general list as confirmed requirements. For now, your permanent government service, no existing LPPSA financing and approximate RM600k–700k budget are enough context for a preliminary discussion; a proper eligibility check would need the current requirements confirmed with LPPSA or a financing representative.\n\nThe supplied reference lists a 4.00% rate for financing up to RM750,000, subject to LPPSA terms; that’s a reference, not a personal quote or approval, and it depends on the financing amount rather than just the property budget. The note about up to 90% financing applies where a first LPPSA financing is still active, so it doesn’t appear relevant to what you’ve shared. No approval can be confirmed from chat alone.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for clarifying. Could you check whether Pearlmont has units around RM600k–700k, and confirm with the financing representative whether LPPSA can be used for this project under the current terms? I’ll hold off sharing income details until I know what’s actually needed.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "Thanks, understood—you don’t need to share income details for these initial checks. I don’t have verified current unit prices or availability, or a financing representative’s confirmation that LPPSA applies to Pearlmont under the latest terms, so I can’t confirm either yet. Pearlmont’s published reference is subject to LPPSA’s terms and conditions; it isn’t confirmation that the project qualifies or that you would be approved. The listed unit type is 900 sq. ft., with 3 bedrooms and 2 bathrooms, but whether any are currently around RM600k–700k needs a current price and availability check. You’d still need an individual assessment for approval.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Understood, thanks. Could you check with the team on current unit prices/availability around RM600k–700k and confirm with the financing representative whether LPPSA can be used for Pearlmont under the current terms? I’ll wait for those checks before deciding on next steps.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Understood—you can hold off on sharing income details. I can’t verify current unit prices or availability around RM600k–700k, or get confirmation from a financing representative that LPPSA applies to Pearlmont under the latest terms, based on the information available here. The supplied LPPSA reference is subject to LPPSA’s terms and conditions; it doesn’t confirm project eligibility or your approval. Both checks need current confirmation from the sales team and financing representative before you rely on them.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, understood. Please let me know once the team has checked the current prices and availability, and the financing representative has confirmed whether LPPSA can be used for Pearlmont. I’ll wait for that before deciding on next steps.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Understood. I can’t run the live price or availability check, contact the financing representative, or follow up with results from here, so I don’t want to imply those checks are underway. Please ask the Pearlmont sales team to confirm current units around RM600k–700k and the financing representative to confirm whether LPPSA currently applies to the project. The published LPPSA reference isn’t confirmation of project eligibility or personal approval. You don’t need to share income details just to request those checks.",
+      "action": "NO_ACTION",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. I’ll check with the Pearlmont sales team and financing representative directly before deciding on next steps.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 12,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 71
+}

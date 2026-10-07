@@ -4,7 +4,7 @@ import argparse, json, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-import run as sim
+import run_v1 as sim
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--run",required=True,help="report directory name under simulator/reports"); args=ap.parse_args()

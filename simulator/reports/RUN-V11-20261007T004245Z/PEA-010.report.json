@@ -1,0 +1,207 @@
+{
+  "scenario_id": "PEA-010",
+  "title": "High-intent exact package and weekend viewing",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I can help with both. I’ll need to confirm the latest package and price, as well as Saturday viewing arrangements, so I don’t give you outdated details. I’ll have my colleague follow up with you—what time on Saturday would suit you?",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Saturday around 11am would suit, for me and my wife. Can you check if that slot’s available and confirm the latest package and price too?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "Saturday at 11am is available, so I’ll confirm the viewing for you and your wife. The package reference I have shows 5% or 8% rebates depending on unit category, floor, facing and car-park allocation. I can’t confirm whether that offer is still current or give an exact unit price without the latest package and unit schedule, so I’ll get those checked. If you have a preferred facing or floor, let me know and I can help narrow down what to discuss.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Great, please confirm Saturday at 11am for me and my wife. And send over the verified latest package and exact unit price once you’ve checked, please.",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-010.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "APPOINTMENT_CONFIRMED",
+  "ready_for_appointment": true,
+  "first_ready_turn": 0,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 1,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_CONFIRMED",
+  "conversion_attribution": "AI_ASSISTED_HUMAN_CONFIRMATION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": true,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "APPOINTMENT_CONFIRMED",
+    "appointment_readiness_final": "APPOINTMENT_CONFIRMED",
+    "ready_for_appointment": true,
+    "first_ready_turn": 0,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 1,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 4,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "human_closer_used": true,
+    "appointment_final_state": "APPOINTMENT_CONFIRMED",
+    "conversion_attribution": "AI_ASSISTED_HUMAN_CONFIRMATION",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_finished_sales_job_before_handoff": true,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 4,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The buyer arrived with explicit Saturday viewing intent and asked for the latest package and price, making appointment progression appropriate immediately.",
+        "The AI acknowledged both requests, correctly avoided inventing current commercial terms or live availability, and routed the verification to a human.",
+        "The human confirmed the simulator-verified Saturday 11:00 slot; the buyer then explicitly accepted it for himself and his wife."
+      ],
+      "what_reduced_conversion_probability": [
+        "The AI handed off before collecting the buyer's preferred time and party size, so the buyer had to provide those details after the AI was paused.",
+        "The buyer's request for verified latest package details and exact unit price remained unresolved in the human response."
+      ],
+      "where_conversion_was_won_or_lost": "The viewing intent was already strong at the first customer message, and the AI correctly recognized readiness. The appointment was confirmed after the human verified the slot and the buyer explicitly accepted Saturday at 11:00. This was AI-assisted human confirmation, not a human rescue of a weak lead."
+    },
+    "what_agent_did_well": [
+      "Detected immediate appointment readiness from the buyer's stated Saturday viewing availability and direct request for current package information.",
+      "Did not fabricate an exact price, current package validity, or viewing availability.",
+      "Gave a clear reason for handoff: current package and price required verification, alongside Saturday arrangements.",
+      "Asked for a preferred Saturday time and correctly stopped sending messages after the formal handoff."
+    ],
+    "weak_or_wrong_sales_move": "The handoff was reasonable, but the AI could have made the next step more frictionless by explicitly acknowledging the viewing plan and collecting the preferred time and party size before completing the handoff. It also could have distinguished the dated package reference on file from terms that still required current verification.",
+    "better_next_move": "Acknowledge that Saturday viewing is the next step, ask for the preferred time and how many people will attend, and explain briefly that the latest package and exact unit price need confirmation. Then hand off the collected details for slot and commercial verification without implying that a time is confirmed.",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [
+      "No material retrieval miss: the supplied package knowledge describes rebate categories but warns that package validity is dynamic and exact pricing depends on the unit schedule."
+    ],
+    "likely_issue_sources": [
+      "The AI moved directly to completed handoff rather than capturing scheduling details first; the viewing-close guidance supports low-friction appointment progression and initial coordination where supported."
+    ],
+    "recommended_improvement": {
+      "category": "APPOINTMENT_PROGRESSION_AND_HANDOFF",
+      "target_file": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+      "reason": "Clarify that for a high-intent buyer asking about both viewing and current commercial terms, the agent should capture preferred time and party size before or as part of the handoff, while clearly distinguishing appointment intent from confirmed availability."
+    },
+    "remaining_knowledge_gaps": [
+      "The latest package's current validity was not verified in the conversation.",
+      "No exact unit-specific price or unit schedule was verified.",
+      "Saturday 11:00 availability is established only by the simulator fixture, not as real-world availability."
+    ],
+    "summary": "Strong readiness detection and appropriately cautious handoff. The buyer had already expressed clear Saturday viewing intent, so the AI had completed the core viewing-sales work before the human confirmed logistics. The human also handled package context and pending verification, so the human contribution was more than logistics alone. The buyer explicitly accepted the available Saturday 11:00 slot, making the final appointment confirmed. No post-handoff AI reply or unsupported AI claim occurred."
+  },
+  "error": null
+}

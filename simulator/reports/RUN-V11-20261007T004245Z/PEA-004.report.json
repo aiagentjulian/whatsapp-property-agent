@@ -1,0 +1,336 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have verified rental-yield figures or a reliable basis to predict price appreciation, so I wouldn’t want to quote a number or promise growth. Pearlmont’s maintenance fee is RM0.18/sq.ft. inclusive of sinking fund, which is one factor in assessing holding costs; actual returns depend on the purchase price, achievable rent, vacancy and other costs. Are you mainly looking for rental income or long-term capital growth?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly rental income, with a 5–7 year hold in mind. I’d be looking at net yield after vacancy, maintenance and other costs, not just a headline rent figure. What’s the unit supply like for this phase?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Phase 1 has 1,846 units across three towers: 583 in 1B, 583 in 1C and 680 in 1D. The units are 900 sq.ft., with 3 bedrooms and 2 bathrooms. That’s the phase’s total supply, not the number currently available; I’d need the latest schedule to confirm remaining units. For your rental analysis, the total supply is useful context, but it doesn’t by itself establish competing rental supply or demand.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, total supply is helpful context, but doesn’t tell me how many similar units will compete for tenants. I’m comparing this with another small rental investment, so I’d need actual achievable rent comps and the full cost picture before judging net yield. Do you have sourced rental comparables and the latest unit pricing or other recurring charges?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I don’t have sourced rental comparables or the latest unit pricing/package figures to assess net yield reliably. The confirmed recurring charge I have is RM0.18/sq.ft. for maintenance, inclusive of sinking fund; I don’t have other recurring charges confirmed. I’ll get my colleague to check the latest pricing and whether sourced rental comps and a fuller cost breakdown are available, so you can compare on a like-for-like basis.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send me the latest pricing and full recurring-cost breakdown, plus sourced rental comps if available, when you’ve checked. I’ll compare the net numbers with my other option first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "Thanks—that’s a sensible way to compare. I can confirm the maintenance fee is RM0.18/sq.ft., inclusive of sinking fund. I don’t have verified latest unit pricing, a full recurring-cost breakdown, or sourced rental comparables available to quote, so I can’t send those as checked. They’d need confirmation against the current developer price schedule and cost details, and sourced rental evidence. I also don’t have verified yield or appreciation figures.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Understood, thanks for being clear. Please come back if you’re able to verify the pricing, recurring costs and rental comps from reliable sources. Without those, I can’t compare the net yield properly, so no need to arrange a viewing yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Understood. I don’t have verified pricing, a complete recurring-cost breakdown or sourced rental comps to add right now, so I can’t assess the net yield reliably. No viewing arranged; those figures would need to be checked against current developer documents and reliable rental evidence first.",
+      "action": "NO_ACTION",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, appreciate the transparency. Please reach out if you’re able to verify those figures; I’ll compare them with my other option in the meantime.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-004.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly rental income, with a 5–7 year hold in mind. I’d be looking at net yield after vacancy, maintenance and other costs, not just a headline rent figure. What’s the unit supply like for this phase?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, total supply is helpful context, but doesn’t tell me how many similar units will compete for tenants. I’m comparing this with another small rental investment, so I’d need actual achievable rent comps and the full cost picture before judging net yield. Do you have sourced rental comparables and the latest unit pricing or other recurring charges?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 3,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 4,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 3,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 4,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": true,
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_finished_sales_job_before_handoff": false,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI candidly stated that it had no verified rental-yield or appreciation figures rather than inventing investment returns.",
+        "It gave the sourced maintenance fee and phase supply figures, while correctly distinguishing total supply from current availability and rental demand.",
+        "It recognized the buyer's stated need for sourced rental comparables, current pricing, and a fuller recurring-cost picture, then handed off for verification."
+      ],
+      "what_reduced_conversion_probability": [
+        "The buyer could not assess net yield without verified achievable rents, current pricing, and a complete recurring-cost breakdown.",
+        "The human confirmed that those requested figures were not available to quote, so the buyer had no basis to proceed with a viewing.",
+        "The buyer explicitly asked not to arrange a viewing until reliable numbers were available."
+      ],
+      "where_conversion_was_won_or_lost": "No appointment conversion was won or lost through a missed close. The buyer's stated condition for considering a viewing—reliable investment data—remained unmet, and both AI and human appropriately respected the buyer's request not to arrange one yet."
+    },
+    "what_agent_did_well": [
+      "Answered the yield and appreciation question directly and transparently, without unsupported forecasts or guarantees.",
+      "Used the verified RM0.18/sq.ft. maintenance fee inclusive of sinking fund as relevant holding-cost context.",
+      "Explained that total phase supply does not establish competing rental supply or tenant demand.",
+      "Did not present total unit supply as current availability.",
+      "Handed off when the buyer requested current pricing and verification of rental comparables and recurring costs.",
+      "Did not push a viewing after the buyer made clear that financial due diligence must come first."
+    ],
+    "weak_or_wrong_sales_move": "No material wrong sales move. The response was appropriately data-led for this investor, and an appointment close would have been premature given the buyer's explicit condition.",
+    "better_next_move": "If reliable pricing, recurring-cost details, or sourced rental comparables become available, send only the verified figures with their sources and ask whether the resulting comparison makes a viewing useful. Do not promise that missing data will be found or arrange a viewing before the buyer is ready.",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [
+      "The supplied retrieved content did not include verified rental comparables or yield data.",
+      "The supplied retrieved content did not establish a current unit-price/package schedule or a complete recurring-cost breakdown; the pricing source says current package mechanics require a separate commercial source."
+    ],
+    "likely_issue_sources": [
+      "knowledge/project/pearlmont/02_commercial/pricing.md"
+    ],
+    "recommended_improvement": {
+      "category": "retrieval_and_investment_due_diligence",
+      "target_file": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+      "reason": "Consider clarifying the next step for investment leads who require sourced rent comparables and full holding-cost evidence before a viewing. The agent should distinguish data verification from appointment readiness and avoid implying that unavailable evidence can necessarily be supplied."
+    },
+    "remaining_knowledge_gaps": [
+      "Verified rental comparables and achievable rent evidence for comparable units.",
+      "Current unit-specific pricing and applicable package details.",
+      "A verified, complete recurring-cost breakdown beyond the stated maintenance fee.",
+      "Verified rental-yield or appreciation data; none is supplied in the simulator fixture."
+    ],
+    "summary": "The AI handled the investor's questions accurately, qualified the rental-income objective and holding horizon, and appropriately handed off the request for current pricing and investment evidence. The buyer was not appointment-ready and explicitly declined a viewing until reliable net-yield inputs were available. The human provided transparent follow-up but could not supply the missing evidence; no appointment resulted. No post-handoff AI reply occurred."
+  },
+  "error": null
+}

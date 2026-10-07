@@ -1,0 +1,308 @@
+{
+  "scenario_id": "PEA-003",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:47:00.021038+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 8,
+    "ai": 2,
+    "human_closer": 5
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 2,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "operational_action": "CONTINUE_SELLING",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Floor-wise I’m flexible, sea-facing is the priority—but must have 2 carparks. Can you check which available units match both, and the current price?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Sea-facing units are in Block 1C on Levels 1–38 and Block 1D on Levels 1–37. Since you need 2 carparks, the specific matching units would need to be checked against the unit schedule. Do you have a preferred floor range?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Floor-wise I’m flexible, sea-facing is the priority—but must have 2 carparks. Can you check which available units match both, and the current price?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I’ll have my colleague check the latest available sea-facing units with 2 carparks and confirm the current price/package for you. The sea-facing options are in Blocks 1C and 1D, but I’ll need the current unit schedule to confirm which ones are still available.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay thanks, please check and let me know the matching available unit(s), floor and current price/package. Sea-facing is my priority, but it must come with 2 carparks.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Thanks—sea-facing floors are Block 1C, Levels 1–38, and Block 1D, Levels 1–37. I can’t confirm which of those are currently available with 2 carparks or give a reliable current price/package without the latest unit schedule; the exact price depends on the unit’s category and allocation. I don’t want to guess. Those specific matches and their current package price still need verification against the latest schedule.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Fair enough, please check the latest schedule for sea-facing units with 2 carparks and their current price/package. If there’s a suitable match, I’m happy to arrange a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify the latest unit schedule here, so I can’t confirm which sea-facing units with 2 carparks are available or quote a reliable current price/package. For reference only, the published base-price guide lists sea-facing units at RM350k in Block 1C and RM352k in Block 1D. A package sheet dated 14 Aug 2026 lists different rebates by floor band, but its current validity and the exact unit pricing need confirmation—so please don’t treat those figures as a current quote. Your sea-facing + 2-carpark requirement is clear; once the latest schedule is checked, we can narrow down a suitable match and then arrange a viewing. Any days or time windows that usually work for you?",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Usually Saturday afternoon works for me, but let’s first confirm there’s a sea-facing unit with 2 carparks and the current price/package. Then send me the available viewing time options and I’ll confirm one.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Got it—sea-facing is the priority, and 2 carparks are a must. The documented sea-facing floors are Block 1C, Levels 1–38, and Block 1D, Levels 1–37, but the carpark allocation depends on the exact unit/category. I can’t access a live unit schedule or current package here, so I can’t confirm a matching available unit or reliable current price. Saturday afternoon noted; viewing slots also need checking once a suitable unit is confirmed, and I can’t verify those here either.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you have someone with the latest schedule check and send me the matching sea-facing units with 2 carparks and current price/package when confirmed? I’ll decide on a Saturday afternoon viewing once I’ve seen a suitable match.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Understood—sea-facing with 2 carparks is the must-have, and you’ll consider a Saturday afternoon viewing once you’ve seen a suitable match. The documented sea-facing levels are Block 1C, Levels 1–38, and Block 1D, Levels 1–37, but the carpark allocation, availability and current price/package need checking against the latest unit schedule. I can’t access that schedule or arrange a live check from here, so I can’t confirm a match or promise a follow-up. Saturday afternoon is noted for when a suitable unit and viewing options can be verified.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Understood. Could you connect me with someone who can check the latest schedule, or let me know how I can reach them? I’ll hold off on booking until the match and current price/package are confirmed.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "I’m sorry, I can’t connect you to a live colleague or verify a contact number from here, so I don’t want to give you unconfirmed details. Please contact the Pearlmont sales channel or agent you originally spoke with and ask them to check the latest schedule for sea-facing units with 2 carparks, the current price/package, and Saturday afternoon viewing options. Your must-haves are clear: sea-facing and 2 carparks; you’ll decide about viewing after seeing a suitable match.",
+      "action": "CONTINUE_SELLING",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Alright, thanks. I’ll reach out to the original sales channel and ask them to verify the sea-facing options with 2 carparks and the current price/package before I decide on a Saturday viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "provider_calls": 14,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 47
+}

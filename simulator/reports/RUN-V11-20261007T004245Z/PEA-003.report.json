@@ -1,0 +1,387 @@
+{
+  "scenario_id": "PEA-003",
+  "title": "Two-car household",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Sea-facing units are in Block 1C on Levels 1–38 and Block 1D on Levels 1–37. Since you need 2 carparks, the specific matching units would need to be checked against the unit schedule. Do you have a preferred floor range?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Floor-wise I’m flexible, sea-facing is the priority—but must have 2 carparks. Can you check which available units match both, and the current price?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I’ll have my colleague check the latest available sea-facing units with 2 carparks and confirm the current price/package for you. The sea-facing options are in Blocks 1C and 1D, but I’ll need the current unit schedule to confirm which ones are still available.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay thanks, please check and let me know the matching available unit(s), floor and current price/package. Sea-facing is my priority, but it must come with 2 carparks.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Thanks—sea-facing floors are Block 1C, Levels 1–38, and Block 1D, Levels 1–37. I can’t confirm which of those are currently available with 2 carparks or give a reliable current price/package without the latest unit schedule; the exact price depends on the unit’s category and allocation. I don’t want to guess. Those specific matches and their current package price still need verification against the latest schedule.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Fair enough, please check the latest schedule for sea-facing units with 2 carparks and their current price/package. If there’s a suitable match, I’m happy to arrange a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify the latest unit schedule here, so I can’t confirm which sea-facing units with 2 carparks are available or quote a reliable current price/package. For reference only, the published base-price guide lists sea-facing units at RM350k in Block 1C and RM352k in Block 1D. A package sheet dated 14 Aug 2026 lists different rebates by floor band, but its current validity and the exact unit pricing need confirmation—so please don’t treat those figures as a current quote. Your sea-facing + 2-carpark requirement is clear; once the latest schedule is checked, we can narrow down a suitable match and then arrange a viewing. Any days or time windows that usually work for you?",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Usually Saturday afternoon works for me, but let’s first confirm there’s a sea-facing unit with 2 carparks and the current price/package. Then send me the available viewing time options and I’ll confirm one.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Got it—sea-facing is the priority, and 2 carparks are a must. The documented sea-facing floors are Block 1C, Levels 1–38, and Block 1D, Levels 1–37, but the carpark allocation depends on the exact unit/category. I can’t access a live unit schedule or current package here, so I can’t confirm a matching available unit or reliable current price. Saturday afternoon noted; viewing slots also need checking once a suitable unit is confirmed, and I can’t verify those here either.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you have someone with the latest schedule check and send me the matching sea-facing units with 2 carparks and current price/package when confirmed? I’ll decide on a Saturday afternoon viewing once I’ve seen a suitable match.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Understood—sea-facing with 2 carparks is the must-have, and you’ll consider a Saturday afternoon viewing once you’ve seen a suitable match. The documented sea-facing levels are Block 1C, Levels 1–38, and Block 1D, Levels 1–37, but the carpark allocation, availability and current price/package need checking against the latest unit schedule. I can’t access that schedule or arrange a live check from here, so I can’t confirm a match or promise a follow-up. Saturday afternoon is noted for when a suitable unit and viewing options can be verified.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Understood. Could you connect me with someone who can check the latest schedule, or let me know how I can reach them? I’ll hold off on booking until the match and current price/package are confirmed.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "I’m sorry, I can’t connect you to a live colleague or verify a contact number from here, so I don’t want to give you unconfirmed details. Please contact the Pearlmont sales channel or agent you originally spoke with and ask them to check the latest schedule for sea-facing units with 2 carparks, the current price/package, and Saturday afternoon viewing options. Your must-haves are clear: sea-facing and 2 carparks; you’ll decide about viewing after seeing a suitable match.",
+      "action": "CONTINUE_SELLING",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Alright, thanks. I’ll reach out to the original sales channel and ask them to verify the sea-facing options with 2 carparks and the current price/package before I decide on a Saturday viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-003.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Floor-wise I’m flexible, sea-facing is the priority—but must have 2 carparks. Can you check which available units match both, and the current price?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "EMERGING",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 2,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "operational_action": "CONTINUE_SELLING",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "EMERGING",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+    "handoff_turn": 2,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 2,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": true,
+    "appointment_final_state": "VIEWING_INTEREST",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_finished_sales_job_before_handoff": false,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 3,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 4,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 4,
+      "handoff_timing": 4,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [
+      {
+        "flag": "UNSUPPORTED_OPERATIONAL_PROMISE",
+        "evidence": "The AI said, “I’ll have my colleague check” the latest available units and price/package, but the simulator fixture says no live CRM, inventory, or salesperson is connected. The subsequent human also says they cannot verify the schedule or promise a follow-up.",
+        "turn": 2
+      },
+      {
+        "flag": "MATERIAL_HANDOFF_LIMITATION",
+        "evidence": "The handoff was correctly triggered for live availability verification, but the human could not perform that check or connect the customer to someone who could, leaving the buyer without the requested verification or a concrete next step.",
+        "turn": 3
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI answered the specific sea-facing floor question accurately: Block 1C Levels 1–38 and Block 1D Levels 1–37.",
+        "The buyer’s non-negotiables became clear: sea-facing and two carparks, with floor flexibility.",
+        "The human appropriately avoided inventing current availability or a reliable current price/package.",
+        "The buyer expressed conditional viewing interest and identified Saturday afternoon as a usual preference."
+      ],
+      "what_reduced_conversion_probability": [
+        "The AI implied a colleague could check live inventory and pricing despite the simulator fixture showing those capabilities were not connected.",
+        "The buyer’s main concern—whether a suitable sea-facing, two-carpark unit exists and its current price—remained unresolved.",
+        "The human repeated the limitation over several turns without providing a verified contact route or a concrete follow-up mechanism.",
+        "The human asked about viewing windows before the buyer’s stated condition was met, then no actual viewing options could be supplied."
+      ],
+      "where_conversion_was_won_or_lost": "The AI correctly identified a need for unit-schedule verification and did not claim an appointment was booked. However, the handoff implied a capability to check that was not available in the fixture. The buyer remained interested but explicitly deferred booking until a suitable unit and current price/package were confirmed, so no conversion occurred."
+    },
+    "what_agent_did_well": [
+      "Answered the exact sea-facing floor question with supported Block 1C and 1D ranges.",
+      "Recognized that the two-carpark requirement must be matched to a specific unit/category rather than assuming every sea-facing unit qualifies.",
+      "Did not invent available units, unit numbers, or a current price.",
+      "Used a handoff reason aligned with the buyer’s request for current unit availability verification.",
+      "Did not send any AI message after the formal HANDOFF_COMPLETED event."
+    ],
+    "weak_or_wrong_sales_move": "The handoff wording promised that a colleague would check current stock and pricing, although the simulator fixture did not provide live inventory or a connected salesperson. The AI also missed an opportunity to frame the next step conditionally: verify whether a suitable match exists first, then arrange a viewing if the buyer still wants one.",
+    "better_next_move": "Acknowledge that sea-facing plus two carparks is the required filter, state that the exact unit and current package need schedule verification, and avoid promising a check unless a connected person can actually perform it. If a suitable match is confirmed, invite the buyer to choose from available Saturday-afternoon viewing options. Do not treat the buyer’s conditional interest as an accepted appointment.",
+    "missed_buying_signals": [
+      "The opening request for two carparks and sea-facing floors was a strong, specific unit-selection signal.",
+      "The buyer confirmed sea-facing priority, floor flexibility, and two carparks as mandatory.",
+      "The buyer later said they would arrange a viewing if a suitable match existed, then identified Saturday afternoon as a preferred window."
+    ],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [
+      "The AI’s statement that a colleague would check the latest available units and current price/package was not supported by the simulator-only operational fixture."
+    ],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "The handoff behaviour did not adequately distinguish a valid need for verification from an actual ability to provide that verification.",
+      "The sales flow did not clearly explain that viewing interest was conditional on first confirming a suitable unit and current price/package."
+    ],
+    "recommended_improvement": {
+      "category": "HANDOFF_AND_CONDITIONAL_VIEWING",
+      "target_file": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+      "reason": "Clarify the transition for strong specific unit-fit signals: verify availability and unit-specific price without claiming unconnected operational capability, then offer viewing options only if a suitable match is confirmed."
+    },
+    "remaining_knowledge_gaps": [
+      "No live unit inventory or unit-number schedule was supplied.",
+      "No connected human salesperson or verified contact method was supplied.",
+      "No live appointment slots were supplied.",
+      "The exact current unit price and package eligibility could not be determined without the latest unit schedule."
+    ],
+    "summary": "The AI gave an accurate answer about documented sea-facing floors and correctly recognized that availability and pricing required verification. The handoff reason and timing were appropriate, but the AI overpromised that a colleague would check information when the simulator fixture showed no live inventory or connected salesperson. The buyer showed conditional viewing interest, not appointment readiness or confirmed acceptance. Human responses did not resolve the verification barrier, and no appointment or conversion occurred. AI replies were correctly suppressed after handoff."
+  },
+  "error": null
+}

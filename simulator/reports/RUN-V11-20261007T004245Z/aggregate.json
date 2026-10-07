@@ -1,0 +1,323 @@
+{
+  "version": "1.1",
+  "run_id": "RUN-V11-20261007T004245Z",
+  "models": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "total_scenarios": 12,
+  "completed_scenarios": 12,
+  "failed_runs": [],
+  "convertible_scenarios": 11,
+  "ai_direct_confirmed_appointments": 0,
+  "ai_assisted_human_confirmations": 1,
+  "human_led_confirmations": 0,
+  "end_to_end_confirmed_appointments": 1,
+  "ai_direct_conversion_rate": 0.0,
+  "ai_sales_success_count": 1,
+  "ai_sales_success_rate": 0.091,
+  "end_to_end_conversion_rate": 0.091,
+  "human_led_conversion_count": 0,
+  "human_led_conversion_rate": 0.0,
+  "appointment_interest_only_cases": 4,
+  "bad_fit_correctly_rejected": 1,
+  "appointment_outcome_counts": {
+    "NO_CONVERSION": 10,
+    "AI_ASSISTED_HUMAN_CONFIRMATION": 1,
+    "BAD_FIT_NO_CONVERSION": 1
+  },
+  "handoff_count": 10,
+  "appropriate_handoffs": 9,
+  "premature_handoffs": 1,
+  "late_handoffs": 0,
+  "unnecessary_handoffs": 0,
+  "post_handoff_ai_reply_violations": 0,
+  "readiness_detection_accuracy": 0.917,
+  "readiness_detection_correct_count": 11,
+  "critical_failure_count": 13,
+  "critical_failures": [
+    {
+      "scenario_id": "PEA-001",
+      "flag": "EARLY_HANDOFF_REQUIRED_MEANINGFUL_HUMAN_SELLING",
+      "evidence": "After a single general price question, the AI immediately handed off. It had not yet understood the buyer's budget, family needs, or space concerns, and the human subsequently performed pricing explanation, financing discussion, layout selling, and viewing progression.",
+      "turn": 1
+    },
+    {
+      "scenario_id": "PEA-001",
+      "flag": "MISSED_EFFECTIVE_PRICE_OPENING",
+      "evidence": "The AI led with the RM328k base-price reference. Retrieved sales guidance says a simple price enquiry should normally lead with a supportable post-package entry point or broad RM3xxk range, with a caveat if current validity or exact eligibility needs confirmation.",
+      "turn": 1
+    },
+    {
+      "scenario_id": "PEA-001",
+      "flag": "HANDOFF_COULD_NOT_FULFIL_VERIFICATION",
+      "evidence": "The handoff promised to get the latest package confirmed, but the simulator fixture has no connected live CRM, gallery, pricing, inventory, or calendar. The human later said they could not verify availability or obtain verified gallery contact details, leaving the buyer to follow up independently.",
+      "turn": 1
+    },
+    {
+      "scenario_id": "PEA-001",
+      "flag": "NO_CONFIRMED_VIEWING",
+      "evidence": "The buyer proposed this coming Saturday around 11am conditionally, pending show-unit and slot availability, and later explicitly said the viewing was not confirmed. No appointment should be credited.",
+      "turn": 9
+    },
+    {
+      "scenario_id": "PEA-002",
+      "flag": "UNSUPPORTED_DELIVERABLE_PROMISE",
+      "evidence": "The AI said its colleague would share the Type A floor plan, although the retrieved material did not include the plan and the human later said it was unavailable.",
+      "turn": 4
+    },
+    {
+      "scenario_id": "PEA-003",
+      "flag": "UNSUPPORTED_OPERATIONAL_PROMISE",
+      "evidence": "The AI said, “I’ll have my colleague check” the latest available units and price/package, but the simulator fixture says no live CRM, inventory, or salesperson is connected. The subsequent human also says they cannot verify the schedule or promise a follow-up.",
+      "turn": 2
+    },
+    {
+      "scenario_id": "PEA-003",
+      "flag": "MATERIAL_HANDOFF_LIMITATION",
+      "evidence": "The handoff was correctly triggered for live availability verification, but the human could not perform that check or connect the customer to someone who could, leaving the buyer without the requested verification or a concrete next step.",
+      "turn": 3
+    },
+    {
+      "scenario_id": "PEA-005",
+      "flag": "HANDOFF_CAPABILITY_OVERPROMISE",
+      "evidence": "The AI said it would get a colleague to help check what may apply. The human later clarified that they could not verify current project unit prices or availability, contact a financing representative, or follow up with results.",
+      "turn": 1
+    },
+    {
+      "scenario_id": "PEA-005",
+      "flag": "MISSED_SOURCED_FINANCING_CONTEXT",
+      "evidence": "The retrieved LPPSA source contained reference terms the AI could have explained with clear caveats before handing off; the AI provided only a general statement that approval depends on current terms and individual assessment.",
+      "turn": 1
+    },
+    {
+      "scenario_id": "PEA-006",
+      "flag": "HANDOFF_FOLLOW_UP_NOT_RESOLVED",
+      "evidence": "The AI said a colleague would check the detailed floor plan and follow up. The human replies repeatedly could not verify the door position, so the buyer's stated decision blocker remained unresolved.",
+      "turn": 4
+    },
+    {
+      "scenario_id": "PEA-006",
+      "flag": "REPETITIVE_HUMAN_FOLLOW_UP",
+      "evidence": "Human turns 6–9 largely repeat that the latest detailed floor plan is unavailable, without providing a new resolution or concrete next step.",
+      "turn": 6
+    },
+    {
+      "scenario_id": "PEA-007",
+      "flag": "UNSUPPORTED_FOLLOW_UP_COMMITMENT",
+      "evidence": "The AI said it would have a colleague check which approved documents could be provided. The human later said they could not contact the project team or verify document availability, leaving the requested follow-up unfulfilled.",
+      "turn": 2
+    },
+    {
+      "scenario_id": "PEA-008",
+      "flag": "UNSUPPORTED_OPERATIONAL_COMMITMENT",
+      "evidence": "The agent said, “I’ll get the suitable options checked for you,” although the supplied operational fixture states that no live unit schedule or unit-level price fixture is available. This implies a follow-up capability that is not established.",
+      "turn": 2
+    }
+  ],
+  "average_judge_scores": {
+    "customer_understanding": 4.17,
+    "latest_message_responsiveness": 4.42,
+    "qualification_discipline": 4.08,
+    "selling_angle_relevance": 3.58,
+    "objection_handling": 4.0,
+    "unit_fit_judgment": 3.75,
+    "buying_signal_detection": 3.83,
+    "appointment_judgment": 4.33,
+    "factual_accuracy": 4.58,
+    "sales_naturalness": 3.92,
+    "handoff_judgment": 4.33,
+    "commercial_progression": 3.17,
+    "appointment_readiness_detection": 4.42,
+    "handoff_timing": 4.25,
+    "handoff_reason_correctness": 4.83,
+    "post_handoff_suppression": 5.0,
+    "conversion_attribution": 4.83
+  },
+  "retrieval_misses": [
+    "PEA-001: The AI did not apply the retrieved pricing guidance to lead with a supportable post-package entry range or broad RM3xxk range, qualified by current validity and unit-specific uncertainty.",
+    "PEA-004: The supplied retrieved content did not include verified rental comparables or yield data.",
+    "PEA-004: The supplied retrieved content did not establish a current unit-price/package schedule or a complete recurring-cost breakdown; the pricing source says current package mechanics require a separate commercial source.",
+    "PEA-007: The supplied knowledge did not include the tower-specific site plan or approved official flood/drainage documents requested by the buyer. The AI appropriately did not invent them.",
+    "PEA-008: The response could have used the retrieved floor bands and base-price references as clearly qualified context while explaining that exact unit mapping, final price and availability still required the latest schedule.",
+    "PEA-010: No material retrieval miss: the supplied package knowledge describes rebate categories but warns that package validity is dynamic and exact pricing depends on the unit schedule."
+  ],
+  "remaining_knowledge_gaps": [
+    "PEA-001: No simulator-connected live Type A unit or show-unit availability.",
+    "PEA-001: No simulator-connected Saturday viewing calendar or appointment slots.",
+    "PEA-001: No verified current unit-specific Type A price/package validity or gallery contact details.",
+    "PEA-002: The official Type A floor-plan image and actual wall-to-wall bedroom, foyer, door, and wardrobe-position dimensions were not supplied.",
+    "PEA-002: No verified viewing slots or connected calendar were supplied.",
+    "PEA-003: No live unit inventory or unit-number schedule was supplied.",
+    "PEA-003: No connected human salesperson or verified contact method was supplied.",
+    "PEA-003: No live appointment slots were supplied.",
+    "PEA-003: The exact current unit price and package eligibility could not be determined without the latest unit schedule.",
+    "PEA-004: Verified rental comparables and achievable rent evidence for comparable units.",
+    "PEA-004: Current unit-specific pricing and applicable package details.",
+    "PEA-004: A verified, complete recurring-cost breakdown beyond the stated maintenance fee.",
+    "PEA-004: Verified rental-yield or appreciation data; none is supplied in the simulator fixture.",
+    "PEA-005: Whether current LPPSA terms apply to Pearlmont as a project.",
+    "PEA-005: The current LPPSA eligibility requirements and the buyer's individual eligibility.",
+    "PEA-005: Current Pearlmont unit prices and availability around RM600k–700k.",
+    "PEA-006: Whether the unit door opens directly onto the shared corridor, based on the latest detailed floor plan.",
+    "PEA-006: No authoritative tower-movement or corridor-control plan fixture was supplied.",
+    "PEA-007: Tower-specific plan establishing which tower or area the stated Block 1B cable distance applies to.",
+    "PEA-007: Approved official flood-level and drainage documents or an engineering/flood assessment.",
+    "PEA-007: Confirmed capability and process for checking with the project team and sharing approved documents.",
+    "PEA-008: No current unit-by-unit schedule, exact unit outlook mapping, or unit-level availability was supplied.",
+    "PEA-008: No unit-specific final price or car-park premium was available to confirm against the buyer’s budget.",
+    "PEA-008: No live appointment slots or booking capability were supplied.",
+    "PEA-010: The latest package's current validity was not verified in the conversation.",
+    "PEA-010: No exact unit-specific price or unit schedule was verified.",
+    "PEA-010: Saturday 11:00 availability is established only by the simulator fixture, not as real-world availability."
+  ],
+  "remaining_sales_weaknesses": [
+    "PEA-001: The AI handed off immediately after a general price enquiry instead of giving a qualified, commercially relevant opening and continuing discovery. The human then made substantial sales progress but could not deliver the promised verification or a direct operational next step, leaving the buyer to pursue the gallery independently.",
+    "PEA-002: At turn 3, the buyer asked for the Type A plan, said they would be open to seeing the show unit if the plan did not resolve the uncertainty, and asked what viewing days or times were available. The AI under-assessed readiness as EMERGING. At handoff, it also promised that a colleague would share a plan that the supplied sources did not establish was available.",
+    "PEA-003: The handoff wording promised that a colleague would check current stock and pricing, although the simulator fixture did not provide live inventory or a connected salesperson. The AI also missed an opportunity to frame the next step conditionally: verify whether a suitable match exists first, then arrange a viewing if the buyer still wants one.",
+    "PEA-004: No material wrong sales move. The response was appropriately data-led for this investor, and an appointment close would have been premature given the buyer's explicit condition.",
+    "PEA-005: The AI handed off with only a generic financing caveat instead of first explaining the sourced LPPSA reference information, and its promise that a colleague could help check what applied was not calibrated to the available checking capability.",
+    "PEA-006: The handoff promised that a colleague would check and follow up, but the human follow-up did not resolve the question and repeated the same limitation. The AI did not make a sales error by withholding an appointment close while the buyer explicitly said they needed this detail before deciding.",
+    "PEA-007: The AI promised that a colleague would check which approved documents could be provided, but the human later stated they could not contact the project team or verify availability. The handoff was appropriate; the unsupported follow-up commitment was not.",
+    "PEA-008: The agent implied it could get suitable options checked without an established schedule or follow-up capability. It also could have more clearly framed the next step as conditional: compare verified options first, then arrange a viewing if the buyer finds them worthwhile.",
+    "PEA-009: The AI handed off before making any sales progress, so its sales job was not complete. However, ownership verification was a valid prerequisite here, and no meaningful selling was yet warranted.",
+    "PEA-010: The handoff was reasonable, but the AI could have made the next step more frictionless by explicitly acknowledging the viewing plan and collecting the preferred time and party size before completing the handoff. It also could have distinguished the dated package reference on file from terms that still required current verification.",
+    "PEA-011: The answers were useful but purely informational; a single optional, low-friction question about what the buyer was curious about could have helped tailor the orientation. This was a modest missed engagement opportunity, not a missed appointment close."
+  ],
+  "per_scenario_outcomes": {
+    "PEA-001": {
+      "ready": "APPOINTMENT_IN_PROGRESS",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-002": {
+      "ready": "EMERGING",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-003": {
+      "ready": "EMERGING",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-004": {
+      "ready": "NOT_READY",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-005": {
+      "ready": "NOT_READY",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-006": {
+      "ready": "NOT_READY",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-007": {
+      "ready": "NOT_READY",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-008": {
+      "ready": "EMERGING",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-009": {
+      "ready": "NOT_READY",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-010": {
+      "ready": "APPOINTMENT_CONFIRMED",
+      "handoff": "HANDOFF_COMPLETED",
+      "attribution": "AI_ASSISTED_HUMAN_CONFIRMATION"
+    },
+    "PEA-011": {
+      "ready": "NOT_READY",
+      "handoff": "NO_HANDOFF",
+      "attribution": "NO_CONVERSION"
+    },
+    "PEA-012": {
+      "ready": "NOT_READY",
+      "handoff": "NO_HANDOFF",
+      "attribution": "BAD_FIT_NO_CONVERSION"
+    }
+  },
+  "v1_comparison": {
+    "v1_run": "RUN-20261007T010756Z",
+    "metrics": {
+      "confirmed_appointments": {
+        "v1": 0,
+        "v1_1": 1
+      },
+      "appointment_interest": {
+        "v1": 5,
+        "v1_1": 4
+      },
+      "commercial_progression": {
+        "v1": 3.5,
+        "v1_1": 3.17
+      },
+      "naturalness": {
+        "v1": 3.67,
+        "v1_1": 3.92
+      },
+      "handoff_judgment": {
+        "v1": 4.08,
+        "v1_1": 4.33
+      },
+      "retrieval_quality": {
+        "v1_misses": [
+          "PEA-001: Current effective pricing and package information was a central concern, but `sales-package.md` was not among the retrieved files, despite `pricing.md` identifying it as the source for current rebate and package mechanics. The agent appropriately did not invent those figures and sought confirmation.",
+          "PEA-009: The retrieved unit-fit and viewing-close material was not needed for the registration-conflict request.",
+          "PEA-009: No supplied source provides a specific registration-ownership policy or verification workflow."
+        ],
+        "v1_1_misses": [
+          "The AI did not apply the retrieved pricing guidance to lead with a supportable post-package entry range or broad RM3xxk range, qualified by current validity and unit-specific uncertainty.",
+          "The supplied retrieved content did not include verified rental comparables or yield data.",
+          "The supplied retrieved content did not establish a current unit-price/package schedule or a complete recurring-cost breakdown; the pricing source says current package mechanics require a separate commercial source.",
+          "The supplied knowledge did not include the tower-specific site plan or approved official flood/drainage documents requested by the buyer. The AI appropriately did not invent them.",
+          "The response could have used the retrieved floor bands and base-price references as clearly qualified context while explaining that exact unit mapping, final price and availability still required the latest schedule.",
+          "No material retrieval miss: the supplied package knowledge describes rebate categories but warns that package validity is dynamic and exact pricing depends on the unit schedule."
+        ]
+      },
+      "post_handoff_repetition": {
+        "v1_formal_tracking": "not implemented; proxy counts agent messages after an Agent action tagged HANDOFF",
+        "v1_proxy_agent_replies_after_handoff": 30,
+        "v1_1_violations": 0
+      },
+      "conversion_attribution": {
+        "v1": "not tracked",
+        "v1_1": {
+          "AI_DIRECT_CONVERSION": 0,
+          "AI_ASSISTED_HUMAN_CONFIRMATION": 1,
+          "HUMAN_LED_CONVERSION": 0,
+          "NO_CONVERSION": 10,
+          "BAD_FIT_NO_CONVERSION": 1
+        }
+      }
+    }
+  },
+  "provider_calls": 132,
+  "provider_retries": [],
+  "brain_and_sales_knowledge_unchanged": true,
+  "internal_ownership_knowledge_created": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+  "executive_summary": "V1.1 completed 12/12 scenarios. 0 AI-direct, 1 AI-assisted human, and 0 human-led confirmed appointments; 1 end-to-end total among 11 convertible buyers. 10 formal handoffs; post-handoff AI reply violations: 0."
+}

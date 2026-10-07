@@ -1,0 +1,199 @@
+{
+  "scenario_id": "PEA-009",
+  "title": "Already contacted by another property agent",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes, I can help. I’ll have the existing registration checked first so we don’t duplicate anything, then we can continue from there.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay thanks, appreciate you checking. They just contacted me and shared some info—I haven’t booked a viewing. Just want to avoid duplicate follow-ups; let me know if you need anything from me to check.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "I’ve checked the information available here: it shows a prior contact, but no confirmed registration or appointment. No need to send anything for now. If you’re comfortable, you can share the other agent’s name or company so we can keep things coordinated—no pressure to book a viewing.",
+      "action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. I don’t have their name or company handy—they just shared some info with me. No need to follow up with them on my behalf for now; I’ll let you know if I find their details.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-009.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "SALES_OWNERSHIP_CONFLICT",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+  "handoff_turn": 1,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": true,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+    "handoff_turn": 1,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 5,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": true,
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_finished_sales_job_before_handoff": false,
+    "human_merely_completed_logistics": true,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI offered to check the prior registration to avoid duplication.",
+        "The human verified the prior-contact status and confirmed no appointment or registration was shown."
+      ],
+      "what_reduced_conversion_probability": [
+        "No project or viewing discussion occurred, and the buyer expressed no viewing intent.",
+        "The buyer did not have the other agent's details and asked not to follow up with them on their behalf."
+      ],
+      "where_conversion_was_won_or_lost": "No appointment conversion was pursued or lost: resolving the ownership question was the appropriate immediate next step, and the buyer remained not ready for a viewing."
+    },
+    "what_agent_did_well": [
+      "Acknowledged the existing agent contact without undermining or criticizing that agent.",
+      "Recognized that registration or ownership verification needed human handling.",
+      "Set an appropriate expectation that the check would prevent duplication.",
+      "Correctly assessed the buyer as not ready for an appointment and did not push a viewing.",
+      "Stopped AI follow-up after the formal handoff."
+    ],
+    "weak_or_wrong_sales_move": "The AI handed off before making any sales progress, so its sales job was not complete. However, ownership verification was a valid prerequisite here, and no meaningful selling was yet warranted.",
+    "better_next_move": "Keep the concise ownership-check handoff. After human verification, resume only if ownership is clear and the buyer is open to continuing; respect the buyer's request not to contact the other agent on their behalf.",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [],
+    "recommended_improvement": {
+      "category": "handoff_and_ownership",
+      "target_file": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+      "reason": "The existing guidance supports the handoff and suppression behavior. Reinforce that ownership verification is an operational prerequisite, not evidence of appointment readiness or a completed sales job."
+    },
+    "remaining_knowledge_gaps": [],
+    "summary": "Appropriate, concise handoff for a genuine ownership-conflict check. The human performed low-level verification and coordination only; there was no appointment intent, no conversion, and no post-handoff AI reply."
+  },
+  "error": null
+}

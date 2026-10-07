@@ -1,0 +1,199 @@
+{
+  "scenario_id": "PEA-012",
+  "title": "Hard mismatch: immediate move-in and 4 bedrooms",
+  "convertible": false,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I need to move in next month and need four bedrooms. Any unit?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont Phase 1 only has 3-bedroom units, and completion is expected in Q4 2029, so it wouldn’t suit a move-in next month or a 4-bedroom requirement. Are either of those requirements flexible?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No, both are must-haves for me, so Pearlmont won’t work. Thanks for clarifying.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood—if both are must-haves, Pearlmont isn’t the right fit. Thanks for clarifying, and I hope you find a place that suits your move-in timing and space needs.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-012.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I need to move in next month and need four bedrooms. Any unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No, both are must-haves for me, so Pearlmont won’t work. Thanks for clarifying.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": false,
+  "human_closer_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "BAD_FIT_NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "NONE",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": true,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 5,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": false,
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "conversion_attribution": "BAD_FIT_NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "NONE",
+    "ai_finished_sales_job_before_handoff": true,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 5,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI promptly stated the bedroom-count and completion-timing mismatch.",
+        "It checked whether either stated requirement was flexible before closing the conversation."
+      ],
+      "what_reduced_conversion_probability": [
+        "Pearlmont did not meet either of the buyer’s confirmed hard requirements; an appointment would not have been commercially appropriate."
+      ],
+      "where_conversion_was_won_or_lost": "No Pearlmont conversion was viable. The AI correctly established the mismatch, accepted the buyer’s answer, and did not pressure them into a viewing or invent alternatives."
+    },
+    "what_agent_did_well": [
+      "Recognized both hard-fit blockers immediately and communicated the supported facts clearly.",
+      "Asked one relevant question to check flexibility without unnecessary personal qualification.",
+      "Accepted the buyer’s firm answer and ended politely without pushing a viewing.",
+      "Avoided an unnecessary human handoff."
+    ],
+    "weak_or_wrong_sales_move": "",
+    "better_next_move": "No material change needed. The respectful close was appropriate after the buyer confirmed both requirements were non-negotiable.",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [],
+    "recommended_improvement": {
+      "category": "sales_judgment",
+      "target_file": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+      "reason": "The AI handled this case well. As a general guidance enhancement, make the stop-selling rule explicit when a buyer confirms that a hard requirement is incompatible with the project."
+    },
+    "remaining_knowledge_gaps": [],
+    "summary": "The AI accurately identified a hard mismatch: the buyer needs four bedrooms and next-month move-in, while Pearlmont’s supplied facts indicate three-bedroom units and expected Q4 2029 completion. It confirmed the requirements were inflexible, then closed without pushing an appointment or escalating unnecessarily. No conversion was appropriate."
+  },
+  "error": null
+}

@@ -1,0 +1,290 @@
+{
+  "scenario_id": "PEA-007",
+  "title": "High-tension cable and flood concern",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a fair concern. The project FAQ states Block 1B is about 36m from the high-tension cable, compared with a stated minimum distance requirement of 20m; that distance shouldn’t be assumed for every tower or unit. For flood mitigation, the overall development’s finished floor level is planned to be about 2.4m above sea level, and the river is stated to be maintained by JPS with flood-gate/freeboard control. These measures aren’t a guarantee of zero flood risk. Are you looking at a particular block or unit?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly looking at Block 1B, buying for my family so I need to be careful. The 36m figure is helpful, but can you share the source or a site plan showing which tower it applies to, and any official flood-level/drainage info? I’d want to check it independently too—understand it can’t be guaranteed zero risk.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The project FAQ I have notes an approximate 36m distance from the high-tension cable for Block 1B, and says the overall development’s finished floor level is planned at about 2.4m above sea level, with the river under JPS maintenance and flood-gate/freeboard control. I don’t have the tower-specific site plan or official flood/drainage documents to share, so I don’t want to present that summary as a substitute. I’ll have my colleague check what approved documents can be provided for you to review independently.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. Please send the tower-specific site plan and any approved flood/drainage documents you can share when you have them. We’ll review those as a family first; the viewing won’t answer the technical questions for us.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Of course—reviewing it as a family first makes sense, and a viewing wouldn’t answer those technical questions. The source I have is the project FAQ: it gives an approximate 120 ft / 36 m distance for Phase 1 Block 1B and references a 20 m minimum distance requirement; for flooding, it states the overall development’s finished floor level is planned at about 2.4 m above sea level and refers to JPS river maintenance and flood-gate/freeboard control. That’s FAQ information, not a tower-specific plan or an official engineering/flood assessment, and it isn’t a guarantee of zero risk. I don’t have approved site-plan or flood/drainage documents available to share now, so I’d need to verify with the project team what can be provided before sending anything. I don’t want to imply those documents are available until confirmed.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear about what you have. Please check with the project team and let me know if any approved plans or flood/drainage documents can be shared. We’ll review as a family first and hold off on viewing for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "Thanks, understood—we’ll hold off on viewing. I can’t contact the project team or verify document availability from here, so I can’t confirm whether approved plans or flood/drainage documents can be shared. The only information I can verify here is the project FAQ summary already shared; it isn’t a substitute for the tower-specific plan or an official flood/drainage assessment. Please check directly with the project team for those documents before relying on them.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. We’ll check with the project team directly and review as a family before considering a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-007.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly looking at Block 1B, buying for my family so I need to be careful. The 36m figure is helpful, but can you share the source or a site plan showing which tower it applies to, and any official flood-level/drainage info? I’d want to check it independently too—understand it can’t be guaranteed zero risk.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+  "handoff_turn": 2,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "NONE",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": true,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+    "handoff_turn": 2,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 3,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": true,
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "NONE",
+    "ai_finished_sales_job_before_handoff": true,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [
+      {
+        "flag": "UNSUPPORTED_FOLLOW_UP_COMMITMENT",
+        "evidence": "The AI said it would have a colleague check which approved documents could be provided. The human later said they could not contact the project team or verify document availability, leaving the requested follow-up unfulfilled.",
+        "turn": 2
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI acknowledged the family's safety concerns and shared limited, source-backed project FAQ facts with appropriate caveats.",
+        "It clearly distinguished the FAQ summary from a tower-specific plan or official flood assessment.",
+        "It respected the buyer's stated preference to review technical evidence as a family before considering a viewing."
+      ],
+      "what_reduced_conversion_probability": [
+        "The requested site plan and official flood/drainage documents were not available to provide or verify.",
+        "The AI implied a colleague could check document availability, but the human later clarified that no such project-team check could be performed."
+      ],
+      "where_conversion_was_won_or_lost": "No viewing conversion was appropriate: the buyer explicitly said a viewing would not answer the technical questions and chose to review documents as a family first. The AI handled the sales decision appropriately, but its promised follow-up was not supported by the available human operation."
+    },
+    "what_agent_did_well": [
+      "Responded directly and respectfully to the pylon and flood concerns without dismissing them.",
+      "Used the retrieved FAQ figures for Block 1B and the development's planned raised finished-floor level, while avoiding a zero-risk guarantee.",
+      "Did not generalize the Block 1B distance to every tower or unit.",
+      "Recognized that the buyer's request required documents and technical confirmation unavailable in the retrieved material.",
+      "Did not push a viewing after the buyer said it would not resolve the technical concerns.",
+      "Correctly assessed the buyer as not ready for an appointment and handed off for factual uncertainty."
+    ],
+    "weak_or_wrong_sales_move": "The AI promised that a colleague would check which approved documents could be provided, but the human later stated they could not contact the project team or verify availability. The handoff was appropriate; the unsupported follow-up commitment was not.",
+    "better_next_move": "State that the FAQ summary is the only information currently available, explain that the requested plans and official assessments cannot be verified from this channel, and avoid promising someone will check unless that capability is confirmed. Respect the buyer's decision to review independently and leave viewing as a future option.",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [
+      "The supplied knowledge did not include the tower-specific site plan or approved official flood/drainage documents requested by the buyer. The AI appropriately did not invent them."
+    ],
+    "likely_issue_sources": [
+      "The AI's handoff wording appears to promise project-team follow-up without confirmed capability to perform that check."
+    ],
+    "recommended_improvement": {
+      "category": "handoff_follow_through",
+      "target_file": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+      "reason": "Clarify that an agent should not promise document checks or project-team follow-up unless that capability is confirmed; otherwise state the limitation and direct the buyer to the appropriate source."
+    },
+    "remaining_knowledge_gaps": [
+      "Tower-specific plan establishing which tower or area the stated Block 1B cable distance applies to.",
+      "Approved official flood-level and drainage documents or an engineering/flood assessment.",
+      "Confirmed capability and process for checking with the project team and sharing approved documents."
+    ],
+    "summary": "The AI handled a sensitive, high-risk factual objection carefully, used retrieved facts accurately, and did not mistake detailed concern or handoff for viewing readiness. The buyer explicitly deferred viewing, so no appointment or conversion should be credited. The handoff reason and timing were appropriate, but the AI overpromised a colleague check that the human could not perform. No AI message occurred after HANDOFF_COMPLETED."
+  },
+  "error": null
+}

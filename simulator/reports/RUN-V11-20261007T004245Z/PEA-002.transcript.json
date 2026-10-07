@@ -1,0 +1,321 @@
+{
+  "scenario_id": "PEA-002",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:45:06.915290+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 7,
+    "ai": 4,
+    "human_closer": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Four of us—me, my partner and two kids. Mainly worried whether the bedrooms can fit proper beds and wardrobes, and if the living/dining area will feel cramped with our furniture.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Hmm, that combined figure includes the kitchen too, right? Do you have the actual bedroom dimensions and foyer layout? We’d need to see how our beds and wardrobes fit, not just the total area.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, those room areas are more useful. In our current place the kids have proper beds and wardrobes, so we’re trying to see if those can fit without squeezing the living area. Could you share the Type A floor plan? If it’s still hard to judge, we’d be open to seeing the show unit—what days or times are available?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "900 sqft for a family sounds quite small leh."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair concern—900 sqft can feel compact for some families. The layout has 3 bedrooms and 2 bathrooms, with limited wasted corridor space, but whether it works really depends on who’ll be using the rooms. How many people would be living there?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Four of us—me, my partner and two kids. Mainly worried whether the bedrooms can fit proper beds and wardrobes, and if the living/dining area will feel cramped with our furniture.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "For a family of four, the layout info says all three bedrooms are designed to fit a queen-sized bed, and the master is described as having room for a walk-in wardrobe concept. The living, dining and kitchen area is about 404.7 sq ft combined. I can’t guarantee your exact wardrobes and furniture will fit comfortably from those figures alone—the show unit would give you a much better feel for the proportions, if you’d like to see it.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Hmm, that combined figure includes the kitchen too, right? Do you have the actual bedroom dimensions and foyer layout? We’d need to see how our beds and wardrobes fit, not just the total area.",
+      "appointment_state": "VIEWING_SUGGESTED",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—the 404.7 sq ft figure includes the kitchen. The areas I have are: master bedroom 143.4 sq ft, Bedroom 1 117.4 sq ft, Bedroom 2 103.3 sq ft, and foyer about 25.9 sq ft. I don’t have the wall-to-wall bedroom measurements or detailed foyer dimensions here, so I don’t want to guess. For checking your beds and wardrobes, the floor plan or show unit would give a more reliable sense of fit.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, those room areas are more useful. In our current place the kids have proper beds and wardrobes, so we’re trying to see if those can fit without squeezing the living area. Could you share the Type A floor plan? If it’s still hard to judge, we’d be open to seeing the show unit—what days or times are available?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I’ll have my colleague share the Type A floor plan and confirm the available show-unit viewing days and times with you, so you can check the layout against your furniture.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks—please send the Type A floor plan and the available viewing days/times when you can. We’ll compare it with our furniture first.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Sure. I don’t have the Type A floor-plan image or a confirmed viewing schedule in the information available here, so I can’t send the plan or quote days/times accurately. The approximate areas I have are: master 143.4 sq ft, Bedroom 1 117.4 sq ft, Bedroom 2 103.3 sq ft, foyer 25.9 sq ft, and living/dining/kitchen 404.7 sq ft combined (including the kitchen). The project materials describe all three bedrooms as able to fit a queen-sized bed, but that doesn’t confirm your beds and wardrobes will fit comfortably. You’d need the actual plan dimensions to check that properly.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "No worries, thanks for being upfront. Could you check whether you can get the Type A floor plan with actual dimensions? That’s what we need to compare with our beds and wardrobes. Once we’ve seen it, we can decide if a show-unit visit would help.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "I can’t verify or retrieve the actual-dimension Type A plan from the information available here, so I don’t want to say I can get it or guess the measurements. The room areas I shared are approximate; wall-to-wall dimensions and door/wardrobe positions are what you’d need to check your furniture properly. Once you have the official dimensioned plan, you can compare it first and decide whether a show-unit visit would still help.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, understood. If you’re able to get the official dimensioned Type A plan later, please send it over. We’ll compare it with our furniture first and decide from there about a show-unit visit.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 12,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 32
+}

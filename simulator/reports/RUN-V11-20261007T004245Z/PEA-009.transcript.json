@@ -1,0 +1,149 @@
+{
+  "scenario_id": "PEA-009",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:56:18.731850+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 3,
+    "ai": 1,
+    "human_closer": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+  "handoff_turn": 1,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "SALES_OWNERSHIP_CONFLICT",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes, I can help. I’ll have the existing registration checked first so we don’t duplicate anything, then we can continue from there.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay thanks, appreciate you checking. They just contacted me and shared some info—I haven’t booked a viewing. Just want to avoid duplicate follow-ups; let me know if you need anything from me to check.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "I’ve checked the information available here: it shows a prior contact, but no confirmed registration or appointment. No need to send anything for now. If you’re comfortable, you can share the other agent’s name or company so we can keep things coordinated—no pressure to book a viewing.",
+      "action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. I don’t have their name or company handy—they just shared some info with me. No need to follow up with them on my behalf for now; I’ll let you know if I find their details.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 4,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 115
+}

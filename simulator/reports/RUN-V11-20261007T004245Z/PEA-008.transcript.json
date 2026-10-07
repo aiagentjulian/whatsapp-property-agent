@@ -1,0 +1,253 @@
+{
+  "scenario_id": "PEA-008",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:54:46.682932+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 6,
+    "ai": 2,
+    "human_closer": 3
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 2,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Around RM750k max, ideally less. I can consider a lower floor or less open sea view if the price difference is worth it—just don’t want to assume all the 1C/1D units have the same view. Can you check what options fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "For sea view, I’d focus on the sea-facing units in Blocks 1C or 1D. With your budget in mind, what’s the maximum you’re comfortable spending? I can narrow the options from there; exact unit pricing and availability would need to be confirmed.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Around RM750k max, ideally less. I can consider a lower floor or less open sea view if the price difference is worth it—just don’t want to assume all the 1C/1D units have the same view. Can you check what options fit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I can narrow the search, but I’ll need the latest unit-by-unit schedule to check exact views, prices and availability against your RM750k limit. The project information identifies south-facing sea-view units in 1C and south/southwest-facing sea-view units in 1D, but the exact outlook varies by unit—so I wouldn’t assume every unit in either block has the same view. I’ll get the suitable options checked for you.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please check which options are within RM750k, with the floor and actual view for each. If there are a couple worth comparing, I’m happy to arrange a viewing after that.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Thanks — I can narrow the sea-facing categories from the project info, but I don’t have a current unit schedule to verify individual unit numbers, exact views, availability or final prices. Block 1C has south-facing sea-view units on Levels 1–38; Block 1D has south/southwest-facing sea-view units on Levels 1–37. The actual outlook varies by unit, so I wouldn’t want to promise a specific view without the latest orientation plan. Published base-price references are RM350k for 1C and RM352k for 1D sea-facing units, before applicable car-park premiums and any current package, so those aren’t confirmed final prices against your RM750k ceiling. I can’t reliably identify which available units fit until the latest unit-by-unit schedule is checked. Once that’s verified, we can compare a couple of suitable options and arrange a viewing if you’d like.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, that helps. The base prices sound potentially within my budget, but I understand they’re not final. Could you check the latest schedule for a couple of options under RM750k, including floor, actual outlook and any car-park premium? I’ll decide about viewing once I can compare them.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t access a live unit-by-unit schedule here, so I can’t reliably name two available units or verify each one’s floor, actual outlook, car-park premium and final price. The published base references are RM350k for 1C sea-facing and RM352k for 1D sea-facing, but the car-park premium varies by unit and those figures aren’t confirmed final prices against your RM750k limit. I’d need the latest developer schedule to compare actual options without guessing. Once you have that, I’m happy to help weigh up a couple before you decide about viewing.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, no worries. Please send me the latest schedule when you’re able to get it, especially any options under RM750k with the floor, outlook and car-park premium. I’ll compare those first before deciding on a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Sure, I understand you want to compare the actual numbers first. I don’t have the latest unit schedule available here, so I can’t send or verify specific options, floors, outlooks or car-park premiums yet. The published sea-facing base references are RM350k for 1C and RM352k for 1D; car-park premiums shown in the pricing material range from RM15k to RM30k, but the exact amount depends on the unit. Once you have the latest developer schedule, send it over and I can help compare a couple against your RM750k ceiling before you decide about viewing.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Got it, thanks. Please keep me posted when you have the latest schedule, and I’ll compare the options before deciding about a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "provider_calls": 10,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 110
+}

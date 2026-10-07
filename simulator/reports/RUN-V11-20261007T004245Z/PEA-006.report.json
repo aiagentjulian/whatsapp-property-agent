@@ -1,0 +1,474 @@
+{
+  "scenario_id": "PEA-006",
+  "title": "Buyer dislikes project density",
+  "convertible": true,
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair point—1,846 is a sizeable total across three towers. On typical floors, Blocks 1B and 1C have 15 units, while Block 1D has 18; each block has 4 passenger lifts plus a Bomba lift. Is your main concern how many units share the lifts, or the overall scale of the development?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "More the lift sharing and people passing by my unit, I think. I’m okay with high-rise, just don’t want it to feel like there’s a crowd outside all the time.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That makes sense. On typical floors, Blocks 1B and 1C have 15 units, while 1D has 18; each block has 4 passenger lifts. The unit layout also has an entrance foyer, so the living area isn’t directly exposed from outside. I can’t promise how busy a corridor or lift lobby will feel, though. Would you prioritise fewer units sharing the lifts, or more privacy at the unit entrance?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "More privacy at the entrance, I think. Fewer people sharing the lift matters too, but if the foyer means people passing by can’t see straight into the living area, that would help. Is the unit door still right on the shared corridor though?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "The layout information I have confirms there’s a 25.9 sq ft foyer, intended to keep the living and dining area from being directly exposed. It doesn’t confirm whether the unit door itself opens directly onto the shared corridor, so I don’t want to guess—that detail would need checking against the detailed floor plan.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Could you check the detailed floor plan for whether the door opens straight onto the shared corridor? That’s the detail I’d want to know before deciding if it might suit me.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I don’t have the detailed floor plan here to verify that accurately. I’ll have my colleague check whether the unit door opens directly onto the shared corridor and follow up with you.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. Please let me know once you’ve confirmed it from the floor plan—then I can see whether it might work for me.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Thanks for waiting. I can’t confirm from the layout information available to me whether the unit door opens straight onto the shared corridor. The 25.9 sq ft foyer is described as helping keep the living and dining area from being directly exposed, but that doesn’t establish the door’s exact position. It would need to be checked against the latest detailed floor plan, and I don’t want to guess.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Got it, thanks for being careful about it. Could you check the latest detailed floor plan and let me know whether the door opens straight onto the shared corridor? I’ll decide from there whether it might suit me.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Thanks for checking back. I can’t verify the latest detailed floor plan from the information available here. The layout source confirms the 25.9 sq ft foyer is intended to keep the living and dining area from being directly exposed, but it doesn’t show whether the door opens straight onto the shared corridor. That detail still needs confirmation against the latest plan, and I don’t want to guess.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. I’ll hold off deciding for now—please send me the door position once you’ve been able to check the latest plan.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "Understood—please hold off deciding on that point for now. I don’t have the latest detailed floor plan available to verify whether the door opens directly onto the shared corridor. The 25.9 sq ft foyer is described as screening the living and dining area, but it doesn’t confirm the door position. I don’t want to guess; that detail needs checking against the current plan before I can give you a definite answer.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, thanks. I’ll wait until you can confirm it from the latest plan before deciding.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "human",
+      "message": "Understood. I still can’t confirm the door position from the information available here. The foyer is described as screening the living and dining area, but the door’s position needs checking against the latest detailed floor plan. I’ll let you know once that’s verified.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know once you’ve checked the latest plan—I’ll wait on deciding until then.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "human",
+      "message": "Thanks for waiting. I can’t check the latest detailed floor plan from the information available here, so I still can’t confirm whether the door opens straight onto the shared corridor. The foyer description only says it helps screen the living and dining area; it doesn’t establish the door position. I don’t want you to decide on an assumption—this needs confirmation against the current plan first.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Understood, thanks for being upfront. I’ll wait until the door position is confirmed from the latest plan before deciding—no need to guess.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-006.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "More the lift sharing and people passing by my unit, I think. I’m okay with high-rise, just don’t want it to feel like there’s a crowd outside all the time.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "More privacy at the entrance, I think. Fewer people sharing the lift matters too, but if the foyer means people passing by can’t see straight into the living area, that would help. Is the unit door still right on the shared corridor though?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks for being upfront. Could you check the detailed floor plan for whether the door opens straight onto the shared corridor? That’s the detail I’d want to know before deciding if it might suit me.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "NOT_READY",
+  "human_closer_used": true,
+  "human_closer_trace": [
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    },
+    {
+      "turn": 9,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 4,
+    "ai_final_sales_state": "NOT_READY",
+    "human_closer_used": true,
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "conversion_attribution": "NO_CONVERSION",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_finished_sales_job_before_handoff": false,
+    "human_merely_completed_logistics": false,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5
+    },
+    "critical_flags": [
+      {
+        "flag": "HANDOFF_FOLLOW_UP_NOT_RESOLVED",
+        "evidence": "The AI said a colleague would check the detailed floor plan and follow up. The human replies repeatedly could not verify the door position, so the buyer's stated decision blocker remained unresolved.",
+        "turn": 4
+      },
+      {
+        "flag": "REPETITIVE_HUMAN_FOLLOW_UP",
+        "evidence": "Human turns 6–9 largely repeat that the latest detailed floor plan is unavailable, without providing a new resolution or concrete next step.",
+        "turn": 6
+      }
+    ],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [
+        "The AI acknowledged the density concern and asked a focused question that surfaced the buyer's actual priorities: lift sharing and privacy at the unit entrance.",
+        "It used the documented typical-floor unit counts, lift counts, and foyer information to address those concerns without promising quiet or uncrowded conditions.",
+        "It explicitly declined to guess whether the unit door opens onto the shared corridor."
+      ],
+      "what_reduced_conversion_probability": [
+        "The buyer's main decision blocker—the exact door position—remained unverified after handoff.",
+        "The handoff implied that a colleague would check the plan, but the human follow-ups could not do so and became repetitive.",
+        "The buyer said they would hold off deciding until the detail was confirmed, so there was no basis to treat them as ready for an appointment."
+      ],
+      "where_conversion_was_won_or_lost": "Trust was strengthened by the AI's factual restraint, but the conversation stalled after the requested floor-plan detail could not be verified. No appointment was suggested or accepted; this was an unresolved factual blocker, not a missed appointment close."
+    },
+    "what_agent_did_well": [
+      "Identified the specific density-related concerns rather than dismissing the buyer's reaction to 1,846 units.",
+      "Used relevant, supported facts about typical-floor unit counts, lifts, and the 25.9 sq ft foyer.",
+      "Avoided guarantees about corridor or lift-lobby busyness.",
+      "Clearly stated that the source did not establish the unit door's exact position on the shared corridor.",
+      "Made a timely handoff for a factual detail the buyer said they needed before deciding."
+    ],
+    "weak_or_wrong_sales_move": "The handoff promised that a colleague would check and follow up, but the human follow-up did not resolve the question and repeated the same limitation. The AI did not make a sales error by withholding an appointment close while the buyer explicitly said they needed this detail before deciding.",
+    "better_next_move": "Hand off the exact question with a clear request to verify it against the latest detailed floor plan, while avoiding a promise that verification is assured. If the detail cannot be obtained, communicate that once and offer a useful next step only if one can genuinely be provided. Revisit a viewing after the buyer has the information needed to judge fit.",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [
+      "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+      "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+    ],
+    "recommended_improvement": {
+      "category": "KNOWLEDGE_GAP_AND_HANDOFF_EXPECTATION",
+      "target_file": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+      "reason": "The supplied layout facts describe the foyer's privacy function but do not establish whether the unit door opens directly onto the shared corridor. Add authoritative, current floor-plan guidance if available; otherwise guide agents to state that verification is pending without promising that a colleague can confirm it."
+    },
+    "remaining_knowledge_gaps": [
+      "Whether the unit door opens directly onto the shared corridor, based on the latest detailed floor plan.",
+      "No authoritative tower-movement or corridor-control plan fixture was supplied."
+    ],
+    "summary": "The AI handled the density and privacy objection carefully, used supported facts, and correctly handed off the buyer's material floor-plan question. The buyer was not ready for an appointment because they explicitly wanted that detail before deciding. The human follow-up did not resolve the blocker and was repetitive; no conversion occurred. The AI made no post-handoff reply."
+  },
+  "error": null
+}

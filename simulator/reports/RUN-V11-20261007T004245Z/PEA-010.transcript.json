@@ -1,0 +1,149 @@
+{
+  "scenario_id": "PEA-010",
+  "version": "1.1",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_closer": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T00:56:58.909559+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 3,
+    "ai": 1,
+    "human_closer": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 1,
+  "appointment_state_customer": "APPOINTMENT_CONFIRMED",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_closer_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I can help with both. I’ll need to confirm the latest package and price, as well as Saturday viewing arrangements, so I don’t give you outdated details. I’ll have my colleague follow up with you—what time on Saturday would suit you?",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Saturday around 11am would suit, for me and my wife. Can you check if that slot’s available and confirm the latest package and price too?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "Saturday at 11am is available, so I’ll confirm the viewing for you and your wife. The package reference I have shows 5% or 8% rebates depending on unit category, floor, facing and car-park allocation. I can’t confirm whether that offer is still current or give an exact unit price without the latest package and unit schedule, so I’ll get those checked. If you have a preferred facing or floor, let me know and I can help narrow down what to discuss.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "MEDIUM"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Great, please confirm Saturday at 11am for me and my wife. And send over the verified latest package and exact unit price once you’ve checked, please.",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    }
+  ],
+  "provider_calls": 4,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 120
+}
