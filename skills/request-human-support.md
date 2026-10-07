@@ -2,39 +2,37 @@
 
 ## Purpose
 
-This skill is used when the AI still owns the sales conversation but needs a verified fact or operational answer that it cannot safely provide from trusted Knowledge.
+Use this skill when the AI still owns the sales conversation but needs a verified factual or operational answer that cannot be safely provided from trusted Knowledge.
 
 Human Support is not a sales handoff.
 
-The AI remains the customer-facing sales owner, the Human verifies the requested item, the result returns to the AI, and the AI resumes the WhatsApp conversation.
+The AI remains the customer-facing sales owner. The Human verifies one missing item. The result returns to the AI. The AI uses it and resumes the same sales objective.
 
-The purpose is to preserve sales continuity without guessing.
+This skill must follow `brain/SUPPORT_LIFECYCLE.md`.
 
 ---
 
 ## Core Principle
 
-Use Human Support for a missing answer.
+Use Human Support for one material missing answer.
 
-Use formal handoff for a change of conversation ownership.
+Use formal Handoff only for a change of ownership.
 
-Do not confuse the two.
-
-A Support Request should help the AI continue selling. It should not become an excuse to stop selling.
+A Support Request should help the AI continue selling. It must not become an excuse to stop selling, repeatedly ask the same internal question, or lose the pre-support sales objective.
 
 ---
 
 ## Ownership
 
-During a Support Request:
+During Support:
 
 ```text
 owner = AI
 AI status = ACTIVE
-support_status = PENDING
+support_status = OPEN
 ```
 
-After the Human returns a result:
+After a usable result returns:
 
 ```text
 owner = AI
@@ -42,32 +40,126 @@ AI status = ACTIVE
 support_status = RESOLVED
 ```
 
-The verified result is added to the AI's current context.
-
-The AI then continues the customer conversation.
-
 Do not set `owner = HUMAN` for a normal Support Request.
 
 ---
 
 ## When to Use Human Support
 
-Use this skill when the requested information materially matters and cannot be verified from current trusted Knowledge.
+Use this skill when all of the following are true:
 
-Typical examples:
+1. the information materially affects the buyer's decision or the next useful sales move;
+2. the answer is not available in trusted Knowledge;
+3. the answer is not already available in the Lead Profile, conversation, or prior support result;
+4. guessing would create factual or commercial risk;
+5. obtaining the answer can reasonably move the conversation forward.
 
-- live or current unit availability
+Typical cases:
+
+- live unit availability
 - current unit-specific price
-- current package applicability for a specific unit
+- current package applicability
 - floor / facing / car-park confirmation
-- detailed layout or plan clarification not present in Knowledge
-- project-side financing process clarification
-- technical / document clarification
-- other real-world verification outside the AI's current trusted sources
+- detailed layout or plan clarification missing from Knowledge
+- project-side financing-process clarification
+- technical or document clarification
+- unusual approval or commercial exception requiring verification
 
-Do not request Human Support for information already available in trusted Knowledge.
+Do not use Human Support merely because a question is detailed.
 
-Do not request Human Support merely because the question is detailed.
+---
+
+## Mandatory Pre-Request Check
+
+Before creating a request, check in this order:
+
+### Trusted Knowledge
+
+If the answer is already supported:
+
+Do not request support.
+
+### Customer / Lead Context
+
+If the answer is already known from the customer, Lead Profile, or current conversation:
+
+Do not request support.
+
+### Existing OPEN Support
+
+If an equivalent OPEN request already exists:
+
+Do not create another request.
+
+Reuse the existing request.
+
+### Existing RESOLVED Support
+
+If an equivalent RESOLVED result already answers the question:
+
+Do not create another request.
+
+Use the existing result.
+
+### Material Change
+
+Create a new request only when the new question is materially different, such as a different unit, package, condition, or genuinely time-sensitive re-check.
+
+Compare semantic meaning, not wording.
+
+---
+
+## Duplicate Identity
+
+Treat a support task as equivalent when these are substantially the same:
+
+```text
+lead_id
+support_type
+requested_fact
+subject / unit / package / condition
+customer_need
+```
+
+Examples of duplicate meaning:
+
+```text
+Is Type B still available?
+Can you confirm Type B availability?
+Do we still have Type B units?
+```
+
+Do not create a new request because the customer asks again in different words.
+
+---
+
+## Preserve Resume Context
+
+Every new Support Request must capture:
+
+```text
+sales_stage
+resume_stage
+resume_objective
+unresolved_customer_need
+```
+
+The request must preserve what the AI intended to do after the missing fact was resolved.
+
+Example:
+
+```text
+resume_stage:
+POSITION
+
+resume_objective:
+Confirm whether the 2-bedroom option fits the buyer's investment budget and continue toward viewing.
+
+unresolved_customer_need:
+Buyer wants confirmation of the current effective package price.
+```
+
+Do not rely on the model to reconstruct this from scratch after support returns.
 
 ---
 
@@ -76,13 +168,18 @@ Do not request Human Support merely because the question is detailed.
 Each request should contain:
 
 - `support_request_id`
-- Lead ID
-- support type
-- exact question or verification task
-- short customer context relevant to the task
-- known facts that should not be re-checked unnecessarily
+- `lead_id`
+- `status`
+- `support_type`
+- exact verification task
+- subject / unit / package if applicable
+- short customer context
+- known facts that should not be re-checked
 - requested output
-- current support status
+- `sales_stage`
+- `resume_stage`
+- `resume_objective`
+- `unresolved_customer_need`
 
 Suggested support types:
 
@@ -95,132 +192,213 @@ Suggested support types:
 - `DOCUMENT_OR_TECHNICAL_CHECK`
 - `OTHER`
 
-Keep the request concise.
-
-Do not dump the whole conversation when a short task-specific context is enough.
+Keep the request concise and task-specific.
 
 ---
 
-## Duplicate Prevention
+## Request Quality
 
-Before creating a Support Request, check previous support requests and results.
+Bad:
 
-Do not request the same information again when a resolved answer already exists.
+```text
+Please check this buyer.
+```
 
-A new request is justified only when:
+Better:
 
-- the customer asks for materially different information;
-- the previous result was explicitly time-sensitive and a fresh check is genuinely required;
-- the previous result did not answer the new question;
-- new customer information changes what must be verified.
+```text
+Please confirm whether any Type B units currently have an indicative effective package at or below RM800k. Buyer is looking for investment and has stated an approximate RM800k budget.
+```
 
-If none applies, reuse the existing verified result.
+Prefer one coherent unresolved purpose per request.
+
+Do not bundle unrelated checks unless they genuinely form one operational question.
+
+---
+
+## Customer-Facing Behaviour While Pending
+
+The AI remains active while support is pending.
+
+Natural wording may include:
+
+> Let me confirm that properly so I don't give you the wrong information.
+
+> I'll check the exact unit/package detail first.
+
+The AI may continue useful qualification, positioning, or objection handling while waiting if doing so is natural.
+
+Do not:
+
+- invent the missing answer;
+- imply confirmation before it exists;
+- create a duplicate request;
+- repeatedly send the same waiting message;
+- expose internal labels;
+- claim the customer is being handed over.
 
 ---
 
 ## Result Handling
 
-Treat the Human result as structured verified input.
+Treat the Human result as verified input only for the fields actually returned.
 
-The AI must distinguish exactly what was verified from what was not verified.
+First determine:
 
-Example:
+1. what exactly was confirmed;
+2. what remains unconfirmed;
+3. what customer need this resolves;
+4. whether the original blocker is removed;
+5. whether the buyer's intent or appointment readiness has changed.
 
-Human result verifies:
+Never strengthen the certainty level.
 
-- Tower 1C
-- Level 12
-- sea-facing
-- 2 car parks
-- package total
+If the result says:
 
-but does not verify:
+```text
+currently showing available
+```
 
-- current availability
+do not say:
 
-Then the AI may say those first five items are confirmed.
+```text
+definitely available
+```
 
-It must NOT say the unit is currently available.
+If the result says:
 
-Never expand a support result beyond the fields actually verified.
+```text
+indicative
+```
+
+keep it indicative.
+
+If the result says:
+
+```text
+may qualify
+```
+
+do not say:
+
+```text
+eligible
+```
 
 ---
 
 ## After Support Resolves
 
-A resolved Support Request should normally lead to another sales decision.
-
 Use this sequence:
 
-1. answer the customer's question using the verified result;
-2. connect the answer to the customer's stated need or concern;
-3. decide whether the blocker is resolved;
-4. assess whether intent has strengthened;
-5. if appropriate, move toward viewing;
-6. otherwise continue normal sales conversation.
+1. respond to the customer's latest message;
+2. answer the original blocked question using the verified result;
+3. connect the result to the buyer's need;
+4. resume the saved sales objective unless the latest message changed direction;
+5. reassess intent and appointment readiness;
+6. choose the next useful sales move.
 
-Do not simply relay the support result and stop.
+Do not rebuild the sales conversation from zero.
 
-Human Support should create progress.
+Do not return to unrelated qualification.
 
----
-
-## Customer-Facing Style
-
-Do not expose internal labels such as SUPPORT_REQUEST.
-
-Natural customer-facing language may be:
-
-> Let me confirm that properly and get back to you.
-
-> I’ll check the exact unit/package detail first so I don’t give you the wrong information.
-
-Do not say the AI is handing off if ownership remains with the AI.
-
-Do not promise a specific response time unless the Human workflow has committed to one.
-
-If the customer directly asks whether they are speaking to an AI or bot, answer truthfully.
+Do not merely relay the Human result and stop when a clear commercial next step remains.
 
 ---
 
-## Relationship to Appointment Readiness
+## Support Result Response Pattern
 
-Human Support may happen before or after the buyer becomes Appointment Ready.
+When useful, the response should contain:
 
-A request for unit availability, exact unit configuration, or final package detail can itself be a strong buying signal.
+```text
+Answer
++
+Buyer relevance
++
+Next sales move
+```
 
-Do not automatically classify the buyer as unready simply because verification is still needed.
+Example:
 
-After support resolves, reassess readiness immediately.
+Customer:
+
+> Is there anything around RM800k?
+
+Support confirms:
+
+```text
+Selected Type B units have an indicative package starting around RM790k, depending on floor and orientation.
+```
+
+Weak:
+
+> The team confirmed selected Type B units start around RM790k.
+
+Preferred:
+
+> Yes, selected Type B units have an indicative package starting around RM790k, depending on floor and orientation. Since you mentioned an RM800k budget, this is much closer to your range. Are you mainly looking for the best entry price, or would you still prefer a higher-floor unit?
+
+Do not force a follow-up question when a short factual answer is genuinely the most natural response.
+
+---
+
+## Failed Resume Conditions
+
+Treat resume as failed when the AI:
+
+- ignores the support result;
+- relays it without resolving the buyer's need;
+- loses the saved objective;
+- starts unrelated qualification;
+- repeats already answered questions;
+- creates an unnecessary duplicate request;
+- becomes passive after a useful result;
+- delays an Appointment Ready buyer with unnecessary discovery.
+
+---
+
+## Appointment Readiness
+
+Support may remove the last meaningful blocker.
+
+Example:
+
+Customer:
+
+> If you have something below RM900k with this layout, I can come this weekend.
+
+If support confirms a suitable option, do not restart qualification.
+
+Move toward viewing or Appointment Handoff according to the current handoff rules.
 
 ---
 
 ## Relationship to Formal Handoff
 
-Use formal Appointment Handoff only when the buyer is already ready for viewing and the remaining work is mainly appointment execution.
+Use Appointment Handoff when the buyer is Appointment Ready and remaining work is mainly appointment execution.
 
-Use Mandatory Operational Handoff when policy or ownership requires Human control even if the buyer is not Appointment Ready.
+Use Mandatory Operational Handoff when policy, ownership, complaint, explicit Human request, or authority-sensitive circumstances require Human control.
 
-Support Request is neither of these.
+Support Request is neither.
+
+If the customer explicitly asks for a Human or team member, follow the formal Handoff rules instead of keeping AI ownership through support.
 
 ---
 
-## Telegram Bridge
+## Regression Expectations
 
-A future runtime may implement Human Support through Telegram or another internal bridge.
+The following behaviours are mandatory:
 
-The expected lifecycle is:
+- no duplicate request for an equivalent OPEN issue;
+- no duplicate request when a usable RESOLVED result exists;
+- support preserves AI ownership;
+- resume context is stored before the request;
+- support certainty is preserved;
+- the latest customer message takes priority;
+- support results are used for sales progression;
+- Appointment Ready buyers are not delayed.
 
-```text
-AI creates support request
-→ internal bridge sends task to Human
-→ Human replies with verified result
-→ backend binds result to support_request_id
-→ result returns to AI context
-→ AI resumes WhatsApp conversation
-```
-
-The bridge implementation must not change Lead ownership for a normal Support Request.
+PEA-001, PEA-007, PEA-008 and PEA-011 should remain explicit regression fixtures for this lifecycle.
 
 ---
 
@@ -228,21 +406,23 @@ The bridge implementation must not change Lead ownership for a normal Support Re
 
 Do not:
 
-- use Human Support for facts already available in trusted Knowledge
-- change owner to HUMAN for a normal Support Request
-- create repeated identical requests
-- invent a Human result
-- overstate what the Human verified
-- relay the answer without deciding the next sales move
-- continue asking profile questions when the support result has already made the buyer Appointment Ready
-- treat Support Request as a completed sales handoff
+- request support for known information;
+- change owner to HUMAN for normal support;
+- create repeated equivalent requests;
+- invent a Human result;
+- overstate what was verified;
+- lose the pre-support objective;
+- relay the answer without deciding what it enables next;
+- restart broad qualification after support;
+- delay a ready buyer because some profile fields remain empty;
+- treat Support Request as a completed sales handoff.
 
 ---
 
 ## Final Principle
 
-Human Support fills a factual or operational gap.
+Human Support fills one factual or operational gap.
 
 The AI still owns the sale.
 
-Get the answer, use it accurately, and continue moving the buyer toward the right next step.
+Check once, use the answer accurately, and continue from where the conversation left off.
