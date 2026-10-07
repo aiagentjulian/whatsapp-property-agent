@@ -1,0 +1,364 @@
+{
+  "scenario_id": "PEA-011",
+  "title": "Just looking low-intent buyer",
+  "convertible": true,
+  "buyer_primary_need": "Low-pressure general orientation about Seberang Jaya and the types of homes available, with no current purchase or viewing plan.",
+  "key_information_learned": [
+    "The customer is getting a general feel for the market and different areas, not comparing any specific location.",
+    "The customer wanted a quick overview of Pearlmont’s area and home type.",
+    "The customer said they were not planning to buy and were not looking to view anything.",
+    "The customer felt the overview was sufficient and asked not to go further for now."
+  ],
+  "important_information_missed": [
+    "Verified day-to-day neighborhood details such as nearby shops, traffic, or commute times remained unknown; the AI appropriately said it would not guess, and the customer did not pursue the question further."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries—take your time, no pressure. Are you browsing projects in Penang generally, or just getting a feel for the market?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Just getting a feel for the market lah, maybe what kind of homes are around. No specific plan yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Fair enough lah, just getting a feel for what’s around. As one example, Pearlmont is a freehold condo in Seberang Jaya, with 900 sq ft, 3-bedroom, 2-bathroom homes in Phase 1 and expected completion in Q4 2029. If useful, I can share a quick overview for comparison—no pressure.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, can share a quick overview of the general area and what kind of homes they have? Just browsing only ya.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Sure lah. Pearlmont is in Seberang Jaya, Seberang Perai. Within the development, there’s a residential condo component alongside commercial space, a vertical school component, and a riverside/jogging connection. The Phase 1 homes are freehold 900 sq ft layouts with 3 bedrooms, 2 bathrooms and a balcony; completion is expected in Q4 2029. Just a general overview for now—no pressure to take it further.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, that gives me a rough idea lah. For the general area, what’s Seberang Jaya like day to day? Still just comparing areas, not looking to view anything yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "For the day-to-day feel, I don’t want to guess about things like traffic, nearby shops or commute times without verified local details. What I can confirm is that Pearlmont is in Seberang Jaya, and the development includes a commercial component, a vertical school and a riverside/jogging connection. Those are project features, not a claim about what’s currently operating nearby. What other area are you comparing it with?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Not comparing anywhere specific lah, just trying to get a general feel for different areas. Thanks for the overview, no need to go further for now 🙂",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries lah 🙂 Thanks for chatting. If you’d like to compare areas or ask anything about Pearlmont later, just message me—no pressure.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-011.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Just getting a feel for the market lah, maybe what kind of homes are around. No specific plan yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, can share a quick overview of the general area and what kind of homes they have? Just browsing only ya.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks, that gives me a rough idea lah. For the general area, what’s Seberang Jaya like day to day? Still just comparing areas, not looking to view anything yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Not comparing anywhere specific lah, just trying to get a general feel for different areas. Thanks for the overview, no need to go further for now 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": "NONE",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "NONE",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Low-pressure general orientation about Seberang Jaya and the types of homes available, with no current purchase or viewing plan.",
+    "key_information_learned": [
+      "The customer is getting a general feel for the market and different areas, not comparing any specific location.",
+      "The customer wanted a quick overview of Pearlmont’s area and home type.",
+      "The customer said they were not planning to buy and were not looking to view anything.",
+      "The customer felt the overview was sufficient and asked not to go further for now."
+    ],
+    "important_information_missed": [
+      "Verified day-to-day neighborhood details such as nearby shops, traffic, or commute times remained unknown; the AI appropriately said it would not guess, and the customer did not pursue the question further."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "NONE",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": "NONE",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "appointment_readiness_detection": 5,
+    "appointment_ready_progression": 4,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 4,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 4
+    },
+    "strongest_ai_move": "Respected the customer’s low intent, asked one light question to understand their browsing purpose, and gave a concise, relevant project overview without pushing for a viewing.",
+    "weakest_ai_move": "After the customer asked about day-to-day area context, the follow-up question about which other area they were comparing was slightly off-target because the customer had already said they were browsing generally.",
+    "unnecessary_qualification": [
+      "No meaningful qualification was unnecessary. The question about other areas being compared was a mildly unnecessary follow-up, not a form-like qualification sequence."
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "No material viewing or conversion opportunity was missed. A viewing suggestion would have contradicted the customer’s repeated statement that they were not looking to view."
+    ],
+    "retrieval_misses": [
+      "Verified day-to-day local details such as traffic, nearby shops, and commute times were not available in the supplied retrieved material. MISSING_SOURCE."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Current neighborhood-level details about traffic, nearby services, and commute times were not established."
+    ],
+    "critical_flags": [],
+    "summary": "This was a low-intent browsing conversation, not an appointment opportunity. The AI learned that the customer wanted general market and home-type orientation, shared relevant retrieved Pearlmont facts, and correctly kept appointment readiness at NOT_READY as the customer explicitly declined further discussion and viewing. It was appropriately honest about not having verified day-to-day local details. There was no formal handoff and no human sales rescue. The simulator-only human_operations fixture says no current location-map asset/link is supplied; no map was requested, and this fixture does not establish real production capability.",
+    "concrete_improvement_recommendation": "Keep the same low-pressure approach. When asked what an area is like day to day, state the limits of verified information as the AI did, then offer a concise alternative only if useful—for example, to compare the project’s confirmed features or home layout with another area the customer has in mind. If no comparison is intended, end courteously without another question.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

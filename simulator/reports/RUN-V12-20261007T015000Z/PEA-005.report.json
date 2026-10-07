@@ -1,0 +1,316 @@
+{
+  "scenario_id": "PEA-005",
+  "title": "LPPSA government servant",
+  "convertible": true,
+  "buyer_primary_need": "Determine whether Pearlmont accepts LPPSA and what official documents or checks are needed before deciding on next steps.",
+  "key_information_learned": [
+    "The buyer is a permanent government servant.",
+    "They have no active LPPSA financing.",
+    "They hope to buy within the next few months.",
+    "They want project-specific LPPSA eligibility and an official document checklist before deciding what to do next.",
+    "Their intent is medium; they did not express viewing intent."
+  ],
+  "important_information_missed": [
+    "Whether the buyer wants a project overview or would consider a viewing once the LPPSA question is clarified.",
+    "The AI did not make clear that the cited up-to-90% margin condition is specifically for a first LPPSA financing that is still active, which the buyer says they do not have."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "LPPSA may be an option, but being a government servant alone doesn’t determine approval—LPPSA assesses each application against its terms. The project reference I have lists financing up to RM1 million and, if a first LPPSA financing is still active, up to 90% margin; both are subject to LPPSA conditions. It also lists 4.00% up to RM750,000 and 4.50% on the portion above that. I’d confirm the latest terms before relying on those figures. Do you currently have an active LPPSA financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No active LPPSA financing at the moment. I’m a permanent government servant and hoping to buy in the next few months. Can someone confirm whether this project is eligible for LPPSA, and what documents or checks I’d need before applying?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Thanks—that helps. The LPPSA reference I have lists financing up to RM1 million and notes up to a 90% margin when a first LPPSA financing is still active; all terms remain subject to LPPSA conditions. It doesn’t confirm whether Pearlmont is currently eligible for LPPSA or what documents are required, so I’ll get those details checked rather than guess. I’ll have a colleague follow up with the confirmed project eligibility and checklist.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know once you’ve confirmed whether Pearlmont accepts LPPSA and what documents I should prepare. No rush, I’m looking to buy in the next few months.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t verify from the available information whether Pearlmont accepts LPPSA or which documents and checks you’d need. Your individual eligibility and approval also remain unverified; the supplied LPPSA reference terms don’t confirm these points.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Could you check with the project team whether Pearlmont accepts LPPSA and share an official checklist or contact for the requirements? I’d like to confirm the financing route before deciding on next steps.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-005.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No active LPPSA financing at the moment. I’m a permanent government servant and hoping to buy in the next few months. Can someone confirm whether this project is eligible for LPPSA, and what documents or checks I’d need before applying?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+  "handoff_turn": 2,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "EMERGING",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Confirm whether Pearlmont accepts LPPSA and provide an official document checklist or contact for requirements.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Determine whether Pearlmont accepts LPPSA and what official documents or checks are needed before deciding on next steps.",
+    "key_information_learned": [
+      "The buyer is a permanent government servant.",
+      "They have no active LPPSA financing.",
+      "They hope to buy within the next few months.",
+      "They want project-specific LPPSA eligibility and an official document checklist before deciding what to do next.",
+      "Their intent is medium; they did not express viewing intent."
+    ],
+    "important_information_missed": [
+      "Whether the buyer wants a project overview or would consider a viewing once the LPPSA question is clarified.",
+      "The AI did not make clear that the cited up-to-90% margin condition is specifically for a first LPPSA financing that is still active, which the buyer says they do not have."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "EMERGING",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+    "handoff_turn": 2,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Confirm whether Pearlmont accepts LPPSA and provide an official document checklist or contact for requirements.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "appointment_readiness_detection": 4,
+    "appointment_ready_progression": 1,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 4,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 2,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 3,
+      "commercial_progression": 2,
+      "appointment_readiness_detection": 4,
+      "handoff_timing": 2,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 4,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 1,
+      "retrieved_knowledge_utilization": 4
+    },
+    "strongest_ai_move": "It avoided promising LPPSA approval and clearly disclosed that the retrieved information did not verify Pearlmont eligibility or required documents.",
+    "weakest_ai_move": "It formally handed off immediately after the buyer described a medium-term purchase plan, without establishing whether viewing or a project overview would be appropriate after the financing question is answered.",
+    "unnecessary_qualification": [
+      "None. Asking about current LPPSA financing was relevant, though the follow-up should have contextualized the 90% condition after the buyer said there was no active financing."
+    ],
+    "missed_buying_signals": [
+      "The buyer is a permanent government servant planning to buy within the next few months.",
+      "The buyer requested follow-up on a specific financing blocker, showing continued engagement, but did not indicate viewing intent."
+    ],
+    "missed_selling_opportunity": [
+      "Offer to revisit a project overview or viewing after the project-specific LPPSA question is resolved, without treating the financing inquiry itself as appointment readiness."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [
+      "The LPPSA source says the up-to-90% margin reference applies when a first LPPSA financing remains active; the buyer said they have no active financing, so that condition should have been explicitly distinguished from their situation."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Retrieved Knowledge does not verify whether Pearlmont currently accepts LPPSA or provide the requested official application checklist.",
+      "The simulator-only human_operations fixture lists eligibility as NOT_CONNECTED; it does not verify project acceptance or provide the requested task result.",
+      "The supplied LPPSA reference terms are not individual eligibility or approval confirmation."
+    ],
+    "critical_flags": [
+      {
+        "flag": "EARLY_FORMAL_HANDOFF",
+        "evidence": "The AI handed off at turn 2 while its assessment was EMERGING and before the buyer had expressed viewing intent or appointment readiness.",
+        "turn": 2
+      },
+      {
+        "flag": "OPERATIONAL_TASK_NOT_COMPLETED",
+        "evidence": "The human response said it could not verify Pearlmont LPPSA acceptance or the required documents; the fixture eligibility value is NOT_CONNECTED.",
+        "turn": 3
+      },
+      {
+        "flag": "LPPSA_CONDITION_NEEDS_CONTEXT",
+        "evidence": "The AI repeated the up-to-90% margin condition even after the buyer stated they had no active LPPSA financing, without clarifying that the cited condition concerned an active first financing.",
+        "turn": 2
+      }
+    ],
+    "summary": "The AI handled the core financing uncertainty honestly and used relevant retrieved LPPSA reference terms. It did not make an appointment or encounter a buyer who was ready for one: the buyer wanted project eligibility and document information before deciding on next steps. The specific verification request reasonably required a human/source check, but the formal handoff came before appointment readiness and left medium sales work outstanding. The human gave an honest limitation rather than completing the requested operational check; the simulator fixture is not Pearlmont factual Knowledge or evidence of a live capability.",
+    "concrete_improvement_recommendation": "Explain that the cited 90% margin condition applies to a first LPPSA financing that is still active, and avoid implying it applies to this buyer. State plainly that the available source does not confirm Pearlmont acceptance or provide a checklist. Since the buyer explicitly requested confirmation, route that operational question honestly, but do not count the handoff as appointment success; after the question is answered, ask whether they would like a project overview or to consider a viewing. Source recommendation: knowledge/project/pearlmont/02_commercial/lppsa.md. For Pearlmont-specific acceptance and an official checklist, use MISSING_SOURCE unless a verified source is supplied.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "EMERGING",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.2",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "Use the supplied LPPSA source for published reference terms only; individual eligibility remains unverified."
+    ],
+    "eligibility": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "It avoided promising LPPSA approval and clearly disclosed that the retrieved information did not verify Pearlmont eligibility or required documents.",
+  "weakest_ai_move": "It formally handed off immediately after the buyer described a medium-term purchase plan, without establishing whether viewing or a project overview would be appropriate after the financing question is answered.",
+  "unnecessary_qualification": [
+    "None. Asking about current LPPSA financing was relevant, though the follow-up should have contextualized the 90% condition after the buyer said there was no active financing."
+  ],
+  "missed_buying_signals": [
+    "The buyer is a permanent government servant planning to buy within the next few months.",
+    "The buyer requested follow-up on a specific financing blocker, showing continued engagement, but did not indicate viewing intent."
+  ],
+  "missed_selling_opportunity": [
+    "Offer to revisit a project overview or viewing after the project-specific LPPSA question is resolved, without treating the financing inquiry itself as appointment readiness."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [
+    "The LPPSA source says the up-to-90% margin reference applies when a first LPPSA financing remains active; the buyer said they have no active financing, so that condition should have been explicitly distinguished from their situation."
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": null,
+  "final_appointment_state": "NO_VIEWING_INTENT"
+}

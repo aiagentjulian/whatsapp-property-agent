@@ -1,0 +1,417 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "buyer_primary_need": "Assess whether Pearlmont can approach a roughly 4% net rental-return benchmark over a 5–7 year hold, using verified all-in entry costs and realistic rental evidence, while retaining a sensible exit.",
+  "key_information_learned": [
+    "The buyer is primarily investing for rental income but also wants a sensible resale exit.",
+    "The buyer is considering a 5–7 year holding period.",
+    "The buyer compares net returns after vacancy and costs, not just gross yield.",
+    "The buyer owns a couple of small rental properties and uses roughly 4% net return as a reference benchmark.",
+    "The buyer may compare around RM500k, depending on the unit and all-in cost; budget is not fixed.",
+    "The buyer wants current post-rebate unit prices and separate upfront costs before deciding whether a viewing is worthwhile.",
+    "The buyer is not ready to view without verified pricing and upfront costs."
+  ],
+  "important_information_missed": [
+    "The buyer's precise definition of the 4% net benchmark, including whether it is calculated against all-in acquisition cost, remains unconfirmed.",
+    "The buyer's rent and vacancy assumptions for evaluating Pearlmont remain unknown; no verified rental comparables or yield data were available.",
+    "The AI did not develop a sourced investment comparison or identify which unit trade-offs the buyer would consider after seeing verified costs."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have verified rental comparables or a supported price-appreciation forecast for Pearlmont, so I wouldn’t quote a yield or promise capital growth. Rental yield depends on the rent achieved versus the total purchase cost; net yield also needs to account for costs like maintenance and vacancy. Freehold tenure alone doesn’t guarantee appreciation. Are you mainly looking for rental income or longer-term resale potential?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mainly rental income, but I’d want a sensible exit too. I’m looking at around 5–7 years and comparing net returns, not just gross yield. What’s the RM0.18 psf maintenance inclusive of sinking fund based on, and how many units are in this phase?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The current project information quotes RM0.18 per sq.ft., inclusive of the sinking fund. For a 900 sq.ft. unit, that would be RM162/month if calculated on the full built-up area; the exact chargeable-area basis should be confirmed. Phase 1 has 1,846 units across Towers 1B, 1C and 1D. The unit count is useful supply context, though it alone doesn’t establish rental demand or net returns.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ASK",
+      "message": "For a 5–7 year hold, I’d assess the entry price against realistic rent and total holding costs, rather than assume a yield from the headline maintenance rate. What purchase budget or maximum entry price are you using for your comparison?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Budget isn’t fixed; I’d probably compare around the RM500k mark, depending on the unit and all-in cost. I’ve got a couple of small rentals already, and I benchmark them on net cash return after vacancy and costs—roughly 4% net is my current reference. For this one I’d want to see whether the numbers can get near that, rather than assume they will. What are the actual prices for the unit types you have?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "There’s one standard unit type: Type A, 900 sq.ft., 3 bedrooms and 2 bathrooms. The base schedule I have shows roughly RM328k–RM362k, depending on floor, facing and car-park configuration; the current package applies different rebates by category. I’d need the latest unit schedule and package validity confirmed before quoting your actual post-rebate prices. I’ll get those checked for you so you can compare the all-in cost against your net-return benchmark.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, please send the latest available-unit prices after rebates, with any other upfront costs shown separately. Then I can compare the all-in entry cost against my 4% net benchmark before deciding whether it’s worth viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "I can’t verify the latest available-unit prices after rebates or separate upfront costs: the simulator fixture has no connected current unit schedule, package validity, or cost breakdown. The package information in the supplied reference isn’t confirmation that it’s currently valid. Rental comparables and yield data also aren’t supplied, so I can’t verify whether a unit could meet your 4% net-return benchmark.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Without current prices and upfront costs, I can’t compare it properly against my 4% net benchmark, so I’ll hold off on viewing for now. Please send the breakdown if you’re able to verify it later.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Understood. The latest post-rebate unit prices and separate upfront costs remain unverified because there’s no connected current unit schedule, package-validity confirmation, or cost breakdown. I can’t promise a later send from this simulator. I’ll respect your decision to hold off on viewing.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Understood, thanks for clarifying. I’ll leave it there for now and reconsider if verified pricing and upfront costs become available.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-004.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mainly rental income, but I’d want a sensible exit too. I’m looking at around 5–7 years and comparing net returns, not just gross yield. What’s the RM0.18 psf maintenance inclusive of sinking fund based on, and how many units are in this phase?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Budget isn’t fixed; I’d probably compare around the RM500k mark, depending on the unit and all-in cost. I’ve got a couple of small rentals already, and I benchmark them on net cash return after vacancy and costs—roughly 4% net is my current reference. For this one I’d want to see whether the numbers can get near that, rather than assume they will. What are the actual prices for the unit types you have?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ASK",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 4,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Attempt to verify current post-rebate unit prices and itemized upfront costs; the fixture had no connected schedule or cost breakdown.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Assess whether Pearlmont can approach a roughly 4% net rental-return benchmark over a 5–7 year hold, using verified all-in entry costs and realistic rental evidence, while retaining a sensible exit.",
+    "key_information_learned": [
+      "The buyer is primarily investing for rental income but also wants a sensible resale exit.",
+      "The buyer is considering a 5–7 year holding period.",
+      "The buyer compares net returns after vacancy and costs, not just gross yield.",
+      "The buyer owns a couple of small rental properties and uses roughly 4% net return as a reference benchmark.",
+      "The buyer may compare around RM500k, depending on the unit and all-in cost; budget is not fixed.",
+      "The buyer wants current post-rebate unit prices and separate upfront costs before deciding whether a viewing is worthwhile.",
+      "The buyer is not ready to view without verified pricing and upfront costs."
+    ],
+    "important_information_missed": [
+      "The buyer's precise definition of the 4% net benchmark, including whether it is calculated against all-in acquisition cost, remains unconfirmed.",
+      "The buyer's rent and vacancy assumptions for evaluating Pearlmont remain unknown; no verified rental comparables or yield data were available.",
+      "The AI did not develop a sourced investment comparison or identify which unit trade-offs the buyer would consider after seeing verified costs."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 4,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Attempt to verify current post-rebate unit prices and itemized upfront costs; the fixture had no connected schedule or cost breakdown.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": true,
+    "appointment_readiness_detection": 5,
+    "appointment_ready_progression": 2,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 4,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 4,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 2,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 2,
+      "retrieved_knowledge_utilization": 4
+    },
+    "strongest_ai_move": "It candidly declined to invent yield or appreciation figures, explained the difference between gross and net yield, and contextualized the maintenance charge and phase supply without claiming they proved rental demand.",
+    "weakest_ai_move": "It formally handed off while its own assessment still correctly said NOT_READY. The buyer had explicitly made viewing conditional on first comparing verified all-in costs, so this was an operational handoff, not an appointment-ready handoff.",
+    "unnecessary_qualification": [
+      "None material. Asking for an indicative entry-price comparison was relevant to the buyer's stated investment analysis."
+    ],
+    "missed_buying_signals": [
+      "The buyer disclosed an established rental portfolio, a 5–7 year horizon, and a 4% net benchmark: meaningful commercial engagement, though not a signal that viewing was yet appropriate.",
+      "The buyer's request for actual unit prices and separate upfront costs showed a concrete evaluation step, but they explicitly said they would decide about viewing only after that comparison."
+    ],
+    "missed_selling_opportunity": [
+      "Once the buyer shared the 4% benchmark, the AI could have briefly confirmed that the available evidence would not establish whether Pearlmont meets it and explained what inputs would be needed for a fair comparison, while avoiding any pressure to view before verified costs were available."
+    ],
+    "retrieval_misses": [
+      "No material retrieval miss is evident for the questions answered. The retrieved sources contained the maintenance rate, unit count, base pricing structure, package caveats, and explicit guidance not to invent investment returns."
+    ],
+    "retrieved_knowledge_not_used": [
+      "The retrieved investor unit-fit guidance could have supported a concise discussion of entry cost and holding cost as relevant factors, while making clear that no rental-demand or return conclusion could be drawn."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "No verified rental comparables, rental yield, or appreciation forecast were supplied.",
+      "The simulation had no connected current unit schedule, package-validity confirmation, or upfront-cost breakdown. These are simulator limitations, not verified real-world availability facts."
+    ],
+    "critical_flags": [
+      {
+        "flag": "EARLY_HANDOFF_BEFORE_APPOINTMENT_READINESS",
+        "evidence": "At handoff the AI assessment was NOT_READY, and the buyer later said they would compare verified all-in costs against their 4% net benchmark before deciding whether to view.",
+        "turn": 4
+      },
+      {
+        "flag": "SIMULATOR_ONLY_OPERATIONAL_FIXTURE",
+        "evidence": "The human_operations fixture explicitly says no live CRM, inventory, pricing, calendar, or salesperson is connected; its verification task does not establish real-world prices or availability.",
+        "turn": 5
+      }
+    ],
+    "summary": "The AI learned the buyer's investment purpose, horizon, comparison method, approximate reference budget, and 4% net benchmark. It handled the absence of substantiated yield and appreciation data honestly and used relevant retrieved facts: RM0.18 psf maintenance inclusive of sinking fund, the 1,846-unit Phase 1 supply, and indicative base pricing with a clear need to verify current package and exact prices. The buyer was not appointment-ready: they expressly wanted verified post-rebate prices and upfront costs before deciding whether a viewing was worthwhile. The handoff addressed a legitimate operational verification request, but it occurred before readiness and must not be counted as an appointment-ready handoff. Human fixture operations attempted verification, but no current prices or cost breakdown became available; this simulator-only task completion does not change the AI outcome or imply production capability.",
+    "concrete_improvement_recommendation": "After explaining the indicative base-price range and its limits, keep the buyer's condition explicit: current post-rebate prices and itemized upfront costs are needed before they can judge whether a viewing is worthwhile. Hand off only for that operational verification if the process requires it, label the lead NOT_READY, and do not present the transfer as appointment progress. If verified figures later become available, share them with the buyer's 4% net benchmark in mind and ask whether the resulting comparison makes a viewing useful.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

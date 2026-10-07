@@ -1,0 +1,197 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.2",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T01:57:23.173782+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 4,
+    "ai": 2,
+    "human_handoff_executor": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+  "handoff_turn": 2,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "We’re looking for a home for the family, so this is a real concern for us. 36m for Block 1B is useful, but I’d want to see the official site plan or survey confirming that measurement, and whatever flood assessment or JPS info is available. Can you share the sources? I know the raised level helps but doesn’t mean zero risk.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair question. The project information says the overall development’s finished floor level will be raised to about 2.4m above sea level, and the river is maintained by JPS with flood-gate/freeboard control. Those are mitigation measures, not a guarantee of zero flood risk. For the pylon, the stated distance is about 36m for Phase 1 Block 1B, against a stated 20m minimum requirement; that figure shouldn’t be assumed for every tower or unit. Are you looking at a particular block or unit?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "We’re looking for a home for the family, so this is a real concern for us. 36m for Block 1B is useful, but I’d want to see the official site plan or survey confirming that measurement, and whatever flood assessment or JPS info is available. Can you share the sources? I know the raised level helps but doesn’t mean zero risk.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That’s a reasonable thing to verify for a family home. I don’t have the official site plan/survey or flood assessment/JPS documents available to share here; the figures mentioned so far are project FAQ information, not a substitute for those records. Let me get the official documents checked and confirm what can be shared, rather than give you an unverified answer.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. Please send the official site plan or survey showing the Block 1B distance, plus any flood assessment or JPS information you can share. We’ll review those first before deciding whether to view.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t verify or provide the official Block 1B site plan or survey, or any flood assessment or JPS documents, from the information available here. The project FAQ states an approximate 36 m distance for Block 1B and mentions JPS maintenance and raised finished floor levels, but those facts do not confirm the requested documents or independently assess safety or flood risk.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. We’ll hold off on viewing until we can review the official documents. If you’re able to get them later, please send them over.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 6,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 55
+}

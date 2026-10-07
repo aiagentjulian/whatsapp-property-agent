@@ -1,0 +1,321 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "buyer_primary_need": "Assess Pearlmont’s risk-adjusted investment case, prioritizing net rental potential while treating appreciation as upside.",
+  "key_information_learned": [
+    "The buyer is comparing Pearlmont with other small investments.",
+    "Net rental economics matter more than appreciation, which the buyer treats only as potential upside.",
+    "The buyer needs sourced rent comparables, full entry cost for a specific unit, and phase-supply information to assess the case and exit risk.",
+    "The buyer does not want returns estimated without verified data and is willing to compare further if reliable information becomes available."
+  ],
+  "important_information_missed": [
+    "The buyer’s intended holding period and target return or minimum acceptable net yield were not established.",
+    "No specific unit or car-park configuration was identified, so the requested full entry cost could not be assessed.",
+    "The AI did not share the sourced Phase 1 total of 1,846 units or distinguish that total from current available supply."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I wouldn’t want to quote a rental yield without verified rent comparables and the actual unit price. Yield depends on both, and future appreciation can’t be guaranteed. Pearlmont is freehold, with maintenance at RM0.18 per sq ft including sinking fund—about RM162/month for a 900 sq ft unit—which helps when assessing holding costs, but doesn’t predict returns. Are you more focused on rental income or longer-term appreciation?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Both matter, but I’d look at the net rental case first and treat appreciation as upside, not something to bank on. I’m comparing it with a few other small investments, so I’d need realistic rent comparables, total entry cost and how much supply there’ll be in this phase before judging the exit risk. Do you have any sourced rent comps or the unit pricing yet?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The base-price schedule has entries from RM328k for specific categories, but that’s before the exact unit and car-park pricing, and any applicable rebate—so it isn’t a confirmed current entry cost. I don’t have sourced rental comparables available to give you a reliable net-rent estimate either. I’ll get the latest unit/package figures and any verified rent comps checked for you before you compare.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. Please include the full entry cost for a specific unit and any sourced rent comparables; phase supply numbers would help me judge the exit risk too. No need to estimate returns if the data isn’t verified.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t verify a current package price or the full entry cost for a specific unit from the available fixture; it doesn’t provide a unit price or applicable charges. No sourced rental comparables, yield, or appreciation data are supplied either. The project information gives Phase 1’s total as 1,846 units, but not current available supply or remaining inventory.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks, appreciate the straight answer. 1,846 units in Phase 1 is useful context, but without current supply, specific unit pricing and rent comps I can’t really judge the net case yet. If you get any sourced nearby rental comparisons or the full cost for a specific unit, please send them over and I’ll compare from there.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-004.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Both matter, but I’d look at the net rental case first and treat appreciation as upside, not something to bank on. I’m comparing it with a few other small investments, so I’d need realistic rent comparables, total entry cost and how much supply there’ll be in this phase before judging the exit risk. Do you have any sourced rent comps or the unit pricing yet?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 2,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check current unit/package figures and sourced rental comparables.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Assess Pearlmont’s risk-adjusted investment case, prioritizing net rental potential while treating appreciation as upside.",
+    "key_information_learned": [
+      "The buyer is comparing Pearlmont with other small investments.",
+      "Net rental economics matter more than appreciation, which the buyer treats only as potential upside.",
+      "The buyer needs sourced rent comparables, full entry cost for a specific unit, and phase-supply information to assess the case and exit risk.",
+      "The buyer does not want returns estimated without verified data and is willing to compare further if reliable information becomes available."
+    ],
+    "important_information_missed": [
+      "The buyer’s intended holding period and target return or minimum acceptable net yield were not established.",
+      "No specific unit or car-park configuration was identified, so the requested full entry cost could not be assessed.",
+      "The AI did not share the sourced Phase 1 total of 1,846 units or distinguish that total from current available supply."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 2,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check current unit/package figures and sourced rental comparables.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "appointment_readiness_detection": 5,
+    "appointment_ready_progression": 1,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 3,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 2,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 3,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 2,
+      "commercial_progression": 2,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 1,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 4,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 1,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "It candidly declined to invent yield or appreciation figures, explained why yield depends on rent and price, and used the sourced RM0.18 psf maintenance rate with a clearly framed 900 sq ft example.",
+    "weakest_ai_move": "It handed off before establishing the buyer’s return threshold or holding horizon and without using the retrieved Phase 1 total to answer the supply question as far as available evidence allowed.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [
+      "No strong viewing signal was present. The request for price and investment evidence was investigative and did not, by itself, make a viewing appropriate."
+    ],
+    "missed_selling_opportunity": [
+      "Acknowledge that current available supply is not verified while sharing the sourced Phase 1 total of 1,846 units, then ask about holding horizon or minimum acceptable net return and explain that a specific unit/package check would require a unit choice. Do not push a viewing before the investment evidence supports one."
+    ],
+    "retrieval_misses": [
+      "MISSING_SOURCE: No supplied Knowledge or simulator fixture provides sourced rental comparables, verified yield/appreciation data, or current available inventory."
+    ],
+    "retrieved_knowledge_not_used": [
+      "knowledge/project/pearlmont/01_facts/overview.md contains the Phase 1 total of 1,846 units. That is useful context but not current remaining inventory, so it should have been presented with that distinction.",
+      "knowledge/project/pearlmont/02_commercial/sales-package.md describes package categories and warns that applicability depends on exact unit details and that package validity is time-sensitive. The AI could have explained this limitation alongside the base-price caveat."
+    ],
+    "factual_or_operational_overpromises": [
+      "The statement that it would get the latest figures and rent comparables checked sets an expectation of follow-up, but the simulator fixture could not verify a current package or provide rent comparables. It did not explicitly promise that those data exist."
+    ],
+    "remaining_knowledge_gaps": [
+      "MISSING_SOURCE: Sourced nearby rental comparables and substantiated yield or appreciation data.",
+      "MISSING_SOURCE: Current available inventory or remaining phase supply.",
+      "A specific unit and applicable current package/full-entry-cost calculation were not established by the supplied fixture."
+    ],
+    "critical_flags": [
+      {
+        "flag": "EARLY_HANDOFF",
+        "evidence": "The AI formally handed off while its own assessment was NOT_READY; the buyer had requested evidence to judge an investment case, not a viewing or appointment.",
+        "turn": 2
+      },
+      {
+        "flag": "RETRIEVED_FACT_NOT_USED",
+        "evidence": "The retrieved overview states Phase 1 has 1,846 units. The AI did not share this contextual total or clarify that current available supply was unknown.",
+        "turn": 2
+      },
+      {
+        "flag": "OPERATIONAL_TASK_NOT_COMPLETED",
+        "evidence": "The human fixture supplied no current unit price/package or rental comparables. Its Phase 1 total does not complete the requested current-supply check or the AI’s package/comparables task.",
+        "turn": 3
+      }
+    ],
+    "summary": "The buyer was a credible but still investigative investor, prioritizing a verified net-rental case and exit-risk information. The AI handled yield and appreciation honestly and correctly did not treat a price question as appointment readiness. It nevertheless handed off too soon: it could have used retrieved phase-total information with a clear caveat, explored the buyer’s holding horizon and return threshold, and explained which exact pricing inputs remained operationally unverified. The human performed no sales work, but did not complete the requested operational task; that does not remedy the early AI handoff.",
+    "concrete_improvement_recommendation": "Before handing off, state that sourced rental comparables and current remaining inventory are unavailable, share the retrieved Phase 1 total of 1,846 units only as total phase supply, and ask one focused question about holding period or minimum acceptable net yield. Explain that full entry cost depends on a specific unit and current package verification. Continue the investment discussion until there is meaningful fit and viewing intent; only then hand off for appointment execution or a specific operational check.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.2",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "No rental comparables, yield, or appreciation fixture is supplied."
+    ],
+    "investment_data": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "It candidly declined to invent yield or appreciation figures, explained why yield depends on rent and price, and used the sourced RM0.18 psf maintenance rate with a clearly framed 900 sq ft example.",
+  "weakest_ai_move": "It handed off before establishing the buyer’s return threshold or holding horizon and without using the retrieved Phase 1 total to answer the supply question as far as available evidence allowed.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [
+    "No strong viewing signal was present. The request for price and investment evidence was investigative and did not, by itself, make a viewing appropriate."
+  ],
+  "missed_selling_opportunity": [
+    "Acknowledge that current available supply is not verified while sharing the sourced Phase 1 total of 1,846 units, then ask about holding horizon or minimum acceptable net return and explain that a specific unit/package check would require a unit choice. Do not push a viewing before the investment evidence supports one."
+  ],
+  "retrieval_misses": [
+    "MISSING_SOURCE: No supplied Knowledge or simulator fixture provides sourced rental comparables, verified yield/appreciation data, or current available inventory."
+  ],
+  "retrieved_knowledge_not_used": [
+    "knowledge/project/pearlmont/01_facts/overview.md contains the Phase 1 total of 1,846 units. That is useful context but not current remaining inventory, so it should have been presented with that distinction.",
+    "knowledge/project/pearlmont/02_commercial/sales-package.md describes package categories and warns that applicability depends on exact unit details and that package validity is time-sensitive. The AI could have explained this limitation alongside the base-price caveat."
+  ],
+  "factual_or_operational_overpromises": [
+    "The statement that it would get the latest figures and rent comparables checked sets an expectation of follow-up, but the simulator fixture could not verify a current package or provide rent comparables. It did not explicitly promise that those data exist."
+  ],
+  "improvement_recommendation": null,
+  "final_appointment_state": "NO_VIEWING_INTENT"
+}

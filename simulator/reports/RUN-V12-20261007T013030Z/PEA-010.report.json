@@ -1,0 +1,354 @@
+{
+  "scenario_id": "PEA-010",
+  "title": "High-intent exact package and weekend viewing",
+  "convertible": true,
+  "buyer_primary_need": "Verify the current official package and exact price, then arrange a Saturday viewing with his wife if the terms check out.",
+  "key_information_learned": [
+    "The buyer requested the latest package and price and was available to view on Saturday.",
+    "The buyer wanted a specific Saturday time checked; 2pm initially suited him and his wife.",
+    "After 2pm was not verified, the buyer said Saturday 11am would work for both of them if the package checked out and the slot could be confirmed.",
+    "The buyer requires the current package and exact price to be verified before confirming a viewing.",
+    "The buyer wants to review the package with his wife and ultimately chose to hold off until they can do so."
+  ],
+  "important_information_missed": [
+    "Before handoff, the AI did not ask the buyer's preferred Saturday time or who would attend; the buyer supplied these details only after the AI paused.",
+    "The AI did not clearly say that RM328k was a base-price reference, not a verified current effective price, and that the dated rebate information might not be current."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The price list I have shows base prices from RM328k, and a package dated 14 August 2026 lists 5% or 8% rebates depending on the unit category. I’ll have the latest package and exact price checked, and get a colleague to confirm whether a Saturday viewing can be arranged.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay thanks. Saturday around 2pm would suit me and my wife, if there’s a slot. Could you check the latest package and confirm whether that time is available?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "I couldn’t verify the latest package or an exact unit price from the available fixture. For Saturday, the fixture shows 11:00 available; 2:00pm isn’t verified, so I can’t confirm that time.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks for checking. Could you get the current package and price verified first? If that checks out, 11am Saturday works for my wife and me—please let me know if you can confirm the slot too.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I couldn’t verify that the package dated 14 August 2026 is still current, and no exact unit price is verified. That source describes 5% and 8% rebates for different unit categories, but it doesn’t confirm current validity. The scenario fixture marks Saturday at 11:00 as available; this is not a real-world booking confirmation. Since your agreement to 11:00 was conditional on the package being verified, the appointment is not confirmed.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Got it, thanks. Please check with the sales team for the current official package and exact price, then send it over and confirm if Saturday 11am is still available. We’ll hold off confirming the viewing until we’ve checked the package with my wife.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify the current official package or an exact unit price from the available fixture. The reference dated 14 August 2026 describes 5% and 8% rebates, but its current validity is unverified. The simulator fixture lists Saturday at 11:00 as available; this is not a real-world availability check or booking. I haven’t confirmed the viewing, as you’d like to check the package with your wife first.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. We’ll hold off on the viewing for now. Please send the official current package and exact price once the team verifies them, and we’ll review with my wife before confirming Saturday 11am.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "I couldn’t verify the current official package or an exact unit price from the available fixture. The reference dated 14 August 2026 describes 5% and 8% rebates for different unit categories, but its current validity is unverified. The simulator fixture lists Saturday at 11:00 as available; that is not a real-world availability check or booking confirmation. I haven’t confirmed the viewing, as you’d like to review the package with your wife first. The fixture doesn’t provide a way to contact a sales team or send a later update.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Understood, thanks for being upfront. Is there an official sales contact or channel I can use to check the current package and exact price? We’ll hold off confirming 11am until my wife and I have reviewed it.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "I can’t provide an official sales contact or channel from the available fixture; it doesn’t include one. I also can’t verify the current package or an exact unit price. The reference dated 14 August 2026 describes rebate categories, but its current validity is unverified. The simulator fixture lists Saturday at 11:00 as available, but that isn’t a real-world availability check or booking. I haven’t confirmed the viewing, as you’d like to review the package with your wife first.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Understood, thanks for checking. Since there isn’t an official contact or verified package available here, we’ll hold off on the viewing and review the current price with my wife if we can get it later.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-010.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 0,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 1,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check the package and Saturday viewing availability; the fixture supports Saturday 11:00 as available, but not 2pm, the current package, or an exact unit price.",
+  "human_sales_work_required": "LOW",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Verify the current official package and exact price, then arrange a Saturday viewing with his wife if the terms check out.",
+    "key_information_learned": [
+      "The buyer requested the latest package and price and was available to view on Saturday.",
+      "The buyer wanted a specific Saturday time checked; 2pm initially suited him and his wife.",
+      "After 2pm was not verified, the buyer said Saturday 11am would work for both of them if the package checked out and the slot could be confirmed.",
+      "The buyer requires the current package and exact price to be verified before confirming a viewing.",
+      "The buyer wants to review the package with his wife and ultimately chose to hold off until they can do so."
+    ],
+    "important_information_missed": [
+      "Before handoff, the AI did not ask the buyer's preferred Saturday time or who would attend; the buyer supplied these details only after the AI paused.",
+      "The AI did not clearly say that RM328k was a base-price reference, not a verified current effective price, and that the dated rebate information might not be current."
+    ],
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 0,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 1,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check the package and Saturday viewing availability; the fixture supports Saturday 11:00 as available, but not 2pm, the current package, or an exact unit price.",
+    "human_sales_work_required": "LOW",
+    "human_operational_task_completed": true,
+    "appointment_readiness_detection": 5,
+    "appointment_ready_progression": 4,
+    "useful_information_capture": 3,
+    "retrieved_knowledge_utilization": 3,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "Recognized that asking for the latest package while offering Saturday viewing was a genuine appointment signal, used sourced base-price and rebate information rather than inventing a unit-specific current price, and handed off for verification.",
+    "weakest_ai_move": "Did not collect the buyer's preferred time and party size before pausing, and could have more clearly distinguished the RM328k base-price reference and dated rebate information from a verified current package.",
+    "unnecessary_qualification": [
+      "None. The AI did not burden this high-intent buyer with generic profile questions."
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "Before handing off, briefly ask what Saturday time suits and how many people will attend, while making clear that current terms and the live slot need verification."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [
+      "The sales-package guidance says not to present a dated package as current when validity is uncertain; the AI could have explicitly framed the 5%/8% rebates as a dated reference pending confirmation.",
+      "The viewing-close guidance recommends moving directly to scheduling on weekend-viewing signals and keeping appointment friction low; collecting a preferred time before handoff would have helped."
+    ],
+    "factual_or_operational_overpromises": [
+      "The phrase \"get a colleague to confirm\" implies a real colleague or follow-up capability. The explicitly simulator-only fixture says no live salesperson or later-update channel is connected; do not treat the simulated human executor as proof of production capability."
+    ],
+    "remaining_knowledge_gaps": [
+      "The current validity of the package dated 14 August 2026 is unverified.",
+      "No exact unit-specific current price is verified.",
+      "The 2pm slot was not verified; the fixture lists 11:00 as available only within the simulation.",
+      "No real-world appointment availability or booking confirmation is established."
+    ],
+    "critical_flags": [
+      {
+        "flag": "SIMULATOR_ONLY_OPERATIONAL_CAPABILITY",
+        "evidence": "The AI said it would get a colleague to confirm, but the fixture explicitly states that no live salesperson or follow-up channel is connected.",
+        "turn": 1
+      },
+      {
+        "flag": "APPOINTMENT_NOT_CONFIRMED",
+        "evidence": "The buyer made 11am conditional on package review and later explicitly held off; no specific time was accepted as a confirmed available real-world appointment.",
+        "turn": 3
+      }
+    ],
+    "summary": "The buyer was appointment-ready from the opening turn: he asked for the latest package and price and said he was free Saturday to view. The AI correctly detected readiness and handed off for live commercial and scheduling verification, leaving only low-level operational work rather than substantial sales work. It used retrieved pricing and package information without fabricating an exact current price, but should have labeled the base-price and dated rebate references more explicitly and collected the preferred time and party size first. Human operations in the transcript are simulator-only: the fixture supports an 11:00 Saturday availability check, not a real booking, and does not verify the current package or exact unit price. The viewing remains in progress, not confirmed; the buyer is waiting to review verified terms with his wife.",
+    "improvement_recommendation": "Respond that the available source is dated and does not verify today's exact package or unit price; identify RM328k as a base-price reference only. Since the buyer has already offered to view Saturday, ask one concise scheduling question about preferred time and attendees, then hand off for package and live-slot verification without promising a real colleague or confirmation unless that capability is actually connected.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

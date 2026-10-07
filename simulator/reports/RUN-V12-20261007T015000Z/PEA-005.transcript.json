@@ -1,0 +1,197 @@
+{
+  "scenario_id": "PEA-005",
+  "version": "1.2",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T01:55:17.560709+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 4,
+    "ai": 2,
+    "human_handoff_executor": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+  "handoff_turn": 2,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No active LPPSA financing at the moment. I’m a permanent government servant and hoping to buy in the next few months. Can someone confirm whether this project is eligible for LPPSA, and what documents or checks I’d need before applying?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "LPPSA may be an option, but being a government servant alone doesn’t determine approval—LPPSA assesses each application against its terms. The project reference I have lists financing up to RM1 million and, if a first LPPSA financing is still active, up to 90% margin; both are subject to LPPSA conditions. It also lists 4.00% up to RM750,000 and 4.50% on the portion above that. I’d confirm the latest terms before relying on those figures. Do you currently have an active LPPSA financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No active LPPSA financing at the moment. I’m a permanent government servant and hoping to buy in the next few months. Can someone confirm whether this project is eligible for LPPSA, and what documents or checks I’d need before applying?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Thanks—that helps. The LPPSA reference I have lists financing up to RM1 million and notes up to a 90% margin when a first LPPSA financing is still active; all terms remain subject to LPPSA conditions. It doesn’t confirm whether Pearlmont is currently eligible for LPPSA or what documents are required, so I’ll get those details checked rather than guess. I’ll have a colleague follow up with the confirmed project eligibility and checklist.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know once you’ve confirmed whether Pearlmont accepts LPPSA and what documents I should prepare. No rush, I’m looking to buy in the next few months.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t verify from the available information whether Pearlmont accepts LPPSA or which documents and checks you’d need. Your individual eligibility and approval also remain unverified; the supplied LPPSA reference terms don’t confirm these points.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Could you check with the project team whether Pearlmont accepts LPPSA and share an official checklist or contact for the requirements? I’d like to confirm the financing route before deciding on next steps.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 6,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 41
+}

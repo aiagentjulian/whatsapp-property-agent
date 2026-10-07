@@ -1,0 +1,227 @@
+{
+  "scenario_id": "PEA-008",
+  "version": "1.2",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T01:40:46.292030+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 2,
+    "human_handoff_executor": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 2,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Sea view is more important; I can compromise on the floor if the view is still decent. Trying to keep around RM360k if possible—are there lower-floor options in those blocks that might fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "I’d first focus on the sea-facing units in Blocks 1C and 1D; both have sea-facing floors. The reference base prices are RM350k for Block 1C and RM352k for Block 1D, before any current package, and exact prices and availability need checking. With your budget in mind, which matters more to you: keeping the sea view or getting a higher floor?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Sea view is more important; I can compromise on the floor if the view is still decent. Trying to keep around RM360k if possible—are there lower-floor options in those blocks that might fit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes—both Blocks 1C and 1D have sea-facing units on their listed floors: Levels 1–38 in 1C and Levels 1–37 in 1D. Their reference base prices are RM350k and RM352k respectively, so your ~RM360k budget is worth checking against the specific lower-floor options. That isn’t a confirmed final price, though—the current package, exact unit availability and outlook need verification. I’ll have those checked for you so we can see what fits.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, could you check which lower-floor units are actually available around RM360k and still have a decent sea view? If there’s a suitable one, I’m happy to come view it.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I couldn’t verify which lower-floor units are currently available or whether any are around RM360k with a decent sea view: the simulator fixture has no connected live unit schedule or unit-level pricing. Current package pricing and unit-specific outlook are also unverified. Viewing slots aren’t connected either, so I can’t confirm a viewing time.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "No worries. Could you let me know once you’re able to check the actual unit schedule and pricing? I’m still keen to view if there’s a lower-floor option around RM360k with a decent sea view, but don’t want to arrange a visit until we know one might fit.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify which lower-floor units are available, whether any are around RM360k, or their unit-specific sea outlook: no live unit schedule or unit-level pricing is connected here. I also can’t notify you later because no follow-up capability is connected. I understand you’re still interested in viewing if a suitable option is verified, and don’t want to arrange a visit before then.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Got it, I’ll hold off arranging a visit for now. I’ll check back once there’s an actual unit schedule and pricing to compare—still keen if a lower-floor sea-view option can stay around RM360k.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "provider_calls": 8,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 98
+}

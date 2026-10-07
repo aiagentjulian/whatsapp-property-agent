@@ -1,0 +1,290 @@
+{
+  "scenario_id": "PEA-005",
+  "title": "LPPSA government servant",
+  "convertible": true,
+  "buyer_primary_need": "Determine whether LPPSA is a plausible financing route and what current eligibility requirements and next steps apply before considering a viewing.",
+  "key_information_learned": [
+    "At the initial AI interaction, the customer said they were a government servant and asked whether LPPSA could be used and whether they would be approved.",
+    "After the AI handoff, the customer clarified they are a permanent government servant and hope to buy within 3–6 months.",
+    "The customer wanted LPPSA workability clarified before arranging a viewing and ultimately chose to hold off."
+  ],
+  "important_information_missed": [
+    "The AI handed off before learning the customer's permanent employment status and 3–6 month purchase timeframe.",
+    "Whether the customer has an existing or active LPPSA financing was not established, although it may affect which published reference terms are relevant.",
+    "The AI did not establish whether the customer had a plausible property budget or other basic purchase-fit context."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "LPPSA may be an option for you. The project’s available reference, marked effective 4 October 2026, states financing eligibility up to RM1 million; it also mentions up to 90% financing if a first LPPSA financing is still active, with rates of 4.00% up to RM750,000 and 4.50% on the portion above that. These are subject to LPPSA terms and conditions, so I can’t confirm approval from your occupation alone. I’ll have the team check your individual eligibility and confirm the latest terms with you.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. I’m a permanent government servant and hoping to buy within the next 3–6 months. What details or documents would your team need to check whether LPPSA could work for me?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "I can’t verify your individual LPPSA eligibility here: the available fixture isn’t connected to an individual assessment. The supplied LPPSA reference also doesn’t specify a document checklist, so I can’t confirm which details or documents would be required. Your permanent government employment and 3–6 month timeframe alone don’t establish approval; both your eligibility and the required documents remain unverified.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Understood, thanks for being upfront. Could you connect me with someone who can check the current LPPSA requirements and tell me the next step? I’d like to know if it’s workable before arranging a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t connect you with someone from here: the available fixture isn’t connected to a salesperson or an individual LPPSA assessment. It also can’t verify the current requirements or your next step, so those remain unverified. I can’t confirm whether LPPSA is workable for you before a viewing.",
+      "action": "NO_ACTION",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. I’ll hold off on arranging a viewing until I can check whether LPPSA is workable. Would it be best for me to confirm the current requirements directly with LPPSA or my department?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify from the available information whether LPPSA or your department is the best contact for confirming current requirements. Your individual eligibility and the current requirements remain unverified; the supplied reference only says eligibility is subject to LPPSA terms and conditions. I understand you’ll hold off on arranging a viewing until you can check whether LPPSA is workable.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Alright, understood. I’ll check with LPPSA or my department first and hold off on a viewing until I know if it could work. Thanks for being upfront.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-005.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+  "handoff_turn": 1,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Respond to LPPSA requirements and connection questions, explain that individual eligibility and the document checklist are unverified, and disclose that the fixture cannot connect the customer to a salesperson or assessment.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 2,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Determine whether LPPSA is a plausible financing route and what current eligibility requirements and next steps apply before considering a viewing.",
+    "key_information_learned": [
+      "At the initial AI interaction, the customer said they were a government servant and asked whether LPPSA could be used and whether they would be approved.",
+      "After the AI handoff, the customer clarified they are a permanent government servant and hope to buy within 3–6 months.",
+      "The customer wanted LPPSA workability clarified before arranging a viewing and ultimately chose to hold off."
+    ],
+    "important_information_missed": [
+      "The AI handed off before learning the customer's permanent employment status and 3–6 month purchase timeframe.",
+      "Whether the customer has an existing or active LPPSA financing was not established, although it may affect which published reference terms are relevant.",
+      "The AI did not establish whether the customer had a plausible property budget or other basic purchase-fit context."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "FINANCING_OR_ELIGIBILITY_REQUIRES_HUMAN",
+    "handoff_turn": 1,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Respond to LPPSA requirements and connection questions, explain that individual eligibility and the document checklist are unverified, and disclose that the fixture cannot connect the customer to a salesperson or assessment.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": true,
+    "appointment_readiness_detection": 4,
+    "appointment_ready_progression": 1,
+    "useful_information_capture": 2,
+    "retrieved_knowledge_utilization": 5,
+    "scores": {
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 2,
+      "selling_angle_relevance": 3,
+      "objection_handling": 4,
+      "unit_fit_judgment": 2,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 2,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 2,
+      "commercial_progression": 1,
+      "appointment_readiness_detection": 4,
+      "handoff_timing": 1,
+      "handoff_reason_correctness": 4,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 2,
+      "useful_information_capture": 2,
+      "appointment_ready_progression": 1,
+      "retrieved_knowledge_utilization": 5
+    },
+    "strongest_ai_move": "Used the retrieved LPPSA reference to give relevant published limits and rates while making clear that eligibility and approval were not guaranteed.",
+    "weakest_ai_move": "Formally handed off after the opening question, before establishing purchase timeframe or other basic fit context, and promised that a team would check eligibility and confirm terms despite the simulator fixture having no connected salesperson or individual assessment.",
+    "unnecessary_qualification": [
+      "None; the AI asked no qualification questions, but should have gathered a small amount of relevant context before handing off."
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "After establishing whether LPPSA might plausibly fit and learning the customer's timeframe, the AI could have kept viewing as a later option without pressuring the customer to view before the financing concern was resolved."
+    ],
+    "retrieval_misses": [
+      "No individual eligibility assessment or LPPSA document checklist is supplied in the retrieved material; MISSING_SOURCE for those details."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [
+      "The AI said it would have the team check individual eligibility and confirm the latest terms. The simulator-only human_operations fixture says eligibility is NOT_CONNECTED and no salesperson or individual assessment is connected; the subsequent human responses confirmed that limitation."
+    ],
+    "remaining_knowledge_gaps": [
+      "Individual LPPSA eligibility remains unverified; the fixture supports only published reference terms.",
+      "The supplied LPPSA reference does not provide a document checklist or confirm the best contact for current requirements.",
+      "The customer's existing LPPSA financing status and property affordability context were not established before handoff."
+    ],
+    "critical_flags": [
+      {
+        "flag": "EARLY_HANDOFF",
+        "evidence": "The AI handed off on the opening eligibility question without first establishing timeframe or basic purchase fit. The customer later said they hoped to buy within 3–6 months but would hold off viewing until LPPSA workability was known.",
+        "turn": 1
+      },
+      {
+        "flag": "UNSUPPORTED_OPERATIONAL_PROMISE",
+        "evidence": "The AI promised that the team would check individual eligibility and confirm latest terms, while the simulator-only fixture had no connected salesperson or individual assessment.",
+        "turn": 1
+      }
+    ],
+    "summary": "The AI gave a useful, source-grounded LPPSA overview and correctly avoided promising approval. The customer was not appointment-ready: they wanted financing workability established before considering a viewing, and never expressed viewing intent. The AI nevertheless handed off too early, before learning the customer's 3–6 month timeframe or doing minimal fit discovery. Human responses later disclosed the fixture's limitations and did not perform sales work. Those human responses and the simulator-only operations fixture are not evidence of real Pearlmont production capability.",
+    "concrete_improvement_recommendation": "Answer the LPPSA question from knowledge/project/pearlmont/02_commercial/lppsa.md, clearly distinguish published reference terms from individual eligibility, and avoid promising a team assessment unless an actual handoff destination is connected. Before handing off, ask one or two relevant questions such as purchase timeframe and whether the customer has an active LPPSA financing. Explain that a document checklist and individual eligibility are not established by the available source, and offer a viewing only as a later step if financing appears workable; do not treat the initial price/eligibility question as appointment readiness.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

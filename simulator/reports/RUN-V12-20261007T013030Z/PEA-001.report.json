@@ -1,0 +1,469 @@
+{
+  "scenario_id": "PEA-001",
+  "title": "Budget-sensitive first-home couple",
+  "convertible": true,
+  "buyer_primary_need": "Find an affordable Type A family home for own stay, with manageable monthly payments and enough usable space for a couple and young child.",
+  "key_information_learned": [
+    "The buyer is purchasing for own stay with their spouse and young child.",
+    "The couple is looking around RM3xxk and cares about keeping monthly instalments near RM1.5k, subject to what the bank offers.",
+    "They are considering Type A, and worry that 900 sq ft may feel tight for their family.",
+    "Both spouses are involved in the decision.",
+    "They want to view the Type A layout together to judge the space and asked for available days and times."
+  ],
+  "important_information_missed": [
+    "The buyer's downpayment or upfront-cash comfort remains unknown; it was not necessary to establish viewing readiness.",
+    "Whether a bank's financing terms could meet the RM1.5k monthly target remains unverified.",
+    "No exact unit-specific price, current package validity, viewing slot, or shareable floor-plan document was confirmed."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont’s indicative package pricing starts in the RM3xxk range, depending on the floor, facing and car-park allocation. I’d confirm the latest package before giving you an exact current price. Are you looking for your own stay or as an investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Own stay for me, my spouse and our young child. We’re looking around the RM3xxk range, but the monthly instalment matters too. Is there a Type A layout around that budget?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so it gives your family three separate rooms. The indicative package starts in the RM3xxk range, though the exact price depends on the floor, facing and car-park allocation, and the latest package needs confirmation. Monthly instalments depend on the loan amount, tenure and rate. Do you have a monthly payment range you’d feel comfortable with?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "We’re hoping to keep it around RM1.5k a month if possible, but need to check what the bank would offer. 900 sqft sounds okay on paper, just worried it might feel a bit tight with our child. Is there a way to see how the Type A space is laid out?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "POSITION",
+      "message": "Yes—the Type A layout has about 405 sq ft for the living, dining and kitchen area, with the three bedrooms around 143, 117 and 103 sq ft. The plan is described as having an efficient layout without a long internal corridor, but seeing the space can help you judge whether it feels comfortable for your family. Would you like me to arrange a viewing?",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Yes, we’d like to view the Type A layout so my spouse and I can see if it feels roomy enough. What days and times are available?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Let me get the available viewing times for the Type A layout confirmed, so you and your spouse can plan your visit.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks—please send me the available slots once you’ve confirmed them. I’ll check with my spouse.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "I couldn’t verify any viewing slots: the available days and times remain unconfirmed. I’m unable to provide or book a slot from the information available here.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, no worries. Please let me know once you’ve confirmed the available slots, then I’ll check with my spouse and we can plan from there.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "Viewing availability remains unverified: no available days or times are connected here, so I can’t provide or book a slot, or confirm when one may be available.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Understood, we won’t plan a visit until there’s a confirmed slot. Could you share the Type A floor plan and the latest package details when available? We’ll check the space together and see what the bank says about the monthly payment.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "Viewing availability remains unverified: no days or times are connected here, so I can’t provide or book a slot. The information available also doesn’t include an actual floor-plan document or confirm the latest package’s current validity. The documented Type A layout is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony; the project materials list approximate room areas, including about 405 sq ft for the living, dining and kitchen area. The package source describes 5% and 8% rebate categories based on unit category, floor and car-park allocation, but I can’t confirm whether those details are currently valid or provide an exact current price.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you being clear about what’s confirmed. We’ll check with the bank and look over the Type A details together. Please send the floor plan, current package details and confirmed viewing slots when available, then we can plan from there.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 8,
+      "speaker": "human",
+      "message": "I can’t verify or book viewing slots from the information connected here, and I can’t confirm or send them later automatically. I also don’t have a floor-plan document to share or verified current package details. The documented Type A layout is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, but the package’s current validity and exact price remain unverified.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Understood, thanks for clarifying. We’ll check with the bank and review the Type A details, then get back in touch if we’re ready to take the next step.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-001.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Own stay for me, my spouse and our young child. We’re looking around the RM3xxk range, but the monthly instalment matters too. Is there a Type A layout around that budget?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "We’re hoping to keep it around RM1.5k a month if possible, but need to check what the bank would offer. 900 sqft sounds okay on paper, just worried it might feel a bit tight with our child. Is there a way to see how the Type A space is laid out?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Yes, we’d like to view the Type A layout so my spouse and I can see if it feels roomy enough. What days and times are available?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "POSITION",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 3,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify viewing availability; no slot could be verified from the connected information.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    },
+    {
+      "turn": 7,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    },
+    {
+      "turn": 8,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "NONE",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Find an affordable Type A family home for own stay, with manageable monthly payments and enough usable space for a couple and young child.",
+    "key_information_learned": [
+      "The buyer is purchasing for own stay with their spouse and young child.",
+      "The couple is looking around RM3xxk and cares about keeping monthly instalments near RM1.5k, subject to what the bank offers.",
+      "They are considering Type A, and worry that 900 sq ft may feel tight for their family.",
+      "Both spouses are involved in the decision.",
+      "They want to view the Type A layout together to judge the space and asked for available days and times."
+    ],
+    "important_information_missed": [
+      "The buyer's downpayment or upfront-cash comfort remains unknown; it was not necessary to establish viewing readiness.",
+      "Whether a bank's financing terms could meet the RM1.5k monthly target remains unverified.",
+      "No exact unit-specific price, current package validity, viewing slot, or shareable floor-plan document was confirmed."
+    ],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 3,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "NONE",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify viewing availability; no slot could be verified from the connected information.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": true,
+    "appointment_readiness_detection": 5,
+    "appointment_ready_progression": 5,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 4,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 5,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 4
+    },
+    "strongest_ai_move": "It addressed the space concern with sourced Type A room-area and layout information, then connected the buyer's need to judge the layout physically with a viewing invitation.",
+    "weakest_ai_move": "It could have made the operational boundary slightly clearer when saying it would get available times confirmed; the simulation had no connected calendar or verified slots.",
+    "unnecessary_qualification": [
+      "None material. The monthly-payment question was relevant to the buyer's stated affordability concern."
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "No material missed opportunity. The buyer's request to see the layout and subsequent explicit viewing request were acted on; further qualification was not needed before handing off."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [
+      "The retrieved package source contains rebate-category mechanics, but the AI appropriately avoided presenting a specific rebate or net price without a unit category and current confirmation."
+    ],
+    "factual_or_operational_overpromises": [
+      "The phrase about getting viewing times confirmed may create an expectation of a successful slot check, although it was framed as the reason for the handoff rather than as a confirmed booking."
+    ],
+    "remaining_knowledge_gaps": [
+      "The supplied context has no verified live appointment availability or calendar connection; the simulator-only human_operations fixture records that slots could not be verified.",
+      "The human response says no actual floor-plan document was available to share. No repository source path for that document is supplied: MISSING_SOURCE.",
+      "Current unit-specific pricing and package validity remain unverified. The retrieved Knowledge at knowledge/project/pearlmont/02_commercial/pricing.md and knowledge/project/pearlmont/02_commercial/sales-package.md supports cautious explanation, not a confirmed current unit price."
+    ],
+    "critical_flags": [
+      {
+        "flag": "No appointment confirmation",
+        "evidence": "The buyer requested available times, but no specific available window was provided or explicitly accepted; the final state is viewing interest, not confirmation.",
+        "turn": 4
+      },
+      {
+        "flag": "Simulator-only operational limits",
+        "evidence": "The human_operations fixture states availability and appointment slots are NOT_CONNECTED; Human reported that no slots could be verified. This is not evidence of real production capability.",
+        "turn": 5
+      }
+    ],
+    "summary": "The AI learned the relevant family, budget, monthly-payment, layout concern, joint-decision, and viewing-intent facts. It used retrieved Type A layout information to respond to the space objection and correctly recognized readiness when the buyer explicitly requested a viewing and asked for times. The turn-4 handoff was appropriately limited to operational booking, with no substantial sales work left for Human. Human attempted the fixture-supported slot-verification task, but no slot was available to confirm; the buyer therefore remained at VIEWING_INTEREST. The AI outcome is successful appointment-ready handoff, not a completed or confirmed appointment. Retrieved Pearlmont files are Knowledge; the disconnected-calendar and verification records are simulator-only operations fixtures, not claims about live production capability.",
+    "concrete_improvement_recommendation": "At handoff, state the boundary plainly—for example, “I’ll check whether a viewing slot is available; it isn’t booked until we confirm a specific time.” Keep the same concise layout-based progression, and do not imply that a slot or later follow-up is guaranteed.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

@@ -1,4 +1,4 @@
-# Pearlmont Simulator V1.1
+# Pearlmont Simulator V1.2
 
 Run the complete scenario suite from the repository root:
 
@@ -6,9 +6,9 @@ Run the complete scenario suite from the repository root:
 python3 simulator/runner/run.py
 ```
 
-The default runner is V1.1. It uses the explicit roles/models in `config.json`, reads the existing Brain and Skills, and retrieves at most four matching Pearlmont Knowledge files for each Agent turn. It tracks appointment readiness separately from formal human ownership, pauses Agent messages after handoff, and invokes a lightweight Human Closer only after a completed handoff. It needs `OPENAI_API_KEY` for live model calls. No non-standard Python packages are required.
+The default runner is V1.2. It uses the explicit roles/models in `config.json`, reads the existing Brain and Skills, and retrieves at most four matching Pearlmont Knowledge files for each Agent turn. Its primary KPI is appointment-ready AI success; appointment readiness is separate from handoff and confirmed appointment. It pauses Agent messages after transfer and invokes the Human Handoff Executor only after formal handoff. The Executor can use explicitly labeled synthetic operational fixtures. It needs `OPENAI_API_KEY` for live model calls. No non-standard Python packages are required.
 
-`run_v1.py` preserves the V1 runner for historical reproducibility. Scenario-only `human_operations` fixtures are hidden from the customer simulator and represent synthetic operational truth; no live CRM, inventory, pricing, or calendar is connected.
+`run_v1.py` preserves the original V1 runner for historical reproducibility. Scenario-only `human_operations` fixtures are hidden from the customer simulator and represent synthetic operational truth; no live CRM, inventory, pricing, or calendar is connected. The V1.2 aggregate compares against `RUN-V11-20261007T004245Z`.
 
 Run the same operator path against a fake transport before a live run:
 

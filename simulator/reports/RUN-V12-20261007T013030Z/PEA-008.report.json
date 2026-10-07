@@ -1,0 +1,317 @@
+{
+  "scenario_id": "PEA-008",
+  "title": "High-floor sea view with tight budget",
+  "convertible": true,
+  "buyer_primary_need": "Find a lower-floor sea-facing option in Block 1C or 1D with a decent outlook that could stay near RM360k.",
+  "key_information_learned": [
+    "Sea view matters more to the buyer than a high floor.",
+    "The buyer is willing to compromise on floor if the view remains decent.",
+    "The buyer is trying to stay around RM360k.",
+    "The buyer specifically asked about lower-floor options in Blocks 1C and 1D.",
+    "The buyer is keen to view if a suitable option is verified, but does not want to arrange a visit before then."
+  ],
+  "important_information_missed": [
+    "Whether the buyer would view once an option appears plausibly suitable could have been clarified before handoff.",
+    "The buyer's carpark requirement, which matters to the applicability of the retrieved package pricing, was not learned.",
+    "The agent did not explain the relevant sea-view package bands or use them to frame the budget check."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "I’d first focus on the sea-facing units in Blocks 1C and 1D; both have sea-facing floors. The reference base prices are RM350k for Block 1C and RM352k for Block 1D, before any current package, and exact prices and availability need checking. With your budget in mind, which matters more to you: keeping the sea view or getting a higher floor?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Sea view is more important; I can compromise on the floor if the view is still decent. Trying to keep around RM360k if possible—are there lower-floor options in those blocks that might fit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes—both Blocks 1C and 1D have sea-facing units on their listed floors: Levels 1–38 in 1C and Levels 1–37 in 1D. Their reference base prices are RM350k and RM352k respectively, so your ~RM360k budget is worth checking against the specific lower-floor options. That isn’t a confirmed final price, though—the current package, exact unit availability and outlook need verification. I’ll have those checked for you so we can see what fits.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, could you check which lower-floor units are actually available around RM360k and still have a decent sea view? If there’s a suitable one, I’m happy to come view it.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I couldn’t verify which lower-floor units are currently available or whether any are around RM360k with a decent sea view: the simulator fixture has no connected live unit schedule or unit-level pricing. Current package pricing and unit-specific outlook are also unverified. Viewing slots aren’t connected either, so I can’t confirm a viewing time.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "No worries. Could you let me know once you’re able to check the actual unit schedule and pricing? I’m still keen to view if there’s a lower-floor option around RM360k with a decent sea view, but don’t want to arrange a visit until we know one might fit.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify which lower-floor units are available, whether any are around RM360k, or their unit-specific sea outlook: no live unit schedule or unit-level pricing is connected here. I also can’t notify you later because no follow-up capability is connected. I understand you’re still interested in viewing if a suitable option is verified, and don’t want to arrange a visit before then.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Got it, I’ll hold off arranging a visit for now. I’ll check back once there’s an actual unit schedule and pricing to compare—still keen if a lower-floor sea-view option can stay around RM360k.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-008.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Sea view is more important; I can compromise on the floor if the view is still decent. Trying to keep around RM360k if possible—are there lower-floor options in those blocks that might fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 1,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 2,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "EMERGING",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check whether lower-floor sea-facing options fit the buyer's budget, including current availability, price, and outlook.",
+  "human_sales_work_required": "LOW",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Find a lower-floor sea-facing option in Block 1C or 1D with a decent outlook that could stay near RM360k.",
+    "key_information_learned": [
+      "Sea view matters more to the buyer than a high floor.",
+      "The buyer is willing to compromise on floor if the view remains decent.",
+      "The buyer is trying to stay around RM360k.",
+      "The buyer specifically asked about lower-floor options in Blocks 1C and 1D.",
+      "The buyer is keen to view if a suitable option is verified, but does not want to arrange a visit before then."
+    ],
+    "important_information_missed": [
+      "Whether the buyer would view once an option appears plausibly suitable could have been clarified before handoff.",
+      "The buyer's carpark requirement, which matters to the applicability of the retrieved package pricing, was not learned.",
+      "The agent did not explain the relevant sea-view package bands or use them to frame the budget check."
+    ],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 1,
+    "readiness_detection_correct": false,
+    "readiness_state_at_handoff": "EMERGING",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+    "handoff_turn": 2,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check whether lower-floor sea-facing options fit the buyer's budget, including current availability, price, and outlook.",
+    "human_sales_work_required": "LOW",
+    "human_operational_task_completed": true,
+    "appointment_readiness_detection": 2,
+    "appointment_ready_progression": 2,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 3,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 2,
+      "appointment_judgment": 2,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 2,
+      "commercial_progression": 2,
+      "appointment_readiness_detection": 2,
+      "handoff_timing": 2,
+      "handoff_reason_correctness": 4,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 2,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 2,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "It narrowed the search to the documented sea-facing ranges in Blocks 1C and 1D, related the reference base prices to the buyer's approximate budget, and qualified that current price, availability, and outlook needed checking.",
+    "weakest_ai_move": "It handed off immediately after the buyer identified a specific block/floor/view/budget fit, without using the retrieved package information or first progressing the buyer toward a conditional viewing.",
+    "unnecessary_qualification": [
+      "None. The single trade-off question about view versus floor was relevant and elicited the buyer's main priority."
+    ],
+    "missed_buying_signals": [
+      "At turn 1, the buyer selected sea view over floor, accepted a floor compromise, set an approximate budget, and asked for suitable lower-floor options in the identified blocks—a concrete unit/package check tied to high intent."
+    ],
+    "missed_selling_opportunity": [
+      "Use the available package guidance to explain that sea-view rebate treatment varies by floor band and carpark allocation, then ask whether the buyer would view if a lower-floor option appears to meet the budget and view requirement. Hand off afterward for current unit-level verification."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [
+      "knowledge/project/pearlmont/02_commercial/sales-package.md: The relevant sea-view rebate bands and the dependence on exact category and carpark allocation were retrieved but not used to frame the budget check.",
+      "knowledge/project/pearlmont/03_sales/unit-fit.md: Its guidance to reduce generic discovery and move toward viewing once a buyer asks about specific floor/view combinations was not followed."
+    ],
+    "factual_or_operational_overpromises": [
+      "“I’ll have those checked for you” implied that the requested unit checks could be completed. The explicitly simulator-only fixture had no live unit schedule, unit-level pricing, or viewing slots; Human later disclosed those limits. This is not evidence of real production capability."
+    ],
+    "remaining_knowledge_gaps": [
+      "No current unit schedule, unit-level prices, package eligibility for a particular unit, or unit-specific outlook was available in the simulator fixture.",
+      "No viewing slots were connected, so no appointment time could be confirmed."
+    ],
+    "critical_flags": [
+      {
+        "flag": "EARLY_HANDOFF_BEFORE_READY_BUYER_PROGRESSION",
+        "evidence": "The buyer had already specified the priority trade-off, approximate budget, target blocks, and lower-floor option check; the agent assessed readiness only as EMERGING and handed off without testing conditional viewing intent or using the retrieved package guidance.",
+        "turn": 2
+      },
+      {
+        "flag": "SIMULATOR_ONLY_OPERATIONS_LIMIT",
+        "evidence": "The human_operations fixture explicitly states there is no live schedule, unit-level pricing, calendar, or salesperson connected; Human could not verify a suitable unit or confirm a slot.",
+        "turn": 3
+      }
+    ],
+    "summary": "The buyer was a strong fit for a viewing once a plausible lower-floor sea-facing option near RM360k could be identified. Readiness was already commercially sufficient at customer turn 1 because the buyer had made a concrete floor/view trade-off and requested a budget-linked suitable-unit check. The agent used the orientation and base-price facts accurately and did not invent availability, but missed the relevant retrieved package guidance and handed off before establishing conditional viewing intent. The customer's explicit viewing interest came only after the AI had paused, so Human progress does not erase the early handoff. The simulator-only human task was recorded as completed, but no unit, price, outlook, or appointment slot was actually verified.",
+    "concrete_improvement_recommendation": "Before handing off, acknowledge that sea-facing options are documented in Blocks 1C and 1D and explain cautiously that the retrieved package varies by floor band and carpark allocation; do not calculate an exact effective price without the unit details. Ask whether the buyer would view if a lower-floor option looks suitable around RM360k. Once that conditional intent is established, hand off specifically for current schedule, exact package/price, and outlook verification, while clearly stating any operational limits.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "EMERGING",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

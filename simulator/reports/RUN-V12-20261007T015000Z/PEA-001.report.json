@@ -1,0 +1,418 @@
+{
+  "scenario_id": "PEA-001",
+  "title": "Budget-sensitive first-home couple",
+  "convertible": true,
+  "buyer_primary_need": "An affordable Type A 900 sq.ft. family home for own-stay, with a manageable bank-financed monthly commitment and enough usable space for a couple and young child.",
+  "key_information_learned": [
+    "The buyer is purchasing for own-stay with her husband and young child; her husband is a joint decision-maker.",
+    "Their comfort budget is around RM3xxk, and monthly instalment affordability matters.",
+    "They are considering bank financing and a 30-year loan tenure.",
+    "They are interested in the Type A 900 sq.ft. layout but worry it may feel tight for their family.",
+    "They asked for the Type A floor plan and a check for a unit and package within budget.",
+    "They would be open to a show-unit viewing to assess the space, and later said they would consider arranging a viewing after price/package and floor-plan information is checked."
+  ],
+  "important_information_missed": [
+    "The AI did not clarify the buyer's maximum comfortable price within the broad RM3xxk range; this could help narrow suitable options.",
+    "The AI did not establish whether a show-unit visit would be acceptable once the price and space concerns are addressed, or ask about preferred viewing timing. Exact availability could appropriately remain for operations to verify."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The available package information indicates prices start from around RM300k+ after applicable rebates. The exact price depends on the floor, facing and car-park allocation, and I’d need to confirm the latest package for a specific unit. Are you looking for your own stay or as an investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Own stay for me, my husband and our little one. We’re hoping to keep it around RM3xxk, so the monthly instalment matters too. Is there a Type A layout around that range?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—Type A is the standard 900 sq.ft. layout with 3 bedrooms and 2 bathrooms, so it gives your family three separate rooms. The indicative starting price discussed is around RM300k+ after applicable rebates, but the exact price depends on the unit and current package; I’d need to check a specific unit to confirm it’s within your budget. For a monthly instalment estimate, are you planning to use bank financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, we’d be looking at bank financing. 900 sqft sounds okay on paper, but I’m a bit worried it might feel tight with our little one. Could you share the Type A layout and, once there’s a confirmed price, help us understand the rough monthly commitment?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes. Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony. The approximate room sizes are 143 sq ft for the master, 117 sq ft and 103 sq ft for the other bedrooms; the living, dining and kitchen area is about 405 sq ft. The project materials describe all three bedrooms as able to fit a queen bed, though furniture and circulation will affect how spacious they feel. It’s a practical three-room layout, but seeing the floor plan or show unit would give you the best sense of whether it feels comfortable for your family.\n\nOnce the exact unit price and package are confirmed, I can help estimate the monthly bank-loan commitment. It’ll depend on the loan amount, tenure and rate, and the bank would confirm the actual terms. Do you have a preferred loan tenure?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Probably 30 years. Could you share the Type A floor plan and check if there’s a unit within our RM3xxk budget? If there’s a show unit, we’d be open to viewing it to see how the space feels for our family.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Noted—30 years. I’ll get the latest Type A floor plan and check whether there’s a current unit within your RM3xxk budget, including the applicable package. Once the price is confirmed, I can help with a rough monthly estimate; I’ll also check the show-unit viewing arrangements so you can see how the space feels for your family.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know once you’ve checked the current price and package, and shared the floor plan. Then we can see about arranging a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "The supplied information does not verify a current unit-specific price or package validity, so I can’t confirm whether a Type A fits your RM3xxk budget. Unit availability and show-unit viewing arrangements are NOT_CONNECTED, so those remain unverified too. I don’t have a floor-plan file to share here; the supplied project information describes Type A as 900 sq.ft., with 3 bedrooms, 2 bathrooms and a balcony. Without a confirmed price, I can’t estimate the monthly instalment.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Could you check with the sales team for the latest Type A price/package and floor plan when available? We’d like to see whether it fits our budget and get a rough monthly estimate first, then we can look at arranging a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-001.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Own stay for me, my husband and our little one. We’re hoping to keep it around RM3xxk, so the monthly instalment matters too. Is there a Type A layout around that range?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Yes, we’d be looking at bank financing. 900 sqft sounds okay on paper, but I’m a bit worried it might feel tight with our little one. Could you share the Type A layout and, once there’s a confirmed price, help us understand the rough monthly commitment?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Probably 30 years. Could you share the Type A floor plan and check if there’s a unit within our RM3xxk budget? If there’s a show unit, we’d be open to viewing it to see how the space feels for our family.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 3,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_MISSED_READY_BUYER",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check the current Type A unit price/package against the buyer's budget, provide a floor plan, and check show-unit viewing arrangements.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "An affordable Type A 900 sq.ft. family home for own-stay, with a manageable bank-financed monthly commitment and enough usable space for a couple and young child.",
+    "key_information_learned": [
+      "The buyer is purchasing for own-stay with her husband and young child; her husband is a joint decision-maker.",
+      "Their comfort budget is around RM3xxk, and monthly instalment affordability matters.",
+      "They are considering bank financing and a 30-year loan tenure.",
+      "They are interested in the Type A 900 sq.ft. layout but worry it may feel tight for their family.",
+      "They asked for the Type A floor plan and a check for a unit and package within budget.",
+      "They would be open to a show-unit viewing to assess the space, and later said they would consider arranging a viewing after price/package and floor-plan information is checked."
+    ],
+    "important_information_missed": [
+      "The AI did not clarify the buyer's maximum comfortable price within the broad RM3xxk range; this could help narrow suitable options.",
+      "The AI did not establish whether a show-unit visit would be acceptable once the price and space concerns are addressed, or ask about preferred viewing timing. Exact availability could appropriately remain for operations to verify."
+    ],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 3,
+    "readiness_detection_correct": false,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_MISSED_READY_BUYER",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check the current Type A unit price/package against the buyer's budget, provide a floor plan, and check show-unit viewing arrangements.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "appointment_readiness_detection": 3,
+    "appointment_ready_progression": 4,
+    "useful_information_capture": 5,
+    "retrieved_knowledge_utilization": 4,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 4,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 3,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 5,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 4
+    },
+    "strongest_ai_move": "It addressed the family's space concern with sourced Type A room and living-area details, qualified that perceived spaciousness depends on furniture and circulation, and explained that viewing is a better way to judge the layout.",
+    "weakest_ai_move": "At customer turn 3, the buyer explicitly requested a floor plan and budget-fit unit check and said they were open to a show-unit viewing. The AI's per-turn assessment still marked NOT_READY, despite viewing having become an appropriate next step.",
+    "unnecessary_qualification": [
+      "No clearly unnecessary questions. Asking about financing and tenure was relevant to the requested monthly-commitment estimate."
+    ],
+    "missed_buying_signals": [
+      "At turn 3, the buyer connected a budget-fit Type A check with willingness to view a show unit to assess the space; this was a genuine conditional viewing signal."
+    ],
+    "missed_selling_opportunity": [
+      "The AI could have explicitly framed viewing as the next step once a suitable package and show-unit availability were verified, and invited the buyer to share a preferred day or time if arrangements were available."
+    ],
+    "retrieval_misses": [
+      "No shareable floor-plan file or current unit-specific price/availability source appears in the supplied retrieved material (MISSING_SOURCE)."
+    ],
+    "retrieved_knowledge_not_used": [
+      "The AI could have made the price caveat slightly more informative by explaining that current package eligibility depends on the exact unit category, floor/facing, and car-park allocation; it appropriately did not invent an exact price."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Current validity of the package and a specific unit's price against the buyer's budget remain unverified.",
+      "The fixture does not provide unit availability, show-unit arrangements, or a floor-plan file.",
+      "A rough monthly payment cannot be responsibly estimated without a confirmed price and financing assumptions such as rate and loan amount."
+    ],
+    "critical_flags": [
+      {
+        "flag": "Readiness_under-detected_at_first_appropriate_viewing_point",
+        "evidence": "The buyer asked for a budget-fit unit check and said they would be open to viewing a show unit, but the AI assessment remained NOT_READY. The AI marked READY_FOR_APPOINTMENT on its next turn.",
+        "turn": 3
+      },
+      {
+        "flag": "Operational_task_not_completed",
+        "evidence": "The simulator-only fixture says current unit pricing/package validity is not verified and availability/show-unit arrangements are NOT_CONNECTED; the human response also had no floor-plan file. The executor reported these limits but did not complete the requested checks.",
+        "turn": 5
+      },
+      {
+        "flag": "Simulation_fixture_is_not_production_capability",
+        "evidence": "The human_operations fixture explicitly states there is no live CRM, inventory, pricing, calendar, or salesperson connection. Its NOT_CONNECTED results are simulator-only.",
+        "turn": 5
+      }
+    ],
+    "summary": "This was a suitable buyer with genuine, conditional viewing interest: own-stay family fit, a budget range, financing context, a specific Type A layout concern, and willingness to view if a show unit could help assess space. The AI provided useful sourced layout details and honest caveats, then appropriately handed off for dynamic price/package and viewing checks with little sales work remaining. It should have recognized readiness at customer turn 3 rather than only marking it on the handoff turn. The human's transparent NOT_CONNECTED response did not complete the operational task, and does not change the AI outcome.",
+    "concrete_improvement_recommendation": "When a buyer ties a suitable unit/package check to explicit willingness to view, mark READY_FOR_APPOINTMENT and progress toward a viewing rather than continuing general discovery. State that exact price, current package, and show-unit arrangements need verification; hand off those checks without implying they are complete, and ask for a preferred viewing window only if the booking process can support it.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.2",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "Use retrieved package source only to explain documented package mechanics; no unit-specific price or current validity fixture is supplied."
+    ],
+    "availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "It addressed the family's space concern with sourced Type A room and living-area details, qualified that perceived spaciousness depends on furniture and circulation, and explained that viewing is a better way to judge the layout.",
+  "weakest_ai_move": "At customer turn 3, the buyer explicitly requested a floor plan and budget-fit unit check and said they were open to a show-unit viewing. The AI's per-turn assessment still marked NOT_READY, despite viewing having become an appropriate next step.",
+  "unnecessary_qualification": [
+    "No clearly unnecessary questions. Asking about financing and tenure was relevant to the requested monthly-commitment estimate."
+  ],
+  "missed_buying_signals": [
+    "At turn 3, the buyer connected a budget-fit Type A check with willingness to view a show unit to assess the space; this was a genuine conditional viewing signal."
+  ],
+  "missed_selling_opportunity": [
+    "The AI could have explicitly framed viewing as the next step once a suitable package and show-unit availability were verified, and invited the buyer to share a preferred day or time if arrangements were available."
+  ],
+  "retrieval_misses": [
+    "No shareable floor-plan file or current unit-specific price/availability source appears in the supplied retrieved material (MISSING_SOURCE)."
+  ],
+  "retrieved_knowledge_not_used": [
+    "The AI could have made the price caveat slightly more informative by explaining that current package eligibility depends on the exact unit category, floor/facing, and car-park allocation; it appropriately did not invent an exact price."
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": null,
+  "final_appointment_state": "VIEWING_INTEREST"
+}

@@ -1,0 +1,309 @@
+{
+  "scenario_id": "PEA-007",
+  "title": "High-tension cable and flood concern",
+  "convertible": true,
+  "buyer_primary_need": "A family home that meets their safety threshold, with official evidence on Block 1B’s pylon distance and available flood/JPS information before they consider viewing.",
+  "key_information_learned": [
+    "They are looking for a home for their family.",
+    "The pylon and river/flood risk are genuine decision concerns.",
+    "They find the stated approximate 36 m Block 1B distance useful but want an official site plan or survey to confirm it.",
+    "They want any available flood assessment or JPS information and understand that raised levels do not eliminate all risk.",
+    "They will hold off on viewing until they can review the requested official documents."
+  ],
+  "important_information_missed": [
+    "Whether the customer would reconsider a viewing if the requested evidence were obtained and satisfactory; they said they would review it before deciding.",
+    "The specific risk threshold or finding that would make the project unacceptable to the family."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair question. The project information says the overall development’s finished floor level will be raised to about 2.4m above sea level, and the river is maintained by JPS with flood-gate/freeboard control. Those are mitigation measures, not a guarantee of zero flood risk. For the pylon, the stated distance is about 36m for Phase 1 Block 1B, against a stated 20m minimum requirement; that figure shouldn’t be assumed for every tower or unit. Are you looking at a particular block or unit?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "We’re looking for a home for the family, so this is a real concern for us. 36m for Block 1B is useful, but I’d want to see the official site plan or survey confirming that measurement, and whatever flood assessment or JPS info is available. Can you share the sources? I know the raised level helps but doesn’t mean zero risk.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That’s a reasonable thing to verify for a family home. I don’t have the official site plan/survey or flood assessment/JPS documents available to share here; the figures mentioned so far are project FAQ information, not a substitute for those records. Let me get the official documents checked and confirm what can be shared, rather than give you an unverified answer.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you checking. Please send the official site plan or survey showing the Block 1B distance, plus any flood assessment or JPS information you can share. We’ll review those first before deciding whether to view.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t verify or provide the official Block 1B site plan or survey, or any flood assessment or JPS documents, from the information available here. The project FAQ states an approximate 36 m distance for Block 1B and mentions JPS maintenance and raised finished floor levels, but those facts do not confirm the requested documents or independently assess safety or flood risk.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. We’ll hold off on viewing until we can review the official documents. If you’re able to get them later, please send them over.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-007.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "We’re looking for a home for the family, so this is a real concern for us. 36m for Block 1B is useful, but I’d want to see the official site plan or survey confirming that measurement, and whatever flood assessment or JPS info is available. Can you share the sources? I know the raised level helps but doesn’t mean zero risk.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+  "handoff_turn": 2,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check and provide the official Block 1B site plan or survey and any shareable flood assessment or JPS information.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "A family home that meets their safety threshold, with official evidence on Block 1B’s pylon distance and available flood/JPS information before they consider viewing.",
+    "key_information_learned": [
+      "They are looking for a home for their family.",
+      "The pylon and river/flood risk are genuine decision concerns.",
+      "They find the stated approximate 36 m Block 1B distance useful but want an official site plan or survey to confirm it.",
+      "They want any available flood assessment or JPS information and understand that raised levels do not eliminate all risk.",
+      "They will hold off on viewing until they can review the requested official documents."
+    ],
+    "important_information_missed": [
+      "Whether the customer would reconsider a viewing if the requested evidence were obtained and satisfactory; they said they would review it before deciding.",
+      "The specific risk threshold or finding that would make the project unacceptable to the family."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+    "handoff_turn": 2,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check and provide the official Block 1B site plan or survey and any shareable flood assessment or JPS information.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "appointment_readiness_detection": 5,
+    "appointment_ready_progression": 3,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 5,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 4,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 5
+    },
+    "strongest_ai_move": "It answered with the retrieved, limited project facts: approximately 36 m for Block 1B versus the stated 20 m requirement, and raised finished floor levels/JPS-related mitigation, while clearly avoiding a zero-flood-risk or universal-distance guarantee.",
+    "weakest_ai_move": "It said it would get the official documents checked and confirm what could be shared, implying an operational capability the simulator fixture does not establish. The eventual human response could not provide or verify those documents.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [
+      "The family-home context and request for specific primary evidence show serious evaluation, but not readiness to view: the customer explicitly said they would review documents before deciding."
+    ],
+    "missed_selling_opportunity": [
+      "No appointment push was warranted while the customer's safety blocker remained unresolved. A useful next step would be to make any future update conditional on a verified follow-up channel actually being available."
+    ],
+    "retrieval_misses": [
+      "The requested official site plan/survey and flood assessment or JPS documents were not present in the supplied retrieved material: MISSING_SOURCE."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [
+      "“Let me get the official documents checked and confirm what can be shared” suggests the documents can be checked and followed up. The simulator-only human_operations fixture says technical assessment is NOT_CONNECTED and supplies no such documents; it does not establish a live verification or follow-up capability."
+    ],
+    "remaining_knowledge_gaps": [
+      "No official site plan or survey confirming the Block 1B distance was supplied.",
+      "No official flood assessment or JPS information was supplied.",
+      "The simulator-only human response restated FAQ information but did not complete the requested document-check task."
+    ],
+    "critical_flags": [
+      {
+        "flag": "OPERATIONAL_CAPABILITY_IMPLIED",
+        "evidence": "The agent promised to get the official documents checked, but the simulator fixture has no connected technical assessment and supplies no requested documents.",
+        "turn": 2
+      },
+      {
+        "flag": "REQUESTED_OPERATION_NOT_COMPLETED",
+        "evidence": "The human response stated it could not verify or provide the requested site plan/survey or flood/JPS documents; the fixture marks the task incomplete.",
+        "turn": 3
+      }
+    ],
+    "summary": "The AI handled the pylon and flood concerns carefully using relevant retrieved Pearlmont FAQ facts and correctly recognized that the buyer was not yet ready to view. Escalating the request for official technical documents was appropriate, but the formal handoff occurred before appointment readiness, so the AI outcome is AI_EARLY_HANDOFF under the specified outcome definitions. The separate operational task remained incomplete: the human supplied no requested documents, and the simulator-only fixture does not imply real production capability.",
+    "concrete_improvement_recommendation": "Keep the sourced facts and caveats, then state plainly that the requested documents are not available in the current information. Do not promise verification or follow-up unless that capability is confirmed. If a supported document-check path exists, hand off that specific task; otherwise explain the limitation and leave the viewing decision with the buyer until they have the evidence they require.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.2",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "Use only retrieved project FAQ facts; no official engineering assessment or technical safety opinion fixture is supplied."
+    ],
+    "technical_assessment": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "It answered with the retrieved, limited project facts: approximately 36 m for Block 1B versus the stated 20 m requirement, and raised finished floor levels/JPS-related mitigation, while clearly avoiding a zero-flood-risk or universal-distance guarantee.",
+  "weakest_ai_move": "It said it would get the official documents checked and confirm what could be shared, implying an operational capability the simulator fixture does not establish. The eventual human response could not provide or verify those documents.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [
+    "The family-home context and request for specific primary evidence show serious evaluation, but not readiness to view: the customer explicitly said they would review documents before deciding."
+  ],
+  "missed_selling_opportunity": [
+    "No appointment push was warranted while the customer's safety blocker remained unresolved. A useful next step would be to make any future update conditional on a verified follow-up channel actually being available."
+  ],
+  "retrieval_misses": [
+    "The requested official site plan/survey and flood assessment or JPS documents were not present in the supplied retrieved material: MISSING_SOURCE."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [
+    "“Let me get the official documents checked and confirm what can be shared” suggests the documents can be checked and followed up. The simulator-only human_operations fixture says technical assessment is NOT_CONNECTED and supplies no such documents; it does not establish a live verification or follow-up capability."
+  ],
+  "improvement_recommendation": null,
+  "final_appointment_state": "NO_VIEWING_INTENT"
+}

@@ -1,0 +1,226 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.2",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T01:39:40.665081+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 2,
+    "human_handoff_executor": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+  "handoff_turn": 2,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Both lah, especially pylon exposure because we have young kids. The 36m and 20m figures are helpful, but can you share the actual FAQ or technical documents they come from, plus any flood history or drainage assessment for the site? I’d want to review those properly, maybe with someone technical, before deciding if a visit makes sense.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "It’s a fair concern. The project FAQ says the river is maintained by JPS, with flood-gate/freeboard control, and the development’s finished floor level is planned at about 2.4m above sea level, compared with the original ground level of about 1.0–1.2m. Those are mitigation measures, not a guarantee of zero flood risk. For the pylon, the stated distance is about 120 ft (36m) for Phase 1 Block 1B only; the FAQ also cites a 20m minimum-distance requirement, so I wouldn’t apply that figure to every tower or unit. Are you mainly concerned about flooding, or the pylon’s safety?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Both lah, especially pylon exposure because we have young kids. The 36m and 20m figures are helpful, but can you share the actual FAQ or technical documents they come from, plus any flood history or drainage assessment for the site? I’d want to review those properly, maybe with someone technical, before deciding if a visit makes sense.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That’s understandable, especially with young kids. The information I have so far doesn’t include the site’s flood history or a drainage assessment, so I don’t want to guess. I’ll get the relevant FAQ and technical documents checked, and ask the technical team to clarify what they can share about the pylon and flood risk before you decide whether a visit makes sense.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "HIGH_RISK_FACTUAL_UNCERTAINTY"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the actual FAQ and any flood-history or drainage assessment you can get, plus the technical clarification on the pylon. I’ll review them with my spouse first, then we can decide if a visit makes sense.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "The available FAQ facts state that Phase 1 Block 1B is approximately 120 ft (36 m) from the high-tension cable and cite a 20 m minimum-distance requirement. They also state that the river is maintained by JPS under flood-gate/freeboard control, and that the development’s finished floor level is planned at about 2.4 m above sea level versus original ground levels of about 1.0–1.2 m. These are stated measures, not a guarantee of zero flood risk or a technical safety opinion.\n\nThe actual FAQ or technical documents are not supplied here. I can’t verify or provide the site’s flood history, a drainage assessment, or a technical clarification on pylon safety: the technical assessment is not connected, and no engineering assessment or safety opinion is available in the supplied information. I understand you’ll review what you can with your spouse before deciding whether to visit.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Without the actual FAQ or a flood/drainage assessment, we can’t really judge the risk yet. If you manage to get the FAQ, please send it over and I’ll review with my spouse first—let’s hold off on a visit for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "The available FAQ facts state that Phase 1 Block 1B is approximately 120 ft (36 m) from the high-tension cable and cite a 20 m minimum-distance requirement. They also state that the river is maintained by JPS under flood-gate/freeboard control, and that the planned finished floor level is about 2.4 m above sea level, compared with original ground levels of about 1.0–1.2 m. These measures do not guarantee zero flood risk or establish a technical safety opinion. The actual FAQ document is not supplied here, and I can’t verify or provide the site’s flood history, a drainage assessment, or further technical clarification on pylon safety; the technical assessment is not connected. I can’t confirm that those documents can be obtained or sent. I understand you’ll review the available information with your spouse and hold off on a visit for now.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks for clarifying. Please send the actual FAQ if you manage to get it. We’ll review it with my spouse first and hold off on visiting for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 8,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 89
+}

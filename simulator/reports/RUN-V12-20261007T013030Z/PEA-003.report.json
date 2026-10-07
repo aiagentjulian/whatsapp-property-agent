@@ -1,0 +1,337 @@
+{
+  "scenario_id": "PEA-003",
+  "title": "Two-car household",
+  "convertible": true,
+  "buyer_primary_need": "Find a sea-facing unit with two carparks; two bays are ultimately confirmed as non-negotiable, and the buyer wants current availability and price before viewing.",
+  "key_information_learned": [
+    "The buyer needs two carparks.",
+    "The buyer is interested in sea-facing floors.",
+    "The buyer later clarified that two carparks are non-negotiable and sea-facing is preferred.",
+    "The buyer wants the current price and confirmed availability before arranging a viewing.",
+    "The buyer has high purchase intent but will hold off on viewing until those requirements are checked."
+  ],
+  "important_information_missed": [
+    "Whether two carparks or sea-facing orientation takes priority; the scenario calls for clarifying this trade-off.",
+    "Whether the buyer would consider different sea-facing floor bands if two-carpark options are limited.",
+    "That two-carpark allocations depend on unit category, and exact unit availability cannot be inferred from the general orientation schedule.",
+    "The available sourced package context for sea-view units with two carparks, while making clear that current unit availability and exact price remain unverified."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The sea-facing units are in Block 1C on Levels 1–38 and Block 1D on Levels 1–37; the ground floors are garden units. I’ll get the latest unit schedule checked to confirm which sea-facing floors come with 2 carparks.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay thanks, can you check the latest schedule for sea-facing units with 2 carparks, and the current price? Two bays are a must for us.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "The simulator fixture has no live unit inventory or unit-number schedule, so it cannot verify which sea-facing units are available with 2 carparks. It also does not provide a current price, so that remains unverified. I’ve kept your requirement for two bays in mind.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Two bays are non-negotiable; sea-facing is preferred. Could you check with the project sales team and let me know which options are actually available, with the current price?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "I can’t check with the project sales team through this simulator. There’s no live unit inventory or unit-number schedule, so availability of sea-facing units with two carparks is unverified. No current-price fixture is supplied, so the price is also unverified.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Got it, thanks for being upfront. No point arranging a viewing until the two bays and price are confirmed—could you connect me with the actual project sales team or share their contact so I can check directly?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t connect you with the project sales team through this simulator, and it doesn’t provide their contact details. There’s no live unit inventory or unit-number schedule here, so availability of sea-facing units with two carparks—and the current price—remains unverified.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Understood, thanks for being upfront. Please let me know if you get a direct sales contact or confirmed options with 2 bays and the current price. We won’t arrange a viewing until then.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "The simulator has no connected live unit schedule, current-price data, or project-sales contact details. I can’t verify sea-facing options with two bays, confirm the current price, provide a direct contact, or notify you later through this simulator. Those details remain unverified. I understand you won’t arrange a viewing until the two bays and price are confirmed.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Alright, understood. I’ll hold off on viewing and try to reach the project sales team directly to confirm the two bays and current price. Thanks for being upfront.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-003.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 0,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 1,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "EMERGING",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check whether the simulator provides live availability, unit schedule, and current-price data; report that these are unavailable.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ]
+    },
+    {
+      "turn": 4,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    },
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Find a sea-facing unit with two carparks; two bays are ultimately confirmed as non-negotiable, and the buyer wants current availability and price before viewing.",
+    "key_information_learned": [
+      "The buyer needs two carparks.",
+      "The buyer is interested in sea-facing floors.",
+      "The buyer later clarified that two carparks are non-negotiable and sea-facing is preferred.",
+      "The buyer wants the current price and confirmed availability before arranging a viewing.",
+      "The buyer has high purchase intent but will hold off on viewing until those requirements are checked."
+    ],
+    "important_information_missed": [
+      "Whether two carparks or sea-facing orientation takes priority; the scenario calls for clarifying this trade-off.",
+      "Whether the buyer would consider different sea-facing floor bands if two-carpark options are limited.",
+      "That two-carpark allocations depend on unit category, and exact unit availability cannot be inferred from the general orientation schedule.",
+      "The available sourced package context for sea-view units with two carparks, while making clear that current unit availability and exact price remain unverified."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 0,
+    "readiness_detection_correct": false,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+    "handoff_turn": 1,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check whether the simulator provides live availability, unit schedule, and current-price data; report that these are unavailable.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": true,
+    "appointment_readiness_detection": 2,
+    "appointment_ready_progression": 1,
+    "useful_information_capture": 2,
+    "retrieved_knowledge_utilization": 3,
+    "scores": {
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 2,
+      "selling_angle_relevance": 3,
+      "objection_handling": 2,
+      "unit_fit_judgment": 2,
+      "buying_signal_detection": 2,
+      "appointment_judgment": 1,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 1,
+      "commercial_progression": 1,
+      "appointment_readiness_detection": 2,
+      "handoff_timing": 1,
+      "handoff_reason_correctness": 2,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 2,
+      "useful_information_capture": 2,
+      "appointment_ready_progression": 1,
+      "retrieved_knowledge_utilization": 3
+    },
+    "strongest_ai_move": "It answered the floor-and-facing question with the sourced sea-facing floor ranges and correctly noted that ground floors are garden units.",
+    "weakest_ai_move": "It formally handed off immediately instead of clarifying the buyer's priority or progressing the viewing conversation, and promised to check the latest schedule despite no live schedule connection.",
+    "unnecessary_qualification": [
+      "None; the problem was insufficient qualification, not excessive questioning."
+    ],
+    "missed_buying_signals": [
+      "The opening combined a specific two-carpark requirement with a question about sea-facing floors, a strong unit-fit signal.",
+      "The buyer's later insistence on two bays and request for current price and confirmed options reinforced high purchase intent.",
+      "The buyer was conditionally willing to consider viewing once the availability and price concerns were resolved."
+    ],
+    "missed_selling_opportunity": [
+      "Briefly explain that the documented sea-facing floors are in Blocks 1C and 1D, two-carpark allocation is category-dependent, and exact options need live verification; then clarify whether two bays or sea-facing matters more and offer a viewing or gallery discussion once suitable options are checked."
+    ],
+    "retrieval_misses": [
+      "The AI retrieval trace did not include knowledge/project/pearlmont/02_commercial/sales-package.md, which could have informed a cautious explanation of the documented sea-view/two-carpark package bands.",
+      "No current unit-price source or live inventory source appears in the supplied material; exact price and availability therefore could not be verified."
+    ],
+    "retrieved_knowledge_not_used": [
+      "knowledge/project/pearlmont/03_sales/unit-fit.md says to reduce generic discovery when a buyer asks about specific floor/view/carpark combinations, identify the key trade-off, and move toward suitable-category checking and viewing.",
+      "knowledge/project/pearlmont/03_sales/unit-fit.md identifies confirmation of a two-carpark requirement as a viewing trigger.",
+      "knowledge/project/pearlmont/01_facts/unit-and-layout.md gives the facing sides as well as floor ranges and directs exact unit-to-facing mapping to the latest schedule.",
+      "The supplied sales-package material describes sea-view categories with two-carpark allocations by floor band, but does not establish live availability or an exact current price."
+    ],
+    "factual_or_operational_overpromises": [
+      "“I’ll get the latest unit schedule checked” implies access to a live schedule or project sales team that the simulator fixture explicitly does not provide."
+    ],
+    "remaining_knowledge_gaps": [
+      "Exact sea-facing unit and floor availability with two carparks.",
+      "Current price for any matching available unit.",
+      "Which priority the buyer would trade off if no option meets both preferences.",
+      "A real project-sales contact or live channel for checking options."
+    ],
+    "critical_flags": [
+      {
+        "flag": "PREMATURE_HANDOFF",
+        "evidence": "The AI handed off after one response without clarifying the two-carpark versus sea-facing trade-off or progressing a suitable viewing discussion.",
+        "turn": 1
+      },
+      {
+        "flag": "UNSUPPORTED_OPERATIONAL_PROMISE",
+        "evidence": "The AI said it would get the latest unit schedule checked, while the explicitly labeled simulator fixture supplies no live inventory or unit-number schedule.",
+        "turn": 1
+      }
+    ],
+    "summary": "The buyer was a suitable, high-intent prospect: the specific two-carpark and sea-facing enquiry made viewing an appropriate next step, even though exact options and price still needed verification. The AI answered the basic facing question accurately but assessed readiness only as EMERGING and immediately handed off, leaving meaningful sales work undone. The handoff was therefore too early, not a successful appointment-ready handoff. After takeover, the human fixture reported that live inventory, current pricing, and a sales-team contact were unavailable; its recorded operational task completion reflects checking and reporting simulator limits, not verifying real options. Those human operations are synthetic fixture behavior, not Pearlmont factual Knowledge or evidence of production capability.",
+    "concrete_improvement_recommendation": "Before any handoff, acknowledge that two bays are the requirement, give the sourced sea-facing floor bands, and ask one focused question: whether two bays remain the priority if the exact sea-facing options are limited. Use the supplied package information only as dated category context, not as an exact current quote. Then explain honestly that live availability and price require external verification, and progress toward a viewing conditional on finding a suitable two-carpark option. Do not promise to check a live schedule unless that capability is actually connected.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "EMERGING",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null
+}

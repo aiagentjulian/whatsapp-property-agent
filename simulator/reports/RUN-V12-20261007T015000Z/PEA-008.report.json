@@ -1,0 +1,318 @@
+{
+  "scenario_id": "PEA-008",
+  "title": "High-floor sea view with tight budget",
+  "convertible": true,
+  "buyer_primary_need": "Find a sea-facing unit in Blocks 1C or 1D that preserves a decent sea view while keeping the total cost within RM350k, with flexibility to compromise on floor.",
+  "key_information_learned": [
+    "The buyer wants a high-floor sea view but is willing to consider a lower floor if the view remains decent.",
+    "The buyer's ceiling is around RM350k, ideally including extra costs.",
+    "The buyer wants current lower-floor options in Blocks 1C/1D, including view/orientation and full cost details, before comparing them.",
+    "The buyer has high purchase intent, but has not explicitly requested or accepted a viewing."
+  ],
+  "important_information_missed": [
+    "Whether one or two car parks are required; this affects both package eligibility and total cost.",
+    "Whether a lower-floor option with a decent view and confirmed total cost within budget would prompt the buyer to arrange a viewing.",
+    "Whether the buyer's sea-view preference is an absolute requirement or a preference that could give way to affordability."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "For high-floor sea view, I’d start with the sea-facing units in Block 1C or 1D. The base-price references are RM350k and RM352k respectively, before any current package; the exact unit price and availability need checking. What’s your comfortable maximum budget?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Around RM350k is my ceiling, ideally including any extra costs. I can compromise on floor if the sea view is still decent—can you check if there are lower-floor options in those blocks and what the current price is?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "For a lower sea-facing option, the available pricing reference lists Block 1C at RM350k base and Block 1D at RM352k. It also lists an 8% rebate for sea-view units on Levels 1–14 with 2 car parks; if that package is still valid, the indicative Block 1C price would be about RM322k before any other applicable costs. I can’t confirm that as today’s price or an all-in figure, and the exact unit and view need checking too. I’ll get the lower-floor availability and current pricing verified so you can compare it against your RM350k ceiling.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay thanks, please check the lower-floor options in 1C/1D, especially whether the sea view is still decent and the total cost stays within RM350k. I’ll compare once you have the current details.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "The simulator has no live unit schedule or unit-level price data connected, so I can’t verify lower-floor availability in 1C/1D, the specific sea view, or whether the total cost is within RM350k. Those details remain unverified.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Could you check with the project team and send me the current lower-floor options, with the view/orientation and full cost breakdown? I’ll compare once you have those details.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-008.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Around RM350k is my ceiling, ideally including any extra costs. I can compromise on floor if the sea view is still decent—can you check if there are lower-floor options in those blocks and what the current price is?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 1,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 2,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "EMERGING",
+  "ai_outcome": "AI_EARLY_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify lower-floor availability, view/orientation, and current full cost for Blocks 1C/1D.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Find a sea-facing unit in Blocks 1C or 1D that preserves a decent sea view while keeping the total cost within RM350k, with flexibility to compromise on floor.",
+    "key_information_learned": [
+      "The buyer wants a high-floor sea view but is willing to consider a lower floor if the view remains decent.",
+      "The buyer's ceiling is around RM350k, ideally including extra costs.",
+      "The buyer wants current lower-floor options in Blocks 1C/1D, including view/orientation and full cost details, before comparing them.",
+      "The buyer has high purchase intent, but has not explicitly requested or accepted a viewing."
+    ],
+    "important_information_missed": [
+      "Whether one or two car parks are required; this affects both package eligibility and total cost.",
+      "Whether a lower-floor option with a decent view and confirmed total cost within budget would prompt the buyer to arrange a viewing.",
+      "Whether the buyer's sea-view preference is an absolute requirement or a preference that could give way to affordability."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 1,
+    "readiness_detection_correct": false,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+    "handoff_turn": 2,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "AI_EARLY_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify lower-floor availability, view/orientation, and current full cost for Blocks 1C/1D.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "appointment_readiness_detection": 2,
+    "appointment_ready_progression": 2,
+    "useful_information_capture": 4,
+    "retrieved_knowledge_utilization": 4,
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 2,
+      "factual_accuracy": 4,
+      "sales_naturalness": 4,
+      "handoff_judgment": 2,
+      "commercial_progression": 2,
+      "appointment_readiness_detection": 2,
+      "handoff_timing": 2,
+      "handoff_reason_correctness": 4,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 4,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 2,
+      "retrieved_knowledge_utilization": 4
+    },
+    "strongest_ai_move": "It matched the sea-view preference to Blocks 1C/1D and gave the buyer's budget concern a useful, explicitly conditional pricing reference rather than claiming a confirmed current or all-in price.",
+    "weakest_ai_move": "It handed off immediately after the buyer disclosed a clear budget, accepted a floor compromise, and requested a specific sea-view unit/package check tied to genuine purchase intent. It did not turn that progress into a conditional viewing invitation or establish whether a suitable option would make viewing appropriate.",
+    "unnecessary_qualification": [
+      "None. Asking for the buyer's comfortable maximum budget was directly relevant."
+    ],
+    "missed_buying_signals": [
+      "The buyer named a specific budget ceiling and said they could compromise on floor to retain a decent sea view.",
+      "The buyer requested lower-floor options in named blocks and current pricing, then said they would compare the verified options.",
+      "The buyer asked for view/orientation and a full cost breakdown, showing concrete evaluation intent rather than a generic price enquiry."
+    ],
+    "missed_selling_opportunity": [
+      "After explaining the conditional lower-floor package, the AI could have said that if a suitable option is verified within budget, viewing would help the buyer compare the actual orientation and view, then asked whether they would consider arranging one. It could still have handed off to verify the operational details."
+    ],
+    "retrieval_misses": [
+      "No live unit schedule or unit-level price source was available in the supplied material; exact availability, unit mapping, and total cost could not be verified."
+    ],
+    "retrieved_knowledge_not_used": [
+      "The retrieved unit-fit guidance says specific floor/view combinations are strong intent signals and should usually lead to narrowing the suitable category and proposing a viewing when appropriate."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "MISSING_SOURCE: Current unit-level availability, exact lower-floor stack/orientation mapping, and full unit-specific cost are not supplied.",
+      "The human_operations fixture is simulator-only: it says no live schedule or unit-level price is connected. The human response therefore did not complete the requested verification."
+    ],
+    "critical_flags": [
+      {
+        "flag": "EARLY_HANDOFF_BEFORE_VIEWING_PROGRESSION",
+        "evidence": "The buyer disclosed a RM350k ceiling, accepted a lower-floor compromise for a decent sea view, and requested a specific unit/package check; the AI handed off without testing conditional viewing interest or suggesting a viewing.",
+        "turn": 2
+      },
+      {
+        "flag": "OPERATIONAL_TASK_NOT_COMPLETED",
+        "evidence": "The simulator-only fixture reports NOT_CONNECTED, and the executor stated that availability, view, and total cost remained unverified.",
+        "turn": 3
+      }
+    ],
+    "summary": "The AI understood the core sea-view-versus-budget trade-off and used retrieved base-pricing and package information cautiously. The buyer had enough fit and purchase intent for viewing to be an appropriate next step, even though no viewing was explicitly requested and exact options still required verification. The AI assessed readiness only as EMERGING and handed off before making a conditional viewing move, leaving MEDIUM sales work. The simulator-only human executor performed one operational check but could not complete it; that does not remedy the early handoff.",
+    "concrete_improvement_recommendation": "After giving the conditional lower-floor pricing context, acknowledge that the buyer is open to a floor compromise, then ask whether they would consider viewing if a decent sea-facing option is verified within the RM350k total-cost ceiling. Clarify carpark needs if they affect the package, and hand off the exact availability, orientation, and cost verification without presenting any fixture or unverified figure as live.",
+    "conversion_attribution": "NO_CONVERSION",
+    "ai_final_sales_state": "EMERGING",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.2",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "No live unit schedule or unit-level price fixture is supplied."
+    ],
+    "unit_availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "It matched the sea-view preference to Blocks 1C/1D and gave the buyer's budget concern a useful, explicitly conditional pricing reference rather than claiming a confirmed current or all-in price.",
+  "weakest_ai_move": "It handed off immediately after the buyer disclosed a clear budget, accepted a floor compromise, and requested a specific sea-view unit/package check tied to genuine purchase intent. It did not turn that progress into a conditional viewing invitation or establish whether a suitable option would make viewing appropriate.",
+  "unnecessary_qualification": [
+    "None. Asking for the buyer's comfortable maximum budget was directly relevant."
+  ],
+  "missed_buying_signals": [
+    "The buyer named a specific budget ceiling and said they could compromise on floor to retain a decent sea view.",
+    "The buyer requested lower-floor options in named blocks and current pricing, then said they would compare the verified options.",
+    "The buyer asked for view/orientation and a full cost breakdown, showing concrete evaluation intent rather than a generic price enquiry."
+  ],
+  "missed_selling_opportunity": [
+    "After explaining the conditional lower-floor package, the AI could have said that if a suitable option is verified within budget, viewing would help the buyer compare the actual orientation and view, then asked whether they would consider arranging one. It could still have handed off to verify the operational details."
+  ],
+  "retrieval_misses": [
+    "No live unit schedule or unit-level price source was available in the supplied material; exact availability, unit mapping, and total cost could not be verified."
+  ],
+  "retrieved_knowledge_not_used": [
+    "The retrieved unit-fit guidance says specific floor/view combinations are strong intent signals and should usually lead to narrowing the suitable category and proposing a viewing when appropriate."
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": null,
+  "final_appointment_state": "NO_VIEWING_INTENT"
+}
