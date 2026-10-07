@@ -1,0 +1,782 @@
+{
+  "scenario_id": "PEA-008",
+  "title": "High-floor sea view with tight budget",
+  "convertible": true,
+  "buyer_primary_need": "Own-stay buyer seeking a sea view and preferably a high floor, while keeping within a tight budget and accepting a floor or view compromise for better value.",
+  "key_information_learned": [
+    "Buyer’s stated budget is around RM700,000, with possible stretch to RM750,000 if the view is worth it.",
+    "Buyer is open to a lower floor or less direct view for a meaningful price difference.",
+    "Buyer considered Level 12 a possible compromise and said the layout sounded suitable.",
+    "Buyer expressed strong viewing interest, conditional on confirming the unit and package details."
+  ],
+  "important_information_missed": [
+    "The buyer’s stated budget and the fixture’s RM349,000 package figure differ substantially; the agent could have checked whether the buyer was comparing the same price basis before treating the figure as a suitable value option."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I want high floor sea view, but budget quite tight. Which unit should I take?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "For high-floor sea view, I’d start with the sea-facing units in Blocks 1C or 1D. With your budget in mind, I’d check the current unit pricing and availability before recommending a specific floor. What’s the maximum budget you’re comfortable with?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Trying to keep it around RM700k, maybe stretch to RM750k if the view is really worth it. I’m open to a lower floor or less direct sea view if that makes a big difference in price—can you check what options fit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Check current available Pearlmont units that could suit a budget of RM700,000, with a preference for high-floor sea view but openness to lower floors or less direct views for better value. Return matching unit categories/floors, current unit-specific prices and package applicability, and availability. Do not assume the published package is still valid.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Check current available Pearlmont units that could suit a budget of RM700,000, with a preference for high-floor sea view but openness to lower floors or less direct views for better value. Return matching unit categories/floors, current unit-specific prices and package applicability, and availability. Do not assume the published package is still valid.",
+      "result": {
+        "fixture_key": "budget_view",
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic exact unit and package result for this scenario, not Pearlmont Knowledge or real inventory.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "The check confirms one Type A option: Block 1C, Level 12, unit 1C-12-03. It’s sea-facing with two car parks, and the package total is RM349,000, excluding your buyer-specific legal, stamp duty and financing costs. It isn’t a high-floor unit, and the actual view is best checked in person. Would Level 12 work as a value compromise, or should I focus on higher floors even if the view is less direct?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "RM349k sounds much lower than I expected—just checking, is that the full unit price or a package/discount figure? If it’s really within that range, Level 12 could be a good compromise. Can you confirm the layout, current availability and what the view is like from that stack? I’d be open to viewing it once those details are clear.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether Type A, Block 1C, Level 12, unit 1C-12-03 is currently available. The package total and unit details have already been confirmed; do not re-check them.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether Type A, Block 1C, Level 12, unit 1C-12-03 is currently available. The package total and unit details have already been confirmed; do not re-check them.",
+      "result": {
+        "fixture_key": "budget_view",
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify whether unit 1C-12-03 is currently available. The existing result confirms the Type A layout, Block 1C Level 12 sea-facing configuration with two car parks, and the RM349,000 scenario package total, but does not explicitly confirm current availability. Do not re-check those confirmed details.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify whether unit 1C-12-03 is currently available. The existing result confirms the Type A layout, Block 1C Level 12 sea-facing configuration with two car parks, and the RM349,000 scenario package total, but does not explicitly confirm current availability. Do not re-check those confirmed details.",
+      "result": {
+        "fixture_key": "budget_view",
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The RM349,000 is the scenario package total, not the original/base price; it excludes your own legal, stamp duty and financing costs. Type A is 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. Unit 1C-12-03 is sea-facing, though the actual view is best assessed in person. I don’t have confirmation that it’s currently available, so I can’t present it as available.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks, layout sounds suitable. Since availability isn’t confirmed yet, could you check whether 1C-12-03 is still available and that the RM349k package is current? If yes, I’m keen to arrange a viewing and compare the view from that stack.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify current availability of unit 1C-12-03 only. The prior result confirms the Type A, Block 1C, Level 12, sea-facing configuration with two car parks and the RM349,000 scenario package total (excluding buyer-specific legal, stamp and financing charges), but did not confirm availability. Do not re-check the confirmed unit details or package. The customer is keen to arrange a viewing if the unit is available.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify current availability of unit 1C-12-03 only. The prior result confirms the Type A, Block 1C, Level 12, sea-facing configuration with two car parks and the RM349,000 scenario package total (excluding buyer-specific legal, stamp and financing charges), but did not confirm availability. Do not re-check the confirmed unit details or package. The customer is keen to arrange a viewing if the unit is available.",
+      "result": {
+        "fixture_key": "budget_view",
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm only whether unit 1C-12-03 is currently available. Previous results confirm its configuration and the RM349,000 scenario package total, but do not state availability; do not re-check those details.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm only whether unit 1C-12-03 is currently available. Previous results confirm its configuration and the RM349,000 scenario package total, but do not state availability; do not re-check those details.",
+      "result": {
+        "fixture_key": "budget_view",
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The check confirms the scenario package total is RM349,000, excluding your legal, stamp and financing costs. Type A is 900 sq. ft., with 3 bedrooms and 2 bathrooms. The result still doesn’t confirm live availability, so I can’t say 1C-12-03 is available. Since you’re keen to view it, I’ll get the viewing coordination moving and have availability checked before confirming the visit.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know once you’ve confirmed the unit is still available and the RM349k package is current, then we can arrange a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 10,
+      "speaker": "human",
+      "message": "I can’t verify current availability: the unit-availability fixture is not connected. The RM349,000 figure is a synthetic scenario package result, so it does not confirm that the package is currently valid. Both remain unverified, and I can’t confirm a viewing yet.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 10,
+      "speaker": "customer",
+      "message": "Okay, understood. Please let me know if you’re able to verify the unit and package later—then I can decide about arranging a viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-008.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Trying to keep it around RM700k, maybe stretch to RM750k if the view is really worth it. I’m open to a lower floor or less direct sea view if that makes a big difference in price—can you check what options fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Trying to keep it around RM700k, maybe stretch to RM750k if the view is really worth it. I’m open to a lower floor or less direct sea view if that makes a big difference in price—can you check what options fit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "RM349k sounds much lower than I expected—just checking, is that the full unit price or a package/discount figure? If it’s really within that range, Level 12 could be a good compromise. Can you confirm the layout, current availability and what the view is like from that stack? I’d be open to viewing it once those details are clear.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "RM349k sounds much lower than I expected—just checking, is that the full unit price or a package/discount figure? If it’s really within that range, Level 12 could be a good compromise. Can you confirm the layout, current availability and what the view is like from that stack? I’d be open to viewing it once those details are clear.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "RM349k sounds much lower than I expected—just checking, is that the full unit price or a package/discount figure? If it’s really within that range, Level 12 could be a good compromise. Can you confirm the layout, current availability and what the view is like from that stack? I’d be open to viewing it once those details are clear.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks, layout sounds suitable. Since availability isn’t confirmed yet, could you check whether 1C-12-03 is still available and that the RM349k package is current? If yes, I’m keen to arrange a viewing and compare the view from that stack.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, layout sounds suitable. Since availability isn’t confirmed yet, could you check whether 1C-12-03 is still available and that the RM349k package is current? If yes, I’m keen to arrange a viewing and compare the view from that stack.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Thanks, layout sounds suitable. Since availability isn’t confirmed yet, could you check whether 1C-12-03 is still available and that the RM349k package is current? If yes, I’m keen to arrange a viewing and compare the view from that stack.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Check current available Pearlmont units that could suit a budget of RM700,000, with a preference for high-floor sea view but openness to lower floors or less direct views for better value. Return matching unit categories/floors, current unit-specific prices and package applicability, and availability. Do not assume the published package is still valid."
+    },
+    {
+      "turn": 3,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether Type A, Block 1C, Level 12, unit 1C-12-03 is currently available. The package total and unit details have already been confirmed; do not re-check them."
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify whether unit 1C-12-03 is currently available. The existing result confirms the Type A layout, Block 1C Level 12 sea-facing configuration with two car parks, and the RM349,000 scenario package total, but does not explicitly confirm current availability. Do not re-check those confirmed details."
+    },
+    {
+      "turn": 6,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify current availability of unit 1C-12-03 only. The prior result confirms the Type A, Block 1C, Level 12, sea-facing configuration with two car parks and the RM349,000 scenario package total (excluding buyer-specific legal, stamp and financing charges), but did not confirm availability. Do not re-check the confirmed unit details or package. The customer is keen to arrange a viewing if the unit is available."
+    },
+    {
+      "turn": 8,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm only whether unit 1C-12-03 is currently available. Previous results confirm its configuration and the RM349,000 scenario package total, but do not state availability; do not re-check those details."
+    },
+    {
+      "turn": 9,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 9,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 9,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify the unit’s current availability and package validity, then coordinate a viewing.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 10,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Own-stay buyer seeking a sea view and preferably a high floor, while keeping within a tight budget and accepting a floor or view compromise for better value.",
+    "key_information_learned": [
+      "Buyer’s stated budget is around RM700,000, with possible stretch to RM750,000 if the view is worth it.",
+      "Buyer is open to a lower floor or less direct view for a meaningful price difference.",
+      "Buyer considered Level 12 a possible compromise and said the layout sounded suitable.",
+      "Buyer expressed strong viewing interest, conditional on confirming the unit and package details."
+    ],
+    "important_information_missed": [
+      "The buyer’s stated budget and the fixture’s RM349,000 package figure differ substantially; the agent could have checked whether the buyer was comparing the same price basis before treating the figure as a suitable value option."
+    ],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 9,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+    "handoff_turn": 9,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify the unit’s current availability and package validity, then coordinate a viewing.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 5,
+    "support_requests_resolved": 5,
+    "support_resume_success_count": 2,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": true,
+    "support_failure_modes": [
+      "DUPLICATE_SUPPORT_REQUEST",
+      "SUPPORT_REQUEST_UNNECESSARY"
+    ],
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 4,
+      "objection_handling": 3,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 4,
+      "factual_accuracy": 4,
+      "sales_naturalness": 3,
+      "handoff_judgment": 4,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 4,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 4,
+      "support_request_judgment": 2,
+      "support_result_utilization": 4,
+      "support_resume_quality": 4
+    },
+    "strongest_ai_move": "It presented the simulator-verified Level 12 option with its price and trade-offs, correctly avoided claiming that the unit was available, and ultimately recognized viewing readiness and handed off for operational execution.",
+    "weakest_ai_move": "It repeated availability support requests after the same fixture result had already been returned without answering availability, creating a redundant support loop. It also could have checked the large discrepancy between the buyer’s budget and the quoted package figure.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "After the buyer said they were keen to view if the unit was available, the agent could have made the viewing purpose explicit—comparing the actual view from the stack—while handing off availability verification. No specific time was accepted, so no appointment confirmation should be inferred."
+    ],
+    "commercial_progression": {
+      "evidence": "The agent narrowed the buyer’s stated view-versus-budget trade-off to a specific Level 12 option, explained that the actual view should be assessed in person, and recognized the buyer’s conditional viewing intent by turn 9.",
+      "assessment": "Good progression to appointment readiness, weakened by redundant availability requests and not checking the substantial difference between the buyer’s stated budget and the fixture price."
+    },
+    "retrieval_misses": [
+      "Current unit-level availability and current package validity were not established by retrieved Knowledge or the support fixture."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Current availability of unit 1C-12-03.",
+      "Whether the RM349,000 package is currently valid.",
+      "Exact view from the stack, which the agent appropriately said should be checked at a visit."
+    ],
+    "critical_flags": [
+      {
+        "flag": "DUPLICATE_SUPPORT_REQUEST",
+        "evidence": "After the first availability request at turn 4, the agent repeated substantially the same availability request at turns 5, 7, and 8. The returned fixture explicitly did not confirm availability and was reused without a new lookup.",
+        "turn": 5
+      },
+      {
+        "flag": "SUPPORT_REQUEST_UNNECESSARY",
+        "evidence": "The Agent repeated a support request after the matching verified scenario answer was already returned; no new Human check was performed.",
+        "turn": 4
+      }
+    ],
+    "summary": "Yes—with a material reliability caveat. The AI used simulator-only verified fixture evidence to identify and contextualize a possible value compromise, resumed customer-facing selling, detected genuine viewing intent, and made an appropriately timed appointment handoff with little or no sales work remaining. It did not claim availability or treat the customer’s interest as a confirmed appointment. However, it made repeated availability support requests even though the fixture did not provide availability, and it did not explore the large difference between the buyer’s stated budget and the quoted figure. The RM349,000 unit/package details are SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE evidence only—not Pearlmont Knowledge or evidence of live inventory or package capability. The human executor could not verify availability or package validity, so the operational task was not completed; this does not negate the AI’s appointment-ready handoff outcome.",
+    "improvement_recommendation": "Prevent duplicate support requests for an unresolved question when the prior verified result does not answer it. After one unsuccessful availability check, state that availability remains unverified and proceed to the appropriate operational handoff once the buyer is ready. Also clarify the buyer’s price basis when a returned figure differs substantially from their stated budget. Source target: MISSING_SOURCE.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 5,
+    "support_resolved_count": 5,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Check current available Pearlmont units that could suit a budget of RM700,000, with a preference for high-floor sea view but openness to lower floors or less direct views for better value. Return matching unit categories/floors, current unit-specific prices and package applicability, and availability. Do not assume the published package is still valid.",
+      "fixture_key": "budget_view",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "request": "Confirm whether Type A, Block 1C, Level 12, unit 1C-12-03 is currently available. The package total and unit details have already been confirmed; do not re-check them.",
+      "fixture_key": "budget_view",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "request": "Verify whether unit 1C-12-03 is currently available. The existing result confirms the Type A layout, Block 1C Level 12 sea-facing configuration with two car parks, and the RM349,000 scenario package total, but does not explicitly confirm current availability. Do not re-check those confirmed details.",
+      "fixture_key": "budget_view",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "request": "Verify current availability of unit 1C-12-03 only. The prior result confirms the Type A, Block 1C, Level 12, sea-facing configuration with two car parks and the RM349,000 scenario package total (excluding buyer-specific legal, stamp and financing charges), but did not confirm availability. Do not re-check the confirmed unit details or package. The customer is keen to arrange a viewing if the unit is available.",
+      "fixture_key": "budget_view",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "request": "Confirm only whether unit 1C-12-03 is currently available. Previous results confirm its configuration and the RM349,000 scenario package total, but do not state availability; do not re-check those details.",
+      "fixture_key": "budget_view",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 5,
+  "support_resolved_count": 5,
+  "support_resume_success_count": 2,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [
+    "DUPLICATE_SUPPORT_REQUEST",
+    "SUPPORT_REQUEST_UNNECESSARY"
+  ],
+  "final_appointment_state": "VIEWING_INTEREST",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
+    "specific_verified_facts": [
+      "No live unit schedule or unit-level price fixture is supplied.",
+      "Synthetic support fixture 'budget_view' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "unit_availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "budget_view": {
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic exact unit and package result for this scenario, not Pearlmont Knowledge or real inventory."
+      }
+    }
+  },
+  "strongest_ai_move": "It presented the simulator-verified Level 12 option with its price and trade-offs, correctly avoided claiming that the unit was available, and ultimately recognized viewing readiness and handed off for operational execution.",
+  "weakest_ai_move": "It repeated availability support requests after the same fixture result had already been returned without answering availability, creating a redundant support loop. It also could have checked the large discrepancy between the buyer’s budget and the quoted package figure.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "After the buyer said they were keen to view if the unit was available, the agent could have made the viewing purpose explicit—comparing the actual view from the stack—while handing off availability verification. No specific time was accepted, so no appointment confirmation should be inferred."
+  ],
+  "retrieval_misses": [
+    "Current unit-level availability and current package validity were not established by retrieved Knowledge or the support fixture."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "Prevent duplicate support requests for an unresolved question when the prior verified result does not answer it. After one unsuccessful availability check, state that availability remains unverified and proceed to the appropriate operational handoff once the buyer is ready. Also clarify the buyer’s price basis when a returned figure differs substantially from their stated budget. Source target: MISSING_SOURCE."
+}

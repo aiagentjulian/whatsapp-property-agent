@@ -1,0 +1,574 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.5",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T12:20:34.231478+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 7,
+    "ai": 9,
+    "human_handoff_executor": 0,
+    "human_support": 2
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "For this family’s own-stay decision, verify the source documents for the previously cited flood-level/JPS measures and pylon-distance figures; whether any independent flood assessment or flood records are available to share; and the exact pylon distance for each Phase 1 block (not just Block 1B). Return document names or shareable references and clearly identify anything unavailable or not verified."
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Follow up only on the unresolved items from the prior technical-risk check: provide the customer-shareable FAQ/source document or link supporting the approximately 2.4 m raised platform and stated flood-mitigation measures; ask the developer whether any independent flood assessment or official flood records are available to share; and verify the pylon distances for Blocks 1C and 1D. Return only confirmed references and block-specific figures, clearly marking anything unavailable or unconfirmed. Prior result already confirmed Block 1B at approximately 120 ft (36 m) and found no independent assessment or official block-specific flood-history certification in the available information."
+    },
+    {
+      "turn": 6,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "For this family’s own-stay decision, verify the source documents for the previously cited flood-level/JPS measures and pylon-distance figures; whether any independent flood assessment or flood records are available to share; and the exact pylon distance for each Phase 1 block (not just Block 1B). Return document names or shareable references and clearly identify anything unavailable or not verified.",
+      "fixture_key": "technical_risk",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "request": "Follow up only on the unresolved items from the prior technical-risk check: provide the customer-shareable FAQ/source document or link supporting the approximately 2.4 m raised platform and stated flood-mitigation measures; ask the developer whether any independent flood assessment or official flood records are available to share; and verify the pylon distances for Blocks 1C and 1D. Return only confirmed references and block-specific figures, clearly marking anything unavailable or unconfirmed. Prior result already confirmed Block 1B at approximately 120 ft (36 m) and found no independent assessment or official block-specific flood-history certification in the available information.",
+      "fixture_key": "technical_risk",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks, appreciate you being clear it’s not a zero-risk guarantee. We’re looking for a home for our family, so the pylon and flood side are still quite important to us. Before narrowing to a unit, can you share the source for those figures and any independent flood assessment or records, plus the exact pylon distance for the blocks?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, appreciate you being clear it’s not a zero-risk guarantee. We’re looking for a home for our family, so the pylon and flood side are still quite important to us. Before narrowing to a unit, can you share the source for those figures and any independent flood assessment or records, plus the exact pylon distance for the blocks?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "For us, a block-specific pylon distance and whatever official flood records or independent assessment are available would be important before we shortlist. I’m not expecting a zero-risk guarantee, just something verifiable to review with my family. Can you share the FAQ/source and check if the developer has any flood assessment or records, and the distance for the blocks?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks, that’s helpful. Could you send me the actual FAQ/source and check with the developer whether they have any flood assessment or official records, and pylon distances for 1C and 1D? We’ll review those with the family before deciding whether to shortlist—no need to arrange a viewing yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Thanks, that’s helpful. Could you send me the actual FAQ/source and check with the developer whether they have any flood assessment or official records, and pylon distances for 1C and 1D? We’ll review those with the family before deciding whether to shortlist—no need to arrange a viewing yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Thanks for being upfront. The FAQ points are useful, but I still don’t have the actual source to review. Could you please check with the developer for the document and any records or 1C/1D distances, and send whatever they can verify? We’ll hold off shortlisting—and viewing—until we’ve reviewed it as a family.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Okay, thanks for being upfront. We’ll pause here and hold off shortlisting or viewing until there’s something verifiable to review. If you’re able to get the FAQ document, any official flood records, or the 1C/1D distances, please send them through.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Thanks, appreciate you being upfront. We’ll pause here and review if anything verifiable comes through.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this family’s own-stay decision, verify the source documents for the previously cited flood-level/JPS measures and pylon-distance figures; whether any independent flood assessment or flood records are available to share; and the exact pylon distance for each Phase 1 block (not just Block 1B). Return document names or shareable references and clearly identify anything unavailable or not verified.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this family’s own-stay decision, verify the source documents for the previously cited flood-level/JPS measures and pylon-distance figures; whether any independent flood assessment or flood records are available to share; and the exact pylon distance for each Phase 1 block (not just Block 1B). Return document names or shareable references and clearly identify anything unavailable or not verified.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Follow up only on the unresolved items from the prior technical-risk check: provide the customer-shareable FAQ/source document or link supporting the approximately 2.4 m raised platform and stated flood-mitigation measures; ask the developer whether any independent flood assessment or official flood records are available to share; and verify the pylon distances for Blocks 1C and 1D. Return only confirmed references and block-specific figures, clearly marking anything unavailable or unconfirmed. Prior result already confirmed Block 1B at approximately 120 ft (36 m) and found no independent assessment or official block-specific flood-history certification in the available information.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Follow up only on the unresolved items from the prior technical-risk check: provide the customer-shareable FAQ/source document or link supporting the approximately 2.4 m raised platform and stated flood-mitigation measures; ask the developer whether any independent flood assessment or official flood records are available to share; and verify the pylon distances for Blocks 1C and 1D. Return only confirmed references and block-specific figures, clearly marking anything unavailable or unconfirmed. Prior result already confirmed Block 1B at approximately 120 ft (36 m) and found no independent assessment or official block-specific flood-history certification in the available information.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "It’s a fair concern. The project information states that the overall development’s finished floor level will be raised to about 2.4 m above sea level, and that the river is maintained by JPS with flood-gate/freeboard controls. That’s a mitigation measure, not a guarantee of zero flood risk.\n\nFor the pylon, the stated distance is about 36 m for Phase 1 Block 1B; the FAQ cites a 20 m minimum-distance requirement. That figure shouldn’t be assumed to apply to every block or unit, and I wouldn’t make a broader technical safety guarantee. Is there a particular block or unit you’re considering?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you being clear it’s not a zero-risk guarantee. We’re looking for a home for our family, so the pylon and flood side are still quite important to us. Before narrowing to a unit, can you share the source for those figures and any independent flood assessment or records, plus the exact pylon distance for the blocks?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this family’s own-stay decision, verify the source documents for the previously cited flood-level/JPS measures and pylon-distance figures; whether any independent flood assessment or flood records are available to share; and the exact pylon distance for each Phase 1 block (not just Block 1B). Return document names or shareable references and clearly identify anything unavailable or not verified.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this family’s own-stay decision, verify the source documents for the previously cited flood-level/JPS measures and pylon-distance figures; whether any independent flood assessment or flood records are available to share; and the exact pylon distance for each Phase 1 block (not just Block 1B). Return document names or shareable references and clearly identify anything unavailable or not verified.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I can share the customer-facing FAQ summary. It describes the raised platform of about 2.4 m and flood-mitigation measures; it isn’t an independent flood assessment. I couldn’t verify any independent engineering opinion or official block-specific flood-history certification, and there’s no guarantee of zero flood risk. For the pylon, the only confirmed distance I have is for Block 1B: about 120 ft (36 m); I can’t confirm distances for the other Phase 1 blocks. Is an independent flood assessment or a confirmed distance for your preferred block essential before you consider Pearlmont further?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "For us, a block-specific pylon distance and whatever official flood records or independent assessment are available would be important before we shortlist. I’m not expecting a zero-risk guarantee, just something verifiable to review with my family. Can you share the FAQ/source and check if the developer has any flood assessment or records, and the distance for the blocks?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—I can share the customer-facing FAQ summary here. It describes the raised platform of about 2.4 m and flood-mitigation measures, including JPS river maintenance; it isn’t an independent flood assessment or official flood-history record. I don’t have an independent assessment or official block-specific flood-history record to share. The only confirmed pylon distance I have is for Block 1B—about 120 ft (36 m); distances for Blocks 1C and 1D aren’t confirmed. I understand those gaps mean you may not be able to shortlist Pearlmont yet.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, that’s helpful. Could you send me the actual FAQ/source and check with the developer whether they have any flood assessment or official records, and pylon distances for 1C and 1D? We’ll review those with the family before deciding whether to shortlist—no need to arrange a viewing yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Follow up only on the unresolved items from the prior technical-risk check: provide the customer-shareable FAQ/source document or link supporting the approximately 2.4 m raised platform and stated flood-mitigation measures; ask the developer whether any independent flood assessment or official flood records are available to share; and verify the pylon distances for Blocks 1C and 1D. Return only confirmed references and block-specific figures, clearly marking anything unavailable or unconfirmed. Prior result already confirmed Block 1B at approximately 120 ft (36 m) and found no independent assessment or official block-specific flood-history certification in the available information.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Follow up only on the unresolved items from the prior technical-risk check: provide the customer-shareable FAQ/source document or link supporting the approximately 2.4 m raised platform and stated flood-mitigation measures; ask the developer whether any independent flood assessment or official flood records are available to share; and verify the pylon distances for Blocks 1C and 1D. Return only confirmed references and block-specific figures, clearly marking anything unavailable or unconfirmed. Prior result already confirmed Block 1B at approximately 120 ft (36 m) and found no independent assessment or official block-specific flood-history certification in the available information.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I can share the FAQ points here, though I don’t have a separate document or link to attach in this chat. The FAQ describes the development’s raised platform at about 2.4 m above sea level and flood-mitigation measures, including JPS river maintenance and flood-gate/freeboard controls. These aren’t a guarantee of zero flood risk.\n\nThe only confirmed pylon distance I have is for Block 1B—about 120 ft (36 m); distances for Blocks 1C and 1D aren’t confirmed. I also don’t have an independent flood assessment or official block-specific flood-history record to share, or a developer-confirmed response beyond that. I understand you need verifiable information to review with your family before shortlisting, so I won’t push for a viewing.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. The FAQ points are useful, but I still don’t have the actual source to review. Could you please check with the developer for the document and any records or 1C/1D distances, and send whatever they can verify? We’ll hold off shortlisting—and viewing—until we’ve reviewed it as a family.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I understand. I don’t have an actual FAQ document or link to send, and I don’t have additional verified flood records or pylon distances for Blocks 1C and 1D. The only confirmed pylon figure I can share is Block 1B at about 120 ft (36 m). The FAQ summary describes a raised platform of about 2.4 m and flood-mitigation measures, but it isn’t an independent assessment or official flood-history record. I’ll leave it there for now and won’t push a viewing.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. We’ll pause here and hold off shortlisting or viewing until there’s something verifiable to review. If you’re able to get the FAQ document, any official flood records, or the 1C/1D distances, please send them through.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood—we’ll pause here. I don’t have an actual FAQ document or link, official flood records or an independent assessment, or confirmed pylon distances for Blocks 1C and 1D to send. If I receive any verified material, I’ll pass it along. No viewing arrangements for now.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you being upfront. We’ll pause here and review if anything verifiable comes through.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Of course. We’ll leave it there for now, and I’ll share any verified documents or block-specific details if they become available. No viewing arrangements for now.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "provider_calls": 15,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 93
+}

@@ -1,0 +1,475 @@
+{
+  "scenario_id": "PEA-006",
+  "title": "Buyer dislikes project density",
+  "convertible": true,
+  "buyer_primary_need": "Avoid a crowded, privacy-poor feel, especially people passing the unit in shared lift lobbies and corridors.",
+  "key_information_learned": [
+    "The buyer's main concern is lifts and corridors, not high-rise living categorically.",
+    "Block-specific lift banks help somewhat, but 15–18 units per typical floor remain a concern.",
+    "The buyer wants to inspect a typical floor plan and representative corridor before deciding whether the shared areas feel too busy.",
+    "The buyer is interested in viewing and asks about weekday or weekend slots, but has not committed to an appointment."
+  ],
+  "important_information_missed": [],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I understand — 1,846 units is a substantial total, so I wouldn’t describe Pearlmont as low-density. They’re across three towers; a typical floor has 15 units in Blocks 1B and 1C, and 18 in Block 1D, with four passenger lifts per block. That gives a clearer picture than the total alone, though it may still feel busy depending on what matters most to you. Is your main concern the lifts, shared facilities, or privacy?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Mostly the lifts and corridors — don’t want it feeling like there’s a constant stream of people outside my unit. How are the access and lifts separated between the blocks?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Each block has its own lift bank: 4 passenger lifts plus 1 Bomba lift per block, rather than one shared lift bank for all three. Residential parking and drop-off are also separated from the commercial access; residential drop-off is at Level 4, with link bridges to the towers. There are some connecting bridges between blocks too, so they’re not completely isolated. The lift setup is block-specific, but it can’t guarantee a quiet corridor on every floor.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Block-specific lift banks help a bit, but 15–18 units on a floor still sounds like quite a lot. Do you have a typical floor plan showing how the units are arranged around the lifts?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please verify whether a customer-shareable typical floor plan is available for the residential blocks, showing how units are arranged around the lift lobby and corridors. Include any verified block-specific differences.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please verify whether a customer-shareable typical floor plan is available for the residential blocks, showing how units are arranged around the lift lobby and corridors. Include any verified block-specific differences.",
+      "result": {
+        "fixture_key": "corridor_access",
+        "verified_answer": "For this simulator scenario, the gallery can show the buyer a typical residential floor plan and include a visit to a representative shared corridor during a viewing, subject to gallery access on the day. This helps inspect the layout but cannot predict crowding or noise at other times.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic operational fixture for a representative floor-plan and corridor viewing; not a real gallery booking.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "CLOSE_VIEWING",
+      "message": "I’ve confirmed the gallery can show you a typical residential floor plan, and during a viewing you may also be able to see a representative shared corridor, subject to access on the day. That should help you assess the unit arrangement around the lifts, though it can’t predict how busy or noisy the corridor will be at other times. Would you like me to arrange a visit to take a look?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Yeah, that could help me judge it better. What weekday or weekend slots do you have? I’d want to see the floor plan and corridor before deciding if it feels too busy.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "I’ll get the viewing coordination sorted so they can confirm a suitable weekday or weekend slot and check whether the representative corridor can be accessed that day.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, please check what weekday or weekend slots are available, and whether the corridor can be accessed. I’ll decide once I know the options.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "I can’t verify any weekday or weekend viewing slots from the available information, so I can’t confirm a booking. The gallery can show a typical residential floor plan and may include a representative shared corridor, subject to access on the day; access for a specific date isn’t verified.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Understood, thanks. I won’t book anything yet—please let me know if you’re able to confirm a slot and whether the corridor can be accessed. I’d want to check those before deciding.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-006.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Mostly the lifts and corridors — don’t want it feeling like there’s a constant stream of people outside my unit. How are the access and lifts separated between the blocks?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Block-specific lift banks help a bit, but 15–18 units on a floor still sounds like quite a lot. Do you have a typical floor plan showing how the units are arranged around the lifts?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Block-specific lift banks help a bit, but 15–18 units on a floor still sounds like quite a lot. Do you have a typical floor plan showing how the units are arranged around the lifts?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Yeah, that could help me judge it better. What weekday or weekend slots do you have? I’d want to see the floor plan and corridor before deciding if it feels too busy.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please verify whether a customer-shareable typical floor plan is available for the residential blocks, showing how units are arranged around the lift lobby and corridors. Include any verified block-specific differences."
+    },
+    {
+      "turn": 4,
+      "action": "CLOSE_VIEWING",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 5,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 5,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check weekday or weekend viewing slots and whether a representative corridor can be accessed during the viewing.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-006",
+    "buyer_primary_need": "Avoid a crowded, privacy-poor feel, especially people passing the unit in shared lift lobbies and corridors.",
+    "key_information_learned": [
+      "The buyer's main concern is lifts and corridors, not high-rise living categorically.",
+      "Block-specific lift banks help somewhat, but 15–18 units per typical floor remain a concern.",
+      "The buyer wants to inspect a typical floor plan and representative corridor before deciding whether the shared areas feel too busy.",
+      "The buyer is interested in viewing and asks about weekday or weekend slots, but has not committed to an appointment."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 5,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 5,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check weekday or weekend viewing slots and whether a representative corridor can be accessed during the viewing.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression": {
+      "evidence": "After the resolved support request, the Agent explained that the gallery could show a typical residential floor plan and that a representative shared corridor might be viewable subject to access on the day. It connected the visit to assessing the lift-area layout and its limits, then asked whether the buyer wanted to visit. When the buyer asked for weekday or weekend slots and said the inspection would help decide, the Agent handed off for operational coordination."
+    },
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 5,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 5
+    },
+    "strongest_ai_move": "The Agent acknowledged the density concern without trying to dismiss it, asked one focused question that revealed the buyer's specific concern, and later used support to offer a relevant way to inspect the layout while clearly stating that it could not predict crowding or noise.",
+    "weakest_ai_move": "The turn 2 response gives several access and lift details at once. They are relevant and supported, but could have been slightly more concise before checking whether the information addressed the buyer's concern.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Retrieved Knowledge does not establish that private corridors exist or verify crowding/noise levels.",
+      "The support fixture provides a simulator-only possibility of viewing a representative shared corridor, subject to gallery access on the day; access for a specific date and current viewing slots were not verified."
+    ],
+    "critical_flags": [],
+    "summary": "Yes: in this run, Human Support returned needed information and the AI used it naturally to address the buyer's specific concern, continue selling, reach appointment readiness, and hand off at the appropriate point for operational coordination. The buyer did not confirm a specific appointment, and the Human Executor could not verify slots, so no appointment was booked; that is not an AI failure after a correct appointment handoff. The floor-plan/corridor viewing information came from a SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE, not Pearlmont factual Knowledge or evidence of a real live operational connection.",
+    "improvement_recommendation": "No material correction is indicated. Keep the turn 2 factual response focused, and continue distinguishing a buyer's interest in checking options from acceptance of a specific appointment time.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 1,
+    "support_resolved_count": 1,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [
+    {
+      "turn": 3,
+      "request": "Please verify whether a customer-shareable typical floor plan is available for the residential blocks, showing how units are arranged around the lift lobby and corridors. Include any verified block-specific differences.",
+      "fixture_key": "corridor_access",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator scenario, the gallery can show the buyer a typical residential floor plan and include a visit to a representative shared corridor during a viewing, subject to gallery access on the day. This helps inspect the layout but cannot predict crowding or noise at other times.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "VIEWING_INTEREST",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
+    "specific_verified_facts": [
+      "No authoritative tower-movement/corridor-control plan fixture is supplied.",
+      "Synthetic support fixture 'access' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "access_plan": "NOT_CONNECTED",
+    "support_fixtures": {
+      "access": {
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, residents share the tower lift lobby and corridors; private corridors are not shown. It does not verify crowding or noise levels.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic simulator-only access/corridor plan summary."
+      },
+      "corridor_access": {
+        "verified_answer": "For this simulator scenario, the gallery can show the buyer a typical residential floor plan and include a visit to a representative shared corridor during a viewing, subject to gallery access on the day. This helps inspect the layout but cannot predict crowding or noise at other times.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic operational fixture for a representative floor-plan and corridor viewing; not a real gallery booking."
+      }
+    }
+  },
+  "strongest_ai_move": "The Agent acknowledged the density concern without trying to dismiss it, asked one focused question that revealed the buyer's specific concern, and later used support to offer a relevant way to inspect the layout while clearly stating that it could not predict crowding or noise.",
+  "weakest_ai_move": "The turn 2 response gives several access and lift details at once. They are relevant and supported, but could have been slightly more concise before checking whether the information addressed the buyer's concern.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "No material correction is indicated. Keep the turn 2 factual response focused, and continue distinguishing a buyer's interest in checking options from acceptance of a specific appointment time."
+}

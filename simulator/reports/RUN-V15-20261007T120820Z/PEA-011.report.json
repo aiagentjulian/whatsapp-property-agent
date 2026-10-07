@@ -1,0 +1,463 @@
+{
+  "scenario_id": "PEA-011",
+  "title": "Just looking low-intent buyer",
+  "convertible": true,
+  "buyer_primary_need": "A brief, low-pressure overview of the project and its facilities, with no appointment or purchase commitment.",
+  "key_information_learned": [
+    "The buyer is browsing and says they are not planning to buy yet.",
+    "The buyer asked about the general project, likely resident mix, and facilities.",
+    "The buyer said the overview was enough for browsing and ended the conversation appreciatively."
+  ],
+  "important_information_missed": [
+    "The Agent did not use Human Support to verify the facilities list after honestly stating it was not confirmed. The scenario-only fixture could have answered that question."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries at all—happy to help with any details while you’re browsing, no pressure.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, just curious what the project is generally like—no need to arrange anything, just a brief overview would be nice.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Sure—Pearlmont is a freehold condominium project in Seberang Jaya, Penang. Phase 1 has three residential towers, with 900 sq. ft. units featuring 3 bedrooms, 2 bathrooms and a balcony. The development also includes a large facilities deck, a pay-per-use clubhouse, and school and commercial components. Phase 1 is expected to be completed in Q4 2029.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, that gives me the general picture. Is it more geared towards families, or a mix of residents? Just curious for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "It’s likely to suit families, with the 3-bedroom, 2-bathroom layout and facilities deck, plus a school component in the development. But I can’t say what the resident mix will be—there could be a range of residents. No need to decide anything now, of course.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Got it, thanks. What does the facilities deck include? Just curious for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The confirmed details are that it has an approximately 10-acre Level 9 facilities and landscape deck, plus a pay-per-use Super Clubhouse. I don’t have the specific facilities list confirmed, so I don’t want to guess at the individual amenities.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Ah okay, thanks for clarifying. That’s enough for my browsing for now, appreciate it 🙂",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "You’re welcome 🙂 Glad that helped. Feel free to message anytime if you get curious about anything else.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-011.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks, just curious what the project is generally like—no need to arrange anything, just a brief overview would be nice.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Thanks, that gives me the general picture. Is it more geared towards families, or a mix of residents? Just curious for now.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Got it, thanks. What does the facilities deck include? Just curious for now.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Ah okay, thanks for clarifying. That’s enough for my browsing for now, appreciate it 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": "NONE",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-011",
+    "buyer_primary_need": "A brief, low-pressure overview of the project and its facilities, with no appointment or purchase commitment.",
+    "key_information_learned": [
+      "The buyer is browsing and says they are not planning to buy yet.",
+      "The buyer asked about the general project, likely resident mix, and facilities.",
+      "The buyer said the overview was enough for browsing and ended the conversation appreciatively."
+    ],
+    "important_information_missed": [
+      "The Agent did not use Human Support to verify the facilities list after honestly stating it was not confirmed. The scenario-only fixture could have answered that question."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_type": "NO_FORMAL_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": "NONE",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 0,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression": {
+      "evidence": "The Agent matched the buyer’s low intent with a brief overview, answered the resident-mix question without pretending to know the future resident mix, and respected the buyer’s signal that the information was enough. The facilities answer could have been more useful through a support query, but the buyer remained low-intent and did not show viewing readiness.",
+      "assessment": "Appropriate early-stage handling overall; one missed opportunity to resolve a direct factual question through support."
+    },
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 4,
+      "support_request_judgment": 2,
+      "support_result_utilization": 3,
+      "support_resume_quality": 3
+    },
+    "score_evidence": {
+      "customer_understanding": "Acknowledged that the buyer was browsing and did not push for a purchase or viewing.",
+      "latest_message_responsiveness": "Answered each direct question; the facilities answer stopped at the known general deck details rather than resolving the requested amenity list.",
+      "qualification_discipline": "Did not impose form-like questions on a buyer who explicitly had no active purchase plan.",
+      "selling_angle_relevance": "Connected the 3-bedroom layout and school component to family suitability, while appropriately qualifying that the actual resident mix was unknown.",
+      "objection_handling": "Respected the buyer’s low-commitment preference and did not argue or pressure.",
+      "unit_fit_judgment": "No meaningful unit-fit assessment was warranted because the buyer gave no purchasing needs.",
+      "buying_signal_detection": "Correctly treated general curiosity as low intent, not as a viewing signal.",
+      "appointment_judgment": "Did not push an appointment when the buyer explicitly said there was no need to arrange anything.",
+      "factual_accuracy": "Project overview claims were consistent with retrieved overview material; the Agent appropriately said it did not have the individual facilities list confirmed.",
+      "sales_naturalness": "Replies were concise, warm, and low-pressure.",
+      "handoff_judgment": "No formal handoff was needed; the buyer was neither appointment-ready nor requesting human assistance.",
+      "commercial_progression": "Provided orientation and relevant family context without forcing conversion; could have answered the facilities question more completely using support.",
+      "appointment_readiness_detection": "Per-turn assessments and final state consistently remained NOT_READY, matching the transcript.",
+      "handoff_timing": "No handoff occurred, appropriately.",
+      "handoff_reason_correctness": "No handoff reason was asserted or needed.",
+      "post_handoff_suppression": "No formal handoff occurred; the Agent’s final courteous close was appropriate.",
+      "conversion_attribution": "No appointment or booking was accepted, and none is claimed.",
+      "useful_information_capture": "The Agent learned the buyer’s low intent and immediate information interests, but no further profile capture was appropriate or needed.",
+      "appointment_ready_progression": "Did not attempt to manufacture readiness from casual questions; the buyer ended the exchange without viewing intent.",
+      "retrieved_knowledge_utilization": "Used retrieved project, unit, completion, and facilities-deck facts. The specific facilities list was not present in the supplied retrieved source material.",
+      "support_request_judgment": "A support request could have resolved the buyer’s direct facilities question using the explicit scenario fixture. No request was made; this is a missed opportunity, not an unnecessary request.",
+      "support_result_utilization": "No support request or result existed, so there was no result to use or ignore.",
+      "support_resume_quality": "No resolved support result required a resumption; the Agent continued normal customer-facing replies."
+    },
+    "strongest_ai_move": {
+      "turn": 3,
+      "evidence": "Distinguished likely family suitability from the unknown actual resident mix and avoided presenting speculation as fact."
+    },
+    "weakest_ai_move": {
+      "turn": 4,
+      "evidence": "When asked what the facilities deck includes, the Agent disclosed its knowledge limit but did not request the available scenario support answer."
+    },
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      {
+        "turn": 4,
+        "evidence": "The buyer directly asked for the facilities list. A support query could have supplied a concise answer while preserving the buyer’s no-pressure browsing preference."
+      }
+    ],
+    "retrieval_misses": [
+      {
+        "turn": 4,
+        "information": "Specific facilities-deck amenities were not contained in the supplied retrieved source material."
+      }
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The specific facilities list was absent from retrieved Knowledge. The scenario fixture supplied an answer through the separate support channel, but it was not requested or used."
+    ],
+    "critical_flags": [],
+    "summary": "The Agent handled this low-intent browser appropriately: it provided a brief project orientation, answered questions without overstating what it knew, and respected the buyer’s wish not to arrange anything. It correctly remained AI-owned and active with no formal handoff; the buyer never became appointment-ready. One improvement is clear: after the facilities list was not available in retrieved Knowledge, the Agent could have requested Human Support and then naturally shared the verified answer. No support request was made, so there was no support result to assess for use or resumption. Executive answer: this conversation does not demonstrate whether the AI can use resolved support to move a suitable buyer toward Appointment Ready, because no support flow occurred and this buyer showed no appointment readiness.",
+    "improvement_recommendation": "For a direct factual question whose answer is absent from retrieved Knowledge, use the internal support loop when available, then respond naturally and briefly in context. In this low-intent exchange, keep the answer optional and low-pressure; do not turn the support result into an appointment push.",
+    "simulator_fixture_note": "The facilities answer in the scenario’s human_operations support fixture is SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE evidence only. It is not Pearlmont factual Knowledge and does not establish a real production connection or capability.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 0,
+    "support_resolved_count": 0,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [],
+  "support_request_count": 0,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
+    "specific_verified_facts": [
+      "No current location-map asset/link fixture is supplied."
+    ],
+    "map_asset": "NOT_CONNECTED",
+    "support_fixtures": {
+      "facilities": {
+        "verified_answer": "The scenario fixture lists the Level 9 shared facilities deck as including a swimming pool, gym, and children’s play area. The simulator fixture also lists the karaoke room as pay-per-use. These are orientation details only; there is no obligation to view or make a purchase decision.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project-orientation details for this low-intent scenario; not Pearlmont factual Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": {
+    "turn": 3,
+    "evidence": "Distinguished likely family suitability from the unknown actual resident mix and avoided presenting speculation as fact."
+  },
+  "weakest_ai_move": {
+    "turn": 4,
+    "evidence": "When asked what the facilities deck includes, the Agent disclosed its knowledge limit but did not request the available scenario support answer."
+  },
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    {
+      "turn": 4,
+      "evidence": "The buyer directly asked for the facilities list. A support query could have supplied a concise answer while preserving the buyer’s no-pressure browsing preference."
+    }
+  ],
+  "retrieval_misses": [
+    {
+      "turn": 4,
+      "information": "Specific facilities-deck amenities were not contained in the supplied retrieved source material."
+    }
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "For a direct factual question whose answer is absent from retrieved Knowledge, use the internal support loop when available, then respond naturally and briefly in context. In this low-intent exchange, keep the answer optional and low-pressure; do not turn the support result into an appointment push."
+}

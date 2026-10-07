@@ -1,0 +1,910 @@
+{
+  "scenario_id": "PEA-001",
+  "version": "1.5",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T12:08:24.816913+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 7,
+    "ai": 11,
+    "human_handoff_executor": 1,
+    "human_support": 6
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 11,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 10,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 11,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "For this customer, retrieve a customer-shareable Type A floor plan and verify the current package price applicable to a 1-carpark unit. Also provide an illustrative 30-year monthly instalment estimate, stating the assumed loan amount or financing percentage, interest rate and any exclusions; do not imply financing approval."
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "For this customer, provide a shareable attachment or link to the already-verified Type A floor plan, and verify the current package price for a 1-carpark unit plus an illustrative 30-year monthly instalment. For the estimate, state the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The Type A layout facts are already verified—do not re-check them."
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "For this customer, verify the current package price for a 1-carpark Type A unit and provide an illustrative 30-year monthly instalment, stating the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Also provide the actual customer-shareable Type A floor-plan attachment or link. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom details are already verified—do not re-check them."
+    },
+    {
+      "turn": 7,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "For this AI-owned lead, provide the actual customer-shareable Type A floor-plan attachment or link, and verify the current package price applicable to a 1-carpark Type A unit. Also provide an illustrative 30-year monthly instalment with the assumed loan amount or financing percentage, interest rate, and exclusions. The 900 sq.ft., 3-bedroom, 2-bathroom layout facts are already verified; do not re-check them. Return only details you can verify."
+    },
+    {
+      "turn": 8,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "For this AI-owned lead, return the actual customer-shareable Type A floor-plan attachment or link, and verify the current 1-carpark Type A package price plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom facts are already verified. Prior results confirmed the illustrative plan exists but did not provide an attachment/link, price, or instalment; return only details you can verify."
+    },
+    {
+      "turn": 9,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please provide the actual customer-shareable Type A floor-plan image or link, and verify the current package price for a 1-carpark Type A unit plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Previous results confirmed only that an illustrative plan exists and did not provide the attachment/link, price, or instalment. Do not re-check the already-verified layout specifications."
+    },
+    {
+      "turn": 10,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 11,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 12,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 4,
+      "request": "For this customer, retrieve a customer-shareable Type A floor plan and verify the current package price applicable to a 1-carpark unit. Also provide an illustrative 30-year monthly instalment estimate, stating the assumed loan amount or financing percentage, interest rate and any exclusions; do not imply financing approval.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "request": "For this customer, provide a shareable attachment or link to the already-verified Type A floor plan, and verify the current package price for a 1-carpark unit plus an illustrative 30-year monthly instalment. For the estimate, state the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The Type A layout facts are already verified—do not re-check them.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "request": "For this customer, verify the current package price for a 1-carpark Type A unit and provide an illustrative 30-year monthly instalment, stating the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Also provide the actual customer-shareable Type A floor-plan attachment or link. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom details are already verified—do not re-check them.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "request": "For this AI-owned lead, provide the actual customer-shareable Type A floor-plan attachment or link, and verify the current package price applicable to a 1-carpark Type A unit. Also provide an illustrative 30-year monthly instalment with the assumed loan amount or financing percentage, interest rate, and exclusions. The 900 sq.ft., 3-bedroom, 2-bathroom layout facts are already verified; do not re-check them. Return only details you can verify.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "request": "For this AI-owned lead, return the actual customer-shareable Type A floor-plan attachment or link, and verify the current 1-carpark Type A package price plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom facts are already verified. Prior results confirmed the illustrative plan exists but did not provide an attachment/link, price, or instalment; return only details you can verify.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "request": "Please provide the actual customer-shareable Type A floor-plan image or link, and verify the current package price for a 1-carpark Type A unit plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Previous results confirmed only that an illustrative plan exists and did not provide the attachment/link, price, or instalment. Do not re-check the already-verified layout specifications.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Probably 1 car park for us. Is that starting price for the Type A? Also roughly what would the monthly instalment be?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Probably 30–35 years, still checking what’s manageable. Our budget is around RM3xxk, and it’s for me, my wife and our young child. Just wondering if 900 sqft would feel a bit tight for us.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 9,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 10,
+      "trigger_message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 11,
+      "trigger_message": "Thanks, that gives us a rough idea. Since the living area and storage are our main concern, my wife and I would be interested in seeing the Type A layout in person if that’s possible. Do you have weekend viewing slots?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this customer, retrieve a customer-shareable Type A floor plan and verify the current package price applicable to a 1-carpark unit. Also provide an illustrative 30-year monthly instalment estimate, stating the assumed loan amount or financing percentage, interest rate and any exclusions; do not imply financing approval.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this customer, retrieve a customer-shareable Type A floor plan and verify the current package price applicable to a 1-carpark unit. Also provide an illustrative 30-year monthly instalment estimate, stating the assumed loan amount or financing percentage, interest rate and any exclusions; do not imply financing approval.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic customer-shareable plan fixture; not added to Pearlmont Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this customer, provide a shareable attachment or link to the already-verified Type A floor plan, and verify the current package price for a 1-carpark unit plus an illustrative 30-year monthly instalment. For the estimate, state the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The Type A layout facts are already verified—do not re-check them.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this customer, provide a shareable attachment or link to the already-verified Type A floor plan, and verify the current package price for a 1-carpark unit plus an illustrative 30-year monthly instalment. For the estimate, state the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The Type A layout facts are already verified—do not re-check them.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this customer, verify the current package price for a 1-carpark Type A unit and provide an illustrative 30-year monthly instalment, stating the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Also provide the actual customer-shareable Type A floor-plan attachment or link. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom details are already verified—do not re-check them.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this customer, verify the current package price for a 1-carpark Type A unit and provide an illustrative 30-year monthly instalment, stating the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Also provide the actual customer-shareable Type A floor-plan attachment or link. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom details are already verified—do not re-check them.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this AI-owned lead, provide the actual customer-shareable Type A floor-plan attachment or link, and verify the current package price applicable to a 1-carpark Type A unit. Also provide an illustrative 30-year monthly instalment with the assumed loan amount or financing percentage, interest rate, and exclusions. The 900 sq.ft., 3-bedroom, 2-bathroom layout facts are already verified; do not re-check them. Return only details you can verify.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this AI-owned lead, provide the actual customer-shareable Type A floor-plan attachment or link, and verify the current package price applicable to a 1-carpark Type A unit. Also provide an illustrative 30-year monthly instalment with the assumed loan amount or financing percentage, interest rate, and exclusions. The 900 sq.ft., 3-bedroom, 2-bathroom layout facts are already verified; do not re-check them. Return only details you can verify.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this AI-owned lead, return the actual customer-shareable Type A floor-plan attachment or link, and verify the current 1-carpark Type A package price plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom facts are already verified. Prior results confirmed the illustrative plan exists but did not provide an attachment/link, price, or instalment; return only details you can verify.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this AI-owned lead, return the actual customer-shareable Type A floor-plan attachment or link, and verify the current 1-carpark Type A package price plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom facts are already verified. Prior results confirmed the illustrative plan exists but did not provide an attachment/link, price, or instalment; return only details you can verify.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please provide the actual customer-shareable Type A floor-plan image or link, and verify the current package price for a 1-carpark Type A unit plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Previous results confirmed only that an illustrative plan exists and did not provide the attachment/link, price, or instalment. Do not re-check the already-verified layout specifications.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please provide the actual customer-shareable Type A floor-plan image or link, and verify the current package price for a 1-carpark Type A unit plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Previous results confirmed only that an illustrative plan exists and did not provide the attachment/link, price, or instalment. Do not re-check the already-verified layout specifications.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 11,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Based on the package information dated 14 Aug 2026, indicative effective prices start at around RM302k, depending on the unit’s floor, view and car-park configuration. I’d need to confirm the latest package and exact unit price. Are you looking for 1 or 2 car parks?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Probably 1 car park for us. Is that starting price for the Type A? Also roughly what would the monthly instalment be?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—Type A is the standard Phase 1 layout: 900 sq.ft., 3 bedrooms and 2 bathrooms. The around RM302k figure is an indicative package starting price, but the exact price depends on the unit and current package. Monthly instalment depends on the loan amount, rate and tenure, so I’d need those to work out a rough estimate. What loan tenure are you considering?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Probably 30–35 years, still checking what’s manageable. Our budget is around RM3xxk, and it’s for me, my wife and our young child. Just wondering if 900 sqft would feel a bit tight for us.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "For the three of you, the layout does give 3 bedrooms and 2 bathrooms. The project materials describe all three bedrooms as able to fit a queen-sized bed, with about 405 sq.ft. for the living, dining and kitchen area and no long internal corridor. That said, 900 sq.ft. isn’t huge, and how spacious it feels will depend on furniture and storage. Is your main concern the shared living area, or fitting beds and storage in the bedrooms?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Probably the living area and storage once our kid’s things add up. Could you share the Type A floor plan? And if we assume a 30-year loan, roughly what would the monthly be with the current package?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this customer, retrieve a customer-shareable Type A floor plan and verify the current package price applicable to a 1-carpark unit. Also provide an illustrative 30-year monthly instalment estimate, stating the assumed loan amount or financing percentage, interest rate and any exclusions; do not imply financing approval.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this customer, retrieve a customer-shareable Type A floor plan and verify the current package price applicable to a 1-carpark unit. Also provide an illustrative 30-year monthly instalment estimate, stating the assumed loan amount or financing percentage, interest rate and any exclusions; do not imply financing approval.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic customer-shareable plan fixture; not added to Pearlmont Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this customer, provide a shareable attachment or link to the already-verified Type A floor plan, and verify the current package price for a 1-carpark unit plus an illustrative 30-year monthly instalment. For the estimate, state the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The Type A layout facts are already verified—do not re-check them.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this customer, provide a shareable attachment or link to the already-verified Type A floor plan, and verify the current package price for a 1-carpark unit plus an illustrative 30-year monthly instalment. For the estimate, state the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The Type A layout facts are already verified—do not re-check them.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this customer, verify the current package price for a 1-carpark Type A unit and provide an illustrative 30-year monthly instalment, stating the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Also provide the actual customer-shareable Type A floor-plan attachment or link. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom details are already verified—do not re-check them.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this customer, verify the current package price for a 1-carpark Type A unit and provide an illustrative 30-year monthly instalment, stating the assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Also provide the actual customer-shareable Type A floor-plan attachment or link. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom details are already verified—do not re-check them.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this AI-owned lead, provide the actual customer-shareable Type A floor-plan attachment or link, and verify the current package price applicable to a 1-carpark Type A unit. Also provide an illustrative 30-year monthly instalment with the assumed loan amount or financing percentage, interest rate, and exclusions. The 900 sq.ft., 3-bedroom, 2-bathroom layout facts are already verified; do not re-check them. Return only details you can verify.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this AI-owned lead, provide the actual customer-shareable Type A floor-plan attachment or link, and verify the current package price applicable to a 1-carpark Type A unit. Also provide an illustrative 30-year monthly instalment with the assumed loan amount or financing percentage, interest rate, and exclusions. The 900 sq.ft., 3-bedroom, 2-bathroom layout facts are already verified; do not re-check them. Return only details you can verify.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "For this AI-owned lead, return the actual customer-shareable Type A floor-plan attachment or link, and verify the current 1-carpark Type A package price plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom facts are already verified. Prior results confirmed the illustrative plan exists but did not provide an attachment/link, price, or instalment; return only details you can verify.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "For this AI-owned lead, return the actual customer-shareable Type A floor-plan attachment or link, and verify the current 1-carpark Type A package price plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. The plan’s 900 sq.ft., 3-bedroom, 2-bathroom facts are already verified. Prior results confirmed the illustrative plan exists but did not provide an attachment/link, price, or instalment; return only details you can verify.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please provide the actual customer-shareable Type A floor-plan image or link, and verify the current package price for a 1-carpark Type A unit plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Previous results confirmed only that an illustrative plan exists and did not provide the attachment/link, price, or instalment. Do not re-check the already-verified layout specifications.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please provide the actual customer-shareable Type A floor-plan image or link, and verify the current package price for a 1-carpark Type A unit plus an illustrative 30-year monthly instalment. State the estimate’s assumed loan amount or financing percentage, interest rate, and exclusions; do not imply financing approval. Previous results confirmed only that an illustrative plan exists and did not provide the attachment/link, price, or instalment. Do not re-check the already-verified layout specifications.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 10,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The verified Type A plan is 900 sq.ft., with 3 bedrooms and 2 bathrooms. It’s illustrative, so furniture and storage fit are best judged from the actual layout. I don’t have a shareable plan image or link attached here yet.\n\nFor a rough example only: using RM302k as the earlier indicative starting figure—not a confirmed 1-carpark Type A price—with 90% financing at 4% p.a. over 30 years, repayments would be about RM1,300/month. That excludes fees and insurance; the actual package, rate and loan eligibility need confirmation.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 10,
+      "speaker": "customer",
+      "message": "Thanks, that gives us a rough idea. Since the living area and storage are our main concern, my wife and I would be interested in seeing the Type A layout in person if that’s possible. Do you have weekend viewing slots?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 11,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes, a weekend viewing can be arranged. Since you and your wife want to assess the living area and storage in person, I’ll get the viewing coordination sorted and have the available weekend slots confirmed for you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 11,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 11,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let us know the available weekend slots and we’ll check which one works for both of us.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 12,
+      "speaker": "human",
+      "message": "The simulator fixture indicates Type A viewings may be arranged by appointment on Saturdays or Sundays between 10:00 am and 5:00 pm, subject to gallery confirmation. I can’t verify specific open slots or confirm a booking because the appointment calendar isn’t connected.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 12,
+      "speaker": "customer",
+      "message": "Thanks, that helps. Weekend daytime should be possible, but I’ll check with my wife first. Could you send us the specific slots once the gallery confirms them?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 18,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 19
+}

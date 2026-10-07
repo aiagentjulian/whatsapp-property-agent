@@ -1,0 +1,369 @@
+{
+  "scenario_id": "PEA-002",
+  "title": "Family buyer worried 900 sqft is too small",
+  "convertible": true,
+  "buyer_primary_need": "dry-run",
+  "key_information_learned": [],
+  "important_information_missed": [],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "900 sqft for a family sounds quite small leh."
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please verify the detailed floor-plan layout clarification.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please verify the detailed floor-plan layout clarification.",
+      "result": {
+        "fixture_key": "layout",
+        "verified_answer": "The simulator-only Type A plan overlay gives Bedroom 2 interior dimensions of approximately 3.05m by 3.15m. The mock furniture check fits a 1.5m by 2.0m queen bed, with about 0.75m clear on one side and 0.65m at the foot before wardrobe placement; a full-depth wardrobe opposite the bed would make circulation tight. The plan also shows no long internal corridor. Treat these measurements as this scenario fixture only; viewing the show unit is the practical way to judge the family layout.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Synthetic simulator-only dimensioned Type A plan overlay; the general Type A configuration and no-long-corridor description also appear in knowledge/project/pearlmont/01_facts/unit-and-layout.md. Dimensions and furniture overlay are not added to Pearlmont Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "POSITION",
+      "message": "I checked that for you: The simulator-only Type A plan overlay gives Bedroom 2 interior dimensions of approximately 3.05m by 3.15m. The mock furniture check fits a 1.5m by 2.0m queen bed, with about 0.75m clear on one side and 0.65m at the foot before wardrobe placement; a full-depth wardrobe opposite the bed would make circulation tight. The plan also shows no long internal corridor. Treat these measurements as this scenario fixture only; viewing the show unit is the practical way to judge the family layout. Based on the priorities you mentioned, this gives us a clearer option to assess in person. Would a viewing help you decide?",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, I can consider viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That option seems worth viewing. I can arrange the operational details for you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Yes, can arrange that viewing.",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I’ll check the available simulator fixture and confirm what it establishes.",
+      "action": "NO_ACTION",
+      "sales_work_level": "LOW"
+    }
+  ],
+  "transcript_file": "PEA-002.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, I can consider viewing.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please verify the detailed floor-plan layout clarification."
+    },
+    {
+      "turn": 2,
+      "action": "POSITION",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 2,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 3,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "OPERATIONAL_BOOKING",
+  "human_sales_work_required": "LOW",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 4,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_CONFIRMED",
+  "conversion_attribution": "AI_ASSISTED_HUMAN_CONFIRMATION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": true,
+  "human_merely_completed_logistics": true,
+  "human_rescued_conversion": false,
+  "judge": {
+    "appointment_state": "APPOINTMENT_CONFIRMED",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 2,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 3,
+    "handoff_timing": "APPROPRIATE",
+    "handoff_reason_correct": true,
+    "handoff_quality_score": 5,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "human_handoff_executor_used": true,
+    "appointment_final_state": "APPOINTMENT_CONFIRMED",
+    "conversion_attribution": "AI_ASSISTED_HUMAN_CONFIRMATION",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "sales_work_remaining_at_handoff": "LOW",
+    "human_sales_work_required": "LOW",
+    "human_operational_task_completed": false,
+    "human_operational_task": "OPERATIONAL_BOOKING",
+    "ai_finished_sales_job_before_handoff": true,
+    "human_merely_completed_logistics": true,
+    "human_rescued_conversion": false,
+    "post_handoff_ai_reply_violation": false,
+    "buyer_primary_need": "dry-run",
+    "key_information_learned": [],
+    "important_information_missed": [],
+    "retrieved_knowledge_utilized": true,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "customer_understanding": 3,
+      "latest_message_responsiveness": 3,
+      "qualification_discipline": 3,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 3,
+      "appointment_judgment": 3,
+      "factual_accuracy": 3,
+      "sales_naturalness": 3,
+      "handoff_judgment": 3,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 3,
+      "handoff_timing": 3,
+      "handoff_reason_correctness": 3,
+      "post_handoff_suppression": 3,
+      "conversion_attribution": 3,
+      "useful_information_capture": 3,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 3,
+      "support_request_judgment": 3,
+      "support_result_utilization": 3,
+      "support_resume_quality": 3
+    },
+    "critical_flags": [],
+    "conversion_analysis": {
+      "what_moved_buyer_forward": [],
+      "what_reduced_conversion_probability": [],
+      "where_conversion_was_won_or_lost": "dry-run"
+    },
+    "what_agent_did_well": [],
+    "weak_or_wrong_sales_move": "dry-run",
+    "better_next_move": "dry-run",
+    "missed_buying_signals": [],
+    "unnecessary_qualification": [],
+    "unsupported_factual_claims": [],
+    "retrieval_misses": [],
+    "likely_issue_sources": [],
+    "recommended_improvement": {
+      "category": "none",
+      "target_file": null,
+      "reason": "dry-run"
+    },
+    "remaining_knowledge_gaps": [],
+    "summary": "support-resume and formal handoff transport smoke test",
+    "support_request_count": 1,
+    "support_resolved_count": 1,
+    "missed_selling_opportunity": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "handoff_type": "APPOINTMENT_HANDOFF"
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Please verify the detailed floor-plan layout clarification.",
+      "fixture_key": "layout",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator-only Type A plan overlay gives Bedroom 2 interior dimensions of approximately 3.05m by 3.15m. The mock furniture check fits a 1.5m by 2.0m queen bed, with about 0.75m clear on one side and 0.65m at the foot before wardrobe placement; a full-depth wardrobe opposite the bed would make circulation tight. The plan also shows no long internal corridor. Treat these measurements as this scenario fixture only; viewing the show unit is the practical way to judge the family layout.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "APPOINTMENT_CONFIRMED",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No unit-level availability fixture is supplied.",
+      "Synthetic support fixture 'layout' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "layout": {
+        "verified_answer": "The simulator-only Type A plan overlay gives Bedroom 2 interior dimensions of approximately 3.05m by 3.15m. The mock furniture check fits a 1.5m by 2.0m queen bed, with about 0.75m clear on one side and 0.65m at the foot before wardrobe placement; a full-depth wardrobe opposite the bed would make circulation tight. The plan also shows no long internal corridor. Treat these measurements as this scenario fixture only; viewing the show unit is the practical way to judge the family layout.",
+        "source_note": "Synthetic simulator-only dimensioned Type A plan overlay; the general Type A configuration and no-long-corridor description also appear in knowledge/project/pearlmont/01_facts/unit-and-layout.md. Dimensions and furniture overlay are not added to Pearlmont Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": null,
+  "weakest_ai_move": null,
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": null
+}

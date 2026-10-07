@@ -1,0 +1,328 @@
+{
+  "scenario_id": "PEA-010",
+  "title": "High-intent exact package and weekend viewing",
+  "convertible": true,
+  "buyer_primary_need": "Verify the current package and a supportable price reference, then arrange a Saturday viewing; exact unit-category pricing and slot availability need verification.",
+  "key_information_learned": [
+    "The buyer is highly interested and available to view on Saturday.",
+    "The buyer later accepted Saturday at 11:00 am for himself and his wife.",
+    "The buyer understands RM302,000 is only a starting reference and also wants an exact unit-category breakdown."
+  ],
+  "important_information_missed": [],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify the latest Pearlmont sales package is currently valid and provide the supportable effective starting price or range, including the applicable unit-category conditions. The customer is interested in viewing on Saturday.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify the latest Pearlmont sales package is currently valid and provide the supportable effective starting price or range, including the applicable unit-category conditions. The customer is interested in viewing on Saturday.",
+      "result": {
+        "fixture_key": "weekend_package",
+        "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package validity and viewing slot; no live systems connected.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The current package is valid, with a Type A effective starting reference of RM302,000, subject to the unit category and exact unit confirmation. Saturday at 11:00 am is available, but it isn’t booked yet. Does that time work for you? I’ll get the viewing coordination sorted from here.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Saturday 11am works for me and my wife. Please confirm the slot, and send the exact package/price breakdown for the unit category too, as RM302k is only a starting reference right?",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "The simulator fixture confirms your viewing for Saturday at 11:00 am for you and your wife. The fixture verifies RM302,000 as a Type A starting reference, but not an exact unit-category price breakdown; that remains unverified.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    }
+  ],
+  "transcript_file": "PEA-010.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify the latest Pearlmont sales package is currently valid and provide the supportable effective starting price or range, including the applicable unit-category conditions. The customer is interested in viewing on Saturday."
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 1,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 2,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Confirm the Saturday 11:00 am viewing slot.",
+  "human_sales_work_required": "LOW",
+  "human_operational_task_completed": true,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_CONFIRMED",
+  "conversion_attribution": "HUMAN_LED_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-010",
+    "buyer_primary_need": "Verify the current package and a supportable price reference, then arrange a Saturday viewing; exact unit-category pricing and slot availability need verification.",
+    "key_information_learned": [
+      "The buyer is highly interested and available to view on Saturday.",
+      "The buyer later accepted Saturday at 11:00 am for himself and his wife.",
+      "The buyer understands RM302,000 is only a starting reference and also wants an exact unit-category breakdown."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "APPOINTMENT_CONFIRMED",
+    "appointment_final_state": "APPOINTMENT_CONFIRMED",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 1,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 2,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Confirm the Saturday 11:00 am viewing slot.",
+    "human_sales_work_required": "LOW",
+    "human_operational_task_completed": true,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 4,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 4
+    },
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "strongest_ai_move": "Requested necessary verification for dynamic package validity and a live viewing slot, then resumed as AI owner with the verified starting-price caveat and slot availability. It clearly said the slot was not booked yet and moved directly toward scheduling.",
+    "weakest_ai_move": "The close was concise and effective, but could have tied the viewing more explicitly to comparing the buyer’s unit-category options. This is a minor opportunity, not a readiness or handoff failure.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "Minor: the AI could have framed the viewing as a chance to discuss the exact unit-category breakdown. It appropriately avoided further qualification and handed off for operational booking."
+    ],
+    "commercial_progression": {
+      "evidence": "The buyer opened with a Saturday viewing signal and a request for current price. After support resolved the package and slot uncertainty, the AI provided the Type A starting reference with unit-level caveats, stated Saturday 11:00 am was available but not booked, and asked whether the time worked. The buyer accepted after handoff, and Human confirmed the slot.",
+      "assessment": "Strong progression from verified information to appointment execution; the AI did not claim an unaccepted slot was already booked."
+    },
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "No exact unit-category price breakdown was verified; no specific unit/category was selected."
+    ],
+    "critical_flags": [],
+    "summary": "The AI successfully used Human Support as an internal factual/operational loop rather than a sales handoff: it requested needed verification, received the simulator-only verified fixture, resumed naturally with a qualified price reference and unbooked slot, and moved the high-intent buyer to appointment-ready status before handing off for booking. The buyer then accepted and Human confirmed the slot. This is an AI_APPOINTMENT_HANDOFF_SUCCESS, not a direct AI appointment confirmation. The fixture-backed package and slot are simulator-only evidence, not Pearlmont Knowledge or evidence of a real live-system connection. Overall, this run supports the conclusion that the AI can use reliable support answers to continue selling and move a suitable buyer toward appointment readiness.",
+    "improvement_recommendation": "Keep the same low-friction sequence: verify dynamic facts when needed, clearly distinguish a starting reference from exact unit pricing and an available slot from a booked appointment, then invite the buyer to proceed. A brief buyer-specific link between viewing and reviewing suitable unit categories could make the close stronger without delaying handoff.",
+    "conversion_attribution": "HUMAN_LED_CONVERSION",
+    "support_request_count": 1,
+    "support_resolved_count": 1,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Verify the latest Pearlmont sales package is currently valid and provide the supportable effective starting price or range, including the applicable unit-category conditions. The customer is interested in viewing on Saturday.",
+      "fixture_key": "weekend_package",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "APPOINTMENT_CONFIRMED",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
+    "specific_verified_facts": [
+      "SIMULATOR-ONLY appointment fixture: Saturday 11:00 is available for this scenario. Use current Knowledge source wording for package mechanics; no exact unit-specific price is verified."
+    ],
+    "appointment_slots": {
+      "Saturday 11:00": "AVAILABLE_SIMULATOR_FIXTURE"
+    },
+    "unit_price": "NOT_VERIFIED",
+    "support_fixtures": {
+      "weekend_package": {
+        "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package validity and viewing slot; no live systems connected."
+      }
+    }
+  },
+  "strongest_ai_move": "Requested necessary verification for dynamic package validity and a live viewing slot, then resumed as AI owner with the verified starting-price caveat and slot availability. It clearly said the slot was not booked yet and moved directly toward scheduling.",
+  "weakest_ai_move": "The close was concise and effective, but could have tied the viewing more explicitly to comparing the buyer’s unit-category options. This is a minor opportunity, not a readiness or handoff failure.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "Minor: the AI could have framed the viewing as a chance to discuss the exact unit-category breakdown. It appropriately avoided further qualification and handed off for operational booking."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "Keep the same low-friction sequence: verify dynamic facts when needed, clearly distinguish a starting reference from exact unit pricing and an available slot from a booked appointment, then invite the buyer to proceed. A brief buyer-specific link between viewing and reviewing suitable unit categories could make the close stronger without delaying handoff."
+}

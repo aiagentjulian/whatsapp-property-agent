@@ -1,0 +1,443 @@
+{
+  "scenario_id": "PEA-005",
+  "title": "LPPSA government servant",
+  "convertible": true,
+  "buyer_primary_need": "Confirm whether Pearlmont Phase 1 accepts LPPSA and understand what project information and personal eligibility checks are needed, without receiving an approval guarantee.",
+  "key_information_learned": [
+    "The buyer is a permanent government employee with about six years of service and would be using LPPSA for the first time.",
+    "The buyer has not set a budget and is checking the financing route before deciding on one.",
+    "The buyer understands that LPPSA, not the project team, assesses individual eligibility and approval.",
+    "The buyer asks for current unit categories and a price schedule to take to LPPSA."
+  ],
+  "important_information_missed": [
+    "No budget or preferred unit category was established before the mandatory human transfer; the buyer said they had not set a budget.",
+    "The requested current unit categories and price schedule were not supplied in the recorded human response."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "As a government servant, LPPSA may be an option, but I can’t confirm approval from that alone—LPPSA assesses each applicant under its terms. The supplied reference, effective 4 October 2026, states financing up to RM1 million; if your first LPPSA financing is still active, a second may be allowed without fully settling it, with up to 90% financing. It lists 4.00% up to RM750,000 and 4.50% only on the portion above that. These aren’t guaranteed terms for an individual application. Do you already have an active LPPSA financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No, first time using LPPSA. I’m a permanent government staff, been in service about 6 years. Can someone confirm whether this project and my situation are suitable for LPPSA?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify whether SkyWorld Pearlmont Phase 1 is eligible for LPPSA financing, and whether there are any project-specific conditions or documents relevant to an applicant using LPPSA for the first time. Do not determine or guarantee the customer's personal eligibility or approval; confirm the appropriate route for an individual assessment.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify whether SkyWorld Pearlmont Phase 1 is eligible for LPPSA financing, and whether there are any project-specific conditions or documents relevant to an applicant using LPPSA for the first time. Do not determine or guarantee the customer's personal eligibility or approval; confirm the appropriate route for an individual assessment.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—Pearlmont Phase 1 accepts LPPSA applications from eligible applicants, so the project is compatible with the LPPSA route. Your permanent government employment and six years of service are useful context, but only LPPSA can assess your personal eligibility and approval. Since this would be your first LPPSA financing, the note about an already-active first facility doesn’t apply. To start the project-side process, you’d need to select a unit/category and use its current price schedule. Do you have a budget range in mind so I can help narrow the category?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "I haven’t set a budget yet—I’d like to confirm the LPPSA route first. Could someone from your team verify that Pearlmont currently accepts LPPSA and explain what documents or project details I’d need to check with LPPSA? I understand approval itself depends on their assessment.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "MANDATORY_HANDOFF",
+      "message": "Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. To start the project-side process, you’ll need a selected unit/category and its current price schedule; LPPSA can confirm your personal document checklist and eligibility. Approval isn’t guaranteed. I’ll have a team member follow up to go through this with you.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please have them confirm that Pearlmont currently accepts LPPSA and explain which project details I should take to LPPSA. I haven’t set a budget yet, so I’m just checking the financing route first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. To discuss the project with LPPSA, the project-side details to have are your selected unit/category and its current price schedule. LPPSA determines your personal eligibility and applicant-document checklist, so those aren’t verified here; approval isn’t guaranteed.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks, that helps. Could you send me the current unit categories and price schedule when available? I can take those details to LPPSA to check the financing route before deciding on a budget.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-005.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No, first time using LPPSA. I’m a permanent government staff, been in service about 6 years. Can someone confirm whether this project and my situation are suitable for LPPSA?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "No, first time using LPPSA. I’m a permanent government staff, been in service about 6 years. Can someone confirm whether this project and my situation are suitable for LPPSA?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "I haven’t set a budget yet—I’d like to confirm the LPPSA route first. Could someone from your team verify that Pearlmont currently accepts LPPSA and explain what documents or project details I’d need to check with LPPSA? I understand approval itself depends on their assessment.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify whether SkyWorld Pearlmont Phase 1 is eligible for LPPSA financing, and whether there are any project-specific conditions or documents relevant to an applicant using LPPSA for the first time. Do not determine or guarantee the customer's personal eligibility or approval; confirm the appropriate route for an individual assessment."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "MANDATORY_HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "EXPLICIT_HUMAN_REQUEST",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+  "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+  "handoff_turn": 4,
+  "handoff_timing": "TOO_EARLY",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "MANDATORY_OPERATIONAL_HANDOFF",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Respond to the buyer's explicit request for human confirmation of the LPPSA route and explanation of project details to check with LPPSA.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "MEDIUM",
+  "ai_handoff_too_early": true,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Confirm whether Pearlmont Phase 1 accepts LPPSA and understand what project information and personal eligibility checks are needed, without receiving an approval guarantee.",
+    "key_information_learned": [
+      "The buyer is a permanent government employee with about six years of service and would be using LPPSA for the first time.",
+      "The buyer has not set a budget and is checking the financing route before deciding on one.",
+      "The buyer understands that LPPSA, not the project team, assesses individual eligibility and approval.",
+      "The buyer asks for current unit categories and a price schedule to take to LPPSA."
+    ],
+    "important_information_missed": [
+      "No budget or preferred unit category was established before the mandatory human transfer; the buyer said they had not set a budget.",
+      "The requested current unit categories and price schedule were not supplied in the recorded human response."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+    "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+    "handoff_turn": 4,
+    "handoff_timing": "TOO_EARLY",
+    "sales_work_remaining_at_handoff": "MEDIUM",
+    "ai_outcome": "MANDATORY_OPERATIONAL_HANDOFF",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Respond to the buyer's explicit request for human confirmation of the LPPSA route and explanation of project details to check with LPPSA.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression": "After using the verified route answer, the AI connected it to the buyer's first-time LPPSA situation, clarified who determines personal eligibility and documents, explained the project-side starting requirements, and asked about budget to narrow the category. The buyer had not set a budget and expressed no viewing intent before making an explicit request for a team member.",
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 3,
+      "buying_signal_detection": 4,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 5,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 5
+    },
+    "strongest_ai_move": "The AI requested needed project-specific verification while retaining ownership, then used the resolved answer in customer-facing language. It distinguished project route acceptance from individual eligibility and approval, applied the first-time-financing clarification, and continued with a relevant budget question.",
+    "weakest_ai_move": "After the buyer explicitly requested a team member, the AI appropriately made a mandatory operational handoff rather than continuing sales. The conversation did not progress to unit selection or viewing intent before that transfer; this was not an appointment-readiness miss.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "No clear appointment-ready signal was missed. The AI could not yet connect the buyer to a unit category because the buyer had no budget and remained focused on confirming the financing route."
+    ],
+    "retrieval_misses": [
+      "The retrieved LPPSA material covered published reference terms and cautioned against guaranteeing eligibility, but did not establish Pearlmont Phase 1 route acceptance or the project-side checklist. The AI correctly sought operational verification for those missing facts."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "Current unit categories and price schedule were not provided in the transcript.",
+      "The buyer's individual LPPSA eligibility, personal document checklist, and approval remain for LPPSA to assess."
+    ],
+    "critical_flags": [],
+    "summary": "The AI appropriately used Human Support for a project-specific fact not established by retrieved Knowledge, resumed naturally, contextualized the answer, and continued qualifying without promising personal eligibility or approval. The buyer was not appointment ready: they had no budget, stated no viewing intent, and were still checking the financing route. The turn-4 transfer was a valid MANDATORY_OPERATIONAL_HANDOFF in response to an explicit human request, not a premature appointment handoff. The human response addressed the route and project-side details, but the trace marks the operational task incomplete; the later request for current categories and pricing was not fulfilled in the recorded exchange. Primary question: this run shows the AI can use a correct support answer to continue selling responsibly, but it does not demonstrate movement of a suitable buyer to Appointment Ready because the buyer remained focused on financing-route confirmation and requested a human. The project route and checklist answer was SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE evidence only, not Pearlmont factual Knowledge or evidence of a real live-system connection.",
+    "improvement_recommendation": "When the buyer is ready to continue after route clarification, offer the current unit-category and price schedule if available, then use the buyer's reaction to assess budget fit and whether a viewing is appropriate. For any unverified current operational details, rely on explicit verification rather than inferring them from Knowledge. Source target: MISSING_SOURCE; do not treat simulator fixtures as Knowledge.",
+    "executive_summary": "The AI handled the support loop well: it requested needed verification, retained ownership, used the answer naturally, and continued with a relevant sales question. Appointment readiness was not reached, and the subsequent transfer was mandatory because the buyer explicitly asked for a human—not an appointment handoff. This run supports responsible support-enabled selling but does not establish that the AI reliably moves suitable buyers to Appointment Ready.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 1,
+    "support_resolved_count": 1,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Verify whether SkyWorld Pearlmont Phase 1 is eligible for LPPSA financing, and whether there are any project-specific conditions or documents relevant to an applicant using LPPSA for the first time. Do not determine or guarantee the customer's personal eligibility or approval; confirm the appropriate route for an individual assessment.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
+    "specific_verified_facts": [
+      "Use the supplied LPPSA source for published reference terms only; individual eligibility remains unverified.",
+      "Synthetic support fixture 'lppsa' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability.",
+      "Synthetic LPPSA support fixture confirms project route acceptance for eligible applicants only; it does not establish individual eligibility or approval."
+    ],
+    "eligibility": "NOT_CONNECTED",
+    "support_fixtures": {
+      "lppsa": {
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA."
+      },
+      "lppsa_pricing": {
+        "verified_answer": "For this scenario, the synthetic current package fixture lists Type A starting from RM302,000 after the stated package, subject to eligible unit category and unit-level confirmation. The 14 August 2026 package is superseded in this simulation. This is not a unit-specific quote or availability confirmation.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package clarification added to support the scenario test; not Pearlmont Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "The AI requested needed project-specific verification while retaining ownership, then used the resolved answer in customer-facing language. It distinguished project route acceptance from individual eligibility and approval, applied the first-time-financing clarification, and continued with a relevant budget question.",
+  "weakest_ai_move": "After the buyer explicitly requested a team member, the AI appropriately made a mandatory operational handoff rather than continuing sales. The conversation did not progress to unit selection or viewing intent before that transfer; this was not an appointment-readiness miss.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "No clear appointment-ready signal was missed. The AI could not yet connect the buyer to a unit category because the buyer had no budget and remained focused on confirming the financing route."
+  ],
+  "retrieval_misses": [
+    "The retrieved LPPSA material covered published reference terms and cautioned against guaranteeing eligibility, but did not establish Pearlmont Phase 1 route acceptance or the project-side checklist. The AI correctly sought operational verification for those missing facts."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "When the buyer is ready to continue after route clarification, offer the current unit-category and price schedule if available, then use the buyer's reaction to assess budget fit and whether a viewing is appropriate. For any unverified current operational details, rely on explicit verification rather than inferring them from Knowledge. Source target: MISSING_SOURCE; do not treat simulator fixtures as Knowledge."
+}

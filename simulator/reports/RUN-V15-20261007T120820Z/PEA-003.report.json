@@ -1,0 +1,439 @@
+{
+  "scenario_id": "PEA-003",
+  "title": "Two-car household",
+  "convertible": true,
+  "buyer_primary_need": "Find an option with two car parks and a sea-facing orientation, with exact floor/unit suitability and availability verified.",
+  "key_information_learned": [
+    "The simulator-only support fixture verified Type A Sea View, Block 1C south-facing, Level 18, unit 1C-18-06, with two car parks and a fixture package total of RM418,000.",
+    "The buyer said the option sounded close and would be keen to view if the unit, car parks, and orientation were confirmed.",
+    "The buyer preferred a weekend viewing and had not booked a time."
+  ],
+  "important_information_missed": [
+    "The Agent did not connect the verified option to the buyer’s two-car and sea-facing priorities or explain why viewing would help assess the fit.",
+    "No viewing slot was confirmed; the buyer remained interested in a weekend slot."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify which specific floors/stacks in the sea-facing sides of Blocks 1C and 1D have 2-carpark allocations. Do not check or claim current availability unless separately confirmed.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify which specific floors/stacks in the sea-facing sides of Blocks 1C and 1D have 2-carpark allocations. Do not check or claim current availability unless separately confirmed.",
+      "result": {
+        "fixture_key": "two_carpark",
+        "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; category/facing context aligns with knowledge/project/pearlmont/02_commercial/sales-package.md. Unit number, exact availability, and fixture package are not Pearlmont Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I found a matching Type A Sea View option in Block 1C: south-facing, Level 18 (unit 1C-18-06), with 2 car parks. The package total for this option is RM418,000.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "That sounds close to what I’m looking for. Can you verify 1C-18-06 is still available and that the 2 carparks and sea-facing orientation are confirmed for that unit? If yes, I’d be keen to view it.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes—1C-18-06 is available, with the south-facing sea orientation and 2 car parks confirmed. I’ll get the viewing coordination sorted from here.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Great, thanks for confirming. What viewing slots do you have this week? Weekend would be easiest for me.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I can’t verify this week’s viewing slots, including weekend availability, because no appointment-slot information is connected here. No viewing time is confirmed.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, could you check with the team and let me know if there’s a weekend slot? I haven’t booked anything yet.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-003.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "That sounds close to what I’m looking for. Can you verify 1C-18-06 is still available and that the 2 carparks and sea-facing orientation are confirmed for that unit? If yes, I’d be keen to view it.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify which specific floors/stacks in the sea-facing sides of Blocks 1C and 1D have 2-carpark allocations. Do not check or claim current availability unless separately confirmed."
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 3,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 3,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "VERIFY_SLOT",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 4,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-003",
+    "buyer_primary_need": "Find an option with two car parks and a sea-facing orientation, with exact floor/unit suitability and availability verified.",
+    "key_information_learned": [
+      "The simulator-only support fixture verified Type A Sea View, Block 1C south-facing, Level 18, unit 1C-18-06, with two car parks and a fixture package total of RM418,000.",
+      "The buyer said the option sounded close and would be keen to view if the unit, car parks, and orientation were confirmed.",
+      "The buyer preferred a weekend viewing and had not booked a time."
+    ],
+    "important_information_missed": [
+      "The Agent did not connect the verified option to the buyer’s two-car and sea-facing priorities or explain why viewing would help assess the fit.",
+      "No viewing slot was confirmed; the buyer remained interested in a weekend slot."
+    ],
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 3,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 3,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "VERIFY_SLOT",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 0,
+    "support_results_used": true,
+    "support_result_only_relayed": true,
+    "failed_to_resume_selling": true,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [
+      "SUPPORT_RESULT_ONLY_RELAYED",
+      "FAILED_TO_RESUME_SELLING"
+    ],
+    "scores": {
+      "customer_understanding": 4,
+      "latest_message_responsiveness": 4,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 3,
+      "objection_handling": 3,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 4,
+      "factual_accuracy": 5,
+      "sales_naturalness": 2,
+      "handoff_judgment": 5,
+      "commercial_progression": 3,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 3,
+      "retrieved_knowledge_utilization": 2,
+      "support_request_judgment": 5,
+      "support_result_utilization": 2,
+      "support_resume_quality": 1
+    },
+    "strongest_ai_move": "Requested operational verification rather than inventing a unit allocation, then stated the fixture-backed option and recognized appointment execution as the remaining operational task once the buyer expressed viewing intent.",
+    "weakest_ai_move": "After receiving the answer, the Agent mostly relayed it. It did not contextualize the match to the buyer’s priorities or continue selling with a buyer-centered viewing rationale before handoff.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "After the buyer said the option was close and they would be keen to view if confirmed, the Agent could have briefly connected the verified two-car, sea-facing option to those stated needs and framed viewing as the next useful step. The buyer then independently showed readiness, so this omission did not prevent appropriate handoff."
+    ],
+    "retrieval_misses": [
+      "The retrieved unit-and-layout source says exact unit-number-to-facing mapping requires the latest orientation schedule; no such schedule was retrieved. The support fixture supplied a scenario-specific answer instead."
+    ],
+    "retrieved_knowledge_not_used": [
+      {
+        "source": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "evidence": "The guide advises reducing generic qualification when buyers ask about specific floor/view/carpark combinations and moving toward a suitable category and viewing."
+      },
+      {
+        "source": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "evidence": "The guide recommends connecting a viewing to the buyer’s unresolved decision point. The Agent did not articulate that connection."
+      }
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The human executor could not verify this week’s or weekend viewing slots; no slot was confirmed.",
+      "The exact unit and package details came from a simulator-only support fixture, not retrieved Pearlmont Knowledge or a live production inventory connection."
+    ],
+    "commercial_progression_evidence": [
+      {
+        "turn": 1,
+        "evidence": "The AI requested verification of specific sea-facing floors/stacks with two-carpark allocations; support resolved the request while owner remained AI and AI remained active."
+      },
+      {
+        "turn": 2,
+        "evidence": "The Agent communicated the fixture-backed unit, facing, level, car parks, and package total, but did not add buyer-specific sales context or a viewing progression."
+      },
+      {
+        "turn": 3,
+        "evidence": "After the buyer expressed conditional willingness to view and the Agent confirmed the requested details, it handed off for operational viewing coordination."
+      },
+      {
+        "turn": 4,
+        "evidence": "The human executor reported that slots were not connected and no viewing time was confirmed. This is an incomplete operational task, not remaining AI sales work."
+      }
+    ],
+    "critical_flags": [
+      {
+        "flag": "FAILED_TO_RESUME_SELLING",
+        "evidence": "Following the resolved support request, the Agent relayed the result but did not contextualize it to the buyer’s needs or continue useful selling before the buyer supplied the viewing intent.",
+        "turn": 2
+      }
+    ],
+    "summary": "The support request was justified: retrieved Knowledge described general facing information but not the exact unit-level, two-carpark combination, and the request stayed internal with AI ownership active. The simulator-only synthetic verified fixture supported the stated unit, availability, and package facts; these are scenario evidence, not Pearlmont Knowledge or proof of live-system capability. The Agent relayed those facts without meaningful sales judgment or a natural selling continuation, so support utilization and resumption were weak. The buyer nevertheless stated they would be keen to view if the details were confirmed, making the Agent READY_FOR_APPOINTMENT at handoff. The appointment handoff was timely and appropriate, with only operational coordination remaining. No specific viewing time was confirmed because the human executor could not verify slots. Direct answer to the primary question: this run shows that support can provide a correct answer, but does not demonstrate reliable AI use of that answer to continue selling; the buyer, rather than the AI’s post-support selling, drove the progression to readiness.",
+    "improvement_recommendation": "After communicating a verified support result, add a concise buyer-specific bridge: explain how the option matches the stated priorities, then test or progress viewing intent. Preserve the correct boundary between appointment readiness and operational scheduling, and do not imply that a slot is confirmed until verified.",
+    "reporting_notes": {
+      "simulator_only_evidence": "The unit number, availability, and RM418,000 package total were supplied by the SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE for this run. They are not Pearlmont factual Knowledge or a claim of real-world inventory capability.",
+      "appointment_confirmation": "No specific available time was proposed and explicitly accepted; appointment confirmation was not achieved."
+    },
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 1,
+    "support_resolved_count": 1,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.5",
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Verify which specific floors/stacks in the sea-facing sides of Blocks 1C and 1D have 2-carpark allocations. Do not check or claim current availability unless separately confirmed.",
+      "fixture_key": "two_carpark",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 0,
+  "support_results_used": true,
+  "support_result_only_relayed": true,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [
+    "SUPPORT_RESULT_ONLY_RELAYED",
+    "FAILED_TO_RESUME_SELLING"
+  ],
+  "final_appointment_state": "APPOINTMENT_IN_PROGRESS",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No live unit inventory or unit-number schedule fixture is supplied.",
+      "Synthetic support fixture 'two_carpark' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "unit_availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "two_carpark": {
+        "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; category/facing context aligns with knowledge/project/pearlmont/02_commercial/sales-package.md. Unit number, exact availability, and fixture package are not Pearlmont Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "Requested operational verification rather than inventing a unit allocation, then stated the fixture-backed option and recognized appointment execution as the remaining operational task once the buyer expressed viewing intent.",
+  "weakest_ai_move": "After receiving the answer, the Agent mostly relayed it. It did not contextualize the match to the buyer’s priorities or continue selling with a buyer-centered viewing rationale before handoff.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "After the buyer said the option was close and they would be keen to view if confirmed, the Agent could have briefly connected the verified two-car, sea-facing option to those stated needs and framed viewing as the next useful step. The buyer then independently showed readiness, so this omission did not prevent appropriate handoff."
+  ],
+  "retrieval_misses": [
+    "The retrieved unit-and-layout source says exact unit-number-to-facing mapping requires the latest orientation schedule; no such schedule was retrieved. The support fixture supplied a scenario-specific answer instead."
+  ],
+  "retrieved_knowledge_not_used": [
+    {
+      "source": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+      "evidence": "The guide advises reducing generic qualification when buyers ask about specific floor/view/carpark combinations and moving toward a suitable category and viewing."
+    },
+    {
+      "source": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+      "evidence": "The guide recommends connecting a viewing to the buyer’s unresolved decision point. The Agent did not articulate that connection."
+    }
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "After communicating a verified support result, add a concise buyer-specific bridge: explain how the option matches the stated priorities, then test or progress viewing intent. Preserve the correct boundary between appointment readiness and operational scheduling, and do not imply that a slot is confirmed until verified."
+}
