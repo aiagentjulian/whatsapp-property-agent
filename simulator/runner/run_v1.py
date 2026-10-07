@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Small multi-role Pearlmont simulator. Uses only stdlib plus OpenAI Responses API."""
 from __future__ import annotations
-import argparse, datetime as dt, hashlib, json, os, re, sys, time, urllib.error, urllib.request
+import argparse, datetime as dt, hashlib, json, os, re, subprocess, sys, tempfile, time, urllib.error, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -49,26 +49,203 @@ def normalize_appointment_state(value):
     if "VIEWING_SUGGESTED" in s or "SUGGESTED" in s: return "VIEWING_SUGGESTED"
     return "NO_VIEWING_INTENT"
 
+from provider_schemas import JUDGE_SCHEMA_REQUIRED, LEAD_CONTEXT_FIELDS, ROLE_SCHEMAS
+
+class ProviderError(RuntimeError):
+    def __init__(self,kind,message):
+        super().__init__(message); self.kind=kind
+
+def validate_schema(value,schema,path="$",errors=None):
+    errors=[] if errors is None else errors
+    if "anyOf" in schema:
+        if not any(not validate_schema(value,variant,path,[]) for variant in schema["anyOf"]): errors.append(f"{path}: no anyOf schema matched")
+        return errors
+    expected=schema.get("type")
+    matches={"object":lambda x:isinstance(x,dict),"array":lambda x:isinstance(x,list),"string":lambda x:isinstance(x,str),"boolean":lambda x:isinstance(x,bool),"integer":lambda x:isinstance(x,int) and not isinstance(x,bool),"number":lambda x:isinstance(x,(int,float)) and not isinstance(x,bool),"null":lambda x:x is None}
+    expected_types=expected if isinstance(expected,list) else [expected] if expected else []
+    if expected_types and not any(matches[t](value) for t in expected_types):
+        errors.append(f"{path}: expected {' or '.join(expected_types)}")
+        return errors
+    if "enum" in schema and value not in schema["enum"]: errors.append(f"{path}: value is outside the allowed enum")
+    if isinstance(value,dict):
+        for key in schema.get("required",[]):
+            if key not in value: errors.append(f"{path}: missing required field {key}")
+        props=schema.get("properties",{})
+        for key,item in value.items():
+            if key in props: validate_schema(item,props[key],f"{path}.{key}",errors)
+            elif schema.get("additionalProperties") is False: errors.append(f"{path}: unexpected field {key}")
+    if isinstance(value,list) and "items" in schema:
+        for index,item in enumerate(value): validate_schema(item,schema["items"],f"{path}[{index}]",errors)
+    if isinstance(value,int) and not isinstance(value,bool):
+        if "minimum" in schema and value<schema["minimum"]: errors.append(f"{path}: below minimum")
+        if "maximum" in schema and value>schema["maximum"]: errors.append(f"{path}: above maximum")
+    return errors
+
+def redact_error(text):
+    cleaned=re.sub(r"(?i)(bearer\s+)[A-Za-z0-9._-]+",r"\1[redacted]",str(text))
+    return cleaned[-1600:]
+
+def classify_failure(text,default="CLI_EXIT"):
+    low=str(text).lower()
+    if "unexpected argument" in low or "usage: codex exec" in low: return "CLI_CONFIGURATION"
+    if any(x in low for x in ("usage limit", "usage exhausted", "usage_limit_reached", "quota exceeded", "current quota", "insufficient_quota", "billing hard limit", "credits exhausted", "out of credits")): return "USAGE_EXHAUSTED"
+    if any(x in low for x in ("rate limit", "rate_limit_exceeded", "too many requests", "status 429", "http 429")): return "RATE_LIMIT"
+    if any(x in low for x in ("not supported when using codex", "model not found", "unknown model", "unsupported model")): return "MODEL_UNAVAILABLE"
+    if any(x in low for x in ("unauthorized", "authentication failed", "invalid api key", "token expired", "status 401", "http 401")): return "AUTHENTICATION"
+    if any(x in low for x in ("schema", "structured output", "json schema")): return "SCHEMA_FAILURE"
+    return default
+
 class Provider:
-    def __init__(self,dry=False): self.dry=dry; self.calls=0; self.retries=[]
-    def ask(self,role,system,user):
-        self.calls+=1
-        if self.dry:
-            if role=="sales_agent": return json.dumps({"action":"ANSWER","message":"Thanks for asking. I can help check the current details for you.","lead_context":{}})
-            if role=="customer_simulator": return json.dumps({"message":"Okay, thanks.","done":True,"appointment_state":"NO_VIEWING_INTENT","final_intent":"low"})
-            return json.dumps({"appointment_state":"NO_VIEWING_INTENT","scenario_success":True,"good_judgment":True,"final_lead_intent":"low","scores":{k:3 for k in DIMENSIONS},"critical_flags":[],"conversion_analysis":{"what_moved_buyer_forward":[],"what_reduced_conversion_probability":[],"where_conversion_was_won_or_lost":"dry-run"},"what_agent_did_well":[],"weak_or_wrong_sales_move":"dry-run","better_next_move":"dry-run","close_timing":"not_applicable","missed_buying_signals":[],"unnecessary_qualification":[],"unsupported_factual_claims":[],"retrieval_misses":[],"likely_issue_sources":[],"recommended_improvement":{"category":"none","target_file":None,"reason":"dry-run"},"summary":"transport smoke test"})
+    def __init__(self,dry=False):
+        self.dry=dry; self.name=CONFIG.get("provider","codex_cli"); self.calls=0; self.logical_requests=0; self.retries=[]; self.call_records=[]; self.calls_by_role={}; self.blocking_error=None; self.scenario_id=None
+        if self.name not in ("codex_cli","openai_api"): raise ProviderError("CONFIGURATION",f"unsupported simulator provider: {self.name}")
+        self.settings=CONFIG.get("provider_settings",{}).get(self.name,{})
+
+    def schema(self,role):
+        if role not in ROLE_SCHEMAS: raise ProviderError("CONFIGURATION",f"unsupported simulator role: {role}")
+        return ROLE_SCHEMAS[role]
+
+    def snapshot(self): return {"calls":len(self.call_records),"retries":len(self.retries),"logical_requests":self.logical_requests}
+
+    def usage_summary(self,records):
+        keys=("input_tokens","output_tokens","cached_tokens","total_tokens")
+        available=[r.get("usage") for r in records if r.get("usage")]
+        exact={k:sum(int(u[k]) for u in available if isinstance(u.get(k),int)) if any(isinstance(u.get(k),int) for u in available) else None for k in keys}
+        exact["reported_call_count"]=len(available); exact["total_model_call_count"]=len(records)
+        exact["complete_for_all_calls"]=bool(records) and len(available)==len(records) and all(isinstance(u.get("input_tokens"),int) and isinstance(u.get("output_tokens"),int) for u in available)
+        if exact["complete_for_all_calls"]: exact["total_tokens"]=exact["input_tokens"]+exact["output_tokens"]
+        else: exact["total_tokens"]=None
+        return exact
+
+    def metrics_since(self,snapshot,duration_seconds=None):
+        records=self.call_records[snapshot["calls"]:]; retries=self.retries[snapshot["retries"]:]; roles={}
+        for record in records: roles[record["role"]]=roles.get(record["role"],0)+1
+        result={"provider":self.name,"model_config":CONFIG["models"],"number_of_model_calls":len(records),"logical_requests":self.logical_requests-snapshot["logical_requests"],"calls_by_role":roles,"retry_count":len(retries),"retries":retries,"usage":self.usage_summary(records)}
+        if duration_seconds is not None: result["scenario_duration_seconds"]=round(duration_seconds,3)
+        return result
+
+    def _fake_response(self,role,system,user):
+        if role=="sales_agent": return json.dumps({"action":"ANSWER","message":"Thanks for asking. I can help check the current details for you.","support_request":None,"support_context":None,"lead_context":{},"assessment":{"appointment_readiness":"NOT_READY","handoff_state":"NO_HANDOFF","handoff_reason":None}})
+        if role=="customer_simulator": return json.dumps({"message":"Okay, thanks.","done":True,"appointment_state":"NO_VIEWING_INTENT","final_intent":"low"})
+        if role=="human_handoff_executor": return json.dumps({"message":"I’ll check the available simulator fixture and confirm what it establishes.","operational_action":"NO_ACTION","sales_work_level":"LOW","operational_task_completed":False,"appointment_state":"NO_VIEWING_INTENT"})
+        return json.dumps({"appointment_state":"NO_VIEWING_INTENT","appointment_readiness_final":"NOT_READY","ready_for_appointment":False,"first_ready_turn":None,"readiness_detection_correct":True,"readiness_state_at_handoff":"NOT_READY","handoff_timing":"NOT_NEEDED","sales_work_remaining_at_handoff":"NONE","ai_outcome":"AI_PROGRESS_BUT_NOT_READY","support_resume_success_count":0,"support_results_used":False,"support_result_only_relayed":False,"failed_to_resume_selling":False,"appointment_ready_after_support":False,"support_failure_modes":[],"critical_flags":[],"summary":"transport smoke test","scores":{k:3 for k in ROLE_SCHEMAS["judge"]["properties"]["scores"]["required"]}})
+
+    def _schema_default(self,schema):
+        if "anyOf" in schema:
+            null_branch=next((branch for branch in schema["anyOf"] if branch.get("type")=="null"),None)
+            if null_branch: return None
+            for branch in schema["anyOf"]:
+                if branch.get("type")!="null": return self._schema_default(branch)
+            return None
+        kind=schema.get("type")
+        if kind=="object": return {key:self._schema_default(value) for key,value in schema.get("properties",{}).items()}
+        if kind=="array": return []
+        if kind=="boolean": return False
+        if kind=="integer" or kind=="number": return 0
+        if kind=="null": return None
+        if kind=="string": return schema.get("enum",[""])[0]
+        return None
+
+    def _complete_fake_response(self,role,payload):
+        def complete(value,schema):
+            if "anyOf" in schema:
+                if value is None: return None
+                branch=next((item for item in schema["anyOf"] if item.get("type")=="object"),None)
+                return complete(value,branch) if branch else value
+            if schema.get("type")=="object" and isinstance(value,dict):
+                props=schema.get("properties",{})
+                for key,child in props.items():
+                    if key not in value: value[key]=self._schema_default(child)
+                    else: value[key]=complete(value[key],child)
+            if schema.get("type")=="array" and isinstance(value,list) and "items" in schema:
+                return [complete(item,schema["items"]) for item in value]
+            return value
+        return complete(payload,self.schema(role))
+
+    def _role_system(self,role,system):
+        if role=="sales_agent":
+            return system+"\n\nFor lead_context, return the complete Lead Profile object defined by the structured schema. Carry forward known values from the supplied lead context and conversation; use null for unknown fields, and do not infer facts the customer did not state."
+        return system
+
+    def _codex_response(self,role,system,user):
+        cfg=CONFIG["models"][role]; command=self.settings.get("command","codex"); timeout=float(self.settings.get("timeout_seconds",180)); prompt="You are a JSON-only simulator role. Do not use tools or run commands. Follow the role instructions and input below, then return exactly one JSON object matching the required schema.\n\nROLE INSTRUCTIONS:\n"+self._role_system(role,system)+"\n\nINPUT:\n"+user
+        with tempfile.TemporaryDirectory(prefix="pearlmont-codex-cli-") as tmp:
+            schema_path=Path(tmp)/"output.schema.json"; output_path=Path(tmp)/"output.json"
+            schema_path.write_text(json.dumps(self.schema(role),ensure_ascii=False))
+            args=[command,"--ask-for-approval","never","exec","--ephemeral","--model",cfg["model"],"-c",f"model_reasoning_effort={cfg['reasoning']}","--sandbox","read-only","--output-schema",str(schema_path),"--output-last-message",str(output_path),"--json","-"]
+            env=os.environ.copy(); env.pop("OPENAI_API_KEY",None)
+            try: proc=subprocess.run(args,input=prompt,text=True,capture_output=True,timeout=timeout,cwd=ROOT,env=env)
+            except subprocess.TimeoutExpired as e: raise ProviderError("TIMEOUT",f"Codex CLI exceeded {timeout:g}s timeout") from e
+            except FileNotFoundError as e: raise ProviderError("CLI_UNAVAILABLE",f"Codex CLI executable not found: {command}") from e
+            events=[]
+            for line in proc.stdout.splitlines():
+                try:
+                    event=json.loads(line)
+                    if isinstance(event,dict): events.append(event)
+                except json.JSONDecodeError: pass
+            usage={}
+            for event in events:
+                if event.get("type")=="turn.completed" and isinstance(event.get("usage"),dict):
+                    raw=event["usage"]; usage={"input_tokens":raw.get("input_tokens"),"output_tokens":raw.get("output_tokens"),"cached_tokens":raw.get("cached_input_tokens")}
+                    if isinstance(usage.get("input_tokens"),int) and isinstance(usage.get("output_tokens"),int): usage["total_tokens"]=usage["input_tokens"]+usage["output_tokens"]
+            if proc.returncode!=0:
+                raw_detail=(proc.stderr+"\n"+proc.stdout).strip() or f"Codex CLI exited with status {proc.returncode}"
+                raise ProviderError(classify_failure(raw_detail),redact_error(raw_detail))
+            if not output_path.is_file(): raise ProviderError("INVALID_JSON","Codex CLI produced no last-message output")
+            raw=output_path.read_text().strip()
+            try: payload=json.loads(raw)
+            except json.JSONDecodeError as e: raise ProviderError("INVALID_JSON",f"Codex CLI output was invalid JSON: {e}") from e
+            errors=validate_schema(payload,self.schema(role))
+            if errors: raise ProviderError("SCHEMA_FAILURE","Codex CLI output failed schema validation: "+"; ".join(errors))
+            return raw,usage
+
+    def _openai_response(self,role,system,user):
         key=os.environ.get("OPENAI_API_KEY")
-        if not key: raise RuntimeError("OPENAI_API_KEY is required")
-        cfg=CONFIG["models"][role]
-        payload={"model":cfg["model"],"reasoning":{"effort":cfg["reasoning"]},"instructions":system,"input":user,"store":False}
+        if not key: raise ProviderError("AUTHENTICATION","OPENAI_API_KEY is required when provider=openai_api")
+        cfg=CONFIG["models"][role]; payload={"model":cfg["model"],"reasoning":{"effort":cfg["reasoning"]},"instructions":self._role_system(role,system),"input":user,"store":False,"text":{"format":{"type":"json_object"}}}
         req=urllib.request.Request("https://api.openai.com/v1/responses",data=json.dumps(payload).encode(),headers={"Authorization":"Bearer "+key,"Content-Type":"application/json"},method="POST")
-        for attempt in range(CONFIG.get("retry_count",2)+1):
+        try:
+            with urllib.request.urlopen(req,timeout=float(self.settings.get("timeout_seconds",180))) as res: data=json.load(res)
+        except urllib.error.HTTPError as e:
+            detail=redact_error(e.read().decode("utf-8","replace")); raise ProviderError(classify_failure(f"HTTP {e.code} {detail}","API_ERROR"),f"OpenAI API HTTP {e.code}: {detail}") from e
+        except (urllib.error.URLError,TimeoutError) as e: raise ProviderError("TIMEOUT" if isinstance(e,TimeoutError) else "API_ERROR",redact_error(e)) from e
+        raw=response_text(data).strip()
+        try: payload=json.loads(raw)
+        except json.JSONDecodeError as e: raise ProviderError("INVALID_JSON",f"OpenAI API output was invalid JSON: {e}") from e
+        errors=validate_schema(payload,self.schema(role))
+        if errors: raise ProviderError("SCHEMA_FAILURE","OpenAI API output failed schema validation: "+"; ".join(errors))
+        usage=data.get("usage",{}); raw_details=usage.get("input_tokens_details",{})
+        counts={"input_tokens":usage.get("input_tokens"),"output_tokens":usage.get("output_tokens"),"cached_tokens":raw_details.get("cached_tokens")}
+        if isinstance(counts.get("input_tokens"),int) and isinstance(counts.get("output_tokens"),int): counts["total_tokens"]=counts["input_tokens"]+counts["output_tokens"]
+        return raw,counts
+
+    def ask(self,role,system,user):
+        if self.blocking_error: raise ProviderError(self.blocking_error["kind"],self.blocking_error["message"])
+        self.logical_requests+=1
+        retries=int(self.settings.get("retry_count",CONFIG.get("retry_count",1)))
+        for attempt in range(retries+1):
+            self.calls+=1; self.calls_by_role[role]=self.calls_by_role.get(role,0)+1; started=time.monotonic(); usage=None; error=None
             try:
-                with urllib.request.urlopen(req,timeout=180) as res: return response_text(json.load(res))
-            except (urllib.error.URLError,TimeoutError,ValueError) as e:
-                self.retries.append({"role":role,"attempt":attempt+1,"error":str(e)[:500]})
-                if attempt>=CONFIG.get("retry_count",2): raise
-                time.sleep(2**attempt)
+                raw=self._fake_response(role,system,user) if self.dry else None
+                if self.dry:
+                    usage=None
+                    try: payload=json.loads(raw)
+                    except (TypeError,json.JSONDecodeError) as e: raise ProviderError("INVALID_JSON",f"Fake provider output was invalid JSON: {e}") from e
+                    payload=self._complete_fake_response(role,payload); raw=json.dumps(payload,ensure_ascii=False)
+                    errors=validate_schema(payload,self.schema(role))
+                    if errors: raise ProviderError("SCHEMA_FAILURE","Fake provider output failed schema validation: "+"; ".join(errors))
+                else:
+                    raw,usage=self._codex_response(role,system,user) if self.name=="codex_cli" else self._openai_response(role,system,user)
+                self.call_records.append({"role":role,"scenario_id":self.scenario_id,"provider":self.name,"model":CONFIG["models"][role]["model"],"reasoning":CONFIG["models"][role]["reasoning"],"elapsed_seconds":round(time.monotonic()-started,3),"status":"COMPLETED","usage":usage})
+                return raw
+            except Exception as exc:
+                kind=exc.kind if isinstance(exc,ProviderError) else "PROVIDER_ERROR"; error=redact_error(exc)
+                self.call_records.append({"role":role,"scenario_id":self.scenario_id,"provider":self.name,"model":CONFIG["models"][role]["model"],"reasoning":CONFIG["models"][role]["reasoning"],"elapsed_seconds":round(time.monotonic()-started,3),"status":"FAILED","error_kind":kind,"usage":usage})
+                if kind in ("RATE_LIMIT","USAGE_EXHAUSTED","AUTHENTICATION","MODEL_UNAVAILABLE","CONFIGURATION","CLI_UNAVAILABLE","CLI_CONFIGURATION"):
+                    self.blocking_error={"kind":kind,"message":error,"role":role,"scenario_id":self.scenario_id}
+                if self.blocking_error or attempt>=retries: raise ProviderError(kind,error) from exc
+                retry={"role":role,"scenario_id":self.scenario_id,"attempt":attempt+1,"error_kind":kind,"error":error}; self.retries.append(retry); time.sleep(2**attempt)
+        raise ProviderError("PROVIDER_ERROR","provider retries exhausted")
 
 def retrieve(message, scenario, limit=4):
     q=(message+" "+scenario["title"]+" "+scenario["critical_facts"]).lower()
