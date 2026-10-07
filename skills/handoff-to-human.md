@@ -76,12 +76,12 @@ Formal handoff:
 
 Once `owner = HUMAN`:
 
-- AI auto-replies must be paused
+- AI auto-replies must end for the current AI session
 - the AI must not compete with the human agent
 - the conversation may still be recorded
 - the Lead Profile may still be updated from new customer information
 - the AI may continue internal summarisation if useful
-- the AI must not autonomously resume customer messaging
+- the AI must not resume customer messaging in the same session
 
 ---
 
@@ -125,7 +125,7 @@ When handoff occurs, update the same lead row.
 Important control and status fields should reflect:
 
 - `Owner = HUMAN`
-- `AI Status = PAUSED`
+- `AI Session Status = ENDED`
 - `Handoff Status = HANDED_OFF`
 - `Handoff Reason`
 - `Last Progress`
@@ -191,18 +191,16 @@ The system should recognise that the human already owns the lead.
 
 ## Human-Controlled Owner Field
 
-In V1, the `Owner` field in Google Sheet is a human-controlled dropdown.
-
-Allowed values:
+In V1, the `Owner` field may still be human-visible, with values:
 
 - `AI`
 - `HUMAN`
 
-The AI may read this field.
+Once a formal handoff sets `owner = HUMAN`, that AI sales session is terminal.
 
-The AI must not autonomously change `HUMAN` back to `AI`.
+Changing the Sheet value back to AI must not revive the ended session.
 
-A human or deterministic system action is required for that transition.
+V1 does not support Human → AI return for the same sales session.
 
 ---
 
@@ -227,65 +225,55 @@ Customer message arrives
 
 ---
 
-## Return to AI
+## One-Way Handoff — V1 Frozen Rule
 
-Return to AI is supported in V1 only as an optional manual exception.
+Formal Handoff is terminal for the current AI sales session.
 
-It is not part of the normal handoff path.
+Applies to:
 
-A human may change:
+- Appointment Handoff
+- Mandatory Operational Handoff
+- explicit Human request
+- ownership conflict
 
-`Owner = HUMAN`
+After formal handoff:
 
-to:
+```text
+owner = HUMAN
+ai_session_status = ENDED
+```
 
-`Owner = AI`
+The AI must not:
 
-through the Google Sheet dropdown.
+- resume automatically;
+- resume after Human finishes a task;
+- resume because Owner is manually changed back;
+- reply to later customer messages in the same session;
+- replay messages received during Human ownership.
 
-The backend may detect this during the next polling cycle.
+Human Support is different: it keeps `owner = AI`, returns a verified result, and lets the same AI session continue.
 
-The AI must not decide by itself that the human is finished.
-
-The AI must not automatically switch ownership back to itself.
-
----
-
-## Return-to-AI Behaviour
-
-Changing `Owner` back to `AI` means that future customer messages may again be handled by the AI.
-
-It does not mean the AI should immediately send a new message.
-
-Do not automatically replay or answer every customer message that arrived while the human owned the lead.
-
-When the next customer message arrives after ownership returns to AI:
-
-1. load the latest Lead Profile,
-2. load the relevant recent conversation context,
-3. understand what the human already handled,
-4. continue from the current state,
-5. avoid reopening issues that have already been resolved.
-
-Return to AI should be conservative and simple in V1.
+If a future product version supports returning from Human to AI, design it as a separate explicit feature. It is out of scope for V1.
 
 ---
 
-## AI Status
+## AI Session Status
 
-For clarity, the runtime or Google Sheet may expose:
+Use:
 
 - `ACTIVE`
-- `PAUSED`
+- `ENDED`
 
 Mapping:
 
 ```text
-Owner = AI     → AI Status = ACTIVE
-Owner = HUMAN  → AI Status = PAUSED
+Owner = AI     → AI Session Status = ACTIVE
+Owner = HUMAN  → AI Session Status = ENDED
 ```
 
-`AI Status` should normally be system-managed rather than manually edited.
+`AI Session Status` is system-managed.
+
+An `ENDED` session is terminal.
 
 ---
 
@@ -347,8 +335,8 @@ Keep one Lead Profile.
 
 Update the same Google Sheet row.
 
-Pause the AI when a human owns the lead.
+End the AI sales session when a human owns the lead.
 
 Do not repeat the handoff message.
 
-Return to AI is manual and exceptional in V1.
+V1 has no Human → AI return path for the same session.
