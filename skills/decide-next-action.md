@@ -319,6 +319,48 @@ Avoid unrelated qualification.
 
 ---
 
+## V1.6 Support Lifecycle Gate
+
+Before choosing `REQUEST_SUPPORT`, follow `brain/SUPPORT_LIFECYCLE.md` and `skills/request-human-support.md`.
+
+The decision layer must explicitly check:
+
+1. whether trusted Knowledge already answers the question;
+2. whether the customer or Lead Profile already contains the answer;
+3. whether an equivalent OPEN support request already exists;
+4. whether an equivalent RESOLVED result already exists and is still usable;
+5. whether the new request is materially different;
+6. what `resume_stage`, `resume_objective`, and `unresolved_customer_need` must be preserved if a new request is created.
+
+If an equivalent OPEN request exists:
+
+do not choose `REQUEST_SUPPORT` again.
+
+If an equivalent RESOLVED result exists:
+
+use that result and choose the next commercial action.
+
+If a new Support Request is genuinely required:
+
+choose `REQUEST_SUPPORT` only after preserving the resume context.
+
+After a support result returns, the preferred decision pattern is:
+
+```text
+latest customer message
+→ resolve blocked need
+→ use verified result
+→ resume saved objective
+→ reassess intent / appointment readiness
+→ choose next sales action
+```
+
+Do not restart the conversation from broad qualification.
+
+Do not choose `REQUEST_SUPPORT` merely because the previous support result was not used well.
+
+---
+
 ## Duplicate Support Rule
 
 Before choosing `REQUEST_SUPPORT`, inspect prior requests.
