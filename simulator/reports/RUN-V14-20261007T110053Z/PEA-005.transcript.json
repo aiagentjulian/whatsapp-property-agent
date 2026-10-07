@@ -1,0 +1,391 @@
+{
+  "scenario_id": "PEA-005",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:08:35.806371+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 6,
+    "ai": 5,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+  "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+  "handoff_turn": 5,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "EXPLICIT_HUMAN_REQUEST",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether Pearlmont accepts LPPSA financing and who can verify the current requirements for this buyer; they have no active LPPSA financing and plan to buy for own stay within the next few months."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "MANDATORY_HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_REQUIRED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 6,
+      "operational_action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Confirm whether Pearlmont accepts LPPSA financing and who can verify the current requirements for this buyer; they have no active LPPSA financing and plan to buy for own stay within the next few months.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No, I don’t have any active LPPSA financing. I’m looking for own stay and hoping to buy in the next few months, but need to know first whether Pearlmont can work with LPPSA and who can confirm the current requirements.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "No, I don’t have any active LPPSA financing. I’m looking for own stay and hoping to buy in the next few months, but need to know first whether Pearlmont can work with LPPSA and who can confirm the current requirements.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Yes, 3 bedrooms and 2 bathrooms should suit my own stay. Could someone from your team confirm the current Pearlmont LPPSA process and who I should check with about the requirements before I decide on a viewing?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Yes, please check the current price schedule. Could you also connect me with someone who can confirm Pearlmont’s current LPPSA process and who I should verify the requirements with? I’d like to understand the financing route first before deciding about a viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether Pearlmont accepts LPPSA financing and who can verify the current requirements for this buyer; they have no active LPPSA financing and plan to buy for own stay within the next few months.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether Pearlmont accepts LPPSA financing and who can verify the current requirements for this buyer; they have no active LPPSA financing and plan to buy for own stay within the next few months.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "LPPSA may be an option for you as a government servant, but I can’t tell from that alone whether you’ll be approved—LPPSA will assess your individual eligibility. The current reference says financing may be up to RM1 million; if your first LPPSA financing is still active, a second may be allowed with up to 90% financing, subject to LPPSA’s terms. It also states 4.00% up to RM750,000, with 4.50% applying only to the portion above that. Do you currently have an active LPPSA financing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No, I don’t have any active LPPSA financing. I’m looking for own stay and hoping to buy in the next few months, but need to know first whether Pearlmont can work with LPPSA and who can confirm the current requirements.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether Pearlmont accepts LPPSA financing and who can verify the current requirements for this buyer; they have no active LPPSA financing and plan to buy for own stay within the next few months.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether Pearlmont accepts LPPSA financing and who can verify the current requirements for this buyer; they have no active LPPSA financing and plan to buy for own stay within the next few months.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side starting point is choosing a unit/category and checking its current price schedule; LPPSA confirms the documents needed and assesses your personal eligibility, so approval isn’t guaranteed. Since you don’t have an active LPPSA facility, the note about an active first facility doesn’t apply to you. Pearlmont units are 900 sq ft with 3 bedrooms and 2 bathrooms—would that layout suit your own stay?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Yes, 3 bedrooms and 2 bathrooms should suit my own stay. Could someone from your team confirm the current Pearlmont LPPSA process and who I should check with about the requirements before I decide on a viewing?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I’ve confirmed that Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project team can guide you on the unit/category and current price schedule; LPPSA confirms the documents needed and assesses your personal eligibility, so approval isn’t guaranteed. Since you have no active LPPSA financing, the note about an active first facility doesn’t apply. Would you like me to check the current price schedule before you decide about a viewing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Yes, please check the current price schedule. Could you also connect me with someone who can confirm Pearlmont’s current LPPSA process and who I should verify the requirements with? I’d like to understand the financing route first before deciding about a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "MANDATORY_HANDOFF",
+      "message": "Of course—I’ll have someone from the team follow up to confirm the current price schedule and explain Pearlmont’s LPPSA process. LPPSA can confirm the documents needed and assess your personal eligibility. You can decide about a viewing once you’ve had a chance to review the financing route.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks. I’ll wait for the team to confirm the current price schedule and LPPSA process first, then decide about viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "human",
+      "message": "The simulator’s current package fixture lists Type A from RM302,000 after the package, subject to eligible unit category and unit-level confirmation. It doesn’t provide a full unit-specific price schedule or confirm availability. The project-side starting point is selecting a unit/category and checking its price; LPPSA confirms the required documents and assesses your personal eligibility, which remains unverified and isn’t guaranteed. This fixture doesn’t provide a live connection to a team member.",
+      "action": "VERIFY_PACKAGE",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks for clarifying. I understand Type A starts from RM302,000 under the package, but the actual price depends on the unit/category and availability. Could you confirm a current unit-specific price and point me to the right person or LPPSA channel to verify the requirements? I’ll decide about viewing after I understand those first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 11,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 64
+}

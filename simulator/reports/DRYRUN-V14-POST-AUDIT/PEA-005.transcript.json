@@ -1,0 +1,287 @@
+{
+  "scenario_id": "PEA-005",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:28:44.290968+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 3,
+    "ai": 3,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 3,
+  "appointment_state_customer": "APPOINTMENT_CONFIRMED",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please clarify the LPPSA reference and what can be verified about eligibility."
+    },
+    {
+      "turn": 2,
+      "action": "POSITION",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 4,
+      "operational_action": "NO_ACTION",
+      "sales_work_level": "LOW",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Please clarify the LPPSA reference and what can be verified about eligibility.",
+      "fixture_key": "lppsa",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "I’m a government servant. Can use LPPSA? Will I get approved?",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, I can consider viewing.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/lppsa.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+        "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please clarify the LPPSA reference and what can be verified about eligibility.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please clarify the LPPSA reference and what can be verified about eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I’m a government servant. Can use LPPSA? Will I get approved?"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please clarify the LPPSA reference and what can be verified about eligibility.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please clarify the LPPSA reference and what can be verified about eligibility.",
+      "result": {
+        "fixture_key": "lppsa",
+        "verified_answer": "For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project route and document-boundary clarification; individual LPPSA checklist remains with LPPSA.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "POSITION",
+      "message": "I checked that for you: For this simulator run, the verified project fixture confirms Pearlmont Phase 1 accepts LPPSA applications from eligible applicants. The project-side checklist to start a case is a selected unit/category and its current price schedule; LPPSA determines the applicant documents and personal eligibility. This would be your first LPPSA financing, so the source note about a currently active first LPPSA facility does not apply. No approval or eligibility is guaranteed. Based on the priorities you mentioned, this gives us a clearer option to assess in person. Would a viewing help you decide?",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, I can consider viewing.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That option seems worth viewing. I can arrange the operational details for you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Yes, can arrange that viewing.",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "I’ll check the available simulator fixture and confirm what it establishes.",
+      "action": "NO_ACTION",
+      "sales_work_level": "LOW"
+    }
+  ],
+  "provider_calls": 6,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 35
+}

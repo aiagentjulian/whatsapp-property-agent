@@ -1,0 +1,429 @@
+{
+  "scenario_id": "PEA-004",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:21:00.379370+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 4,
+    "ai": 6,
+    "human_handoff_executor": 0,
+    "human_support": 2
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported."
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found."
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "fixture_key": "investment",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "fixture_key": "pricing",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Rental income is the priority, with a roughly 5–7 year hold in mind. I’m comparing net returns against other options, so the maintenance figure is useful, but I’d still need realistic rent and purchase price by unit type to assess it. Do you have those sourced figures?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Rental income is the priority, with a roughly 5–7 year hold in mind. I’m comparing net returns against other options, so the maintenance figure is useful, but I’d still need realistic rent and purchase price by unit type to assess it. Do you have those sourced figures?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Mostly comparing it with a completed condo where I can check actual rental listings and recent transactions, plus a couple of other investment options. I’m aiming for a sensible net return, not just a headline gross yield. If there are sourced rents and purchase prices by unit type, that’d help me compare properly; otherwise I’ll hold off on viewing for now.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "I’m comparing it with a completed condo I already track, where I can check actual rents and recent transactions. Since Pearlmont’s rental figures aren’t sourced yet, I’ll hold off on viewing for now and revisit if reliable rent data by unit type becomes available. Thanks for being upfront.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have verified rental comparables or a substantiated yield or appreciation forecast for Pearlmont, so I wouldn’t want to quote a return. What is documented is the maintenance fee at RM0.18 per sq.ft. per month, inclusive of sinking fund. Phase 1 has 1,846 units, so rental demand and competing supply are worth checking as part of the investment case. Are you mainly looking for rental income or longer-term appreciation?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Rental income is the priority, with a roughly 5–7 year hold in mind. I’m comparing net returns against other options, so the maintenance figure is useful, but I’d still need realistic rent and purchase price by unit type to assess it. Do you have those sourced figures?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "For Pearlmont’s standard Type A (900 sq.ft., 3 bedrooms, 2 bathrooms), the current package starts from RM302,000 for the one-carpark category. The exact price varies by floor, facing, carpark allocation and package. At RM0.18 per sq.ft., the maintenance fee is about RM162/month, inclusive of sinking fund. I still don’t have verified rental comparables, so I can’t give you a substantiated rent or net-yield estimate. What alternatives are you comparing it with?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Mostly comparing it with a completed condo where I can check actual rental listings and recent transactions, plus a couple of other investment options. I’m aiming for a sensible net return, not just a headline gross yield. If there are sourced rents and purchase prices by unit type, that’d help me compare properly; otherwise I’ll hold off on viewing for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a sensible comparison to make before viewing. I don’t have sourced rental figures for Pearlmont, so I can’t build a reliable net-return comparison from the available information. If you share the completed condo or the figures you’re comparing, I can help line up the assumptions fairly; no need to arrange a viewing until the investment case is clearer.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "I’m comparing it with a completed condo I already track, where I can check actual rents and recent transactions. Since Pearlmont’s rental figures aren’t sourced yet, I’ll hold off on viewing for now and revisit if reliable rent data by unit type becomes available. Thanks for being upfront.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "That’s completely fair—without sourced rental comparables, a net-return comparison wouldn’t be reliable. Thanks for being clear. If reliable rent data by unit type becomes available, we can revisit it then. No need to arrange a viewing for now.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "provider_calls": 9,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 23
+}

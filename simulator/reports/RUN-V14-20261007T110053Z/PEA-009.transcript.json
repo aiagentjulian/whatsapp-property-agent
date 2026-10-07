@@ -1,0 +1,152 @@
+{
+  "scenario_id": "PEA-009",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:14:39.951921+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 3,
+    "ai": 1,
+    "human_handoff_executor": 1,
+    "human_support": 0
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+  "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+  "handoff_turn": 1,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "SALES_OWNERSHIP_CONFLICT",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "MANDATORY_HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 2,
+      "operational_action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "support_trace": [],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Another agent already contacted me about Pearlmont. Can you still help?",
+      "files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": [
+        "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md"
+      ]
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Another agent already contacted me about Pearlmont. Can you still help?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "MANDATORY_HANDOFF",
+      "message": "Yes, I can help. I’ll have the existing registration checked first so we don’t duplicate anything, then we can take it from there.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "SALES_OWNERSHIP_CONFLICT"
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay thanks, appreciate you checking first. I’d rather avoid duplicate follow-ups—could you let me know whether I’m already registered before we take it further?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "human",
+      "message": "The check shows that prior contact exists, but there’s no customer-acknowledged appointment or confirmed registration in the fixture.",
+      "action": "VERIFY_OWNERSHIP",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Got it, thanks for checking. Just to confirm, there’s no confirmed registration or appointment under my details, right? I’d like to avoid any overlap before taking it further.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 4,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 96
+}

@@ -1,0 +1,241 @@
+{
+  "scenario_id": "PEA-010",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:22:26.417531+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 2,
+    "ai": 2,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 2,
+  "appointment_state_customer": "APPOINTMENT_CONFIRMED",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm the latest valid Pearlmont package and supportable effective starting price; also check whether a Saturday viewing can be arranged."
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "operational_task_completed": true,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Confirm the latest valid Pearlmont package and supportable effective starting price; also check whether a Saturday viewing can be arranged.",
+      "fixture_key": "weekend_package",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the latest valid Pearlmont package and supportable effective starting price; also check whether a Saturday viewing can be arranged.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the latest valid Pearlmont package and supportable effective starting price; also check whether a Saturday viewing can be arranged.",
+      "result": {
+        "fixture_key": "weekend_package",
+        "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package validity and viewing slot; no live systems connected.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the latest valid Pearlmont package and supportable effective starting price; also check whether a Saturday viewing can be arranged.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the latest valid Pearlmont package and supportable effective starting price; also check whether a Saturday viewing can be arranged.",
+      "result": {
+        "fixture_key": "weekend_package",
+        "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package validity and viewing slot; no live systems connected.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The current package is valid, with a Type A effective starting reference of RM302,000, subject to the unit category and unit-level confirmation. Saturday at 11:00 am is available for a viewing, but it isn’t booked yet. I’ll have the team confirm the arrangement—does 11:00 am work for you?",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, Saturday at 11 works for my spouse and me. Please get the team to confirm the slot, and share the latest package breakdown and terms when verified.",
+      "appointment_state": "APPOINTMENT_CONFIRMED",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "Saturday at 11:00 am is confirmed for your viewing with your spouse in this simulator. The verified package fixture confirms a current Type A effective starting reference of RM302,000, subject to unit category and unit-level confirmation. A full package breakdown and terms are not verified by the available fixture, and no live booking or pricing system is connected.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    }
+  ],
+  "provider_calls": 4,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 28
+}

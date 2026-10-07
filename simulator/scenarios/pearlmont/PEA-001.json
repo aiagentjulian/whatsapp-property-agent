@@ -33,11 +33,29 @@
   },
   "critical_facts": "family budget and Type A 900 sqft layout",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
     "specific_verified_facts": [
       "Use retrieved package source only to explain documented package mechanics; no unit-specific price or current validity fixture is supplied."
     ],
     "availability": "NOT_CONNECTED",
-    "appointment_slots": "NOT_CONNECTED"
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "payment_example": {
+        "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic mortgage illustration with assumptions stated; not financial advice or a real lender quote."
+      },
+      "show_unit": {
+        "verified_answer": "The simulator viewing fixture confirms the Type A show unit can be viewed by appointment on Saturday or Sunday between 10:00 am and 5:00 pm, subject to gallery confirmation. No specific slot is held until a time is accepted and confirmed.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic viewing logistics for this scenario; no real calendar is connected."
+      },
+      "pricing": {
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package fixture to support early affordability discussion."
+      },
+      "layout": {
+        "verified_answer": "The simulator document fixture includes a customer-shareable Type A floor-plan image showing 900 sq.ft., three bedrooms, two bathrooms, and the living/dining/kitchen area. The image is an illustrative plan; furniture fit and usable circulation should be assessed at a viewing.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic customer-shareable plan fixture; not added to Pearlmont Knowledge."
+      }
+    }
   }
 }

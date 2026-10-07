@@ -1,0 +1,245 @@
+{
+  "scenario_id": "PEA-010",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T10:53:48.408216+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 3,
+    "ai": 2,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+  "handoff_turn": 2,
+  "appointment_state_customer": "APPOINTMENT_IN_PROGRESS",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether the 14 August 2026 Pearlmont sales package is still valid, the current effective starting price and applicable terms, and whether a Saturday viewing can be arranged."
+    },
+    {
+      "turn": 2,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 3,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Confirm whether the 14 August 2026 Pearlmont sales package is still valid, the current effective starting price and applicable terms, and whether a Saturday viewing can be arranged.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Can share latest package and price? I’m free Saturday to view.",
+      "files": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether the 14 August 2026 Pearlmont sales package is still valid, the current effective starting price and applicable terms, and whether a Saturday viewing can be arranged.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether the 14 August 2026 Pearlmont sales package is still valid, the current effective starting price and applicable terms, and whether a Saturday viewing can be arranged.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Can share latest package and price? I’m free Saturday to view."
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether the 14 August 2026 Pearlmont sales package is still valid, the current effective starting price and applicable terms, and whether a Saturday viewing can be arranged.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether the 14 August 2026 Pearlmont sales package is still valid, the current effective starting price and applicable terms, and whether a Saturday viewing can be arranged.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "The pricing reference starts from RM328k before any applicable package or rebate. The effective price depends on the unit category, floor and car parks, and I can’t verify whether the 14 August package is still current. I’ll have the team confirm the latest package and check a Saturday viewing slot with you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "PRICING_OR_PACKAGE_VERIFICATION"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, could you check the latest package and what Saturday slots are available? Saturday afternoon would suit us best; my spouse will come too.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    },
+    {
+      "turn": 3,
+      "speaker": "human",
+      "message": "The supplied fixture can’t verify whether the package is still current or confirm an effective unit price. It shows Saturday at 11:00 as available in this simulation; no Saturday afternoon slot is listed. Would 11:00 work for you and your spouse?",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "11am could work for both of us. Could you verify the latest package and price first? We’d like to check that before locking in the visit.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "high"
+    }
+  ],
+  "provider_calls": 5,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 165
+}

@@ -33,10 +33,16 @@
   },
   "critical_facts": "Project overview and no obligation; preserve property reveal strategy where practical",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
     "specific_verified_facts": [
       "No current location-map asset/link fixture is supplied."
     ],
-    "map_asset": "NOT_CONNECTED"
+    "map_asset": "NOT_CONNECTED",
+    "support_fixtures": {
+      "facilities": {
+        "verified_answer": "The scenario fixture lists the Level 9 shared facilities deck as including a swimming pool, gym, and children’s play area. The simulator fixture also lists the karaoke room as pay-per-use. These are orientation details only; there is no obligation to view or make a purchase decision.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic project-orientation details for this low-intent scenario; not Pearlmont factual Knowledge."
+      }
+    }
   }
 }

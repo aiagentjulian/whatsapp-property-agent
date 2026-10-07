@@ -1,0 +1,147 @@
+{
+  "scenario_id": "PEA-011",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:16:24.417207+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 2,
+    "ai": 2,
+    "human_handoff_executor": 0,
+    "human_support": 0
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks, appreciate it. I’ll have a look around first and reach out if I have any questions.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries, take your time—no pressure. If you want to compare the layout or location later, just let me know.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, appreciate it. I’ll have a look around first and reach out if I have any questions.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Of course—take your time. If any questions come up while you’re looking around, just message me.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "provider_calls": 3,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 106
+}

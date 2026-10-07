@@ -1,0 +1,522 @@
+{
+  "scenario_id": "PEA-004",
+  "title": "Investor asking yield and appreciation",
+  "convertible": true,
+  "buyer_primary_need": "Assess whether Pearlmont offers a credible risk-adjusted rental investment, prioritizing realistic rental evidence, purchase price by unit type, net holding costs, supply and exit risk over headline yield.",
+  "key_information_learned": [
+    "The buyer prioritizes rental income and has a roughly 5–7 year holding horizon.",
+    "The buyer compares net returns with a completed condominium where actual rental listings and recent transactions can be checked, as well as other investments.",
+    "The buyer considers the RM0.18 psf maintenance figure useful but needs reliable rent and purchase-price data to assess the investment.",
+    "The buyer explicitly chose to hold off on viewing until reliable rent data by unit type is available."
+  ],
+  "important_information_missed": [
+    "The buyer's target return and more specific holding-cost comparison were not elicited, but the existing evidence was sufficient to respect the buyer's decision not to view."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have verified rental comparables or a substantiated yield or appreciation forecast for Pearlmont, so I wouldn’t want to quote a return. What is documented is the maintenance fee at RM0.18 per sq.ft. per month, inclusive of sinking fund. Phase 1 has 1,846 units, so rental demand and competing supply are worth checking as part of the investment case. Are you mainly looking for rental income or longer-term appreciation?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Rental income is the priority, with a roughly 5–7 year hold in mind. I’m comparing net returns against other options, so the maintenance figure is useful, but I’d still need realistic rent and purchase price by unit type to assess it. Do you have those sourced figures?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "For Pearlmont’s standard Type A (900 sq.ft., 3 bedrooms, 2 bathrooms), the current package starts from RM302,000 for the one-carpark category. The exact price varies by floor, facing, carpark allocation and package. At RM0.18 per sq.ft., the maintenance fee is about RM162/month, inclusive of sinking fund. I still don’t have verified rental comparables, so I can’t give you a substantiated rent or net-yield estimate. What alternatives are you comparing it with?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Mostly comparing it with a completed condo where I can check actual rental listings and recent transactions, plus a couple of other investment options. I’m aiming for a sensible net return, not just a headline gross yield. If there are sourced rents and purchase prices by unit type, that’d help me compare properly; otherwise I’ll hold off on viewing for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a sensible comparison to make before viewing. I don’t have sourced rental figures for Pearlmont, so I can’t build a reliable net-return comparison from the available information. If you share the completed condo or the figures you’re comparing, I can help line up the assumptions fairly; no need to arrange a viewing until the investment case is clearer.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "I’m comparing it with a completed condo I already track, where I can check actual rents and recent transactions. Since Pearlmont’s rental figures aren’t sourced yet, I’ll hold off on viewing for now and revisit if reliable rent data by unit type becomes available. Thanks for being upfront.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "That’s completely fair—without sourced rental comparables, a net-return comparison wouldn’t be reliable. Thanks for being clear. If reliable rent data by unit type becomes available, we can revisit it then. No need to arrange a viewing for now.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-004.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Rental income is the priority, with a roughly 5–7 year hold in mind. I’m comparing net returns against other options, so the maintenance figure is useful, but I’d still need realistic rent and purchase price by unit type to assess it. Do you have those sourced figures?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Rental income is the priority, with a roughly 5–7 year hold in mind. I’m comparing net returns against other options, so the maintenance figure is useful, but I’d still need realistic rent and purchase price by unit type to assess it. Do you have those sourced figures?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Mostly comparing it with a completed condo where I can check actual rental listings and recent transactions, plus a couple of other investment options. I’m aiming for a sensible net return, not just a headline gross yield. If there are sourced rents and purchase prices by unit type, that’d help me compare properly; otherwise I’ll hold off on viewing for now.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "I’m comparing it with a completed condo I already track, where I can check actual rents and recent transactions. Since Pearlmont’s rental figures aren’t sourced yet, I’ll hold off on viewing for now and revisit if reliable rent data by unit type becomes available. Thanks for being upfront.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported."
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found."
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": null,
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "Assess whether Pearlmont offers a credible risk-adjusted rental investment, prioritizing realistic rental evidence, purchase price by unit type, net holding costs, supply and exit risk over headline yield.",
+    "key_information_learned": [
+      "The buyer prioritizes rental income and has a roughly 5–7 year holding horizon.",
+      "The buyer compares net returns with a completed condominium where actual rental listings and recent transactions can be checked, as well as other investments.",
+      "The buyer considers the RM0.18 psf maintenance figure useful but needs reliable rent and purchase-price data to assess the investment.",
+      "The buyer explicitly chose to hold off on viewing until reliable rent data by unit type is available."
+    ],
+    "important_information_missed": [
+      "The buyer's target return and more specific holding-cost comparison were not elicited, but the existing evidence was sufficient to respect the buyer's decision not to view."
+    ],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_type": "NO_FORMAL_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": null,
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 2,
+    "support_requests_resolved": 2,
+    "support_resume_success_count": 2,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression": {
+      "evidence": [
+        "After the investment-evidence support result, the AI transparently declined to quote unsupported yield or appreciation, applied the verified maintenance and Phase 1 supply facts to the investment discussion, and asked whether rental income or appreciation mattered more.",
+        "After the price support result, the AI used the simulator-only Type A price basis alongside the maintenance cost, clarified that rental comparables remained unavailable, and asked what alternatives the buyer was comparing.",
+        "When the buyer said reliable rental data was necessary and declined a viewing for now, the AI acknowledged the limitation and respected that decision rather than pressing for an appointment."
+      ],
+      "assessment": "The AI advanced the buyer's assessment as far as the available evidence reasonably allowed. The remaining rental-evidence gap was material to this buyer, so not pursuing viewing or handoff was appropriate."
+    },
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 5
+    },
+    "strongest_ai_move": "Candidly distinguishing verified holding-cost and project-supply facts from unavailable rental and appreciation evidence, then respecting the buyer's explicit decision to defer viewing.",
+    "weakest_ai_move": "The AI could have made the investment comparison slightly more actionable by offering to compare the buyer's own completed-condo figures against Pearlmont's known costs, while clearly noting that Pearlmont rent evidence was unavailable. This was a minor opportunity, not a missed appointment signal.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "Minor opportunity to offer a structured comparison using buyer-supplied completed-condo rent and transaction figures. The buyer's stated lack of Pearlmont rental data and explicit decision to hold off on viewing made a viewing close inappropriate."
+    ],
+    "retrieval_misses": [
+      "The retrieved pricing.md is explicitly a base-price reference, not current effective pricing. The AI appropriately requested operational verification rather than treating the base price as current."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "No substantiated rental comparables, approved yield guidance, or appreciation forecast were available.",
+      "No current remaining inventory was verified.",
+      "The current Type A price basis in the support result is simulator-only evidence, not Pearlmont factual Knowledge or proof of a live pricing-system connection.",
+      "Actual rental demand, competing supply, and exit prospects remain unestablished."
+    ],
+    "critical_flags": [],
+    "support_request_judgment": "Both requests addressed real information gaps: the retrieved sources did not substantiate rental returns, and the pricing source was a base-price reference rather than a current effective price. Both requests resolved, with AI ownership retained and AI remaining active.",
+    "support_result_utilization": "Both results were used beyond simple relay. The investment result informed the discussion of documented holding cost and supply risk; the price result was contextualized with a maintenance-cost calculation and the continuing absence of rental evidence. Both replies continued the buyer-specific investment discussion.",
+    "support_resume_quality": "Successful after both resolved requests: the AI resumed in customer-facing language, applied the answers in context, and continued selling without exposing internal support messages.",
+    "summary": "The AI handled this investor conversation appropriately: it made two justified support requests, resumed successfully after each, avoided unsupported yield or appreciation claims, and used the verified-in-simulation facts to inform the discussion. The buyer did not become appointment-ready and explicitly deferred viewing until credible rent data is available, so no formal handoff was required. Direct answer to the primary question: in this run, Human Support supplied verified answers and the AI used them naturally to continue selling, but the buyer's material rental-evidence blocker remained unresolved; the AI correctly did not manufacture appointment readiness or push a viewing. The price and investment details supplied through support are SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE evidence for this scenario only, not Pearlmont factual Knowledge or evidence of live production capability.",
+    "improvement_recommendation": "When a buyer compares an investment with a completed property, consider offering a concise, buyer-led comparison using figures the buyer supplies, while keeping Pearlmont's unverified rent and return data explicitly out of the calculation. No repository change is recommended from this simulator run.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 2,
+    "support_resolved_count": 2,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.4",
+  "support_trace": [
+    {
+      "turn": 1,
+      "request": "Check whether Pearlmont has verified rental evidence or approved rental-yield guidance, and sourced appreciation drivers or risks suitable for a customer response. Do not provide estimates unless supported.",
+      "fixture_key": "investment",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "request": "Confirm the latest effective purchase price or approved current price range for Pearlmont’s standard Type A unit (900 sq.ft., 3 bedrooms, 2 bathrooms), including any applicable block, floor, facing, car-park and package differences. The available base-price reference starts at RM328k, but is not a current effective price. Do not repeat the resolved rental-evidence check; no verified rental comparables or yield were found.",
+      "fixture_key": "pricing",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 2,
+  "support_resolved_count": 2,
+  "support_resume_success_count": 2,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No rental comparables, yield, or appreciation fixture is supplied.",
+      "Synthetic support fixture 'investment' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "investment_data": "NOT_CONNECTED",
+    "support_fixtures": {
+      "investment": {
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable."
+      },
+      "pricing": {
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "Candidly distinguishing verified holding-cost and project-supply facts from unavailable rental and appreciation evidence, then respecting the buyer's explicit decision to defer viewing.",
+  "weakest_ai_move": "The AI could have made the investment comparison slightly more actionable by offering to compare the buyer's own completed-condo figures against Pearlmont's known costs, while clearly noting that Pearlmont rent evidence was unavailable. This was a minor opportunity, not a missed appointment signal.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "Minor opportunity to offer a structured comparison using buyer-supplied completed-condo rent and transaction figures. The buyer's stated lack of Pearlmont rental data and explicit decision to hold off on viewing made a viewing close inappropriate."
+  ],
+  "retrieval_misses": [
+    "The retrieved pricing.md is explicitly a base-price reference, not current effective pricing. The AI appropriately requested operational verification rather than treating the base price as current."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "When a buyer compares an investment with a completed property, consider offering a concise, buyer-led comparison using figures the buyer supplies, while keeping Pearlmont's unverified rent and return data explicitly out of the calculation. No repository change is recommended from this simulator run."
+}

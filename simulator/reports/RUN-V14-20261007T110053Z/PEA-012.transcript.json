@@ -1,0 +1,145 @@
+{
+  "scenario_id": "PEA-012",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:17:01.279966+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 2,
+    "ai": 2,
+    "human_handoff_executor": 0,
+    "human_support": 0
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I need to move in next month and need four bedrooms. Any unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No, both are fixed for me — need 4 bedrooms and move in next month. Thanks for letting me know Pearlmont won’t fit, I’ll look elsewhere.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I need to move in next month and need four bedrooms. Any unit?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont wouldn’t fit that move-in timing: Phase 1 is expected to complete in Q4 2029, and the units are 3-bedroom, 2-bathroom layouts—not 4-bedroom. So there isn’t a unit here that matches both needs. Is the four-bedroom requirement flexible, or do you need to move next month for sure?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No, both are fixed for me — need 4 bedrooms and move in next month. Thanks for letting me know Pearlmont won’t fit, I’ll look elsewhere.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood — Pearlmont isn’t the right fit for your timing and space needs. Thanks for considering it, and I hope you find a suitable place soon.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "provider_calls": 3,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 110
+}

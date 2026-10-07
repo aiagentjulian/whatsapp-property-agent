@@ -1,0 +1,417 @@
+{
+  "scenario_id": "PEA-002",
+  "title": "Family buyer worried 900 sqft is too small",
+  "convertible": true,
+  "buyer_primary_need": "A practical 900 sq.ft. family layout for four, especially bedroom and wardrobe fit and usable circulation.",
+  "key_information_learned": [
+    "The household has four people: the buyer, spouse, and two children.",
+    "The main concern is fitting beds and wardrobes while retaining clear walkways.",
+    "The buyer compares circulation with their current home and sees a show-unit walkthrough as useful.",
+    "The buyer is open to a walkthrough and asks for available days and times."
+  ],
+  "important_information_missed": [
+    "The Agent did not establish actual furniture dimensions or whether any specific bedroom must fit particular furniture.",
+    "The retrieved factual source includes bedroom areas, but not room dimensions or furniture clearances."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "900 sqft for a family sounds quite small leh."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair concern—900 sqft is compact for a family, so I wouldn’t want to call it spacious without knowing your needs. It’s a 3-bedroom, 2-bathroom layout, planned with limited wasted corridor space, but whether it works really depends on who’ll be living there. How many people are in your family?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Four of us—me, my spouse and two kids. Mostly worried whether the bedrooms and living area can still fit our furniture without everyone squeezing past each other.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a fair concern for four people. The plan lists about 405 sq ft for the living, dining and kitchen area, and the project materials say all three bedrooms are designed to fit a queen-sized bed. But whether your furniture leaves comfortable walkways depends on its actual size—a show-unit walkthrough would help you judge that much better than the 900 sq ft figure alone. Are you more concerned about fitting the beds and wardrobes, or the sofa and dining set?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "More the beds and wardrobes, then whether got enough walkway around them. In our current place the circulation makes a big difference, so the 405 sq ft common area alone doesn’t tell me enough. A show-unit walkthrough could help me judge the flow, especially the bedrooms.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "CLOSE_VIEWING",
+      "message": "Exactly—the floor area alone can’t show how much room there is to move around the beds and wardrobes. A show-unit walkthrough would make that much easier to judge. Would you like me to help arrange a visit?",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Yeah, I’d be open to a walkthrough. What days and times are available? I’d want to check the bedroom layout properly.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "A walkthrough sounds like the right next step to check the bedroom layout and walkways properly. I’ll have my colleague confirm the available days and times with you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please ask them to share the available days and times, then I can see what works for us.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "I can’t verify available viewing days or times because the appointment calendar isn’t connected, so I can’t confirm a slot.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "No worries, thanks for letting me know. I’m still interested—please share the available days and times once you’re able to check, and I’ll see what works for us.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-002.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "900 sqft for a family sounds quite small leh.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Four of us—me, my spouse and two kids. Mostly worried whether the bedrooms and living area can still fit our furniture without everyone squeezing past each other.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "More the beds and wardrobes, then whether got enough walkway around them. In our current place the circulation makes a big difference, so the 405 sq ft common area alone doesn’t tell me enough. A show-unit walkthrough could help me judge the flow, especially the bedrooms.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Yeah, I’d be open to a walkthrough. What days and times are available? I’d want to check the bedroom layout properly.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "CLOSE_VIEWING",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 4,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Check and share available viewing days and times.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-002",
+    "buyer_primary_need": "A practical 900 sq.ft. family layout for four, especially bedroom and wardrobe fit and usable circulation.",
+    "key_information_learned": [
+      "The household has four people: the buyer, spouse, and two children.",
+      "The main concern is fitting beds and wardrobes while retaining clear walkways.",
+      "The buyer compares circulation with their current home and sees a show-unit walkthrough as useful.",
+      "The buyer is open to a walkthrough and asks for available days and times."
+    ],
+    "important_information_missed": [
+      "The Agent did not establish actual furniture dimensions or whether any specific bedroom must fit particular furniture.",
+      "The retrieved factual source includes bedroom areas, but not room dimensions or furniture clearances."
+    ],
+    "appointment_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_final_state": "APPOINTMENT_IN_PROGRESS",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 4,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Check and share available viewing days and times.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 0,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression": {
+      "evidence": "The Agent acknowledged the size concern, connected it to the buyer’s household and furniture needs, explained that a show-unit visit would help assess real circulation, then offered a walkthrough. After the buyer asked for viewing times, the Agent handed off for booking.",
+      "assessment": "Progressed to appointment readiness without support. The handoff left only slot verification and execution; no substantial sales work remained."
+    },
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 5,
+      "objection_handling": 5,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 3,
+      "support_result_utilization": 3,
+      "support_resume_quality": 3
+    },
+    "strongest_ai_move": "It treated the space concern as a real family-fit question rather than arguing that 900 sq.ft. was spacious, and connected the show-unit visit to the buyer’s specific concern about bedroom circulation.",
+    "weakest_ai_move": "It did not obtain more specific bedroom-fit evidence before moving to the viewing. The available Knowledge provided bedroom areas but not dimensions or furniture clearances; a suitably bounded support query could potentially have added detail, though it was not necessary to reach readiness.",
+    "unnecessary_qualification": [],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "Could have mentioned the retrieved Bedroom 2 area (103.3 sq.ft.) as a factual reference, while making clear that area alone does not establish furniture clearance."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [
+      "Bedroom-specific area figures and foyer area were available in the retrieved layout source but not used. These were optional details and would not by themselves answer the furniture-clearance concern."
+    ],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The retrieved Pearlmont Knowledge contains bedroom areas and project-material layout descriptions, but no bedroom dimensions or furniture-clearance measurements.",
+      "The appointment calendar was NOT_CONNECTED, so the available viewing times could not be verified."
+    ],
+    "critical_flags": [],
+    "summary": "The Agent handled the family’s concern well, identified meaningful viewing intent, and handed off at READY_FOR_APPOINTMENT with only operational booking remaining. The human executor could not verify a slot because the calendar was not connected; that does not undo the correct AI appointment handoff. No Human Support request occurred, so this run does not test support-result resumption. Direct answer: this Agent moved this suitable buyer toward Appointment Ready, but this conversation alone cannot establish reliable support-enabled performance.",
+    "improvement_recommendation": "When precise furniture fit is the blocker, consider requesting verified layout details if available, then explain what the information does and does not establish before checking whether a walkthrough remains useful. No source change is recommended from this simulator run.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 0,
+    "support_resolved_count": 0,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.4",
+  "support_trace": [],
+  "support_request_count": 0,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "APPOINTMENT_IN_PROGRESS",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No unit-level availability fixture is supplied.",
+      "Synthetic support fixture 'layout' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "layout": {
+        "verified_answer": "The simulator-only Type A plan overlay gives Bedroom 2 interior dimensions of approximately 3.05m by 3.15m. The mock furniture check fits a 1.5m by 2.0m queen bed, with about 0.75m clear on one side and 0.65m at the foot before wardrobe placement; a full-depth wardrobe opposite the bed would make circulation tight. The plan also shows no long internal corridor. Treat these measurements as this scenario fixture only; viewing the show unit is the practical way to judge the family layout.",
+        "source_note": "Synthetic simulator-only dimensioned Type A plan overlay; the general Type A configuration and no-long-corridor description also appear in knowledge/project/pearlmont/01_facts/unit-and-layout.md. Dimensions and furniture overlay are not added to Pearlmont Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "It treated the space concern as a real family-fit question rather than arguing that 900 sq.ft. was spacious, and connected the show-unit visit to the buyer’s specific concern about bedroom circulation.",
+  "weakest_ai_move": "It did not obtain more specific bedroom-fit evidence before moving to the viewing. The available Knowledge provided bedroom areas but not dimensions or furniture clearances; a suitably bounded support query could potentially have added detail, though it was not necessary to reach readiness.",
+  "unnecessary_qualification": [],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "Could have mentioned the retrieved Bedroom 2 area (103.3 sq.ft.) as a factual reference, while making clear that area alone does not establish furniture clearance."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [
+    "Bedroom-specific area figures and foyer area were available in the retrieved layout source but not used. These were optional details and would not by themselves answer the furniture-clearance concern."
+  ],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "When precise furniture fit is the blocker, consider requesting verified layout details if available, then explain what the information does and does not establish before checking whether a walkthrough remains useful. No source change is recommended from this simulator run."
+}

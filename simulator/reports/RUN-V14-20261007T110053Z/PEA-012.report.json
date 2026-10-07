@@ -1,0 +1,257 @@
+{
+  "scenario_id": "PEA-012",
+  "title": "Hard mismatch: immediate move-in and 4 bedrooms",
+  "convertible": false,
+  "buyer_primary_need": "A four-bedroom home available for move-in next month; both requirements are fixed.",
+  "key_information_learned": [
+    "The buyer needs four bedrooms.",
+    "The buyer needs to move in next month.",
+    "Both requirements are non-negotiable, and the buyer will look elsewhere."
+  ],
+  "important_information_missed": [],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I need to move in next month and need four bedrooms. Any unit?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont wouldn’t fit that move-in timing: Phase 1 is expected to complete in Q4 2029, and the units are 3-bedroom, 2-bathroom layouts—not 4-bedroom. So there isn’t a unit here that matches both needs. Is the four-bedroom requirement flexible, or do you need to move next month for sure?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "No, both are fixed for me — need 4 bedrooms and move in next month. Thanks for letting me know Pearlmont won’t fit, I’ll look elsewhere.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood — Pearlmont isn’t the right fit for your timing and space needs. Thanks for considering it, and I hope you find a suitable place soon.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-012.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I need to move in next month and need four bedrooms. Any unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "No, both are fixed for me — need 4 bedrooms and move in next month. Thanks for letting me know Pearlmont won’t fit, I’ll look elsewhere.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "BAD_FIT_CORRECTLY_IDENTIFIED",
+  "human_handoff_executor_used": false,
+  "human_operational_task": "NONE",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "BAD_FIT_NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "buyer_primary_need": "A four-bedroom home available for move-in next month; both requirements are fixed.",
+    "key_information_learned": [
+      "The buyer needs four bedrooms.",
+      "The buyer needs to move in next month.",
+      "Both requirements are non-negotiable, and the buyer will look elsewhere."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_type": "NO_FORMAL_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "BAD_FIT_CORRECTLY_IDENTIFIED",
+    "human_handoff_executor_used": false,
+    "human_operational_task": "NONE",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 5,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 5,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 5
+    },
+    "score_evidence": {
+      "qualification_discipline": "The single flexibility check was relevant after explaining the mismatch, though the buyer's initial requirements were already clear.",
+      "support_request_judgment": "No support request was made; the retrieved sources directly established the relevant completion timing and bedroom count, so operational verification was unnecessary.",
+      "support_result_utilization": "Not applicable: no support result existed. The high score reflects no ignored or mishandled result.",
+      "support_resume_quality": "Not applicable: no support result required resumption. The AI appropriately responded to the buyer's final message."
+    },
+    "strongest_ai_move": "It stated the decisive mismatch clearly using retrieved facts—Q4 2029 expected completion and a three-bedroom layout—then accepted the buyer's decision without pushing a viewing.",
+    "weakest_ai_move": "The flexibility question was reasonable but not essential given the buyer's stated requirements; it did not lead to pressure or unnecessary further qualification.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "No material opportunity was missed: the buyer had two fixed requirements that Pearlmont could not meet and explicitly chose to look elsewhere. A viewing or appointment suggestion would have been inappropriate."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [],
+    "support_requests": 0,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression_evidence": "The AI promptly established that the project does not match either hard requirement, checked whether there was any flexibility, and closed respectfully when the buyer confirmed there was not. Correctly screening out this non-convertible buyer is appropriate commercial progression.",
+    "critical_flags": [],
+    "summary": "The AI handled this hard mismatch well: it used retrieved Knowledge accurately to explain that Pearlmont's expected Q4 2029 completion and three-bedroom units cannot meet the buyer's next-month move-in and four-bedroom requirements. It detected no appointment readiness, did not make a formal handoff, and respected the buyer's decision to look elsewhere. The buyer was correctly screened out rather than converted. This scenario contains no Human Support request, so it does not test whether the AI can use a support answer to continue selling; it shows appropriate judgment when the product is a clear mismatch.",
+    "improvement_recommendation": "No material change is needed for this interaction. Continue stating verified fit constraints early and avoid suggesting a viewing when hard requirements rule the project out. No repository source change is indicated.",
+    "conversion_attribution": "BAD_FIT_NO_CONVERSION",
+    "support_request_count": 0,
+    "support_resolved_count": 0,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.4",
+  "support_trace": [],
+  "support_request_count": 0,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "Buyer has hard requirements for immediate move-in and four bedrooms; the supplied Pearlmont facts do not meet them."
+    ],
+    "appointment_slots": "NOT_APPLICABLE"
+  },
+  "strongest_ai_move": "It stated the decisive mismatch clearly using retrieved facts—Q4 2029 expected completion and a three-bedroom layout—then accepted the buyer's decision without pushing a viewing.",
+  "weakest_ai_move": "The flexibility question was reasonable but not essential given the buyer's stated requirements; it did not lead to pressure or unnecessary further qualification.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "No material opportunity was missed: the buyer had two fixed requirements that Pearlmont could not meet and explicitly chose to look elsewhere. A viewing or appointment suggestion would have been inappropriate."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "No material change is needed for this interaction. Continue stating verified fit constraints early and avoid suggesting a viewing when hard requirements rule the project out. No repository source change is indicated."
+}

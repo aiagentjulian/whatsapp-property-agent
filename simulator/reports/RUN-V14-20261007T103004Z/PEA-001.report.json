@@ -1,0 +1,544 @@
+{
+  "scenario_id": "PEA-001",
+  "title": "Budget-sensitive first-home couple",
+  "convertible": true,
+  "buyer_primary_need": "Affordable first home for a couple with a young child, with manageable monthly costs and confidence that the Type A 900 sq.ft. layout will work for family life.",
+  "key_information_learned": [
+    "Buyer is purchasing for own stay with his wife and young child; spouse is a joint decision-maker.",
+    "Target budget is around RM3xxk; monthly affordability and bank assessment remain uncertain.",
+    "Buyer is concerned about shared living space and storage, but considers the bedrooms potentially suitable.",
+    "Buyer explicitly requested a Type A show-unit viewing so the family can judge the layout in person; weekends are usually easier."
+  ],
+  "important_information_missed": [
+    "No exact comfortable monthly repayment or financing outcome was established; the buyer could not specify one without bank information."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The current package guide indicates eligible units start at around RM302k after the applicable rebate, based on a RM328k base price. The exact price depends on the unit, floor and car-park allocation, so I’d confirm the latest package before quoting a specific unit. All Phase 1 units are 900 sq.ft. with 3 bedrooms and 2 bathrooms. Are you looking for your own stay or as an investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Own stay. We’re hoping to keep it around the RM3xxk range—could you give a rough idea of the monthly instalment, subject to the bank’s assessment?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have a verified instalment illustration to quote, so I don’t want to give you a misleading monthly figure. The actual amount will depend on the approved loan, tenure and bank rate. What monthly repayment range would feel comfortable for you?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Hard to say on the monthly until we know what the bank would offer—we’d want to keep it manageable as it’s our first home. It’s for me, my wife and our young child; 900 sqft sounds a bit tight for us. Is the Type A layout practical for a family?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "POSITION",
+      "message": "That’s a fair concern—900 sq.ft. can feel different depending on how you use the space. Type A has 3 bedrooms and 2 bathrooms; the living, dining and kitchen area is about 405 sq.ft., and the project materials describe all three bedrooms as able to fit a queen-sized bed. It’s an efficient layout, but with a young child, storage and furniture choices will matter. Which feels like the bigger concern for your family: the bedrooms or the shared living space?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Probably the shared living area and storage, especially with our child’s things. The bedrooms sound okay on paper, but it’s hard to picture the space from the measurements. Is there a Type A show unit we could see?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That makes sense—seeing the Type A in person should help you judge the shared space and storage for your family. I’ll get the viewing details confirmed and have a colleague follow up with you to arrange it.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. My wife should come along too—could you let me know what days and times are available to view the Type A show unit? We’d like to see how the living area and storage feel in person.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "I can’t verify whether a Type A show unit is available or which viewing days and times are open—the supplied simulator fixture is not connected to unit availability or the viewing calendar.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "No worries. Could you check with the team and let me know once you can confirm a Type A viewing slot? Weekends are usually easier for us, but I’ll confirm the exact time with my wife.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "transcript_file": "PEA-001.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Own stay. We’re hoping to keep it around the RM3xxk range—could you give a rough idea of the monthly instalment, subject to the bank’s assessment?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Own stay. We’re hoping to keep it around the RM3xxk range—could you give a rough idea of the monthly instalment, subject to the bank’s assessment?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Hard to say on the monthly until we know what the bank would offer—we’d want to keep it manageable as it’s our first home. It’s for me, my wife and our young child; 900 sqft sounds a bit tight for us. Is the Type A layout practical for a family?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Probably the shared living area and storage, especially with our child’s things. The bedrooms sound okay on paper, but it’s hard to picture the space from the measurements. Is there a Type A show unit we could see?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Probably the shared living area and storage, especially with our child’s things. The bedrooms sound okay on paper, but it’s hard to picture the space from the measurements. Is there a Type A show unit we could see?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "POSITION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are."
+    },
+    {
+      "turn": 6,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 5,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 6,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify Type A show-unit availability and viewing arrangements, then follow up to arrange a viewing.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 7,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-001",
+    "buyer_primary_need": "Affordable first home for a couple with a young child, with manageable monthly costs and confidence that the Type A 900 sq.ft. layout will work for family life.",
+    "key_information_learned": [
+      "Buyer is purchasing for own stay with his wife and young child; spouse is a joint decision-maker.",
+      "Target budget is around RM3xxk; monthly affordability and bank assessment remain uncertain.",
+      "Buyer is concerned about shared living space and storage, but considers the bedrooms potentially suitable.",
+      "Buyer explicitly requested a Type A show-unit viewing so the family can judge the layout in person; weekends are usually easier."
+    ],
+    "important_information_missed": [
+      "No exact comfortable monthly repayment or financing outcome was established; the buyer could not specify one without bank information."
+    ],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "appointment_confirmation": false,
+    "first_ready_turn": 5,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+    "handoff_turn": 6,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify Type A show-unit availability and viewing arrangements, then follow up to arrange a viewing.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 2,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 4,
+      "selling_angle_relevance": 5,
+      "objection_handling": 5,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 5,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 4,
+      "support_resume_quality": 4
+    },
+    "strongest_ai_move": "Responded to the family’s space concern with relevant Type A layout facts, acknowledged that practical fit depends on furniture and storage, and recognized the show-unit request as a genuine viewing signal.",
+    "weakest_ai_move": "The unresolved monthly-cost concern was not revisited after the layout discussion. This was not a blocker to the buyer’s explicit viewing request, and the Agent appropriately avoided inventing an instalment figure.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [
+      "No material missed opportunity. The buyer’s specific show-unit request provided a suitable next step despite unresolved bank-dependent monthly costs."
+    ],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "No verified instalment illustration was supplied in the support trace.",
+      "No verified show-unit availability or viewing slots were supplied in the support trace or human operations fixture."
+    ],
+    "commercial_progression_evidence": [
+      "The Agent opened with an indicative package price and caveat that exact pricing depends on unit, floor and car-park allocation.",
+      "After the buyer raised family-space concerns, the Agent used retrieved layout information (3 bedrooms, 2 bathrooms, approximately 405 sq.ft. living/dining/kitchen area, and project-material bedroom descriptions) and explored the specific concern.",
+      "When the buyer requested a show unit, the Agent connected viewing to judging living space and storage, then handed off for operational verification."
+    ],
+    "critical_flags": [],
+    "summary": "The AI successfully moved this suitable, medium-intent buyer to READY_FOR_APPOINTMENT and made an appropriately timed appointment handoff with LOW sales work remaining. It handled both unsupported support requests honestly: neither had a matching fixture, so there was no verified result to use or communicate. The human executor could not verify availability, so no viewing was booked; that is an incomplete operational task, not an AI sales failure. Direct answer to the primary question: this run shows the AI can use retrieved layout information to address a concern and move a suitable buyer toward appointment readiness, but it does not test successful use of a resolved support answer because both support requests were unavailable.",
+    "improvement_recommendation": "No source or Knowledge change is indicated. In similar conversations, after the layout concern is addressed, briefly acknowledge that monthly affordability remains bank-dependent while keeping the requested viewing as the next step. The AI correctly made no post-handoff response.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 2,
+    "support_resolved_count": 0,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.4",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 2,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "VIEWING_INTEREST",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "Use retrieved package source only to explain documented package mechanics; no unit-specific price or current validity fixture is supplied."
+    ],
+    "availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "Responded to the family’s space concern with relevant Type A layout facts, acknowledged that practical fit depends on furniture and storage, and recognized the show-unit request as a genuine viewing signal.",
+  "weakest_ai_move": "The unresolved monthly-cost concern was not revisited after the layout discussion. This was not a blocker to the buyer’s explicit viewing request, and the Agent appropriately avoided inventing an instalment figure.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [
+    "No material missed opportunity. The buyer’s specific show-unit request provided a suitable next step despite unresolved bank-dependent monthly costs."
+  ],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "No source or Knowledge change is indicated. In similar conversations, after the layout concern is addressed, briefly acknowledge that monthly affordability remains bank-dependent while keeping the requested viewing as the next step. The AI correctly made no post-handoff response."
+}

@@ -33,7 +33,7 @@
   },
   "critical_facts": "1,846 units; towers/lifts and access separation source facts; no noise/crowding guarantees",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
     "specific_verified_facts": [
       "No authoritative tower-movement/corridor-control plan fixture is supplied.",
       "Synthetic support fixture 'access' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
@@ -41,8 +41,12 @@
     "access_plan": "NOT_CONNECTED",
     "support_fixtures": {
       "access": {
-        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, the fixture shows residents share the tower lift lobby and corridors; it does not show private corridors or a control that prevents residents from encountering one another. It does not verify noise or crowding levels.",
-        "source_note": "Synthetic simulator-only access/corridor plan fixture; the residential-versus-commercial access distinction is also in project Knowledge."
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, residents share the tower lift lobby and corridors; private corridors are not shown. It does not verify crowding or noise levels.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic simulator-only access/corridor plan summary."
+      },
+      "corridor_access": {
+        "verified_answer": "For this simulator scenario, the gallery can show the buyer a typical residential floor plan and include a visit to a representative shared corridor during a viewing, subject to gallery access on the day. This helps inspect the layout but cannot predict crowding or noise at other times.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic operational fixture for a representative floor-plan and corridor viewing; not a real gallery booking."
       }
     }
   }

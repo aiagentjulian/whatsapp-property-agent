@@ -1,0 +1,484 @@
+{
+  "scenario_id": "PEA-001",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:18:54.663735+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 6,
+    "ai": 6,
+    "human_handoff_executor": 1,
+    "human_support": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 6,
+  "appointment_state_customer": "APPOINTMENT_IN_PROGRESS",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "POSITION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Verify whether the 14 Aug 2026 sales package is currently valid and confirm how the rebate applies to Type A units by category, including a supportable effective price range. Also check whether there are approved downpayment or monthly instalment examples and their assumptions. Customer is an own-stay buyer with a comfortable budget around RM3xxk; do not assume a specific unit or financing eligibility."
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether the 14 Aug 2026 Pearlmont package is currently valid and verify the applicable Type A rebate categories and supportable effective price range. Do not recheck the monthly-payment illustration; it has already been resolved."
+    },
+    {
+      "turn": 5,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 7,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "LOW",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 3,
+      "request": "Verify whether the 14 Aug 2026 sales package is currently valid and confirm how the rebate applies to Type A units by category, including a supportable effective price range. Also check whether there are approved downpayment or monthly instalment examples and their assumptions. Customer is an own-stay buyer with a comfortable budget around RM3xxk; do not assume a specific unit or financing eligibility.",
+      "fixture_key": "payment_example",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "request": "Confirm whether the 14 Aug 2026 Pearlmont package is currently valid and verify the applicable Type A rebate categories and supportable effective price range. Do not recheck the monthly-payment illustration; it has already been resolved.",
+      "fixture_key": "pricing",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Own stay, for me, my spouse and our young child. Is the 900 sqft Type A layout practical for a small family?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Maybe one room can be for our child/play area for now. I’m still a bit worried 900 sqft might feel tight once we furnish it. Our comfortable budget is around RM3xxk, and the monthly instalment/downpayment are important too—does the price you mentioned include the rebate, or does it depend on the unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Maybe one room can be for our child/play area for now. I’m still a bit worried 900 sqft might feel tight once we furnish it. Our comfortable budget is around RM3xxk, and the monthly instalment/downpayment are important too—does the price you mentioned include the rebate, or does it depend on the unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Maybe one room can be for our child/play area for now. I’m still a bit worried 900 sqft might feel tight once we furnish it. Our comfortable budget is around RM3xxk, and the monthly instalment/downpayment are important too—does the price you mentioned include the rebate, or does it depend on the unit?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "One carpark should be enough for us for now. The monthly estimate sounds more manageable, but we’d need to understand the downpayment and other upfront costs before deciding. Could we see the actual Type A layout or unit to judge the space, and get a breakdown of the costs? My spouse would need to come too.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify whether the 14 Aug 2026 sales package is currently valid and confirm how the rebate applies to Type A units by category, including a supportable effective price range. Also check whether there are approved downpayment or monthly instalment examples and their assumptions. Customer is an own-stay buyer with a comfortable budget around RM3xxk; do not assume a specific unit or financing eligibility.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify whether the 14 Aug 2026 sales package is currently valid and confirm how the rebate applies to Type A units by category, including a supportable effective price range. Also check whether there are approved downpayment or monthly instalment examples and their assumptions. Customer is an own-stay buyer with a comfortable budget around RM3xxk; do not assume a specific unit or financing eligibility.",
+      "result": {
+        "fixture_key": "payment_example",
+        "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic mortgage illustration with assumptions stated; not financial advice or a real lender quote.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether the 14 Aug 2026 Pearlmont package is currently valid and verify the applicable Type A rebate categories and supportable effective price range. Do not recheck the monthly-payment illustration; it has already been resolved.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether the 14 Aug 2026 Pearlmont package is currently valid and verify the applicable Type A rebate categories and supportable effective price range. Do not recheck the monthly-payment illustration; it has already been resolved.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package fixture to support early affordability discussion.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The pricing materials show base prices from RM328k. The package document lists an 8% rebate for some unit categories, which would make that base about RM302k before confirming the exact unit and current package validity. Are you looking for your own stay or as an investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Own stay, for me, my spouse and our young child. Is the 900 sqft Type A layout practical for a small family?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "POSITION",
+      "message": "For you, your spouse and your young child, the 900 sqft Type A looks practical on paper: it has 3 bedrooms and 2 bathrooms, with an efficient layout and little wasted corridor space. The living, dining and kitchen area is about 405 sqft; the project materials describe all three bedrooms as able to fit a queen bed, though furniture and circulation are worth checking against the actual layout. Would you want one room kept flexible for play or work?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Maybe one room can be for our child/play area for now. I’m still a bit worried 900 sqft might feel tight once we furnish it. Our comfortable budget is around RM3xxk, and the monthly instalment/downpayment are important too—does the price you mentioned include the rebate, or does it depend on the unit?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Verify whether the 14 Aug 2026 sales package is currently valid and confirm how the rebate applies to Type A units by category, including a supportable effective price range. Also check whether there are approved downpayment or monthly instalment examples and their assumptions. Customer is an own-stay buyer with a comfortable budget around RM3xxk; do not assume a specific unit or financing eligibility.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Verify whether the 14 Aug 2026 sales package is currently valid and confirm how the rebate applies to Type A units by category, including a supportable effective price range. Also check whether there are approved downpayment or monthly instalment examples and their assumptions. Customer is an own-stay buyer with a comfortable budget around RM3xxk; do not assume a specific unit or financing eligibility.",
+      "result": {
+        "fixture_key": "payment_example",
+        "verified_answer": "For this simulator example only, assuming 90% financing, 35 years, and 4.2% annual interest, the estimated monthly principal-and-interest payment is about RM1,245 for RM302,000 and RM1,352 for RM328,000. This is an illustration, not a bank quote or personal eligibility assessment; actual amount depends on the approved price, loan terms, fees, and bank assessment.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic mortgage illustration with assumptions stated; not financial advice or a real lender quote.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether the 14 Aug 2026 Pearlmont package is currently valid and verify the applicable Type A rebate categories and supportable effective price range. Do not recheck the monthly-payment illustration; it has already been resolved.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether the 14 Aug 2026 Pearlmont package is currently valid and verify the applicable Type A rebate categories and supportable effective price range. Do not recheck the monthly-payment illustration; it has already been resolved.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package reference starts from RM302,000 for the one-carpark category, subject to floor and facing and final unit-level confirmation. This is a synthetic current package answer for the scenario, not a live quote or availability check.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package fixture to support early affordability discussion.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Yes—the RM302k figure is the current Type A package reference from for the 1-carpark category, not a price for every Type A unit. Floor, facing and the specific unit can change the final price, so I’d treat it as an entry reference until the exact unit is confirmed.\n\nFor a rough cash-flow illustration, assuming 90% financing over 35 years at 4.2%, the estimated monthly principal-and-interest payment is about RM1,245 at RM302k or RM1,352 at RM328k. At 90% financing, the 10% downpayment would be about RM30,200 or RM32,800 respectively, before fees—and the loan terms and eligibility would need to be confirmed with a bank.\n\nOn the space, the living/dining/kitchen area is about 405 sq ft, and the project materials describe the bedrooms as able to fit a queen bed. Furniture layout can still affect how roomy it feels, so it’s worth checking the actual plan. Would one carpark suit your household, or do you need two?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "One carpark should be enough for us for now. The monthly estimate sounds more manageable, but we’d need to understand the downpayment and other upfront costs before deciding. Could we see the actual Type A layout or unit to judge the space, and get a breakdown of the costs? My spouse would need to come too.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes—seeing the actual Type A layout together should help you judge the space. I’ll have my colleague coordinate a visit for both of you and prepare an upfront-cost breakdown based on the one-carpark Type A reference. The final figures will depend on the selected unit and applicable financing terms.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Could you send a couple of available visit slots and the upfront-cost breakdown for the 1-carpark Type A? I’ll check which time works for my spouse too.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "I can’t verify specific open visit slots because the appointment calendar isn’t connected. The viewing reference says the Type A show unit can be viewed by appointment on Saturday or Sunday, 10:00 am–5:00 pm, subject to gallery confirmation; no time is held or confirmed. For the one-carpark Type A, the available price reference starts at RM302,000. Assuming 90% financing, 10% down would be about RM30,200 before fees. I don’t have a verified itemized breakdown of other upfront costs, and financing terms aren’t confirmed.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "LOW"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, that’s helpful. I’ll check with my spouse—weekend 10am–5pm could work, but I can’t confirm a time yet. Could you send the Type A floor plan and any verified upfront-cost items you do have, even if it’s not a full breakdown?",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 12,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 13
+}

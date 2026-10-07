@@ -1,0 +1,570 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:24:00.196751+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 8,
+    "human_handoff_executor": 0,
+    "human_support": 3
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please retrieve the source documents or approved customer-shareable references supporting the stated 20 m minimum-distance requirement, and confirm what the requirement applies to. Also check whether Pearlmont has documented site flood history or an independent flood assessment that can be shared. Return only verified details and available document links; flag anything unavailable."
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm which customer-shareable materials are available: the actual FAQ, any site or flood-mitigation plans it is based on, and the source document or standard identifying what the 20 m requirement applies to. Provide verified document links or confirm if only a summary is available. Also confirm whether a technical person can explain the available materials. Do not infer or promise that documents or a technical contact are available."
+    },
+    {
+      "turn": 5,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please confirm whether a technical contact is available to explain the customer-shareable FAQ summary and the available flood information, including the 20 m reference. Also provide the approved customer-shareable FAQ summary or a link if one is available to send; otherwise confirm that it can only be discussed and no shareable copy/link is available. Do not infer availability."
+    },
+    {
+      "turn": 7,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Please retrieve the source documents or approved customer-shareable references supporting the stated 20 m minimum-distance requirement, and confirm what the requirement applies to. Also check whether Pearlmont has documented site flood history or an independent flood assessment that can be shared. Return only verified details and available document links; flag anything unavailable.",
+      "fixture_key": "technical_risk",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "request": "Please confirm which customer-shareable materials are available: the actual FAQ, any site or flood-mitigation plans it is based on, and the source document or standard identifying what the 20 m requirement applies to. Provide verified document links or confirm if only a summary is available. Also confirm whether a technical person can explain the available materials. Do not infer or promise that documents or a technical contact are available.",
+      "fixture_key": "technical_risk",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "request": "Please confirm whether a technical contact is available to explain the customer-shareable FAQ summary and the available flood information, including the 20 m reference. Also provide the approved customer-shareable FAQ summary or a link if one is available to send; otherwise confirm that it can only be discussed and no shareable copy/link is available. Do not infer availability.",
+      "fixture_key": "technical_risk",
+      "status": "RESOLVED",
+      "resolution_source": "REUSED_VERIFIED_RESULT",
+      "human_lookup_performed": false,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Both honestly, got young kids so quite cautious. The 36m and raised level are helpful, but I’d need to see the actual source/docs—especially flood history or an independent flood assessment, and what the 20m requirement refers to. Can you share those?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Both honestly, got young kids so quite cautious. The 36m and raised level are helpful, but I’d need to see the actual source/docs—especially flood history or an independent flood assessment, and what the 20m requirement refers to. Can you share those?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks for being upfront. Can you send me the actual FAQ and any site/flood mitigation plans they’re based on, plus the source for that 20m figure? If there’s a technical person who can explain what’s available, I’d be open to speaking with them. I wouldn’t be comfortable deciding on a viewing alone without understanding the evidence first.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Thanks for being upfront. Can you send me the actual FAQ and any site/flood mitigation plans they’re based on, plus the source for that 20m figure? If there’s a technical person who can explain what’s available, I’d be open to speaking with them. I wouldn’t be comfortable deciding on a viewing alone without understanding the evidence first.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Okay, thanks for checking. Please send me the shareable FAQ summary, and if you can find out whether a technical person can explain the available flood info and the 20m figure, let me know. I’ll hold off on a viewing until I’ve understood what evidence there is.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "Okay, thanks for checking. Please send me the shareable FAQ summary, and if you can find out whether a technical person can explain the available flood info and the 20m figure, let me know. I’ll hold off on a viewing until I’ve understood what evidence there is.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Thanks, appreciate you being upfront. I’ll hold off on a viewing for now. If you do get a technical person or any verified source for the flood info and 20m figure, please share it and I’ll take a look.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please retrieve the source documents or approved customer-shareable references supporting the stated 20 m minimum-distance requirement, and confirm what the requirement applies to. Also check whether Pearlmont has documented site flood history or an independent flood assessment that can be shared. Return only verified details and available document links; flag anything unavailable.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please retrieve the source documents or approved customer-shareable references supporting the stated 20 m minimum-distance requirement, and confirm what the requirement applies to. Also check whether Pearlmont has documented site flood history or an independent flood assessment that can be shared. Return only verified details and available document links; flag anything unavailable.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please confirm which customer-shareable materials are available: the actual FAQ, any site or flood-mitigation plans it is based on, and the source document or standard identifying what the 20 m requirement applies to. Provide verified document links or confirm if only a summary is available. Also confirm whether a technical person can explain the available materials. Do not infer or promise that documents or a technical contact are available.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please confirm which customer-shareable materials are available: the actual FAQ, any site or flood-mitigation plans it is based on, and the source document or standard identifying what the 20 m requirement applies to. Provide verified document links or confirm if only a summary is available. Also confirm whether a technical person can explain the available materials. Do not infer or promise that documents or a technical contact are available.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please confirm whether a technical contact is available to explain the customer-shareable FAQ summary and the available flood information, including the 20 m reference. Also provide the approved customer-shareable FAQ summary or a link if one is available to send; otherwise confirm that it can only be discussed and no shareable copy/link is available. Do not infer availability.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please confirm whether a technical contact is available to explain the customer-shareable FAQ summary and the available flood information, including the 20 m reference. Also provide the approved customer-shareable FAQ summary or a link if one is available to send; otherwise confirm that it can only be discussed and no shareable copy/link is available. Do not infer availability.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair questions. For Phase 1 Block 1B, the project FAQ states the high-tension cable is about 36 m away and cites a 20 m minimum-distance requirement. For flooding, it says the development’s finished floor level is planned at about 2.4 m above sea level, compared with an original ground level of around 1.0–1.2 m, and that the river is under JPS maintenance and flood-gate/freeboard control. Those measures don’t mean I can guarantee zero flood risk. Which concern weighs more for you—the river or the pylon?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Both honestly, got young kids so quite cautious. The 36m and raised level are helpful, but I’d need to see the actual source/docs—especially flood history or an independent flood assessment, and what the 20m requirement refers to. Can you share those?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please retrieve the source documents or approved customer-shareable references supporting the stated 20 m minimum-distance requirement, and confirm what the requirement applies to. Also check whether Pearlmont has documented site flood history or an independent flood assessment that can be shared. Return only verified details and available document links; flag anything unavailable.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please retrieve the source documents or approved customer-shareable references supporting the stated 20 m minimum-distance requirement, and confirm what the requirement applies to. Also check whether Pearlmont has documented site flood history or an independent flood assessment that can be shared. Return only verified details and available document links; flag anything unavailable.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I checked what can be shared. The customer-facing FAQ summary confirms Block 1B is about 120 ft (36 m) from the high-tension line and describes the raised platform at about 2.4 m, along with flood-mitigation measures. It cites a 20 m minimum-distance requirement, but the material available doesn’t identify the underlying standard or exactly what that requirement applies to, so I can’t present it as independent confirmation. There’s no independent engineering assessment or official block-specific flood-history certification available to share, and the measures aren’t a guarantee of zero flood risk. I understand those gaps matter when you have young children; the FAQ summary can help explain the project’s stated measures, but it isn’t a substitute for the independent evidence you’re looking for.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. Can you send me the actual FAQ and any site/flood mitigation plans they’re based on, plus the source for that 20m figure? If there’s a technical person who can explain what’s available, I’d be open to speaking with them. I wouldn’t be comfortable deciding on a viewing alone without understanding the evidence first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please confirm which customer-shareable materials are available: the actual FAQ, any site or flood-mitigation plans it is based on, and the source document or standard identifying what the 20 m requirement applies to. Provide verified document links or confirm if only a summary is available. Also confirm whether a technical person can explain the available materials. Do not infer or promise that documents or a technical contact are available.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please confirm which customer-shareable materials are available: the actual FAQ, any site or flood-mitigation plans it is based on, and the source document or standard identifying what the 20 m requirement applies to. Provide verified document links or confirm if only a summary is available. Also confirm whether a technical person can explain the available materials. Do not infer or promise that documents or a technical contact are available.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I checked what’s confirmed: I can discuss a customer-shareable FAQ summary, but I don’t have the actual FAQ, site or flood-mitigation plans, or a source identifying what the 20 m figure applies to confirmed as shareable. There’s also no independent engineering opinion or official Block 1B flood-history certification available in the information confirmed, and I can’t confirm that a technical person is available to speak with you. A site visit wouldn’t replace that independent evidence, so I understand why you’d want those details before considering a viewing.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks for checking. Please send me the shareable FAQ summary, and if you can find out whether a technical person can explain the available flood info and the 20m figure, let me know. I’ll hold off on a viewing until I’ve understood what evidence there is.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please confirm whether a technical contact is available to explain the customer-shareable FAQ summary and the available flood information, including the 20 m reference. Also provide the approved customer-shareable FAQ summary or a link if one is available to send; otherwise confirm that it can only be discussed and no shareable copy/link is available. Do not infer availability.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please confirm whether a technical contact is available to explain the customer-shareable FAQ summary and the available flood information, including the 20 m reference. Also provide the approved customer-shareable FAQ summary or a link if one is available to send; otherwise confirm that it can only be discussed and no shareable copy/link is available. Do not infer availability.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Previously returned synthetic verified fixture; no second lookup was performed.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Here’s the shareable summary: the project material states Block 1B is about 120 ft (36 m) from the high-tension line and refers to a 20 m minimum-distance requirement, but the source and what that requirement applies to aren’t identified in the information available. It also describes a raised platform of about 2.4 m and flood-mitigation measures, with the river under JPS maintenance and flood-gate/freeboard control. I don’t have the actual FAQ, plans, an independent flood assessment or an official Block 1B flood-history record to send, and I can’t confirm that a technical contact is available. These measures aren’t a guarantee of zero flood risk. I understand you’d prefer to understand the evidence before considering a viewing, so I won’t push that.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Thanks, appreciate you being upfront. I’ll hold off on a viewing for now. If you do get a technical person or any verified source for the flood info and 20m figure, please share it and I’ll take a look.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "Understood—I won’t push for a viewing. I don’t have any new verified sources or a confirmed technical contact to share at the moment. If either becomes available, I’ll let you know.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "provider_calls": 12,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 13
+}

@@ -1,0 +1,429 @@
+{
+  "scenario_id": "PEA-003",
+  "title": "Two-car household",
+  "convertible": true,
+  "buyer_primary_need": "A unit with two allocated carparks as a must-have, with sea-facing orientation strongly preferred and floor flexibility.",
+  "key_information_learned": [
+    "Two carparks are non-negotiable.",
+    "Sea-facing is a strong preference, but the buyer is flexible on floor.",
+    "RM418,000 is within the buyer's range, subject to confirmation that it is the current total.",
+    "The buyer is keen to view once the unit details and availability are verified; weekends are generally easier."
+  ],
+  "important_information_missed": [
+    "No material sales qualification was missed. Live inventory and viewing-slot verification remained operationally unresolved after handoff."
+  ],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Need 2 carparks. Also which floor got sea facing?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Sea-facing units are in Block 1C on Levels 1–38 and Block 1D on Levels 1–37. Since you need 2 carparks, I’d focus on matching categories; the exact floor/unit and current availability would need checking.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "2 carparks is the must-have, sea-facing is still a big preference but I can be flexible on floor. Can you check which categories currently have 2 bays and sea-facing options?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm which current Pearlmont unit categories have both 2 allocated carparks and sea-facing options, including any currently available matching floors or units. Do not assume availability.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm which current Pearlmont unit categories have both 2 allocated carparks and sea-facing options, including any currently available matching floors or units. Do not assume availability.",
+      "result": {
+        "fixture_key": "two_carpark",
+        "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; category/facing context aligns with knowledge/project/pearlmont/02_commercial/sales-package.md. Unit number, exact availability, and fixture package are not Pearlmont Knowledge.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "NARROW_UNIT",
+      "message": "The matching option is Type A Sea View, Block 1C south-facing, Level 18, unit 1C-18-06, with 2 carparks. The package total is RM418,000. It meets your parking must-have and sea-facing preference. Is that package total within the range you had in mind?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "RM418k sounds within range, if that’s the current total. Can you verify that unit is still available and really comes with 2 carparks and sea-facing? Then I’d be keen to view it.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "high"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "Yes—the confirmed option is Type A Sea View, Block 1C south-facing, Level 18, unit 1C-18-06, with 2 carparks. The package total is RM418,000. Since that fits your range, I’ll get the viewing arrangements checked for you. Are weekends generally easier for you?",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Weekend usually easier, yes. Before we arrange it, can you confirm the live availability and that this exact unit still includes 2 carparks and is sea-facing? I’d want that checked before coming down.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "The simulator snapshot records unit 1C-18-06 as a sea-view option with 2 carparks, but I can’t verify its live availability or confirm those details against live inventory. Viewing slots also aren’t connected, so I can’t confirm a weekend time.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. Could you check with the sales team whether that exact unit is still available and confirm the 2 carparks and sea-facing before we arrange a viewing? Weekend works for me once those details are verified.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "high"
+    }
+  ],
+  "transcript_file": "PEA-003.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Need 2 carparks. Also which floor got sea facing?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "2 carparks is the must-have, sea-facing is still a big preference but I can be flexible on floor. Can you check which categories currently have 2 bays and sea-facing options?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "2 carparks is the must-have, sea-facing is still a big preference but I can be flexible on floor. Can you check which categories currently have 2 bays and sea-facing options?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "RM418k sounds within range, if that’s the current total. Can you verify that unit is still available and really comes with 2 carparks and sea-facing? Then I’d be keen to view it.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm which current Pearlmont unit categories have both 2 allocated carparks and sea-facing options, including any currently available matching floors or units. Do not assume availability."
+    },
+    {
+      "turn": 3,
+      "action": "NARROW_UNIT",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+  "ready_for_appointment": true,
+  "first_ready_turn": 4,
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "handoff_timing": "APPROPRIATE",
+  "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+  "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+  "human_handoff_executor_used": true,
+  "human_operational_task": "Verify the exact unit details and availability, and coordinate viewing arrangements, including a weekend slot.",
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "appointment_final_state": "VIEWING_INTEREST",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": true,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-003",
+    "buyer_primary_need": "A unit with two allocated carparks as a must-have, with sea-facing orientation strongly preferred and floor flexibility.",
+    "key_information_learned": [
+      "Two carparks are non-negotiable.",
+      "Sea-facing is a strong preference, but the buyer is flexible on floor.",
+      "RM418,000 is within the buyer's range, subject to confirmation that it is the current total.",
+      "The buyer is keen to view once the unit details and availability are verified; weekends are generally easier."
+    ],
+    "important_information_missed": [
+      "No material sales qualification was missed. Live inventory and viewing-slot verification remained operationally unresolved after handoff."
+    ],
+    "appointment_state": "VIEWING_INTEREST",
+    "appointment_final_state": "VIEWING_INTEREST",
+    "appointment_readiness_final": "READY_FOR_APPOINTMENT",
+    "ready_for_appointment": true,
+    "first_ready_turn": 4,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "READY_FOR_APPOINTMENT",
+    "handoff_state": "HANDOFF_COMPLETED",
+    "handoff_type": "APPOINTMENT_HANDOFF",
+    "handoff_reason": "OPERATIONAL_BOOKING",
+    "handoff_turn": 4,
+    "handoff_timing": "APPROPRIATE",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_APPOINTMENT_HANDOFF_SUCCESS",
+    "human_handoff_executor_used": true,
+    "human_operational_task": "Verify the exact unit details and availability, and coordinate viewing arrangements, including a weekend slot.",
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 1,
+    "support_resume_success_count": 1,
+    "support_results_used": true,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": true,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [],
+    "retrieval_misses": [],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The human executor could not verify live inventory or confirm a viewing slot. The support fixture is simulator-only evidence, not Pearlmont factual Knowledge or a real-world inventory record."
+    ],
+    "commercial_progression": {
+      "evidence": "After the resolved support request, the AI presented the matching two-carpark sea-view option and fixture package total, connected it to the buyer's stated must-have and preference, and checked price fit. After the buyer confirmed the price range and expressed conditional viewing intent, the AI marked the lead ready and handed off for operational coordination.",
+      "assessment": "The AI made useful sales progress rather than merely relaying the support result."
+    },
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 5,
+      "objection_handling": 4,
+      "unit_fit_judgment": 5,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 4,
+      "handoff_judgment": 5,
+      "commercial_progression": 5,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 5,
+      "appointment_ready_progression": 5,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 5,
+      "support_result_utilization": 5,
+      "support_resume_quality": 5
+    },
+    "strongest_ai_move": "Used the verified-in-simulation answer to match the buyer's two-carpark requirement and sea-facing preference, then checked price fit before moving to appointment handoff.",
+    "weakest_ai_move": "The handoff wording could have made the outstanding operational checks and their unconfirmed status more explicit. This did not make the handoff premature or undermine AI appointment-ready success.",
+    "critical_flags": [],
+    "summary": "The support-enabled sales flow succeeded: the AI requested needed operational information, received a matching verified-in-simulation fixture answer, resumed naturally, applied it to the buyer's requirements, established price fit, identified appointment readiness, and handed off for operational execution at the right time. This run is positive evidence that the AI can use reliable support to progress a suitable buyer toward appointment ready; it does not establish reliability across other cases. The human executor did not complete live availability verification or confirm a viewing slot, so there is no confirmed appointment. That is a separate operational outcome, not an AI appointment-handoff failure. The unit, availability, and RM418,000 package details are simulator-only evidence, not Pearlmont Knowledge or a claim of real-world live-system capability.",
+    "improvement_recommendation": "At operational handoff, clearly record which customer-requested checks remain outstanding and avoid implying that viewing details are confirmed until the executor returns a concrete result. No Knowledge or Brain change is recommended from this simulator run; source target for any missing operational capability: MISSING_SOURCE.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 1,
+    "support_resolved_count": 1,
+    "ai_final_sales_state": "READY_FOR_APPOINTMENT",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.4",
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Confirm which current Pearlmont unit categories have both 2 allocated carparks and sea-facing options, including any currently available matching floors or units. Do not assume availability.",
+      "fixture_key": "two_carpark",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 1,
+  "support_resume_success_count": 1,
+  "support_results_used": true,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": true,
+  "support_failure_modes": [],
+  "final_appointment_state": "VIEWING_INTEREST",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "specific_verified_facts": [
+      "No live unit inventory or unit-number schedule fixture is supplied.",
+      "Synthetic support fixture 'two_carpark' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
+    ],
+    "unit_availability": "NOT_CONNECTED",
+    "appointment_slots": "NOT_CONNECTED",
+    "support_fixtures": {
+      "two_carpark": {
+        "verified_answer": "The simulator inventory snapshot confirms an available Type A Sea View option, Block 1C south-facing, level 18, unit 1C-18-06, with two car parks. Its fixture package total is RM418,000. This is the verified-in-simulation option and price for this run; no further live inventory check is needed in the simulation. This synthetic availability is not a real-world listing.",
+        "source_note": "Synthetic simulator-only current inventory/package fixture; category/facing context aligns with knowledge/project/pearlmont/02_commercial/sales-package.md. Unit number, exact availability, and fixture package are not Pearlmont Knowledge."
+      }
+    }
+  },
+  "strongest_ai_move": "Used the verified-in-simulation answer to match the buyer's two-carpark requirement and sea-facing preference, then checked price fit before moving to appointment handoff.",
+  "weakest_ai_move": "The handoff wording could have made the outstanding operational checks and their unconfirmed status more explicit. This did not make the handoff premature or undermine AI appointment-ready success.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "At operational handoff, clearly record which customer-requested checks remain outstanding and avoid implying that viewing details are confirmed until the executor returns a concrete result. No Knowledge or Brain change is recommended from this simulator run; source target for any missing operational capability: MISSING_SOURCE."
+}

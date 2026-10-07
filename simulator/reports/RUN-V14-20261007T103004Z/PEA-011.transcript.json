@@ -1,0 +1,382 @@
+{
+  "scenario_id": "PEA-011",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T10:55:07.762137+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 6,
+    "human_handoff_executor": 0,
+    "human_support": 1
+  },
+  "owner_final": "AI",
+  "ai_status_final": "ACTIVE",
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details."
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "human_handoff_executor_trace": [],
+  "support_trace": [
+    {
+      "turn": 3,
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks, just wanted a general idea of what Pearlmont is about for now, nothing too detailed 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Got it, thanks 🙂 What kind of shared facilities are planned? Just curious, no rush on the details.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Got it, thanks 🙂 What kind of shared facilities are planned? Just curious, no rush on the details.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Ah okay, thanks for being clear about what’s confirmed 🙂 What does the pay-per-use clubhouse generally mean—would certain spaces be bookable when needed? No rush, just curious.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Ah understood, thanks for explaining 🙂 That’s enough for now.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries—take your time. If anything about Pearlmont catches your interest while you’re browsing, feel free to ask.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, just wanted a general idea of what Pearlmont is about for now, nothing too detailed 🙂",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont is a freehold condominium development in Seberang Jaya. Phase 1 has three residential towers, with 900 sq ft units featuring 3 bedrooms, 2 bathrooms and a balcony, plus a large shared facilities deck. It’s expected to be completed in Q4 2029. That’s the broad picture for now—feel free to ask whenever something catches your interest.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Got it, thanks 🙂 What kind of shared facilities are planned? Just curious, no rush on the details.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The confirmed overview is an approximately 10-acre Level 9 facilities and landscape deck, plus a pay-per-use Super Clubhouse. I don’t have a verified item-by-item facilities list or confirmation of which specific facilities are pay-per-use, so I don’t want to guess.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Ah okay, thanks for being clear about what’s confirmed 🙂 What does the pay-per-use clubhouse generally mean—would certain spaces be bookable when needed? No rush, just curious.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Generally, “pay-per-use” means a fee may apply when you use certain facilities, rather than their use being included. Whether Pearlmont’s clubhouse has bookable spaces, and what the fees or booking rules are, hasn’t been confirmed, so I wouldn’t want to assume that’s how it works here.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Ah understood, thanks for explaining 🙂 That’s enough for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "You’re welcome 🙂 Feel free to ask if anything else comes to mind.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "provider_calls": 10,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 176
+}

@@ -1,0 +1,476 @@
+{
+  "scenario_id": "PEA-011",
+  "title": "Just looking low-intent buyer",
+  "convertible": true,
+  "buyer_primary_need": "A brief, low-pressure general orientation to Pearlmont and its shared facilities; the buyer explicitly said they were browsing and not planning to buy.",
+  "key_information_learned": [
+    "Pearlmont is a freehold condominium development in Seberang Jaya.",
+    "Phase 1 has three residential towers; the described units are 900 sq. ft. with 3 bedrooms, 2 bathrooms, and a balcony.",
+    "Expected Phase 1 completion is Q4 2029.",
+    "Retrieved Knowledge identifies an approximately 10-acre Level 9 facilities/landscape deck and a pay-per-use Super Clubhouse.",
+    "No itemized facilities list or confirmation of clubhouse booking rules was verified."
+  ],
+  "important_information_missed": [],
+  "status": "COMPLETED",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Just browsing only, not planning to buy yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "No worries—take your time. If anything about Pearlmont catches your interest while you’re browsing, feel free to ask.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Thanks, just wanted a general idea of what Pearlmont is about for now, nothing too detailed 🙂",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Pearlmont is a freehold condominium development in Seberang Jaya. Phase 1 has three residential towers, with 900 sq ft units featuring 3 bedrooms, 2 bathrooms and a balcony, plus a large shared facilities deck. It’s expected to be completed in Q4 2029. That’s the broad picture for now—feel free to ask whenever something catches your interest.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Got it, thanks 🙂 What kind of shared facilities are planned? Just curious, no rush on the details.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The confirmed overview is an approximately 10-acre Level 9 facilities and landscape deck, plus a pay-per-use Super Clubhouse. I don’t have a verified item-by-item facilities list or confirmation of which specific facilities are pay-per-use, so I don’t want to guess.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Ah okay, thanks for being clear about what’s confirmed 🙂 What does the pay-per-use clubhouse generally mean—would certain spaces be bookable when needed? No rush, just curious.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Generally, “pay-per-use” means a fee may apply when you use certain facilities, rather than their use being included. Whether Pearlmont’s clubhouse has bookable spaces, and what the fees or booking rules are, hasn’t been confirmed, so I wouldn’t want to assume that’s how it works here.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Ah understood, thanks for explaining 🙂 That’s enough for now.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "low"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "message": "You’re welcome 🙂 Feel free to ask if anything else comes to mind.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    }
+  ],
+  "transcript_file": "PEA-011.transcript.json",
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Just browsing only, not planning to buy yet.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Thanks, just wanted a general idea of what Pearlmont is about for now, nothing too detailed 🙂",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Got it, thanks 🙂 What kind of shared facilities are planned? Just curious, no rush on the details.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Got it, thanks 🙂 What kind of shared facilities are planned? Just curious, no rush on the details.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Ah okay, thanks for being clear about what’s confirmed 🙂 What does the pay-per-use clubhouse generally mean—would certain spaces be bookable when needed? No rush, just curious.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Ah understood, thanks for explaining 🙂 That’s enough for now.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details."
+    },
+    {
+      "turn": 4,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "ACKNOWLEDGE / MAINTAIN",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "appointment_readiness_final": "NOT_READY",
+  "ready_for_appointment": false,
+  "first_ready_turn": null,
+  "handoff_state": "NO_HANDOFF",
+  "handoff_type": "NO_FORMAL_HANDOFF",
+  "handoff_reason": null,
+  "handoff_turn": null,
+  "handoff_timing": "NOT_NEEDED",
+  "ai_final_sales_state": "NOT_READY",
+  "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+  "human_handoff_executor_used": false,
+  "human_operational_task": null,
+  "human_sales_work_required": "NONE",
+  "human_operational_task_completed": false,
+  "human_handoff_executor_trace": [],
+  "appointment_final_state": "NO_VIEWING_INTENT",
+  "conversion_attribution": "NO_CONVERSION",
+  "sales_work_remaining_at_handoff": "LOW",
+  "ai_handoff_too_early": false,
+  "ai_handoff_appropriate": false,
+  "ai_finished_sales_job_before_handoff": false,
+  "human_merely_completed_logistics": false,
+  "human_rescued_conversion": false,
+  "judge": {
+    "scenario_id": "PEA-011",
+    "buyer_primary_need": "A brief, low-pressure general orientation to Pearlmont and its shared facilities; the buyer explicitly said they were browsing and not planning to buy.",
+    "key_information_learned": [
+      "Pearlmont is a freehold condominium development in Seberang Jaya.",
+      "Phase 1 has three residential towers; the described units are 900 sq. ft. with 3 bedrooms, 2 bathrooms, and a balcony.",
+      "Expected Phase 1 completion is Q4 2029.",
+      "Retrieved Knowledge identifies an approximately 10-acre Level 9 facilities/landscape deck and a pay-per-use Super Clubhouse.",
+      "No itemized facilities list or confirmation of clubhouse booking rules was verified."
+    ],
+    "important_information_missed": [],
+    "appointment_state": "NO_VIEWING_INTENT",
+    "appointment_final_state": "NO_VIEWING_INTENT",
+    "appointment_readiness_final": "NOT_READY",
+    "ready_for_appointment": false,
+    "first_ready_turn": null,
+    "readiness_detection_correct": true,
+    "readiness_state_at_handoff": "NOT_READY",
+    "handoff_state": "NO_HANDOFF",
+    "handoff_type": "NO_FORMAL_HANDOFF",
+    "handoff_reason": null,
+    "handoff_turn": null,
+    "handoff_timing": "NOT_NEEDED",
+    "sales_work_remaining_at_handoff": "LOW",
+    "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+    "human_handoff_executor_used": false,
+    "human_operational_task": null,
+    "human_sales_work_required": "NONE",
+    "human_operational_task_completed": false,
+    "support_requests": 1,
+    "support_requests_resolved": 0,
+    "support_resume_success_count": 0,
+    "support_results_used": false,
+    "support_result_only_relayed": false,
+    "failed_to_resume_selling": false,
+    "appointment_ready_after_support": false,
+    "support_unnecessary": false,
+    "support_failure_modes": [],
+    "commercial_progression": {
+      "evidence": "The AI gave a concise project overview, answered the facilities follow-up with the available facts and clearly bounded what was unverified, then respected the buyer's signal that the information was enough. The buyer remained engaged for follow-up questions but showed no purchase or viewing intent.",
+      "assessment": "Appropriate light progression for a low-intent browser; no viewing close or formal handoff was warranted."
+    },
+    "scores": {
+      "customer_understanding": 5,
+      "latest_message_responsiveness": 5,
+      "qualification_discipline": 5,
+      "selling_angle_relevance": 4,
+      "objection_handling": 4,
+      "unit_fit_judgment": 4,
+      "buying_signal_detection": 5,
+      "appointment_judgment": 5,
+      "factual_accuracy": 5,
+      "sales_naturalness": 5,
+      "handoff_judgment": 5,
+      "commercial_progression": 4,
+      "appointment_readiness_detection": 5,
+      "handoff_timing": 5,
+      "handoff_reason_correctness": 5,
+      "post_handoff_suppression": 5,
+      "conversion_attribution": 5,
+      "useful_information_capture": 4,
+      "appointment_ready_progression": 4,
+      "retrieved_knowledge_utilization": 5,
+      "support_request_judgment": 4,
+      "support_result_utilization": 4,
+      "support_resume_quality": 4
+    },
+    "strongest_ai_move": "Kept the conversation low-pressure and answered the facilities question honestly: it shared the overview supported by retrieved Knowledge without inventing an itemized list or clubhouse booking rules.",
+    "weakest_ai_move": "The requested support lookup returned no fixture answer, leaving the buyer's itemized facilities question unresolved. The AI handled that limitation transparently; this was not a failure to use a verified support result.",
+    "unnecessary_qualification": [
+      "False"
+    ],
+    "missed_buying_signals": [],
+    "missed_selling_opportunity": [],
+    "retrieval_misses": [
+      "An itemized list of planned facilities and specific clubhouse booking rules were not present in the retrieved source material."
+    ],
+    "retrieved_knowledge_not_used": [],
+    "factual_or_operational_overpromises": [],
+    "remaining_knowledge_gaps": [
+      "The retrieved Knowledge did not specify individual facilities on the Level 9 deck or whether particular clubhouse spaces are bookable.",
+      "The support trace returned UNAVAILABLE with no matching simulator fixture; no operational verification was supplied."
+    ],
+    "critical_flags": [],
+    "summary": "The AI correctly recognized a low-intent browser, gave a useful general orientation, answered follow-up questions within the limits of retrieved Knowledge, and did not pressure the buyer toward an appointment. It made one reasonable internal support request for details not established in the retrieved material; no fixture answer was available, and the AI did not present those details as verified. It resumed customer-facing conversation and maintained AI ownership, with no formal appointment handoff required. Direct answer: this run shows appropriate support-loop judgment and low-pressure selling, but cannot demonstrate use of a verified support answer or whether such an answer would help move a suitable buyer toward Appointment Ready.",
+    "improvement_recommendation": "Continue answering from the verified overview and clearly separating known project facts from unavailable item-level details. Do not push an appointment when the buyer says they are only browsing and has no viewing intent.",
+    "simulator_evidence_note": "The support result was UNAVAILABLE, not a verified fixture answer. The facilities overview cited in the customer-facing reply came from retrieved Pearlmont Knowledge. No simulator fixture facts were used or represented as live operational data.",
+    "conversion_attribution": "NO_CONVERSION",
+    "support_request_count": 1,
+    "support_resolved_count": 0,
+    "ai_final_sales_state": "NOT_READY",
+    "post_handoff_ai_reply_violation": false
+  },
+  "error": null,
+  "version": "1.4",
+  "support_trace": [
+    {
+      "turn": 3,
+      "request": "Confirm the officially planned shared facilities for Pearlmont Phase 1, including which are on the Level 9 facilities deck and any pay-per-use facilities. Provide only customer-shareable details.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "support_request_count": 1,
+  "support_resolved_count": 0,
+  "support_resume_success_count": 0,
+  "support_results_used": false,
+  "support_result_only_relayed": false,
+  "appointment_ready_after_support": false,
+  "support_failure_modes": [],
+  "final_appointment_state": "NO_VIEWING_INTENT",
+  "simulator_only_human_operations_fixture": {
+    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "specific_verified_facts": [
+      "No current location-map asset/link fixture is supplied."
+    ],
+    "map_asset": "NOT_CONNECTED"
+  },
+  "strongest_ai_move": "Kept the conversation low-pressure and answered the facilities question honestly: it shared the overview supported by retrieved Knowledge without inventing an itemized list or clubhouse booking rules.",
+  "weakest_ai_move": "The requested support lookup returned no fixture answer, leaving the buyer's itemized facilities question unresolved. The AI handled that limitation transparently; this was not a failure to use a verified support result.",
+  "unnecessary_qualification": [
+    "False"
+  ],
+  "missed_buying_signals": [],
+  "missed_selling_opportunity": [],
+  "retrieval_misses": [
+    "An itemized list of planned facilities and specific clubhouse booking rules were not present in the retrieved source material."
+  ],
+  "retrieved_knowledge_not_used": [],
+  "factual_or_operational_overpromises": [],
+  "improvement_recommendation": "Continue answering from the verified overview and clearly separating known project facts from unavailable item-level details. Do not push an appointment when the buyer says they are only browsing and has no viewing intent."
+}

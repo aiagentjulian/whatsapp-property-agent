@@ -1,0 +1,344 @@
+{
+  "scenario_id": "PEA-006",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T11:10:20.703491+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 4,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 4,
+  "appointment_state_customer": "APPOINTMENT_IN_PROGRESS",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether each residential block has a separate entrance and lift lobby, and whether lift access or shared areas are separated between blocks. Customer is specifically concerned about peak-hour crowding and shared access."
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Confirm whether each residential block has a separate entrance and lift lobby, and whether lift access or shared areas are separated between blocks. Customer is specifically concerned about peak-hour crowding and shared access.",
+      "fixture_key": "access",
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, residents share the tower lift lobby and corridors; private corridors are not shown. It does not verify crowding or noise levels.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "1846 units sounds too dense. I don’t like crowded condos.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "More the lifts and shared access, especially peak hour. 15–18 units on a floor sounds like a lot if everyone’s using the same lobby—are the blocks’ entrances or lift areas separated?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "More the lifts and shared access, especially peak hour. 15–18 units on a floor sounds like a lot if everyone’s using the same lobby—are the blocks’ entrances or lift areas separated?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Thanks for being straight about it. The shared lift lobby and corridors are really what I’m unsure about. Could I see the residential access and lift lobby during a viewing, ideally around evening peak?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether each residential block has a separate entrance and lift lobby, and whether lift access or shared areas are separated between blocks. Customer is specifically concerned about peak-hour crowding and shared access.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether each residential block has a separate entrance and lift lobby, and whether lift access or shared areas are separated between blocks. Customer is specifically concerned about peak-hour crowding and shared access.",
+      "result": {
+        "fixture_key": "access",
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, residents share the tower lift lobby and corridors; private corridors are not shown. It does not verify crowding or noise levels.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic simulator-only access/corridor plan summary.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "1846 units sounds too dense. I don’t like crowded condos."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "Fair concern—1,846 units across 3 towers is a substantial development, so I wouldn’t describe it as low-density. For context, typical floors have 15 units in Blocks 1B and 1C, and 18 in Block 1D; each block has 4 passenger lifts plus a Bomba lift. Is your main concern lift queues, or the overall number of residents?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "More the lifts and shared access, especially peak hour. 15–18 units on a floor sounds like a lot if everyone’s using the same lobby—are the blocks’ entrances or lift areas separated?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether each residential block has a separate entrance and lift lobby, and whether lift access or shared areas are separated between blocks. Customer is specifically concerned about peak-hour crowding and shared access.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether each residential block has a separate entrance and lift lobby, and whether lift access or shared areas are separated between blocks. Customer is specifically concerned about peak-hour crowding and shared access.",
+      "result": {
+        "fixture_key": "access",
+        "verified_answer": "The simulator access-plan fixture confirms commercial and residential access are segregated. Within residential areas, residents share the tower lift lobby and corridors; private corridors are not shown. It does not verify crowding or noise levels.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic simulator-only access/corridor plan summary.",
+        "status": "RESOLVED"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I can confirm commercial and residential access are segregated. Within the residential areas, residents share the tower lift lobby and corridors—private corridors aren’t shown. The plan doesn’t establish whether entrances are fully separate between residential blocks, so I wouldn’t want to overstate that. Each block has 4 passenger lifts plus a Bomba lift, though that can’t guarantee peak-hour wait times.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Thanks for being straight about it. The shared lift lobby and corridors are really what I’m unsure about. Could I see the residential access and lift lobby during a viewing, ideally around evening peak?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That makes sense—the shared lobby is the part you’d want to assess in person. I’ll have the team coordinate a viewing and confirm whether the residential lift lobby can be included around evening peak.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "OPERATIONAL_BOOKING"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know what evening slots are available, and whether the residential lift lobby can be included in the viewing.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "I can’t verify any evening viewing slots from the supplied fixture. It says a representative shared residential corridor may be included, subject to gallery access on the day, but it doesn’t verify access to the residential lift lobby or an evening-peak visit.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Thanks for checking. The lift lobby and seeing it around evening peak are the main things I need to assess, so I’ll hold off choosing a slot until you can confirm whether both are possible. Please let me know if you find out.",
+      "appointment_state": "APPOINTMENT_IN_PROGRESS",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 9,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 74
+}

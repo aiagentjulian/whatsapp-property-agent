@@ -33,13 +33,19 @@
   },
   "critical_facts": "Current package/price and viewing slot must be verified; no fabrication",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. No live CRM, inventory, pricing, calendar, or human salesperson is connected. Treat only scenario-specific facts below as verified within this simulation; never present them as real-world availability.",
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
     "specific_verified_facts": [
       "SIMULATOR-ONLY appointment fixture: Saturday 11:00 is available for this scenario. Use current Knowledge source wording for package mechanics; no exact unit-specific price is verified."
     ],
     "appointment_slots": {
       "Saturday 11:00": "AVAILABLE_SIMULATOR_FIXTURE"
     },
-    "unit_price": "NOT_VERIFIED"
+    "unit_price": "NOT_VERIFIED",
+    "support_fixtures": {
+      "weekend_package": {
+        "verified_answer": "For this simulator run, the current package is valid and the Type A effective starting reference is RM302,000, subject to unit category and unit-level confirmation. Saturday 11:00 am is the available simulator viewing slot; it is not booked until accepted and confirmed.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package validity and viewing slot; no live systems connected."
+      }
+    }
   }
 }

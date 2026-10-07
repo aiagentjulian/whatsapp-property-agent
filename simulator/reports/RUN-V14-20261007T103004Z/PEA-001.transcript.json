@@ -1,0 +1,478 @@
+{
+  "scenario_id": "PEA-001",
+  "version": "1.4",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-07T10:30:04.195660+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 6,
+    "ai": 6,
+    "human_handoff_executor": 1,
+    "human_support": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_status_final": "PAUSED",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+  "handoff_turn": 6,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment."
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "POSITION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_status_after_turn": "ACTIVE",
+      "support_request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are."
+    },
+    {
+      "turn": 6,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION",
+      "owner_after_turn": "HUMAN",
+      "ai_status_after_turn": "PAUSED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 7,
+      "operational_action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "turn": 2,
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "fixture_key": null,
+      "status": "UNAVAILABLE",
+      "resolution_source": "NO_FIXTURE",
+      "human_lookup_performed": false,
+      "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_status_after": "ACTIVE"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "Hi, I saw the ad. How much is this project?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Own stay. We’re hoping to keep it around the RM3xxk range—could you give a rough idea of the monthly instalment, subject to the bank’s assessment?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Own stay. We’re hoping to keep it around the RM3xxk range—could you give a rough idea of the monthly instalment, subject to the bank’s assessment?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Hard to say on the monthly until we know what the bank would offer—we’d want to keep it manageable as it’s our first home. It’s for me, my wife and our young child; 900 sqft sounds a bit tight for us. Is the Type A layout practical for a family?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Probably the shared living area and storage, especially with our child’s things. The bedrooms sound okay on paper, but it’s hard to picture the space from the measurements. Is there a Type A show unit we could see?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "Probably the shared living area and storage, especially with our child’s things. The bedrooms sound okay on paper, but it’s hard to picture the space from the measurements. Is there a Type A show unit we could see?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    }
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I saw the ad. How much is this project?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "The current package guide indicates eligible units start at around RM302k after the applicable rebate, based on a RM328k base price. The exact price depends on the unit, floor and car-park allocation, so I’d confirm the latest package before quoting a specific unit. All Phase 1 units are 900 sq.ft. with 3 bedrooms and 2 bathrooms. Are you looking for your own stay or as an investment?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Own stay. We’re hoping to keep it around the RM3xxk range—could you give a rough idea of the monthly instalment, subject to the bank’s assessment?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Please provide an approved rough monthly instalment illustration for a Pearlmont price around RM302k–RM328k, including the assumed loan amount, tenure and interest rate, with a caveat that actual instalments depend on bank assessment.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "I don’t have a verified instalment illustration to quote, so I don’t want to give you a misleading monthly figure. The actual amount will depend on the approved loan, tenure and bank rate. What monthly repayment range would feel comfortable for you?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Hard to say on the monthly until we know what the bank would offer—we’d want to keep it manageable as it’s our first home. It’s for me, my wife and our young child; 900 sqft sounds a bit tight for us. Is the Type A layout practical for a family?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "POSITION",
+      "message": "That’s a fair concern—900 sq.ft. can feel different depending on how you use the space. Type A has 3 bedrooms and 2 bathrooms; the living, dining and kitchen area is about 405 sq.ft., and the project materials describe all three bedrooms as able to fit a queen-sized bed. It’s an efficient layout, but with a young child, storage and furniture choices will matter. Which feels like the bigger concern for your family: the bedrooms or the shared living space?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Probably the shared living area and storage, especially with our child’s things. The bedrooms sound okay on paper, but it’s hard to picture the space from the measurements. Is there a Type A show unit we could see?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "status": "PENDING",
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "request": "Confirm whether a Type A show unit is available to view and what the current viewing arrangements are.",
+      "result": {
+        "fixture_key": null,
+        "verified_answer": "The requested item is not verified by a supplied simulator support fixture; do not present it as verified.",
+        "source_note": null,
+        "status": "UNAVAILABLE"
+      },
+      "owner": "AI",
+      "ai_status": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "That makes sense—seeing the Type A in person should help you judge the shared space and storage for your family. I’ll get the viewing details confirmed and have a colleague follow up with you to arrange it.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+      }
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner": "HUMAN",
+      "ai_status": "PAUSED",
+      "handoff_reason": "UNIT_AVAILABILITY_VERIFICATION"
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. My wife should come along too—could you let me know what days and times are available to view the Type A show unit? We’d like to see how the living area and storage feel in person.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 7,
+      "speaker": "human",
+      "message": "I can’t verify whether a Type A show unit is available or which viewing days and times are open—the supplied simulator fixture is not connected to unit availability or the viewing calendar.",
+      "action": "VERIFY_AVAILABILITY",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "No worries. Could you check with the team and let me know once you can confirm a Type A viewing slot? Weekends are usually easier for us, but I’ll confirm the exact time with my wife.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 12,
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 13
+}

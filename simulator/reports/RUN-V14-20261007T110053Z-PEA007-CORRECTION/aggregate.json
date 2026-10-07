@@ -1,0 +1,253 @@
+{
+  "version": "1.4",
+  "run_id": "RUN-V14-20261007T110053Z-PEA007-CORRECTION",
+  "models": {
+    "sales_agent": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "scenario_count_attempted": 1,
+  "scenario_count_completed": 1,
+  "failed_runs": [],
+  "convertible_scenarios": 1,
+  "normal_sales_flow_convertible_scenarios": 1,
+  "ai_outcome_counts": {
+    "AI_APPOINTMENT_READY_SUCCESS": 0,
+    "AI_APPOINTMENT_HANDOFF_SUCCESS": 0,
+    "AI_DIRECT_APPOINTMENT_SUCCESS": 0,
+    "AI_PROGRESS_BUT_NOT_READY": 1,
+    "AI_EARLY_HANDOFF": 0,
+    "AI_MISSED_READY_BUYER": 0,
+    "AI_LOST_CONVERSION": 0,
+    "MANDATORY_OPERATIONAL_HANDOFF": 0,
+    "BAD_FIT_CORRECTLY_IDENTIFIED": 0
+  },
+  "appointment_ready_ai_successes": 0,
+  "appointment_ready_ai_success_rate": 0.0,
+  "appointment_ready_handoff_count": 0,
+  "appointment_ready_handoff_rate": 0.0,
+  "handoff_count": 0,
+  "successful_appointment_handoffs": 0,
+  "mandatory_operational_handoffs": 0,
+  "premature_handoffs": 0,
+  "premature_appointment_handoffs": 0,
+  "premature_handoff_rate": null,
+  "missed_ready_buyers": 0,
+  "missed_ready_buyer_rate": 0.0,
+  "lost_conversions": 0,
+  "progress_but_not_ready": 1,
+  "ai_direct_confirmed_appointments": 0,
+  "ai_direct_confirmed_appointment_rate": 0.0,
+  "end_to_end_confirmed_appointments": 0,
+  "end_to_end_confirmed_rate": 0.0,
+  "end_to_end_confirmed_appointment_rate": 0.0,
+  "human_operational_tasks_completed_after_successful_handoff": 0,
+  "human_operational_completion_rate_after_successful_handoff": null,
+  "bad_fit_correctly_identified": 0,
+  "bad_fit_identification_rate": null,
+  "support_requests": 3,
+  "support_completion_rate": 1.0,
+  "support_result_utilization_score": 4.0,
+  "duplicate_support_requests": 1,
+  "failed_resume_cases": 0,
+  "support_requests_resolved": 3,
+  "support_resume_successes": 2,
+  "ai_resume_success_rate": 0.667,
+  "appointment_ready_after_support": 0,
+  "support_failure_modes": {
+    "SUPPORT_REQUEST_UNNECESSARY": 1,
+    "DUPLICATE_SUPPORT_REQUEST": 1,
+    "SUPPORT_RESULT_NOT_USED": 0,
+    "SUPPORT_RESULT_ONLY_RELAYED": 0,
+    "FAILED_TO_RESUME_SELLING": 0,
+    "MISSED_READY_AFTER_SUPPORT": 0,
+    "PREMATURE_APPOINTMENT_HANDOFF": 0,
+    "FAILED_APPOINTMENT_HANDOFF": 0,
+    "OVERQUALIFICATION_AFTER_SUPPORT": 0,
+    "SUPPORT_RESULT_OVERSTATED": 0
+  },
+  "average_useful_information_capture_score": 4.0,
+  "readiness_detection_accuracy": 1.0,
+  "readiness_detection_correct_count": 1,
+  "average_sales_work_remaining_at_handoff_level_0_none_1_low_2_medium_3_high": null,
+  "average_judge_scores": {
+    "customer_understanding": 5.0,
+    "latest_message_responsiveness": 5.0,
+    "qualification_discipline": 4.0,
+    "selling_angle_relevance": 4.0,
+    "objection_handling": 5.0,
+    "unit_fit_judgment": 3.0,
+    "buying_signal_detection": 4.0,
+    "appointment_judgment": 5.0,
+    "factual_accuracy": 5.0,
+    "sales_naturalness": 4.0,
+    "handoff_judgment": 5.0,
+    "commercial_progression": 3.0,
+    "appointment_readiness_detection": 5.0,
+    "handoff_timing": 5.0,
+    "handoff_reason_correctness": 5.0,
+    "post_handoff_suppression": 5.0,
+    "conversion_attribution": 5.0,
+    "useful_information_capture": 4.0,
+    "appointment_ready_progression": 2.0,
+    "retrieved_knowledge_utilization": 5.0,
+    "support_request_judgment": 3.0,
+    "support_result_utilization": 4.0,
+    "support_resume_quality": 4.0
+  },
+  "commercial_progression": 3.0,
+  "sales_naturalness": 4.0,
+  "retrieved_knowledge_utilization": 5.0,
+  "retrieval_misses": [],
+  "retrieved_knowledge_not_used": [],
+  "retrieval_quality_score": 5.0,
+  "retrieval_utilization_score": 5.0,
+  "critical_failure_count": 2,
+  "critical_failures": [
+    {
+      "scenario_id": "PEA-007",
+      "flag": "DUPLICATE_SUPPORT_REQUEST",
+      "evidence": "Turn 6 again asked whether a technical contact was available, a point already included in the turn 4 request. The result trace says the prior verified result was reused and no second lookup was performed.",
+      "turn": 6
+    },
+    {
+      "scenario_id": "PEA-007",
+      "flag": "SUPPORT_REQUEST_UNNECESSARY",
+      "evidence": "The Agent repeated a support request after the matching verified scenario answer was already returned; no new Human check was performed.",
+      "turn": 4
+    }
+  ],
+  "remaining_knowledge_gaps": [
+    "PEA-007: The retrieved FAQ Knowledge states the approximate 36 m distance, 20 m reference, raised platform, and river-management information, but does not establish the underlying standard for the 20 m figure or provide independent engineering or block-specific flood-history evidence.",
+    "PEA-007: The support answer did not confirm an actual FAQ, plans, document link, or technical contact."
+  ],
+  "remaining_sales_weaknesses": [
+    "PEA-007: Turn 6 repeated the technical-contact availability query already made at turn 4; the result was reused rather than newly verified."
+  ],
+  "post_handoff_ai_reply_violations": 0,
+  "per_scenario_outcomes": {
+    "PEA-007": {
+      "ai_outcome": "AI_PROGRESS_BUT_NOT_READY",
+      "readiness": "NOT_READY",
+      "handoff": "NO_HANDOFF",
+      "handoff_type": "NO_FORMAL_HANDOFF",
+      "support_requests": 3,
+      "support_failure_modes": [
+        "DUPLICATE_SUPPORT_REQUEST",
+        "SUPPORT_REQUEST_UNNECESSARY"
+      ],
+      "work_remaining": "LOW"
+    }
+  },
+  "v1_3_comparison": {
+    "baseline_run": "RUN-V13-20261007T023345Z",
+    "baseline": {
+      "appointment_ready_ai_successes": 6,
+      "appointment_ready_ai_success_rate": 0.545,
+      "support_requests": 14,
+      "support_resolution_rate": 0.429,
+      "ai_resume_success_rate": 0.833,
+      "appointment_ready_after_support": 4,
+      "premature_appointment_handoffs": 0,
+      "mandatory_operational_handoffs": 1,
+      "missed_ready_buyers": 0,
+      "commercial_progression": 3.0,
+      "naturalness": 3.0,
+      "support_result_utilization": 4.42,
+      "critical_failures": 8,
+      "judge_score_means_reliable": false
+    },
+    "v1_4": {
+      "appointment_ready_ai_successes": 0,
+      "appointment_ready_ai_success_rate": 0.0,
+      "support_requests": 3,
+      "support_resolution_rate": 1.0,
+      "ai_resume_success_rate": 0.667,
+      "appointment_ready_after_support": 0,
+      "premature_appointment_handoffs": 0,
+      "mandatory_operational_handoffs": 0,
+      "missed_ready_buyers": 0,
+      "commercial_progression": 3.0,
+      "naturalness": 4.0,
+      "support_result_utilization": 4.0,
+      "critical_failures": 2
+    },
+    "comparison_note": "V1.3 unavailable Human Support outcomes are not treated as AI failures for the support-resolution comparison. V1.3 score averages are unreliable due missing-score fallback/default behavior; V1.4 shows validated Judge means."
+  },
+  "v1_2_comparison": {
+    "baseline_run": "RUN-V12-20261007T015000Z",
+    "baseline_metrics": {
+      "appointment_ready_ai_successes": 1,
+      "appointment_ready_ai_success_rate": 0.091,
+      "successful_appointment_ready_handoffs": 1,
+      "premature_handoffs": 7,
+      "missed_ready_buyers": 1,
+      "end_to_end_confirmed_appointments": 1,
+      "critical_failure_count": 24
+    },
+    "v1_3_metrics": {
+      "appointment_ready_ai_successes": 0,
+      "appointment_ready_ai_success_rate": 0.0,
+      "successful_appointment_handoffs": 0,
+      "premature_handoffs": 0,
+      "missed_ready_buyers": 0,
+      "end_to_end_confirmed_appointments": 0,
+      "support_requests": 3,
+      "support_completion_rate": 1.0,
+      "support_result_utilization_score": 4.0,
+      "duplicate_support_requests": 1,
+      "failed_resume_cases": 0,
+      "ai_resume_success_rate": 0.667
+    }
+  },
+  "v1_1_comparison": {
+    "baseline_run": "RUN-V11-20261007T004245Z",
+    "baseline_metrics": {
+      "appointment_ready_ai_successes_estimated_from_v1_1_fields": 2,
+      "appointment_ready_handoff_successes_estimated_from_v1_1_fields": 2,
+      "premature_handoffs": 1,
+      "confirmed_appointments": 1,
+      "commercial_progression": 3.17,
+      "naturalness": 3.92,
+      "handoff_judgment": 4.33,
+      "useful_information_capture": "not scored in V1.1",
+      "retrieved_knowledge_utilization": "not scored in V1.1"
+    },
+    "v1_3_metrics": {
+      "appointment_ready_ai_successes": 0,
+      "appointment_ready_ai_success_rate": 0.0,
+      "successful_appointment_ready_handoffs": 0,
+      "premature_handoffs": 0,
+      "confirmed_appointments": 0,
+      "commercial_progression": 3.0,
+      "naturalness": 4.0,
+      "handoff_judgment": 5.0,
+      "useful_information_capture": 4.0,
+      "retrieved_knowledge_utilization": 5.0
+    },
+    "note": "V1.1 did not classify appointment-ready AI outcomes; its baseline handoff-success estimate is reconstructed from saved readiness/work/timing fields and is not directly comparable to V1.3 Judge classification."
+  },
+  "provider_calls": 13,
+  "provider_retries": [],
+  "brain_and_sales_knowledge_unchanged": true,
+  "simulator_fixture_notice": "Human support and operational facts are synthetic scenario fixtures, separate from Pearlmont Knowledge and not claims of real-world connected-system capability.",
+  "executive_summary": "Diagnostic answer: with reliable synthetic Human Support, the AI reached Appointment Ready or made a correct appointment handoff in 0/1 convertible scenarios (0.0). The AI made 3 Human support requests; 3 were resolved from scenario fixtures and 2 were judged as successful AI resumption. 0 support-enabled scenarios reached appointment readiness. The Agent completed 0 appropriate appointment-ready handoffs, with 0 premature formal handoffs, 0 missed-ready buyers, and 0 end-to-end confirmed appointments. Support is an allowed capability and does not itself count as a sales handoff. Per-scenario weaknesses and fixture limits are detailed below.",
+  "v1_3_fallback_score_bug": {
+    "present": true,
+    "evidence": "The accepted V1.3 report has multiple Judge score means fixed at exactly 3.0 and the V1.3 run path did not schema-validate all 23 dimensions; a per-scenario post_handoff_suppression 5-point default also existed. V1.4 removes score defaults and validates every score.",
+    "comparison_score_caveat": "V1.3 Judge averages are flagged as unreliable; scenario outcomes and operational metrics remain comparable with caveats for unavailable support fixtures."
+  }
+}

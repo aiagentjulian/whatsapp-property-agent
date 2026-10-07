@@ -33,7 +33,7 @@
   },
   "critical_facts": "Block 1C/1D sea-facing ranges in source; exact mapping and inventory require current schedule",
   "human_operations": {
-    "fixture_notice": "Simulator-only operational test data. Support fixtures are synthetic verified answers for this scenario run; they are not live CRM, inventory, pricing, calendar, or salesperson data and must never be represented as real-world availability.",
+    "fixture_notice": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE records are test-only verified answers for this scenario. They are not Pearlmont factual Knowledge, and do not establish a real live connection.",
     "specific_verified_facts": [
       "No live unit schedule or unit-level price fixture is supplied.",
       "Synthetic support fixture 'budget_view' supplies a verified-in-simulation answer to the matching support request; it is not Pearlmont factual Knowledge or live capability."
@@ -42,8 +42,8 @@
     "appointment_slots": "NOT_CONNECTED",
     "support_fixtures": {
       "budget_view": {
-        "verified_answer": "The simulator inventory snapshot confirms one Type A sea-facing option on Block 1C at level 12, with two car parks, at a fixture package total of RM349,000. It is below your stated RM350,000 ceiling, but it is not a high-floor option; whether level 12 gives you the view you want should be checked at a viewing. This exact availability and package are synthetic and valid only in this simulation.",
-        "source_note": "Synthetic simulator-only current inventory/package fixture; no Pearlmont Knowledge pricing or availability has been changed."
+        "verified_answer": "The synthetic inventory fixture confirms Type A, Block 1C, level 12, unit 1C-12-03, sea-facing, with two car parks. The scenario package total is RM349,000, within the stated RM370,000 ceiling. The total includes the simulated package components and excludes buyer-specific legal, stamp, and financing charges; this is not a high-floor unit, and the view should be checked at a visit.",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic exact unit and package result for this scenario, not Pearlmont Knowledge or real inventory."
       }
     }
   }
