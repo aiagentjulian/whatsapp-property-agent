@@ -1,400 +1,384 @@
-# Human Handoff Rules
+# Human Involvement and Handoff Rules
 
 ## Purpose
 
-Human handoff defines when the AI Property Agent should continue handling the conversation, when human involvement is recommended, and when the AI must stop and transfer conversation ownership to a human property agent.
+This file defines three different ways Human involvement can enter the WhatsApp sales workflow:
 
-The goal is not to hand off early.
+1. Human Support Request
+2. Appointment Handoff
+3. Mandatory Operational Handoff
 
-The goal is to let the AI handle normal sales work confidently while respecting factual, commercial and authority boundaries.
+These must not be treated as the same event.
 
-A handoff is an ownership change, not a failure state.
+The AI should do real sales work, use Human help when it needs verified information, and transfer ownership only when ownership genuinely needs to change.
 
 ---
 
 ## Core Principle
 
-The AI should continue handling the conversation when it has sufficient knowledge, authority and context to do so safely and usefully.
+Human help does not automatically mean Human ownership.
 
-The AI should hand off when continuing would create unnecessary risk, exceed its authority, or reduce the chance of closing a serious prospect.
+Use Human Support when the AI needs an answer.
 
-The AI should not hand off simply because the conversation becomes detailed.
+Use Appointment Handoff when the AI has brought a suitable buyer to Appointment Ready and the remaining work is mainly appointment execution.
 
----
-
-# Handoff States
-
-Use the following internal states:
-
-- `AI_ACTIVE`
-- `HANDOFF_RECOMMENDED`
-- `HANDOFF_REQUIRED`
-- `HUMAN_ACTIVE`
-
-These states describe conversation ownership and escalation status.
-
-They are not customer-facing labels.
+Use Mandatory Operational Handoff when policy or customer circumstances require Human ownership even if the buyer is not Appointment Ready.
 
 ---
 
-# 1. AI_ACTIVE
+# 1. AI ACTIVE
 
-The AI owns the live conversation.
+When `owner = AI`, the AI owns the customer conversation.
 
 Normal responsibilities include:
 
-- answering project questions supported by knowledge
-- understanding the prospect
-- qualification
-- positioning
-- handling ordinary objections
-- assessing intent
-- moving toward appointment readiness
-- updating the Lead Profile
-- updating Google Sheet lead state when implemented
+- answer supported project questions
+- understand the buyer
+- collect useful information
+- qualify only when useful
+- position the project
+- handle ordinary objections
+- narrow unit fit
+- assess intent
+- request Human Support when needed
+- resume after Human Support
+- move suitable buyers toward Appointment Ready
 
-Do not escalate ordinary work that the AI is capable of handling.
+The AI should not behave like a receptionist.
 
 ---
 
-# 2. HANDOFF_RECOMMENDED
+# 2. HUMAN SUPPORT REQUEST
 
-Human involvement would probably help, but the AI is not required to stop immediately.
+A Support Request is not a handoff.
+
+Use it when the AI still owns the sale but needs a verified answer it cannot safely obtain from trusted Knowledge.
 
 Typical examples:
 
-- highly qualified prospect where human involvement may materially improve closing probability
-- prospect entering serious commercial discussion
-- complex comparison requiring human sales judgment
-- customer wants a more detailed negotiation
-- conversation reaches a point where a human relationship may add value
+- live unit availability
+- exact unit-specific pricing
+- current package applicability
+- floor / facing / car-park confirmation
+- detailed plan clarification
+- technical or document clarification
+- project-side financing process clarification
 
-When handoff is recommended, the AI may continue the current conversational turn if useful while preparing the transition.
+During Support:
 
-Do not abruptly abandon the customer.
+```text
+owner = AI
+AI status = ACTIVE
+support_status = PENDING
+```
 
----
+When the Human returns the result:
 
-# 3. HANDOFF_REQUIRED
+```text
+owner = AI
+AI status = ACTIVE
+support_status = RESOLVED
+```
 
-The AI must transfer ownership because continuing would exceed its authority or create unacceptable uncertainty.
+The result returns to the AI and the AI continues the WhatsApp conversation.
 
-Typical triggers include:
+Do not pause the AI permanently for a normal Support Request.
 
-- customer explicitly asks to speak with a human
-- customer requests a special discount, rebate, commercial exception or non-standard term that requires approval
-- current unit availability or booking status cannot be confirmed from trusted data
-- legal, tax, regulatory or eligibility question exceeds available verified knowledge
-- financing eligibility or approval requires professional or bank confirmation
-- customer wants to reserve, book, submit documents or perform another action not yet supported by the system
-- complaint, dispute or materially sensitive issue
-- customer asks for a commitment the AI is not authorised to make
-- AI confidence is insufficient and an incorrect answer could materially affect the customer's decision
-
-Once `HANDOFF_REQUIRED` is triggered, the AI should not keep improvising answers in the restricted area.
-
----
-
-# 4. HUMAN_ACTIVE
-
-A human property agent owns the live conversation.
-
-When this state is active:
-
-- AI auto-send must stop
-- AI must not compete with the human agent for replies
-- AI may continue background profile maintenance if the runtime supports it
-- AI may continue summarising or extracting structured information from new conversation events
-- the human remains the conversational owner until ownership is explicitly returned
-
-A future `RETURN_TO_AI` workflow may be added later.
-
-V1 does not assume automatic return to AI.
+Do not create a duplicate Lead Profile.
 
 ---
 
-# What the AI Should Handle Without Handoff
+# 3. APPOINTMENT HANDOFF
 
-Do not hand off these situations when the required facts exist in trusted project knowledge:
+Appointment Handoff is the normal successful end of the AI's early-stage sales role.
+
+Use it when:
+
+- the buyer is `READY_FOR_APPOINTMENT`, `APPOINTMENT_IN_PROGRESS` or stronger;
+- major sales blockers have been handled sufficiently;
+- remaining work is mainly operational.
+
+Typical remaining Human work:
+
+- confirm viewing slot
+- coordinate visit timing
+- confirm exact unit to view
+- complete appointment logistics
+- handle live operational details
+
+When Appointment Handoff completes:
+
+```text
+owner = HUMAN
+AI status = PAUSED
+handoff_type = APPOINTMENT_HANDOFF
+```
+
+AI auto-send stops.
+
+This is not an AI failure. It is the intended sales outcome.
+
+---
+
+# 4. MANDATORY OPERATIONAL HANDOFF
+
+Use Mandatory Operational Handoff when Human ownership is required even though the buyer may not be Appointment Ready.
+
+Typical triggers:
+
+- sales ownership / previous-agent conflict
+- customer explicitly asks for a Human
+- complaint or dispute
+- authority-sensitive negotiation or exception
+- legal / regulatory situation where Human control is required
+- another policy-bound situation that prevents the AI from continuing
+
+When completed:
+
+```text
+owner = HUMAN
+AI status = PAUSED
+handoff_type = MANDATORY_OPERATIONAL_HANDOFF
+```
+
+Do not classify this as an early Appointment Handoff merely because the buyer is not ready to view.
+
+---
+
+# Appointment Readiness and Handoff Are Independent
+
+Do not assume:
+
+```text
+Human involvement = Appointment Ready
+```
+
+and do not assume:
+
+```text
+Appointment Ready = Human involvement required immediately
+```
+
+A buyer may need Human Support while still early in the sales process.
+
+A buyer may become Appointment Ready before an exact slot or unit is confirmed.
+
+The AI's commercial job is to move suitable buyers to readiness and then hand off correctly when appointment execution requires Human ownership.
+
+---
+
+# What the AI Should Handle Itself
+
+Do not use Support or Handoff for ordinary work when trusted Knowledge is available.
+
+Examples:
 
 - project overview
 - location
-- connectivity
 - facilities
 - unit types
-- layouts
-- indicative pricing supported by current knowledge
-- project positioning
-- own-stay discussion
+- layout facts
+- supported pricing context
+- own-stay positioning
 - investment discussion
-- normal budget qualification
-- normal timeline qualification
-- property preference discovery
-- general comparison framing
+- normal budget and timeline discussion
 - ordinary objections
-- general financing concepts that do not claim individual eligibility
-- asking whether the customer is interested in viewing
-- moving a qualified prospect toward appointment readiness
-
-The AI should be commercially useful, not merely a receptionist.
+- unit-fit reasoning
+- general financing explanation without claiming approval
+- testing viewing interest
 
 ---
 
-# Do Not Handoff Too Early
+# Material Unknowns
 
-The following are not sufficient reasons by themselves to hand off:
+Never guess a material unknown.
 
-- the customer asks several questions
-- the customer asks a detailed question that is already covered by knowledge
-- the customer says they are still considering
-- the customer challenges the value proposition
-- the customer expresses a normal objection
-- the customer has not provided complete profile information
-- the conversation is long
-- the customer is high intent
+If the missing information can be verified while the AI continues to own the sale:
 
-High intent may make handoff useful, but it does not automatically make handoff mandatory.
+use Human Support.
 
----
+If Human ownership itself is required:
 
-# Decision Order
+use the correct formal handoff type.
 
-Before escalating, assess the situation in this order:
-
-1. Can the AI answer accurately from trusted knowledge?
-2. Does the AI have authority to make or communicate the requested commitment?
-3. Has the customer explicitly requested a human?
-4. Would human involvement materially improve the close?
-5. Is there meaningful risk in allowing the AI to continue?
-
-Then choose one state:
-
-- `AI_ACTIVE`
-- `HANDOFF_RECOMMENDED`
-- `HANDOFF_REQUIRED`
+This replaces the old assumption that every material unknown requires immediate ownership transfer.
 
 ---
 
-# Lead Profile Is the Single Customer State
+# Support Result Accuracy
 
-Do not maintain a separate handoff profile or duplicate customer record.
+Human Support results are verified input, but only for the fields explicitly returned.
 
-The existing Lead Profile remains the single current customer state before, during and after handoff.
+The AI must not convert a partial result into broader certainty.
 
-Handoff should update only the relevant operational fields, including:
+If Human confirms:
+
+- category
+- floor
+- facing
+- car parks
+
+but does not confirm current availability, the AI must not say:
+
+> This unit is available.
+
+Say only what has actually been verified.
+
+---
+
+# Duplicate Support Prevention
+
+Do not submit the same Support Request again when a resolved result already exists.
+
+Reuse the prior result unless:
+
+- the customer asks a materially different question;
+- a new time-sensitive check is genuinely required;
+- new customer information changes the requested verification.
+
+---
+
+# Customer-Facing Support Style
+
+Support should feel like normal service continuity.
+
+Natural examples:
+
+> Let me confirm that properly and get back to you.
+
+> I’ll check the exact unit/package detail first so I don’t give you the wrong information.
+
+Do not expose internal labels.
+
+Do not say the customer is being handed over when ownership remains with the AI.
+
+---
+
+# Customer-Facing Formal Handoff Style
+
+Formal handoff should also feel continuous.
+
+Natural examples:
+
+> I’ll get the viewing coordination sorted from here.
+
+> For this part, I’ll get the person handling the appointment to continue with you.
+
+Do not claim a specific slot, unit, price or availability unless already verified.
+
+If the customer explicitly asks whether they are speaking to AI, do not lie.
+
+---
+
+# Lead Profile and Operational State
+
+Keep one Lead Profile throughout.
+
+Relevant operational fields may include:
 
 - `owner`
+- `ai_status`
+- `support_status`
+- `support_request_id`
+- `support_type`
+- `handoff_type`
 - `handoff_status`
 - `handoff_reason`
+- `appointment_readiness`
 - `last_progress`
 - `next_action`
 
-The human agent should be able to understand the customer from the same Lead Profile used by the AI.
+Human Support does not change `lead_source`.
+
+Formal handoff does not create a new Lead.
 
 ---
 
-# Google Sheet Handoff View
+# Google Sheet and Human View
 
-When Google Sheet sync is implemented, the human agent should be able to open the existing `Leads` tab and see the current customer state.
+The existing Leads row remains the single customer record.
 
-No separate handoff sheet is required.
+The Human should be able to see:
 
-Useful handoff-visible fields include:
+- who the customer is
+- what they need
+- what has been discussed
+- current intent / readiness
+- active concern
+- latest progress
+- pending support task or handoff reason
+- next required action
 
-- Name
-- Phone
-- Source
-- Campaign
-- Purpose
-- Budget
-- Timeline
-- Stage
-- Intent
-- Need
-- Concerns
-- Last Progress
-- Next Action
-- Owner
-- Handoff Status
-- Handoff Reason
-
-The goal is that the human can immediately see:
-
-- who this prospect is
-- what they currently want
-- how serious they appear to be
-- what has already been discussed
-- what remains unresolved
-- what the human should do next
+No separate handoff customer record is required.
 
 ---
 
-# Minimal Handoff Notification
+# Internal Support Bridge
 
-A separate full handoff summary is not required because the Lead Profile already contains the customer state.
+A Support Request may later be routed through Telegram or another internal bridge.
 
-If the system sends a notification to the human agent, keep it short.
+Expected flow:
 
-Example structure:
+```text
+AI creates Support Request
+→ bridge sends task to Human
+→ Human verifies
+→ Human replies with result
+→ backend binds result to support_request_id
+→ result returns to AI
+→ AI resumes WhatsApp conversation
+```
 
-`[Customer name or phone] requires human handoff — [handoff reason]. See Leads sheet for current profile.`
-
-Optionally include one short `last_progress` line when helpful.
-
-Do not duplicate the entire Lead Profile into the notification.
-
----
-
-# Customer-Facing Handoff Style
-
-Handoff should feel like service continuation, not system failure.
-
-Avoid language such as:
-
-- "I cannot answer this."
-- "The AI cannot help you."
-- "This is beyond my capability."
-
-Prefer natural service language such as:
-
-- "Let me confirm the latest details for you so I don't give you the wrong information."
-- "I'll get the latest availability confirmed for you."
-- "For this part, I'll get my colleague to follow up with you directly."
-
-Do not promise a response time unless the system or human team has actually committed to one.
+Normal Support does not change ownership.
 
 ---
 
-# Commercial Boundary
+# Formal Handoff Sequence
 
-The AI must not independently approve or invent:
+When formal ownership transfer is required:
+
+1. finish the current customer-facing message if appropriate;
+2. update newly learned Lead fields;
+3. update `last_progress`;
+4. set `next_action`;
+5. set `handoff_type`;
+6. set `handoff_reason`;
+7. switch `owner = HUMAN`;
+8. set AI status to PAUSED;
+9. stop AI auto-send.
+
+Return to AI requires explicit Human/system control.
+
+Do not replay old customer messages automatically.
+
+---
+
+# Commercial and Authority Boundaries
+
+The AI must not independently invent or approve:
 
 - special discounts
-- additional rebates
-- exceptions to published promotions
+- unpublished rebates
+- commercial exceptions
 - reservation commitments
 - unit holds
 - guaranteed rental returns
 - guaranteed appreciation
 - guaranteed financing
-- contractual promises
+- contractual or legal commitments
 
-If the customer requests one of these, use trusted published information if applicable and hand off when approval or confirmation is required.
+Use published information where appropriate.
 
----
-
-# Factual Uncertainty Boundary
-
-Not every unknown fact requires immediate human handoff.
-
-Use this distinction:
-
-## Low-impact unknown
-
-If the missing information is not material to the customer's current decision, the AI may acknowledge uncertainty and continue the conversation.
-
-## Material unknown
-
-If the missing information directly affects price, availability, eligibility, legal position, financing, booking or another major buying decision, handoff or confirmation is required.
-
-Never guess a material unknown.
-
----
-
-# Strong Prospect Rule
-
-When a prospect becomes highly qualified or `READY_FOR_APPOINTMENT`, the AI should stop unnecessary discovery.
-
-If appointment handling is not yet automated, a human handoff may become the natural next step.
-
-The AI should not continue asking profile-completion questions simply because fields remain empty.
-
----
-
-# Source Does Not Change at Handoff
-
-Handoff must not modify `lead_source`.
-
-`lead_source` is determined by the messaging/acquisition system at Lead creation:
-
-- customer initiated the conversation -> `INBOUND`
-- business initiated outbound contact and customer replied -> `OUTBOUND`
-
-The LLM does not infer this field.
-
-Human takeover does not change the acquisition source.
-
----
-
-# Outbound Lead Rule
-
-An outbound contact is not yet a Lead merely because the business sent a message.
-
-No Lead Profile or Leads Sheet row should be created until the outbound contact replies and a two-way conversation begins.
-
-Once they reply:
-
-- create the Lead Profile
-- set `lead_source = OUTBOUND` deterministically
-- preserve campaign metadata when available
-- begin normal sales flow
-- maintain the same profile through any later handoff
-
----
-
-# Inbound Lead Rule
-
-When a customer initiates a WhatsApp enquiry:
-
-- create the Lead Profile on the first inbound message
-- set `lead_source = INBOUND` deterministically
-- begin the normal sales flow
-
-The LLM may use source context but must not rewrite it.
-
----
-
-# Handoff Update Sequence
-
-When handoff is triggered:
-
-1. finish the current customer-facing reply if appropriate,
-2. update all newly learned Lead Profile fields,
-3. update `last_progress`,
-4. set `next_action`,
-5. set `handoff_reason`,
-6. set `handoff_status`,
-7. switch `owner` from `AI` to `HUMAN` when takeover occurs,
-8. stop AI auto-send once `HUMAN_ACTIVE` begins.
-
-Do not create a duplicate profile.
-
----
-
-# Relationship to Other Brain Files
-
-`AGENT.md` defines the overall agent identity and principles.
-
-`SALES_FLOW.md` defines how the sales conversation progresses.
-
-`LEAD_PROFILE.md` defines the single current customer state.
-
-`INTENT_MODEL.md` defines customer buying intent.
-
-`RESPONSE_RULES.md` defines how the agent communicates.
-
-`HANDOFF_RULES.md` defines when conversation ownership moves from AI to human and how that transition should behave.
+Use Support or formal Handoff according to whether the AI should remain owner.
 
 ---
 
 # Final Principle
 
-Let the AI do real sales work.
+Human Support fills a gap.
 
-Do not hand off ordinary work simply because it is easier.
+Appointment Handoff completes a successful AI sales progression.
 
-Do not let the AI cross factual or authority boundaries simply to avoid handoff.
+Mandatory Handoff protects ownership, authority or policy boundaries.
 
-Use one Lead Profile throughout the customer journey.
-
-Handoff changes ownership, not identity.
+Keep these paths separate.
