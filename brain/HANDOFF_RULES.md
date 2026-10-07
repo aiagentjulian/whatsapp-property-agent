@@ -110,7 +110,7 @@ When Appointment Handoff completes:
 
 ```text
 owner = HUMAN
-AI status = PAUSED
+AI session status = ENDED
 handoff_type = APPOINTMENT_HANDOFF
 ```
 
@@ -137,7 +137,7 @@ When completed:
 
 ```text
 owner = HUMAN
-AI status = PAUSED
+AI session status = ENDED
 handoff_type = MANDATORY_OPERATIONAL_HANDOFF
 ```
 
@@ -277,7 +277,7 @@ Keep one Lead Profile throughout.
 Relevant operational fields may include:
 
 - `owner`
-- `ai_status`
+- `ai_session_status`
 - `support_status`
 - `support_request_id`
 - `support_type`
@@ -344,10 +344,14 @@ When formal ownership transfer is required:
 5. set `handoff_type`;
 6. set `handoff_reason`;
 7. switch `owner = HUMAN`;
-8. set AI status to PAUSED;
-9. stop AI auto-send.
+8. set `ai_session_status = ENDED`;
+9. stop AI auto-send permanently for this AI sales session.
 
-Return to AI requires explicit Human/system control.
+Formal Handoff is one-way in V1.
+
+There is no `RETURN_TO_AI` path after either Appointment Handoff or Mandatory Operational Handoff.
+
+A later Human reply continues under Human ownership. If the product ever supports a new AI session in the future, that must be a separate explicit workflow rather than resuming this ended session.
 
 Do not replay old customer messages automatically.
 
@@ -370,6 +374,27 @@ The AI must not independently invent or approve:
 Use published information where appropriate.
 
 Use Support or formal Handoff according to whether the AI should remain owner.
+
+---
+
+# V1 Frozen One-Way Handoff Rule
+
+For V1, every formal Handoff is terminal for the current AI sales session.
+
+```text
+APPOINTMENT_HANDOFF
+or
+MANDATORY_OPERATIONAL_HANDOFF
+        ↓
+owner = HUMAN
+ai_session_status = ENDED
+        ↓
+AI sends no further customer messages
+```
+
+Do not implement automatic or manual Human → AI return for the same session.
+
+Human Support remains the only Human interaction path that returns information to an active AI session.
 
 ---
 
