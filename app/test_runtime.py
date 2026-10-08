@@ -202,14 +202,57 @@ class RuntimeTests(unittest.TestCase):
             def count(self): return 1
             def is_visible(self): return True
             def wait_for(self, state, timeout): return None
+            def inner_text(self, timeout=None): return "+60 18-400 5448"
+            def click(self, timeout=None): return None
         class Page:
-            def __init__(self): self.urls = []
+            class Keyboard:
+                def press(self, key): return None
+            def __init__(self): self.urls = []; self.keyboard = self.Keyboard()
             def goto(self, url, wait_until): self.urls.append(url)
             def locator(self, selector): return Locator()
+            def get_by_role(self, role, name): return Locator()
         page = Page()
         adapter = WhatsAppWeb({}, None)
-        self.assertTrue(adapter._open_contact(page, "+60 12-469 6398"))
-        self.assertEqual(page.urls, ["https://web.whatsapp.com/send?phone=60124696398"])
+        self.assertTrue(adapter._open_contact(page, "+60 18-400 5448"))
+        self.assertEqual(page.urls, ["https://web.whatsapp.com/send?phone=60184005448"])
+
+    def test_whatsapp_poll_continues_when_one_chat_is_not_ready(self):
+        class Adapter(WhatsAppWeb):
+            @staticmethod
+            def _qr_visible(page): return False
+            @staticmethod
+            def _wait_for_composer(page, timeout=20000):
+                if page == "stalled": raise RuntimeError("chat composer did not become visible")
+            @staticmethod
+            def _verify_phone_identity(page, contact): return None
+            @staticmethod
+            def _incoming(page): return [("message-2", "visible inbound")]
+        adapter = Adapter({}, None)
+        verified = {"60184005448", "60124696398"}
+        results = adapter._poll_contact_pages(
+            [("60184005448", "stalled"), ("60124696398", "ready")], verified)
+        self.assertIn("chat composer did not become visible", results[0][4])
+        self.assertEqual(results[0][3], [])
+        self.assertIsNone(results[1][4])
+        self.assertEqual(results[1][3], [("message-2", "visible inbound")])
+
+    def test_whatsapp_phone_identity_mismatch_fails_closed(self):
+        class Locator:
+            @property
+            def first(self): return self
+            def count(self): return 1
+            def is_visible(self): return True
+            def click(self, timeout=None): return None
+            def wait_for(self, state, timeout): return None
+            def inner_text(self, timeout=None): return "+60 12-469 6398"
+        class Keyboard:
+            def press(self, key): return None
+        class Page:
+            keyboard = Keyboard()
+            def get_by_role(self, role, name): return Locator()
+            def locator(self, selector): return Locator()
+        with self.assertRaisesRegex(RuntimeError, "does not match"):
+            WhatsAppWeb._verify_phone_identity(Page(), "60184005448")
 
     def test_whatsapp_send_confirmation_supports_current_outgoing_dom(self):
         class Locator:

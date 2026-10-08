@@ -44,20 +44,54 @@ class WhatsAppWeb:
                 return locator.first
         raise RuntimeError("WhatsApp Web search control is unavailable; stopping safely.")
 
+    @staticmethod
+    def _wait_for_composer(page, timeout=20000):
+        composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
+        try:
+            composer.wait_for(state="visible", timeout=timeout)
+        except Exception as exc:
+            raise RuntimeError("chat composer did not become visible within %d ms" % timeout) from exc
+        if not composer.count() or not composer.is_visible():
+            raise RuntimeError("chat composer is not visible")
+        header = page.locator("header").last
+        if not header.count() or not header.is_visible():
+            raise RuntimeError("conversation header is not visible")
+
+    @staticmethod
+    def _verify_phone_identity(page, contact):
+        """Verify the selected chat's WhatsApp contact card against the exact allowlisted phone."""
+        digits = re.sub(r"\D", "", contact)
+        if not digits:
+            raise RuntimeError("an exact phone number is required to verify this chat")
+        profile_button = page.get_by_role("button", name="Profile details")
+        if not profile_button.count() or not profile_button.is_visible():
+            raise RuntimeError("chat profile details are unavailable for identity verification")
+        try:
+            profile_button.click(timeout=3000)
+            drawer = page.locator('[data-testid="chat-info-drawer"]').first
+            drawer.wait_for(state="visible", timeout=3000)
+            lines = drawer.inner_text(timeout=3000).splitlines()
+            if not any(re.sub(r"\D", "", line) == digits for line in lines):
+                raise RuntimeError("chat profile phone does not match the exact allowlisted number")
+        except RuntimeError:
+            raise
+        except Exception as exc:
+            raise RuntimeError("chat profile identity could not be verified") from exc
+        finally:
+            try:
+                page.keyboard.press("Escape")
+            except Exception:
+                pass
+
     def _open_contact(self, page, contact):
-        # Numeric contacts use a direct, exact-phone URL so a missing thread or a
-        # saved display name cannot cause selection of another chat.
+        # Navigate by exact phone; the visible name may be a saved name or a
+        # WhatsApp username. Verify the phone in the profile card before polling.
         digits = re.sub(r"\D", "", contact)
         if digits:
             page.goto("https://web.whatsapp.com/send?phone=" + digits, wait_until="domcontentloaded")
-            composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
-            try:
-                composer.wait_for(state="visible", timeout=20000)
-            except Exception:
-                return False
-            header = page.locator('header').last
-            if not header.count() or not header.is_visible():
-                raise RuntimeError("Unknown WhatsApp chat state; stopping safely.")
+            self._wait_for_composer(page, timeout=20000)
+            self._verify_phone_identity(page, contact)
+            self._wait_for_composer(page, timeout=5000)
             return True
 
         # Named contacts are searched exactly; no new conversation is sent.
@@ -88,13 +122,32 @@ class WhatsAppWeb:
                     selected = candidate
                     break
         if selected is None:
-            return False
+            raise RuntimeError("named WhatsApp chat was not found in search results")
         selected.click(timeout=2500)
-        page.wait_for_timeout(350)
-        header = page.locator('header').last
-        if not header.count() or not header.is_visible():
-            raise RuntimeError("Unknown WhatsApp chat state; stopping safely.")
+        self._wait_for_composer(page, timeout=20000)
         return True
+
+    def _poll_contact_pages(self, contact_pages, verified_contacts, timeout=1800):
+        """Read each chat independently so one unavailable page cannot block another."""
+        results = []
+        for slot, (contact, page) in enumerate(contact_pages, 1):
+            try:
+                if self._qr_visible(page):
+                    raise RuntimeError("WhatsApp session is not authenticated in this chat tab")
+                if contact not in verified_contacts:
+                    self._wait_for_composer(page, timeout=timeout)
+                    self._verify_phone_identity(page, contact)
+                    verified_contacts.add(contact)
+                else:
+                    self._wait_for_composer(page, timeout=timeout)
+                results.append((slot, contact, page, self._incoming(page), None))
+            except Exception as exc:
+                if isinstance(exc, RuntimeError):
+                    error = str(exc)
+                else:
+                    error = "chat polling failed (%s)" % type(exc).__name__
+                results.append((slot, contact, page, [], error))
+        return results
 
     @staticmethod
     def _incoming(page):
@@ -227,11 +280,20 @@ class WhatsAppWeb:
                 outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
                 contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
                 contact_pages = {}
+                verified_contacts = set()
+                reported_errors = {}
+                last_poll_report = {}
                 for index, contact in enumerate(contacts):
                     contact_page = page if index == 0 else context.new_page()
                     contact_pages[contact] = contact_page
-                    if not self._open_contact(contact_page, contact):
-                        print("An allowlisted chat is still loading; keeping its browser tab open without re-navigation.", flush=True)
+                    try:
+                        self._open_contact(contact_page, contact)
+                        verified_contacts.add(contact)
+                        print("Allowlisted chat slot %d opened and exact phone identity verified." % (index + 1), flush=True)
+                    except Exception as exc:
+                        detail = str(exc) if isinstance(exc, RuntimeError) else type(exc).__name__
+                        reported_errors[index + 1] = (detail, 0)
+                        print("Allowlisted chat slot %d navigation/identity check failed: %s; will retry readiness without re-navigation." % (index + 1, detail), flush=True)
                     state_key = "seen:" + normalize_contact(contact)
                     if self.runtime.store.adapter_value(state_key) is None:
                         # No thread existed at startup. Any later first inbound
@@ -242,16 +304,21 @@ class WhatsAppWeb:
                     ready_file.write_text(str(os.getpid()), encoding="utf-8")
                 try:
                     while not (stop_file and stop_file.exists()):
-                        for contact, contact_page in contact_pages.items():
-                            if self._qr_visible(contact_page):
-                                raise RuntimeError("WhatsApp Web session expired; Runtime stopped safely. Run the login command before restarting.")
-                            composer = contact_page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
-                            if not composer.count() or not composer.is_visible():
-                                # Give WhatsApp time to finish opening this chat;
-                                # repeating goto here can trap it on "Starting chat".
-                                contact_page.wait_for_timeout(300)
+                        now = time.monotonic()
+                        scans = self._poll_contact_pages(list(contact_pages.items()), verified_contacts)
+                        for slot, contact, contact_page, incoming, error in scans:
+                            if error:
+                                prior = reported_errors.get(slot)
+                                if prior is None or prior[0] != error or now - prior[1] >= 30:
+                                    print("Allowlisted chat slot %d poll failed: %s; retrying readiness without re-navigation." % (slot, error), flush=True)
+                                    reported_errors[slot] = (error, now)
                                 continue
-                            incoming = self._incoming(contact_page)
+                            if slot in reported_errors:
+                                print("Allowlisted chat slot %d recovered; polling resumed." % slot, flush=True)
+                                del reported_errors[slot]
+                            if now - last_poll_report.get(slot, 0) >= 60:
+                                print("Allowlisted chat slot %d polled; %d inbound message nodes found." % (slot, len(incoming)), flush=True)
+                                last_poll_report[slot] = now
                             state_key = "seen:" + normalize_contact(contact)
                             seen_raw = self.runtime.store.adapter_value(state_key)
                             seen = set(json.loads(seen_raw)) if seen_raw else set()
@@ -264,10 +331,14 @@ class WhatsAppWeb:
                                         continue
                                     seen.add(external_id)
                                     if self.runtime.allowed(contact) and send_replies:
-                                        self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(contact_page, reply))
-                                        crm_result = self.runtime.sync_crm()
-                                        if crm_result["status"] not in ("SYNCED", "AUTH_REQUIRED"):
-                                            print("CRM sync remains pending for retry.", flush=True)
+                                        try:
+                                            result = self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(contact_page, reply))
+                                            print("Allowlisted chat slot %d inbound result: %s; send status: %s." % (slot, result.get("status"), result.get("send_status", "not_sent")), flush=True)
+                                            crm_result = self.runtime.sync_crm()
+                                            if crm_result["status"] not in ("SYNCED", "AUTH_REQUIRED"):
+                                                print("CRM sync remains pending for retry.", flush=True)
+                                        except Exception as exc:
+                                            print("Allowlisted chat slot %d inbound handling failed (%s); the other chats will continue polling." % (slot, type(exc).__name__), flush=True)
                                     elif send_replies is False:
                                         print("New allowlisted inbound observed; message handling is disabled until --send-replies is authorized.", flush=True)
                             self.runtime.store.set_adapter_value(state_key, json.dumps(sorted(seen)[-5000:]))
