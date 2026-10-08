@@ -7,7 +7,7 @@ from .agent import SalesAgent
 from .knowledge import retrieve
 from .provider import PROFILE_FIELDS, agent_schema
 from .service import Runtime, support_signature
-from .whatsapp import is_allowlisted
+from .whatsapp import WhatsAppWeb, is_allowlisted
 
 
 def decision(action="REPLY", reply="Thanks, I’ll check that for you.", **kwargs):
@@ -143,6 +143,29 @@ class RuntimeTests(unittest.TestCase):
                 return invalid, {}
         with self.assertRaisesRegex(ValueError, "system-controlled"):
             SalesAgent({"model": "gpt-6-luna", "reasoning": "medium"}, InvalidProvider()).decide("Hi", {}, [], [])
+
+    def test_whatsapp_adapter_reads_only_incoming_message_nodes(self):
+        class Message:
+            def __init__(self, external_id, body):
+                self.external_id = external_id
+                self.body = body
+            def get_attribute(self, key):
+                return self.external_id if key == "data-id" else None
+            def locator(self, selector):
+                return BodyLocator(self.body)
+        class BodyLocator:
+            def __init__(self, body): self.body = body
+            def count(self): return int(bool(self.body))
+            def inner_text(self): return self.body
+        class Messages:
+            def all(self): return [Message("in-1", "hello"), Message(None, "missing id"), Message("in-3", "  ")]
+        class Page:
+            def locator(self, selector):
+                self.selector = selector
+                return Messages()
+        page = Page()
+        self.assertEqual(WhatsAppWeb._incoming(page), [("in-1", "hello")])
+        self.assertEqual(page.selector, ".message-in")
 
 
 if __name__ == "__main__":
