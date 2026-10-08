@@ -97,11 +97,31 @@ class WhatsAppWeb:
     @staticmethod
     def _incoming(page):
         found = []
-        for message in page.locator(".message-in").all():
+        # WhatsApp Web has moved the message id and body under different
+        # wrappers over time. Keep the legacy incoming selector, and also read
+        # the current conversation-message wrapper. Its data-id starts with
+        # false_ for messages sent by the other participant and true_ for our
+        # own messages, so outgoing messages remain excluded.
+        for message in page.locator('.message-in, [data-testid^="conv-msg-"]').all():
             external_id = message.get_attribute("data-id")
             if not external_id:
                 continue
-            text = message.locator(".copyable-text").inner_text() if message.locator(".copyable-text").count() else ""
+            classes = message.get_attribute("class") or ""
+            testid = message.get_attribute("data-testid") or ""
+            incoming_marker = message.locator('[data-testid="tail-in"], [data-testid="msg-container"] [data-testid="tail-in"]')
+            outgoing_marker = message.locator('[data-testid="tail-out"], [data-testid="msg-container"] [data-testid="tail-out"]')
+            is_incoming = (
+                "message-in" in classes
+                or testid == "message-in"
+                or (incoming_marker.count() > 0 and outgoing_marker.count() == 0)
+                or external_id.startswith("false_")
+            )
+            if not is_incoming or external_id.startswith("true_"):
+                continue
+            body = message.locator(".copyable-text")
+            if not body.count():
+                body = message.locator("[data-pre-plain-text]")
+            text = body.first.inner_text() if body.count() else ""
             if text.strip():
                 found.append((external_id, text.strip()))
         return found

@@ -146,26 +146,34 @@ class RuntimeTests(unittest.TestCase):
 
     def test_whatsapp_adapter_reads_only_incoming_message_nodes(self):
         class Message:
-            def __init__(self, external_id, body):
+            def __init__(self, external_id, body, classes="", testid=""):
                 self.external_id = external_id
                 self.body = body
+                self.classes = classes
+                self.testid = testid
             def get_attribute(self, key):
-                return self.external_id if key == "data-id" else None
+                return {"data-id": self.external_id, "class": self.classes, "data-testid": self.testid}.get(key)
             def locator(self, selector):
                 return BodyLocator(self.body)
         class BodyLocator:
             def __init__(self, body): self.body = body
+            @property
+            def first(self): return self
             def count(self): return int(bool(self.body))
             def inner_text(self): return self.body
         class Messages:
-            def all(self): return [Message("in-1", "hello"), Message(None, "missing id"), Message("in-3", "  ")]
+            def all(self):
+                return [Message("legacy-1", "hello", classes="message-in"),
+                        Message("false_chat_2", "current inbound", testid="conv-msg-2"),
+                        Message("true_chat_3", "outbound", testid="conv-msg-3"),
+                        Message(None, "missing id"), Message("false_chat_4", "  ", testid="conv-msg-4")]
         class Page:
             def locator(self, selector):
                 self.selector = selector
                 return Messages()
         page = Page()
-        self.assertEqual(WhatsAppWeb._incoming(page), [("in-1", "hello")])
-        self.assertEqual(page.selector, ".message-in")
+        self.assertEqual(WhatsAppWeb._incoming(page), [("legacy-1", "hello"), ("false_chat_2", "current inbound")])
+        self.assertEqual(page.selector, '.message-in, [data-testid^="conv-msg-"]')
 
     def test_whatsapp_startup_waits_for_initial_message_download(self):
         class Locator:
