@@ -81,11 +81,12 @@ class Runtime:
             out_id = self.store.add_message(lead["lead_id"], "OUTBOUND", reply, "pending_send" if send_reply else "not_sent")
             if send_reply:
                 try:
-                    sender(contact, reply)
+                    send_result = sender(contact, reply)
                 except Exception as exc:
                     self.store.update_send_status(out_id, "uncertain")
                     return dict(result, reply=None, send_status="uncertain", error=str(exc), operator_review_required=True)
-                self.store.update_send_status(out_id, "sent")
+                external_id = send_result.get("message_id") if isinstance(send_result, dict) else None
+                self.store.update_send_status(out_id, "sent", external_id)
                 result["send_status"] = "sent"
             result["reply"] = reply
         return result

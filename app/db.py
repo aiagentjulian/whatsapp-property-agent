@@ -161,9 +161,15 @@ class Store:
             db.execute("INSERT INTO messages VALUES(?,?,?,?,?,?,?)", (msg_id, lead_id, None, direction, body, status, now()))
         return msg_id
 
-    def update_send_status(self, message_id, status):
+    def update_send_status(self, message_id, status, external_id=None):
         with self.transaction() as db:
-            db.execute("UPDATE messages SET send_status=? WHERE message_id=?", (status, message_id))
+            db.execute("UPDATE messages SET send_status=?, external_id=COALESCE(?, external_id) WHERE message_id=?",
+                       (status, external_id, message_id))
+
+    def update_status_by_external_id(self, external_id, status):
+        with self.transaction() as db:
+            return db.execute("UPDATE messages SET send_status=? WHERE external_id=? AND direction='OUTBOUND'",
+                              (status, external_id)).rowcount == 1
 
     def update_profile(self, lead_id, updates):
         with self.transaction() as db:

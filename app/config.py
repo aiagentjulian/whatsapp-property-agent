@@ -39,4 +39,10 @@ def get_config():
         "outbound_opening_message": os.getenv("OUTBOUND_OPENING_MESSAGE", "").replace("\\n", "\n"),
         "google_oauth_client_path": Path(os.getenv("GOOGLE_OAUTH_CLIENT_PATH", "data/lead/google-oauth-client.json")),
         "google_token_path": Path(os.getenv("GOOGLE_TOKEN_PATH", "data/lead/google-token.json")),
+        "meta_access_token": os.getenv("META_ACCESS_TOKEN", ""),
+        "meta_phone_number_id": os.getenv("META_PHONE_NUMBER_ID", ""),
+        "meta_webhook_verify_token": os.getenv("META_WEBHOOK_VERIFY_TOKEN", ""),
+        "meta_graph_api_version": os.getenv("META_GRAPH_API_VERSION", "v25.0"),
+        "webhook_host": os.getenv("WEBHOOK_HOST", "127.0.0.1"),
+        "webhook_port": int(os.getenv("WEBHOOK_PORT", "8080")),
     }
