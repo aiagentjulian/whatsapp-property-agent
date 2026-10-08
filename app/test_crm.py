@@ -1,14 +1,12 @@
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
 
-from .cli import main
 from .db import Store
 from .provider import PROFILE_FIELDS
 from .service import Runtime
 from .sheets import LEAD_HEADERS, PROSPECT_HEADERS, SheetsCRM, lead_values, prospect_values, sync_pending
-from .whatsapp import is_allowlisted
+from .contacts import is_allowlisted
 
 
 class FakeAgent:
@@ -125,30 +123,12 @@ class CRMTests(unittest.TestCase):
         record = self.store.crm_record("LEAD", lead["lead_id"])
         self.assertEqual((record["owner"], record["ai_session_status"], record["handoff_status"]), ("HUMAN", "ENDED", "COMPLETED"))
 
-    def test_contact_gate_and_outbound_send_requires_interactive_confirmation(self):
+    def test_contact_gate_and_prospect_creation_require_allowlist(self):
         self.assertTrue(is_allowlisted("Outbound Test Contact", self.config["outbound_allowlist"]))
         self.assertFalse(is_allowlisted("Other Test Contact", self.config["outbound_allowlist"]))
-        prospect, _ = self.store.create_prospect("Outbound Test Contact")
-        import os
-        old_db = os.environ.get("DATABASE_PATH")
-        old_allow = os.environ.get("WHATSAPP_OUTBOUND_ALLOWLIST")
-        old_copy = os.environ.get("OUTBOUND_OPENING_MESSAGE")
-        os.environ["DATABASE_PATH"] = str(self.path)
-        os.environ["WHATSAPP_OUTBOUND_ALLOWLIST"] = "Outbound Test Contact"
-        os.environ["OUTBOUND_OPENING_MESSAGE"] = "Approved test copy"
-        try:
-            with patch("builtins.input", return_value="NO"), patch("app.cli.WhatsAppWeb.send_outbound") as send:
-                with self.assertRaises(SystemExit): main(["send-outbound", prospect["prospect_id"]])
-                send.assert_not_called()
-            self.assertEqual(self.store.get_prospect(prospect["prospect_id"])["outbound_status"], "NOT_SENT")
-            with patch("builtins.input", return_value="SEND"), patch("app.cli.WhatsAppWeb.send_outbound") as send:
-                main(["send-outbound", prospect["prospect_id"]])
-                send.assert_called_once_with("Outbound Test Contact", "Approved test copy")
-            self.assertEqual(self.store.get_prospect(prospect["prospect_id"])["outbound_status"], "SENT")
-        finally:
-            for key, old in (("DATABASE_PATH", old_db), ("WHATSAPP_OUTBOUND_ALLOWLIST", old_allow), ("OUTBOUND_OPENING_MESSAGE", old_copy)):
-                if old is None: os.environ.pop(key, None)
-                else: os.environ[key] = old
+        prospect, created = self.store.create_prospect("Outbound Test Contact")
+        self.assertTrue(created)
+        self.assertEqual(prospect["outbound_status"], "NOT_SENT")
 
     def test_uncertain_send_state_cannot_be_retried(self):
         prospect, _ = self.store.create_prospect("Outbound Test Contact")

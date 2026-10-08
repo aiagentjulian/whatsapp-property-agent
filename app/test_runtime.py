@@ -7,7 +7,7 @@ from .agent import SalesAgent
 from .knowledge import retrieve
 from .provider import PROFILE_FIELDS, agent_schema
 from .service import Runtime, support_signature
-from .whatsapp import WhatsAppWeb, is_allowlisted
+from .contacts import is_allowlisted
 
 
 def decision(action="REPLY", reply="Thanks, I’ll check that for you.", **kwargs):
@@ -144,135 +144,6 @@ class RuntimeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "system-controlled"):
             SalesAgent({"model": "gpt-6-luna", "reasoning": "medium"}, InvalidProvider()).decide("Hi", {}, [], [])
 
-    def test_whatsapp_adapter_reads_only_incoming_message_nodes(self):
-        class Message:
-            def __init__(self, external_id, body, classes="", testid=""):
-                self.external_id = external_id
-                self.body = body
-                self.classes = classes
-                self.testid = testid
-            def get_attribute(self, key):
-                return {"data-id": self.external_id, "class": self.classes, "data-testid": self.testid}.get(key)
-            def locator(self, selector):
-                return BodyLocator(self.body)
-        class BodyLocator:
-            def __init__(self, body): self.body = body
-            @property
-            def first(self): return self
-            def count(self): return int(bool(self.body))
-            def inner_text(self): return self.body
-        class Messages:
-            def all(self):
-                return [Message("legacy-1", "hello", classes="message-in"),
-                        Message("false_chat_2", "current inbound", testid="conv-msg-2"),
-                        Message("true_chat_3", "outbound", testid="conv-msg-3"),
-                        Message(None, "missing id"), Message("false_chat_4", "  ", testid="conv-msg-4")]
-        class Page:
-            def locator(self, selector):
-                self.selector = selector
-                return Messages()
-        page = Page()
-        self.assertEqual(WhatsAppWeb._incoming(page), [("legacy-1", "hello"), ("false_chat_2", "current inbound")])
-        self.assertEqual(page.selector, '.message-in, [data-testid^="conv-msg-"]')
-
-    def test_whatsapp_startup_waits_for_initial_message_download(self):
-        class Locator:
-            def __init__(self, visible): self.visible = visible
-            @property
-            def first(self): return self
-            def count(self): return 1
-            def is_visible(self): return self.visible
-            def all(self): return [self]
-        class Page:
-            def __init__(self): self.loading = True; self.waits = 0
-            def locator(self, selector): return Locator(False if "canvas" in selector or "data-ref" in selector else True)
-            def get_by_text(self, text, exact=False): return Locator(self.loading)
-            def wait_for_timeout(self, milliseconds): self.waits += 1; self.loading = False
-        page = Page()
-        adapter = WhatsAppWeb({}, None)
-        self.assertTrue(adapter._wait_authenticated(page, timeout=1))
-        self.assertEqual(page.waits, 1)
-
-    def test_whatsapp_phone_chat_uses_exact_route_once(self):
-        class Locator:
-            @property
-            def first(self): return self
-            @property
-            def last(self): return self
-            def count(self): return 1
-            def is_visible(self): return True
-            def wait_for(self, state, timeout): return None
-            def inner_text(self, timeout=None): return "+60 18-400 5448"
-            def click(self, timeout=None): return None
-        class Page:
-            class Keyboard:
-                def press(self, key): return None
-            def __init__(self): self.urls = []; self.keyboard = self.Keyboard()
-            def goto(self, url, wait_until): self.urls.append(url)
-            def locator(self, selector): return Locator()
-            def get_by_role(self, role, name): return Locator()
-        page = Page()
-        adapter = WhatsAppWeb({}, None)
-        self.assertTrue(adapter._open_contact(page, "+60 18-400 5448"))
-        self.assertEqual(page.urls, ["https://web.whatsapp.com/send?phone=60184005448"])
-
-    def test_whatsapp_poll_continues_when_one_chat_is_not_ready(self):
-        class Adapter(WhatsAppWeb):
-            @staticmethod
-            def _qr_visible(page): return False
-            @staticmethod
-            def _wait_for_composer(page, timeout=20000):
-                if page == "stalled": raise RuntimeError("chat composer did not become visible")
-            @staticmethod
-            def _verify_phone_identity(page, contact): return None
-            @staticmethod
-            def _incoming(page): return [("message-2", "visible inbound")]
-        adapter = Adapter({}, None)
-        verified = {"60184005448", "60124696398"}
-        results = adapter._poll_contact_pages(
-            [("60184005448", "stalled"), ("60124696398", "ready")], verified)
-        self.assertIn("chat composer did not become visible", results[0][4])
-        self.assertEqual(results[0][3], [])
-        self.assertIsNone(results[1][4])
-        self.assertEqual(results[1][3], [("message-2", "visible inbound")])
-
-    def test_whatsapp_phone_identity_mismatch_fails_closed(self):
-        class Locator:
-            @property
-            def first(self): return self
-            def count(self): return 1
-            def is_visible(self): return True
-            def click(self, timeout=None): return None
-            def wait_for(self, state, timeout): return None
-            def inner_text(self, timeout=None): return "+60 12-469 6398"
-        class Keyboard:
-            def press(self, key): return None
-        class Page:
-            keyboard = Keyboard()
-            def get_by_role(self, role, name): return Locator()
-            def locator(self, selector): return Locator()
-        with self.assertRaisesRegex(RuntimeError, "does not match"):
-            WhatsAppWeb._verify_phone_identity(Page(), "60184005448")
-
-    def test_whatsapp_send_confirmation_supports_current_outgoing_dom(self):
-        class Locator:
-            @property
-            def first(self): return self
-            def count(self): return 1
-            def is_visible(self): return True
-            def fill(self, body): self.body = body
-            def press(self, key): self.key = key
-        class Page:
-            def __init__(self): self.selectors = []; self.wait_args = None
-            def locator(self, selector):
-                self.selectors.append(selector)
-                return Locator()
-            def wait_for_function(self, script, arg, timeout):
-                self.wait_args = (script, arg, timeout)
-        page = Page()
-        WhatsAppWeb({}, None)._send(page, "Approved reply")
-        self.assertEqual(page.selectors[0], WhatsAppWeb.OUTGOING_MESSAGES)
-        self.assertEqual(page.wait_args[1]["selector"], WhatsAppWeb.OUTGOING_MESSAGES)
 
 
 if __name__ == "__main__":

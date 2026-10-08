@@ -1,37 +1,24 @@
 # WhatsApp Property Agent
 
-## Google Sheets CRM and controlled outbound
-
-SQLite remains canonical. The Runtime queues stable-ID Lead and Prospect upserts in SQLite, then syncs them to the existing `Leads` and `Prospects` tabs when a local Google OAuth token is available. Failed writes remain pending for `sync-sheets` retries. The adapter checks the existing headers before writing and refuses ambiguous duplicate IDs.
-
-To connect the local Runtime, install the dependencies with `python -m pip install -r requirements.txt`, create/download a Google OAuth Desktop client JSON for the account that can edit the CRM spreadsheet, and save it to `data/lead/google-oauth-client.json` (or configure `GOOGLE_OAUTH_CLIENT_PATH`). Then run `python -m app.cli sheets-auth` and approve the Google consent prompt. The access token is stored in the ignored, permission-restricted `data/lead/google-token.json` (or `GOOGLE_TOKEN_PATH`). Run `python -m app.cli sync-sheets` to retry queued writes. The Runtime performs queued CRM syncs on startup and after handled inbound messages when authorization is available.
-
-Controlled outbound is disabled until a test number is explicitly listed in `WHATSAPP_OUTBOUND_ALLOWLIST` and exact opening copy is approved in `OUTBOUND_OPENING_MESSAGE`. Create a Prospect with `python -m app.cli create-prospect <phone> --campaign <name> --source-detail <source>`. This creates only a `NOT_SENT` Prospect. Review the copy and run `python -m app.cli send-outbound <prospect-id>`; the command displays the recipient and exact text, then requires typing `SEND` immediately before one message. A `SENDING` or `UNCERTAIN` Prospect cannot be sent again automatically. Outbound replies are monitored for sent Prospects and convert once into an `OUTBOUND` Lead.
-
-Local WhatsApp Web property-sales agent for controlled testing with allowlisted contacts. The runtime uses the existing Brain, Skills and Pearlmont Knowledge as its source of truth.
+This repository contains the Python property-sales Agent, Sales Brain, Skills, Pearlmont Knowledge, SQLite Lead and support workflows, and Google Sheets CRM adapter. The WhatsApp Web transport has been removed; this project currently does not listen for WhatsApp messages or send replies.
 
 ## Setup
 
-Requires Python 3.9+, Node.js, and a local headed browser supported by Playwright.
+Requires Python 3.9+.
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python -m playwright install chromium
 cp .env.example .env
 ```
 
-Set `OPENAI_API_KEY` in the shell or `.env`, then configure `WHATSAPP_ALLOWLIST` as a comma-separated list of exact WhatsApp contact names or phone numbers. Never commit `.env`, the browser profile, or `data/lead/agent.sqlite3`.
+Set `OPENAI_API_KEY` in the shell or local `.env`. The Agent is pinned to `gpt-6-luna` with Medium reasoning by default. Keep `.env`, OAuth credentials, OAuth tokens, and the local SQLite database private.
 
-## Operator commands
+## Local operations
 
 ```sh
 python -m app.cli status
-python -m app.cli login       # opens headed WhatsApp Web for manual QR login; does not process messages
-python -m app.cli start --send-replies  # starts a detached allowlisted listener with replies enabled
-python -m app.cli status                # reports the detached Runtime PID and configuration
-python -m app.cli stop                  # requests orderly shutdown
 python -m app.cli leads
 python -m app.cli lead <lead-id>
 python -m app.cli history <lead-id>
@@ -39,10 +26,18 @@ python -m app.cli support
 python -m app.cli resolve-support <request-id> --result "Verified answer"
 python -m app.cli handoffs
 python -m app.cli usage
+python -m app.cli knowledge-check "What is the project location?"
 ```
 
-The `login` command opens the existing persistent browser profile for manual login; it does not process messages. `start` returns after the Runtime confirms WhatsApp Web authentication and begins its listener. The Runtime keeps its browser visible and writes diagnostics to `data/lead/runtime.log`. Use `status` to confirm the process and `stop` to shut it down. The MacBook must remain powered on and awake while the listener is running. Browser login state is preserved across normal Runtime restarts.
+SQLite remains canonical. Google Sheets syncs stable-ID Lead and Prospect upserts to the existing CRM tabs when a local OAuth token is available. Configure the OAuth Desktop client at `data/lead/google-oauth-client.json` (or set `GOOGLE_OAUTH_CLIENT_PATH`), then run:
 
-Runtime defaults are `RUNTIME_PROVIDER=openai_api`, `RUNTIME_MODEL=gpt-6-luna`, and `RUNTIME_REASONING=medium`. The runtime never silently substitutes another model. The existing Simulator remains on its own Codex CLI / GPT-5.6 Luna configuration.
+```sh
+python -m app.cli sheets-auth
+python -m app.cli sync-sheets
+```
 
-Core sales journey: `UNDERSTAND → QUALIFY → POSITION → HANDLE → INTENT → CLOSE`.
+The access token is stored in ignored, permission-restricted `data/lead/google-token.json` (or `GOOGLE_TOKEN_PATH`). Failed CRM writes remain queued in SQLite for later `sync-sheets` retries.
+
+Prospects can be reviewed and created locally. `create-prospect` only creates a `NOT_SENT` Prospect after checking the exact `WHATSAPP_OUTBOUND_ALLOWLIST`; it does not send a message.
+
+The core sales journey is `UNDERSTAND → QUALIFY → POSITION → HANDLE → INTENT → CLOSE`.

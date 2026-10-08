@@ -34,7 +34,6 @@ def get_config():
         "reasoning": reasoning,
         "api_key": os.getenv("OPENAI_API_KEY", ""),
         "database": Path(os.getenv("DATABASE_PATH", "data/lead/agent.sqlite3")),
-        "profile_dir": Path(os.getenv("WHATSAPP_PROFILE_DIR", "data/lead/browser-profile")),
         "allowlist": [x.strip() for x in os.getenv("WHATSAPP_ALLOWLIST", "").split(",") if x.strip()],
         "outbound_allowlist": [x.strip() for x in os.getenv("WHATSAPP_OUTBOUND_ALLOWLIST", "").split(",") if x.strip()],
         "outbound_opening_message": os.getenv("OUTBOUND_OPENING_MESSAGE", "").replace("\\n", "\n"),
