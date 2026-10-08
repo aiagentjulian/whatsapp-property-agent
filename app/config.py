@@ -1,0 +1,39 @@
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_env_file(path=None):
+    """Load simple KEY=value entries without overriding the process environment."""
+    env_path = Path(path or ROOT / ".env")
+    if not env_path.is_file():
+        return
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
+
+
+def get_config():
+    load_env_file()
+    model = os.getenv("RUNTIME_MODEL", "gpt-6-luna")
+    provider = os.getenv("RUNTIME_PROVIDER", "openai_api")
+    reasoning = os.getenv("RUNTIME_REASONING", "medium")
+    if provider != "openai_api":
+        raise ValueError("RUNTIME_PROVIDER must be openai_api for the runtime.")
+    if model != "gpt-6-luna":
+        raise ValueError("This MVP is pinned to gpt-6-luna; model substitution is disabled.")
+    if reasoning not in ("low", "medium", "high"):
+        raise ValueError("RUNTIME_REASONING must be low, medium, or high.")
+    return {
+        "provider": provider,
+        "model": model,
+        "reasoning": reasoning,
+        "api_key": os.getenv("OPENAI_API_KEY", ""),
+        "database": Path(os.getenv("DATABASE_PATH", "data/lead/agent.sqlite3")),
+        "profile_dir": Path(os.getenv("WHATSAPP_PROFILE_DIR", "data/lead/browser-profile")),
+        "allowlist": [x.strip() for x in os.getenv("WHATSAPP_ALLOWLIST", "").split(",") if x.strip()],
+    }
