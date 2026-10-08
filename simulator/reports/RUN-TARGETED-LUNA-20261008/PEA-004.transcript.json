@@ -1,0 +1,930 @@
+{
+  "scenario_id": "PEA-004",
+  "version": "1.6",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-08T04:24:25.688472+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 8,
+    "ai": 9,
+    "human_handoff_executor": 1,
+    "human_support": 2
+  },
+  "owner_final": "HUMAN",
+  "ai_session_status_final": "ENDED",
+  "ai_session_id": "PEA-004:AI-SESSION-1",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "APPOINTMENT_HANDOFF",
+  "handoff_reason": "OPERATIONAL_BOOKING",
+  "handoff_turn": 9,
+  "appointment_state_customer": "VIEWING_INTEREST",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 5,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 7,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "OPERATIONAL_BOOKING",
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "HUMAN",
+      "ai_session_status_after_action": "ENDED"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "support_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 2,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "action": "ANSWER",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "support_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 5,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 6,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Verify whether Pearlmont has an official document or designated contact who can provide phase-wise supply data and actual rental/comparable transaction evidence for conservative investment underwriting. Return only confirmed document/contact details and scope; do not infer unavailable figures.",
+      "support_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's request for an official evidence source or contact, then assess whether the available information is sufficient for their conservative 5–7 year investment comparison.",
+        "unresolved_customer_need": "The buyer needs a credible official source or contact for phase-wise supply and actual rental/comparable transaction data before making the investment case.",
+        "sales_stage": "HANDLE"
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 7,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 8,
+      "action": "ANSWER",
+      "appointment_readiness": "EMERGING",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 9,
+      "action": "HANDOFF",
+      "appointment_readiness": "READY_FOR_APPOINTMENT",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "owner_after_turn": "HUMAN",
+      "ai_session_status_after_turn": "ENDED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 10,
+      "operational_action": "VERIFY_SLOT",
+      "sales_work_level": "NONE",
+      "appointment_state": "VIEWING_INTEREST",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "ai_session_id": "PEA-004:AI-SESSION-1",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "support_request_id": "PEA-004-SUP-001",
+      "lead_id": "PEA-004",
+      "turn": 1,
+      "request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing"
+        ],
+        []
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 1
+    },
+    {
+      "support_request_id": "PEA-004-SUP-002",
+      "lead_id": "PEA-004",
+      "turn": 4,
+      "request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "fixture_key": "investment",
+      "support_identity": [
+        [
+          "investment"
+        ],
+        []
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 4
+    }
+  ],
+  "support_attempt_trace": [
+    {
+      "turn": 1,
+      "request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "fixture_key": "pricing",
+      "support_identity": [
+        [
+          "package_pricing"
+        ],
+        []
+      ],
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-004-SUP-001"
+    },
+    {
+      "turn": 4,
+      "request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "fixture_key": "investment",
+      "support_identity": [
+        [
+          "investment"
+        ],
+        []
+      ],
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-004-SUP-002"
+    },
+    {
+      "turn": 6,
+      "request": "Verify whether Pearlmont has an official document or designated contact who can provide phase-wise supply data and actual rental/comparable transaction evidence for conservative investment underwriting. Return only confirmed document/contact details and scope; do not infer unavailable figures.",
+      "fixture_key": "investment",
+      "support_identity": [
+        [
+          "investment"
+        ],
+        []
+      ],
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's request for an official evidence source or contact, then assess whether the available information is sufficient for their conservative 5–7 year investment comparison.",
+        "unresolved_customer_need": "The buyer needs a credible official source or contact for phase-wise supply and actual rental/comparable transaction data before making the investment case.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": true,
+      "matching_support_request_id": "PEA-004-SUP-002",
+      "disposition": "REUSE_RESOLVED"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "What rental yield can I expect? Will price appreciate?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/02_commercial/pricing.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Looking at around RM300k, probably a 5–7 year hold. I’d need the net numbers to make sense, not just gross yield—especially maintenance, sinking fund, vacancy and phase supply. Is the RM0.18 psf inclusive of sinking fund, and what’s the source for that figure?",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, thanks for clarifying the source and that there’s no verified yield forecast. For my 5–7 year hold, can you share the phase-wise unit supply and any actual rental evidence or comparable transactions? I’m comparing this against a few other projects, so I’d rather underwrite it conservatively than assume the facilities will drive demand.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/facilities-and-quality.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 5,
+      "trigger_message": "Okay, thanks for clarifying the source and that there’s no verified yield forecast. For my 5–7 year hold, can you share the phase-wise unit supply and any actual rental evidence or comparable transactions? I’m comparing this against a few other projects, so I’d rather underwrite it conservatively than assume the facilities will drive demand.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/facilities-and-quality.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 6,
+      "trigger_message": "I’m using roughly RM1,500–RM1,700 monthly rent in my conservative comparison, with some vacancy allowance, but that’s my underwriting assumption—not Pearlmont evidence. The other projects have at least some asking-rent listings and transaction references. Without comparable rental data or phase-wise supply here, I can’t make the investment case yet. Is there any official document or contact who can provide those figures?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 7,
+      "trigger_message": "I’m using roughly RM1,500–RM1,700 monthly rent in my conservative comparison, with some vacancy allowance, but that’s my underwriting assumption—not Pearlmont evidence. The other projects have at least some asking-rent listings and transaction references. Without comparable rental data or phase-wise supply here, I can’t make the investment case yet. Is there any official document or contact who can provide those figures?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/overview.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 8,
+      "trigger_message": "Okay, stress-test it using RM1,500 and RM1,700 rent, with vacancy allowance and the RM162 monthly maintenance. Please show the net yield range clearly, and flag any costs you’re not able to verify. If the numbers still look reasonable, I can consider a viewing after that.",
+      "files": [
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/01_facts/overview.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 9,
+      "trigger_message": "The 5.0%–5.8% assumption-based range looks potentially workable, but I’m treating it as a sensitivity only since several costs are still unverified. I’m open to a viewing to check the actual layout and location—what weekday or weekend slots are available?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+        "knowledge/project/pearlmont/03_sales/viewing-close.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-004:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-001",
+      "request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-001",
+      "request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Verify whether Pearlmont has an official document or designated contact who can provide phase-wise supply data and actual rental/comparable transaction evidence for conservative investment underwriting. Return only confirmed document/contact details and scope; do not infer unavailable figures.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    }
+  ],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": true,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-004:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "What rental yield can I expect? Will price appreciate?"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-001",
+      "request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 1,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-001",
+      "request": "Please verify whether Pearlmont has approved, current evidence for expected rental yield or rental-demand metrics, and any substantiated price-appreciation outlook or documented appreciation drivers. Return only supported figures, assumptions, caveats, and source scope; do not provide guarantees.",
+      "result": {
+        "fixture_key": "pricing",
+        "verified_answer": "For this simulator run, the current Type A 900 sq.ft. package price starts from RM302,000 for the one-carpark category. Exact unit price depends on floor, facing, carpark allocation and final package applicability. The figure is a synthetic fixture and not an investment return estimate.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic current package price basis; not Pearlmont factual Knowledge.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Answer the buyer's rental-yield and price-appreciation questions using verified project evidence, then assess whether Pearlmont fits their investment priorities.",
+        "unresolved_customer_need": "The buyer wants a credible expectation for rental yield and whether the property's price may appreciate.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "To be transparent, I don’t have a verified rental-yield figure or substantiated appreciation forecast to quote, so I wouldn’t want to promise a percentage. What I can confirm is that the current Type A 900 sq.ft. one-carpark package starts from RM302,000; exact pricing depends on floor, facing, car-park allocation and package applicability. That’s an entry-price reference, not an investment-return estimate. What budget range and holding period are you considering?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Looking at around RM300k, probably a 5–7 year hold. I’d need the net numbers to make sense, not just gross yield—especially maintenance, sinking fund, vacancy and phase supply. Is the RM0.18 psf inclusive of sinking fund, and what’s the source for that figure?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "You’re right to focus on net numbers. The RM0.18 psf figure is stated in Pearlmont’s latest project FAQ, updated 17 September 2026, as inclusive of the sinking fund. For a 900 sq.ft. unit, that is RM162 per month at the stated rate. It covers the stated maintenance rate only—not vacancy, rental assumptions or phase-supply risk—and I still don’t have a verified rental-yield forecast to quote.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks for clarifying the source and that there’s no verified yield forecast. For my 5–7 year hold, can you share the phase-wise unit supply and any actual rental evidence or comparable transactions? I’m comparing this against a few other projects, so I’d rather underwrite it conservatively than assume the facilities will drive demand.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Please verify Pearlmont Phase 1 phase-wise unit supply and any approved, current actual rental evidence or comparable transaction data relevant to a conservative 5–7 year investment assessment. Return only supported figures, source scope, dates, assumptions and caveats; do not infer rental yield, appreciation or demand from facilities alone.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Simulator-only verified-information fixture; figures repeat sourced facts, while rental/yield/appreciation remain explicitly unavailable.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Assess the buyer’s conservative 5–7 year investment case using verified phase-supply and rental evidence, then determine whether Pearlmont fits their around RM300k budget and net-return requirements.",
+        "unresolved_customer_need": "The buyer wants phase-wise supply data and actual rental or comparable transaction evidence before comparing Pearlmont with other projects.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "For conservative underwriting, the verified figure is 1,846 total Phase 1 units. I don’t have verified phase-by-phase supply, current remaining inventory, rental comparables, or substantiated yield/appreciation data to quote, so I wouldn’t assume facilities create demand. The known holding cost remains RM0.18 psf inclusive of sinking fund, or RM162/month for 900 sq.ft. At this stage, Pearlmont is only a possible fit if your own rent and vacancy assumptions still work against the RM302,000 entry reference. Do you already have a conservative monthly-rent assumption from the other projects you’re comparing?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "I’m using roughly RM1,500–RM1,700 monthly rent in my conservative comparison, with some vacancy allowance, but that’s my underwriting assumption—not Pearlmont evidence. The other projects have at least some asking-rent listings and transaction references. Without comparable rental data or phase-wise supply here, I can’t make the investment case yet. Is there any official document or contact who can provide those figures?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 6,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT_REUSED",
+      "support_request_id": "PEA-004-SUP-002",
+      "request": "Verify whether Pearlmont has an official document or designated contact who can provide phase-wise supply data and actual rental/comparable transaction evidence for conservative investment underwriting. Return only confirmed document/contact details and scope; do not infer unavailable figures.",
+      "result": {
+        "fixture_key": "investment",
+        "verified_answer": "The supplied verified investment facts are the RM0.18 per sq.ft. monthly maintenance fee inclusive of sinking fund and the project material total of 1,846 Phase 1 units. No rental comparables, substantiated yield, appreciation forecast, or current remaining inventory is verified. We should not quote a return; whether the documented holding cost and location due diligence fit your investment criteria is still worth assessing.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "Equivalent resolved support result reused; no second Human lookup.",
+        "status": "RESOLVED",
+        "resolution_source": "REUSED_VERIFIED_RESULT"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I can’t provide a verified official document or designated contact for phase-wise supply, rental comparables or transaction evidence. The confirmed information remains 1,846 total Phase 1 units and RM0.18 psf monthly maintenance inclusive of sinking fund; there’s still no verified rental, yield, appreciation or current-inventory data. So your conservative comparison is right not to assume those figures. I can help stress-test your RM1,500–RM1,700 rent assumptions against the RM302,000 entry reference, clearly keeping those as your assumptions rather than Pearlmont evidence.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "Okay, stress-test it using RM1,500 and RM1,700 rent, with vacancy allowance and the RM162 monthly maintenance. Please show the net yield range clearly, and flag any costs you’re not able to verify. If the numbers still look reasonable, I can consider a viewing after that.",
+      "appointment_state": "VIEWING_SUGGESTED",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "action": "ANSWER",
+      "message": "Using the RM302,000 entry reference and assuming a 5% vacancy allowance: at RM1,500 rent, annual rent after vacancy is RM17,100; less RM1,944 annual maintenance gives RM15,156 net before other costs, or about 5.0% net yield. At RM1,700 rent, the equivalent is RM17,436, or about 5.8%. This excludes financing, assessment/quit rent, insurance, repairs, furnishing, agent fees, tax and transaction costs, which I can’t verify here. So this is an assumption-based sensitivity range, not Pearlmont rental evidence or a forecast. If that range is still workable for your comparison, viewing the actual layout would be the next useful step.",
+      "assessment": {
+        "appointment_readiness": "EMERGING",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "The 5.0%–5.8% assumption-based range looks potentially workable, but I’m treating it as a sensitivity only since several costs are still unverified. I’m open to a viewing to check the actual layout and location—what weekday or weekend slots are available?",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 9,
+      "speaker": "agent",
+      "action": "HANDOFF",
+      "message": "A viewing makes sense to check the actual layout and location. I’ll get the viewing coordination sorted from here so the team can confirm the available weekday and weekend slots with you.",
+      "assessment": {
+        "appointment_readiness": "READY_FOR_APPOINTMENT",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "OPERATIONAL_BOOKING"
+      }
+    },
+    {
+      "turn": 9,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "APPOINTMENT_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "OPERATIONAL_BOOKING",
+      "ai_session_id": "PEA-004:AI-SESSION-1"
+    },
+    {
+      "turn": 9,
+      "speaker": "customer",
+      "message": "Okay, please have the team send me the available weekday and weekend slots. I’ll compare them with my schedule before confirming.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 10,
+      "speaker": "human",
+      "message": "I can’t verify any weekday or weekend viewing slots from the supplied simulator fixture because no availability or calendar data is provided. The viewing remains unconfirmed.",
+      "action": "VERIFY_SLOT",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 10,
+      "speaker": "customer",
+      "message": "Okay, no problem. Please let me know once the weekday or weekend slots are verified, and I’ll check against my schedule before confirming.",
+      "appointment_state": "VIEWING_INTEREST",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 17,
+  "provider_metrics": {
+    "provider": "codex_cli",
+    "model_config": {
+      "sales_agent": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "customer_simulator": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "judge": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "human_handoff_executor": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      }
+    },
+    "number_of_model_calls": 18,
+    "logical_requests": 18,
+    "calls_by_role": {
+      "sales_agent": 9,
+      "customer_simulator": 7,
+      "human_handoff_executor": 1,
+      "judge": 1
+    },
+    "retry_count": 0,
+    "retries": [],
+    "usage": {
+      "input_tokens": 719588,
+      "output_tokens": 14463,
+      "cached_tokens": 76544,
+      "total_tokens": 734051,
+      "reported_call_count": 18,
+      "total_model_call_count": 18,
+      "complete_for_all_calls": true
+    },
+    "scenario_duration_seconds": 247.448
+  },
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 18
+}

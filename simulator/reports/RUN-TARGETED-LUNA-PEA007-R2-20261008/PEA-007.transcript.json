@@ -1,0 +1,513 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.6",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-08T04:31:09.358336+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 5,
+    "ai": 4,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_session_status_final": "ENDED",
+  "ai_session_id": "PEA-007:AI-SESSION-1",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+  "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+  "handoff_turn": 4,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "EXPLICIT_HUMAN_REQUEST",
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "HUMAN",
+      "ai_session_status_after_action": "ENDED"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "support_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 3,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 4,
+      "action": "MANDATORY_HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "owner_after_turn": "HUMAN",
+      "ai_session_status_after_turn": "ENDED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 5,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "ai_session_id": "PEA-007:AI-SESSION-1",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "support_request_id": "PEA-007-SUP-001",
+      "lead_id": "PEA-007",
+      "turn": 2,
+      "request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "fixture_key": "technical_risk",
+      "support_identity": [
+        [
+          "technical_risk"
+        ],
+        [
+          "1b"
+        ]
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 2
+    }
+  ],
+  "support_attempt_trace": [
+    {
+      "turn": 2,
+      "request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "fixture_key": "technical_risk",
+      "support_identity": [
+        [
+          "technical_risk"
+        ],
+        [
+          "1b"
+        ]
+      ],
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-007-SUP-001"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Okay, thanks for being straight and not guaranteeing zero risk. I’m buying for my family, so I need to verify properly. Can you share the FAQ/site plan showing the exact Block 1B distance, plus any flood assessment or past flood records from the relevant authorities? Also, is the 2.4m level for the actual house floor or just the overall development?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Okay, thanks for being straight and not guaranteeing zero risk. I’m buying for my family, so I need to verify properly. Can you share the FAQ/site plan showing the exact Block 1B distance, plus any flood assessment or past flood records from the relevant authorities? Also, is the 2.4m level for the actual house floor or just the overall development?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 4,
+      "trigger_message": "Okay, understood. Before I consider viewing, can you arrange for someone from the project team to share the FAQ/site plan and clarify whether the 2.4m is the actual house floor level? I’d also like to see any official flood assessment or records available. I need to verify these properly with my family first.",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/03_sales/unit-fit.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-007:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    }
+  ],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": true,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-007:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a fair concern. For Phase 1 Block 1B, the latest project FAQ states the high-tension cable is approximately 120 ft (36 m) away, versus a stated minimum safe-distance requirement of 20 m. For the river, the development’s finished floor level is planned at approximately 2.4 m above sea level, compared with the original ground level of about 1.0–1.2 m, with JPS river maintenance and flood-gate/freeboard control referenced. These measures are intended to support local flood-level management compliance, but I wouldn’t claim zero flood risk or give an absolute safety guarantee.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Okay, thanks for being straight and not guaranteeing zero risk. I’m buying for my family, so I need to verify properly. Can you share the FAQ/site plan showing the exact Block 1B distance, plus any flood assessment or past flood records from the relevant authorities? Also, is the 2.4m level for the actual house floor or just the overall development?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify and provide the customer-facing documents or confirmed references for: (1) the exact Phase 1 Block 1B high-tension cable/pylon distance shown in the FAQ or site plan; (2) any available flood assessment and relevant-authority past flood records; and (3) whether the stated 2.4 m above-sea-level finished floor level applies to the actual residential house floor/unit level or only the overall development platform. Preserve the distinction that the current FAQ states an approximately 2.4 m finished floor level for the overall development, but does not by itself confirm the exact house-floor level.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the family buyer's pylon-safety and flood-risk concerns using verified documents and clarify the scope of the 2.4 m level before continuing qualification or positioning.",
+        "unresolved_customer_need": "The buyer wants the exact Block 1B distance, flood assessment or authority records, and confirmation of whether 2.4 m refers to the actual house floor or overall development level.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "I’ve confirmed the available project summary: Block 1B is approximately 120 ft (36 m) from the high-tension line. The project material describes an overall raised platform of about 2.4 m above sea level, with mitigation measures, but it does not confirm that this is the finished floor level of the individual house/unit. I also don’t have an independent engineering opinion or official block-specific flood-history certification to share, so I can’t guarantee zero flood risk. The FAQ summary can be discussed, and a site visit can help you inspect the location, but independent technical review would still be the proper way to verify those points for your family.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, understood. Before I consider viewing, can you arrange for someone from the project team to share the FAQ/site plan and clarify whether the 2.4m is the actual house floor level? I’d also like to see any official flood assessment or records available. I need to verify these properly with my family first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "action": "MANDATORY_HANDOFF",
+      "message": "Understood. Since you’d like the project team to clarify the 2.4 m house-floor point and share any supporting records, I’ll have them continue with you so these can be checked properly. I won’t treat the 2.4 m figure as the individual house-floor level unless they confirm it.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+      }
+    },
+    {
+      "turn": 4,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks, I appreciate that. I’ll wait for the project team to share the FAQ/site plan and clarify whether the 2.4m refers to the actual house floor. Please also let me know what official flood assessment or past records are available—I’ll review them with my family first.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 5,
+      "speaker": "human",
+      "message": "The available project summary states that Block 1B is approximately 120 ft (36 m) from the high-tension line. The approximately 2.4 m level refers to the overall raised development platform; it does not confirm the finished floor level of an individual house or unit. No independent flood assessment or official block-specific past-flood records are available in the supplied fixture, and zero flood risk cannot be guaranteed.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks for clarifying honestly. Since there’s no independent assessment or official block-specific flood records, I need to discuss this with my family and verify what we can before deciding. I’m not ready to arrange a viewing yet.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 9,
+  "provider_metrics": {
+    "provider": "codex_cli",
+    "model_config": {
+      "sales_agent": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "customer_simulator": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "judge": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "human_handoff_executor": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      }
+    },
+    "number_of_model_calls": 10,
+    "logical_requests": 10,
+    "calls_by_role": {
+      "sales_agent": 4,
+      "customer_simulator": 4,
+      "human_handoff_executor": 1,
+      "judge": 1
+    },
+    "retry_count": 0,
+    "retries": [],
+    "usage": {
+      "input_tokens": 367105,
+      "output_tokens": 7158,
+      "cached_tokens": 33280,
+      "total_tokens": 374263,
+      "reported_call_count": 10,
+      "total_model_call_count": 10,
+      "complete_for_all_calls": true
+    },
+    "scenario_duration_seconds": 132.184
+  },
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 10
+}

@@ -1,0 +1,463 @@
+{
+  "scenario_id": "PEA-007",
+  "version": "1.6",
+  "model_config": {
+    "sales_agent": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "customer_simulator": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "judge": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    },
+    "human_handoff_executor": {
+      "model": "gpt-5.6-luna",
+      "reasoning": "medium"
+    }
+  },
+  "attempted_at_utc": "2026-10-08T04:28:33.137777+00:00",
+  "status": "COMPLETED",
+  "turns": {
+    "customer": 4,
+    "ai": 3,
+    "human_handoff_executor": 1,
+    "human_support": 1
+  },
+  "owner_final": "HUMAN",
+  "ai_session_status_final": "ENDED",
+  "ai_session_id": "PEA-007:AI-SESSION-1",
+  "handoff_state": "HANDOFF_COMPLETED",
+  "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+  "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+  "handoff_turn": 3,
+  "appointment_state_customer": "NO_VIEWING_INTENT",
+  "appointment_readiness_trace": [
+    {
+      "turn": 1,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state_effective": "NO_HANDOFF",
+      "handoff_reason_reported": null,
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "AI",
+      "ai_session_status_after_action": "ACTIVE"
+    },
+    {
+      "turn": 3,
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state_effective": "HANDOFF_COMPLETED",
+      "handoff_reason_reported": "EXPLICIT_HUMAN_REQUEST",
+      "owner_before_action": "AI",
+      "ai_session_status_before_action": "ACTIVE",
+      "owner_after_action": "HUMAN",
+      "ai_session_status_after_action": "ENDED"
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "HANDLE_OBJECTION",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "NO_HANDOFF",
+      "handoff_state": "NO_HANDOFF",
+      "handoff_reason": null,
+      "owner_after_turn": "AI",
+      "ai_session_status_after_turn": "ACTIVE",
+      "support_request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "support_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "support_request_attempt": true
+    },
+    {
+      "turn": 3,
+      "action": "MANDATORY_HANDOFF",
+      "appointment_readiness": "NOT_READY",
+      "handoff_state_reported": "HANDOFF_COMPLETED",
+      "handoff_state": "HANDOFF_COMPLETED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "owner_after_turn": "HUMAN",
+      "ai_session_status_after_turn": "ENDED"
+    }
+  ],
+  "human_handoff_executor_trace": [
+    {
+      "turn": 4,
+      "operational_action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "operational_task_completed": false,
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "ai_session_id": "PEA-007:AI-SESSION-1",
+      "retrieved_files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ]
+    }
+  ],
+  "support_trace": [
+    {
+      "support_request_id": "PEA-007-SUP-001",
+      "lead_id": "PEA-007",
+      "turn": 2,
+      "request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "fixture_key": "technical_risk",
+      "support_identity": [
+        [
+          "technical_risk"
+        ],
+        [
+          "1b"
+        ]
+      ],
+      "status": "RESOLVED",
+      "resolution_source": "NEW_FIXTURE",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "owner_before": "AI",
+      "owner_after": "AI",
+      "ai_session_status_after": "ACTIVE",
+      "human_lookup_performed": true,
+      "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+      "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+      "resolved_turn": 2
+    }
+  ],
+  "support_attempt_trace": [
+    {
+      "turn": 2,
+      "request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "fixture_key": "technical_risk",
+      "support_identity": [
+        [
+          "technical_risk"
+        ],
+        [
+          "1b"
+        ]
+      ],
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "missing_resume_context_fields": [],
+      "duplicate": false,
+      "matching_support_request_id": null,
+      "disposition": "CREATED",
+      "support_request_id": "PEA-007-SUP-001"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "turn": 1,
+      "trigger_message": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 2,
+      "trigger_message": "Both honestly, especially the cable distance and whether the flood measures are independently verified. We’re looking for a family home, so I’d need the actual site plan showing Block 1B and the tower, plus the relevant flood assessment or JPS documentation. Can someone technical explain the residual risks and what is guaranteed versus just mitigation?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    },
+    {
+      "turn": 3,
+      "trigger_message": "Both honestly, especially the cable distance and whether the flood measures are independently verified. We’re looking for a family home, so I’d need the actual site plan showing Block 1B and the tower, plus the relevant flood assessment or JPS documentation. Can someone technical explain the residual risks and what is guaranteed versus just mitigation?",
+      "files": [
+        "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+        "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+        "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+        "knowledge/project/pearlmont/03_sales/selling-angles.md"
+      ],
+      "internal_files": []
+    }
+  ],
+  "system_events": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-007:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    }
+  ],
+  "one_way_handoff_checks": {
+    "formal_handoff_present": true,
+    "before_state_valid": true,
+    "after_state_valid": true,
+    "session_id_unchanged": true,
+    "violation_counts": {
+      "POST_HANDOFF_AI_REPLY": 0,
+      "AI_SESSION_REOPENED": 0,
+      "OWNER_REVERTED_TO_AI": 0,
+      "POST_HANDOFF_MESSAGE_REPLAY": 0
+    }
+  },
+  "post_handoff_ai_reply_violations": 0,
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "system",
+      "event": "AI_SESSION_STARTED",
+      "ai_session_id": "PEA-007:AI-SESSION-1",
+      "owner": "AI",
+      "ai_session_status": "ACTIVE"
+    },
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "I saw the pylon and river nearby. Is it safe? Any flood risk?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "action": "HANDLE_OBJECTION",
+      "message": "That’s a fair concern. For Phase 1 Block 1B, the stated distance from the high-tension cable is approximately 120 ft (36 m), compared with a stated minimum requirement of 20 m. For flooding, the development’s finished floor level is planned at about 2.4 m above sea level, versus the original ground level of around 1.0–1.2 m, with river maintenance and flood-gate/freeboard control referenced under JPS. I wouldn’t claim zero flood risk, but these are the stated mitigation measures. Is your main concern the pylon/electrical safety, or the river flooding risk?",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "NO_HANDOFF",
+        "handoff_reason": null
+      }
+    },
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Both honestly, especially the cable distance and whether the flood measures are independently verified. We’re looking for a family home, so I’d need the actual site plan showing Block 1B and the tower, plus the relevant flood assessment or JPS documentation. Can someone technical explain the residual risks and what is guaranteed versus just mitigation?",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_REQUEST",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "status": "RESOLVED",
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 2,
+      "speaker": "system",
+      "event": "SUPPORT_RESULT",
+      "support_request_id": "PEA-007-SUP-001",
+      "request": "Please verify whether the current Pearlmont materials include the actual site plan identifying Phase 1 Block 1B and the pylon/tower relationship, plus any flood assessment, JPS documentation, or independently verified flood-management records. Confirm what technical residual-risk information is documented and distinguish guarantees from mitigation measures. Customer is considering a family home and needs this information before assessing suitability.",
+      "result": {
+        "fixture_key": "technical_risk",
+        "verified_answer": "The simulator-only document summary confirms Block 1B is approximately 120 ft (36 m) from the high-tension line and the project material describes a raised platform of about 2.4 m with mitigation measures. A customer-shareable FAQ summary can be discussed; no independent engineering opinion, official block-specific flood-history certification, or guarantee of zero flood risk is available in this fixture. A site visit can help inspect the location, but cannot replace independent technical review.",
+        "fixture_classification": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE",
+        "source_note": "SIMULATOR_SYNTHETIC_VERIFIED_FIXTURE. Synthetic document summary addresses known concern while explicitly preserving the technical evidence gaps.",
+        "status": "RESOLVED",
+        "resolution_source": "NEW_FIXTURE"
+      },
+      "resume_context": {
+        "resume_stage": "HANDLE",
+        "resume_objective": "Resolve the customer's pylon-safety and flood-risk concerns using verified documentation, then determine whether the project remains suitable for their family home and whether a technical human explanation is still required.",
+        "unresolved_customer_need": "Customer wants the actual Block 1B/tower site plan, relevant flood or JPS documentation, and a technical explanation of residual risks and what is guaranteed versus mitigation only.",
+        "sales_stage": "HANDLE"
+      },
+      "owner": "AI",
+      "ai_session_status": "ACTIVE",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "action": "MANDATORY_HANDOFF",
+      "message": "The documented information confirms Block 1B is approximately 120 ft (36 m) from the high-tension line, and the development uses a raised platform of about 2.4 m with flood-mitigation measures. However, there is no independent engineering opinion, block-specific flood-history certification, or guarantee of zero flood risk in the available documentation. I’ll arrange for a technical colleague to continue with you on the residual-risk and documentation questions.",
+      "assessment": {
+        "appointment_readiness": "NOT_READY",
+        "handoff_state": "HANDOFF_COMPLETED",
+        "handoff_reason": "EXPLICIT_HUMAN_REQUEST"
+      }
+    },
+    {
+      "turn": 3,
+      "speaker": "system",
+      "event": "HANDOFF_COMPLETED",
+      "handoff_type": "MANDATORY_OPERATIONAL_HANDOFF",
+      "owner_before": "AI",
+      "ai_session_status_before": "ACTIVE",
+      "owner": "HUMAN",
+      "ai_session_status": "ENDED",
+      "handoff_reason": "EXPLICIT_HUMAN_REQUEST",
+      "ai_session_id": "PEA-007:AI-SESSION-1"
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thank you. Please have the technical colleague share the actual Block 1B/tower site plan and the flood or JPS documents, and explain what has been independently checked versus just planned mitigation. I’m not ready to arrange a viewing until we understand the residual risks.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    },
+    {
+      "turn": 4,
+      "speaker": "human",
+      "message": "The simulator fixture verifies only that Block 1B is approximately 120 ft (36 m) from the high-tension line and that the project describes a raised platform of about 2.4 m with flood-mitigation measures. It does not provide the actual Block 1B/tower site plan, independent engineering opinion, official block-specific flood-history certification, JPS documents, or any guarantee of zero flood risk. Independent verification and residual-risk review therefore remain unverified; these measures should be treated as planned mitigation, not guarantees.",
+      "action": "ANSWER_FROM_SOURCE",
+      "sales_work_level": "NONE"
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Thanks for being transparent. Since the independent checks and actual documents are still unverified, we’ll hold off for now. Please share the Block 1B/tower plan and any official flood or JPS documents if they become available, then we can review with the family before deciding about a viewing.",
+      "appointment_state": "NO_VIEWING_INTENT",
+      "final_intent": "medium"
+    }
+  ],
+  "provider_calls": 7,
+  "provider_metrics": {
+    "provider": "codex_cli",
+    "model_config": {
+      "sales_agent": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "customer_simulator": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "judge": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      },
+      "human_handoff_executor": {
+        "model": "gpt-5.6-luna",
+        "reasoning": "medium"
+      }
+    },
+    "number_of_model_calls": 8,
+    "logical_requests": 8,
+    "calls_by_role": {
+      "sales_agent": 3,
+      "customer_simulator": 3,
+      "human_handoff_executor": 1,
+      "judge": 1
+    },
+    "retry_count": 0,
+    "retries": [],
+    "usage": {
+      "input_tokens": 284392,
+      "output_tokens": 5615,
+      "cached_tokens": 0,
+      "total_tokens": 290007,
+      "reported_call_count": 8,
+      "total_model_call_count": 8,
+      "complete_for_all_calls": true
+    },
+    "scenario_duration_seconds": 101.819
+  },
+  "retries": [],
+  "error": null,
+  "provider_calls_total": 26
+}
