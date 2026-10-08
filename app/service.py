@@ -22,6 +22,22 @@ class Runtime:
         self.config = config
         self.store = store or Store(config["database"])
         self.agent = agent or SalesAgent(config)
+        self._sheets_client = None
+        self._sheets_checked = False
+
+    def sync_crm(self):
+        from .sheets import SheetsCRM, sync_pending
+        if not self._sheets_checked:
+            try:
+                self._sheets_client = SheetsCRM.from_token(self.config)
+            except Exception as exc:
+                self._sheets_checked = True
+                return {"status": "PENDING", "error": str(exc), "pending": len(self.store.outbox())}
+            self._sheets_checked = True
+        if self._sheets_client is None:
+            return {"status": "AUTH_REQUIRED", "pending": len(self.store.outbox())}
+        results = sync_pending(self.store, self._sheets_client)
+        return {"status": "SYNCED" if all(x["status"] == "SYNCED" for x in results) else "PENDING", "results": results}
 
     def process_inbound(self, contact, external_id, body, send_reply=False, sender=None):
         if not self.allowed(contact):
@@ -76,4 +92,6 @@ class Runtime:
 
     def allowed(self, contact):
         target = normalize(contact)
-        return bool(target) and any(target == normalize(value) for value in self.config["allowlist"])
+        inbound = any(target == normalize(value) for value in self.config["allowlist"])
+        outbound = any(target == normalize(value) for value in self.config.get("outbound_allowlist", []))
+        return bool(target) and (inbound or (outbound and self.store.has_active_outbound_prospect(contact)))

@@ -57,7 +57,26 @@ class Store:
                 CREATE TABLE IF NOT EXISTS adapter_state (
                     state_key TEXT PRIMARY KEY, state_value TEXT NOT NULL, updated_at TEXT NOT NULL
                 );
+                CREATE TABLE IF NOT EXISTS prospects (
+                    prospect_id TEXT PRIMARY KEY, phone TEXT NOT NULL, name TEXT NOT NULL DEFAULT '',
+                    campaign TEXT NOT NULL DEFAULT '', source_detail TEXT NOT NULL DEFAULT '',
+                    outbound_status TEXT NOT NULL DEFAULT 'NOT_SENT', sent_at TEXT, replied_at TEXT,
+                    converted_lead_id TEXT, last_action TEXT NOT NULL DEFAULT '', created_at TEXT NOT NULL, updated_at TEXT NOT NULL,
+                    UNIQUE(phone, campaign)
+                );
+                CREATE TABLE IF NOT EXISTS sheets_outbox (
+                    entity_type TEXT NOT NULL, entity_id TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'PENDING',
+                    attempts INTEGER NOT NULL DEFAULT 0, last_error TEXT, updated_at TEXT NOT NULL,
+                    PRIMARY KEY(entity_type, entity_id)
+                );
             """)
+            # Additive migration: existing SQLite databases remain usable.
+            columns = {row[1] for row in db.execute("PRAGMA table_info(leads)")}
+            for name, declaration in (("source_detail", "TEXT NOT NULL DEFAULT ''"),
+                                      ("campaign", "TEXT NOT NULL DEFAULT ''"),
+                                      ("prospect_id", "TEXT")):
+                if name not in columns:
+                    db.execute("ALTER TABLE leads ADD COLUMN %s %s" % (name, declaration))
 
     @contextmanager
     def transaction(self):
@@ -78,16 +97,26 @@ class Store:
             duplicate = db.execute("SELECT message_id, lead_id FROM messages WHERE external_id=?", (external_id,)).fetchone()
             if duplicate:
                 return self.get_lead(duplicate["lead_id"], db), False, duplicate["message_id"]
+            prospect = db.execute("SELECT * FROM prospects WHERE phone=? AND outbound_status IN ('SENT','REPLIED') ORDER BY updated_at DESC LIMIT 1", (phone,)).fetchone()
             lead = db.execute("SELECT * FROM leads WHERE phone=? AND project='pearlmont'", (phone,)).fetchone()
             if not lead:
                 lead_id = str(uuid.uuid4())
-                profile = {"lead_id": lead_id, "phone": phone, "lead_source": "INBOUND", "sales_stage": "UNDERSTAND",
+                source = "OUTBOUND" if prospect else "INBOUND"
+                profile = {"lead_id": lead_id, "phone": phone, "lead_source": source, "sales_stage": "UNDERSTAND",
                            "intent_level": "LOW", "appointment_readiness": "NOT_READY", "purchase_purpose": "UNKNOWN",
                            "owner": "AI", "ai_session_status": "ACTIVE", "next_objective": "Understand the enquiry and respond helpfully."}
-                db.execute("INSERT INTO leads VALUES(?,?,?,?,?,?,?,?,?)",
-                           (lead_id, phone, "pearlmont", "INBOUND", "AI", "ACTIVE", json.dumps(profile), stamp, stamp))
+                db.execute("INSERT INTO leads (lead_id,phone,project,lead_source,owner,ai_session_status,profile_json,created_at,updated_at,source_detail,campaign,prospect_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+                           (lead_id, phone, "pearlmont", source, "AI", "ACTIVE", json.dumps(profile), stamp, stamp,
+                            prospect["source_detail"] if prospect else "", prospect["campaign"] if prospect else "", prospect["prospect_id"] if prospect else None))
+                self._queue(db, "LEAD", lead_id, stamp)
+                if prospect:
+                    db.execute("UPDATE prospects SET outbound_status='REPLIED',replied_at=COALESCE(replied_at,?),converted_lead_id=?,last_action='Customer replied; converted to Lead',updated_at=? WHERE prospect_id=?",
+                               (stamp, lead_id, stamp, prospect["prospect_id"]))
+                    self._queue(db, "PROSPECT", prospect["prospect_id"], stamp)
             else:
                 lead_id = lead["lead_id"]
+                db.execute("UPDATE leads SET updated_at=? WHERE lead_id=?", (stamp, lead_id))
+                self._queue(db, "LEAD", lead_id, stamp)
             message_id = str(uuid.uuid4())
             db.execute("INSERT INTO messages VALUES(?,?,?,?,?,?,?)",
                        (message_id, lead_id, external_id, "INBOUND", body, "received", stamp))
@@ -145,6 +174,7 @@ class Store:
             profile.update(updates)
             profile["owner"] = db.execute("SELECT owner FROM leads WHERE lead_id=?", (lead_id,)).fetchone()[0]
             db.execute("UPDATE leads SET profile_json=?,updated_at=? WHERE lead_id=?", (json.dumps(profile, ensure_ascii=False), now(), lead_id))
+            self._queue(db, "LEAD", lead_id, now())
         return self.get(lead_id)
 
     def create_support(self, lead_id, support):
@@ -160,6 +190,7 @@ class Store:
                        (request_id, lead_id, "OPEN", support["support_type"], support["requested_fact"], support["subject"],
                         support["customer_need"], support["reason"], support["resume_stage"], support["resume_objective"], signature, None, stamp, None))
             row = db.execute("SELECT * FROM support_requests WHERE request_id=?", (request_id,)).fetchone()
+            self._queue(db, "LEAD", lead_id, stamp)
         return dict(row), True
 
     def pending_support(self, lead_id=None):
@@ -182,6 +213,7 @@ class Store:
             if row["status"] != "OPEN":
                 raise ValueError("Only an OPEN Support Request can be resolved")
             db.execute("UPDATE support_requests SET status='RESOLVED',support_result=?,resolved_at=? WHERE request_id=?", (result, now(), request_id))
+            self._queue(db, "LEAD", row["lead_id"], now())
             resolved = db.execute("SELECT * FROM support_requests WHERE request_id=?", (request_id,)).fetchone()
         return dict(resolved)
 
@@ -200,6 +232,7 @@ class Store:
             profile = json.loads(db.execute("SELECT profile_json FROM leads WHERE lead_id=?", (lead_id,)).fetchone()[0])
             profile.update({"owner": "HUMAN", "ai_session_status": "ENDED", "handoff_status": "COMPLETED", "handoff_reason": reason})
             db.execute("UPDATE leads SET owner='HUMAN',ai_session_status='ENDED',profile_json=?,updated_at=? WHERE lead_id=?", (json.dumps(profile, ensure_ascii=False), stamp, lead_id))
+            self._queue(db, "LEAD", lead_id, stamp)
         return True
 
     def handoffs(self):
@@ -224,3 +257,79 @@ class Store:
     def set_adapter_value(self, key, value):
         with self.transaction() as db:
             db.execute("INSERT INTO adapter_state VALUES(?,?,?) ON CONFLICT(state_key) DO UPDATE SET state_value=excluded.state_value,updated_at=excluded.updated_at", (key, value, now()))
+
+    @staticmethod
+    def _queue(db, entity_type, entity_id, stamp=None):
+        db.execute("INSERT INTO sheets_outbox(entity_type,entity_id,status,attempts,last_error,updated_at) VALUES(?,?,'PENDING',0,NULL,?) ON CONFLICT(entity_type,entity_id) DO UPDATE SET status='PENDING',last_error=NULL,updated_at=excluded.updated_at",
+                   (entity_type, entity_id, stamp or now()))
+
+    def create_prospect(self, phone, name="", campaign="", source_detail=""):
+        stamp = now()
+        with self.transaction() as db:
+            if db.execute("SELECT 1 FROM leads WHERE phone=? AND project='pearlmont'", (phone,)).fetchone():
+                raise ValueError("This contact already has a Lead; refusing to create a duplicate Prospect.")
+            existing = db.execute("SELECT * FROM prospects WHERE phone=? AND campaign=?", (phone, campaign)).fetchone()
+            if existing:
+                return dict(existing), False
+            prospect_id = str(uuid.uuid4())
+            db.execute("INSERT INTO prospects(prospect_id,phone,name,campaign,source_detail,outbound_status,last_action,created_at,updated_at) VALUES(?,?,?,?,?,'NOT_SENT','Prospect created',?,?)",
+                       (prospect_id, phone, name, campaign, source_detail, stamp, stamp))
+            self._queue(db, "PROSPECT", prospect_id, stamp)
+            return dict(db.execute("SELECT * FROM prospects WHERE prospect_id=?", (prospect_id,)).fetchone()), True
+
+    def get_prospect(self, prospect_id):
+        with self.connect() as db:
+            row = db.execute("SELECT * FROM prospects WHERE prospect_id=?", (prospect_id,)).fetchone()
+            return dict(row) if row else None
+
+    def prospects(self):
+        with self.connect() as db:
+            return [dict(row) for row in db.execute("SELECT * FROM prospects ORDER BY updated_at DESC")]
+
+    def has_active_outbound_prospect(self, phone):
+        with self.connect() as db:
+            return bool(db.execute("SELECT 1 FROM prospects WHERE phone=? AND outbound_status IN ('SENT','REPLIED') LIMIT 1", (phone,)).fetchone())
+
+    def mark_prospect_send(self, prospect_id, status, error=None):
+        if status not in ("SENDING", "SENT", "UNCERTAIN"):
+            raise ValueError("Invalid outbound status")
+        stamp = now()
+        with self.transaction() as db:
+            row = db.execute("SELECT * FROM prospects WHERE prospect_id=?", (prospect_id,)).fetchone()
+            if not row:
+                raise KeyError("Prospect not found")
+            allowed_previous = ("NOT_SENT",) if status == "SENDING" else ("SENDING",)
+            if row["outbound_status"] not in allowed_previous:
+                raise ValueError("Prospect is not eligible for a first send")
+            action = {"SENDING": "Operator-approved send in progress", "SENT": "Opening message sent",
+                      "UNCERTAIN": "Send status uncertain; operator review required"}[status]
+            db.execute("UPDATE prospects SET outbound_status=?,sent_at=CASE WHEN ?='SENT' THEN ? ELSE sent_at END,last_action=?,updated_at=? WHERE prospect_id=?",
+                       (status, status, stamp, action, stamp, prospect_id))
+            self._queue(db, "PROSPECT", prospect_id, stamp)
+
+    def outbox(self, limit=100):
+        with self.connect() as db:
+            return [dict(r) for r in db.execute("SELECT * FROM sheets_outbox WHERE status='PENDING' ORDER BY updated_at LIMIT ?", (limit,))]
+
+    def outbox_result(self, entity_type, entity_id, error=None):
+        with self.transaction() as db:
+            if error is None:
+                db.execute("UPDATE sheets_outbox SET status='SYNCED',attempts=attempts+1,last_error=NULL,updated_at=? WHERE entity_type=? AND entity_id=?", (now(), entity_type, entity_id))
+            else:
+                db.execute("UPDATE sheets_outbox SET status='PENDING',attempts=attempts+1,last_error=?,updated_at=? WHERE entity_type=? AND entity_id=?", (str(error)[:1000], now(), entity_type, entity_id))
+
+    def crm_record(self, entity_type, entity_id):
+        with self.connect() as db:
+            if entity_type == "PROSPECT":
+                row = db.execute("SELECT * FROM prospects WHERE prospect_id=?", (entity_id,)).fetchone()
+                return dict(row) if row else None
+            if entity_type == "LEAD":
+                row = db.execute("SELECT * FROM leads WHERE lead_id=?", (entity_id,)).fetchone()
+                if not row: return None
+                lead = self.lead_dict(row)
+                latest_support = db.execute("SELECT status FROM support_requests WHERE lead_id=? ORDER BY created_at DESC LIMIT 1", (entity_id,)).fetchone()
+                lead["support_status"] = (latest_support[0] if latest_support else "NONE")
+                lead["handoff_status"] = lead["profile"].get("handoff_status", "NONE")
+                lead["handoff_reason"] = lead["profile"].get("handoff_reason", "")
+                return lead
+            raise ValueError("Unknown CRM entity type")

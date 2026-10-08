@@ -120,6 +120,26 @@ class WhatsAppWeb:
             finally:
                 context.close()
 
+    def send_outbound(self, contact, body):
+        """Send one operator-approved message from an existing allowlisted chat."""
+        if not is_allowlisted(contact, self.config.get("outbound_allowlist", [])):
+            raise RuntimeError("Contact is not in WHATSAPP_OUTBOUND_ALLOWLIST")
+        profile = self.config["profile_dir"]
+        if not profile.is_absolute():
+            profile = ROOT / profile
+        with self._playwright() as p:
+            context = p.chromium.launch_persistent_context(str(profile), headless=False, args=["--start-maximized"], no_viewport=True)
+            try:
+                page = context.pages[0] if context.pages else context.new_page()
+                page.goto("https://web.whatsapp.com", wait_until="domcontentloaded")
+                page.wait_for_timeout(1200)
+                if page.locator('canvas[aria-label*="Scan"], div[data-ref]').count():
+                    raise RuntimeError("WhatsApp Web is not authenticated in the existing browser profile")
+                self._open_contact(page, contact)
+                self._send(page, body)
+            finally:
+                context.close()
+
     def run(self, send_replies=False, stop_file=None):
         if not self.config["allowlist"]:
             raise RuntimeError("Set WHATSAPP_ALLOWLIST before starting the message listener.")
@@ -132,12 +152,17 @@ class WhatsAppWeb:
             page = context.pages[0] if context.pages else context.new_page()
             page.goto("https://web.whatsapp.com", wait_until="domcontentloaded")
             print("Allowlisted listener started; replies %s." % ("ENABLED" if send_replies else "DISABLED"), flush=True)
+            crm_result = self.runtime.sync_crm()
+            if crm_result["status"] != "SYNCED":
+                print("CRM sync status: %s (%s pending)." % (crm_result["status"], crm_result.get("pending", len(crm_result.get("results", [])))), flush=True)
             try:
                 while not (stop_file and stop_file.exists()):
                     if page.locator('canvas[aria-label*="Scan"], div[data-ref]').count():
                         page.wait_for_timeout(1500)
                         continue
-                    for contact in self.config["allowlist"]:
+                    outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
+                    contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
+                    for contact in contacts:
                         self._open_contact(page, contact)
                         incoming = self._incoming(page)
                         state_key = "seen:" + normalize_contact(contact)
@@ -151,8 +176,11 @@ class WhatsAppWeb:
                                 if external_id in seen:
                                     continue
                                 seen.add(external_id)
-                                if is_allowlisted(contact, self.config["allowlist"]) and send_replies:
+                                if self.runtime.allowed(contact) and send_replies:
                                     self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(page, reply))
+                                    crm_result = self.runtime.sync_crm()
+                                    if crm_result["status"] not in ("SYNCED", "AUTH_REQUIRED"):
+                                        print("CRM sync remains pending for retry.", flush=True)
                                 elif send_replies is False:
                                     print("New allowlisted inbound observed; message handling is disabled until --send-replies is authorized.", flush=True)
                         self.runtime.store.set_adapter_value(state_key, json.dumps(sorted(seen)[-5000:]))

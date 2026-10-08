@@ -36,4 +36,8 @@ def get_config():
         "database": Path(os.getenv("DATABASE_PATH", "data/lead/agent.sqlite3")),
         "profile_dir": Path(os.getenv("WHATSAPP_PROFILE_DIR", "data/lead/browser-profile")),
         "allowlist": [x.strip() for x in os.getenv("WHATSAPP_ALLOWLIST", "").split(",") if x.strip()],
+        "outbound_allowlist": [x.strip() for x in os.getenv("WHATSAPP_OUTBOUND_ALLOWLIST", "").split(",") if x.strip()],
+        "outbound_opening_message": os.getenv("OUTBOUND_OPENING_MESSAGE", "").replace("\\n", "\n"),
+        "google_oauth_client_path": Path(os.getenv("GOOGLE_OAUTH_CLIENT_PATH", "data/lead/google-oauth-client.json")),
+        "google_token_path": Path(os.getenv("GOOGLE_TOKEN_PATH", "data/lead/google-token.json")),
     }
