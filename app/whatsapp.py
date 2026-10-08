@@ -23,6 +23,8 @@ def is_allowlisted(contact, allowlist):
 
 class WhatsAppWeb:
     """Small headed Playwright adapter. UI uncertainty fails closed; no retry after uncertain send."""
+    OUTGOING_MESSAGES = '.message-out, [data-testid^="conv-msg-"]:has([data-testid="tail-out"])'
+
     def __init__(self, config, runtime):
         self.config = config
         self.runtime = runtime
@@ -152,14 +154,16 @@ class WhatsAppWeb:
         raise RuntimeError("WhatsApp Web did not finish loading its messages within 300 seconds; Runtime stopped safely.")
 
     def _send(self, page, body):
-        current = page.locator('.message-out').count()
+        current = page.locator(self.OUTGOING_MESSAGES).count()
         composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
         if not composer.count() or not composer.is_visible():
             raise RuntimeError("WhatsApp composer is unavailable; send status will be marked uncertain.")
         composer.fill(body)
         composer.press("Enter")
         try:
-            page.wait_for_function("n => document.querySelectorAll('.message-out').length > n", arg=current, timeout=5000)
+            selector = self.OUTGOING_MESSAGES
+            page.wait_for_function("({selector, n}) => document.querySelectorAll(selector).length > n",
+                                   arg={"selector": selector, "n": current}, timeout=5000)
         except Exception as exc:
             raise RuntimeError("WhatsApp send result is uncertain; operator review required and message will not be retried.") from exc
 

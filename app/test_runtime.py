@@ -211,6 +211,26 @@ class RuntimeTests(unittest.TestCase):
         self.assertTrue(adapter._open_contact(page, "+60 12-469 6398"))
         self.assertEqual(page.urls, ["https://web.whatsapp.com/send?phone=60124696398"])
 
+    def test_whatsapp_send_confirmation_supports_current_outgoing_dom(self):
+        class Locator:
+            @property
+            def first(self): return self
+            def count(self): return 1
+            def is_visible(self): return True
+            def fill(self, body): self.body = body
+            def press(self, key): self.key = key
+        class Page:
+            def __init__(self): self.selectors = []; self.wait_args = None
+            def locator(self, selector):
+                self.selectors.append(selector)
+                return Locator()
+            def wait_for_function(self, script, arg, timeout):
+                self.wait_args = (script, arg, timeout)
+        page = Page()
+        WhatsAppWeb({}, None)._send(page, "Approved reply")
+        self.assertEqual(page.selectors[0], WhatsAppWeb.OUTGOING_MESSAGES)
+        self.assertEqual(page.wait_args[1]["selector"], WhatsAppWeb.OUTGOING_MESSAGES)
+
 
 if __name__ == "__main__":
     unittest.main()
