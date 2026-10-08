@@ -1,4 +1,5 @@
 """Google Sheets CRM adapter. SQLite remains canonical; writes are idempotent by stable IDs."""
+import sys
 from pathlib import Path
 
 from .config import ROOT
@@ -115,7 +116,11 @@ def authorize(config):
     except ImportError as exc:
         raise RuntimeError("Install Google Sheets dependencies from requirements.txt") from exc
     flow = InstalledAppFlow.from_client_secrets_file(str(client_path), ["https://www.googleapis.com/auth/spreadsheets"])
-    creds = flow.run_local_server(port=0, open_browser=True, prompt="consent")
+    # Keep Google's registered localhost redirect host, but bind explicitly to IPv4.
+    # On macOS use Safari so Chrome extensions cannot block the loopback callback.
+    browser = "safari" if sys.platform == "darwin" else None
+    creds = flow.run_local_server(host="localhost", bind_addr="127.0.0.1", port=0,
+                                  open_browser=True, browser=browser, prompt="consent")
     token_path.parent.mkdir(parents=True, exist_ok=True)
     token_path.write_text(creds.to_json(), encoding="utf-8")
     token_path.chmod(0o600)

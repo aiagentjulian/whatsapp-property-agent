@@ -29,9 +29,9 @@ Set `OPENAI_API_KEY` in the shell or `.env`, then configure `WHATSAPP_ALLOWLIST`
 ```sh
 python -m app.cli status
 python -m app.cli login       # opens headed WhatsApp Web for manual QR login; does not process messages
-python -m app.cli start       # starts the allowlisted listener; replies are disabled by default
-python -m app.cli start --send-replies  # explicit live reply authorization required
-python -m app.cli stop
+python -m app.cli start --send-replies  # starts a detached allowlisted listener with replies enabled
+python -m app.cli status                # reports the detached Runtime PID and configuration
+python -m app.cli stop                  # requests orderly shutdown
 python -m app.cli leads
 python -m app.cli lead <lead-id>
 python -m app.cli history <lead-id>
@@ -41,7 +41,7 @@ python -m app.cli handoffs
 python -m app.cli usage
 ```
 
-The `login` command is the Phase 1 stop point: scan the QR code locally, then stop. It will not start automated replies. Afterward, authorize controlled conversation testing separately and run `start --send-replies`.
+The `login` command opens the existing persistent browser profile for manual login; it does not process messages. `start` returns after the Runtime confirms WhatsApp Web authentication and begins its listener. The Runtime keeps its browser visible and writes diagnostics to `data/lead/runtime.log`. Use `status` to confirm the process and `stop` to shut it down. The MacBook must remain powered on and awake while the listener is running. Browser login state is preserved across normal Runtime restarts.
 
 Runtime defaults are `RUNTIME_PROVIDER=openai_api`, `RUNTIME_MODEL=gpt-6-luna`, and `RUNTIME_REASONING=medium`. The runtime never silently substitutes another model. The existing Simulator remains on its own Codex CLI / GPT-5.6 Luna configuration.
 

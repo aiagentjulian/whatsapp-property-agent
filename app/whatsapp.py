@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import time
 
@@ -89,6 +90,28 @@ class WhatsAppWeb:
                 found.append((external_id, text.strip()))
         return found
 
+    @staticmethod
+    def _qr_visible(page):
+        for selector in ('canvas[aria-label*="Scan"]', 'div[data-ref]'):
+            for locator in page.locator(selector).all():
+                if locator.is_visible():
+                    return True
+        return False
+
+    def _wait_authenticated(self, page, stop_file=None, timeout=45):
+        deadline = time.monotonic() + timeout
+        while time.monotonic() < deadline:
+            if stop_file and stop_file.exists():
+                return False
+            if self._qr_visible(page):
+                raise RuntimeError("WhatsApp Web session is not authenticated; run the login command and retry. Runtime stopped safely.")
+            try:
+                self._find_search(page)
+                return True
+            except RuntimeError:
+                page.wait_for_timeout(1000)
+        raise RuntimeError("WhatsApp Web login state could not be confirmed within 45 seconds; Runtime stopped safely.")
+
     def _send(self, page, body):
         current = page.locator('.message-out').count()
         composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
@@ -140,7 +163,7 @@ class WhatsAppWeb:
             finally:
                 context.close()
 
-    def run(self, send_replies=False, stop_file=None):
+    def run(self, send_replies=False, stop_file=None, ready_file=None):
         if not self.config["allowlist"]:
             raise RuntimeError("Set WHATSAPP_ALLOWLIST before starting the message listener.")
         profile = self.config["profile_dir"]
@@ -149,46 +172,51 @@ class WhatsAppWeb:
         profile.mkdir(parents=True, exist_ok=True)
         with self._playwright() as p:
             context = p.chromium.launch_persistent_context(str(profile), headless=False, args=["--start-maximized"], no_viewport=True)
-            page = context.pages[0] if context.pages else context.new_page()
-            page.goto("https://web.whatsapp.com", wait_until="domcontentloaded")
-            print("Allowlisted listener started; replies %s." % ("ENABLED" if send_replies else "DISABLED"), flush=True)
-            crm_result = self.runtime.sync_crm()
-            if crm_result["status"] != "SYNCED":
-                print("CRM sync status: %s (%s pending)." % (crm_result["status"], crm_result.get("pending", len(crm_result.get("results", [])))), flush=True)
             try:
-                while not (stop_file and stop_file.exists()):
-                    if page.locator('canvas[aria-label*="Scan"], div[data-ref]').count():
-                        page.wait_for_timeout(1500)
-                        continue
-                    outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
-                    contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
-                    for contact in contacts:
-                        self._open_contact(page, contact)
-                        incoming = self._incoming(page)
-                        state_key = "seen:" + normalize_contact(contact)
-                        seen_raw = self.runtime.store.adapter_value(state_key)
-                        seen = set(json.loads(seen_raw)) if seen_raw else set()
-                        # First observation is only a history baseline. Never replay old chat messages.
-                        if seen_raw is None:
-                            seen.update(mid for mid, _ in incoming)
-                        else:
-                            for external_id, body in incoming:
-                                if external_id in seen:
-                                    continue
-                                seen.add(external_id)
-                                if self.runtime.allowed(contact) and send_replies:
-                                    self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(page, reply))
-                                    crm_result = self.runtime.sync_crm()
-                                    if crm_result["status"] not in ("SYNCED", "AUTH_REQUIRED"):
-                                        print("CRM sync remains pending for retry.", flush=True)
-                                elif send_replies is False:
-                                    print("New allowlisted inbound observed; message handling is disabled until --send-replies is authorized.", flush=True)
-                        self.runtime.store.set_adapter_value(state_key, json.dumps(sorted(seen)[-5000:]))
-                        page.wait_for_timeout(200)
-                    page.wait_for_timeout(1800)
-            except KeyboardInterrupt:
-                pass
-            except Exception as exc:
-                raise RuntimeError("WhatsApp adapter stopped safely: %s" % exc) from exc
+                page = context.pages[0] if context.pages else context.new_page()
+                page.goto("https://web.whatsapp.com", wait_until="domcontentloaded")
+                if not self._wait_authenticated(page, stop_file):
+                    return
+                print("Allowlisted listener started; replies %s." % ("ENABLED" if send_replies else "DISABLED"), flush=True)
+                crm_result = self.runtime.sync_crm()
+                if crm_result["status"] != "SYNCED":
+                    print("CRM sync status: %s (%s pending)." % (crm_result["status"], crm_result.get("pending", len(crm_result.get("results", [])))), flush=True)
+                if ready_file:
+                    ready_file.parent.mkdir(parents=True, exist_ok=True)
+                    ready_file.write_text(str(os.getpid()), encoding="utf-8")
+                try:
+                    while not (stop_file and stop_file.exists()):
+                        if self._qr_visible(page):
+                            raise RuntimeError("WhatsApp Web session expired; Runtime stopped safely. Run the login command before restarting.")
+                        outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
+                        contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
+                        for contact in contacts:
+                            self._open_contact(page, contact)
+                            incoming = self._incoming(page)
+                            state_key = "seen:" + normalize_contact(contact)
+                            seen_raw = self.runtime.store.adapter_value(state_key)
+                            seen = set(json.loads(seen_raw)) if seen_raw else set()
+                            # First observation is only a history baseline. Never replay old chat messages.
+                            if seen_raw is None:
+                                seen.update(mid for mid, _ in incoming)
+                            else:
+                                for external_id, body in incoming:
+                                    if external_id in seen:
+                                        continue
+                                    seen.add(external_id)
+                                    if self.runtime.allowed(contact) and send_replies:
+                                        self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(page, reply))
+                                        crm_result = self.runtime.sync_crm()
+                                        if crm_result["status"] not in ("SYNCED", "AUTH_REQUIRED"):
+                                            print("CRM sync remains pending for retry.", flush=True)
+                                    elif send_replies is False:
+                                        print("New allowlisted inbound observed; message handling is disabled until --send-replies is authorized.", flush=True)
+                            self.runtime.store.set_adapter_value(state_key, json.dumps(sorted(seen)[-5000:]))
+                            page.wait_for_timeout(200)
+                        page.wait_for_timeout(1800)
+                except KeyboardInterrupt:
+                    pass
+                except Exception as exc:
+                    raise RuntimeError("WhatsApp adapter stopped safely: %s" % exc) from exc
             finally:
                 context.close()
