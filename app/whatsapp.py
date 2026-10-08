@@ -71,12 +71,24 @@ class WhatsAppWeb:
                     selected = candidate
                     break
         if selected is None:
-            raise RuntimeError("Allowlisted contact chat was not found in WhatsApp Web; no message was sent.")
-        selected.click(timeout=2500)
-        page.wait_for_timeout(350)
+            # A first inbound test contact may not have a chat row yet. Opening the
+            # exact phone URL is read-only; it lets the listener wait for that first
+            # inbound message without selecting a similarly named conversation.
+            digits = re.sub(r"\D", "", contact)
+            if not digits:
+                return False
+            page.goto("https://web.whatsapp.com/send?phone=" + digits, wait_until="domcontentloaded")
+            page.wait_for_timeout(900)
+            composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
+            if not composer.count() or not composer.is_visible():
+                return False
+        else:
+            selected.click(timeout=2500)
+            page.wait_for_timeout(350)
         header = page.locator('header').last
         if not header.count() or not header.is_visible():
             raise RuntimeError("Unknown WhatsApp chat state; stopping safely.")
+        return True
 
     @staticmethod
     def _incoming(page):
@@ -191,7 +203,13 @@ class WhatsAppWeb:
                         outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
                         contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
                         for contact in contacts:
-                            self._open_contact(page, contact)
+                            if not self._open_contact(page, contact):
+                                state_key = "seen:" + normalize_contact(contact)
+                                if self.runtime.store.adapter_value(state_key) is None:
+                                    # No thread existed at startup. Any later first
+                                    # inbound message should be processed, not baselined.
+                                    self.runtime.store.set_adapter_value(state_key, "[]")
+                                continue
                             incoming = self._incoming(page)
                             state_key = "seen:" + normalize_contact(contact)
                             seen_raw = self.runtime.store.adapter_value(state_key)
