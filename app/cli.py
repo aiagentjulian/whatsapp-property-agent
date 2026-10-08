@@ -78,7 +78,7 @@ def launch_detached(send_replies):
             child = subprocess.Popen(command, cwd=str(ROOT), env=child_env, stdin=subprocess.DEVNULL,
                                      stdout=log, stderr=subprocess.STDOUT, close_fds=True,
                                      start_new_session=True)
-        deadline = time.monotonic() + 60
+        deadline = time.monotonic() + 360
         while time.monotonic() < deadline:
             if ready_file.exists() and pid_file.exists():
                 runtime_pid = pid_file.read_text().strip()
@@ -89,7 +89,7 @@ def launch_detached(send_replies):
                 raise SystemExit("Runtime exited before becoming ready. Inspect the local runtime log.")
             time.sleep(0.5)
         stop_file.write_text("stop", encoding="utf-8")
-        raise SystemExit("Runtime did not become ready within 60 seconds; a stop request was sent. Inspect the local runtime log.")
+        raise SystemExit("Runtime did not become ready within 360 seconds; a stop request was sent. Inspect the local runtime log.")
     finally:
         launch_file.unlink(missing_ok=True)
 

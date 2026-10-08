@@ -167,6 +167,42 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(WhatsAppWeb._incoming(page), [("in-1", "hello")])
         self.assertEqual(page.selector, ".message-in")
 
+    def test_whatsapp_startup_waits_for_initial_message_download(self):
+        class Locator:
+            def __init__(self, visible): self.visible = visible
+            @property
+            def first(self): return self
+            def count(self): return 1
+            def is_visible(self): return self.visible
+            def all(self): return [self]
+        class Page:
+            def __init__(self): self.loading = True; self.waits = 0
+            def locator(self, selector): return Locator(False if "canvas" in selector or "data-ref" in selector else True)
+            def get_by_text(self, text, exact=False): return Locator(self.loading)
+            def wait_for_timeout(self, milliseconds): self.waits += 1; self.loading = False
+        page = Page()
+        adapter = WhatsAppWeb({}, None)
+        self.assertTrue(adapter._wait_authenticated(page, timeout=1))
+        self.assertEqual(page.waits, 1)
+
+    def test_whatsapp_phone_chat_uses_exact_route_once(self):
+        class Locator:
+            @property
+            def first(self): return self
+            @property
+            def last(self): return self
+            def count(self): return 1
+            def is_visible(self): return True
+            def wait_for(self, state, timeout): return None
+        class Page:
+            def __init__(self): self.urls = []
+            def goto(self, url, wait_until): self.urls.append(url)
+            def locator(self, selector): return Locator()
+        page = Page()
+        adapter = WhatsAppWeb({}, None)
+        self.assertTrue(adapter._open_contact(page, "+60 12-469 6398"))
+        self.assertEqual(page.urls, ["https://web.whatsapp.com/send?phone=60124696398"])
+
 
 if __name__ == "__main__":
     unittest.main()

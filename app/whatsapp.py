@@ -50,7 +50,7 @@ class WhatsAppWeb:
             page.goto("https://web.whatsapp.com/send?phone=" + digits, wait_until="domcontentloaded")
             composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
             try:
-                composer.wait_for(state="visible", timeout=5000)
+                composer.wait_for(state="visible", timeout=20000)
             except Exception:
                 return False
             header = page.locator('header').last
@@ -114,7 +114,7 @@ class WhatsAppWeb:
                     return True
         return False
 
-    def _wait_authenticated(self, page, stop_file=None, timeout=45):
+    def _wait_authenticated(self, page, stop_file=None, timeout=300):
         deadline = time.monotonic() + timeout
         while time.monotonic() < deadline:
             if stop_file and stop_file.exists():
@@ -123,10 +123,13 @@ class WhatsAppWeb:
                 raise RuntimeError("WhatsApp Web session is not authenticated; run the login command and retry. Runtime stopped safely.")
             try:
                 self._find_search(page)
-                return True
+                downloading = page.get_by_text("Your messages are downloading", exact=False)
+                if not downloading.count() or not downloading.first.is_visible():
+                    return True
             except RuntimeError:
-                page.wait_for_timeout(1000)
-        raise RuntimeError("WhatsApp Web login state could not be confirmed within 45 seconds; Runtime stopped safely.")
+                pass
+            page.wait_for_timeout(1000)
+        raise RuntimeError("WhatsApp Web did not finish loading its messages within 300 seconds; Runtime stopped safely.")
 
     def _send(self, page, body):
         current = page.locator('.message-out').count()
@@ -197,24 +200,34 @@ class WhatsAppWeb:
                 crm_result = self.runtime.sync_crm()
                 if crm_result["status"] != "SYNCED":
                     print("CRM sync status: %s (%s pending)." % (crm_result["status"], crm_result.get("pending", len(crm_result.get("results", [])))), flush=True)
+                outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
+                contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
+                contact_pages = {}
+                for index, contact in enumerate(contacts):
+                    contact_page = page if index == 0 else context.new_page()
+                    contact_pages[contact] = contact_page
+                    if not self._open_contact(contact_page, contact):
+                        print("An allowlisted chat is still loading; keeping its browser tab open without re-navigation.", flush=True)
+                    state_key = "seen:" + normalize_contact(contact)
+                    if self.runtime.store.adapter_value(state_key) is None:
+                        # No thread existed at startup. Any later first inbound
+                        # message should be processed, not baselined.
+                        self.runtime.store.set_adapter_value(state_key, "[]")
                 if ready_file:
                     ready_file.parent.mkdir(parents=True, exist_ok=True)
                     ready_file.write_text(str(os.getpid()), encoding="utf-8")
                 try:
                     while not (stop_file and stop_file.exists()):
-                        if self._qr_visible(page):
-                            raise RuntimeError("WhatsApp Web session expired; Runtime stopped safely. Run the login command before restarting.")
-                        outbound_prospects = [p["phone"] for p in self.runtime.store.prospects() if p["outbound_status"] in ("SENT", "REPLIED")]
-                        contacts = list(dict.fromkeys(self.config["allowlist"] + outbound_prospects))
-                        for contact in contacts:
-                            if not self._open_contact(page, contact):
-                                state_key = "seen:" + normalize_contact(contact)
-                                if self.runtime.store.adapter_value(state_key) is None:
-                                    # No thread existed at startup. Any later first
-                                    # inbound message should be processed, not baselined.
-                                    self.runtime.store.set_adapter_value(state_key, "[]")
+                        for contact, contact_page in contact_pages.items():
+                            if self._qr_visible(contact_page):
+                                raise RuntimeError("WhatsApp Web session expired; Runtime stopped safely. Run the login command before restarting.")
+                            composer = contact_page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
+                            if not composer.count() or not composer.is_visible():
+                                # Give WhatsApp time to finish opening this chat;
+                                # repeating goto here can trap it on "Starting chat".
+                                contact_page.wait_for_timeout(300)
                                 continue
-                            incoming = self._incoming(page)
+                            incoming = self._incoming(contact_page)
                             state_key = "seen:" + normalize_contact(contact)
                             seen_raw = self.runtime.store.adapter_value(state_key)
                             seen = set(json.loads(seen_raw)) if seen_raw else set()
@@ -227,14 +240,14 @@ class WhatsAppWeb:
                                         continue
                                     seen.add(external_id)
                                     if self.runtime.allowed(contact) and send_replies:
-                                        self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(page, reply))
+                                        self.runtime.process_inbound(contact, external_id, body, True, lambda _c, reply: self._send(contact_page, reply))
                                         crm_result = self.runtime.sync_crm()
                                         if crm_result["status"] not in ("SYNCED", "AUTH_REQUIRED"):
                                             print("CRM sync remains pending for retry.", flush=True)
                                     elif send_replies is False:
                                         print("New allowlisted inbound observed; message handling is disabled until --send-replies is authorized.", flush=True)
                             self.runtime.store.set_adapter_value(state_key, json.dumps(sorted(seen)[-5000:]))
-                            page.wait_for_timeout(200)
+                            contact_page.wait_for_timeout(200)
                         page.wait_for_timeout(1800)
                 except KeyboardInterrupt:
                     pass
