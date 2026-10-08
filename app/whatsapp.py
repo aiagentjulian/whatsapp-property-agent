@@ -43,7 +43,22 @@ class WhatsAppWeb:
         raise RuntimeError("WhatsApp Web search control is unavailable; stopping safely.")
 
     def _open_contact(self, page, contact):
-        # Search is used only to open the explicit allowlisted chat, never to send a new conversation.
+        # Numeric contacts use a direct, exact-phone URL so a missing thread or a
+        # saved display name cannot cause selection of another chat.
+        digits = re.sub(r"\D", "", contact)
+        if digits:
+            page.goto("https://web.whatsapp.com/send?phone=" + digits, wait_until="domcontentloaded")
+            composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
+            try:
+                composer.wait_for(state="visible", timeout=5000)
+            except Exception:
+                return False
+            header = page.locator('header').last
+            if not header.count() or not header.is_visible():
+                raise RuntimeError("Unknown WhatsApp chat state; stopping safely.")
+            return True
+
+        # Named contacts are searched exactly; no new conversation is sent.
         search_button = page.locator('button[aria-label="Search"], span[data-icon="search"]').first
         if search_button.count() and search_button.is_visible():
             try:
@@ -71,20 +86,9 @@ class WhatsAppWeb:
                     selected = candidate
                     break
         if selected is None:
-            # A first inbound test contact may not have a chat row yet. Opening the
-            # exact phone URL is read-only; it lets the listener wait for that first
-            # inbound message without selecting a similarly named conversation.
-            digits = re.sub(r"\D", "", contact)
-            if not digits:
-                return False
-            page.goto("https://web.whatsapp.com/send?phone=" + digits, wait_until="domcontentloaded")
-            page.wait_for_timeout(900)
-            composer = page.locator('footer div[contenteditable="true"][role="textbox"], footer [data-tab="10"]').first
-            if not composer.count() or not composer.is_visible():
-                return False
-        else:
-            selected.click(timeout=2500)
-            page.wait_for_timeout(350)
+            return False
+        selected.click(timeout=2500)
+        page.wait_for_timeout(350)
         header = page.locator('header').last
         if not header.count() or not header.is_visible():
             raise RuntimeError("Unknown WhatsApp chat state; stopping safely.")
