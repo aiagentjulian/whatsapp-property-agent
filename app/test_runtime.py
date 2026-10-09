@@ -147,6 +147,26 @@ class RuntimeTests(unittest.TestCase):
             db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
         self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
 
+    def test_sales_agent_receives_extended_bidirectional_history(self):
+        import json
+        class CapturingProvider:
+            def __init__(self):
+                self.payload = None
+            def decide(self, system, user):
+                self.payload = json.loads(user)
+                return decision(reply="Okay."), {}
+
+        provider = CapturingProvider()
+        rows = [{"direction": "INBOUND" if i % 2 == 0 else "OUTBOUND",
+                 "body": "message %s" % i} for i in range(50)]
+        SalesAgent(self.config, provider).decide("latest", {}, rows, [])
+        recent = provider.payload["recent_conversation"]
+        self.assertEqual(len(recent), 40)
+        self.assertEqual(recent[0]["body"], "message 10")
+        self.assertEqual(recent[-1]["body"], "message 49")
+        self.assertEqual(recent[0]["direction"], "INBOUND")
+        self.assertEqual(recent[-1]["direction"], "OUTBOUND")
+
     def test_sales_brain_keeps_identity_private_and_conversation_unscripted(self):
         from .agent import CONTEXT_FILES, SYSTEM_PROMPT
         self.assertIn("BPG", SalesAgent.context_text())
