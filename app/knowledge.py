@@ -66,6 +66,33 @@ def current_unit_offering():
     raise ValueError("Project Knowledge is missing the standard unit offering")
 
 
+def buyer_sales_evidence(profile, history):
+    """Supply a few verified selling angles when the buyer reveals family needs."""
+    recent_customer_messages = " ".join(
+        row.get("body", "") for row in history[-20:] if row.get("direction") == "INBOUND"
+    )
+    profile_details = " ".join(str(profile.get(key) or "") for key in (
+        "purchase_reason", "primary_motivations", "important_features", "conversation_summary",
+    ))
+    buyer_context = (recent_customer_messages + " " + profile_details).lower()
+    if not re.search(r"\b(family|families|kids?|children|child|wife|husband)\b", buyer_context):
+        return []
+
+    wanted = [
+        ("03_sales/selling-angles.md", "2. Family Practicality Angle"),
+        ("03_sales/selling-angles.md", "3. Mature-Location Angle"),
+        ("01_facts/location-and-connectivity.md", "External connectivity"),
+        ("01_facts/school-access-and-family.md", "Family-Oriented Facilities"),
+    ]
+    evidence = []
+    for relative, target_heading in wanted:
+        for heading, content in _passages((KNOWLEDGE / relative).read_text(encoding="utf-8")):
+            if heading == target_heading:
+                evidence.append({"heading": heading, "content": content})
+                break
+    return evidence
+
+
 def _non_identifying_facts(content):
     """Keep ordinary property details without revealing project/developer names."""
     labels = ("- Location:", "- Tenure:", "- Property type for Phase 1 residential:")
