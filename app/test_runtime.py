@@ -276,8 +276,10 @@ class RuntimeTests(unittest.TestCase):
     def test_high_reasoning_is_default_unless_explicitly_overridden(self):
         from .config import get_config
         from unittest.mock import patch
-        with patch.dict("os.environ", {"RUNTIME_REASONING": "high", "RUNTIME_MODEL": "gpt-6-luna"}):
+        with patch("app.config.load_env_file"), patch.dict("os.environ", {}, clear=True):
             self.assertEqual(get_config()["reasoning"], "high")
+        with patch("app.config.load_env_file"), patch.dict("os.environ", {"RUNTIME_REASONING": "medium"}, clear=True):
+            self.assertEqual(get_config()["reasoning"], "medium")
         self.assertIn('"effort": self.config["reasoning"]', __import__(
             "inspect").getsource(__import__("app.provider", fromlist=["OpenAIProvider"]).OpenAIProvider.decide))
 
