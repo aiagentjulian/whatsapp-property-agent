@@ -64,6 +64,21 @@ def retrieve(query, lead_profile=None, limit=3):
     gate_terms = raw_terms | tokenize(profile_text)
     ownership_terms = {"agent", "ownership", "registered", "registration", "previous", "complaint", "dispute", "conflict"}
     allow_internal = bool(gate_terms & ownership_terms)
+    # A direct project/developer identification question is different from a
+    # general enquiry. Answer the former truthfully; keep the latter discreet.
+    identity_request = bool(raw_terms & {"skyworld", "pearlmont"}) or any(
+        phrase in lower_query for phrase in (
+            "which project", "what project", "project name", "name of the project",
+            "who is the developer", "who's the developer", "which developer",
+            "developer name", "name of the developer", "who developed",
+        )
+    )
+    if identity_request:
+        path = KNOWLEDGE / "01_facts/overview.md"
+        for heading, content in _passages(path.read_text(encoding="utf-8")):
+            if heading.lower() == "project identity":
+                return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
+                         "heading": heading, "score": 1, "content": content}]
     if general_intro:
         path = KNOWLEDGE / "01_facts/overview.md"
         for heading, content in _passages(path.read_text(encoding="utf-8")):
