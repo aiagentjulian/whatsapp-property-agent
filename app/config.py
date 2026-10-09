@@ -21,7 +21,7 @@ def get_config():
     load_env_file()
     model = os.getenv("RUNTIME_MODEL", "gpt-6-luna")
     provider = os.getenv("RUNTIME_PROVIDER", "openai_api")
-    reasoning = os.getenv("RUNTIME_REASONING", "medium")
+    reasoning = os.getenv("RUNTIME_REASONING", "high")
     if provider != "openai_api":
         raise ValueError("RUNTIME_PROVIDER must be openai_api for the runtime.")
     if model != "gpt-6-luna":
