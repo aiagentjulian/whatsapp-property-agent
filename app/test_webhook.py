@@ -24,6 +24,11 @@ class FakeAgent:
                  "handoff_reason": None, "handoff_details": None}, {})
 
 
+class FailingAgent:
+    def decide(self, *_args):
+        raise RuntimeError("private message and provider details must not be logged")
+
+
 class FakeMeta:
     def __init__(self):
         self.sends = []
@@ -65,7 +70,9 @@ class WebhookTests(unittest.TestCase):
 
     def payload(self, message_id="wamid.inbound-test", sender="60184005448", body="Tell me about the project"):
         return {"object": "whatsapp_business_account", "entry": [{"changes": [{"field": "messages", "value": {
-            "metadata": {"phone_number_id": "phone-id"}, "contacts": [{"wa_id": sender}],
+            "messaging_product": "whatsapp",
+            "metadata": {"display_phone_number": "+1 555 640 9035", "phone_number_id": "phone-id"},
+            "contacts": [{"profile": {"name": "Test Contact"}, "wa_id": sender}],
             "messages": [{"id": message_id, "from": sender, "type": "text", "text": {"body": body}}]}}]}]}
 
     def test_verify_token_matches_without_revealing_it(self):
@@ -125,7 +132,8 @@ class WebhookTests(unittest.TestCase):
             self.assertEqual(verify.read().decode(), "dryrun")
             data = json.dumps(self.payload()).encode()
             request = urllib.request.Request(origin + "/webhook", data=data, headers={"Content-Type": "application/json"})
-            first = json.loads(urllib.request.urlopen(request, timeout=3).read())
+            with self.assertLogs(level="INFO") as captured:
+                first = json.loads(urllib.request.urlopen(request, timeout=3).read())
             second = json.loads(urllib.request.urlopen(request, timeout=3).read())
             self.assertEqual(first["handled"], 1)
             self.assertEqual(second["handled"], 1)
@@ -133,6 +141,43 @@ class WebhookTests(unittest.TestCase):
             self.assertEqual(len(meta.sends), 1)
             self.assertEqual(len(self.store.leads()), 1)
             self.assertEqual(len(crm_syncs), 1)
+            diagnostics = "\n".join(captured.output)
+            for stage in ("request_arrived", "json_parsed", "payload_parsed", "message_parsed",
+                          "allowlist decision=allow", "sqlite_ingestion outcome=inserted", "gpt_call outcome=complete",
+                          "meta_send outcome=accepted", "response http_status=200"):
+                self.assertIn(stage, diagnostics)
+            for sensitive in ("Tell me about the project", "60184005448", "wamid.inbound-test", "phone-id"):
+                self.assertNotIn(sensitive, diagnostics)
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=3)
+
+    def test_processing_exception_is_logged_without_sensitive_data_after_http_ack(self):
+        runtime = Runtime(self.config, self.store, FailingAgent())
+        app = WebhookApp(self.config, runtime, self.meta)
+        server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(app))
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        origin = "http://127.0.0.1:%s" % server.server_address[1]
+        secret_body = "private-message-body-unique"
+        message_id = "wamid.private-test-id"
+        try:
+            data = json.dumps(self.payload(message_id=message_id, body=secret_body)).encode()
+            request = urllib.request.Request(origin + "/webhook", data=data, headers={"Content-Type": "application/json"})
+            with self.assertLogs(level="INFO") as captured:
+                response = urllib.request.urlopen(request, timeout=3)
+                self.assertEqual(response.status, 200)
+                self.assertEqual(response.read(), b"")
+            diagnostics = "\n".join(captured.output)
+            self.assertIn("stage=gpt_call outcome=error error_type=RuntimeError", diagnostics)
+            self.assertIn("outcome=processing_error_acknowledged", diagnostics)
+            for sensitive in (secret_body, message_id, "60184005448", "private message and provider details"):
+                self.assertNotIn(sensitive, diagnostics)
+            self.assertEqual(len(self.store.leads()), 1)
+            self.assertEqual([row["external_id"] for row in self.store.history(self.store.leads()[0]["lead_id"])],
+                             [message_id])
+            self.assertEqual(self.meta.sends, [])
         finally:
             server.shutdown()
             server.server_close()

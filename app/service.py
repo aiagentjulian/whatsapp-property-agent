@@ -1,8 +1,12 @@
+import hashlib
+import logging
 import re
 
 from .agent import SalesAgent
 from .db import Store
 from .provider import PROFILE_FIELDS
+
+logger = logging.getLogger(__name__)
 
 
 def normalize(value):
@@ -39,10 +43,24 @@ class Runtime:
         results = sync_pending(self.store, self._sheets_client)
         return {"status": "SYNCED" if all(x["status"] == "SYNCED" for x in results) else "PENDING", "results": results}
 
-    def process_inbound(self, contact, external_id, body, send_reply=False, sender=None):
-        if not self.allowed(contact):
+    def process_inbound(self, contact, external_id, body, send_reply=False, sender=None, diagnostic_id=None):
+        message_ref = hashlib.sha256(str(external_id).encode("utf-8")).hexdigest()[:12] if external_id else "missing"
+        allowed = self.allowed(contact)
+        if diagnostic_id:
+            logger.info("meta_webhook request_id=%s message_ref=%s stage=allowlist decision=%s",
+                        diagnostic_id, message_ref, "allow" if allowed else "deny")
+        if not allowed:
             return {"status": "blocked", "reason": "contact_not_allowlisted"}
-        lead, inserted, message_id = self.store.ingest(contact, external_id, body)
+        try:
+            lead, inserted, message_id = self.store.ingest(contact, external_id, body)
+        except Exception as exc:
+            if diagnostic_id:
+                logger.error("meta_webhook request_id=%s message_ref=%s stage=sqlite_ingestion outcome=error error_type=%s",
+                             diagnostic_id, message_ref, type(exc).__name__)
+            raise
+        if diagnostic_id:
+            logger.info("meta_webhook request_id=%s message_ref=%s stage=sqlite_ingestion outcome=%s",
+                        diagnostic_id, message_ref, "inserted" if inserted else "duplicate")
         if not inserted:
             return {"status": "duplicate", "lead_id": lead["lead_id"]}
         if lead["owner"] != "AI" or lead["ai_session_status"] != "ACTIVE":
@@ -50,7 +68,19 @@ class Runtime:
         profile = lead["profile"]
         history = self.store.history(lead["lead_id"])
         supports = self.store.support_context(lead["lead_id"])
-        decision, usage = self.agent.decide(body, profile, history, supports)
+        if diagnostic_id:
+            logger.info("meta_webhook request_id=%s message_ref=%s stage=gpt_call outcome=started",
+                        diagnostic_id, message_ref)
+        try:
+            decision, usage = self.agent.decide(body, profile, history, supports)
+        except Exception as exc:
+            if diagnostic_id:
+                logger.error("meta_webhook request_id=%s message_ref=%s stage=gpt_call outcome=error error_type=%s",
+                             diagnostic_id, message_ref, type(exc).__name__)
+            raise
+        if diagnostic_id:
+            logger.info("meta_webhook request_id=%s message_ref=%s stage=gpt_call outcome=complete",
+                        diagnostic_id, message_ref)
         self.store.record_usage(lead["lead_id"], self.config["model"], usage)
         updates = {key: value for key, value in decision["lead_updates"].items() if key in PROFILE_FIELDS and value is not None}
         if decision["action"] == "APPOINTMENT_HANDOFF":
@@ -80,13 +110,22 @@ class Runtime:
                 return {"status": "suppressed", "reason": "ownership_changed_before_send", "lead_id": lead["lead_id"]}
             out_id = self.store.add_message(lead["lead_id"], "OUTBOUND", reply, "pending_send" if send_reply else "not_sent")
             if send_reply:
+                if diagnostic_id:
+                    logger.info("meta_webhook request_id=%s message_ref=%s stage=meta_send outcome=started",
+                                diagnostic_id, message_ref)
                 try:
                     send_result = sender(contact, reply)
                 except Exception as exc:
                     self.store.update_send_status(out_id, "uncertain")
+                    if diagnostic_id:
+                        logger.error("meta_webhook request_id=%s message_ref=%s stage=meta_send outcome=uncertain error_type=%s",
+                                     diagnostic_id, message_ref, type(exc).__name__)
                     return dict(result, reply=None, send_status="uncertain", error=str(exc), operator_review_required=True)
                 external_id = send_result.get("message_id") if isinstance(send_result, dict) else None
                 self.store.update_send_status(out_id, "sent", external_id)
+                if diagnostic_id:
+                    logger.info("meta_webhook request_id=%s message_ref=%s stage=meta_send outcome=accepted",
+                                diagnostic_id, message_ref)
                 result["send_status"] = "sent"
             result["reply"] = reply
         return result
