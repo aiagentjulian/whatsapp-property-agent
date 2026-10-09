@@ -293,6 +293,8 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(usage["total_tokens"], 13)
         schema = agent_schema()
         self.assertFalse(schema["additionalProperties"])
+        self.assertIn("sales_move", schema["required"])
+        self.assertIn("buyer_signal", schema["required"])
         self.assertNotIn("owner", schema["properties"]["lead_updates"]["properties"])
         class InvalidProvider:
             def decide(self, system, user):
