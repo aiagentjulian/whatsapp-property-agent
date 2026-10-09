@@ -93,9 +93,9 @@ def project_sales_context():
     angles = []
     path = KNOWLEDGE / "03_sales/usp-map.md"
     for heading, content in _passages(path.read_text(encoding="utf-8")):
-        if not re.match(r"^\\d+\\.", heading):
+        if not re.match(r"^\d+\.", heading):
             continue
-        match = re.search(r"### Core proposition\\s*\\n(.+?)(?=\\n### |\\Z)", content, re.S)
+        match = re.search(r"### Core proposition\s*\n(.+?)(?=\n### |\Z)", content, re.S)
         if match:
             angles.append({"topic": heading, "value": match.group(1).strip()})
     return {"facts": facts, "selling_possibilities": angles}
