@@ -153,7 +153,8 @@ class Store:
 
     def history(self, lead_id):
         with self.connect() as db:
-            return [dict(r) for r in db.execute("SELECT * FROM messages WHERE lead_id=? ORDER BY created_at", (lead_id,))]
+            return [dict(r) for r in db.execute(
+                "SELECT * FROM messages WHERE lead_id=? ORDER BY created_at, rowid", (lead_id,))]
 
     def add_message(self, lead_id, direction, body, status="sent"):
         msg_id = str(uuid.uuid4())

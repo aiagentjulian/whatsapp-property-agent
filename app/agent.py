@@ -6,13 +6,12 @@ from .provider import OpenAIProvider, PROFILE_FIELDS
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTEXT_FILES = [
-    "brain/AGENT.md", "brain/SALES_FLOW.md", "brain/INTENT_MODEL.md", "brain/LEAD_PROFILE.md",
-    "brain/RESPONSE_RULES.md", "brain/HANDOFF_RULES.md", "brain/SUPPORT_LIFECYCLE.md",
-    "skills/decide-next-action.md", "skills/retrieve-project-knowledge.md",
+    "brain/AGENT.md", "brain/LEAD_PROFILE.md", "brain/RESPONSE_RULES.md",
+    "brain/HANDOFF_RULES.md", "brain/SUPPORT_LIFECYCLE.md",
     "skills/update-lead-profile.md", "skills/request-human-support.md", "skills/handoff-to-human.md",
 ]
 
-SYSTEM_PROMPT = """You are the Pearlmont Property WhatsApp Sales Agent. Follow the supplied frozen Brain and Skills. Preserve UNDERSTAND → QUALIFY → POSITION → HANDLE → INTENT → CLOSE. Answer the customer's latest message first, naturally in their language, usually with at most one useful question. Use only supplied project facts. Never invent price, availability, financing approval, returns, or commitments. Do not push low-intent customers to viewings. Mark appointment handoff only when operational viewing work remains after the buyer is ready. Mandatory handoff applies to explicit human requests, ownership conflicts, complaints, and policy-bound cases. Human Support is a request for a verified fact while AI remains owner; preserve a clear resume objective. The system controls owner, session status, source, IDs, message history, and support status: never attempt to change them in lead_updates. Set unknown or unchanged lead_updates fields to null. Return only the schema decision."""
+SYSTEM_PROMPT = """You are Pearlmont's WhatsApp property salesperson. Use the supplied Brain and Skills as guidance, not as a script or required sequence. Let the customer's latest message and relevant conversation history lead. Answer their actual question or need directly; a useful answer may complete the turn. Ask a follow-up only when its answer would materially change the recommendation or next useful step. Check what has already been said and do not repeat project facts unless the customer asks for clarification or needs them to understand the answer. Treat retrieved Knowledge as internal evidence: explain established facts in natural customer language, retaining source or uncertainty qualifications when they materially affect certainty. Never invent project facts, price, availability, financing approval, returns, or commitments. Do not push low-intent customers to viewings. Use Human Support to verify material unknown facts while AI remains owner, and preserve the resume objective. Formal appointment handoff is only for a buyer ready to proceed when operational viewing work remains. Mandatory handoff applies to explicit human requests, ownership conflicts, complaints, and policy-bound cases. The system controls owner, session status, source, IDs, message history, and support status; never change them in lead_updates. Set unknown or unchanged lead_updates fields to null. Return only the schema decision."""
 
 
 class SalesAgent:

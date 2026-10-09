@@ -124,6 +124,22 @@ class RuntimeTests(unittest.TestCase):
         self.assertFalse(any(row["path"].startswith("04_internal/") for row in pricing))
         ownership = retrieve("I already registered with another agent; who owns this lead?")
         self.assertTrue(any(row["path"].startswith("04_internal/") and "INTERNAL ONLY" in row["content"] for row in ownership))
+        layout = retrieve("Layout?")
+        self.assertEqual(len(layout), 1)
+        self.assertEqual(layout[0]["heading"], "Layout characteristics described in project materials")
+        self.assertFalse(retrieve("Own stay."))
+        intro = retrieve("Hi there, may I know more about this project?")
+        self.assertEqual(len(intro), 1)
+        self.assertEqual(intro[0]["heading"], "Project identity")
+
+    def test_history_order_is_stable_for_equal_timestamps(self):
+        store = Store(self.path)
+        lead, _, _ = store.ingest("Alice Example", "h1", "first")
+        store.add_message(lead["lead_id"], "OUTBOUND", "reply")
+        store.ingest("Alice Example", "h2", "second")
+        with store.connect() as db:
+            db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
+        self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
 
     def test_structured_agent_output_schema_and_validation(self):
         class Provider:
