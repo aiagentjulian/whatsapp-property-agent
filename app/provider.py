@@ -61,7 +61,7 @@ class OpenAIProvider:
                 {"role": "user", "content": [{"type": "input_text", "text": user_prompt}]},
             ],
             "text": {"format": {"type": "json_schema", "name": "property_agent_decision", "strict": True, "schema": agent_schema()}},
-            "max_output_tokens": 1400,
+            "max_output_tokens": 4500,
             "store": False,
         }
         request = urllib.request.Request(
