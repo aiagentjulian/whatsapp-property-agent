@@ -134,6 +134,8 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Freehold", intro[0]["content"])
         self.assertNotIn("SkyWorld", str(intro))
         self.assertNotIn("Pearlmont", str(intro))
+        other_intro = retrieve("Can you share some project details?")
+        self.assertNotIn("SkyWorld Pearlmont", str(other_intro))
         # Identity questions must still have access to the real project facts.
         identified = retrieve("Is this SkyWorld Pearlmont?")
         self.assertTrue(any("SkyWorld Pearlmont" in row["content"] for row in identified))
