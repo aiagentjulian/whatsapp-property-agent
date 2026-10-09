@@ -28,6 +28,9 @@ def main(argv=None):
     knowledge = sub.add_parser("knowledge-check"); knowledge.add_argument("query")
     sub.add_parser("sheets-auth", help="Authorize local Runtime access to the existing CRM spreadsheet")
     sub.add_parser("sync-sheets", help="Retry pending SQLite CRM synchronization")
+    reset = sub.add_parser("reset-test-lead", help="Reset one explicitly configured test contact (stop the Runtime first)")
+    reset.add_argument("--phone", required=True)
+    reset.add_argument("--confirm-phone", required=True, help="Repeat the exact test phone to authorize the reset")
     sub.add_parser("prospects", help="List local Outbound Prospects")
     create = sub.add_parser("create-prospect", help="Create a NOT_SENT Prospect; does not create a Lead or send")
     create.add_argument("phone"); create.add_argument("--name", default=""); create.add_argument("--campaign", default=""); create.add_argument("--source-detail", default="")
@@ -65,6 +68,20 @@ def main(argv=None):
             raise SystemExit("Google Sheets authorization is not ready. Configure the OAuth Desktop client and run sheets-auth.")
         results = sync_pending(store, client)
         output({"status": "SYNCED" if all(item["status"] == "SYNCED" for item in results) else "PENDING", "results": results})
+    elif args.command == "reset-test-lead":
+        if args.phone != args.confirm_phone:
+            raise SystemExit("Confirmation does not exactly match --phone; nothing was reset.")
+        if args.phone not in config["test_contacts"]:
+            raise SystemExit("Phone must exactly match WHATSAPP_TEST_CONTACTS; nothing was reset.")
+        result = store.reset_test_lead(args.phone, config["test_contacts"])
+        lead = store.by_phone(args.phone)
+        if lead:
+            if store.history(lead["lead_id"]) or store.support_context(lead["lead_id"]):
+                raise RuntimeError("Test reset verification failed: conversational records remain")
+            result["verified_fresh"] = lead["profile"] == store._initial_profile(lead["lead_id"], args.phone)
+        else:
+            result["verified_fresh"] = True
+        output(result)
     elif args.command == "prospects":
         output(store.prospects())
     elif args.command == "create-prospect":
