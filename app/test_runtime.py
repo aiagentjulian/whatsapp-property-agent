@@ -170,7 +170,12 @@ class RuntimeTests(unittest.TestCase):
         provider = CapturingProvider()
         rows = [{"direction": "INBOUND" if i % 2 == 0 else "OUTBOUND",
                  "body": "message %s" % i} for i in range(50)]
-        SalesAgent(self.config, provider).decide("latest", {}, rows, [])
+        SalesAgent(self.config, provider).decide("latest", {
+            "purchase_purpose": "OWN_STAY", "next_action": "ASK_BUDGET",
+            "sales_stage": "QUALIFY", "active_concerns": [], "phone": "private",
+        }, rows, [])
+        self.assertEqual(provider.payload["lead_profile"], {"purchase_purpose": "OWN_STAY"})
+        self.assertIn("selling_possibilities", provider.payload["project_sales_context"])
         recent = provider.payload["recent_conversation"]
         offering = provider.payload["current_project_unit_offering"]
         self.assertIn("All Phase 1 residential units use the same main unit type", offering)
@@ -183,64 +188,35 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(recent[0]["direction"], "INBOUND")
         self.assertEqual(recent[-1]["direction"], "OUTBOUND")
 
-    def test_sales_evidence_uses_recent_buyer_context_across_profiles(self):
-        from .knowledge import buyer_sales_evidence
-        family_messages = [
-            {"direction": "INBOUND", "body": "own stay"},
-            {"direction": "OUTBOUND", "body": "Would the 3-bedroom layout work?"},
-            {"direction": "INBOUND", "body": "We have two children and practical family spaces matter."},
-            {"direction": "OUTBOUND", "body": "That layout may suit you."},
-            {"direction": "INBOUND", "body": "I think the layout could work."},
-        ]
-        evidence = buyer_sales_evidence({
-            "purchase_purpose": "OWN_STAY",
-            "important_features": ["Practical layout for a family with two children", "Family-friendly spaces"],
-            "conversation_summary": "Own-stay buyer with two children who is assessing family layout fit.",
-        }, family_messages)
-        self.assertLessEqual(len(evidence), 1)
-        self.assertTrue(any(item["heading"] in ("2. Family Practicality Angle", "9. Efficient 900 sqft Layout") for item in evidence))
-        own_stay_messages = [
-            {"direction": "INBOUND", "body": "My partner and I want an own-stay home; monthly ownership costs matter."},
-            {"direction": "OUTBOUND", "body": "Would maintenance or mortgage matter more?"},
-            {"direction": "INBOUND", "body": "That seems reasonable."},
-        ]
-        own_stay_evidence = buyer_sales_evidence({
-            "purchase_purpose": "OWN_STAY",
-            "important_features": ["Monthly ownership costs"],
-            "conversation_summary": "Couple considering own stay and watching monthly ownership costs.",
-        }, own_stay_messages)
-        self.assertTrue(any(item["heading"] == "4. Low-Holding-Cost Angle" for item in own_stay_evidence))
-        self.assertNotIn("Family Practicality Angle", " ".join(item["heading"] for item in own_stay_evidence))
-        investor_messages = [
-            {"direction": "INBOUND", "body": "I am considering a rental investment; monthly holding costs matter."},
-            {"direction": "OUTBOUND", "body": "The stated maintenance charge is RM0.18 psf."},
-            {"direction": "INBOUND", "body": "That sounds manageable."},
-        ]
-        investor_evidence = buyer_sales_evidence({
-            "purchase_purpose": "INVESTMENT",
-            "important_features": ["Rental income", "Manageable ownership costs"],
-            "conversation_summary": "Buyer is considering rental investment and holding costs.",
-        }, investor_messages)
-        self.assertTrue(any(item["heading"] == "4. Low-Holding-Cost Angle" for item in investor_evidence))
-        self.assertNotIn("Family Practicality Angle", " ".join(item["heading"] for item in investor_evidence))
-        self.assertFalse(buyer_sales_evidence({}, [{"direction": "INBOUND", "body": "Price?"}]))
+    def test_project_sales_context_offers_broad_evidence_not_a_family_script(self):
+        from .knowledge import project_sales_context
+        context = project_sales_context()
+        facts = " ".join(item["content"] for item in context["facts"])
+        angles = context["selling_possibilities"]
+        self.assertIn("Sunway Carnival Mall", facts)
+        self.assertIn("Children's playground", facts)
+        self.assertIn("RM0.18", facts)
+        self.assertTrue(any("Mature Seberang Jaya" in item["topic"] for item in angles))
+        self.assertTrue(any("Freehold" in item["topic"] for item in angles))
+        self.assertTrue(any("SkyPark" in item["topic"] for item in angles))
+        self.assertGreaterEqual(len(angles), 8)
+        self.assertNotIn("Project name: SkyWorld Pearlmont", facts)
+        # The runtime does not choose a "family" or "single" angle in advance.
+        self.assertEqual(context, project_sales_context())
 
     def test_sales_brain_keeps_identity_private_and_conversation_unscripted(self):
         from .agent import CONTEXT_FILES, SYSTEM_PROMPT
         context = SalesAgent.context_text()
+        self.assertEqual(CONTEXT_FILES, ["brain/AGENT.md"])
         self.assertIn("BPG", context)
         self.assertIn("Pearl Residences", SYSTEM_PROMPT)
         self.assertIn("Pearl Residences", context)
-        self.assertIn("own stay or investment", SYSTEM_PROMPT)
-        self.assertIn("never give more than three", SYSTEM_PROMPT)
-        self.assertIn("shift from repeated qualification to relevant positioning", SYSTEM_PROMPT)
-        self.assertIn("do not ask open-ended bedroom-count preferences", SYSTEM_PROMPT)
-        self.assertIn("four bedrooms are essential", context)
-        self.assertIn("If a customer directly asks", SYSTEM_PROMPT)
+        self.assertIn("independent sales judgment", context.lower())
+        self.assertIn("Malaysian", SYSTEM_PROMPT)
+        self.assertIn("Never force jokes", context)
         self.assertIn("answer truthfully", SYSTEM_PROMPT)
-        self.assertIn("brain/AGENT.md", CONTEXT_FILES)
-        self.assertNotIn("brain/RESPONSE_RULES.md", CONTEXT_FILES)
-        self.assertFalse(any(path.startswith("skills/") for path in CONTEXT_FILES))
+        self.assertNotIn("if the customer says 'own stay'", SYSTEM_PROMPT.lower())
+        self.assertNotIn("oh ok", SYSTEM_PROMPT.lower())
 
     def test_structured_agent_output_schema_and_validation(self):
         class Provider:
