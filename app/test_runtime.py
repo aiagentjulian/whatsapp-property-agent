@@ -175,9 +175,14 @@ class RuntimeTests(unittest.TestCase):
 
     def test_sales_brain_keeps_identity_private_and_conversation_unscripted(self):
         from .agent import CONTEXT_FILES, SYSTEM_PROMPT
-        self.assertIn("BPG", SalesAgent.context_text())
-        self.assertIn("do not proactively reveal", SYSTEM_PROMPT)
-        self.assertIn("answer honestly", SYSTEM_PROMPT)
+        context = SalesAgent.context_text()
+        self.assertIn("BPG", context)
+        self.assertIn("Pearl Residences", SYSTEM_PROMPT)
+        self.assertIn("Pearl Residences", context)
+        self.assertIn("own stay or investment", SYSTEM_PROMPT)
+        self.assertIn("never give more than three", SYSTEM_PROMPT)
+        self.assertIn("If a customer directly asks", SYSTEM_PROMPT)
+        self.assertIn("answer truthfully", SYSTEM_PROMPT)
         self.assertIn("brain/AGENT.md", CONTEXT_FILES)
         self.assertNotIn("brain/RESPONSE_RULES.md", CONTEXT_FILES)
         self.assertFalse(any(path.startswith("skills/") for path in CONTEXT_FILES))
