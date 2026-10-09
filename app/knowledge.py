@@ -72,16 +72,33 @@ def current_unit_offering():
     raise ValueError("Project Knowledge is missing the standard unit offering")
 
 
-def buyer_sales_evidence(profile, history):
-    """Retrieve a small set of sales evidence from the buyer's recent context."""
-    recent_customer_messages = [
-        row.get("body", "") for row in history[-40:] if row.get("direction") == "INBOUND"
-    ][-10:]
-    profile_details = " ".join(str(profile.get(key) or "") for key in (
-        "purchase_purpose", "purchase_reason", "primary_motivations", "important_features",
-        "decision_factors", "active_concerns", "fit_assessment", "conversation_summary",
-    ))
-    return retrieve(" ".join(recent_customer_messages + [profile_details]), profile, limit=1, sales_only=True)
+def project_sales_context():
+    """Offer general project evidence and selling possibilities without choosing for the LLM."""
+    sections = (
+        ("01_facts/overview.md", ("Project identity", "Completion", "Major development components", "Maintenance")),
+        ("01_facts/location-and-connectivity.md", ("External connectivity", "Riverside connection")),
+        ("01_facts/school-access-and-family.md", ("Vertical School", "School Access", "Family-Oriented Facilities")),
+        ("01_facts/facilities-and-quality.md", ("Level 9 facilities deck", "Super Clubhouse")),
+    )
+    facts = []
+    for relative, headings in sections:
+        path = KNOWLEDGE / relative
+        for heading, content in _passages(path.read_text(encoding="utf-8")):
+            if heading not in headings:
+                continue
+            if heading == "Project identity":
+                content = _non_identifying_facts(content)
+            facts.append({"topic": heading, "content": content})
+
+    angles = []
+    path = KNOWLEDGE / "03_sales/usp-map.md"
+    for heading, content in _passages(path.read_text(encoding="utf-8")):
+        if not re.match(r"^\\d+\\.", heading):
+            continue
+        match = re.search(r"### Core proposition\\s*\\n(.+?)(?=\\n### |\\Z)", content, re.S)
+        if match:
+            angles.append({"topic": heading, "value": match.group(1).strip()})
+    return {"facts": facts, "selling_possibilities": angles}
 
 
 def _non_identifying_facts(content):
