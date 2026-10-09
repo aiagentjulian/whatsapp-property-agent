@@ -27,7 +27,7 @@ class SalesAgent:
         user_prompt = json.dumps({
             "brain_and_skills": self.context_text(),
             "lead_profile": profile,
-            "recent_conversation": [{"direction": row["direction"], "body": row["body"]} for row in history[-16:]],
+            "recent_conversation": [{"direction": row["direction"], "body": row["body"]} for row in history[-40:]],
             "latest_customer_message": latest_message,
             "relevant_project_knowledge": passages,
             "verified_support_results": support_results,
