@@ -36,13 +36,15 @@ def agent_schema():
         "type": "object", "additionalProperties": False,
         "properties": {
             "action": {"type": "string", "enum": ["REPLY", "SUPPORT_REQUEST", "APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"]},
+            "sales_move": {"type": "string", "enum": ["ANSWER", "EXPLORE", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"]},
+            "buyer_signal": {"type": "string", "enum": ["QUESTION", "POSITIVE", "NEUTRAL", "OBJECTION", "DISENGAGED", "UNKNOWN"]},
             "reply": {"type": "string"},
             "lead_updates": {"type": "object", "properties": updates, "required": PROFILE_FIELDS, "additionalProperties": False},
             "support_request": {"type": ["object", "null"], "properties": support, "required": list(support), "additionalProperties": False},
             "handoff_reason": {"type": ["string", "null"], "enum": ["OPERATIONAL_BOOKING", "SALES_OWNERSHIP_CONFLICT", "EXPLICIT_HUMAN_REQUEST", "COMPLAINT_OR_DISPUTE", "HIGH_RISK_FACTUAL_UNCERTAINTY", "OTHER", None]},
             "handoff_details": {"type": ["string", "null"]},
         },
-        "required": ["action", "reply", "lead_updates", "support_request", "handoff_reason", "handoff_details"],
+        "required": ["action", "sales_move", "buyer_signal", "reply", "lead_updates", "support_request", "handoff_reason", "handoff_details"],
     }
 
 
