@@ -90,6 +90,46 @@ class Store:
         finally:
             db.close()
 
+    @staticmethod
+    def _initial_profile(lead_id, phone, source="INBOUND"):
+        return {"lead_id": lead_id, "phone": phone, "lead_source": source,
+                "sales_stage": "UNDERSTAND", "intent_level": "LOW",
+                "appointment_readiness": "NOT_READY", "purchase_purpose": "UNKNOWN",
+                "owner": "AI", "ai_session_status": "ACTIVE",
+                "next_objective": "Understand the enquiry and respond helpfully."}
+
+    def reset_test_lead(self, phone, test_contacts):
+        """Reset one explicitly configured inbound test lead, preserving its CRM identity.
+
+        The caller must stop the live Runtime first to avoid in-flight replies
+        writing to the just-reset conversation.
+        """
+        if not phone or phone not in set(test_contacts or ()):
+            raise ValueError("Phone is not an explicitly configured WHATSAPP_TEST_CONTACTS entry")
+        stamp = now()
+        with self.transaction() as db:
+            lead = db.execute(
+                "SELECT lead_id, lead_source, prospect_id FROM leads WHERE phone=? AND project='pearlmont'",
+                (phone,)).fetchone()
+            if not lead:
+                return {"status": "already_clean", "phone": phone, "history_count": 0}
+            if lead["lead_source"] != "INBOUND" or lead["prospect_id"] is not None:
+                raise ValueError("Reset is only available for a standalone inbound test lead")
+            lead_id = lead["lead_id"]
+            db.execute("DELETE FROM messages WHERE lead_id=?", (lead_id,))
+            db.execute("DELETE FROM support_requests WHERE lead_id=?", (lead_id,))
+            db.execute("DELETE FROM handoffs WHERE lead_id=?", (lead_id,))
+            db.execute("DELETE FROM api_usage WHERE lead_id=?", (lead_id,))
+            db.execute(
+                """UPDATE leads SET owner='AI', ai_session_status='ACTIVE',
+                   profile_json=?, source_detail='', campaign='', updated_at=?
+                   WHERE lead_id=?""",
+                (json.dumps(self._initial_profile(lead_id, phone)), stamp, lead_id))
+            # Reuse the same Lead ID so a synced Sheets row is updated, not duplicated.
+            self._queue(db, "LEAD", lead_id, stamp)
+        return {"status": "reset", "phone": phone, "lead_id": lead_id, "history_count": 0,
+                "crm_sync_pending": True}
+
     def ingest(self, phone, external_id, body):
         """Atomically deduplicate inbound messages and reuse the one project Lead."""
         stamp = now()
@@ -102,9 +142,7 @@ class Store:
             if not lead:
                 lead_id = str(uuid.uuid4())
                 source = "OUTBOUND" if prospect else "INBOUND"
-                profile = {"lead_id": lead_id, "phone": phone, "lead_source": source, "sales_stage": "UNDERSTAND",
-                           "intent_level": "LOW", "appointment_readiness": "NOT_READY", "purchase_purpose": "UNKNOWN",
-                           "owner": "AI", "ai_session_status": "ACTIVE", "next_objective": "Understand the enquiry and respond helpfully."}
+                profile = self._initial_profile(lead_id, phone, source)
                 db.execute("INSERT INTO leads (lead_id,phone,project,lead_source,owner,ai_session_status,profile_json,created_at,updated_at,source_detail,campaign,prospect_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
                            (lead_id, phone, "pearlmont", source, "AI", "ACTIVE", json.dumps(profile), stamp, stamp,
                             prospect["source_detail"] if prospect else "", prospect["campaign"] if prospect else "", prospect["prospect_id"] if prospect else None))
