@@ -167,6 +167,11 @@ class RuntimeTests(unittest.TestCase):
                  "body": "message %s" % i} for i in range(50)]
         SalesAgent(self.config, provider).decide("latest", {}, rows, [])
         recent = provider.payload["recent_conversation"]
+        offering = provider.payload["current_project_unit_offering"]
+        self.assertIn("All Phase 1 residential units use the same main unit type", offering)
+        self.assertIn("- Built-up: 900 sq.ft.", offering)
+        self.assertIn("- 3 bedrooms", offering)
+        self.assertIn("- 2 bathrooms", offering)
         self.assertEqual(len(recent), 40)
         self.assertEqual(recent[0]["body"], "message 10")
         self.assertEqual(recent[-1]["body"], "message 49")
@@ -181,6 +186,8 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Pearl Residences", context)
         self.assertIn("own stay or investment", SYSTEM_PROMPT)
         self.assertIn("never give more than three", SYSTEM_PROMPT)
+        self.assertIn("do not ask open-ended bedroom-count preferences", SYSTEM_PROMPT)
+        self.assertIn("four bedrooms are essential", context)
         self.assertIn("If a customer directly asks", SYSTEM_PROMPT)
         self.assertIn("answer truthfully", SYSTEM_PROMPT)
         self.assertIn("brain/AGENT.md", CONTEXT_FILES)
