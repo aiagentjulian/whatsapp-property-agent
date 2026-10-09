@@ -68,7 +68,12 @@ def retrieve(query, lead_profile=None, limit=3):
         path = KNOWLEDGE / "01_facts/overview.md"
         for heading, content in _passages(path.read_text(encoding="utf-8")):
             if heading.lower() == "project identity":
-                return [{"path": path.relative_to(KNOWLEDGE).as_posix(), "heading": heading, "score": 1, "content": content}]
+                # Supply only introductory property facts, not identifiers the customer
+                # has not asked for. Explicit identity questions use normal retrieval.
+                labels = ("- Location:", "- Tenure:", "- Property type for Phase 1 residential:")
+                facts = [line for line in content.splitlines() if line.strip().startswith(labels)]
+                return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
+                         "heading": "General property facts", "score": 1, "content": "\n".join(facts)}]
     if not terms or ("?" not in (query or "") and not terms & {"project", "layout", "bedroom", "room", "price", "cost", "location", "facility", "facilities", "freehold", "tenure", "developer", "completion", "maintenance", "package", "rebate", "floor", "facing", "balcony", "unit", "transport", "school", "financing", "loan", "booking", "view", "viewing", "safety", "flood", "pylon", "cable"}):
         return []
 

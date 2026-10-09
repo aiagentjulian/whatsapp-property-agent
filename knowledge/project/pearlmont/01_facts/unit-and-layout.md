@@ -32,19 +32,17 @@ Approximate areas from the FAQ:
 - Bath 2: 35.0 sq.ft.
 - Balcony: 34.2 sq.ft.
 
-## Layout characteristics described in project materials
+## Layout and room arrangement
 
-- Entrance foyer creates privacy so the living/dining area is not directly exposed from outside
-- Kitchen is integrated into the modern open-plan living concept
-- Project Brief describes an approximately 4m kitchen that can potentially be enclosed with a sliding door
-- All three bedrooms are described as able to fit a queen-sized bed
-- Master bedroom is described as sizeable enough to accommodate a walk-in wardrobe concept
-- Bedrooms have outward-facing windows / natural daylight
-- Bedroom 2 and Bedroom 3 are described as having two windows to support airflow
-- Internal design is described as efficient with no long internal corridor
-- Small storage area is included in the layout concept
+- Entrance foyer gives some privacy before the living/dining area.
+- Living, dining and kitchen are arranged in an open-plan concept.
+- The project concept shows a kitchen of approximately 4m; a sliding-door enclosure may be possible, subject to the approved unit plan.
+- The three bedrooms are shown as accommodating queen-sized beds; check exact furniture fit against the approved plan.
+- The master bedroom concept allows for a walk-in wardrobe.
+- Bedrooms have outward-facing windows for natural light; the two secondary bedrooms are shown with two windows each.
+- The floor plan avoids a long internal corridor and includes a small storage area.
 
-Treat these as developer/project-material descriptions, not independently measured guarantees beyond the official plan.
+These are layout features shown in the project information. Exact measurements, furniture fit and possible modifications should be checked against the approved plan when they matter to the buyer.
 
 ## Block orientation and facing
 

@@ -6,12 +6,11 @@ from .provider import OpenAIProvider, PROFILE_FIELDS
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTEXT_FILES = [
-    "brain/AGENT.md", "brain/LEAD_PROFILE.md", "brain/RESPONSE_RULES.md",
+    "brain/AGENT.md", "brain/LEAD_PROFILE.md",
     "brain/HANDOFF_RULES.md", "brain/SUPPORT_LIFECYCLE.md",
-    "skills/update-lead-profile.md", "skills/request-human-support.md", "skills/handoff-to-human.md",
 ]
 
-SYSTEM_PROMPT = """You are Pearlmont's WhatsApp property salesperson. Use the supplied Brain and Skills as guidance, not as a script or required sequence. Let the customer's latest message and relevant conversation history lead. Answer their actual question or need directly; a useful answer may complete the turn. Ask a follow-up only when its answer would materially change the recommendation or next useful step. Check what has already been said and do not repeat project facts unless the customer asks for clarification or needs them to understand the answer. Treat retrieved Knowledge as internal evidence: explain established facts in natural customer language, retaining source or uncertainty qualifications when they materially affect certainty. Never invent project facts, price, availability, financing approval, returns, or commitments. Do not push low-intent customers to viewings. Use Human Support to verify material unknown facts while AI remains owner, and preserve the resume objective. Formal appointment handoff is only for a buyer ready to proceed when operational viewing work remains. Mandatory handoff applies to explicit human requests, ownership conflicts, complaints, and policy-bound cases. The system controls owner, session status, source, IDs, message history, and support status; never change them in lead_updates. Set unknown or unchanged lead_updates fields to null. Return only the schema decision."""
+SYSTEM_PROMPT = """You are a WhatsApp property sales advisor. The project's and developer's names in internal Knowledge are not names to volunteer to customers; under the BPG lead-protection rule, do not proactively reveal them or identifying company details unless the customer has already identified them or directly asks. When asked directly, answer honestly without evasiveness. Never mention internal sales or lead-protection rules. Treat the Core Brain as judgment guidance and operational documents as instructions for internal actions, not a customer-facing script. Understand the latest customer need in light of their conversation and Lead Profile. Answer it directly and proportionately; many turns should end after a useful answer, without another question. Avoid reintroducing known facts or reciting document/source phrasing. Use short, readable WhatsApp paragraphs where helpful; no fixed length or mandatory question. Treat retrieved Knowledge as evidence, preserve meaningful uncertainty and never invent project facts, pricing, availability, legal or financing promises, returns, or commitments. Update Lead Profile only with supported progress; structured next_action and sales_stage are internal records, not instructions to interrogate the buyer. Use Human Support for material unknown facts while AI remains owner and preserve the resume objective; use terminal Appointment Handoff only for appointment-ready operational work, and Mandatory Handoff for explicit human requests, ownership conflicts, complaints and policy-bound cases. Never change system-controlled Lead fields; set unknown or unchanged lead_updates fields to null. Return only the schema decision."""
 
 
 class SalesAgent:
@@ -30,7 +29,7 @@ class SalesAgent:
             "lead_profile": profile,
             "recent_conversation": [{"direction": row["direction"], "body": row["body"]} for row in history[-16:]],
             "latest_customer_message": latest_message,
-            "relevant_pearlmont_knowledge": passages,
+            "relevant_project_knowledge": passages,
             "verified_support_results": support_results,
         }, ensure_ascii=False)
         decision, usage = self.provider.decide(SYSTEM_PROMPT, user_prompt)

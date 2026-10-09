@@ -126,11 +126,17 @@ class RuntimeTests(unittest.TestCase):
         self.assertTrue(any(row["path"].startswith("04_internal/") and "INTERNAL ONLY" in row["content"] for row in ownership))
         layout = retrieve("Layout?")
         self.assertEqual(len(layout), 1)
-        self.assertEqual(layout[0]["heading"], "Layout characteristics described in project materials")
+        self.assertEqual(layout[0]["heading"], "Layout and room arrangement")
         self.assertFalse(retrieve("Own stay."))
         intro = retrieve("Hi there, may I know more about this project?")
         self.assertEqual(len(intro), 1)
-        self.assertEqual(intro[0]["heading"], "Project identity")
+        self.assertEqual(intro[0]["heading"], "General property facts")
+        self.assertIn("Freehold", intro[0]["content"])
+        self.assertNotIn("SkyWorld", str(intro))
+        self.assertNotIn("Pearlmont", str(intro))
+        # Identity questions must still have access to the real project facts.
+        identified = retrieve("Is this SkyWorld Pearlmont?")
+        self.assertTrue(any("SkyWorld Pearlmont" in row["content"] for row in identified))
 
     def test_history_order_is_stable_for_equal_timestamps(self):
         store = Store(self.path)
@@ -140,6 +146,15 @@ class RuntimeTests(unittest.TestCase):
         with store.connect() as db:
             db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
         self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
+
+    def test_sales_brain_keeps_identity_private_and_conversation_unscripted(self):
+        from .agent import CONTEXT_FILES, SYSTEM_PROMPT
+        self.assertIn("BPG", SalesAgent.context_text())
+        self.assertIn("do not proactively reveal", SYSTEM_PROMPT)
+        self.assertIn("answer honestly", SYSTEM_PROMPT)
+        self.assertIn("brain/AGENT.md", CONTEXT_FILES)
+        self.assertNotIn("brain/RESPONSE_RULES.md", CONTEXT_FILES)
+        self.assertFalse(any(path.startswith("skills/") for path in CONTEXT_FILES))
 
     def test_structured_agent_output_schema_and_validation(self):
         class Provider:
