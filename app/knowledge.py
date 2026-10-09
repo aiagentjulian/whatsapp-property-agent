@@ -57,6 +57,15 @@ def _passages(text):
     return passages
 
 
+def current_unit_offering():
+    """Keep the actual Phase 1 unit choice visible on every sales turn."""
+    path = KNOWLEDGE / "01_facts/unit-and-layout.md"
+    for heading, content in _passages(path.read_text(encoding="utf-8")):
+        if heading.lower() == "standard unit":
+            return content
+    raise ValueError("Project Knowledge is missing the standard unit offering")
+
+
 def _non_identifying_facts(content):
     """Keep ordinary property details without revealing project/developer names."""
     labels = ("- Location:", "- Tenure:", "- Property type for Phase 1 residential:")
