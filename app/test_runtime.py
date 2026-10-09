@@ -178,6 +178,22 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(recent[0]["direction"], "INBOUND")
         self.assertEqual(recent[-1]["direction"], "OUTBOUND")
 
+    def test_family_sales_evidence_supports_positioning_after_layout_fit(self):
+        from .knowledge import buyer_sales_evidence
+        messages = [
+            {"direction": "INBOUND", "body": "own stay"},
+            {"direction": "OUTBOUND", "body": "Are you buying with family?"},
+            {"direction": "INBOUND", "body": "family"},
+            {"direction": "OUTBOUND", "body": "Would 3 bedrooms work?"},
+            {"direction": "INBOUND", "body": "I think so"},
+        ]
+        evidence = buyer_sales_evidence({"purchase_purpose": "OWN_STAY"}, messages)
+        content = " ".join(item["content"] for item in evidence)
+        self.assertIn("Sunway Carnival Mall", content)
+        self.assertIn("Children's playground", content)
+        self.assertTrue(any(item["heading"] == "2. Family Practicality Angle" for item in evidence))
+        self.assertFalse(buyer_sales_evidence({}, [{"direction": "INBOUND", "body": "Price?"}]))
+
     def test_sales_brain_keeps_identity_private_and_conversation_unscripted(self):
         from .agent import CONTEXT_FILES, SYSTEM_PROMPT
         context = SalesAgent.context_text()
@@ -186,6 +202,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Pearl Residences", context)
         self.assertIn("own stay or investment", SYSTEM_PROMPT)
         self.assertIn("never give more than three", SYSTEM_PROMPT)
+        self.assertIn("shift from repeated qualification to relevant positioning", SYSTEM_PROMPT)
         self.assertIn("do not ask open-ended bedroom-count preferences", SYSTEM_PROMPT)
         self.assertIn("four bedrooms are essential", context)
         self.assertIn("If a customer directly asks", SYSTEM_PROMPT)
