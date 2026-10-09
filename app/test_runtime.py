@@ -139,6 +139,10 @@ class RuntimeTests(unittest.TestCase):
         # Identity questions must still have access to the real project facts.
         identified = retrieve("Is this SkyWorld Pearlmont?")
         self.assertTrue(any("SkyWorld Pearlmont" in row["content"] for row in identified))
+        natural_layout = retrieve("900 sq ft sounds tight—how are the rooms laid out?")
+        self.assertTrue(any("unit-and-layout.md" in row["path"] for row in natural_layout))
+        pool_details = retrieve("Could you give me a fuller explanation of the main pool and kids’ pool, including their approximate lengths and depths?")
+        self.assertTrue(any("55m" in row["content"] or "55 m" in row["content"] for row in pool_details))
 
     def test_history_order_is_stable_for_equal_timestamps(self):
         store = Store(self.path)

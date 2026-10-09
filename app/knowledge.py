@@ -12,7 +12,15 @@ STOPWORDS = {
 
 
 def tokenize(text):
-    return set(re.findall(r"[a-z0-9]+", text.lower()))
+    terms = set(re.findall(r"[a-z0-9]+", text.lower()))
+    # Normalize common customer wording so natural plural/inflected questions
+    # match the singular terms used in Knowledge headings and facts.
+    aliases = {
+        "laid": "layout", "layouts": "layout", "rooms": "room",
+        "bedrooms": "bedroom", "pools": "pool", "lengths": "length",
+        "depths": "depth", "facilities": "facility", "children": "child",
+    }
+    return {aliases.get(term, term) for term in terms}
 
 
 def _passages(text):
