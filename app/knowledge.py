@@ -49,6 +49,12 @@ def _passages(text):
     return passages
 
 
+def _non_identifying_facts(content):
+    """Keep ordinary property details without revealing project/developer names."""
+    labels = ("- Location:", "- Tenure:", "- Property type for Phase 1 residential:")
+    return "\n".join(line for line in content.splitlines() if line.strip().startswith(labels))
+
+
 def retrieve(query, lead_profile=None, limit=3):
     """Return the most relevant short Knowledge passages; gate internal ownership material."""
     profile = lead_profile or {}
@@ -85,10 +91,9 @@ def retrieve(query, lead_profile=None, limit=3):
             if heading.lower() == "project identity":
                 # Supply only introductory property facts, not identifiers the customer
                 # has not asked for. Explicit identity questions use normal retrieval.
-                labels = ("- Location:", "- Tenure:", "- Property type for Phase 1 residential:")
-                facts = [line for line in content.splitlines() if line.strip().startswith(labels)]
                 return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
-                         "heading": "General property facts", "score": 1, "content": "\n".join(facts)}]
+                         "heading": "General property facts", "score": 1,
+                         "content": _non_identifying_facts(content)}]
     if not terms or ("?" not in (query or "") and not terms & {"project", "layout", "bedroom", "room", "price", "cost", "location", "facility", "facilities", "freehold", "tenure", "developer", "completion", "maintenance", "package", "rebate", "floor", "facing", "balcony", "unit", "transport", "school", "financing", "loan", "booking", "view", "viewing", "safety", "flood", "pylon", "cable"}):
         return []
 
@@ -111,6 +116,8 @@ def retrieve(query, lead_profile=None, limit=3):
                 score += 2
             if relative.startswith("04_internal/"):
                 score += 3
+            if heading.lower() == "project identity" and not identity_request:
+                content = _non_identifying_facts(content)
             ranked.append((score, relative, heading, content))
     ranked.sort(key=lambda item: (-item[0], item[1], item[2]))
     if not ranked:
