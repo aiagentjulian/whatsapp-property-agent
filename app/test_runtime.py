@@ -11,7 +11,7 @@ from .contacts import is_allowlisted
 
 
 def decision(action="REPLY", reply="Thanks, I’ll check that for you.", **kwargs):
-    value = {"action": action, "reply": reply, "lead_updates": {key: None for key in PROFILE_FIELDS},
+    value = {"action": action, "sales_move": "ANSWER", "buyer_signal": "UNKNOWN", "reply": reply, "lead_updates": {key: None for key in PROFILE_FIELDS},
              "support_request": None, "handoff_reason": None, "handoff_details": None}
     value.update(kwargs)
     return value
@@ -175,15 +175,16 @@ class RuntimeTests(unittest.TestCase):
             "sales_stage": "QUALIFY", "active_concerns": [], "phone": "private",
         }, rows, [])
         self.assertEqual(provider.payload["lead_profile"], {"purchase_purpose": "OWN_STAY"})
-        self.assertIn("selling_possibilities", provider.payload["project_sales_context"])
+        self.assertIn("optional_sales_angles", provider.payload["focused_sales_evidence"])
+        self.assertNotIn("project_sales_context", provider.payload)
         recent = provider.payload["recent_conversation"]
         offering = provider.payload["current_project_unit_offering"]
         self.assertIn("All Phase 1 residential units use the same main unit type", offering)
         self.assertIn("- Built-up: 900 sq.ft.", offering)
         self.assertIn("- 3 bedrooms", offering)
         self.assertIn("- 2 bathrooms", offering)
-        self.assertEqual(len(recent), 40)
-        self.assertEqual(recent[0]["body"], "message 10")
+        self.assertEqual(len(recent), 28)
+        self.assertEqual(recent[0]["body"], "message 22")
         self.assertEqual(recent[-1]["body"], "message 49")
         self.assertEqual(recent[0]["direction"], "INBOUND")
         self.assertEqual(recent[-1]["direction"], "OUTBOUND")
@@ -217,6 +218,68 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("answer truthfully", SYSTEM_PROMPT)
         self.assertNotIn("if the customer says 'own stay'", SYSTEM_PROMPT.lower())
         self.assertNotIn("oh ok", SYSTEM_PROMPT.lower())
+
+    def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
+        from .knowledge import focused_sales_context
+        intro = [{"direction": "INBOUND", "body": "Hi, may I know more about this project?"}]
+        start = focused_sales_context(intro[-1]["body"], {}, intro)
+        self.assertEqual(start["optional_sales_angles"], [])
+        messages = intro + [
+            {"direction": "OUTBOUND", "body": "The project is in Seberang Jaya. Own stay or investment?"},
+            {"direction": "INBOUND", "body": "own stay"},
+            {"direction": "OUTBOUND", "body": "Are you looking with family?"},
+            {"direction": "INBOUND", "body": "with family"},
+        ]
+        family = focused_sales_context("with family", {"purchase_purpose": "OWN_STAY"}, messages)
+        self.assertLessEqual(len(family["optional_sales_angles"]), 2)
+        self.assertGreater(len(family["optional_sales_angles"]), 0)
+        self.assertFalse(any("Vertical School" in x["angle"] for x in family["optional_sales_angles"]))
+        messages += [
+            {"direction": "OUTBOUND", "body": "There's a 10-acre SkyPark and Sunway Carnival Mall in the wider area."},
+            {"direction": "INBOUND", "body": "oh ok"},
+        ]
+        cool = focused_sales_context("oh ok", {"purchase_purpose": "OWN_STAY"}, messages)
+        self.assertFalse(any("SkyPark" in x["angle"] or "Mature Seberang" in x["angle"]
+                             for x in cool["optional_sales_angles"]))
+        self.assertTrue(any("SkyPark" in title for title in cool["already_presented"]))
+
+    def test_reset_test_lead_isolated_and_restores_new_conversation_state(self):
+        store = Store(self.path)
+        initial, _, _ = store.ingest("+60123456789", "m-test-1", "I'm looking with family")
+        other, _, _ = store.ingest("Real Buyer", "m-real-1", "Need 4 rooms")
+        store.update_profile(initial["lead_id"], {"purchase_purpose": "OWN_STAY", "active_concerns": ["budget"]})
+        store.add_message(initial["lead_id"], "OUTBOUND", "Here are our facilities")
+        store.record_usage(initial["lead_id"], "gpt-6-luna", {"input_tokens": 10})
+        self.assertTrue(store.formal_handoff(initial["lead_id"], "MANDATORY_OPERATIONAL_HANDOFF",
+                                             "EXPLICIT_HUMAN_REQUEST", "buyer requested"))
+        with self.assertRaisesRegex(ValueError, "WHATSAPP_TEST_CONTACTS"):
+            store.reset_test_lead("Real Buyer", ["+60123456789"])
+        result = store.reset_test_lead("+60123456789", ["+60123456789"])
+        self.assertEqual(result["status"], "reset")
+        fresh = store.by_phone("+60123456789")
+        self.assertEqual(fresh["lead_id"], initial["lead_id"])
+        self.assertEqual(fresh["profile"], store._initial_profile(initial["lead_id"], "+60123456789"))
+        self.assertEqual(store.history(initial["lead_id"]), [])
+        self.assertEqual(store.pending_support(initial["lead_id"]), [])
+        self.assertFalse(any(x["lead_id"] == initial["lead_id"] for x in store.handoffs()))
+        self.assertEqual(store.usage()["calls"], 0)
+        self.assertEqual(store.get(other["lead_id"])["profile"]["purchase_purpose"], "UNKNOWN")
+        self.assertEqual(len(store.history(other["lead_id"])), 1)
+        self.assertTrue(any(row["entity_id"] == initial["lead_id"] and row["entity_type"] == "LEAD"
+                            for row in store.outbox()))
+        new, inserted, _ = store.ingest("+60123456789", "m-test-2", "Hi, what is this project?")
+        self.assertTrue(inserted)
+        self.assertEqual(new["lead_id"], initial["lead_id"])
+        self.assertEqual(len(store.history(initial["lead_id"])), 1)
+        self.assertEqual(store.history(initial["lead_id"])[0]["body"], "Hi, what is this project?")
+
+    def test_high_reasoning_is_default_unless_explicitly_overridden(self):
+        from .config import get_config
+        from unittest.mock import patch
+        with patch.dict("os.environ", {"RUNTIME_REASONING": "high", "RUNTIME_MODEL": "gpt-6-luna"}):
+            self.assertEqual(get_config()["reasoning"], "high")
+        self.assertIn('"effort": self.config["reasoning"]', __import__(
+            "inspect").getsource(__import__("app.provider", fromlist=["OpenAIProvider"]).OpenAIProvider.decide))
 
     def test_structured_agent_output_schema_and_validation(self):
         class Provider:
