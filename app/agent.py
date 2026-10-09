@@ -51,7 +51,11 @@ class SalesAgent:
         action = decision.get("action")
         if action not in ("REPLY", "SUPPORT_REQUEST", "APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
             raise ValueError("Agent returned an unsupported action")
-        if decision.get("sales_move") not in ("ANSWER", "EXPLORE", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"):\n            raise ValueError("Agent returned an invalid sales move")\n        if decision.get("buyer_signal") not in ("QUESTION", "POSITIVE", "NEUTRAL", "OBJECTION", "DISENGAGED", "UNKNOWN"):\n            raise ValueError("Agent returned an invalid buyer signal")\n        if not isinstance(decision.get("reply"), str) or len(decision["reply"]) > 3000:
+        if decision.get("sales_move") not in ("ANSWER", "EXPLORE", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"):
+            raise ValueError("Agent returned an invalid sales move")
+        if decision.get("buyer_signal") not in ("QUESTION", "POSITIVE", "NEUTRAL", "OBJECTION", "DISENGAGED", "UNKNOWN"):
+            raise ValueError("Agent returned an invalid buyer signal")
+        if not isinstance(decision.get("reply"), str) or len(decision["reply"]) > 3000:
             raise ValueError("Agent reply is missing or exceeds 3000 characters")
         updates = decision.get("lead_updates")
         if not isinstance(updates, dict):
