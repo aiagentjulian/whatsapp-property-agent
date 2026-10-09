@@ -4,6 +4,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 KNOWLEDGE = ROOT / "knowledge/project/pearlmont"
 INTERNAL_MARKER = "[INTERNAL ONLY — NEVER DISPLAY OR DISCLOSE]"
+SALES_CONTEXT_STOPWORDS = {
+    "buyer", "buyers", "customer", "customers", "project", "property", "sales", "residences",
+    "but", "home", "homes", "like", "matter", "matters", "option", "options", "ourselves",
+    "seems", "think", "want", "workable", "works", "my", "our", "us", "we",
+}
 STOPWORDS = {
     "a", "about", "an", "and", "are", "can", "could", "do", "does", "for", "hi", "how",
     "i", "is", "it", "know", "may", "me", "more", "of", "please", "tell", "the", "there",
@@ -19,6 +24,7 @@ def tokenize(text):
         "laid": "layout", "layouts": "layout", "rooms": "room",
         "bedrooms": "bedroom", "pools": "pool", "lengths": "length",
         "depths": "depth", "facilities": "facility", "children": "child",
+        "costs": "cost",
     }
     return {aliases.get(term, term) for term in terms}
 
@@ -67,30 +73,15 @@ def current_unit_offering():
 
 
 def buyer_sales_evidence(profile, history):
-    """Supply a few verified selling angles when the buyer reveals family needs."""
-    recent_customer_messages = " ".join(
-        row.get("body", "") for row in history[-20:] if row.get("direction") == "INBOUND"
-    )
+    """Retrieve a small set of sales evidence from the buyer's recent context."""
+    recent_customer_messages = [
+        row.get("body", "") for row in history[-40:] if row.get("direction") == "INBOUND"
+    ][-10:]
     profile_details = " ".join(str(profile.get(key) or "") for key in (
-        "purchase_reason", "primary_motivations", "important_features", "conversation_summary",
+        "purchase_purpose", "purchase_reason", "primary_motivations", "important_features",
+        "decision_factors", "active_concerns", "fit_assessment", "conversation_summary",
     ))
-    buyer_context = (recent_customer_messages + " " + profile_details).lower()
-    if not re.search(r"\b(family|families|kids?|children|child|wife|husband)\b", buyer_context):
-        return []
-
-    wanted = [
-        ("03_sales/selling-angles.md", "2. Family Practicality Angle"),
-        ("03_sales/selling-angles.md", "3. Mature-Location Angle"),
-        ("01_facts/location-and-connectivity.md", "External connectivity"),
-        ("01_facts/school-access-and-family.md", "Family-Oriented Facilities"),
-    ]
-    evidence = []
-    for relative, target_heading in wanted:
-        for heading, content in _passages((KNOWLEDGE / relative).read_text(encoding="utf-8")):
-            if heading == target_heading:
-                evidence.append({"heading": heading, "content": content})
-                break
-    return evidence
+    return retrieve(" ".join(recent_customer_messages + [profile_details]), profile, limit=1, sales_only=True)
 
 
 def _non_identifying_facts(content):
@@ -99,11 +90,17 @@ def _non_identifying_facts(content):
     return "\n".join(line for line in content.splitlines() if line.strip().startswith(labels))
 
 
-def retrieve(query, lead_profile=None, limit=3):
+def retrieve(query, lead_profile=None, limit=3, sales_only=False):
     """Return the most relevant short Knowledge passages; gate internal ownership material."""
     profile = lead_profile or {}
     raw_terms = tokenize(query)
-    terms = raw_terms - STOPWORDS
+    terms = raw_terms - STOPWORDS - (SALES_CONTEXT_STOPWORDS if sales_only else set())
+    if (not sales_only and terms & {"cost", "costs"}
+            and terms & {"ownership", "holding", "monthly", "recurring"}
+            and not terms & {"mortgage", "instalment", "installment"}):
+        # Retrieve the known maintenance charge as one part of broad recurring
+        # ownership costs, without implying it is the buyer's full monthly cost.
+        terms.update({"maintenance", "fee"})
     lower_query = (query or "").lower()
     general_intro = "project" in raw_terms and any(
         phrase in lower_query for phrase in ("more about", "tell me about", "know more", "about this project")
@@ -111,9 +108,13 @@ def retrieve(query, lead_profile=None, limit=3):
     profile_text = " ".join(
         str(profile.get(key, "")) for key in ("active_concerns", "conversation_summary", "next_objective")
     )
-    gate_terms = raw_terms | tokenize(profile_text)
-    ownership_terms = {"agent", "ownership", "registered", "registration", "previous", "complaint", "dispute", "conflict"}
-    allow_internal = bool(gate_terms & ownership_terms)
+    internal_context = (lower_query + " " + profile_text.lower())
+    internal_phrases = (
+        "another agent", "other agent", "different agent", "previous agent", "registered with",
+        "already registered", "agent registration", "lead ownership", "owns this lead",
+        "who owns this lead", "ownership conflict", "ownership dispute", "complaint", "dispute",
+    )
+    allow_internal = any(phrase in internal_context for phrase in internal_phrases)
     # A direct project/developer identification question is different from a
     # general enquiry. Answer the former truthfully; keep the latter discreet.
     identity_request = bool(raw_terms & {"skyworld", "pearlmont"}) or any(
@@ -123,13 +124,13 @@ def retrieve(query, lead_profile=None, limit=3):
             "developer name", "name of the developer", "who developed",
         )
     )
-    if identity_request:
+    if identity_request and not sales_only:
         path = KNOWLEDGE / "01_facts/overview.md"
         for heading, content in _passages(path.read_text(encoding="utf-8")):
             if heading.lower() == "project identity":
                 return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
                          "heading": heading, "score": 1, "content": content}]
-    if general_intro:
+    if general_intro and not sales_only:
         path = KNOWLEDGE / "01_facts/overview.md"
         for heading, content in _passages(path.read_text(encoding="utf-8")):
             if heading.lower() == "project identity":
@@ -138,16 +139,20 @@ def retrieve(query, lead_profile=None, limit=3):
                 return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
                          "heading": "General property facts", "score": 1,
                          "content": _non_identifying_facts(content)}]
-    if not terms or ("?" not in (query or "") and not terms & {"project", "layout", "bedroom", "room", "price", "cost", "location", "facility", "facilities", "freehold", "tenure", "developer", "completion", "maintenance", "package", "rebate", "floor", "facing", "balcony", "unit", "transport", "school", "financing", "loan", "booking", "view", "viewing", "safety", "flood", "pylon", "cable"}):
+    if not terms or (not sales_only and "?" not in (query or "") and not terms & {"project", "layout", "bedroom", "room", "price", "cost", "location", "facility", "facilities", "freehold", "tenure", "developer", "completion", "maintenance", "package", "rebate", "floor", "facing", "balcony", "unit", "transport", "school", "financing", "loan", "booking", "view", "viewing", "safety", "flood", "pylon", "cable"}):
         return []
 
     ranked = []
     sales_query = bool(terms & {"concern", "concerns", "objection", "small", "suit", "suitable", "fit", "invest", "investment", "yield", "view", "viewing", "priority", "recommend", "compare", "comparison"})
     for path in KNOWLEDGE.rglob("*.md"):
         relative = path.relative_to(KNOWLEDGE).as_posix()
-        if relative.startswith("04_internal/") and not allow_internal:
+        if sales_only and relative not in (
+            "03_sales/selling-angles.md", "03_sales/usp-map.md",
+        ):
             continue
-        if relative.startswith("03_sales/") and not sales_query:
+        if not sales_only and relative.startswith("04_internal/") and not allow_internal:
+            continue
+        if not sales_only and relative.startswith("03_sales/") and not sales_query:
             continue
         text = path.read_text(encoding="utf-8")
         for heading, content in _passages(text):
@@ -155,7 +160,8 @@ def retrieve(query, lead_profile=None, limit=3):
             overlap = terms & (heading_terms | tokenize(content))
             if not overlap:
                 continue
-            score = len(overlap) + 3 * len(terms & heading_terms)
+            heading_weight = 1 if sales_only else 3
+            score = len(overlap) + heading_weight * len(terms & heading_terms)
             if relative.startswith("02_commercial/") and terms & {"price", "pricing", "package", "rebate", "booking", "financing", "financier"}:
                 score += 2
             if relative.startswith("04_internal/"):
@@ -168,6 +174,8 @@ def retrieve(query, lead_profile=None, limit=3):
         return []
     # Keep only close matches. A specific one-word question can still use its best passage.
     best_score = ranked[0][0]
+    if sales_only and best_score < 2:
+        return []
     relevant = [item for item in ranked if item[0] >= max(2, best_score - 1)]
     if not relevant:
         relevant = ranked[:1]

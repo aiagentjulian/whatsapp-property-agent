@@ -124,6 +124,11 @@ class RuntimeTests(unittest.TestCase):
         self.assertFalse(any(row["path"].startswith("04_internal/") for row in pricing))
         ownership = retrieve("I already registered with another agent; who owns this lead?")
         self.assertTrue(any(row["path"].startswith("04_internal/") and "INTERNAL ONLY" in row["content"] for row in ownership))
+        ordinary_ownership = retrieve("Monthly home ownership costs are important to us.",
+                                      {"active_concerns": ["monthly home ownership costs"]})
+        self.assertFalse(any(row["path"].startswith("04_internal/") for row in ordinary_ownership))
+        self.assertTrue(any("maintenance-and-management.md" in row["path"] and "RM0.18" in row["content"]
+                            for row in ordinary_ownership))
         layout = retrieve("Layout?")
         self.assertEqual(len(layout), 1)
         self.assertEqual(layout[0]["heading"], "Layout and room arrangement")
@@ -178,20 +183,46 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(recent[0]["direction"], "INBOUND")
         self.assertEqual(recent[-1]["direction"], "OUTBOUND")
 
-    def test_family_sales_evidence_supports_positioning_after_layout_fit(self):
+    def test_sales_evidence_uses_recent_buyer_context_across_profiles(self):
         from .knowledge import buyer_sales_evidence
-        messages = [
+        family_messages = [
             {"direction": "INBOUND", "body": "own stay"},
-            {"direction": "OUTBOUND", "body": "Are you buying with family?"},
-            {"direction": "INBOUND", "body": "family"},
-            {"direction": "OUTBOUND", "body": "Would 3 bedrooms work?"},
-            {"direction": "INBOUND", "body": "I think so"},
+            {"direction": "OUTBOUND", "body": "Would the 3-bedroom layout work?"},
+            {"direction": "INBOUND", "body": "We have two children and practical family spaces matter."},
+            {"direction": "OUTBOUND", "body": "That layout may suit you."},
+            {"direction": "INBOUND", "body": "I think the layout could work."},
         ]
-        evidence = buyer_sales_evidence({"purchase_purpose": "OWN_STAY"}, messages)
-        content = " ".join(item["content"] for item in evidence)
-        self.assertIn("Sunway Carnival Mall", content)
-        self.assertIn("Children's playground", content)
-        self.assertTrue(any(item["heading"] == "2. Family Practicality Angle" for item in evidence))
+        evidence = buyer_sales_evidence({
+            "purchase_purpose": "OWN_STAY",
+            "important_features": ["Practical layout for a family with two children", "Family-friendly spaces"],
+            "conversation_summary": "Own-stay buyer with two children who is assessing family layout fit.",
+        }, family_messages)
+        self.assertLessEqual(len(evidence), 1)
+        self.assertTrue(any(item["heading"] in ("2. Family Practicality Angle", "9. Efficient 900 sqft Layout") for item in evidence))
+        own_stay_messages = [
+            {"direction": "INBOUND", "body": "My partner and I want an own-stay home; monthly ownership costs matter."},
+            {"direction": "OUTBOUND", "body": "Would maintenance or mortgage matter more?"},
+            {"direction": "INBOUND", "body": "That seems reasonable."},
+        ]
+        own_stay_evidence = buyer_sales_evidence({
+            "purchase_purpose": "OWN_STAY",
+            "important_features": ["Monthly ownership costs"],
+            "conversation_summary": "Couple considering own stay and watching monthly ownership costs.",
+        }, own_stay_messages)
+        self.assertTrue(any(item["heading"] == "4. Low-Holding-Cost Angle" for item in own_stay_evidence))
+        self.assertNotIn("Family Practicality Angle", " ".join(item["heading"] for item in own_stay_evidence))
+        investor_messages = [
+            {"direction": "INBOUND", "body": "I am considering a rental investment; monthly holding costs matter."},
+            {"direction": "OUTBOUND", "body": "The stated maintenance charge is RM0.18 psf."},
+            {"direction": "INBOUND", "body": "That sounds manageable."},
+        ]
+        investor_evidence = buyer_sales_evidence({
+            "purchase_purpose": "INVESTMENT",
+            "important_features": ["Rental income", "Manageable ownership costs"],
+            "conversation_summary": "Buyer is considering rental investment and holding costs.",
+        }, investor_messages)
+        self.assertTrue(any(item["heading"] == "4. Low-Holding-Cost Angle" for item in investor_evidence))
+        self.assertNotIn("Family Practicality Angle", " ".join(item["heading"] for item in investor_evidence))
         self.assertFalse(buyer_sales_evidence({}, [{"direction": "INBOUND", "body": "Price?"}]))
 
     def test_sales_brain_keeps_identity_private_and_conversation_unscripted(self):
