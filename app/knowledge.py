@@ -101,6 +101,59 @@ def project_sales_context():
     return {"facts": facts, "selling_possibilities": angles}
 
 
+# Product-specific evidence routing. These are retrieval hints, never sales scripts.
+# The primary source for each selected fact is still the existing Knowledge file.
+SALES_EVIDENCE = (
+    ("2. Mature Seberang Jaya Location", ("family", "location", "nearby", "convenient", "commute", "shop", "mall", "own stay"), ("sunway carnival", "mature area", "shopping nearby"), "01_facts/location-and-connectivity.md", "External connectivity"),
+    ("3. 10-Acre Elevated SkyPark / Large Community Green Space", ("family", "children", "kids", "green", "play", "facilities", "space"), ("skypark", "10-acre", "10 acre", "facilities deck"), "01_facts/facilities-and-quality.md", "Level 9 facilities deck"),
+    ("4. Vertical School + Family Ecosystem", ("school", "education", "child", "children", "kids", "tadika"), ("vertical school", "covered walkway", "school access"), "01_facts/school-access-and-family.md", "Vertical School"),
+    ("6. RM0.18 psf Maintenance + Pay-Per-Use Clubhouse", ("budget", "cost", "monthly", "maintenance", "expense", "afford", "fees"), ("maintenance fee", "0.18", "pay-per-use"), "01_facts/overview.md", "Maintenance"),
+    ("9. Efficient 900 sqft Layout", ("layout", "bedroom", "bedrooms", "rooms", "floorplan", "sqft", "size"), ("900 sqft", "900 sq", "3 bedrooms", "3-bedroom"), "01_facts/unit-and-layout.md", "Standard unit"),
+    ("5. PPVC + Quality Assurance + 10-Year Waterproofing Warranty", ("quality", "defect", "leak", "waterproof", "construction"), ("qlassic", "waterproof", "ppvc"), "01_facts/facilities-and-quality.md", "QLASSIC and construction quality"),
+    ("8. Green / Healthy Home Design", ("sunlight", "daylight", "ventilation", "green", "air"), ("greenre", "ventilation", "daylight"), "01_facts/facilities-and-quality.md", "Green building features"),
+)
+
+
+def focused_sales_context(latest_message, profile, history):
+    """Offer at most two relevant, not-recently-pitched USP facts.
+
+    Use actual buyer context for retrieval. The model remains responsible for
+    deciding whether to sell, ask, answer or give the buyer space.
+    """
+    customer_turns = [row.get("body", "") for row in history[-12:]
+                      if row.get("direction") == "INBOUND"]
+    recent_advisor = " ".join(row.get("body", "") for row in history[-16:]
+                              if row.get("direction") == "OUTBOUND").lower()
+    buyer_text = " ".join(customer_turns[-6:]) + " " + str(profile.get("purchase_purpose", ""))
+    for key in ("primary_motivations", "active_concerns", "decision_factors"):
+        value = profile.get(key)
+        if value:
+            buyer_text += " " + (" ".join(value) if isinstance(value, list) else str(value))
+    buyer_tokens = tokenize(buyer_text)
+    explicit_tokens = tokenize(latest_message)
+    catalog = project_sales_context()["selling_possibilities"]
+    propositions = {item["topic"]: item["value"] for item in catalog}
+    scored = []
+    recently_presented = []
+    for index, (title, keywords, pitched, relative, heading) in enumerate(SALES_EVIDENCE):
+        was_pitched = any(phrase in recent_advisor for phrase in pitched)
+        if was_pitched:
+            recently_presented.append(title)
+        score = 3 * len(explicit_tokens & set(keywords)) + len(buyer_tokens & set(keywords))
+        if not score or was_pitched or title not in propositions:
+            continue
+        scored.append((-score, index, title, relative, heading))
+    scored.sort()
+    options = []
+    for _, _, title, relative, heading in scored[:2]:
+        for section, content in _passages((KNOWLEDGE / relative).read_text(encoding="utf-8")):
+            if section == heading:
+                options.append({"angle": title, "why_it_matters": propositions[title],
+                                "verified_evidence": content[:900]})
+                break
+    return {"already_presented": recently_presented, "optional_sales_angles": options}
+
+
 def _non_identifying_facts(content):
     """Keep ordinary property details without revealing project/developer names."""
     labels = ("- Location:", "- Tenure:", "- Property type for Phase 1 residential:")
