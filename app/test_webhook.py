@@ -44,7 +44,8 @@ class FakeProvider:
 
     def decide(self, _system, _user):
         self.calls += 1
-        return ({"action": "REPLY", "reply": "The project offers several home layouts. What size are you considering?",
+        return ({"action": "REPLY", "sales_move": "EXPLORE", "buyer_signal": "QUESTION",
+                 "reply": "The project offers several home layouts. What size are you considering?",
                  "lead_updates": {key: None for key in PROFILE_FIELDS}, "support_request": None,
                  "handoff_reason": None, "handoff_details": None},
                 {"input_tokens": 10, "output_tokens": 12, "total_tokens": 22})
