@@ -61,6 +61,29 @@ Review the entire replies for relevance, repetition, natural pacing, factual
 accuracy and progression. A successful API call or unit test does **not** prove
 sales quality.
 
+For the blinded Sales Core V2 vs real Cloudflare Clef + GPT-6 Luna A/B
+evaluation, configure `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`, and the
+same `OPENAI_API_KEY`/`RUNTIME_REASONING` used by the current Agent. Run:
+
+```sh
+python -m app.ab_eval --mode pilot_then_full --max-usd 10 --max-neurons 10000
+```
+
+The operator verifies the Cloudflare token, runs five distinct paired pilot
+scenarios, and only starts the 30-scenario × 3-repeat full evaluation when the
+real Clef model, Luna calls, dynamic Customer Simulator, and blind reviews all
+work. The full phase contains 180 complete A/B dialogues. Each conversation
+allows up to 12 customer turns and may end naturally. It uses no WhatsApp,
+production database, Google Sheets, or human-support transport. There are no
+automatic provider retries. The USD cap is shared across Luna and Clef; the
+Neuron cap is enforced separately. Reports, including raw synthetic dialogues,
+failed transcripts, route traces, blind scores, evidence, API usage, and
+latencies, are written to `simulator/ab_eval_reports/<run-id>/`.
+
+`--mode pilot` runs only the pilot. `--mode full` skips the pilot and runs the
+180-dialogue phase directly. The full recommendation requires a complete set
+of blind judgments; a model score or API success alone is not treated as proof.
+
 For a fresh WhatsApp test, stop the live Runtime first. Register **only** the
 designated inbound test number in `WHATSAPP_TEST_CONTACTS` in the private
 local environment. It must exactly match the phone stored by the Runtime.

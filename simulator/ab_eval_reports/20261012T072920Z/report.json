@@ -1,0 +1,3253 @@
+{
+  "run_id": "20261012T072920Z",
+  "status": "complete",
+  "model_configuration": {
+    "sales_agent": "gpt-6-luna",
+    "reasoning": "high",
+    "customer_simulator": "gpt-6-luna/high",
+    "blind_evaluator": "gpt-6-luna/high",
+    "clef_requested": "@cf/cloudflare/clef"
+  },
+  "connectivity": {
+    "cloudflare_token": "active",
+    "clef_model_probe": {
+      "token_status": "active",
+      "account_id": "[REDACTED]",
+      "model": "clef",
+      "latency_ms": 907,
+      "estimated_input_tokens": 129,
+      "usage": {
+        "input_tokens": 142,
+        "output_tokens": 0
+      }
+    }
+  },
+  "protocol": {
+    "pilot": "5 distinct scenarios × A/B = 10 dialogues",
+    "full": "30 scenarios × 3 repeats × A/B = 180 dialogues",
+    "max_customer_turns": 12,
+    "blind_to_arms": true,
+    "provider_retries": 0,
+    "production_side_effects": false,
+    "combined_usd_budget_cap": 10.0,
+    "cloudflare_neuron_cap": 100000,
+    "billing_basis": {
+      "openai": "Standard GPT-6 Luna $0.10/1M input and $0.50/1M output; uncached rates used conservatively.",
+      "cloudflare": "Clef $0.24/1M input tokens; 21,818 Neurons/1M input tokens. If usage omits tokens/neurons, a conservative character-based estimate is reported.",
+      "sources": [
+        "https://developers.openai.com/api/docs/pricing",
+        "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+      ]
+    }
+  },
+  "phases": {
+    "pilot": {
+      "phase": "pilot",
+      "dialogues": [
+        {
+          "arm": "A_SALES_CORE_V2",
+          "scenario_id": "E01-own-stay-small-family",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?"
+            },
+            {
+              "speaker": "agent",
+              "text": "For a family home around Seberang Jaya, Pearl Residences could be worth considering. Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony, in an established urban area. Is having enough room at home your main priority, or is being near work or family more important?"
+            },
+            {
+              "speaker": "customer",
+              "text": "Three bedrooms are important, but being close to the kids’ school and everyday shops matters too. What’s the price range and estimated monthly instalment? We’re trying to keep the monthly costs manageable."
+            },
+            {
+              "speaker": "agent",
+              "text": "Three bedrooms matches the Pearl Residences layout. There’s a planned SK/SMK school within the development, expected to be completed alongside Phase 1. I’ll check the latest price range and a realistic monthly estimate—instalments depend on the loan terms and eligibility, so I don’t want to guess. I also don’t have verified details on nearby everyday shops yet."
+            },
+            {
+              "speaker": "customer",
+              "text": "Okay, please send the price range and estimated monthly instalment once you’ve checked. Since the school there is still planned, are there existing schools and everyday shops nearby in the meantime?"
+            },
+            {
+              "speaker": "agent",
+              "text": "The SK/SMK within the development is planned, so it isn’t an existing school yet. Project information mentions connectivity toward Sunway Carnival Mall and Chai Leng Park, but I can’t confirm which existing schools or everyday shops are nearby or how close they are, so I’ll check rather than guess. The price and instalment check is still underway too; I’ll share the verified figures once I have them."
+            },
+            {
+              "speaker": "customer",
+              "text": "Okay, thanks. Please send the verified details when you have them, especially the estimated monthly instalment—we need to see if it fits our budget."
+            },
+            {
+              "speaker": "agent",
+              "text": "Of course. The price and instalment estimate, along with details on existing nearby schools and everyday shops, are still being verified. I’ll share the confirmed information once it’s available, especially the monthly estimate so you can assess whether it fits your budget."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?",
+              "customer_stance": "neutral",
+              "agent_reply": "For a family home around Seberang Jaya, Pearl Residences could be worth considering. Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony, in an established urban area. Is having enough room at home your main priority, or is being near work or family more important?",
+              "action": "REPLY",
+              "sales_move": "POSITION",
+              "buyer_signal": "QUESTION",
+              "clef": null,
+              "retrieved_knowledge_paths": [
+                "03_sales/usp-map.md",
+                "03_sales/objection-to-usp-map.md"
+              ],
+              "openai_usage": {
+                "input_tokens": 2615,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2612,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 740,
+                "output_tokens_details": {
+                  "reasoning_tokens": 374
+                },
+                "total_tokens": 3355
+              },
+              "agent_latency_ms": 10077,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 394,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 285,
+                "output_tokens_details": {
+                  "reasoning_tokens": 201
+                },
+                "total_tokens": 679
+              },
+              "customer_simulator_latency_ms": 4433
+            },
+            {
+              "turn": 2,
+              "customer": "Three bedrooms are important, but being close to the kids’ school and everyday shops matters too. What’s the price range and estimated monthly instalment? We’re trying to keep the monthly costs manageable.",
+              "customer_stance": "interested",
+              "agent_reply": "Three bedrooms matches the Pearl Residences layout. There’s a planned SK/SMK school within the development, expected to be completed alongside Phase 1. I’ll check the latest price range and a realistic monthly estimate—instalments depend on the loan terms and eligibility, so I don’t want to guess. I also don’t have verified details on nearby everyday shops yet.",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": null,
+              "retrieved_knowledge_paths": [
+                "02_commercial/sales-package.md",
+                "02_commercial/pricing.md"
+              ],
+              "openai_usage": {
+                "input_tokens": 2745,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2742,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 1760,
+                "output_tokens_details": {
+                  "reasoning_tokens": 1166
+                },
+                "total_tokens": 4505
+              },
+              "agent_latency_ms": 19476,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 524,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 267,
+                "output_tokens_details": {
+                  "reasoning_tokens": 190
+                },
+                "total_tokens": 791
+              },
+              "customer_simulator_latency_ms": 4591
+            },
+            {
+              "turn": 3,
+              "customer": "Okay, please send the price range and estimated monthly instalment once you’ve checked. Since the school there is still planned, are there existing schools and everyday shops nearby in the meantime?",
+              "customer_stance": "interested",
+              "agent_reply": "The SK/SMK within the development is planned, so it isn’t an existing school yet. Project information mentions connectivity toward Sunway Carnival Mall and Chai Leng Park, but I can’t confirm which existing schools or everyday shops are nearby or how close they are, so I’ll check rather than guess. The price and instalment check is still underway too; I’ll share the verified figures once I have them.",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": null,
+              "retrieved_knowledge_paths": [
+                "01_facts/location-and-connectivity.md"
+              ],
+              "openai_usage": {
+                "input_tokens": 2925,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2922,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 1010,
+                "output_tokens_details": {
+                  "reasoning_tokens": 613
+                },
+                "total_tokens": 3935
+              },
+              "agent_latency_ms": 12442,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 659,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 312,
+                "output_tokens_details": {
+                  "reasoning_tokens": 244
+                },
+                "total_tokens": 971
+              },
+              "customer_simulator_latency_ms": 4774
+            },
+            {
+              "turn": 4,
+              "customer": "Okay, thanks. Please send the verified details when you have them, especially the estimated monthly instalment—we need to see if it fits our budget.",
+              "customer_stance": "interested",
+              "agent_reply": "Of course. The price and instalment estimate, along with details on existing nearby schools and everyday shops, are still being verified. I’ll share the confirmed information once it’s available, especially the monthly estimate so you can assess whether it fits your budget.",
+              "action": "REPLY",
+              "sales_move": "GIVE_SPACE",
+              "buyer_signal": "NEUTRAL",
+              "clef": null,
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 3105,
+                "input_tokens_details": {
+                  "cache_write_tokens": 3102,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 428,
+                "output_tokens_details": {
+                  "reasoning_tokens": 186
+                },
+                "total_tokens": 3533
+              },
+              "agent_latency_ms": 5662,
+              "customer_next_stance": "ending",
+              "customer_simulator_usage": {
+                "input_tokens": 754,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 222,
+                "output_tokens_details": {
+                  "reasoning_tokens": 162
+                },
+                "total_tokens": 976
+              },
+              "customer_simulator_latency_ms": 3531
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 4,
+          "customer_profile_for_blind_judge": {
+            "background": "A married couple with two school-age children is looking for a home in Seberang Jaya.",
+            "needs": "Own stay; three bedrooms; convenient school and daily errands access.",
+            "hidden_motive": "One child has asthma and the parent quietly prioritizes ventilation and green space.",
+            "obstacle": "They fear a high monthly carrying cost.",
+            "acceptable_behavior": "Understand the family use, ask about a real priority, and mention a verified relevant feature only when it fits."
+          },
+          "pair_id": "E01-own-stay-small-family-R1",
+          "blind_judgment": "failed",
+          "judgment_error": {
+            "type": "RuntimeError",
+            "message": "GPT-6 Luna JSON response did not complete."
+          },
+          "composite_score_1_to_5": null
+        },
+        {
+          "arm": "B_CLEF_ROUTED",
+          "scenario_id": "E01-own-stay-small-family",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?"
+            },
+            {
+              "speaker": "agent",
+              "text": "For a family home around Seberang Jaya, Pearl Residences may be worth considering. Phase 1 has a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Would that size work for your household, or are you looking for more space?"
+            },
+            {
+              "speaker": "customer",
+              "text": "900 sq. ft. might work for the four of us. What would the monthly payment roughly be, and are there schools and daily shops nearby?"
+            },
+            {
+              "speaker": "agent",
+              "text": "For daily shopping, the project materials point to Sunway Carnival Mall and Chai Leng Park, though I don’t have verified distances to quote. I don’t have a confirmed nearby-school list either. I’d rather not guess the monthly instalment without current pricing and financing assumptions, so I’ll check an up-to-date estimate and the school information for you."
+            },
+            {
+              "speaker": "customer",
+              "text": "Thanks, please do check. Monthly costs are important for us—could you include maintenance fees in the estimate too? The school information would help as well, since we have two school-age children."
+            },
+            {
+              "speaker": "agent",
+              "text": "Yes—based on the 900 sq. ft. layout, maintenance at RM0.18 per sq. ft. comes to about RM162/month, inclusive of the sinking fund. That’s maintenance only, not the loan instalment or other costs. Pearl Residences also has a planned 25-storey school for SK and SMK under MOE, expected to be completed with Phase 1. I’m still waiting on the current pricing and financing assumptions for an instalment estimate, and confirmed information on nearby schools; I don’t want to guess those."
+            },
+            {
+              "speaker": "customer",
+              "text": "Thanks, RM162 for maintenance is helpful. Having an SK/SMK on site sounds convenient—do you know if it’s confirmed, or still only planned? Please let me know once you have a realistic instalment estimate too; we’re trying to keep the total monthly cost manageable."
+            },
+            {
+              "speaker": "agent",
+              "text": "It’s still planned, not confirmed or completed. The information I have describes an MOE SK/SMK school, expected to be completed with Phase 1. I’m still waiting for current pricing and financing assumptions before I can give you a realistic instalment estimate. Once verified, I’ll share it so you can consider it alongside the RM162 monthly maintenance."
+            },
+            {
+              "speaker": "customer",
+              "text": "Okay, please send the estimate once you’ve checked. Could you also find out whether there are landscaped or open green spaces, and how the units are ventilated? Those would be useful for our children."
+            },
+            {
+              "speaker": "agent",
+              "text": "The project plans describe roughly 10 acres of landscaped space on the Level 9 facilities deck. The residents’ podium landscape is separated from the clubhouse areas, which are pay-per-use. I don’t have verified details on how the units are ventilated yet, so I’ll check rather than guess. The realistic instalment estimate is still pending verification too; I’ll share it once I have the figures and assumptions."
+            },
+            {
+              "speaker": "customer",
+              "text": "Thanks, the landscaped space sounds nice. Could you check whether the units have opening windows or cross-ventilation? One of our children has asthma, so airflow matters to us. Please send the cost estimate once you’ve verified it too."
+            },
+            {
+              "speaker": "agent",
+              "text": "I understand—airflow is especially important with asthma in the family. The project material describes a natural-ventilation design, but it doesn’t confirm whether the 900 sq. ft. units have opening windows or cross-ventilation, so I won’t assume. I’ve already asked for that detail and a realistic instalment estimate; both are still pending, and I’ll share them once verified."
+            },
+            {
+              "speaker": "customer",
+              "text": "Okay, thanks. Please send both when you have confirmed details—I’ll wait for those before deciding whether it’s a fit for us."
+            },
+            {
+              "speaker": "agent",
+              "text": "Of course. I’ll send you the confirmed ventilation details and realistic instalment estimate once they’re available, so you can assess whether Pearl Residences is a fit for your family."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?",
+              "customer_stance": "neutral",
+              "agent_reply": "For a family home around Seberang Jaya, Pearl Residences may be worth considering. Phase 1 has a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Would that size work for your household, or are you looking for more space?",
+              "action": "REPLY",
+              "sales_move": "POSITION",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8439,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14329,
+                "usage_token_source": "provider",
+                "latency_ms": 1494,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.8916
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.8381
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.7871
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.7519
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.7286
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.7086
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.7054
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.6565
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.4692
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.4319
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.3956
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.3832
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.1676
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.1058
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0844
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0763
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0661
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.0526
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0525
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.0485
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.0415
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.0354
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.0269
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0263
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.0206
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0193
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.0133
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.0126
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0098
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0097
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0096
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0062
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                  "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                  "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                  "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                  "knowledge/project/pearlmont/01_facts/unit-and-layout.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 2227,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2224,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 912,
+                "output_tokens_details": {
+                  "reasoning_tokens": 545
+                },
+                "total_tokens": 3139
+              },
+              "agent_latency_ms": 13779,
+              "customer_next_stance": "doubtful",
+              "customer_simulator_usage": {
+                "input_tokens": 385,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 235,
+                "output_tokens_details": {
+                  "reasoning_tokens": 160
+                },
+                "total_tokens": 620
+              },
+              "customer_simulator_latency_ms": 4121
+            },
+            {
+              "turn": 2,
+              "customer": "900 sq. ft. might work for the four of us. What would the monthly payment roughly be, and are there schools and daily shops nearby?",
+              "customer_stance": "doubtful",
+              "agent_reply": "For daily shopping, the project materials point to Sunway Carnival Mall and Chai Leng Park, though I don’t have verified distances to quote. I don’t have a confirmed nearby-school list either. I’d rather not guess the monthly instalment without current pricing and financing assumptions, so I’ll check an up-to-date estimate and the school information for you.",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8545,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14544,
+                "usage_token_source": "provider",
+                "latency_ms": 1040,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.8953
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.8583
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.8459
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.8414
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.7888
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.7153
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.6658
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.6353
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.6254
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.6244
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.6144
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.4097
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.3766
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.3016
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.2084
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.2061
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.2038
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.2028
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.1612
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.1294
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.1288
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.0413
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0335
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0309
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0282
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0258
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0236
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0226
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0149
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0137
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0097
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0092
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                  "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                  "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                  "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 2515,
+                "input_tokens_details": {
+                  "cache_write_tokens": 1460,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 1467,
+                "output_tokens_details": {
+                  "reasoning_tokens": 1034
+                },
+                "total_tokens": 3982
+              },
+              "agent_latency_ms": 18735,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 501,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 300,
+                "output_tokens_details": {
+                  "reasoning_tokens": 220
+                },
+                "total_tokens": 801
+              },
+              "customer_simulator_latency_ms": 4733
+            },
+            {
+              "turn": 3,
+              "customer": "Thanks, please do check. Monthly costs are important for us—could you include maintenance fees in the estimate too? The school information would help as well, since we have two school-age children.",
+              "customer_stance": "interested",
+              "agent_reply": "Yes—based on the 900 sq. ft. layout, maintenance at RM0.18 per sq. ft. comes to about RM162/month, inclusive of the sinking fund. That’s maintenance only, not the loan instalment or other costs. Pearl Residences also has a planned 25-storey school for SK and SMK under MOE, expected to be completed with Phase 1. I’m still waiting on the current pricing and financing assumptions for an instalment estimate, and confirmed information on nearby schools; I don’t want to guess those.",
+              "action": "REPLY",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8670,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14854,
+                "usage_token_source": "provider",
+                "latency_ms": 1550,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.9571
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.8904
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.8271
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.8267
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.7576
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.6804
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.6188
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.4861
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.4636
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.3997
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.3358
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.2574
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.2497
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.2465
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.244
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.1658
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.1586
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.1547
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.1346
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.1152
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0907
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.0738
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0538
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0473
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0342
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0192
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0148
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0146
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0131
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0116
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0103
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0101
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                  "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                  "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                  "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 2881,
+                "input_tokens_details": {
+                  "cache_write_tokens": 1826,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 1699,
+                "output_tokens_details": {
+                  "reasoning_tokens": 1235
+                },
+                "total_tokens": 4580
+              },
+              "agent_latency_ms": 20409,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 667,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 356,
+                "output_tokens_details": {
+                  "reasoning_tokens": 257
+                },
+                "total_tokens": 1023
+              },
+              "customer_simulator_latency_ms": 4567
+            },
+            {
+              "turn": 4,
+              "customer": "Thanks, RM162 for maintenance is helpful. Having an SK/SMK on site sounds convenient—do you know if it’s confirmed, or still only planned? Please let me know once you have a realistic instalment estimate too; we’re trying to keep the total monthly cost manageable.",
+              "customer_stance": "interested",
+              "agent_reply": "It’s still planned, not confirmed or completed. The information I have describes an MOE SK/SMK school, expected to be completed with Phase 1. I’m still waiting for current pricing and financing assumptions before I can give you a realistic instalment estimate. Once verified, I’ll share it so you can consider it alongside the RM162 monthly maintenance.",
+              "action": "REPLY",
+              "sales_move": "HANDLE",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8862,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 15258,
+                "usage_token_source": "provider",
+                "latency_ms": 1168,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.9363
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.8726
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.8642
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.7664
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.7447
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.7371
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.6532
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.4178
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.3354
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.2976
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.2716
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.2681
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.255
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.1872
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.1695
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.138
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.1325
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.1323
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.1103
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.0865
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.0829
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0331
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0265
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.022
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0204
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0192
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0173
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0161
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0128
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0107
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0099
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0083
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                  "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                  "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                  "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                  "knowledge/project/pearlmont/02_commercial/financing-and-booking.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 3157,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2102,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 861,
+                "output_tokens_details": {
+                  "reasoning_tokens": 576
+                },
+                "total_tokens": 4018
+              },
+              "agent_latency_ms": 11559,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 812,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 457,
+                "output_tokens_details": {
+                  "reasoning_tokens": 378
+                },
+                "total_tokens": 1269
+              },
+              "customer_simulator_latency_ms": 5432
+            },
+            {
+              "turn": 5,
+              "customer": "Okay, please send the estimate once you’ve checked. Could you also find out whether there are landscaped or open green spaces, and how the units are ventilated? Those would be useful for our children.",
+              "customer_stance": "interested",
+              "agent_reply": "The project plans describe roughly 10 acres of landscaped space on the Level 9 facilities deck. The residents’ podium landscape is separated from the clubhouse areas, which are pay-per-use. I don’t have verified details on how the units are ventilated yet, so I’ll check rather than guess. The realistic instalment estimate is still pending verification too; I’ll share it once I have the figures and assumptions.",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8993,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 15566,
+                "usage_token_source": "provider",
+                "latency_ms": 1384,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.9598
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.883
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.7922
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.6944
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.6488
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.6461
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.6281
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.5139
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.3986
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.3219
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.3187
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.3183
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.3178
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.2316
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.1965
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.187
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.1656
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.1539
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.1423
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.1402
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.119
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.0935
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.0829
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0609
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0303
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0296
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.018
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0178
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0171
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0161
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0084
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0081
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                  "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                  "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                  "knowledge/project/pearlmont/03_sales/selling-angles.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 3278,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2223,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 1130,
+                "output_tokens_details": {
+                  "reasoning_tokens": 749
+                },
+                "total_tokens": 4408
+              },
+              "agent_latency_ms": 16163,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 950,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 354,
+                "output_tokens_details": {
+                  "reasoning_tokens": 262
+                },
+                "total_tokens": 1304
+              },
+              "customer_simulator_latency_ms": 4466
+            },
+            {
+              "turn": 6,
+              "customer": "Thanks, the landscaped space sounds nice. Could you check whether the units have opening windows or cross-ventilation? One of our children has asthma, so airflow matters to us. Please send the cost estimate once you’ve verified it too.",
+              "customer_stance": "interested",
+              "agent_reply": "I understand—airflow is especially important with asthma in the family. The project material describes a natural-ventilation design, but it doesn’t confirm whether the 900 sq. ft. units have opening windows or cross-ventilation, so I won’t assume. I’ve already asked for that detail and a realistic instalment estimate; both are still pending, and I’ll share them once verified.",
+              "action": "REPLY",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 9141,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 15921,
+                "usage_token_source": "provider",
+                "latency_ms": 1446,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.9391
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.7889
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.739
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.6837
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.636
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.5494
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.461
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.4489
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.4256
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.4205
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.4089
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.3662
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.3102
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.2824
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.2694
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.2522
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.2313
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.1939
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.1775
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.1645
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.1629
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.0645
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0481
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.0476
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0308
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0255
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0232
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0224
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0204
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0191
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0104
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0102
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                  "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                  "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                  "knowledge/project/pearlmont/03_sales/selling-angles.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 3636,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2581,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 1310,
+                "output_tokens_details": {
+                  "reasoning_tokens": 929
+                },
+                "total_tokens": 4946
+              },
+              "agent_latency_ms": 15036,
+              "customer_next_stance": "neutral",
+              "customer_simulator_usage": {
+                "input_tokens": 1093,
+                "input_tokens_details": {
+                  "cache_write_tokens": 1090,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 188,
+                "output_tokens_details": {
+                  "reasoning_tokens": 118
+                },
+                "total_tokens": 1281
+              },
+              "customer_simulator_latency_ms": 4394
+            },
+            {
+              "turn": 7,
+              "customer": "Okay, thanks. Please send both when you have confirmed details—I’ll wait for those before deciding whether it’s a fit for us.",
+              "customer_stance": "neutral",
+              "agent_reply": "Of course. I’ll send you the confirmed ventilation details and realistic instalment estimate once they’re available, so you can assess whether Pearl Residences is a fit for your family.",
+              "action": "REPLY",
+              "sales_move": "GIVE_SPACE",
+              "buyer_signal": "NEUTRAL",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 9265,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 16204,
+                "usage_token_source": "provider",
+                "latency_ms": 4341,
+                "classifications": {
+                  "purchase_purpose": "OWN_STAY",
+                  "buyer_signal": "NEUTRAL",
+                  "response_stance": "NEUTRAL",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.8357
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.7525
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.6987
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.5836
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.5679
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.5001
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.4244
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.4153
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.4153
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.3317
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.3031
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.2916
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.2586
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.2348
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.2157
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.2105
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.2022
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.1985
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.1865
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.1307
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.1261
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.0716
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.0413
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.026
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0241
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.022
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0194
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0151
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.015
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0126
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.009
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0085
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                  "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                  "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                  "knowledge/project/pearlmont/02_commercial/pricing.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 3624,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2569,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 496,
+                "output_tokens_details": {
+                  "reasoning_tokens": 256
+                },
+                "total_tokens": 4120
+              },
+              "agent_latency_ms": 13804,
+              "customer_next_stance": "silent",
+              "customer_simulator_usage": {
+                "input_tokens": 1170,
+                "input_tokens_details": {
+                  "cache_write_tokens": 1167,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 105,
+                "output_tokens_details": {
+                  "reasoning_tokens": 64
+                },
+                "total_tokens": 1275
+              },
+              "customer_simulator_latency_ms": 2524
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 7,
+          "customer_profile_for_blind_judge": {
+            "background": "A married couple with two school-age children is looking for a home in Seberang Jaya.",
+            "needs": "Own stay; three bedrooms; convenient school and daily errands access.",
+            "hidden_motive": "One child has asthma and the parent quietly prioritizes ventilation and green space.",
+            "obstacle": "They fear a high monthly carrying cost.",
+            "acceptable_behavior": "Understand the family use, ask about a real priority, and mention a verified relevant feature only when it fits."
+          },
+          "pair_id": "E01-own-stay-small-family-R1",
+          "blind_judgment": "failed",
+          "judgment_error": {
+            "type": "RuntimeError",
+            "message": "GPT-6 Luna JSON response did not complete."
+          },
+          "composite_score_1_to_5": null
+        },
+        {
+          "arm": "B_CLEF_ROUTED",
+          "scenario_id": "E05-layout-four-bedrooms",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "We need four bedrooms. Does the project have that layout?"
+            },
+            {
+              "speaker": "agent",
+              "text": "No—Pearl Residences’ Phase 1 units are all 3-bedroom, 2-bathroom layouts, so they wouldn’t meet your four-bedroom requirement."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "We need four bedrooms. Does the project have that layout?",
+              "customer_stance": "neutral",
+              "agent_reply": "No—Pearl Residences’ Phase 1 units are all 3-bedroom, 2-bathroom layouts, so they wouldn’t meet your four-bedroom requirement.",
+              "action": "REPLY",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8431,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14319,
+                "usage_token_source": "provider",
+                "latency_ms": 1430,
+                "classifications": {
+                  "purchase_purpose": "UNKNOWN",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.9713
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.838
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.5142
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.4688
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.3805
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.3131
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.2467
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.1463
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.0861
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0483
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0467
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.0427
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.0353
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.0339
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.0327
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.0214
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0179
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.0171
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.017
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0165
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0163
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0142
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.0135
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.013
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.0128
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.0117
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0113
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0101
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.0099
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0079
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0078
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.007
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                  "knowledge/project/pearlmont/03_sales/unit-fit.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 2086,
+                "input_tokens_details": {
+                  "cache_write_tokens": 1031,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 724,
+                "output_tokens_details": {
+                  "reasoning_tokens": 449
+                },
+                "total_tokens": 2810
+              },
+              "agent_latency_ms": 14990,
+              "customer_next_stance": "ending",
+              "customer_simulator_usage": {
+                "input_tokens": 333,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 114,
+                "output_tokens_details": {
+                  "reasoning_tokens": 63
+                },
+                "total_tokens": 447
+              },
+              "customer_simulator_latency_ms": 2750
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A multigenerational household of five is planning a move.",
+            "needs": "Four separate bedrooms and enough privacy for an older parent.",
+            "hidden_motive": "They would consider alternatives only if an actual layout can work.",
+            "obstacle": "The verified standard unit has three bedrooms.",
+            "acceptable_behavior": "Acknowledge the mismatch directly and explore only if the customer invites alternatives."
+          },
+          "pair_id": "E05-layout-four-bedrooms-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 5,
+              "natural_continuation": 5,
+              "valuable_questions": 5,
+              "relevant_advantages": 5,
+              "customer_interest": 5,
+              "non_repetition": 5,
+              "factual_accuracy": 4,
+              "appropriate_pacing": 5
+            },
+            "evidence": {
+              "intent_understanding": "Directly addresses the four-bedroom requirement and says the three-bedroom units would not meet it.",
+              "natural_continuation": "Responds clearly to “Does the project have that layout?” without adding unrelated material.",
+              "valuable_questions": "Does not ask an unnecessary follow-up; the customer has not invited exploration of alternatives.",
+              "relevant_advantages": "Does not introduce unrelated selling points when the stated layout is a mismatch.",
+              "customer_interest": "Gives the customer a candid answer that helps them decide whether to continue.",
+              "non_repetition": "States the mismatch once, without repeating a pitch or asking for information already provided.",
+              "factual_accuracy": "The 3-bedroom, 2-bathroom configuration matches the supplied knowledge, but the agent calls the project “Pearl Residences” rather than “SkyWorld Pearlmont.”",
+              "appropriate_pacing": "Stops after answering directly and does not push a viewing or alternatives."
+            },
+            "factual_issues": [
+              "The project name “Pearl Residences” is unsupported by the supplied knowledge, which identifies the project as SkyWorld Pearlmont."
+            ],
+            "overall_note": "A concise, appropriately direct response that acknowledges the genuine bedroom-count mismatch and respects the customer’s preference not to explore alternatives unless invited. The only factual concern is the project-name discrepancy.",
+            "usage": {
+              "input_tokens": 20340,
+              "input_tokens_details": {
+                "cache_write_tokens": 20337,
+                "cached_tokens": 0
+              },
+              "output_tokens": 719,
+              "output_tokens_details": {
+                "reasoning_tokens": 338
+              },
+              "total_tokens": 21059
+            },
+            "latency_ms": 8766
+          },
+          "composite_score_1_to_5": 4.875
+        },
+        {
+          "arm": "A_SALES_CORE_V2",
+          "scenario_id": "E05-layout-four-bedrooms",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "We need four bedrooms. Does the project have that layout?"
+            },
+            {
+              "speaker": "agent",
+              "text": "Pearl Residences Phase 1 doesn’t have a four-bedroom layout; the units are 900 sq. ft. with three bedrooms and two bathrooms. If four bedrooms is essential, it won’t match your requirement. Would three bedrooms still be worth considering, or is four a must-have?"
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "We need four bedrooms. Does the project have that layout?",
+              "customer_stance": "neutral",
+              "agent_reply": "Pearl Residences Phase 1 doesn’t have a four-bedroom layout; the units are 900 sq. ft. with three bedrooms and two bathrooms. If four bedrooms is essential, it won’t match your requirement. Would three bedrooms still be worth considering, or is four a must-have?",
+              "action": "REPLY",
+              "sales_move": "HANDLE",
+              "buyer_signal": "QUESTION",
+              "clef": null,
+              "retrieved_knowledge_paths": [
+                "01_facts/unit-and-layout.md"
+              ],
+              "openai_usage": {
+                "input_tokens": 2215,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2212,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 871,
+                "output_tokens_details": {
+                  "reasoning_tokens": 490
+                },
+                "total_tokens": 3086
+              },
+              "agent_latency_ms": 10198,
+              "customer_next_stance": "ending",
+              "customer_simulator_usage": {
+                "input_tokens": 358,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 152,
+                "output_tokens_details": {
+                  "reasoning_tokens": 98
+                },
+                "total_tokens": 510
+              },
+              "customer_simulator_latency_ms": 2976
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A multigenerational household of five is planning a move.",
+            "needs": "Four separate bedrooms and enough privacy for an older parent.",
+            "hidden_motive": "They would consider alternatives only if an actual layout can work.",
+            "obstacle": "The verified standard unit has three bedrooms.",
+            "acceptable_behavior": "Acknowledge the mismatch directly and explore only if the customer invites alternatives."
+          },
+          "pair_id": "E05-layout-four-bedrooms-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 4,
+              "natural_continuation": 3,
+              "valuable_questions": 2,
+              "relevant_advantages": 5,
+              "customer_interest": 3,
+              "non_repetition": 2,
+              "factual_accuracy": 3,
+              "appropriate_pacing": 3
+            },
+            "evidence": {
+              "intent_understanding": "Directly acknowledges that the project has no four-bedroom layout and says it will not match the requirement.",
+              "natural_continuation": "Answers the question clearly, but then asks whether three bedrooms are worth considering despite the customer saying, “We need four bedrooms.”",
+              "valuable_questions": "The follow-up about considering three bedrooms adds little after the customer has already stated the four-bedroom need.",
+              "relevant_advantages": "Does not introduce unrelated project advantages or try to sell around the mismatch.",
+              "customer_interest": "The candid mismatch statement is useful, but the follow-up steers toward a smaller layout rather than respecting the stated requirement.",
+              "non_repetition": "Asks “or is four a must-have?” after the customer has already said, “We need four bedrooms.”",
+              "factual_accuracy": "The stated 900 sq. ft., three-bedroom, two-bathroom configuration matches the supplied knowledge, but the project is named “Pearl Residences” rather than “SkyWorld Pearlmont.”",
+              "appropriate_pacing": "Does not push for a viewing, but raises an alternative before the customer invites one."
+            },
+            "factual_issues": [
+              "The agent calls the project “Pearl Residences Phase 1”; the supplied project knowledge identifies it as SkyWorld Pearlmont."
+            ],
+            "overall_note": "The agent is transparent about the bedroom mismatch and gives accurate unit details, but asks about a three-bedroom alternative even though the customer has already stated a four-bedroom need and the context calls for exploring alternatives only if invited.",
+            "usage": {
+              "input_tokens": 20365,
+              "input_tokens_details": {
+                "cache_write_tokens": 20362,
+                "cached_tokens": 0
+              },
+              "output_tokens": 1116,
+              "output_tokens_details": {
+                "reasoning_tokens": 689
+              },
+              "total_tokens": 21481
+            },
+            "latency_ms": 12421
+          },
+          "composite_score_1_to_5": 3.125
+        },
+        {
+          "arm": "B_CLEF_ROUTED",
+          "scenario_id": "E08-cold-short-replies",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "Can you send me a very short overview? I'm at work."
+            },
+            {
+              "speaker": "agent",
+              "text": "Sure — Pearl Residences offers 900 sq. ft. homes with 3 bedrooms, 2 bathrooms and a balcony. That’s the quick overview for now."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "Can you send me a very short overview? I'm at work.",
+              "customer_stance": "neutral",
+              "agent_reply": "Sure — Pearl Residences offers 900 sq. ft. homes with 3 bedrooms, 2 bathrooms and a balcony. That’s the quick overview for now.",
+              "action": "REPLY",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8433,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14316,
+                "usage_token_source": "provider",
+                "latency_ms": 2320,
+                "classifications": {
+                  "purchase_purpose": "UNKNOWN",
+                  "buyer_signal": "QUESTION",
+                  "response_stance": "QUESTION",
+                  "intent_level": "LOW"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.9221
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.5825
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.5363
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.4126
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.3848
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.3811
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.363
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.2609
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.2188
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.1904
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.1753
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0901
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.0864
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.069
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0659
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0639
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0488
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.0478
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.0469
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0438
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.0436
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.0353
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0323
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.0307
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0203
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.0195
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.0139
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.0124
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0102
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0101
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0078
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0059
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/01_facts/overview.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 1986,
+                "input_tokens_details": {
+                  "cache_write_tokens": 931,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 471,
+                "output_tokens_details": {
+                  "reasoning_tokens": 251
+                },
+                "total_tokens": 2457
+              },
+              "agent_latency_ms": 9455,
+              "customer_next_stance": "ending",
+              "customer_simulator_usage": {
+                "input_tokens": 326,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 101,
+                "output_tokens_details": {
+                  "reasoning_tokens": 56
+                },
+                "total_tokens": 427
+              },
+              "customer_simulator_latency_ms": 2245
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A busy prospect asked for information during a work break.",
+            "needs": "A very brief overview, if any.",
+            "hidden_motive": "They are testing whether the agent will spam them.",
+            "obstacle": "Low attention and no established need.",
+            "acceptable_behavior": "Keep it short, don't interrogate, and accept a neutral or quiet response."
+          },
+          "pair_id": "E08-cold-short-replies-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 5,
+              "natural_continuation": 5,
+              "valuable_questions": 5,
+              "relevant_advantages": 4,
+              "customer_interest": 4,
+              "non_repetition": 5,
+              "factual_accuracy": 3,
+              "appropriate_pacing": 5
+            },
+            "evidence": {
+              "intent_understanding": "The customer asks for a “very short overview” while at work; the agent gives a single concise summary.",
+              "natural_continuation": "“Sure” followed by the requested overview responds directly and coherently.",
+              "valuable_questions": "No question is asked, appropriately avoiding extra demands on a busy customer.",
+              "relevant_advantages": "The unit size and bedroom/bathroom configuration are directly relevant to the requested overview.",
+              "customer_interest": "The answer is useful without pressure or manufactured urgency, though it does not offer an optional next step.",
+              "non_repetition": "The agent gives one brief overview and does not repeat itself.",
+              "factual_accuracy": "The stated 900 sq. ft., 3-bedroom, 2-bathroom configuration and balcony match the supplied knowledge; “Pearl Residences” does not match the documented project name, SkyWorld Pearlmont.",
+              "appropriate_pacing": "The response ends after the short overview, giving the customer space while they are at work."
+            },
+            "factual_issues": [
+              "“Pearl Residences” is unsupported by the supplied knowledge, which identifies the project as SkyWorld Pearlmont."
+            ],
+            "overall_note": "A well-paced, concise response that respects the customer’s limited attention. The unit details are supported, but the project name should be checked.",
+            "usage": {
+              "input_tokens": 20333,
+              "input_tokens_details": {
+                "cache_write_tokens": 20330,
+                "cached_tokens": 0
+              },
+              "output_tokens": 625,
+              "output_tokens_details": {
+                "reasoning_tokens": 241
+              },
+              "total_tokens": 20958
+            },
+            "latency_ms": 6997
+          },
+          "composite_score_1_to_5": 4.5
+        },
+        {
+          "arm": "A_SALES_CORE_V2",
+          "scenario_id": "E08-cold-short-replies",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "Can you send me a very short overview? I'm at work."
+            },
+            {
+              "speaker": "agent",
+              "text": "Sure—quick overview: Pearl Residences’ Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "Can you send me a very short overview? I'm at work.",
+              "customer_stance": "neutral",
+              "agent_reply": "Sure—quick overview: Pearl Residences’ Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony.",
+              "action": "REPLY",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "clef": null,
+              "retrieved_knowledge_paths": [
+                "01_facts/specifications-and-finishes.md",
+                "01_facts/unit-and-layout.md"
+              ],
+              "openai_usage": {
+                "input_tokens": 2337,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2334,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 558,
+                "output_tokens_details": {
+                  "reasoning_tokens": 268
+                },
+                "total_tokens": 2895
+              },
+              "agent_latency_ms": 6422,
+              "customer_next_stance": "ending",
+              "customer_simulator_usage": {
+                "input_tokens": 324,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 150,
+                "output_tokens_details": {
+                  "reasoning_tokens": 103
+                },
+                "total_tokens": 474
+              },
+              "customer_simulator_latency_ms": 2802
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A busy prospect asked for information during a work break.",
+            "needs": "A very brief overview, if any.",
+            "hidden_motive": "They are testing whether the agent will spam them.",
+            "obstacle": "Low attention and no established need.",
+            "acceptable_behavior": "Keep it short, don't interrogate, and accept a neutral or quiet response."
+          },
+          "pair_id": "E08-cold-short-replies-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 5,
+              "natural_continuation": 5,
+              "valuable_questions": 5,
+              "relevant_advantages": 5,
+              "customer_interest": 4,
+              "non_repetition": 5,
+              "factual_accuracy": 3,
+              "appropriate_pacing": 5
+            },
+            "evidence": {
+              "intent_understanding": "The customer asked for a very short overview while at work; the agent gave just one concise sentence.",
+              "natural_continuation": "“Sure—quick overview” directly acknowledges the request and stays conversational.",
+              "valuable_questions": "No follow-up question; appropriate given the customer’s low attention and no established need.",
+              "relevant_advantages": "The overview gives the requested basic unit facts: 900 sq ft, 3 bedrooms, 2 bathrooms, and a balcony.",
+              "customer_interest": "Provides useful essentials without pressure or manufactured urgency.",
+              "non_repetition": "The agent gives one short overview and does not repeat or extend the pitch.",
+              "factual_accuracy": "The unit details match the knowledge, but the agent calls the project “Pearl Residences”; the supplied knowledge identifies it as SkyWorld Pearlmont.",
+              "appropriate_pacing": "The response is brief and does not push for a viewing or further engagement."
+            },
+            "factual_issues": [
+              "The project name “Pearl Residences” is unsupported and differs from the supplied project name, SkyWorld Pearlmont. The stated 900 sq ft, 3-bedroom, 2-bathroom configuration with a balcony is supported."
+            ],
+            "overall_note": "A well-paced, minimal response that respects the customer’s work break. The only notable issue is the project name, which should be verified or corrected.",
+            "usage": {
+              "input_tokens": 20331,
+              "input_tokens_details": {
+                "cache_write_tokens": 20328,
+                "cached_tokens": 0
+              },
+              "output_tokens": 683,
+              "output_tokens_details": {
+                "reasoning_tokens": 288
+              },
+              "total_tokens": 21014
+            },
+            "latency_ms": 7313
+          },
+          "composite_score_1_to_5": 4.625
+        },
+        {
+          "arm": "B_CLEF_ROUTED",
+          "scenario_id": "E10-viewing-saturday",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "We're interested in visiting the show unit this Saturday. How do we arrange that?"
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "We're interested in visiting the show unit this Saturday. How do we arrange that?",
+              "customer_stance": "neutral",
+              "action": "APPOINTMENT_HANDOFF",
+              "handoff_reason": "OPERATIONAL_BOOKING",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8436,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14331,
+                "usage_token_source": "provider",
+                "latency_ms": 1325,
+                "classifications": {
+                  "purchase_purpose": "UNKNOWN",
+                  "buyer_signal": "POSITIVE",
+                  "response_stance": "QUESTION",
+                  "intent_level": "READY"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.8797
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.8408
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.2388
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.2128
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.1729
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.1637
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.1567
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.1526
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.1269
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.104
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.1025
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.0778
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.0587
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.0577
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.0534
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0462
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.0411
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.0358
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0239
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.0237
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.0217
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.0184
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0172
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0171
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0169
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.0162
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.0158
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.0136
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0128
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0119
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0115
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0092
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+                ]
+              },
+              "openai_usage": {
+                "input_tokens": 1993,
+                "input_tokens_details": {
+                  "cache_write_tokens": 938,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 635,
+                "output_tokens_details": {
+                  "reasoning_tokens": 338
+                },
+                "total_tokens": 2628
+              },
+              "agent_latency_ms": 10506
+            }
+          ],
+          "end_reason": "formal_handoff",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A couple has narrowed down two local developments and is free this Saturday.",
+            "needs": "See a representative layout and assess whether the space works.",
+            "hidden_motive": "One partner is ready to visit; the other is undecided.",
+            "obstacle": "No live calendar or slot confirmation is connected.",
+            "acceptable_behavior": "Respond to viewing interest and route actual booking to the existing human process without promising a slot."
+          },
+          "pair_id": "E10-viewing-saturday-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 1,
+              "natural_continuation": 1,
+              "valuable_questions": 3,
+              "relevant_advantages": 3,
+              "customer_interest": 1,
+              "non_repetition": 3,
+              "factual_accuracy": 3,
+              "appropriate_pacing": 1
+            },
+            "evidence": {
+              "intent_understanding": "No assistant response is provided to show understanding of the customer's wish to visit and assess the layout.",
+              "natural_continuation": "The transcript ends after the customer's question; there is no reply.",
+              "valuable_questions": "No assistant question is present, so whether a question would help cannot be assessed.",
+              "relevant_advantages": "No assistant message introduces a project advantage relevant to viewing a layout.",
+              "customer_interest": "No response helps the customer arrange or learn about a visit.",
+              "non_repetition": "There is no assistant content to repeat or not repeat; the criterion cannot be assessed.",
+              "factual_accuracy": "No assistant claims are present to fact-check.",
+              "appropriate_pacing": "No response moves toward a viewing or routes booking through a human."
+            },
+            "factual_issues": [],
+            "overall_note": "Only the customer's opening inquiry is included. The absence of an assistant reply leaves most interaction criteria un demonstrated; no unsupported or contradictory factual claims were made.",
+            "usage": {
+              "input_tokens": 20309,
+              "input_tokens_details": {
+                "cache_write_tokens": 20306,
+                "cached_tokens": 0
+              },
+              "output_tokens": 826,
+              "output_tokens_details": {
+                "reasoning_tokens": 516
+              },
+              "total_tokens": 21135
+            },
+            "latency_ms": 9717
+          },
+          "composite_score_1_to_5": 2.0
+        },
+        {
+          "arm": "A_SALES_CORE_V2",
+          "scenario_id": "E10-viewing-saturday",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "We're interested in visiting the show unit this Saturday. How do we arrange that?"
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "We're interested in visiting the show unit this Saturday. How do we arrange that?",
+              "customer_stance": "neutral",
+              "action": "APPOINTMENT_HANDOFF",
+              "handoff_reason": "OPERATIONAL_BOOKING",
+              "clef": null,
+              "openai_usage": {
+                "input_tokens": 2214,
+                "input_tokens_details": {
+                  "cache_write_tokens": 2211,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 753,
+                "output_tokens_details": {
+                  "reasoning_tokens": 376
+                },
+                "total_tokens": 2967
+              },
+              "agent_latency_ms": 7891
+            }
+          ],
+          "end_reason": "formal_handoff",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A couple has narrowed down two local developments and is free this Saturday.",
+            "needs": "See a representative layout and assess whether the space works.",
+            "hidden_motive": "One partner is ready to visit; the other is undecided.",
+            "obstacle": "No live calendar or slot confirmation is connected.",
+            "acceptable_behavior": "Respond to viewing interest and route actual booking to the existing human process without promising a slot."
+          },
+          "pair_id": "E10-viewing-saturday-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 1,
+              "natural_continuation": 1,
+              "valuable_questions": 1,
+              "relevant_advantages": 1,
+              "customer_interest": 1,
+              "non_repetition": 3,
+              "factual_accuracy": 3,
+              "appropriate_pacing": 1
+            },
+            "evidence": {
+              "intent_understanding": "Only the customer’s request is present; there is no reply showing recognition of their viewing need.",
+              "natural_continuation": "No assistant response follows the customer’s question.",
+              "valuable_questions": "No assistant turn is present, so no helpful clarifying question is asked.",
+              "relevant_advantages": "No project advantage is mentioned or connected to the customer’s wish to assess the layout.",
+              "customer_interest": "No response makes arranging or learning about a visit easier.",
+              "non_repetition": "There is no repeated pitch, but also no assistant response to assess.",
+              "factual_accuracy": "No assistant factual claims are present; accuracy cannot be meaningfully demonstrated.",
+              "appropriate_pacing": "The customer expresses interest in visiting Saturday, but no response acknowledges or routes the request."
+            },
+            "factual_issues": [],
+            "overall_note": "The transcript contains only the customer’s opening message, so there is no customer-facing response to evaluate. The customer receives no viewing-arrangement guidance or human handoff.",
+            "usage": {
+              "input_tokens": 20309,
+              "input_tokens_details": {
+                "cache_write_tokens": 0,
+                "cached_tokens": 20306
+              },
+              "output_tokens": 848,
+              "output_tokens_details": {
+                "reasoning_tokens": 531
+              },
+              "total_tokens": 21157
+            },
+            "latency_ms": 9852
+          },
+          "composite_score_1_to_5": 1.5
+        },
+        {
+          "arm": "B_CLEF_ROUTED",
+          "scenario_id": "E20-explicit-need-time",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "This is a lot to take in. I need some time to digest it."
+            },
+            {
+              "speaker": "agent",
+              "text": "Of course—take your time to digest it. No rush. I’m here if you’d like to pick it up again later."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "This is a lot to take in. I need some time to digest it.",
+              "customer_stance": "neutral",
+              "agent_reply": "Of course—take your time to digest it. No rush. I’m here if you’d like to pick it up again later.",
+              "action": "REPLY",
+              "sales_move": "GIVE_SPACE",
+              "buyer_signal": "NEUTRAL",
+              "clef": {
+                "model": "clef",
+                "usage": {
+                  "input_tokens": 8435,
+                  "output_tokens": 0
+                },
+                "estimated_input_tokens": 14319,
+                "usage_token_source": "provider",
+                "latency_ms": 1038,
+                "classifications": {
+                  "purchase_purpose": "UNKNOWN",
+                  "buyer_signal": "NEUTRAL",
+                  "response_stance": "OVERWHELMED",
+                  "intent_level": "MEDIUM"
+                },
+                "knowledge_routes": [
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/sales-judgment.md",
+                    "probability_relevant": 0.9129
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/buyer-profiles.md",
+                    "probability_relevant": 0.2633
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/objection-to-usp-map.md",
+                    "probability_relevant": 0.2071
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/selling-angles.md",
+                    "probability_relevant": 0.1251
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+                    "probability_relevant": 0.113
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/overview.md",
+                    "probability_relevant": 0.0902
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/viewing-close.md",
+                    "probability_relevant": 0.0844
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+                    "probability_relevant": 0.0779
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/unit-fit.md",
+                    "probability_relevant": 0.0755
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+                    "probability_relevant": 0.0655
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+                    "probability_relevant": 0.0591
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+                    "probability_relevant": 0.0518
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+                    "probability_relevant": 0.0481
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+                    "probability_relevant": 0.0456
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+                    "probability_relevant": 0.0426
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+                    "probability_relevant": 0.042
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+                    "probability_relevant": 0.0404
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+                    "probability_relevant": 0.0377
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+                    "probability_relevant": 0.0374
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+                    "probability_relevant": 0.0361
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+                    "probability_relevant": 0.0333
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+                    "probability_relevant": 0.0325
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+                    "probability_relevant": 0.0319
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+                    "probability_relevant": 0.0285
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+                    "probability_relevant": 0.0282
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+                    "probability_relevant": 0.0267
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+                    "probability_relevant": 0.0231
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+                    "probability_relevant": 0.0214
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+                    "probability_relevant": 0.0191
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+                    "probability_relevant": 0.0145
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/sales-conflict-and-ownership.md",
+                    "probability_relevant": 0.0136
+                  },
+                  {
+                    "path": "knowledge/project/pearlmont/04_internal/booking-payment-process.md",
+                    "probability_relevant": 0.0115
+                  }
+                ],
+                "selected_knowledge_paths": [
+                  "knowledge/project/pearlmont/03_sales/sales-judgment.md"
+                ]
+              },
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 1999,
+                "input_tokens_details": {
+                  "cache_write_tokens": 944,
+                  "cached_tokens": 1052
+                },
+                "output_tokens": 334,
+                "output_tokens_details": {
+                  "reasoning_tokens": 114
+                },
+                "total_tokens": 2333
+              },
+              "agent_latency_ms": 5997,
+              "customer_next_stance": "ending",
+              "customer_simulator_usage": {
+                "input_tokens": 323,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 171,
+                "output_tokens_details": {
+                  "reasoning_tokens": 114
+                },
+                "total_tokens": 494
+              },
+              "customer_simulator_latency_ms": 3148
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A buyer says the information is too much and they need time.",
+            "needs": "Space to review at their own pace.",
+            "hidden_motive": "They remain interested but are comparing with a spouse.",
+            "obstacle": "They will disengage if asked another qualification question.",
+            "acceptable_behavior": "Acknowledge and stop pitching or questioning for now."
+          },
+          "pair_id": "E20-explicit-need-time-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 5,
+              "natural_continuation": 5,
+              "valuable_questions": 5,
+              "relevant_advantages": 5,
+              "customer_interest": 5,
+              "non_repetition": 5,
+              "factual_accuracy": 5,
+              "appropriate_pacing": 5
+            },
+            "evidence": {
+              "intent_understanding": "Acknowledges the buyer needs time: “take your time to digest it. No rush.”",
+              "natural_continuation": "Directly and naturally responds to the buyer’s request to digest the information.",
+              "valuable_questions": "Does not ask another question after the buyer signals they need space.",
+              "relevant_advantages": "Refrains from introducing project advantages when the buyer is asking for time.",
+              "customer_interest": "Leaves the door open with “I’m here if you’d like to pick it up again later,” without pressure.",
+              "non_repetition": "No repeated pitch or re-asked information; the reply stays brief.",
+              "factual_accuracy": "Makes no project claims or commitments that need factual verification.",
+              "appropriate_pacing": "Stops the conversation’s sales momentum and gives the buyer the time they requested."
+            },
+            "factual_issues": [],
+            "overall_note": "A concise, considerate response that respects the buyer’s request for space and avoids further questions or pitching.",
+            "usage": {
+              "input_tokens": 20330,
+              "input_tokens_details": {
+                "cache_write_tokens": 20327,
+                "cached_tokens": 0
+              },
+              "output_tokens": 488,
+              "output_tokens_details": {
+                "reasoning_tokens": 175
+              },
+              "total_tokens": 20818
+            },
+            "latency_ms": 6052
+          },
+          "composite_score_1_to_5": 5.0
+        },
+        {
+          "arm": "A_SALES_CORE_V2",
+          "scenario_id": "E20-explicit-need-time",
+          "transcript": [
+            {
+              "speaker": "customer",
+              "text": "This is a lot to take in. I need some time to digest it."
+            },
+            {
+              "speaker": "agent",
+              "text": "Of course—take your time to digest it. No pressure to decide now. I’m here if you’d like to clarify anything later."
+            }
+          ],
+          "turns": [
+            {
+              "turn": 1,
+              "customer": "This is a lot to take in. I need some time to digest it.",
+              "customer_stance": "neutral",
+              "agent_reply": "Of course—take your time to digest it. No pressure to decide now. I’m here if you’d like to clarify anything later.",
+              "action": "REPLY",
+              "sales_move": "GIVE_SPACE",
+              "buyer_signal": "NEUTRAL",
+              "clef": null,
+              "retrieved_knowledge_paths": [],
+              "openai_usage": {
+                "input_tokens": 1927,
+                "input_tokens_details": {
+                  "cache_write_tokens": 1924,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 446,
+                "output_tokens_details": {
+                  "reasoning_tokens": 225
+                },
+                "total_tokens": 2373
+              },
+              "agent_latency_ms": 5800,
+              "customer_next_stance": "interested",
+              "customer_simulator_usage": {
+                "input_tokens": 324,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 284,
+                "output_tokens_details": {
+                  "reasoning_tokens": 221
+                },
+                "total_tokens": 608
+              },
+              "customer_simulator_latency_ms": 4738
+            }
+          ],
+          "end_reason": "customer_ended",
+          "customer_turn_count": 1,
+          "customer_profile_for_blind_judge": {
+            "background": "A buyer says the information is too much and they need time.",
+            "needs": "Space to review at their own pace.",
+            "hidden_motive": "They remain interested but are comparing with a spouse.",
+            "obstacle": "They will disengage if asked another qualification question.",
+            "acceptable_behavior": "Acknowledge and stop pitching or questioning for now."
+          },
+          "pair_id": "E20-explicit-need-time-R1",
+          "blind_judgment": "complete",
+          "judgment": {
+            "scores": {
+              "intent_understanding": 5,
+              "natural_continuation": 5,
+              "valuable_questions": 5,
+              "relevant_advantages": 5,
+              "customer_interest": 5,
+              "non_repetition": 5,
+              "factual_accuracy": 5,
+              "appropriate_pacing": 5
+            },
+            "evidence": {
+              "intent_understanding": "Acknowledges the customer's need for time: “take your time to digest it.”",
+              "natural_continuation": "Responds directly and warmly to the customer's stated overwhelm.",
+              "valuable_questions": "Does not ask another qualification question when the customer needs space.",
+              "relevant_advantages": "Does not introduce an unrelated project pitch; none is needed here.",
+              "customer_interest": "Offers future clarification without pressure: “I’m here if you’d like to clarify anything later.”",
+              "non_repetition": "No repeated pitch or re-asked question.",
+              "factual_accuracy": "Makes no project-specific factual claims or unsupported commitments.",
+              "appropriate_pacing": "Explicitly gives the customer time and does not push for a viewing or decision."
+            },
+            "factual_issues": [],
+            "overall_note": "A concise, considerate response that respects the customer's request for time and avoids further pitching or questioning.",
+            "usage": {
+              "input_tokens": 20331,
+              "input_tokens_details": {
+                "cache_write_tokens": 20328,
+                "cached_tokens": 0
+              },
+              "output_tokens": 415,
+              "output_tokens_details": {
+                "reasoning_tokens": 120
+              },
+              "total_tokens": 20746
+            },
+            "latency_ms": 5193
+          },
+          "composite_score_1_to_5": 5.0
+        }
+      ],
+      "pairs": [
+        {
+          "pair_id": "E01-own-stay-small-family-R1",
+          "scenario_id": "E01-own-stay-small-family",
+          "repeat": 1,
+          "execution_order": [
+            "A_SALES_CORE_V2",
+            "B_CLEF_ROUTED"
+          ],
+          "A_score": null,
+          "B_score": null
+        },
+        {
+          "pair_id": "E05-layout-four-bedrooms-R1",
+          "scenario_id": "E05-layout-four-bedrooms",
+          "repeat": 1,
+          "execution_order": [
+            "B_CLEF_ROUTED",
+            "A_SALES_CORE_V2"
+          ],
+          "B_score": 4.875,
+          "A_score": 3.125
+        },
+        {
+          "pair_id": "E08-cold-short-replies-R1",
+          "scenario_id": "E08-cold-short-replies",
+          "repeat": 1,
+          "execution_order": [
+            "B_CLEF_ROUTED",
+            "A_SALES_CORE_V2"
+          ],
+          "B_score": 4.5,
+          "A_score": 4.625
+        },
+        {
+          "pair_id": "E10-viewing-saturday-R1",
+          "scenario_id": "E10-viewing-saturday",
+          "repeat": 1,
+          "execution_order": [
+            "B_CLEF_ROUTED",
+            "A_SALES_CORE_V2"
+          ],
+          "B_score": 2.0,
+          "A_score": 1.5
+        },
+        {
+          "pair_id": "E20-explicit-need-time-R1",
+          "scenario_id": "E20-explicit-need-time",
+          "repeat": 1,
+          "execution_order": [
+            "B_CLEF_ROUTED",
+            "A_SALES_CORE_V2"
+          ],
+          "B_score": 5.0,
+          "A_score": 5.0
+        }
+      ],
+      "stop_reason": null,
+      "summary": {
+        "arms": {
+          "A_SALES_CORE_V2": {
+            "evaluated_dialogues": 4,
+            "composite_mean_1_to_5": 3.562,
+            "criterion_means_1_to_5": {
+              "intent_understanding": 3.75,
+              "natural_continuation": 3.5,
+              "valuable_questions": 3.25,
+              "relevant_advantages": 4,
+              "customer_interest": 3.25,
+              "non_repetition": 3.75,
+              "factual_accuracy": 3.5,
+              "appropriate_pacing": 3.5
+            },
+            "mean_turns": 1,
+            "end_reasons": {
+              "customer_ended": 3,
+              "formal_handoff": 1
+            }
+          },
+          "B_CLEF_ROUTED": {
+            "evaluated_dialogues": 4,
+            "composite_mean_1_to_5": 4.094,
+            "criterion_means_1_to_5": {
+              "intent_understanding": 4,
+              "natural_continuation": 4,
+              "valuable_questions": 4.5,
+              "relevant_advantages": 4.25,
+              "customer_interest": 3.75,
+              "non_repetition": 4.5,
+              "factual_accuracy": 3.75,
+              "appropriate_pacing": 4
+            },
+            "mean_turns": 1,
+            "end_reasons": {
+              "customer_ended": 3,
+              "formal_handoff": 1
+            }
+          }
+        },
+        "paired": {
+          "n_scenarios": 4,
+          "mean_B_minus_A_points_1_to_5": 0.5312,
+          "ci95": [
+            -0.0625,
+            1.3125
+          ],
+          "method": "two-sided 95% percentile bootstrap over scenario-cluster means (10,000 resamples)",
+          "statistical_signal": "no clear difference; 95% CI includes zero"
+        },
+        "scenarios": {
+          "E01-own-stay-small-family": {
+            "pairs": 1,
+            "A_mean": null,
+            "B_mean": null
+          },
+          "E05-layout-four-bedrooms": {
+            "pairs": 1,
+            "A_mean": 3.125,
+            "B_mean": 4.875
+          },
+          "E08-cold-short-replies": {
+            "pairs": 1,
+            "A_mean": 4.625,
+            "B_mean": 4.5
+          },
+          "E10-viewing-saturday": {
+            "pairs": 1,
+            "A_mean": 1.5,
+            "B_mean": 2.0
+          },
+          "E20-explicit-need-time": {
+            "pairs": 1,
+            "A_mean": 5.0,
+            "B_mean": 5.0
+          }
+        }
+      },
+      "framework_effective": false,
+      "validation_reasons": [
+        "E01-own-stay-small-family / A_SALES_CORE_V2 did not receive a valid independent blind judgment.",
+        "E01-own-stay-small-family / B_CLEF_ROUTED did not receive a valid independent blind judgment.",
+        "E10-viewing-saturday / B_CLEF_ROUTED has no complete agent response.",
+        "E10-viewing-saturday / A_SALES_CORE_V2 has no complete agent response."
+      ]
+    }
+  },
+  "usage": {
+    "openai_model": "gpt-6-luna",
+    "openai_calls": 46,
+    "openai_input_tokens": 263948,
+    "openai_output_tokens": 29578,
+    "openai_cost_usd_estimate": 0.041184,
+    "openai_cost_cap_usd": 10.0,
+    "clef_cost_usd_estimate": 0.02299,
+    "combined_cost_usd_estimate": 0.064174,
+    "openai_latency_ms_mean": 8297,
+    "openai_latency_ms_median": 6686,
+    "openai_by_role": {
+      "sales_agent": {
+        "calls": 19,
+        "input_tokens": 49465,
+        "output_tokens": 16605,
+        "latency_ms_mean": 11024,
+        "latency_ms_median": 10152
+      },
+      "customer_simulator": {
+        "calls": 17,
+        "input_tokens": 9897,
+        "output_tokens": 4053,
+        "latency_ms_mean": 3896,
+        "latency_ms_median": 4394
+      },
+      "blind_evaluator": {
+        "calls": 10,
+        "input_tokens": 204586,
+        "output_tokens": 8920,
+        "latency_ms_mean": 10600,
+        "latency_ms_median": 9242
+      }
+    },
+    "clef_model": "@cf/cloudflare/clef",
+    "clef_calls": 12,
+    "clef_input_tokens_reported_or_conservative_estimate": 95792,
+    "clef_neurons_reported_or_estimate": 2098,
+    "clef_neuron_cap": 100000,
+    "clef_latency_ms_mean": 1620,
+    "clef_latency_ms_median": 1407
+  },
+  "recommendation": "Pilot evidence only; no integration recommendation is justified until the 30-scenario paired evaluation completes."
+}

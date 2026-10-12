@@ -160,9 +160,10 @@ def _non_identifying_facts(content):
     return "\n".join(line for line in content.splitlines() if line.strip().startswith(labels))
 
 
-def retrieve(query, lead_profile=None, limit=3, sales_only=False):
+def retrieve(query, lead_profile=None, limit=3, sales_only=False, allowed_paths=None):
     """Return the most relevant short Knowledge passages; gate internal ownership material."""
     profile = lead_profile or {}
+    allowed = {str(path) for path in allowed_paths} if allowed_paths is not None else None
     raw_terms = tokenize(query)
     terms = raw_terms - STOPWORDS - (SALES_CONTEXT_STOPWORDS if sales_only else set())
     if (not sales_only and terms & {"cost", "costs"}
@@ -200,7 +201,7 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
             if heading.lower() == "project identity":
                 return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
                          "heading": heading, "score": 1, "content": content}]
-    if general_intro and not sales_only:
+    if general_intro and not sales_only and (allowed is None or "01_facts/overview.md" in allowed):
         path = KNOWLEDGE / "01_facts/overview.md"
         for heading, content in _passages(path.read_text(encoding="utf-8")):
             if heading.lower() == "project identity":
@@ -216,6 +217,8 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
     sales_query = bool(terms & {"concern", "concerns", "objection", "small", "suit", "suitable", "fit", "invest", "investment", "yield", "view", "viewing", "priority", "recommend", "compare", "comparison"})
     for path in KNOWLEDGE.rglob("*.md"):
         relative = path.relative_to(KNOWLEDGE).as_posix()
+        if allowed is not None and relative not in allowed:
+            continue
         if sales_only and relative not in (
             "03_sales/selling-angles.md", "03_sales/usp-map.md",
         ):
