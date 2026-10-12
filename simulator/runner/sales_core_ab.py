@@ -17,10 +17,11 @@ SIM = ROOT / "simulator"
 sys.path.insert(0, str(ROOT))
 from app.agent import SalesAgent
 from app.config import get_config, load_env_file
+from app.db import support_equivalent
 from app.knowledge import KNOWLEDGE
 from app.provider import PROFILE_FIELDS, agent_schema
 from app.sales_core_v3 import SalesCoreV3
-from app.service import support_signature
+from app.service import support_customer_reply, support_signature
 
 MODEL = "gpt-6-luna"
 INPUT_RATE, CACHED_RATE, OUTPUT_RATE = 0.10, 0.01, 0.50
@@ -168,7 +169,8 @@ class FakeOperations:
 
     def accept_support(self, data):
         signature = support_signature(data)
-        existing = next((r for r in self.requests if r["signature"] == signature), None)
+        existing = next((r for r in self.requests if r["signature"] == signature or
+                         (r["status"] == "OPEN" and support_equivalent(r, data))), None)
         if existing:
             return existing, False
         row = {"request_id": "SIM-%03d" % (len(self.requests) + 1), "signature": signature,
@@ -268,8 +270,7 @@ def run_conversation(scenario, architecture, api, config, checkpoint):
                     action["operation_outcome"] = "ACCEPTED" if created else "REUSED"
                     action["request_id"] = request["request_id"]
                     if architecture == "V3":
-                        decision["reply"] = ("I’ve registered that for verification. I don’t have the confirmed answer yet."
-                            if created else "That check is still pending; I don’t have a verified update yet.")
+                        decision["reply"] = support_customer_reply(request, created)
                         action["reply"] = decision["reply"]
                 elif decision["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
                     action["operation_outcome"] = "ACCEPTED" if operations.accept_handoff(decision["action"], decision["handoff_reason"]) else "REUSED"

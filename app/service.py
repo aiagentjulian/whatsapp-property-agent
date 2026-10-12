@@ -21,6 +21,14 @@ def support_signature(support):
     return "%s|%s" % (support.get("support_type", "OTHER"), " ".join(sorted(tokens)))
 
 
+def support_customer_reply(support, created):
+    subject = " ".join(str(support.get("requested_fact") or support.get("subject") or "that detail").split())
+    subject = subject.rstrip(".?!")[:160]
+    if created:
+        return "I’ve registered a check on %s. I don’t have a verified answer yet." % subject
+    return "The check on %s is still pending; I don’t have a verified update yet." % subject
+
+
 class Runtime:
     def __init__(self, config, store=None, agent=None):
         self.config = config
@@ -109,8 +117,7 @@ class Runtime:
             support, created = self.store.create_support(lead["lead_id"], request)
             result = {"status": "support_requested" if created else "support_reused", "support_request_id": support["request_id"], "lead_id": lead["lead_id"]}
             if self.config.get("sales_core") == "v3":
-                decision["reply"] = ("I’ve registered that for verification. I don’t have the confirmed answer yet."
-                                     if created else "That check is still pending; I don’t have a verified update yet.")
+                decision["reply"] = support_customer_reply(support, created)
         elif action in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
             formal_type = "APPOINTMENT_HANDOFF" if action == "APPOINTMENT_HANDOFF" else "MANDATORY_OPERATIONAL_HANDOFF"
             success = self.store.formal_handoff(lead["lead_id"], formal_type, decision["handoff_reason"], decision.get("handoff_details") or body)

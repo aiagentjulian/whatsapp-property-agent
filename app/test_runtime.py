@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from .db import Store
+from .db import Store, support_equivalent
 from .agent import SalesAgent
 from .knowledge import retrieve
 from .provider import PROFILE_FIELDS, agent_schema
@@ -87,6 +87,22 @@ class RuntimeTests(unittest.TestCase):
         self.assertTrue(agent.support_contexts[-1])
         self.assertIn("Verified: one Type B unit is currently available.", agent.support_contexts[-1][0]["support_result"])
         self.assertEqual(store.usage()["calls"], 3)
+
+    def test_expanded_pending_layout_request_is_reused(self):
+        first = {"support_type": "LAYOUT", "requested_fact": "Official Type A floor plan and bedroom dimensions including desk setup",
+                 "subject": "Type A layout", "customer_need": "Assess office", "reason": "Exact dimensions unknown",
+                 "resume_stage": "HANDLE", "resume_objective": "Discuss fit"}
+        second = dict(first, requested_fact="Official Type A floor plan and bedroom dimensions including desk setup and parent staying over")
+        self.assertTrue(support_equivalent(first, second))
+        store = Store(self.path)
+        lead, _, _ = store.ingest("Alice Example", "layout-1", "Need layout")
+        first["signature"] = support_signature(first)
+        second["signature"] = support_signature(second)
+        one, created = store.create_support(lead["lead_id"], first)
+        two, created_again = store.create_support(lead["lead_id"], second)
+        self.assertTrue(created)
+        self.assertFalse(created_again)
+        self.assertEqual(one["request_id"], two["request_id"])
 
     def test_formal_handoff_is_one_way_and_blocks_later_ai(self):
         ready = decision("APPOINTMENT_HANDOFF", "I can arrange the viewing.", handoff_reason="OPERATIONAL_BOOKING",

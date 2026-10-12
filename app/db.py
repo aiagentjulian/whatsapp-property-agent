@@ -1,4 +1,5 @@
 import json
+import re
 import sqlite3
 import uuid
 from contextlib import contextmanager
@@ -8,6 +9,19 @@ from pathlib import Path
 
 def now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def support_equivalent(first, second):
+    """Recognize an expanded wording of the same pending fact check."""
+    if first.get("support_type") != second.get("support_type"):
+        return False
+    def terms(row):
+        ignored = {"a", "an", "and", "are", "be", "can", "for", "if", "in", "is", "of", "or", "the",
+                   "to", "whether", "which", "with", "pearl", "residences", "current", "confirm", "verify"}
+        return set(re.findall(r"[a-z0-9]+", row.get("requested_fact", "").lower())) - ignored
+    left, right = terms(first), terms(second)
+    smaller = min(len(left), len(right))
+    return smaller >= 4 and len(left & right) / smaller >= 0.8
 
 
 class Store:
@@ -236,12 +250,14 @@ class Store:
     def create_support(self, lead_id, support):
         """Return (request, created); meaning signature prevents duplicate OPEN/RESOLVED requests."""
         signature = support["signature"]
-        with self.connect() as db:
+        with self.transaction() as db:
             existing = db.execute("SELECT * FROM support_requests WHERE lead_id=? AND signature=? AND status IN ('OPEN','RESOLVED') ORDER BY created_at DESC LIMIT 1", (lead_id, signature)).fetchone()
             if existing:
                 return dict(existing), False
-        request_id, stamp = str(uuid.uuid4()), now()
-        with self.transaction() as db:
+            for row in db.execute("SELECT * FROM support_requests WHERE lead_id=? AND status='OPEN' ORDER BY created_at DESC", (lead_id,)):
+                if support_equivalent(dict(row), support):
+                    return dict(row), False
+            request_id, stamp = str(uuid.uuid4()), now()
             db.execute("INSERT INTO support_requests VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                        (request_id, lead_id, "OPEN", support["support_type"], support["requested_fact"], support["subject"],
                         support["customer_need"], support["reason"], support["resume_stage"], support["resume_objective"], signature, None, stamp, None))

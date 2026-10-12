@@ -5,12 +5,13 @@ from pathlib import Path
 from unittest.mock import patch
 
 from simulator.runner.sales_core_ab import API, FakeOperations, run_conversation, report_metrics
+from app.service import support_customer_reply
 
 
 class EvalTests(unittest.TestCase):
     def test_support_adapter_reuses_pending_and_resolves_only_on_event(self):
         adapter = FakeOperations()
-        request = {"support_type": "PRICING", "subject": "Type A", "requested_fact": "current price"}
+        request = {"support_type": "PRICING", "subject": "Type A", "requested_fact": "current price for three bedroom Type A unit"}
         first, created = adapter.accept_support(request)
         self.assertTrue(created)
         again, created = adapter.accept_support(request)
@@ -18,6 +19,11 @@ class EvalTests(unittest.TestCase):
         self.assertEqual(first["request_id"], again["request_id"])
         self.assertEqual(adapter.context()[0]["status"], "OPEN")
         self.assertIsNone(adapter.context()[0]["support_result"])
+        expanded = dict(request, requested_fact="current price for three bedroom Type A unit and cheaper option")
+        expanded_request, expanded_created = adapter.accept_support(expanded)
+        self.assertFalse(expanded_created)
+        self.assertEqual(expanded_request["request_id"], first["request_id"])
+        self.assertIn("current price", support_customer_reply(first, True))
         adapter.resolve(first["request_id"], "Synthetic fixture: verified price RM390k")
         self.assertEqual(adapter.context()[0]["status"], "RESOLVED")
         self.assertFalse(adapter.accept_handoff("APPOINTMENT_HANDOFF", "OPERATIONAL_BOOKING") is False)
