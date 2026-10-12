@@ -1,0 +1,145 @@
+{
+  "decision_cases": [
+    {
+      "id": "PEA-004-investment-request",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-004.transcript.json",
+      "state": "Customer: What rental yield can I expect? Will price appreciate?",
+      "intent": "asks_unverified_returns",
+      "next_move": "avoid_unsupported_claim_and_offer_verification"
+    },
+    {
+      "id": "PEA-004-missing-comparables",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-004.transcript.json",
+      "state": "Customer: Please check actual rental comparables and the latest price/package, with sources and dates. Also, how many units are in this phase? I am comparing net yield after vacancy and maintenance.",
+      "intent": "requests_multiple_evidence_items",
+      "next_move": "answer_known_parts_and_verify_missing_evidence"
+    },
+    {
+      "id": "PEA-004-repeat-after-partial-resolution",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-004.transcript.json",
+      "state": "Earlier assistant supplied a synthetic package-price fixture only. Customer: I still need sourced rental comparables and vacancy evidence; the package answer alone is not enough to estimate net yield.",
+      "intent": "returns_to_unresolved_request",
+      "next_move": "continue_unresolved_item_without_repeating_resolved_item"
+    },
+    {
+      "id": "PEA-007-flood-and-pylon",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-007.transcript.json",
+      "state": "Customer: I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "intent": "raises_safety_and_flood_concern",
+      "next_move": "answer_with_limits_and_no_guarantee"
+    },
+    {
+      "id": "PEA-008-view-and-budget-tradeoff",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-008.transcript.json",
+      "state": "Customer: I want a high floor and sea view, but my budget is quite tight. Which unit should I take?",
+      "intent": "requests_recommendation_with_constraints",
+      "next_move": "clarify_tradeoff_before_recommending"
+    },
+    {
+      "id": "PEA-004-rejects-premature-viewing",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-004.transcript.json",
+      "state": "Customer is still asking for documented rental comparables and net-yield inputs. They have not asked to visit or expressed viewing intent.",
+      "intent": "continues_due_diligence",
+      "next_move": "answer_due_diligence_without_pushing_viewing"
+    },
+    {
+      "id": "four-bedroom-hard-mismatch",
+      "source": "simulator/scenarios/pearlmont/PEA-004.json",
+      "state": "Earlier assistant explained Phase 1 has three bedrooms. Customer: Three bedrooms definitely cannot work for us.",
+      "intent": "confirms_hard_product_mismatch",
+      "next_move": "acknowledge_mismatch_without_repitching"
+    },
+    {
+      "id": "overloaded-customer",
+      "source": "app/eval_sales.py:overload",
+      "state": "Earlier assistant sent a long project overview. Customer: Too much information. I need some time to digest all that.",
+      "intent": "asks_for_space_after_overload",
+      "next_move": "brief_acknowledgement_and_give_space"
+    },
+    {
+      "id": "neutral-acknowledgement",
+      "source": "app/eval_sales.py:family",
+      "state": "The assistant explained that Phase 1 has three bedrooms after asking about the household. Customer: oh ok.",
+      "intent": "neutral_acknowledgement",
+      "next_move": "do_not_infer_purchase_intent"
+    },
+    {
+      "id": "maintenance-question",
+      "source": "app/eval_sales.py:commercial",
+      "state": "Customer: Can you tell me the maintenance fee, and what is included?",
+      "intent": "asks_specific_verified_fact",
+      "next_move": "answer_direct_question_from_knowledge"
+    }
+  ],
+  "retrieval_cases": [
+    {
+      "id": "flood-risk",
+      "query": "I saw the pylon and river nearby. Is it safe? Any flood risk?",
+      "gold_paths": ["01_facts/location-and-connectivity.md", "01_facts/risks-and-sensitive-faq.md"],
+      "candidate_paths": ["01_facts/location-and-connectivity.md", "01_facts/risks-and-sensitive-faq.md", "01_facts/parking-access-and-security.md", "01_facts/overview.md", "03_sales/objection-to-usp-map.md", "01_facts/green-building-and-sustainability.md"]
+    },
+    {
+      "id": "view-budget-tradeoff",
+      "query": "I want high floor sea view, but budget quite tight. Which unit should I take?",
+      "gold_paths": ["01_facts/orientation-and-view.md", "02_commercial/pricing.md", "03_sales/unit-fit.md", "01_facts/unit-and-layout.md", "03_sales/objection-to-usp-map.md"],
+      "candidate_paths": ["01_facts/orientation-and-view.md", "02_commercial/pricing.md", "03_sales/unit-fit.md", "01_facts/unit-and-layout.md", "03_sales/objection-to-usp-map.md", "03_sales/viewing-close.md", "01_facts/school-access-and-family.md", "01_facts/clubhouse-and-pay-per-use.md"]
+    },
+    {
+      "id": "investment-evidence",
+      "query": "What rental yield can I expect, and will the price appreciate? I need dated comparable rents, vacancy evidence and net-yield inputs.",
+      "gold_paths": ["03_sales/sales-judgment.md", "02_commercial/pricing.md", "02_commercial/sales-package.md", "01_facts/maintenance-and-management.md", "01_facts/overview.md"],
+      "candidate_paths": ["03_sales/sales-judgment.md", "02_commercial/pricing.md", "02_commercial/sales-package.md", "01_facts/maintenance-and-management.md", "01_facts/overview.md", "01_facts/location-and-connectivity.md", "03_sales/viewing-close.md", "01_facts/facilities-and-quality.md"]
+    },
+    {
+      "id": "lppsa-financing",
+      "query": "I am a Malaysian government employee. Can I use LPPSA for this home, and what should I check before applying?",
+      "gold_paths": ["02_commercial/lppsa.md", "02_commercial/panel-financiers-and-legal.md", "02_commercial/financing-and-booking.md"],
+      "candidate_paths": ["02_commercial/lppsa.md", "02_commercial/panel-financiers-and-legal.md", "02_commercial/financing-and-booking.md", "02_commercial/pricing.md", "01_facts/unit-and-layout.md", "01_facts/maintenance-and-management.md"]
+    },
+    {
+      "id": "maintenance-and-clubhouse",
+      "query": "What is the monthly maintenance fee for the 900 square foot home, and is clubhouse use included?",
+      "gold_paths": ["01_facts/maintenance-and-management.md", "01_facts/clubhouse-and-pay-per-use.md", "01_facts/overview.md"],
+      "candidate_paths": ["01_facts/maintenance-and-management.md", "01_facts/clubhouse-and-pay-per-use.md", "01_facts/overview.md", "01_facts/facilities-and-quality.md", "02_commercial/sales-package.md", "01_facts/location-and-connectivity.md"]
+    }
+  ],
+  "sufficiency_cases": [
+    {"id": "yield-without-rentals", "query": "What net rental yield can I expect after vacancy and maintenance?", "paths": ["02_commercial/pricing.md", "01_facts/maintenance-and-management.md", "01_facts/unit-and-layout.md"], "sufficient": false},
+    {"id": "maintenance-fact", "query": "What is the published maintenance rate and does it include sinking fund?", "paths": ["01_facts/maintenance-and-management.md"], "sufficient": true},
+    {"id": "flood-guarantee", "query": "Can you guarantee the development will never flood?", "paths": ["01_facts/location-and-connectivity.md", "01_facts/risks-and-sensitive-faq.md"], "sufficient": false},
+    {"id": "four-bedroom-layout", "query": "Does Phase 1 offer a four-bedroom home?", "paths": ["01_facts/unit-and-layout.md"], "sufficient": true},
+    {"id": "lppsa-approval", "query": "Will LPPSA approve my personal application?", "paths": ["02_commercial/lppsa.md"], "sufficient": false}
+  ],
+  "grounding_cases": [
+    {"id": "maintenance-rate-supported", "claim": "The stated residential maintenance rate is RM0.18 per square foot, inclusive of sinking fund.", "paths": ["01_facts/maintenance-and-management.md"], "grounded": true},
+    {"id": "no-flood-ever", "claim": "The development can never flood.", "paths": ["01_facts/location-and-connectivity.md", "01_facts/risks-and-sensitive-faq.md"], "grounded": false},
+    {"id": "four-bedroom-inventory", "claim": "Phase 1 includes a four-bedroom layout.", "paths": ["01_facts/unit-and-layout.md"], "grounded": false},
+    {"id": "school-completion-guarantee", "claim": "The planned school is already completed and admitting students.", "paths": ["01_facts/school-access-and-family.md"], "grounded": false},
+    {"id": "900-square-foot-layout", "claim": "The standard Phase 1 layout is 900 square feet with three bedrooms and two bathrooms.", "paths": ["01_facts/unit-and-layout.md"], "grounded": true},
+    {"id": "lppsa-personal-approval", "claim": "This buyer will be approved by LPPSA.", "paths": ["02_commercial/lppsa.md"], "grounded": false}
+  ],
+  "combo_cases": [
+    {
+      "id": "flood-risk",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-007.transcript.json",
+      "history": [{"direction": "INBOUND", "body": "I saw the pylon and river nearby. Is it safe? Any flood risk?"}],
+      "profile": {"purchase_purpose": "UNKNOWN"}
+    },
+    {
+      "id": "view-budget-tradeoff",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-008.transcript.json",
+      "history": [{"direction": "INBOUND", "body": "I want high floor sea view, but budget quite tight. Which unit should I take?"}],
+      "profile": {"purchase_purpose": "UNKNOWN"}
+    },
+    {
+      "id": "investment-evidence",
+      "source": "simulator/reports/RUN-V16-20261007T155329Z/PEA-004.transcript.json",
+      "history": [
+        {"direction": "INBOUND", "body": "What rental yield can I expect? Will price appreciate?"},
+        {"direction": "OUTBOUND", "body": "I cannot substantiate a yield or appreciation forecast. The relevant inputs would be purchase price, achievable rent, vacancy and costs."},
+        {"direction": "INBOUND", "body": "Please check actual rental comparables and the latest price/package, with source and date. I am comparing net yield after vacancy and maintenance."}
+      ],
+      "profile": {"purchase_purpose": "INVESTMENT"}
+    }
+  ]
+}
