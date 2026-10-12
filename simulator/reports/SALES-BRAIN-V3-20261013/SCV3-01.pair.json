@@ -1,0 +1,488 @@
+{
+  "scenario_id": "SCV3-01",
+  "title": "Family buying for own stay",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has already agreed to check the approved plan, so I’m waiting for that information.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, saw your Pearl Residences post. Looking for own stay with family. Can share more?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Sure—Pearl Residences is in established Seberang Jaya. Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. The community plan also includes a playground, kids’ pool and water play, and community halls. For your own stay, what matters most: the layout, nearby conveniences, or shared facilities?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Layout mainly. 900 sq. ft. for four of us is my main concern—do you have a floor plan with the bedroom sizes?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I don’t have confirmed bedroom measurements on hand, so I don’t want to guess. The layout concept shows all three bedrooms intended to fit queen-size beds, but I’ll check the approved floor plan for the exact room sizes for you."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. I’ll wait for the confirmed floor plan—the room sizes will help us see if it works for the kids."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Sure—Pearl Residences is in established Seberang Jaya. Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. The community plan also includes a playground, kids’ pool and water play, and community halls. For your own stay, what matters most: the layout, nearby conveniences, or shared facilities?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have confirmed bedroom measurements on hand, so I don’t want to guess. The layout concept shows all three bedrooms intended to fit queen-size beds, but I’ll check the approved floor plan for the exact room sizes for you.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Layout mainly. 900 sq. ft. for four of us is my main concern—do you have a floor plan with the bedroom sizes?",
+        "state": "CONTINUE",
+        "reason": "The customer is interested but wants to check whether the bedrooms will suit the family before going further.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. I’ll wait for the confirmed floor plan—the room sizes will help us see if it works for the kids.",
+        "state": "WAITING",
+        "reason": "The agent has already agreed to check the approved plan, so I’m waiting for that information.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "OWN_STAY",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully.",
+      "preferred_language": "English",
+      "purchase_reason": "Looking for a home to stay in with family"
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "LAYOUT|1 approved bedroom dimensions each exact floor pearl phase plan residences showing sizes type",
+          "support_type": "LAYOUT",
+          "requested_fact": "Approved Phase 1 Type A floor plan showing exact dimensions of each bedroom.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2253,
+          "output_tokens": 790,
+          "total_tokens": 3043,
+          "cached_tokens": 0,
+          "reasoning_tokens": 516
+        },
+        "latency_seconds": 8.969,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 460,
+          "output_tokens": 172,
+          "total_tokens": 632,
+          "cached_tokens": 0,
+          "reasoning_tokens": 95
+        },
+        "latency_seconds": 3.731,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2823,
+          "output_tokens": 637,
+          "total_tokens": 3460,
+          "cached_tokens": 0,
+          "reasoning_tokens": 301
+        },
+        "latency_seconds": 7.679,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 619,
+          "output_tokens": 156,
+          "total_tokens": 775,
+          "cached_tokens": 0,
+          "reasoning_tokens": 83
+        },
+        "latency_seconds": 3.146,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The floor plan and bedroom dimensions are already pending verification, so it’s natural to wait for the agent’s update.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, saw your Pearl Residences post. Looking for own stay with family. Can share more?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Pearl Residences offers a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Would a 3-bedroom home suit your family?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Could you share the floor plan? 900 sqft sounds a bit tight—are the bedrooms big enough for kids’ beds and storage?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. Please send the floor plan and bedroom dimensions once you’ve confirmed them—we’ll have a look with the kids’ furniture in mind."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences offers a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Would a 3-bedroom home suit your family?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Could you share the floor plan? 900 sqft sounds a bit tight—are the bedrooms big enough for kids’ beds and storage?",
+        "state": "CONTINUE",
+        "reason": "I’m interested, but need to understand whether the layout will work for our family.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. Please send the floor plan and bedroom dimensions once you’ve confirmed them—we’ll have a look with the kids’ furniture in mind.",
+        "state": "WAITING",
+        "reason": "The floor plan and bedroom dimensions are already pending verification, so it’s natural to wait for the agent’s update.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "OWN_STAY",
+      "sales_stage": "HANDLE",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Assess bedroom furniture and storage fit using verified floor plan details.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Looking for a home for own stay with family.",
+          "Requested the floor plan and asked whether bedrooms fit kids’ beds and storage."
+        ],
+        "confirmed_motivations": [
+          "Own-stay use with family."
+        ],
+        "hypotheses": [
+          "A compact layout may not meet the family’s space needs."
+        ],
+        "tradeoffs": [
+          "900 sq. ft. offers three bedrooms, but the customer is concerned it may feel tight."
+        ],
+        "objections": [
+          "Concern that 900 sq. ft. may be too tight; bedroom fit for beds and storage is unanswered."
+        ],
+        "communicated_facts": [
+          "Shared that Pearl Residences has a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony."
+        ],
+        "sales_attempts": [
+          "Asked whether a 3-bedroom home would suit the family — customer requested the floor plan and raised a size concern; revise with layout details."
+        ],
+        "open_questions": [
+          "Can the bedrooms accommodate the beds and storage they need?",
+          "What are their budget and move-in timing?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Provide the floor plan and verified bedroom dimensions, if available.",
+          "why": "The customer directly requested the plan and wants to assess whether the bedrooms can fit kids’ beds and storage.",
+          "feedback_to_watch": "Whether the actual room sizes ease their concern or confirm the layout feels too tight."
+        }
+      },
+      "preferred_language": "English",
+      "purchase_reason": "Looking for a home for own stay with family.",
+      "important_features": [
+        "3 bedrooms",
+        "2 bathrooms",
+        "Balcony"
+      ],
+      "primary_motivations": [
+        "Own-stay use"
+      ],
+      "fit_assessment": "Potential own-stay fit; bedroom furniture and storage suitability remains unconfirmed pending the floor plan and room dimensions.",
+      "last_progress": "Customer requested the floor plan and asked whether bedrooms can fit kids’ beds and storage; project information indicates bedrooms are intended for queen-size beds.",
+      "next_action": "Obtain verified floor plan and bedroom dimensions for the customer to assess.",
+      "conversation_summary": "Customer is looking for a family home for own stay and is concerned that the 900 sq. ft. layout may be tight. They requested the floor plan and asked about bedroom space for kids’ beds and storage.",
+      "active_concerns": [
+        "Whether the bedrooms can fit kids’ beds and storage in the 900 sq. ft. layout."
+      ]
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "LAYOUT|3 900 all and bedroom bedrooms dimensions exact floor ft layout pearl plan residences sq three",
+          "support_type": "LAYOUT",
+          "requested_fact": "The Pearl Residences 900 sq. ft. floor plan and exact dimensions of all three bedrooms.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 533,
+          "output_tokens": 506,
+          "total_tokens": 1039,
+          "cached_tokens": 0,
+          "reasoning_tokens": 212
+        },
+        "latency_seconds": 6.071,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2767,
+          "output_tokens": 683,
+          "total_tokens": 3450,
+          "cached_tokens": 0,
+          "reasoning_tokens": 356
+        },
+        "latency_seconds": 8.082,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 420,
+          "output_tokens": 139,
+          "total_tokens": 559,
+          "cached_tokens": 0,
+          "reasoning_tokens": 66
+        },
+        "latency_seconds": 2.342,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 955,
+          "output_tokens": 982,
+          "total_tokens": 1937,
+          "cached_tokens": 0,
+          "reasoning_tokens": 611
+        },
+        "latency_seconds": 11.202,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3610,
+          "output_tokens": 1476,
+          "total_tokens": 5086,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 980
+        },
+        "latency_seconds": 13.458,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 550,
+          "output_tokens": 145,
+          "total_tokens": 695,
+          "cached_tokens": 0,
+          "reasoning_tokens": 64
+        },
+        "latency_seconds": 2.656,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 2,
+        "meaningful_sales_actions": 2,
+        "observation_and_adaptation": 2,
+        "natural_continuity": 2,
+        "progression_and_pacing": 2
+      },
+      "B": {
+        "customer_insight": 3,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 3
+      }
+    },
+    "examples": [],
+    "material_errors": [],
+    "simulator_quality": "Both are plausible short, early-stage exchanges. B feels more responsive to the customer’s stated concern; neither transcript shows whether the promised follow-up actually happens.",
+    "summary": "B is stronger because it asks what matters to the family (turn 1) and adapts when the customer says layout is the main concern (turn 2). It gives a relevant layout concept—queen-size beds are shown in all three bedrooms—and avoids guessing at exact measurements. However, the supplied facts include approximate areas for the master bedroom and two other bedrooms, so B could have shared those figures while making clear they are approximate, then offered to confirm the approved plan and furniture fit. A gives basic unit facts at turn 1, but its turn-2 response offers no useful information beyond saying the request is registered for verification; it could have shared the same approximate room areas and clearly explained what exact information it would confirm. B’s turn 3 ends naturally with the customer willing to wait, though a clear follow-up expectation would improve progression. No material factual error is evident in either transcript."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 1367,
+        "output_tokens": 3621,
+        "total_tokens": 4988,
+        "cached_tokens": 0,
+        "reasoning_tokens": 2996
+      },
+      "latency_seconds": 37.358,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20700,
+        "output_tokens": 4035,
+        "total_tokens": 24735,
+        "cached_tokens": 0,
+        "reasoning_tokens": 3270
+      },
+      "latency_seconds": 35.841,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20759,
+        "output_tokens": 2896,
+        "total_tokens": 23655,
+        "cached_tokens": 0,
+        "reasoning_tokens": 2575
+      },
+      "latency_seconds": 27.944,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

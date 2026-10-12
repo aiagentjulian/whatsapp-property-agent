@@ -1,0 +1,735 @@
+{
+  "scenario_id": "SCV3-09",
+  "title": "Changing requirement and returning question",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 5,
+    "natural_ending_reason": "customer waiting: The agent has agreed to verify the itemised clubhouse facilities and current charges; both requested checks are still pending.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, can tell me about the layout? Need a room for work from home."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen are open-plan, and the layout avoids a long internal corridor. One bedroom could be used as your WFH room; exact desk and furniture fit would need checking against the approved plan. Would you need a closed-door office, or mainly space for a desk?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Actually, my priority’s shifted a bit—my mum may stay over, so I’d need a room that can work as an office but also be comfortable for her. Is one of the bedrooms easy to set up for both?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "It may be possible, but I can’t confidently say it’ll be comfortable without checking the bedroom dimensions and a realistic desk-and-bed arrangement. I’ll get the approved plan checked for that dual-use setup rather than guess."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Thanks, that’d help. Also, does the maintenance fee include clubhouse use, or is that charged separately?"
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "The RM0.18 psf maintenance fee includes the sinking fund, but it doesn’t cover use of every clubhouse facility. Selected facilities are pay-per-use, charged based on use or package. I’ve also requested the bedroom dimensions and a practical desk-and-bed fit check, and will update you once that’s verified."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "Okay, thanks. Do you have a list of which clubhouse facilities are pay-per-use and their charges? Just want to understand the ongoing costs properly."
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "I can confirm selected clubhouse facilities are pay-per-use, with options described as pay-per-visit, frequent-user plans and longer-duration packages. I don’t have a verified itemised facility list or current charges, so I’ll check the latest schedule rather than give you outdated figures."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "Okay, thanks. Please let me know when you’ve checked the current list and charges."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen are open-plan, and the layout avoids a long internal corridor. One bedroom could be used as your WFH room; exact desk and furniture fit would need checking against the approved plan. Would you need a closed-door office, or mainly space for a desk?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "It may be possible, but I can’t confidently say it’ll be comfortable without checking the bedroom dimensions and a realistic desk-and-bed arrangement. I’ll get the approved plan checked for that dual-use setup rather than guess.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      },
+      {
+        "turn": 3,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The RM0.18 psf maintenance fee includes the sinking fund, but it doesn’t cover use of every clubhouse facility. Selected facilities are pay-per-use, charged based on use or package. I’ve also requested the bedroom dimensions and a practical desk-and-bed fit check, and will update you once that’s verified."
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can confirm selected clubhouse facilities are pay-per-use, with options described as pay-per-visit, frequent-user plans and longer-duration packages. I don’t have a verified itemised facility list or current charges, so I’ll check the latest schedule rather than give you outdated figures.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-002"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Actually, my priority’s shifted a bit—my mum may stay over, so I’d need a room that can work as an office but also be comfortable for her. Is one of the bedrooms easy to set up for both?",
+        "state": "CONTINUE",
+        "reason": "The buyer explains the changed priority and asks about a flexible room that can serve both purposes.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Thanks, that’d help. Also, does the maintenance fee include clubhouse use, or is that charged separately?",
+        "state": "CONTINUE",
+        "reason": "The agent acknowledged the changed need and is checking the layout; I’m asking about another ownership cost without chasing the pending request.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 3,
+        "message": "Okay, thanks. Do you have a list of which clubhouse facilities are pay-per-use and their charges? Just want to understand the ongoing costs properly.",
+        "state": "CONTINUE",
+        "reason": "The agent clarified that some facilities cost extra, but the specific facilities and rates remain unanswered. The bedroom fit check is already pending, so I’m not asking about it again.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 4,
+        "message": "Okay, thanks. Please let me know when you’ve checked the current list and charges.",
+        "state": "WAITING",
+        "reason": "The agent has agreed to verify the itemised clubhouse facilities and current charges; both requested checks are still pending.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Verify whether a bedroom can fit a practical work setup and bed comfortably.",
+      "size_or_layout_preference": "3-bedroom layout with a room for work from home and occasional stays by her mum",
+      "important_features": [
+        "Room suitable for work from home",
+        "Room that can also accommodate her mum comfortably when she stays over"
+      ],
+      "fit_assessment": "Potentially suitable as a dual-purpose office and guest room, but bedroom dimensions and furniture fit are unverified.",
+      "last_progress": "Buyer clarified that a bedroom needs to serve as both a WFH room and a room for her mum to stay over.",
+      "next_action": "Check the approved plan and bedroom dimensions for the dual-use setup.",
+      "conversation_summary": "Buyer needs a bedroom that can work as a home office and comfortably accommodate her mum when she stays over; exact furniture fit needs verification.",
+      "active_concerns": [
+        "Whether a bedroom can comfortably fit both a work setup and a bed for her mum"
+      ]
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "LAYOUT|and approved bed bedroom comfortably desk dimensions dual fit in layout one pearl practical purpose residences setup type",
+          "support_type": "LAYOUT",
+          "requested_fact": "Approved Type A bedroom dimensions and whether a practical desk setup and bed can fit comfortably in one bedroom.",
+          "status": "OPEN"
+        },
+        {
+          "request_id": "SIM-002",
+          "signature": "PRICING|and are charges clubhouse costs current facilities itemised list or package pay pearl per rates residences that their use",
+          "support_type": "PRICING",
+          "requested_fact": "Current itemised list of clubhouse facilities that are pay-per-use and their current charges or package rates.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2228,
+          "output_tokens": 979,
+          "total_tokens": 3207,
+          "cached_tokens": 0,
+          "reasoning_tokens": 625
+        },
+        "latency_seconds": 9.948,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 482,
+          "output_tokens": 244,
+          "total_tokens": 726,
+          "cached_tokens": 0,
+          "reasoning_tokens": 151
+        },
+        "latency_seconds": 3.968,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2448,
+          "output_tokens": 1464,
+          "total_tokens": 3912,
+          "cached_tokens": 0,
+          "reasoning_tokens": 974
+        },
+        "latency_seconds": 15.23,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 659,
+          "output_tokens": 249,
+          "total_tokens": 908,
+          "cached_tokens": 0,
+          "reasoning_tokens": 173
+        },
+        "latency_seconds": 4.303,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2607,
+          "output_tokens": 583,
+          "total_tokens": 3190,
+          "cached_tokens": 0,
+          "reasoning_tokens": 330
+        },
+        "latency_seconds": 6.326,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 779,
+          "output_tokens": 255,
+          "total_tokens": 1034,
+          "cached_tokens": 0,
+          "reasoning_tokens": 162
+        },
+        "latency_seconds": 3.831,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2764,
+          "output_tokens": 760,
+          "total_tokens": 3524,
+          "cached_tokens": 0,
+          "reasoning_tokens": 401
+        },
+        "latency_seconds": 8.465,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 954,
+          "output_tokens": 128,
+          "total_tokens": 1082,
+          "cached_tokens": 0,
+          "reasoning_tokens": 60
+        },
+        "latency_seconds": 10.031,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 2,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 5,
+    "natural_ending_reason": "customer waiting: Both the clubhouse charges and the flexible layout details have been registered for verification; there’s nothing more to ask until the agent has an update.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, can tell me about the layout? Need a room for work from home."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks. My priority’s shifted a bit—my parent may stay over, so I’m looking for a room that can work flexibly for them too. Please include that in the layout check."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. While that’s being checked, do you know if clubhouse use is included in the maintenance fee, or charged separately?"
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "The maintenance fee is RM0.18 per sq. ft., including the sinking fund. Selected premium clubhouse facilities are pay-per-use, so those charges are separate. I don’t have the confirmed rates for individual facilities."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "Okay, so the maintenance covers the common charges, but some clubhouse facilities are extra. Could you share which facilities are pay-per-use and the rates once confirmed?"
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "Thanks, I’ll wait for the confirmed list and rates. The layout check for my parent staying over is still pending too."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "NEUTRAL",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-002"
+      },
+      {
+        "turn": 3,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The maintenance fee is RM0.18 per sq. ft., including the sinking fund. Selected premium clubhouse facilities are pay-per-use, so those charges are separate. I don’t have the confirmed rates for individual facilities."
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-003"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks. My priority’s shifted a bit—my parent may stay over, so I’m looking for a room that can work flexibly for them too. Please include that in the layout check.",
+        "state": "CONTINUE",
+        "reason": "Acknowledges the pending layout verification without chasing for an answer, and clarifies the changed need.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. While that’s being checked, do you know if clubhouse use is included in the maintenance fee, or charged separately?",
+        "state": "CONTINUE",
+        "reason": "The layout check is pending, so I’m asking about another ownership cost without pressing for an update.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 3,
+        "message": "Okay, so the maintenance covers the common charges, but some clubhouse facilities are extra. Could you share which facilities are pay-per-use and the rates once confirmed?",
+        "state": "CONTINUE",
+        "reason": "The buyer has a clearer distinction between maintenance and separate clubhouse charges, but still needs the facility list and actual rates to understand ownership costs.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 4,
+        "message": "Thanks, I’ll wait for the confirmed list and rates. The layout check for my parent staying over is still pending too.",
+        "state": "WAITING",
+        "reason": "Both the clubhouse charges and the flexible layout details have been registered for verification; there’s nothing more to ask until the agent has an update.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Verify whether the Type A layout and bedroom dimensions support both a WFH desk setup and occasional parent stays.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Needs a room for working from home.",
+          "Wants the room to work flexibly when a parent stays over.",
+          "Asked which clubhouse facilities are pay-per-use and their rates, once confirmed."
+        ],
+        "confirmed_motivations": [
+          "Needs space to work from home.",
+          "Their parent may stay over."
+        ],
+        "hypotheses": [],
+        "tradeoffs": [],
+        "objections": [],
+        "communicated_facts": [
+          "Maintenance is RM0.18 per sq. ft., including the sinking fund.",
+          "Selected premium clubhouse facilities are pay-per-use; individual facility rates are not confirmed.",
+          "The official Type A layout and bedroom dimensions check, including both WFH and parent-stay use, is still open."
+        ],
+        "sales_attempts": [
+          "Continue: Registered layout verification; buyer added the parent-stay use case, then asked about clubhouse fees. No buying commitment expressed.",
+          "Continue: Explained maintenance and separate pay-per-use charges; buyer acknowledged and requested the facility list and rates."
+        ],
+        "open_questions": [
+          "Which project or property does Type A refer to?",
+          "Which clubhouse facilities are pay-per-use, and what are their rates?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Confirm the project or property and obtain verified details of pay-per-use clubhouse facilities and rates; leave the existing layout verification pending.",
+          "why": "The buyer directly requested the facility list and rates, while the Type A layout check is already open.",
+          "feedback_to_watch": "Whether the facility charges affect the buyer's interest, and whether they provide the project details needed for verification."
+        }
+      },
+      "size_or_layout_preference": "A room that can support a work-from-home setup and flexibly accommodate a parent staying over.",
+      "last_progress": "Buyer expanded the layout requirement to include a parent staying over alongside working from home.",
+      "next_action": "Amend the pending Type A layout verification request to cover both uses.",
+      "conversation_summary": "Buyer needs a room for working from home and wants it to flexibly accommodate a parent staying over. Official Type A floor plan and bedroom dimensions are not yet confirmed."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "LAYOUT|1 accommodate and bedroom desk dimensions floor including layout official pearl phase plan residences setup type",
+          "support_type": "LAYOUT",
+          "requested_fact": "Official Type A floor plan and bedroom dimensions, including whether a bedroom can accommodate a desk setup.",
+          "status": "OPEN"
+        },
+        {
+          "request_id": "SIM-002",
+          "signature": "LAYOUT|accommodate and bedroom desk dimensions flexibly floor from home including layout official over parent plan serve setup staying suitability type work",
+          "support_type": "LAYOUT",
+          "requested_fact": "Official Type A floor plan and bedroom dimensions, including whether a bedroom can accommodate a work-from-home desk setup and flexibly serve for a parent staying over.",
+          "status": "OPEN"
+        },
+        {
+          "request_id": "SIM-003",
+          "signature": "PRICING|and are clubhouse confirmed each facilities pay pearl per rates residences use which",
+          "support_type": "PRICING",
+          "requested_fact": "Which Pearl Residences clubhouse facilities are pay-per-use and the confirmed rates for each.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 527,
+          "output_tokens": 671,
+          "total_tokens": 1198,
+          "cached_tokens": 0,
+          "reasoning_tokens": 448
+        },
+        "latency_seconds": 9.287,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2499,
+          "output_tokens": 1061,
+          "total_tokens": 3560,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 699
+        },
+        "latency_seconds": 10.569,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 466,
+          "output_tokens": 233,
+          "total_tokens": 699,
+          "cached_tokens": 0,
+          "reasoning_tokens": 147
+        },
+        "latency_seconds": 3.716,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 837,
+          "output_tokens": 2238,
+          "total_tokens": 3075,
+          "cached_tokens": 0,
+          "reasoning_tokens": 1889
+        },
+        "latency_seconds": 24.85,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2759,
+          "output_tokens": 1902,
+          "total_tokens": 4661,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 1461
+        },
+        "latency_seconds": 15.629,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 620,
+          "output_tokens": 315,
+          "total_tokens": 935,
+          "cached_tokens": 0,
+          "reasoning_tokens": 239
+        },
+        "latency_seconds": 6.116,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1131,
+          "output_tokens": 1031,
+          "total_tokens": 2162,
+          "cached_tokens": 0,
+          "reasoning_tokens": 718
+        },
+        "latency_seconds": 12.153,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3156,
+          "output_tokens": 616,
+          "total_tokens": 3772,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 381
+        },
+        "latency_seconds": 6.078,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 725,
+          "output_tokens": 180,
+          "total_tokens": 905,
+          "cached_tokens": 0,
+          "reasoning_tokens": 92
+        },
+        "latency_seconds": 3.418,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1262,
+          "output_tokens": 1028,
+          "total_tokens": 2290,
+          "cached_tokens": 0,
+          "reasoning_tokens": 631
+        },
+        "latency_seconds": 12.534,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3246,
+          "output_tokens": 1339,
+          "total_tokens": 4585,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 904
+        },
+        "latency_seconds": 11.9,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 859,
+          "output_tokens": 126,
+          "total_tokens": 985,
+          "cached_tokens": 0,
+          "reasoning_tokens": 45
+        },
+        "latency_seconds": 3.028,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 3,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "A",
+    "V3": "B"
+  },
+  "blind_judge": {
+    "winner": "A",
+    "scores": {
+      "A": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 4,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 4
+      },
+      "B": {
+        "customer_insight": 2,
+        "meaningful_sales_actions": 2,
+        "observation_and_adaptation": 2,
+        "natural_continuity": 2,
+        "progression_and_pacing": 2
+      }
+    },
+    "examples": [],
+    "material_errors": [],
+    "simulator_quality": "A feels comparatively natural and specific, though it repeats the pending layout check at turn 3. B’s repeated “registered that for verification” responses at turns 1, 2 and 4 feel mechanical and leave the customer with little useful information. Both transcripts end with follow-ups still pending.",
+    "summary": "A wins because it answers the initial layout question with relevant facts and a useful clarifying question (turn 1), then adapts when the customer adds that her mother may stay over (turn 2). It also answers the maintenance/clubhouse question accurately and avoids inventing current charges (turns 3–4). A stronger turn 2 could give the known bedroom-area figures and explain that the plan depicts bedrooms accommodating queen-sized beds, while still cautioning that a desk-and-bed fit needs checking. B gives a useful maintenance/clubhouse distinction at turn 3, but otherwise mostly logs requests instead of addressing the customer’s layout needs or advancing the discussion."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 21188,
+        "output_tokens": 2204,
+        "total_tokens": 23392,
+        "cached_tokens": 0,
+        "reasoning_tokens": 1901
+      },
+      "latency_seconds": 23.569,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

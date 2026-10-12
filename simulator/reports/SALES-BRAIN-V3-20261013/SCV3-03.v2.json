@@ -1,0 +1,106 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 2,
+  "natural_ending_reason": "customer waiting: The agent is checking the requested price and availability, so I’ll wait for the verified information before discussing next steps.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi, how much is the 3 bedroom? My budget quite tight, below RM400k if possible."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! The 3-bedroom unit is 900 sq ft with 2 bathrooms. I’ll check the latest price and whether any units are below RM400k—don’t want to guess and give you the wrong figure."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please let me know once you’ve confirmed the price and whether any are below RM400k."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Hi! The 3-bedroom unit is 900 sq ft with 2 bathrooms. I’ll check the latest price and whether any units are below RM400k—don’t want to guess and give you the wrong figure.",
+      "operation_outcome": "ACCEPTED",
+      "request_id": "SIM-001"
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Okay, thanks. Please let me know once you’ve confirmed the price and whether any are below RM400k.",
+      "state": "WAITING",
+      "reason": "The agent is checking the requested price and availability, so I’ll wait for the verified information before discussing next steps.",
+      "interest_change": "UNCHANGED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Answer the enquiry helpfully.",
+    "preferred_property_type": "3-bedroom",
+    "budget_range": "Below RM400k if possible"
+  },
+  "operations": {
+    "requests": [
+      {
+        "request_id": "SIM-001",
+        "signature": "PRICING|000 1 3 and any are availability bedroom below latest pearl phase price residences rm400 units",
+        "support_type": "PRICING",
+        "requested_fact": "Latest price for a Phase 1 3-bedroom unit, and whether any units are available below RM400,000.",
+        "status": "OPEN"
+      }
+    ],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2394,
+        "output_tokens": 868,
+        "total_tokens": 3262,
+        "cached_tokens": 0,
+        "reasoning_tokens": 429
+      },
+      "latency_seconds": 9.965,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 489,
+        "output_tokens": 115,
+        "total_tokens": 604,
+        "cached_tokens": 0,
+        "reasoning_tokens": 41
+      },
+      "latency_seconds": 2.202,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 1,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

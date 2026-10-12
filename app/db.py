@@ -54,6 +54,15 @@ class Store:
                     usage_id TEXT PRIMARY KEY, lead_id TEXT, model TEXT NOT NULL,
                     input_tokens INTEGER, output_tokens INTEGER, total_tokens INTEGER, created_at TEXT NOT NULL
                 );
+                CREATE TABLE IF NOT EXISTS conversation_progress (
+                    lead_id TEXT PRIMARY KEY REFERENCES leads(lead_id),
+                    progress_json TEXT NOT NULL, updated_at TEXT NOT NULL
+                );
+                CREATE TABLE IF NOT EXISTS v3_stage_usage (
+                    usage_id TEXT PRIMARY KEY, lead_id TEXT REFERENCES leads(lead_id),
+                    stage TEXT NOT NULL, status TEXT NOT NULL, usage_json TEXT NOT NULL,
+                    created_at TEXT NOT NULL
+                );
                 CREATE TABLE IF NOT EXISTS adapter_state (
                     state_key TEXT PRIMARY KEY, state_value TEXT NOT NULL, updated_at TEXT NOT NULL
                 );
@@ -120,6 +129,8 @@ class Store:
             db.execute("DELETE FROM support_requests WHERE lead_id=?", (lead_id,))
             db.execute("DELETE FROM handoffs WHERE lead_id=?", (lead_id,))
             db.execute("DELETE FROM api_usage WHERE lead_id=?", (lead_id,))
+            db.execute("DELETE FROM conversation_progress WHERE lead_id=?", (lead_id,))
+            db.execute("DELETE FROM v3_stage_usage WHERE lead_id=?", (lead_id,))
             db.execute(
                 """UPDATE leads SET owner='AI', ai_session_status='ACTIVE',
                    profile_json=?, source_detail='', campaign='', updated_at=?
@@ -289,6 +300,25 @@ class Store:
             return
         with self.transaction() as db:
             db.execute("INSERT INTO api_usage VALUES(?,?,?,?,?,?,?)", (str(uuid.uuid4()), lead_id, model, usage.get("input_tokens"), usage.get("output_tokens"), usage.get("total_tokens"), now()))
+
+    def get_progress(self, lead_id):
+        with self.connect() as db:
+            row = db.execute("SELECT progress_json FROM conversation_progress WHERE lead_id=?", (lead_id,)).fetchone()
+            return json.loads(row[0]) if row else {}
+
+    def save_progress(self, lead_id, progress):
+        if not isinstance(progress, dict):
+            raise ValueError("Conversation progress must be an object")
+        with self.transaction() as db:
+            db.execute("INSERT INTO conversation_progress VALUES(?,?,?) ON CONFLICT(lead_id) DO UPDATE SET progress_json=excluded.progress_json,updated_at=excluded.updated_at",
+                       (lead_id, json.dumps(progress, ensure_ascii=False), now()))
+
+    def record_v3_stage_usage(self, lead_id, stage, usage, status):
+        with self.transaction() as db:
+            db.execute("INSERT INTO v3_stage_usage VALUES(?,?,?,?,?,?)",
+                       (str(uuid.uuid4()), lead_id, stage, status, json.dumps(usage or {}), now()))
+        if usage:
+            self.record_usage(lead_id, "gpt-6-luna/" + stage, usage)
 
     def usage(self):
         with self.connect() as db:

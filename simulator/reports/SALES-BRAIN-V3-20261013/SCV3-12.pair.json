@@ -1,0 +1,469 @@
+{
+  "scenario_id": "SCV3-12",
+  "title": "Flexible space and family privacy",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent is checking the requested information, so there’s nothing more to ask until they have it.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, I prefer 4 rooms because I work from home and my mum sometimes stays. Do you have that?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Pearl Residences Phase 1 only has 3-bedroom, 2-bathroom units at 900 sq ft, so there isn’t a 4-bedroom option. With your work-from-home setup and your mum staying sometimes, would a 3-bedroom layout still be worth considering, or is a fourth room essential?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "I could consider 3 bedrooms if one can work as a quiet office and Mum still has some privacy when she visits. Do you have the actual floor plan and room dimensions?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "The layout concept shows three bedrooms, but I don’t have the approved floor plan or verified room dimensions to share yet. I’ll check those so we can assess whether one room would work as a quiet office and still give your mum privacy."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Thanks, I’ll wait for the approved plan and room dimensions before deciding whether the layout works for us."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences Phase 1 only has 3-bedroom, 2-bathroom units at 900 sq ft, so there isn’t a 4-bedroom option. With your work-from-home setup and your mum staying sometimes, would a 3-bedroom layout still be worth considering, or is a fourth room essential?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The layout concept shows three bedrooms, but I don’t have the approved floor plan or verified room dimensions to share yet. I’ll check those so we can assess whether one room would work as a quiet office and still give your mum privacy.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "I could consider 3 bedrooms if one can work as a quiet office and Mum still has some privacy when she visits. Do you have the actual floor plan and room dimensions?",
+        "state": "CONTINUE",
+        "reason": "The buyer is open to the verified three-bedroom option but needs to assess its real layout against work and family privacy needs.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Thanks, I’ll wait for the approved plan and room dimensions before deciding whether the layout works for us.",
+        "state": "WAITING",
+        "reason": "The agent is checking the requested information, so there’s nothing more to ask until they have it.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "HANDLE",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Find out whether a 3-bedroom unit could still work for her needs",
+      "size_or_layout_preference": "Prefers 4 rooms for working from home and occasional stays by her mum",
+      "important_features": [
+        "4 rooms",
+        "Space for a work-from-home setup",
+        "Room for her mum to stay occasionally"
+      ],
+      "primary_motivations": [],
+      "decision_factors": [
+        "Whether a 3-bedroom unit can meet her needs"
+      ],
+      "active_concerns": [
+        "Pearl Residences Phase 1 does not offer a 4-bedroom unit"
+      ],
+      "fit_assessment": "Potential mismatch if four rooms are essential; the Phase 1 offering is 3 bedrooms.",
+      "last_progress": "Shared that she prefers four rooms for WFH and her mum's occasional stays.",
+      "next_action": "Check whether a 3-bedroom layout is acceptable",
+      "conversation_summary": "Buyer prefers four rooms for working from home and occasional stays by her mum; asked whether Pearl Residences offers this."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "LAYOUT|1 and approved bedroom dimensions each floor layout pearl phase plan residences type verified",
+          "support_type": "LAYOUT",
+          "requested_fact": "Approved Phase 1 Type A floor plan and verified dimensions for each bedroom.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2293,
+          "output_tokens": 843,
+          "total_tokens": 3136,
+          "cached_tokens": 0,
+          "reasoning_tokens": 381
+        },
+        "latency_seconds": 9.813,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 460,
+          "output_tokens": 170,
+          "total_tokens": 630,
+          "cached_tokens": 0,
+          "reasoning_tokens": 82
+        },
+        "latency_seconds": 3.862,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2427,
+          "output_tokens": 928,
+          "total_tokens": 3355,
+          "cached_tokens": 0,
+          "reasoning_tokens": 489
+        },
+        "latency_seconds": 9.742,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 625,
+          "output_tokens": 128,
+          "total_tokens": 753,
+          "cached_tokens": 0,
+          "reasoning_tokens": 59
+        },
+        "latency_seconds": 2.476,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has registered the request and is waiting on verification, so there’s no need to press for an update yet.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, I prefer 4 rooms because I work from home and my mum sometimes stays. Do you have that?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Pearl Residences doesn’t have 4-room units in Phase 1; the units are 3-bedroom, 2-bathroom homes. Since you’d like space to work from home and for your mum to stay, would you consider a 3-bedroom, or is having four rooms essential?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "I can consider 3 bedrooms, it’s not absolutely essential. One room needs to work as a quiet study, and my mum should still have some privacy when she visits. Could you share the actual floor plan and room sizes?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. I’ll wait for the confirmed floor plan and room sizes before deciding if the layout would work for us."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences doesn’t have 4-room units in Phase 1; the units are 3-bedroom, 2-bathroom homes. Since you’d like space to work from home and for your mum to stay, would you consider a 3-bedroom, or is having four rooms essential?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "I can consider 3 bedrooms, it’s not absolutely essential. One room needs to work as a quiet study, and my mum should still have some privacy when she visits. Could you share the actual floor plan and room sizes?",
+        "state": "CONTINUE",
+        "reason": "The buyer is open to a three-bedroom unit but needs verified layout details to judge whether it suits their work and family needs.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. I’ll wait for the confirmed floor plan and room sizes before deciding if the layout would work for us.",
+        "state": "WAITING",
+        "reason": "The agent has registered the request and is waiting on verification, so there’s no need to press for an update yet.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "QUALIFY",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Share verified Phase 1 floor plan and room dimensions so she can assess layout fit.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Prefers 4 rooms but says 3 bedrooms are not absolutely essential.",
+          "One room needs to work as a quiet study; her mother should have some privacy when visiting."
+        ],
+        "confirmed_motivations": [
+          "Works from home.",
+          "Her mother sometimes stays."
+        ],
+        "hypotheses": [],
+        "tradeoffs": [
+          "Open to considering 3 bedrooms if the layout can support a quiet study and some privacy for her mother."
+        ],
+        "objections": [],
+        "communicated_facts": [
+          "Pearl Residences Phase 1 has 3-bedroom, 2-bathroom units, not 4-room units."
+        ],
+        "sales_attempts": [
+          "CONTINUE: Explained the Phase 1 layout and asked if she would consider 3 bedrooms; she said she can, with study and guest-privacy needs."
+        ],
+        "open_questions": [
+          "Do the actual floor plan and room sizes support her study and guest-privacy needs?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Retrieve the actual Phase 1 floor plan and room dimensions, then share them.",
+          "why": "She directly requested them to assess whether a 3-bedroom layout meets her needs.",
+          "feedback_to_watch": "Whether the layout and room sizes work for a quiet study and her mother's privacy."
+        }
+      },
+      "preferred_language": "English",
+      "size_or_layout_preference": "Open to 3 bedrooms if one room can serve as a quiet study and her mother has some privacy when visiting.",
+      "important_features": [
+        "Quiet study",
+        "Privacy for her mother when visiting"
+      ],
+      "primary_motivations": [
+        "Works from home",
+        "Her mother sometimes stays"
+      ],
+      "decision_factors": [
+        "Whether the actual floor plan and room dimensions support a quiet study and guest privacy"
+      ],
+      "active_concerns": [],
+      "resolved_concerns": [],
+      "fit_assessment": "Potentially suitable if the approved layout and room dimensions meet her study and guest-privacy needs; not yet verified.",
+      "last_progress": "She is open to 3 bedrooms, subject to study and guest-privacy needs, and asked for the actual plan and room sizes.",
+      "next_action": "Request the approved Phase 1 floor plan and exact room dimensions.",
+      "conversation_summary": "She prefers four rooms for working from home and her mother's occasional visits, but can consider three bedrooms if one can serve as a quiet study and her mother has privacy. She requested the actual floor plan and room sizes; these are not verified in the available information."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "LAYOUT|1 3 and approved bedroom dimensions exact floor measurements pearl phase plan residences room type",
+          "support_type": "LAYOUT",
+          "requested_fact": "The approved Phase 1 floor plan and exact room dimensions for the 3-bedroom Type A unit.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 539,
+          "output_tokens": 400,
+          "total_tokens": 939,
+          "cached_tokens": 0,
+          "reasoning_tokens": 174
+        },
+        "latency_seconds": 5.141,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2556,
+          "output_tokens": 1191,
+          "total_tokens": 3747,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 801
+        },
+        "latency_seconds": 10.821,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 456,
+          "output_tokens": 213,
+          "total_tokens": 669,
+          "cached_tokens": 0,
+          "reasoning_tokens": 113
+        },
+        "latency_seconds": 3.638,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1026,
+          "output_tokens": 951,
+          "total_tokens": 1977,
+          "cached_tokens": 0,
+          "reasoning_tokens": 614
+        },
+        "latency_seconds": 10.821,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3009,
+          "output_tokens": 1185,
+          "total_tokens": 4194,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 649
+        },
+        "latency_seconds": 10.108,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 605,
+          "output_tokens": 158,
+          "total_tokens": 763,
+          "cached_tokens": 0,
+          "reasoning_tokens": 81
+        },
+        "latency_seconds": 2.593,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 3,
+        "meaningful_sales_actions": 2,
+        "observation_and_adaptation": 2,
+        "natural_continuity": 2,
+        "progression_and_pacing": 2
+      },
+      "B": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 3
+      }
+    },
+    "examples": [],
+    "material_errors": [],
+    "simulator_quality": "The exchange is plausible, and both customers explicitly choose to wait. Neither transcript reaches fulfillment of the requested information, so follow-through is untested. B’s wording is more natural and specific.",
+    "summary": "Both agents appropriately establish that Phase 1 has three-bedroom rather than four-bedroom units and check whether the customer is flexible (turn 1). B better carries the customer’s stated needs forward: at turn 2 it connects the requested plan and dimensions to a quiet office and the mother’s privacy, and says it will check the information. A’s “I’ve registered that for verification” is vague and does not show how the requested details relate to the customer’s needs. Neither agent makes much concrete progress: the available reference includes approximate room areas (master 143.4 sq ft, Bedroom 1 117.4 sq ft, Bedroom 2 103.3 sq ft), although it does not provide exact room dimensions. A stronger turn 2 from either agent would share those approximate areas with that limitation clearly stated, confirm the approved plan and exact dimensions, and relate the room arrangement to the office/privacy question. No material factual or operational errors are evident."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20798,
+        "output_tokens": 2266,
+        "total_tokens": 23064,
+        "cached_tokens": 0,
+        "reasoning_tokens": 1868
+      },
+      "latency_seconds": 24.449,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

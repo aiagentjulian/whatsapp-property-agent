@@ -1,0 +1,368 @@
+{
+  "scenario_id": "SCV3-07",
+  "title": "Safety, flood and infrastructure concerns",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has agreed to check both requests and neither has a result yet, so there is nothing more to ask for now.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "I saw the location near river and power lines. Flood risk or safety concern ah?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Fair concern. The latest project information says the development’s finished floor level is planned at about 2.4 m above sea level, with river maintenance and flood-gate freeboard controls under JPS. That’s mitigation, not a guarantee of zero flood risk. I don’t have verified details on the nearby power lines or any safety assessment, so I’ll check that rather than guess."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks for being upfront. I’ll wait for the verified power-line info. For the flood risk, is there a project-specific flood assessment or official flood-history record you can share? The 2.4 m level is useful, but doesn’t establish the site’s risk on its own."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "You’re right—the 2.4 m level alone doesn’t establish the site’s flood risk. I’ll check whether there’s a project-specific flood assessment or official flood-history record I can share, and won’t guess in the meantime."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks for checking. I’ll wait for the verified info and sources before drawing any conclusions."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair concern. The latest project information says the development’s finished floor level is planned at about 2.4 m above sea level, with river maintenance and flood-gate freeboard controls under JPS. That’s mitigation, not a guarantee of zero flood risk. I don’t have verified details on the nearby power lines or any safety assessment, so I’ll check that rather than guess.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "You’re right—the 2.4 m level alone doesn’t establish the site’s flood risk. I’ll check whether there’s a project-specific flood assessment or official flood-history record I can share, and won’t guess in the meantime.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-002"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks for being upfront. I’ll wait for the verified power-line info. For the flood risk, is there a project-specific flood assessment or official flood-history record you can share? The 2.4 m level is useful, but doesn’t establish the site’s risk on its own.",
+        "state": "CONTINUE",
+        "reason": "The buyer acknowledges the pending technical check without chasing it and asks for verifiable, project-specific flood evidence.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks for checking. I’ll wait for the verified info and sources before drawing any conclusions.",
+        "state": "WAITING",
+        "reason": "The agent has agreed to check both requests and neither has a result yet, so there is nothing more to ask for now.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "HANDLE",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Provide verified information about power-line proximity and safety assessment.",
+      "active_concerns": [
+        "Flood risk and nearby power-line safety"
+      ],
+      "last_progress": "Buyer raised concerns about the river location, flood risk and nearby power lines.",
+      "next_action": "Verify power-line proximity and any relevant safety assessment.",
+      "conversation_summary": "Buyer is concerned about flood risk and power-line safety. Shared stated flood mitigation measures without guaranteeing zero risk; power-line details need verification."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "TECHNICAL|and any assessment availability clearance information line lines nearby or pearl power proximity residences safety verified",
+          "support_type": "TECHNICAL",
+          "requested_fact": "Verified proximity of the nearby power lines to Pearl Residences and any available safety assessment or clearance information.",
+          "status": "OPEN"
+        },
+        {
+          "request_id": "SIM-002",
+          "signature": "TECHNICAL|and are assessment availability findings flood history including official or pearl project records relevant residences share site source specific",
+          "support_type": "TECHNICAL",
+          "requested_fact": "Whether a project-specific flood assessment and/or official flood-history records for the Pearl Residences site are available to share, including the source and relevant findings.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2230,
+          "output_tokens": 741,
+          "total_tokens": 2971,
+          "cached_tokens": 0,
+          "reasoning_tokens": 323
+        },
+        "latency_seconds": 9.478,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 500,
+          "output_tokens": 420,
+          "total_tokens": 920,
+          "cached_tokens": 0,
+          "reasoning_tokens": 313
+        },
+        "latency_seconds": 6.046,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2576,
+          "output_tokens": 535,
+          "total_tokens": 3111,
+          "cached_tokens": 0,
+          "reasoning_tokens": 160
+        },
+        "latency_seconds": 7.086,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 705,
+          "output_tokens": 143,
+          "total_tokens": 848,
+          "cached_tokens": 0,
+          "reasoning_tokens": 70
+        },
+        "latency_seconds": 2.956,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 2,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 2,
+    "natural_ending_reason": "customer waiting: The agent has registered the technical question for verification and it is still open, so I’ll wait for the response rather than press for an answer now.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "I saw the location near river and power lines. Flood risk or safety concern ah?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Okay, thanks. I’ll wait for the verified information—especially the flood records and measured distances or applicable setbacks. Please let me know when you have it."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Okay, thanks. I’ll wait for the verified information—especially the flood records and measured distances or applicable setbacks. Please let me know when you have it.",
+        "state": "WAITING",
+        "reason": "The agent has registered the technical question for verification and it is still open, so I’ll wait for the response rather than press for an answer now.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Wants to know whether the location near a river and power lines presents flood or safety concerns."
+        ],
+        "confirmed_motivations": [],
+        "hypotheses": [
+          "May be assessing location-related risks before considering the property further."
+        ],
+        "tradeoffs": [],
+        "objections": [],
+        "communicated_facts": [],
+        "sales_attempts": [],
+        "open_questions": [
+          "Which project or property location is the buyer referring to?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Identify the specific property, then provide verified information on flood history and the river and power-line proximity.",
+          "why": "The concern is site-specific, and no property or supporting facts are available in the conversation.",
+          "feedback_to_watch": "Whether the buyer shares the property details and whether verified information addresses the concern."
+        }
+      }
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "TECHNICAL|and any applicable concerns distance flood from history including information line lines or pearl power residences risk river s safety setbacks site verified",
+          "support_type": "TECHNICAL",
+          "requested_fact": "Verified flood history or risk information for the Pearl Residences site, and the site's distance from the river and power lines, including any applicable safety setbacks.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 527,
+          "output_tokens": 634,
+          "total_tokens": 1161,
+          "cached_tokens": 0,
+          "reasoning_tokens": 327
+        },
+        "latency_seconds": 8.767,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2584,
+          "output_tokens": 1174,
+          "total_tokens": 3758,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 834
+        },
+        "latency_seconds": 11.436,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 448,
+          "output_tokens": 141,
+          "total_tokens": 589,
+          "cached_tokens": 0,
+          "reasoning_tokens": 51
+        },
+        "latency_seconds": 2.733,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 2,
+        "meaningful_sales_actions": 2,
+        "observation_and_adaptation": 2,
+        "natural_continuity": 3,
+        "progression_and_pacing": 2
+      },
+      "B": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 4,
+        "observation_and_adaptation": 5,
+        "natural_continuity": 5,
+        "progression_and_pacing": 4
+      }
+    },
+    "examples": [],
+    "material_errors": [],
+    "simulator_quality": "Both transcripts are plausible short exchanges that end while verification is pending. B’s dialogue feels more responsive and natural; neither transcript provides a verified follow-up result, so the simulator does not show whether the stated checks are completed.",
+    "summary": "B is stronger. At turn 1, B answers the flood part with the stated 2.4 m finished-floor level and JPS river-maintenance/flood-gate controls, while clearly saying these do not guarantee zero risk; it separately declines to guess about the power lines. At turn 2, B accepts the customer’s point that the mitigation information does not establish site-specific flood risk and agrees to check for an assessment or official history. A’s turn 1 defers the whole question despite available project information about flood mitigation, offering no substantive answer. A better response there would give the supported mitigation facts with the same caveat B uses, distinguish what remains unverified, and say what will be checked. B’s main remaining gap is that the transcript ends before it supplies the requested sources or verified power-line information."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20697,
+        "output_tokens": 1354,
+        "total_tokens": 22051,
+        "cached_tokens": 0,
+        "reasoning_tokens": 1034
+      },
+      "latency_seconds": 14.665,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

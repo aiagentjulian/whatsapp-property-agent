@@ -1,0 +1,204 @@
+{
+  "architecture": "V3",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 3,
+  "natural_ending_reason": "customer end: The overview answered their question, and they are only browsing with no plans to proceed.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi. Just browsing only, not planning anything yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi, no worries at all—browse at your own pace. If you’d like any info on Pearl Residences later, I’m here."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks. What type of homes are at Pearl Residences? Just a quick overview is fine."
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "For Phase 1, Pearl Residences has one main home type: Type A, with 3 bedrooms, 2 bathrooms and a balcony in 900 sq. ft."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Got it, thanks. Just wanted a quick idea of the layout."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "NEUTRAL",
+      "reply": "Hi, no worries at all—browse at your own pace. If you’d like any info on Pearl Residences later, I’m here."
+    },
+    {
+      "turn": 2,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "For Phase 1, Pearl Residences has one main home type: Type A, with 3 bedrooms, 2 bathrooms and a balcony in 900 sq. ft."
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Thanks. What type of homes are at Pearl Residences? Just a quick overview is fine.",
+      "state": "CONTINUE",
+      "reason": "I’m only browsing, but a brief overview would help me understand what kind of homes these are.",
+      "interest_change": "UNCHANGED"
+    },
+    {
+      "after_agent_turn": 2,
+      "message": "Got it, thanks. Just wanted a quick idea of the layout.",
+      "state": "END",
+      "reason": "The overview answered their question, and they are only browsing with no plans to proceed.",
+      "interest_change": "UNCHANGED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Answer the enquiry helpfully.",
+    "conversation_progress": {
+      "explicit_requirements": [
+        "Asked for a quick overview of the types of homes at Pearl Residences."
+      ],
+      "confirmed_motivations": [],
+      "hypotheses": [
+        "The specific question suggests curiosity, but they said they are just browsing and not planning anything yet."
+      ],
+      "tradeoffs": [],
+      "objections": [],
+      "communicated_facts": [],
+      "sales_attempts": [
+        "Low-pressure offer to share Pearl Residences info — buyer asked for a quick overview; continue."
+      ],
+      "open_questions": [],
+      "commitments": [],
+      "next_opportunity": {
+        "action": "Check verified Pearl Residences information and provide a concise overview of its home types.",
+        "why": "The buyer directly asked for this information and requested a quick overview.",
+        "feedback_to_watch": "Whether they ask follow-up questions about a home type or simply continue browsing."
+      }
+    }
+  },
+  "operations": {
+    "requests": [],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 515,
+        "output_tokens": 728,
+        "total_tokens": 1243,
+        "cached_tokens": 0,
+        "reasoning_tokens": 464
+      },
+      "latency_seconds": 8.875,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2393,
+        "output_tokens": 615,
+        "total_tokens": 3008,
+        "cached_tokens": 1134,
+        "reasoning_tokens": 393
+      },
+      "latency_seconds": 6.376,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 390,
+        "output_tokens": 166,
+        "total_tokens": 556,
+        "cached_tokens": 0,
+        "reasoning_tokens": 99
+      },
+      "latency_seconds": 3.057,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 747,
+        "output_tokens": 910,
+        "total_tokens": 1657,
+        "cached_tokens": 0,
+        "reasoning_tokens": 607
+      },
+      "latency_seconds": 10.927,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2649,
+        "output_tokens": 508,
+        "total_tokens": 3157,
+        "cached_tokens": 1134,
+        "reasoning_tokens": 284
+      },
+      "latency_seconds": 5.415,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 478,
+        "output_tokens": 173,
+        "total_tokens": 651,
+        "cached_tokens": 0,
+        "reasoning_tokens": 115
+      },
+      "latency_seconds": 3.233,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 0,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

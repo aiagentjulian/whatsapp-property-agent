@@ -1,0 +1,45 @@
+import json
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+from simulator.runner.sales_core_ab import API, FakeOperations, run_conversation, report_metrics
+
+
+class EvalTests(unittest.TestCase):
+    def test_support_adapter_reuses_pending_and_resolves_only_on_event(self):
+        adapter = FakeOperations()
+        request = {"support_type": "PRICING", "subject": "Type A", "requested_fact": "current price"}
+        first, created = adapter.accept_support(request)
+        self.assertTrue(created)
+        again, created = adapter.accept_support(request)
+        self.assertFalse(created)
+        self.assertEqual(first["request_id"], again["request_id"])
+        self.assertEqual(adapter.context()[0]["status"], "OPEN")
+        self.assertIsNone(adapter.context()[0]["support_result"])
+        adapter.resolve(first["request_id"], "Synthetic fixture: verified price RM390k")
+        self.assertEqual(adapter.context()[0]["status"], "RESOLVED")
+        self.assertFalse(adapter.accept_handoff("APPOINTMENT_HANDOFF", "OPERATIONAL_BOOKING") is False)
+        self.assertFalse(adapter.handoff["appointment_confirmed"])
+
+    def test_fake_operator_pauses_without_forced_extra_turn(self):
+        scenario = {"opening": "Hi", "persona": "ordinary browser", "facts": "no urgency", "motives": "understand project"}
+        config = {"model": "gpt-6-luna", "reasoning": "high", "api_key": ""}
+        with tempfile.TemporaryDirectory() as temp:
+            result = run_conversation(scenario, "V3", API(config, dry=True), config, Path(temp) / "pair.json")
+        self.assertEqual(result["status"], "COMPLETED")
+        self.assertEqual(result["customer_turns"], 2)
+        self.assertEqual(result["customer_state_transitions"][0]["state"], "END")
+        self.assertEqual(len(result["agent_actions"]), 1)
+        self.assertEqual(result["deterministic_checks"]["duplicate_support_requests"], 0)
+
+    def test_incomplete_usage_is_counted_but_not_success(self):
+        rows = [{"role": "blind_judge", "transport": "responses_api", "outcome": "INCOMPLETE",
+                 "latency_seconds": 1.0, "usage": {"input_tokens": 100, "cached_tokens": 0,
+                                                     "output_tokens": 900, "total_tokens": 1000}}]
+        metrics = report_metrics(rows)
+        self.assertEqual(metrics["failed_or_incomplete_calls"], 1)
+        self.assertEqual(metrics["tokens"]["total_tokens"], 1000)
+
+if __name__ == "__main__": unittest.main()

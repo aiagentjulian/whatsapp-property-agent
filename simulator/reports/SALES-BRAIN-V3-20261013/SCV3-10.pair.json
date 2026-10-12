@@ -1,0 +1,417 @@
+{
+  "scenario_id": "SCV3-10",
+  "title": "High intent, sensitive to pressure",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "customer",
+    "customer_turns": 2,
+    "natural_ending_reason": "accepted formal handoff; appointment not confirmed",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, I may want to see the show unit this weekend. But don't want agent keep chasing me after ya."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Of course—I won’t chase you. If you decide you’d like to go this weekend, just message me and I can help arrange the show-unit visit. No pressure to decide now."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks, I’d like to view this weekend. Is Saturday around 11am possible? Could you check and confirm if that time is available? No worries if it isn’t—just let me know when you’ve checked."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Sure, I’ll check whether Saturday around 11am is available and get back to you. I won’t follow up beyond confirming the time you asked about."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Of course—I won’t chase you. If you decide you’d like to go this weekend, just message me and I can help arrange the show-unit visit. No pressure to decide now."
+      },
+      {
+        "turn": 2,
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Sure, I’ll check whether Saturday around 11am is available and get back to you. I won’t follow up beyond confirming the time you asked about.",
+        "operation_outcome": "ACCEPTED"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks, I’d like to view this weekend. Is Saturday around 11am possible? Could you check and confirm if that time is available? No worries if it isn’t—just let me know when you’ve checked.",
+        "state": "CONTINUE",
+        "reason": "I’m ready to arrange a low-pressure viewing, but the time still needs to be checked and confirmed.",
+        "interest_change": "INCREASED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "CLOSE",
+      "intent_level": "MEDIUM",
+      "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+      "next_objective": "Check whether a show-unit viewing is available Saturday around 11am and confirm to the customer.",
+      "viewing_interest": "Would like to view the show unit this weekend; requested Saturday around 11am and wants availability checked and confirmed.",
+      "active_concerns": [
+        "Does not want repeated agent follow-up."
+      ],
+      "last_progress": "Customer requested a show-unit viewing this weekend and specified Saturday around 11am.",
+      "next_action": "Check Saturday 11am viewing availability and confirm with the customer.",
+      "conversation_summary": "Customer wants to view the show unit this weekend, preferably Saturday around 11am. They do not want repeated follow-up; only confirm the requested time."
+    },
+    "operations": {
+      "requests": [],
+      "handoff": {
+        "status": "ACCEPTED",
+        "action": "APPOINTMENT_HANDOFF",
+        "reason": "OPERATIONAL_BOOKING",
+        "appointment_confirmed": false
+      }
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2182,
+          "output_tokens": 675,
+          "total_tokens": 2857,
+          "cached_tokens": 0,
+          "reasoning_tokens": 362
+        },
+        "latency_seconds": 7.571,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 428,
+          "output_tokens": 262,
+          "total_tokens": 690,
+          "cached_tokens": 0,
+          "reasoning_tokens": 167
+        },
+        "latency_seconds": 3.672,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2729,
+          "output_tokens": 670,
+          "total_tokens": 3399,
+          "cached_tokens": 0,
+          "reasoning_tokens": 300
+        },
+        "latency_seconds": 7.228,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 0,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The availability check is still pending, so I’ll wait for confirmation before making plans.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, I may want to see the show unit this weekend. But don't want agent keep chasing me after ya."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "No worries, I won’t chase you. If you decide you’d like to view this weekend, just message me your preferred day and time and I’ll help check the arrangements. I’ll leave it with you in the meantime."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks, that’s good. Saturday around 2pm would suit me—could you check if that time is available and let me know before I plan around it? Not booked yet, right?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. I’ll wait for you to confirm before planning around it. Just to be clear, it isn’t booked or reserved yet, right?"
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "No worries, I won’t chase you. If you decide you’d like to view this weekend, just message me your preferred day and time and I’ll help check the arrangements. I’ll leave it with you in the meantime."
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks, that’s good. Saturday around 2pm would suit me—could you check if that time is available and let me know before I plan around it? Not booked yet, right?",
+        "state": "CONTINUE",
+        "reason": "The customer is interested in viewing and is asking for availability confirmation without assuming an appointment is booked.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. I’ll wait for you to confirm before planning around it. Just to be clear, it isn’t booked or reserved yet, right?",
+        "state": "WAITING",
+        "reason": "The availability check is still pending, so I’ll wait for confirmation before making plans.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "INTENT",
+      "intent_level": "MEDIUM",
+      "appointment_readiness": "EMERGING",
+      "next_objective": "Confirm whether a show-unit visit is available Saturday around 2pm; do not book without the buyer’s authorization.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Saturday around 2pm would suit a show-unit visit; wants availability confirmed before planning.",
+          "Doesn't want the agent to keep chasing them."
+        ],
+        "confirmed_motivations": [],
+        "hypotheses": [
+          "Viewing interest is now more concrete but remains unbooked; buyer wants confirmation before making plans."
+        ],
+        "tradeoffs": [],
+        "objections": [
+          "Concern about repeated follow-up."
+        ],
+        "communicated_facts": [
+          "Agent said they would not chase and offered to help check viewing arrangements if the buyer wanted to visit."
+        ],
+        "sales_attempts": [
+          "Low-pressure, no-chase viewing offer — CONTINUE; buyer appreciated it, proposed Saturday around 2pm, and asked for an availability check."
+        ],
+        "open_questions": [
+          "Is Saturday around 2pm available, and has any viewing been booked or reserved? Do not book without the buyer's authorization."
+        ],
+        "commitments": [
+          "Check availability for Saturday around 2pm and let the buyer know before they plan."
+        ],
+        "next_opportunity": {
+          "action": "Check the Saturday around 2pm viewing availability and booking status, then report back without making a booking.",
+          "why": "The buyer explicitly requested confirmation before planning; responding to that request respects their no-chasing preference.",
+          "feedback_to_watch": "Whether the time is suitable and whether the buyer then asks to book."
+        }
+      },
+      "viewing_interest": "Tentatively interested in a show-unit visit Saturday around 2pm; wants availability confirmed before planning. Not booked.",
+      "active_concerns": [
+        "Doesn't want repeated follow-up."
+      ],
+      "fit_assessment": "Tentative viewing interest; respect their preference not to be chased.",
+      "last_progress": "Buyer proposed Saturday around 2pm for a tentative show-unit visit and asked for availability confirmation; nothing has been booked.",
+      "next_action": "Verify Saturday around 2pm show-unit viewing availability and report the result before the buyer plans.",
+      "conversation_summary": "Buyer may want to see the show unit this weekend but does not want repeated agent follow-up."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "AVAILABILITY|2pm around availability booked no or pearl reserved residences saturday show that viewing",
+          "support_type": "AVAILABILITY",
+          "requested_fact": "Whether a Pearl Residences show-unit viewing is available Saturday around 2pm; confirm that no viewing is booked or reserved.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 539,
+          "output_tokens": 602,
+          "total_tokens": 1141,
+          "cached_tokens": 0,
+          "reasoning_tokens": 311
+        },
+        "latency_seconds": 7.147,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2587,
+          "output_tokens": 1058,
+          "total_tokens": 3645,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 724
+        },
+        "latency_seconds": 10.158,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 436,
+          "output_tokens": 175,
+          "total_tokens": 611,
+          "cached_tokens": 0,
+          "reasoning_tokens": 88
+        },
+        "latency_seconds": 3.797,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 980,
+          "output_tokens": 1711,
+          "total_tokens": 2691,
+          "cached_tokens": 0,
+          "reasoning_tokens": 1352
+        },
+        "latency_seconds": 19.125,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3331,
+          "output_tokens": 1264,
+          "total_tokens": 4595,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 860
+        },
+        "latency_seconds": 10.828,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 584,
+          "output_tokens": 147,
+          "total_tokens": 731,
+          "cached_tokens": 0,
+          "reasoning_tokens": 70
+        },
+        "latency_seconds": 3.137,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "A",
+    "V3": "B"
+  },
+  "blind_judge": {
+    "winner": "A",
+    "scores": {
+      "A": {
+        "customer_insight": 5,
+        "meaningful_sales_actions": 4,
+        "observation_and_adaptation": 5,
+        "natural_continuity": 5,
+        "progression_and_pacing": 4
+      },
+      "B": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 3,
+        "natural_continuity": 2,
+        "progression_and_pacing": 2
+      }
+    },
+    "examples": [],
+    "material_errors": [],
+    "simulator_quality": "A is a coherent, if brief, exchange that ends with a pending availability check and an accepted handoff. B's scenario is plausible, but the transcript ends immediately after the customer repeats an unanswered booking-status question, making the exchange feel incomplete.",
+    "summary": "A wins by respecting the customer's no-chasing boundary in turn 1, then responding directly to the requested Saturday 11am check in turn 2. It clearly says the time is not yet confirmed and limits follow-up to confirming the requested time. The appointment remains pending, so the check itself is not a completed outcome. B also respects the no-chasing boundary in turn 1, but in turn 2, “I’ve registered that for verification” is vague and does not answer whether the 2pm slot is booked or reserved. The customer repeats that question in turn 3 and receives no answer in the transcript. A stronger reply would explicitly clarify that nothing is booked or reserved yet, state that the time needs checking, and confirm only after verification. No material factual errors are established; B’s claimed registration is unclear, but the transcript does not show that it is false."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20688,
+        "output_tokens": 2197,
+        "total_tokens": 22885,
+        "cached_tokens": 0,
+        "reasoning_tokens": 1860
+      },
+      "latency_seconds": 24.379,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

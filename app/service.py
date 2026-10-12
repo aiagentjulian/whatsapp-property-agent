@@ -29,7 +29,7 @@ class Runtime:
             self.agent = agent
         elif config.get("sales_core", "v2") == "v3":
             from .sales_core_v3 import SalesCoreV3
-            self.agent = SalesCoreV3(config)
+            self.agent = SalesCoreV3(config, usage_recorder=self.store.record_v3_stage_usage)
         else:
             self.agent = SalesAgent(config)
         self._sheets_client = None
@@ -71,7 +71,9 @@ class Runtime:
             return {"status": "duplicate", "lead_id": lead["lead_id"]}
         if lead["owner"] != "AI" or lead["ai_session_status"] != "ACTIVE":
             return {"status": "suppressed", "reason": "ai_session_ended", "lead_id": lead["lead_id"]}
-        profile = lead["profile"]
+        profile = dict(lead["profile"])
+        if self.config.get("sales_core") == "v3":
+            profile["conversation_progress"] = self.store.get_progress(lead["lead_id"])
         history = self.store.history(lead["lead_id"])
         supports = self.store.support_context(lead["lead_id"])
         if diagnostic_id:
@@ -87,7 +89,9 @@ class Runtime:
         if diagnostic_id:
             logger.info("meta_webhook request_id=%s message_ref=%s stage=gpt_call outcome=complete",
                         diagnostic_id, message_ref)
-        self.store.record_usage(lead["lead_id"], self.config["model"], usage)
+        if not usage.get("recorded_stage_usage"):
+            self.store.record_usage(lead["lead_id"], self.config["model"], usage)
+        progress = decision.pop("_conversation_progress", None)
         updates = {key: value for key, value in decision["lead_updates"].items() if key in PROFILE_FIELDS and value is not None}
         if decision["action"] == "APPOINTMENT_HANDOFF":
             readiness = updates.get("appointment_readiness") or profile.get("appointment_readiness")
@@ -96,12 +100,17 @@ class Runtime:
         # System fields are restored from persisted authority after every model update.
         updates.update({"lead_id": lead["lead_id"], "phone": lead["phone"], "lead_source": lead["lead_source"], "owner": lead["owner"], "ai_session_status": lead["ai_session_status"]})
         self.store.update_profile(lead["lead_id"], updates)
+        if progress is not None:
+            self.store.save_progress(lead["lead_id"], progress)
         action = decision["action"]
         if action == "SUPPORT_REQUEST":
             request = dict(decision["support_request"])
             request["signature"] = support_signature(request)
             support, created = self.store.create_support(lead["lead_id"], request)
             result = {"status": "support_requested" if created else "support_reused", "support_request_id": support["request_id"], "lead_id": lead["lead_id"]}
+            if self.config.get("sales_core") == "v3":
+                decision["reply"] = ("I’ve registered that for verification. I don’t have the confirmed answer yet."
+                                     if created else "That check is still pending; I don’t have a verified update yet.")
         elif action in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
             formal_type = "APPOINTMENT_HANDOFF" if action == "APPOINTMENT_HANDOFF" else "MANDATORY_OPERATIONAL_HANDOFF"
             success = self.store.formal_handoff(lead["lead_id"], formal_type, decision["handoff_reason"], decision.get("handoff_details") or body)

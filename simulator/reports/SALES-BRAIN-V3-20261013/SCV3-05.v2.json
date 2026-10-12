@@ -1,0 +1,97 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 2,
+  "natural_ending_reason": "customer end: The project only offers three-bedroom units, which does not meet the household’s non-negotiable requirement.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! Pearl Residences Phase 1 only has 3-bedroom, 2-bathroom units, so there isn’t a 4-bedroom option. If 4 bedrooms are essential for your parents and kids, this likely won’t be the right fit."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks for being upfront. We do need four separate bedrooms, so this one won’t work for us. We’ll look elsewhere."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Hi! Pearl Residences Phase 1 only has 3-bedroom, 2-bathroom units, so there isn’t a 4-bedroom option. If 4 bedrooms are essential for your parents and kids, this likely won’t be the right fit."
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Thanks for being upfront. We do need four separate bedrooms, so this one won’t work for us. We’ll look elsewhere.",
+      "state": "END",
+      "reason": "The project only offers three-bedroom units, which does not meet the household’s non-negotiable requirement.",
+      "interest_change": "DECREASED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Answer the enquiry helpfully.",
+    "purchase_reason": "Needs space for parents and kids",
+    "size_or_layout_preference": "4 bedrooms required",
+    "fit_assessment": "Mismatch: Phase 1 units have 3 bedrooms; buyer needs 4."
+  },
+  "operations": {
+    "requests": [],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2530,
+        "output_tokens": 623,
+        "total_tokens": 3153,
+        "cached_tokens": 0,
+        "reasoning_tokens": 363
+      },
+      "latency_seconds": 7.956,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 428,
+        "output_tokens": 120,
+        "total_tokens": 548,
+        "cached_tokens": 0,
+        "reasoning_tokens": 45
+      },
+      "latency_seconds": 2.502,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 0,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

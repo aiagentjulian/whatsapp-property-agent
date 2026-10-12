@@ -1,0 +1,243 @@
+{
+  "architecture": "V3",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 3,
+  "natural_ending_reason": "customer waiting: The floor plan and bedroom dimensions are already pending verification, so it’s natural to wait for the agent’s update.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi, saw your Pearl Residences post. Looking for own stay with family. Can share more?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! Pearl Residences offers a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Would a 3-bedroom home suit your family?"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Could you share the floor plan? 900 sqft sounds a bit tight—are the bedrooms big enough for kids’ beds and storage?"
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the floor plan and bedroom dimensions once you’ve confirmed them—we’ll have a look with the kids’ furniture in mind."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Hi! Pearl Residences offers a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Would a 3-bedroom home suit your family?"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "HANDLE",
+      "buyer_signal": "QUESTION",
+      "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+      "operation_outcome": "ACCEPTED",
+      "request_id": "SIM-001"
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Could you share the floor plan? 900 sqft sounds a bit tight—are the bedrooms big enough for kids’ beds and storage?",
+      "state": "CONTINUE",
+      "reason": "I’m interested, but need to understand whether the layout will work for our family.",
+      "interest_change": "UNCHANGED"
+    },
+    {
+      "after_agent_turn": 2,
+      "message": "Okay, thanks. Please send the floor plan and bedroom dimensions once you’ve confirmed them—we’ll have a look with the kids’ furniture in mind.",
+      "state": "WAITING",
+      "reason": "The floor plan and bedroom dimensions are already pending verification, so it’s natural to wait for the agent’s update.",
+      "interest_change": "UNCHANGED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "OWN_STAY",
+    "sales_stage": "HANDLE",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Assess bedroom furniture and storage fit using verified floor plan details.",
+    "conversation_progress": {
+      "explicit_requirements": [
+        "Looking for a home for own stay with family.",
+        "Requested the floor plan and asked whether bedrooms fit kids’ beds and storage."
+      ],
+      "confirmed_motivations": [
+        "Own-stay use with family."
+      ],
+      "hypotheses": [
+        "A compact layout may not meet the family’s space needs."
+      ],
+      "tradeoffs": [
+        "900 sq. ft. offers three bedrooms, but the customer is concerned it may feel tight."
+      ],
+      "objections": [
+        "Concern that 900 sq. ft. may be too tight; bedroom fit for beds and storage is unanswered."
+      ],
+      "communicated_facts": [
+        "Shared that Pearl Residences has a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony."
+      ],
+      "sales_attempts": [
+        "Asked whether a 3-bedroom home would suit the family — customer requested the floor plan and raised a size concern; revise with layout details."
+      ],
+      "open_questions": [
+        "Can the bedrooms accommodate the beds and storage they need?",
+        "What are their budget and move-in timing?"
+      ],
+      "commitments": [],
+      "next_opportunity": {
+        "action": "Provide the floor plan and verified bedroom dimensions, if available.",
+        "why": "The customer directly requested the plan and wants to assess whether the bedrooms can fit kids’ beds and storage.",
+        "feedback_to_watch": "Whether the actual room sizes ease their concern or confirm the layout feels too tight."
+      }
+    },
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a home for own stay with family.",
+    "important_features": [
+      "3 bedrooms",
+      "2 bathrooms",
+      "Balcony"
+    ],
+    "primary_motivations": [
+      "Own-stay use"
+    ],
+    "fit_assessment": "Potential own-stay fit; bedroom furniture and storage suitability remains unconfirmed pending the floor plan and room dimensions.",
+    "last_progress": "Customer requested the floor plan and asked whether bedrooms can fit kids’ beds and storage; project information indicates bedrooms are intended for queen-size beds.",
+    "next_action": "Obtain verified floor plan and bedroom dimensions for the customer to assess.",
+    "conversation_summary": "Customer is looking for a family home for own stay and is concerned that the 900 sq. ft. layout may be tight. They requested the floor plan and asked about bedroom space for kids’ beds and storage.",
+    "active_concerns": [
+      "Whether the bedrooms can fit kids’ beds and storage in the 900 sq. ft. layout."
+    ]
+  },
+  "operations": {
+    "requests": [
+      {
+        "request_id": "SIM-001",
+        "signature": "LAYOUT|3 900 all and bedroom bedrooms dimensions exact floor ft layout pearl plan residences sq three",
+        "support_type": "LAYOUT",
+        "requested_fact": "The Pearl Residences 900 sq. ft. floor plan and exact dimensions of all three bedrooms.",
+        "status": "OPEN"
+      }
+    ],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 533,
+        "output_tokens": 506,
+        "total_tokens": 1039,
+        "cached_tokens": 0,
+        "reasoning_tokens": 212
+      },
+      "latency_seconds": 6.071,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2767,
+        "output_tokens": 683,
+        "total_tokens": 3450,
+        "cached_tokens": 0,
+        "reasoning_tokens": 356
+      },
+      "latency_seconds": 8.082,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 420,
+        "output_tokens": 139,
+        "total_tokens": 559,
+        "cached_tokens": 0,
+        "reasoning_tokens": 66
+      },
+      "latency_seconds": 2.342,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 955,
+        "output_tokens": 982,
+        "total_tokens": 1937,
+        "cached_tokens": 0,
+        "reasoning_tokens": 611
+      },
+      "latency_seconds": 11.202,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3610,
+        "output_tokens": 1476,
+        "total_tokens": 5086,
+        "cached_tokens": 1134,
+        "reasoning_tokens": 980
+      },
+      "latency_seconds": 13.458,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 550,
+        "output_tokens": 145,
+        "total_tokens": 695,
+        "cached_tokens": 0,
+        "reasoning_tokens": 64
+      },
+      "latency_seconds": 2.656,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 1,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 3,
+  "natural_ending_reason": "customer waiting: The agent has already accepted the request and is checking the figures, so I’ll wait for the evidence before assessing the investment.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi, considering for investment. What rental yield can expect around there?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "I can’t give you a reliable yield figure without current rental comparables and the unit’s purchase price, so I don’t want to guess. I’ll check the latest figures for Pearl Residences so we can estimate a realistic gross yield. Is rental income your main objective, or are you also weighing long-term appreciation?"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Rental income is the main objective—I’m looking for net yield above 4%. I’ll also consider appreciation, but need to understand vacancy and other costs before comparing it with my alternatives."
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Understood—net yield above 4% is your target, and vacancy and holding costs need to be included, not just gross rent. One verified cost: the Phase 1 Type A is 900 sq ft, with maintenance incl. sinking fund at RM0.18 psf, or about RM162/month. Current pricing and rental comparables are already being checked; I’ll also verify the vacancy and other holding-cost assumptions rather than guess."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. Please send the rental comps and cost assumptions once you’ve verified them—then I can compare properly."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I can’t give you a reliable yield figure without current rental comparables and the unit’s purchase price, so I don’t want to guess. I’ll check the latest figures for Pearl Residences so we can estimate a realistic gross yield. Is rental income your main objective, or are you also weighing long-term appreciation?",
+      "operation_outcome": "ACCEPTED",
+      "request_id": "SIM-001"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "HANDLE",
+      "buyer_signal": "QUESTION",
+      "reply": "Understood—net yield above 4% is your target, and vacancy and holding costs need to be included, not just gross rent. One verified cost: the Phase 1 Type A is 900 sq ft, with maintenance incl. sinking fund at RM0.18 psf, or about RM162/month. Current pricing and rental comparables are already being checked; I’ll also verify the vacancy and other holding-cost assumptions rather than guess.",
+      "operation_outcome": "ACCEPTED",
+      "request_id": "SIM-002"
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Rental income is the main objective—I’m looking for net yield above 4%. I’ll also consider appreciation, but need to understand vacancy and other costs before comparing it with my alternatives.",
+      "state": "CONTINUE",
+      "reason": "Answers the agent’s question and clarifies the investment criteria while their request for current figures is still open.",
+      "interest_change": "UNCHANGED"
+    },
+    {
+      "after_agent_turn": 2,
+      "message": "Okay, thanks. Please send the rental comps and cost assumptions once you’ve verified them—then I can compare properly.",
+      "state": "WAITING",
+      "reason": "The agent has already accepted the request and is checking the figures, so I’ll wait for the evidence before assessing the investment.",
+      "interest_change": "UNCHANGED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "INVESTMENT",
+    "sales_stage": "HANDLE",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Verify vacancy and holding-cost assumptions alongside the pending price and rental-comparable check, then assess whether the net-yield target is realistic.",
+    "purchase_reason": "Rental income is the main objective; target net yield above 4%, with appreciation as a secondary consideration.",
+    "primary_motivations": [
+      "Rental income",
+      "Potential appreciation"
+    ],
+    "decision_factors": [
+      "Net yield above 4%",
+      "Vacancy",
+      "Holding costs"
+    ],
+    "active_concerns": [
+      "Needs current vacancy and cost assumptions to compare net yield with alternatives"
+    ],
+    "last_progress": "Buyer clarified rental income is the main objective, with a net-yield target above 4%; appreciation is secondary.",
+    "next_action": "Obtain verified vacancy and recurring holding-cost information.",
+    "conversation_summary": "Investor prioritises rental income and wants net yield above 4%; also considers appreciation and needs vacancy and ownership costs to compare alternatives."
+  },
+  "operations": {
+    "requests": [
+      {
+        "request_id": "SIM-001",
+        "signature": "OTHER|achievable and comparables current estimate gross or pearl price range realistic recent rent rental residences sufficient yield",
+        "support_type": "OTHER",
+        "requested_fact": "Current unit pricing and recent rental comparables or achievable rent range for Pearl Residences, sufficient to estimate a realistic gross rental yield.",
+        "status": "OPEN"
+      },
+      {
+        "request_id": "SIM-002",
+        "signature": "OTHER|and applicable are assumptions based beyond charges confirmation costs current estimating evidence fee figures including maintenance net or owner pearl recurring relevant reliable rental residences unavailable vacancy verified where yield",
+        "support_type": "OTHER",
+        "requested_fact": "Current evidence-based vacancy assumptions and recurring owner costs relevant to estimating Pearl Residences net rental yield, including applicable charges beyond the verified maintenance fee, or confirmation where reliable figures are unavailable.",
+        "status": "OPEN"
+      }
+    ],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2124,
+        "output_tokens": 1286,
+        "total_tokens": 3410,
+        "cached_tokens": 0,
+        "reasoning_tokens": 818
+      },
+      "latency_seconds": 14.994,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 493,
+        "output_tokens": 210,
+        "total_tokens": 703,
+        "cached_tokens": 0,
+        "reasoning_tokens": 124
+      },
+      "latency_seconds": 3.35,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2848,
+        "output_tokens": 2075,
+        "total_tokens": 4923,
+        "cached_tokens": 0,
+        "reasoning_tokens": 1421
+      },
+      "latency_seconds": 23.993,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 723,
+        "output_tokens": 142,
+        "total_tokens": 865,
+        "cached_tokens": 0,
+        "reasoning_tokens": 65
+      },
+      "latency_seconds": 2.778,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 2,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

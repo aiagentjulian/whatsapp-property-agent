@@ -1,0 +1,446 @@
+{
+  "scenario_id": "SCV3-11",
+  "title": "Facilities and ownership costs",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has an open request to verify the pool terms and current charges; no need to ask again before they respond.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, how much is the maintenance fee and is the clubhouse included?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "The maintenance fee is RM0.18 per sq. ft., inclusive of the sinking fund. The clubhouse isn’t fully included in that fee—selected facilities are pay-per-use or charged by package."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks. Is pool access included, or is that pay-per-use too? My wife would mainly use the pool, so I’m trying to work out the ongoing cost."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I don’t have confirmed pool-specific access terms or current rates, so I don’t want to guess. I’ll check whether pool access is included or pay-per-use, and the current charges or plans, so you can work out the ongoing cost for your wife."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks—please let me know once you’ve confirmed the pool access terms and any charges."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The maintenance fee is RM0.18 per sq. ft., inclusive of the sinking fund. The clubhouse isn’t fully included in that fee—selected facilities are pay-per-use or charged by package."
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have confirmed pool-specific access terms or current rates, so I don’t want to guess. I’ll check whether pool access is included or pay-per-use, and the current charges or plans, so you can work out the ongoing cost for your wife.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks. Is pool access included, or is that pay-per-use too? My wife would mainly use the pool, so I’m trying to work out the ongoing cost.",
+        "state": "CONTINUE",
+        "reason": "The maintenance rate is clear, but pool access may add a regular cost and matters to the spouse’s preference.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks—please let me know once you’ve confirmed the pool access terms and any charges.",
+        "state": "WAITING",
+        "reason": "The agent has an open request to verify the pool terms and current charges; no need to ask again before they respond.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully.",
+      "important_features": [
+        "Pool access for his wife"
+      ],
+      "decision_factors": [
+        "Ongoing pool-access cost"
+      ]
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "PRICING|access and charges clubhouse current fee in included maintenance official or pay pearl per plans pool provide residences use",
+          "support_type": "PRICING",
+          "requested_fact": "Confirm whether pool access is included in the maintenance fee or pay-per-use, and provide current official pool access charges or plans.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2155,
+          "output_tokens": 561,
+          "total_tokens": 2716,
+          "cached_tokens": 0,
+          "reasoning_tokens": 334
+        },
+        "latency_seconds": 5.763,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 425,
+          "output_tokens": 188,
+          "total_tokens": 613,
+          "cached_tokens": 0,
+          "reasoning_tokens": 104
+        },
+        "latency_seconds": 3.64,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2207,
+          "output_tokens": 1176,
+          "total_tokens": 3383,
+          "cached_tokens": 0,
+          "reasoning_tokens": 721
+        },
+        "latency_seconds": 11.923,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 605,
+          "output_tokens": 109,
+          "total_tokens": 714,
+          "cached_tokens": 0,
+          "reasoning_tokens": 37
+        },
+        "latency_seconds": 2.021,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has registered the question for verification and has no confirmed answer yet.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, how much is the maintenance fee and is the clubhouse included?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! At Pearl Residences, the maintenance fee is RM0.18 per sq ft, inclusive of sinking fund. For a 900 sq ft unit, that works out to RM162 per month. Clubhouse use isn’t fully included in the fee—selected facilities are pay-per-use or package-based."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks, RM162 is clear for 900 sq ft. Is pool access included, or is that one of the pay-per-use facilities? My spouse would use the pool quite a bit."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks for checking. I’ll wait for the confirmed pool access details before comparing the monthly costs."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! At Pearl Residences, the maintenance fee is RM0.18 per sq ft, inclusive of sinking fund. For a 900 sq ft unit, that works out to RM162 per month. Clubhouse use isn’t fully included in the fee—selected facilities are pay-per-use or package-based."
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks, RM162 is clear for 900 sq ft. Is pool access included, or is that one of the pay-per-use facilities? My spouse would use the pool quite a bit.",
+        "state": "CONTINUE",
+        "reason": "The maintenance rate is clear, but they need to confirm whether pool access comes with extra charges.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks for checking. I’ll wait for the confirmed pool access details before comparing the monthly costs.",
+        "state": "WAITING",
+        "reason": "The agent has registered the question for verification and has no confirmed answer yet.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Asked for Pearl Residences' maintenance fee and whether clubhouse access is included.",
+          "Asked whether pool access is included or pay-per-use."
+        ],
+        "confirmed_motivations": [
+          "Says their spouse would use the pool quite a bit."
+        ],
+        "hypotheses": [
+          "May be assessing ongoing costs and whether the facilities suit the household."
+        ],
+        "tradeoffs": [],
+        "objections": [],
+        "communicated_facts": [
+          "Maintenance fee quoted at RM0.18 per sq ft, inclusive of sinking fund; a 900 sq ft unit was stated as RM162 per month.",
+          "Clubhouse use was described as not fully included; selected facilities are pay-per-use or package-based."
+        ],
+        "sales_attempts": [
+          "Shared fee and general clubhouse terms — continue; buyer said RM162 was clear and asked specifically about pool access."
+        ],
+        "open_questions": [
+          "Is pool access included in the maintenance fee, or is it pay-per-use or package-based? If paid, what are the charges or terms?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Confirm Pearl Residences' pool access and any related charges, then give the buyer a precise answer.",
+          "why": "The buyer's spouse would use the pool often, so its access terms may materially affect the household's ongoing costs and suitability.",
+          "feedback_to_watch": "Whether the pool is included and, if not, whether its cost or access terms affect the buyer's interest."
+        }
+      }
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "OTHER|access and charged charges current fee in included maintenance or pearl pool residences separately swimming terms",
+          "support_type": "OTHER",
+          "requested_fact": "Whether swimming pool access is included in the maintenance fee or charged separately, and the current access terms or charges.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 521,
+          "output_tokens": 596,
+          "total_tokens": 1117,
+          "cached_tokens": 0,
+          "reasoning_tokens": 322
+        },
+        "latency_seconds": 11.502,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2530,
+          "output_tokens": 578,
+          "total_tokens": 3108,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 327
+        },
+        "latency_seconds": 6.782,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 447,
+          "output_tokens": 178,
+          "total_tokens": 625,
+          "cached_tokens": 0,
+          "reasoning_tokens": 93
+        },
+        "latency_seconds": 3.344,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 841,
+          "output_tokens": 837,
+          "total_tokens": 1678,
+          "cached_tokens": 0,
+          "reasoning_tokens": 451
+        },
+        "latency_seconds": 10.143,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2908,
+          "output_tokens": 786,
+          "total_tokens": 3694,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 456
+        },
+        "latency_seconds": 7.608,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 589,
+          "output_tokens": 100,
+          "total_tokens": 689,
+          "cached_tokens": 0,
+          "reasoning_tokens": 36
+        },
+        "latency_seconds": 2.38,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 3,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 3,
+        "natural_continuity": 3,
+        "progression_and_pacing": 3
+      },
+      "B": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 4,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 3
+      }
+    },
+    "examples": [],
+    "material_errors": [
+      {
+        "side": "A",
+        "turn": 1,
+        "kind": "unqualified calculated cost",
+        "evidence": "A states RM162 per month for 900 sq. ft. without identifying it as an estimate or making it subject to confirmation. The arithmetic is correct, but the project guidance cautions against giving a monthly total unless calculation is allowed and, if calculated, says to qualify it."
+      }
+    ],
+    "simulator_quality": "Both exchanges are plausible, concise customer-service conversations. The customer naturally accepts that pool-specific terms need verification. B makes the pending follow-up clearer; neither transcript includes the eventual confirmation.",
+    "summary": "B wins on turns 2: it connects the check to the customer's stated ongoing-cost concern and specifies that it will verify whether pool access is included or pay-per-use, along with current charges or plans. A also avoids guessing, but “I’ve registered that for verification” is vague and does not reflect the customer's point that their spouse would use the pool frequently. A better response from either agent could add the known context—that residents and registered tenants receive discounted clubhouse rates and selected facilities are pay-per-use—while making clear that the pool's specific charging terms still need confirmation. A's turn 1 monthly total is arithmetically correct, but is unqualified despite the project's calculation guidance. B's progression score remains 3 because the conversation ends with the answer still pending."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20739,
+        "output_tokens": 3503,
+        "total_tokens": 24242,
+        "cached_tokens": 0,
+        "reasoning_tokens": 3052
+      },
+      "latency_seconds": 34.657,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

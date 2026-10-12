@@ -1,0 +1,94 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 2,
+  "natural_ending_reason": "customer end: The agent gave space and there’s nothing I need to ask right now.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi. Just browsing only, not planning anything yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "No worries—take your time browsing. If you’d like any details about Pearl Residences later, just message me."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, just having a look for now."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "NEUTRAL",
+      "reply": "No worries—take your time browsing. If you’d like any details about Pearl Residences later, just message me."
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Thanks, just having a look for now.",
+      "state": "END",
+      "reason": "The agent gave space and there’s nothing I need to ask right now.",
+      "interest_change": "UNCHANGED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Answer the enquiry helpfully."
+  },
+  "operations": {
+    "requests": [],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1920,
+        "output_tokens": 469,
+        "total_tokens": 2389,
+        "cached_tokens": 0,
+        "reasoning_tokens": 254
+      },
+      "latency_seconds": 6.367,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 385,
+        "output_tokens": 128,
+        "total_tokens": 513,
+        "cached_tokens": 0,
+        "reasoning_tokens": 77
+      },
+      "latency_seconds": 2.535,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 0,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

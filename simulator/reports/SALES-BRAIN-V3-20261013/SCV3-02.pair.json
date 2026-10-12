@@ -1,0 +1,962 @@
+{
+  "scenario_id": "SCV3-02",
+  "title": "First-time buyer unsure of priorities",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 5,
+    "natural_ending_reason": "customer waiting: The agent has said they will check the requested price and financing details, so there’s nothing more to ask until they reply.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, first time buying. Not sure what I should look at first tbh."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Totally normal—there’s a lot to take in for a first purchase. Start by working out whether it’s for your own stay or as an investment, then what budget feels comfortable. From there, you can narrow down location and the features that matter to you. Are you mainly looking for a place to live in yourself, or still figuring that out?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Probably for my own stay in a year or two, but I’m not completely sure yet. Budget is the part I’m lost on—how do I work out what monthly payment would be comfortable?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "A good starting point is what you can comfortably manage after essentials, existing debts and regular savings—not the maximum a bank might lend. Include the loan instalment and ongoing costs; for Pearl’s 900 sq ft Type A, maintenance including sinking fund is about RM162 a month, before utilities and other expenses. If you’re comfortable sharing rough take-home income and monthly debt payments, I can help you sketch a budget. No exact details needed."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Thanks, that maintenance figure helps. I’d rather not share my income just yet—could you give me a simple rough way to estimate a comfortable monthly instalment?"
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "A simple rough guide is to keep total housing costs around 25–30% of your take-home pay. That’s for everything monthly, not just the loan: subtract Pearl’s roughly RM162 maintenance for a 900 sq ft unit, plus an allowance for utilities and other ongoing costs, to get a rough instalment ceiling. If you have other debts or want more breathing room, aim lower. It’s just a budgeting guide, not a bank’s approval limit."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "That makes it feel more manageable, thanks. Could you share the indicative price for the Type A and a rough monthly instalment example, maybe with a typical down payment? Just trying to understand the numbers before looking further."
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "I can help with that. I don’t want to guess the current Type A price or down-payment terms, so I’ll check the latest figures and share a rough instalment example with the assumptions clearly stated. It’ll be a budgeting guide, not a loan quote or approval."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "Okay, thanks—appreciate you checking. I’ll wait for the figures and assumptions."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Totally normal—there’s a lot to take in for a first purchase. Start by working out whether it’s for your own stay or as an investment, then what budget feels comfortable. From there, you can narrow down location and the features that matter to you. Are you mainly looking for a place to live in yourself, or still figuring that out?"
+      },
+      {
+        "turn": 2,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "A good starting point is what you can comfortably manage after essentials, existing debts and regular savings—not the maximum a bank might lend. Include the loan instalment and ongoing costs; for Pearl’s 900 sq ft Type A, maintenance including sinking fund is about RM162 a month, before utilities and other expenses. If you’re comfortable sharing rough take-home income and monthly debt payments, I can help you sketch a budget. No exact details needed."
+      },
+      {
+        "turn": 3,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "A simple rough guide is to keep total housing costs around 25–30% of your take-home pay. That’s for everything monthly, not just the loan: subtract Pearl’s roughly RM162 maintenance for a 900 sq ft unit, plus an allowance for utilities and other ongoing costs, to get a rough instalment ceiling. If you have other debts or want more breathing room, aim lower. It’s just a budgeting guide, not a bank’s approval limit."
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can help with that. I don’t want to guess the current Type A price or down-payment terms, so I’ll check the latest figures and share a rough instalment example with the assumptions clearly stated. It’ll be a budgeting guide, not a loan quote or approval.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Probably for my own stay in a year or two, but I’m not completely sure yet. Budget is the part I’m lost on—how do I work out what monthly payment would be comfortable?",
+        "state": "CONTINUE",
+        "reason": "Shares a likely own-stay timeline and asks for a practical first step on affordability.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Thanks, that maintenance figure helps. I’d rather not share my income just yet—could you give me a simple rough way to estimate a comfortable monthly instalment?",
+        "state": "CONTINUE",
+        "reason": "The customer wants to understand affordability but is not ready to share personal financial details.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 3,
+        "message": "That makes it feel more manageable, thanks. Could you share the indicative price for the Type A and a rough monthly instalment example, maybe with a typical down payment? Just trying to understand the numbers before looking further.",
+        "state": "CONTINUE",
+        "reason": "The simple budgeting guide helped, and the buyer is now comfortable asking for a low-pressure example to understand affordability.",
+        "interest_change": "INCREASED"
+      },
+      {
+        "after_agent_turn": 4,
+        "message": "Okay, thanks—appreciate you checking. I’ll wait for the figures and assumptions.",
+        "state": "WAITING",
+        "reason": "The agent has said they will check the requested price and financing details, so there’s nothing more to ask until they reply.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "EXPLORING",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Help estimate an affordable monthly housing budget from approximate income and debt commitments",
+      "last_progress": "Likely considering a home for own stay in a year or two, but still unsure",
+      "next_action": "Invite rough take-home income and monthly debt payment figures if comfortable",
+      "conversation_summary": "First-time buyer, likely considering own stay in a year or two but still exploring. Unsure how to set a comfortable monthly housing budget.",
+      "purchase_timeline": "In a year or two",
+      "active_concerns": [
+        "Unsure how to work out a comfortable monthly housing budget"
+      ]
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "FINANCING|and applicable assumptions clearly current down estimate example illustrative indicative instalment monthly package payment pearl price residences rough set stated suitable terms type",
+          "support_type": "FINANCING",
+          "requested_fact": "Current indicative price for Pearl Residences Type A, applicable down-payment/package terms, and a suitable set of clearly stated assumptions for an illustrative monthly instalment estimate.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1932,
+          "output_tokens": 1082,
+          "total_tokens": 3014,
+          "cached_tokens": 0,
+          "reasoning_tokens": 776
+        },
+        "latency_seconds": 11.389,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 451,
+          "output_tokens": 187,
+          "total_tokens": 638,
+          "cached_tokens": 0,
+          "reasoning_tokens": 101
+        },
+        "latency_seconds": 3.031,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2643,
+          "output_tokens": 1898,
+          "total_tokens": 4541,
+          "cached_tokens": 0,
+          "reasoning_tokens": 1461
+        },
+        "latency_seconds": 17.608,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 614,
+          "output_tokens": 239,
+          "total_tokens": 853,
+          "cached_tokens": 0,
+          "reasoning_tokens": 161
+        },
+        "latency_seconds": 5.912,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2661,
+          "output_tokens": 797,
+          "total_tokens": 3458,
+          "cached_tokens": 0,
+          "reasoning_tokens": 516
+        },
+        "latency_seconds": 8.194,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 775,
+          "output_tokens": 214,
+          "total_tokens": 989,
+          "cached_tokens": 0,
+          "reasoning_tokens": 119
+        },
+        "latency_seconds": 3.51,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2855,
+          "output_tokens": 884,
+          "total_tokens": 3739,
+          "cached_tokens": 0,
+          "reasoning_tokens": 516
+        },
+        "latency_seconds": 9.52,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 975,
+          "output_tokens": 129,
+          "total_tokens": 1104,
+          "cached_tokens": 0,
+          "reasoning_tokens": 57
+        },
+        "latency_seconds": 2.425,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 8,
+    "natural_ending_reason": "customer waiting: The agent has registered the question for verification and has no answer yet, so I’ll wait rather than pursue it.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, first time buying. Not sure what I should look at first tbh."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Totally normal for a first purchase. A good place to start is: decide whether it’s for your own stay or investment, set a comfortable overall budget including upfront and ongoing costs, and shortlist areas that suit your needs. Then compare the actual layout and ownership costs—not just the headline price. Are you mainly looking for a place to live in, or an investment?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Probably own stay in 1–2 years, but I’m not completely sure yet. I’m a bit worried about financing—should I work out a comfortable monthly payment first before looking at places?"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Yes—working backwards from a monthly payment that feels comfortable is a sensible first step before narrowing down places. Leave room for upfront costs and ongoing ownership costs too, and treat a bank’s maximum loan as a ceiling, not your target. What monthly range would feel manageable for you?"
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "I haven’t figured out a range yet. How do I estimate a comfortable monthly amount without knowing what I can borrow?"
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "You don’t need to know your borrowing limit yet. Use your take-home pay and look at a few recent months of spending: subtract regular bills, debt payments, savings you want to keep putting aside, and a buffer for unexpected costs. What’s left can help you choose a provisional monthly housing budget—but don’t assume it should all go to the loan payment. Remember to allow for other ownership costs too, like maintenance, utilities and insurance. It’s a starting point, not a loan assessment. If you’re comfortable, you can share your rough take-home pay and monthly commitments, and we can work out a first estimate."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "That makes sense. I’m not quite comfortable sharing my pay details yet—could you show me a simple example of how to work it out?"
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "Sure—just a made-up example, not a borrowing estimate. If take-home pay were RM5,000: subtract RM1,500 for regular bills, RM500 for debt payments, RM800 you want to save, and RM500 as a buffer. That leaves RM1,700 for housing costs altogether. If you set aside, say, RM400 for things like maintenance, utilities and insurance, you’d have about RM1,300 left as a possible loan-payment budget. The amounts will vary, and upfront costs need planning separately. You can try the same calculation privately with your own numbers—no need to share them here."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "Thanks, that example makes it much clearer. I’ll try it with my own numbers. What upfront costs should I start planning for separately?"
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "message": "Good question. It helps to plan for a few separate buckets:\n\n• Booking/earnest deposit and the balance of your down payment, depending on the loan amount and sale terms. The deposit is often credited toward the purchase price, but check the terms.\n• Legal fees and stamp duty for the purchase, plus legal fees and stamp duty for the loan.\n• Possible loan-related costs, such as valuation, and insurance or takaful if applicable.\n• Moving and setup costs, including utility deposits, basic furnishings or repairs.\n\nThe amounts depend on the property price, financing and current rules, so there isn’t a reliable total to quote yet. A solicitor and bank can confirm the applicable fees once you have a specific property and loan in mind."
+      },
+      {
+        "turn": 6,
+        "speaker": "customer",
+        "message": "Thanks, that gives me a clearer picture. I’ll work out my monthly comfort range and see what I can set aside for upfront costs first. After that, is it worth doing a basic bank check before I start viewing places?"
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "message": "Yes, an initial bank affordability check can be useful before you view—it may give you a rough guide to what you could borrow. The bank may ask about your income, employment and existing commitments, and what documents it needs varies. Treat any early estimate as indicative, not loan approval or a guaranteed amount; a formal application involves fuller checks. You can ask the bank whether it’s just an initial review or a formal application, and whether it includes a credit-record enquiry. No need to share your figures here."
+      },
+      {
+        "turn": 7,
+        "speaker": "customer",
+        "message": "Thanks, that’s helpful. I’ll work out my own numbers first, then ask a bank what kind of check they’re doing. If I speak to a few banks, could that lead to multiple credit-record enquiries?"
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 8,
+        "speaker": "customer",
+        "message": "Okay, thanks for checking. I’ll wait for the confirmed answer before speaking to a few banks."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Totally normal for a first purchase. A good place to start is: decide whether it’s for your own stay or investment, set a comfortable overall budget including upfront and ongoing costs, and shortlist areas that suit your needs. Then compare the actual layout and ownership costs—not just the headline price. Are you mainly looking for a place to live in, or an investment?"
+      },
+      {
+        "turn": 2,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes—working backwards from a monthly payment that feels comfortable is a sensible first step before narrowing down places. Leave room for upfront costs and ongoing ownership costs too, and treat a bank’s maximum loan as a ceiling, not your target. What monthly range would feel manageable for you?"
+      },
+      {
+        "turn": 3,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "You don’t need to know your borrowing limit yet. Use your take-home pay and look at a few recent months of spending: subtract regular bills, debt payments, savings you want to keep putting aside, and a buffer for unexpected costs. What’s left can help you choose a provisional monthly housing budget—but don’t assume it should all go to the loan payment. Remember to allow for other ownership costs too, like maintenance, utilities and insurance. It’s a starting point, not a loan assessment. If you’re comfortable, you can share your rough take-home pay and monthly commitments, and we can work out a first estimate."
+      },
+      {
+        "turn": 4,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Sure—just a made-up example, not a borrowing estimate. If take-home pay were RM5,000: subtract RM1,500 for regular bills, RM500 for debt payments, RM800 you want to save, and RM500 as a buffer. That leaves RM1,700 for housing costs altogether. If you set aside, say, RM400 for things like maintenance, utilities and insurance, you’d have about RM1,300 left as a possible loan-payment budget. The amounts will vary, and upfront costs need planning separately. You can try the same calculation privately with your own numbers—no need to share them here."
+      },
+      {
+        "turn": 5,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Good question. It helps to plan for a few separate buckets:\n\n• Booking/earnest deposit and the balance of your down payment, depending on the loan amount and sale terms. The deposit is often credited toward the purchase price, but check the terms.\n• Legal fees and stamp duty for the purchase, plus legal fees and stamp duty for the loan.\n• Possible loan-related costs, such as valuation, and insurance or takaful if applicable.\n• Moving and setup costs, including utility deposits, basic furnishings or repairs.\n\nThe amounts depend on the property price, financing and current rules, so there isn’t a reliable total to quote yet. A solicitor and bank can confirm the applicable fees once you have a specific property and loan in mind."
+      },
+      {
+        "turn": 6,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes, an initial bank affordability check can be useful before you view—it may give you a rough guide to what you could borrow. The bank may ask about your income, employment and existing commitments, and what documents it needs varies. Treat any early estimate as indicative, not loan approval or a guaranteed amount; a formal application involves fuller checks. You can ask the bank whether it’s just an initial review or a formal application, and whether it includes a credit-record enquiry. No need to share your figures here."
+      },
+      {
+        "turn": 7,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Probably own stay in 1–2 years, but I’m not completely sure yet. I’m a bit worried about financing—should I work out a comfortable monthly payment first before looking at places?",
+        "state": "CONTINUE",
+        "reason": "The agent’s suggested first steps are helpful, and the buyer is engaging by sharing their likely plan and asking how to approach affordability.",
+        "interest_change": "INCREASED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "I haven’t figured out a range yet. How do I estimate a comfortable monthly amount without knowing what I can borrow?",
+        "state": "CONTINUE",
+        "reason": "The agent’s question makes sense, but the buyer has no budget yet and wants a simple first step to assess affordability.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 3,
+        "message": "That makes sense. I’m not quite comfortable sharing my pay details yet—could you show me a simple example of how to work it out?",
+        "state": "CONTINUE",
+        "reason": "The practical approach helps, but they want to understand the calculation before sharing personal financial details.",
+        "interest_change": "INCREASED"
+      },
+      {
+        "after_agent_turn": 4,
+        "message": "Thanks, that example makes it much clearer. I’ll try it with my own numbers. What upfront costs should I start planning for separately?",
+        "state": "CONTINUE",
+        "reason": "The example reduced some uncertainty, and the buyer has a practical next question about planning costs.",
+        "interest_change": "INCREASED"
+      },
+      {
+        "after_agent_turn": 5,
+        "message": "Thanks, that gives me a clearer picture. I’ll work out my monthly comfort range and see what I can set aside for upfront costs first. After that, is it worth doing a basic bank check before I start viewing places?",
+        "state": "CONTINUE",
+        "reason": "The agent answered the upfront-cost question clearly, and the buyer is ready for one manageable next step.",
+        "interest_change": "INCREASED"
+      },
+      {
+        "after_agent_turn": 6,
+        "message": "Thanks, that’s helpful. I’ll work out my own numbers first, then ask a bank what kind of check they’re doing. If I speak to a few banks, could that lead to multiple credit-record enquiries?",
+        "state": "CONTINUE",
+        "reason": "The customer is reassured by the practical guidance but remains cautious about financing and asks a relevant follow-up before proceeding.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 7,
+        "message": "Okay, thanks for checking. I’ll wait for the confirmed answer before speaking to a few banks.",
+        "state": "WAITING",
+        "reason": "The agent has registered the question for verification and has no answer yet, so I’ll wait rather than pursue it.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "EXPLORING",
+      "sales_stage": "QUALIFY",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Buyer plans to calculate a comfortable monthly range and upfront savings privately; they can consider an indicative bank affordability check before viewing.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "First-time buyer; tentatively considering own stay in 1–2 years, but unsure.",
+          "Wants to calculate a comfortable monthly range and upfront savings privately before viewing.",
+          "Not comfortable sharing pay details here.",
+          "Asks whether speaking with several banks could result in multiple credit-record enquiries."
+        ],
+        "confirmed_motivations": [],
+        "hypotheses": [
+          "May want to compare lenders while avoiding unnecessary credit enquiries or any impact on their record.",
+          "Financing uncertainty may be holding back their move toward viewing."
+        ],
+        "tradeoffs": [
+          "Getting useful affordability guidance from multiple banks versus avoiding repeated formal checks; distinguish preliminary checks from formal applications."
+        ],
+        "objections": [
+          "Financing uncertainty.",
+          "Reluctant to share personal financial details at this stage."
+        ],
+        "communicated_facts": [
+          "Shared a provisional monthly-budget method and a hypothetical RM5,000 take-home-pay example; buyer said it clarified the method.",
+          "Outlined upfront-cost categories; actual amounts depend on the property and financing.",
+          "Explained that an initial bank affordability estimate is indicative, not loan approval; information needed varies, and the buyer can ask whether a check is formal and includes a credit-record enquiry."
+        ],
+        "sales_attempts": [
+          "Beginner checklist and purpose question — revise; buyer tentatively leaned toward own stay but remained unsure and raised financing concerns.",
+          "Monthly-budget-first guidance and request for a range — revise; buyer had no range and asked how to estimate without knowing borrowing capacity.",
+          "Request for rough financial figures — revise; buyer was not comfortable sharing them and asked for an example.",
+          "Hypothetical budget example and upfront-cost overview — continue; buyer said these clarified planning and will calculate privately.",
+          "Initial bank-check explanation — continue; buyer found it helpful, plans to ask banks what type of check they do, and followed up about multiple enquiries."
+        ],
+        "open_questions": [
+          "Whether preliminary checks versus formal applications at Malaysian banks create recorded enquiries, and what impact multiple enquiries may have."
+        ],
+        "commitments": [
+          "Buyer will calculate a monthly comfort range and upfront savings privately, then ask a bank what kind of check it is doing."
+        ],
+        "next_opportunity": {
+          "action": "Resolve the multiple-enquiry question accurately for Malaysia, distinguishing preliminary checks from formal applications and suggesting what to verify before authorizing a check.",
+          "why": "Directly addresses the buyer's concern and helps them explore affordability without pressuring them to share financial details or proceed to viewings.",
+          "feedback_to_watch": "Whether the buyer wants to compare banks, asks what to ask them, or prefers to complete their private budget first."
+        }
+      },
+      "last_progress": "Buyer found the upfront-cost overview helpful, plans to work out their budget privately, and asked whether a preliminary bank check is worthwhile before viewing.",
+      "next_action": "Give the buyer space to calculate privately; offer to explain the general bank-check process if they want.",
+      "conversation_summary": "First-time buyer is unsure where to begin, probably considering own stay in 1–2 years, and is concerned about financing.",
+      "financing_context": "Worried about financing and wants a way to estimate a comfortable monthly housing budget before knowing borrowing capacity.",
+      "purchase_timeline": "Probably 1–2 years, but not certain.",
+      "active_concerns": [
+        "Financing uncertainty"
+      ]
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "FINANCING|affordability and applications at bank banks be ccris checks create credit ctos current enquiries formal how malaysian may multiple practices preliminary record recorded treated versus",
+          "support_type": "FINANCING",
+          "requested_fact": "Current Malaysian CCRIS and CTOS practices: whether preliminary affordability checks versus formal applications at multiple banks create recorded credit enquiries, and how multiple enquiries may be treated.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 527,
+          "output_tokens": 561,
+          "total_tokens": 1088,
+          "cached_tokens": 0,
+          "reasoning_tokens": 349
+        },
+        "latency_seconds": 7.596,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2646,
+          "output_tokens": 964,
+          "total_tokens": 3610,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 652
+        },
+        "latency_seconds": 10.884,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 454,
+          "output_tokens": 162,
+          "total_tokens": 616,
+          "cached_tokens": 0,
+          "reasoning_tokens": 66
+        },
+        "latency_seconds": 2.98,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 918,
+          "output_tokens": 1285,
+          "total_tokens": 2203,
+          "cached_tokens": 0,
+          "reasoning_tokens": 839
+        },
+        "latency_seconds": 16.929,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3541,
+          "output_tokens": 974,
+          "total_tokens": 4515,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 555
+        },
+        "latency_seconds": 9.866,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 584,
+          "output_tokens": 114,
+          "total_tokens": 698,
+          "cached_tokens": 0,
+          "reasoning_tokens": 37
+        },
+        "latency_seconds": 2.766,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1224,
+          "output_tokens": 1214,
+          "total_tokens": 2438,
+          "cached_tokens": 0,
+          "reasoning_tokens": 739
+        },
+        "latency_seconds": 21.096,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3383,
+          "output_tokens": 895,
+          "total_tokens": 4278,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 448
+        },
+        "latency_seconds": 10.174,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 768,
+          "output_tokens": 217,
+          "total_tokens": 985,
+          "cached_tokens": 0,
+          "reasoning_tokens": 140
+        },
+        "latency_seconds": 3.16,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1533,
+          "output_tokens": 1208,
+          "total_tokens": 2741,
+          "cached_tokens": 0,
+          "reasoning_tokens": 701
+        },
+        "latency_seconds": 15.531,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3423,
+          "output_tokens": 584,
+          "total_tokens": 4007,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 267
+        },
+        "latency_seconds": 6.169,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 959,
+          "output_tokens": 164,
+          "total_tokens": 1123,
+          "cached_tokens": 0,
+          "reasoning_tokens": 88
+        },
+        "latency_seconds": 2.944,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1771,
+          "output_tokens": 2554,
+          "total_tokens": 4325,
+          "cached_tokens": 0,
+          "reasoning_tokens": 1809
+        },
+        "latency_seconds": 29.884,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1771,
+          "output_tokens": 1650,
+          "total_tokens": 3421,
+          "cached_tokens": 1768,
+          "reasoning_tokens": 1098
+        },
+        "latency_seconds": 19.61,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3846,
+          "output_tokens": 823,
+          "total_tokens": 4669,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 479
+        },
+        "latency_seconds": 8.561,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 1176,
+          "output_tokens": 236,
+          "total_tokens": 1412,
+          "cached_tokens": 0,
+          "reasoning_tokens": 140
+        },
+        "latency_seconds": 4.931,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2046,
+          "output_tokens": 1149,
+          "total_tokens": 3195,
+          "cached_tokens": 0,
+          "reasoning_tokens": 516
+        },
+        "latency_seconds": 13.074,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 4396,
+          "output_tokens": 1189,
+          "total_tokens": 5585,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 832
+        },
+        "latency_seconds": 12.166,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 1358,
+          "output_tokens": 230,
+          "total_tokens": 1588,
+          "cached_tokens": 0,
+          "reasoning_tokens": 134
+        },
+        "latency_seconds": 4.405,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2253,
+          "output_tokens": 2279,
+          "total_tokens": 4532,
+          "cached_tokens": 0,
+          "reasoning_tokens": 1632
+        },
+        "latency_seconds": 25.878,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 4826,
+          "output_tokens": 1350,
+          "total_tokens": 6176,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 958
+        },
+        "latency_seconds": 13.79,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 1518,
+          "output_tokens": 124,
+          "total_tokens": 1642,
+          "cached_tokens": 0,
+          "reasoning_tokens": 53
+        },
+        "latency_seconds": 2.866,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "A",
+    "V3": "B"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 3
+      },
+      "B": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 4,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 3,
+        "progression_and_pacing": 4
+      }
+    },
+    "examples": [],
+    "material_errors": [
+      {
+        "side": "A",
+        "turn": 4,
+        "kind": "Unsubstantiated follow-up promise",
+        "evidence": "The agent says, “I’ll check the latest figures and share” a price and instalment example; the transcript ends with the customer waiting for that follow-up, without showing a verification or delivery step."
+      },
+      {
+        "side": "B",
+        "turn": 7,
+        "kind": "Unsubstantiated verification claim",
+        "evidence": "The agent says, “I’ve registered that for verification,” but no registration or verification action is shown, and the customer is left waiting for an answer."
+      }
+    ],
+    "simulator_quality": "Both conversations are plausible overall. B gives a useful, well-calibrated budgeting exchange, but its final verification handoff sounds system-generated. A is conversational, though its promised follow-up leaves the main price question unresolved.",
+    "summary": "B wins narrowly. It adapts well when the customer declines to share income: turns 3–4 offer a private budgeting method and a clearly labelled hypothetical example, and turn 5 responds directly to the question about upfront costs. A also handles the customer’s privacy respectfully and gives the correct RM162 monthly maintenance estimate for a 900 sq ft unit (turn 2), but when asked for indicative price and instalment figures (turn 4), it defers rather than offering a clearly qualified, package-dependent price indication and stating what assumptions would be needed for an instalment illustration. B could improve its final turn by explaining that credit-enquiry treatment varies and suggesting the customer ask each bank whether its initial check is a soft or hard enquiry, rather than claiming an unshown verification registration. A could similarly provide a supported indicative price range with eligibility caveats, or transparently say which current details need confirmation, without leaving an unsupported promise of later delivery."
+  },
+  "paired_winner": "V3",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 22046,
+        "output_tokens": 4497,
+        "total_tokens": 26543,
+        "cached_tokens": 0,
+        "reasoning_tokens": 3950
+      },
+      "latency_seconds": 46.269,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

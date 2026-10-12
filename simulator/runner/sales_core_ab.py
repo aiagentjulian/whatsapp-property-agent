@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Paired, offline-from-WhatsApp Sales Core V2/V3 conversation experiment."""
+"""Isolated paired V2/V3 sales evaluation through fake or OpenAI transports."""
 from __future__ import annotations
-
 import argparse
 import datetime as dt
 import hashlib
 import json
 import os
-import random
 import sys
 import time
 import urllib.error
@@ -17,165 +15,179 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SIM = ROOT / "simulator"
 sys.path.insert(0, str(ROOT))
-from app.agent import SalesAgent  # noqa: E402
-from app.config import get_config, load_env_file  # noqa: E402
-from app.provider import PROFILE_FIELDS, OpenAIProvider  # noqa: E402
-from app.sales_core_v3 import SalesCoreV3  # noqa: E402
+from app.agent import SalesAgent
+from app.config import get_config, load_env_file
+from app.knowledge import KNOWLEDGE
+from app.provider import PROFILE_FIELDS, agent_schema
+from app.sales_core_v3 import SalesCoreV3
+from app.service import support_signature
 
 MODEL = "gpt-6-luna"
-INPUT_RATE = 0.10
-CACHED_RATE = 0.01
-OUTPUT_RATE = 0.50
-SCORE_DIMENSIONS = [
-    "customer_understanding", "contextual_continuity", "sales_judgment", "value_relevance",
-    "question_quality", "objection_handling", "repetition_control", "factual_accuracy",
-    "viewing_timing", "interest_without_pressure", "naturalness",
-]
-
+INPUT_RATE, CACHED_RATE, OUTPUT_RATE = 0.10, 0.01, 0.50
+WEIGHTS = {"customer_insight": 25, "meaningful_sales_actions": 25,
+           "observation_and_adaptation": 20, "natural_continuity": 20, "progression_and_pacing": 10}
 CUSTOMER_SCHEMA = {"type": "object", "additionalProperties": False, "properties": {
-    "message": {"type": "string"}, "done": {"type": "boolean"},
-    "ending_reason": {"type": ["string", "null"]},
-}, "required": ["message", "done", "ending_reason"]}
+    "message": {"type": "string"}, "state": {"type": "string", "enum": ["CONTINUE", "WAITING", "END"]},
+    "reason": {"type": "string"}, "interest_change": {"type": "string", "enum": ["INCREASED", "UNCHANGED", "DECREASED"]}},
+    "required": ["message", "state", "reason", "interest_change"]}
 JUDGE_SCHEMA = {"type": "object", "additionalProperties": False, "properties": {
     "winner": {"type": "string", "enum": ["A", "B", "TIE"]},
-    "scores": {"type": "object", "additionalProperties": False,
-               "properties": {side: {"type": "object", "additionalProperties": False,
-                                     "properties": {key: {"type": "integer", "minimum": 1, "maximum": 5}
-                                                    for key in SCORE_DIMENSIONS},
-                                     "required": SCORE_DIMENSIONS} for side in ("A", "B")},
-               "required": ["A", "B"]},
-    "stronger_examples": {"type": "array", "items": {"type": "object", "additionalProperties": False,
+    "scores": {"type": "object", "additionalProperties": False, "properties": {
+        side: {"type": "object", "additionalProperties": False,
+               "properties": {key: {"type": "integer", "minimum": 1, "maximum": 5} for key in WEIGHTS},
+               "required": list(WEIGHTS)} for side in ("A", "B")}, "required": ["A", "B"]},
+    "examples": {"type": "array", "items": {"type": "object", "additionalProperties": False,
         "properties": {"side": {"type": "string", "enum": ["A", "B"]}, "turn": {"type": "integer"},
-                       "evidence": {"type": "string"}, "why_better": {"type": "string"}},
-        "required": ["side", "turn", "evidence", "why_better"]}},
-    "weaker_examples": {"type": "array", "items": {"type": "object", "additionalProperties": False,
+                       "evidence": {"type": "string"}, "assessment": {"type": "string"},
+                       "better_response": {"type": "string"}},
+        "required": ["side", "turn", "evidence", "assessment", "better_response"]}},
+    "material_errors": {"type": "array", "items": {"type": "object", "additionalProperties": False,
         "properties": {"side": {"type": "string", "enum": ["A", "B"]}, "turn": {"type": "integer"},
-                       "evidence": {"type": "string"}, "why_worse": {"type": "string"}},
-        "required": ["side", "turn", "evidence", "why_worse"]}},
-    "simulator_quality": {"type": "string"},
-    "factuality_findings": {"type": "array", "items": {"type": "string"}},
-    "summary": {"type": "string"},
-}, "required": ["winner", "scores", "stronger_examples", "weaker_examples", "simulator_quality", "factuality_findings", "summary"]}
+                       "kind": {"type": "string"}, "evidence": {"type": "string"}},
+        "required": ["side", "turn", "kind", "evidence"]}},
+    "simulator_quality": {"type": "string"}, "summary": {"type": "string"}},
+    "required": ["winner", "scores", "examples", "material_errors", "simulator_quality", "summary"]}
+
+
+def atomic_json(path, obj):
+    temp = path.with_suffix(path.suffix + ".tmp")
+    temp.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n")
+    temp.replace(path)
 
 
 class API:
     def __init__(self, config, dry=False):
-        self.config = config
-        self.dry = dry
+        self.config, self.dry = config, dry
         self.records = []
+        self.journal = None
 
-    def request(self, role, system, user, schema, name, max_tokens=1200):
+    def request(self, role, system, user, schema, name, max_tokens, reasoning=None):
         start = time.monotonic()
+        effort = reasoning or self.config["reasoning"]
         if self.dry:
-            payload = self.fake(role, name, user, schema)
+            payload = self.fake(role, user)
             usage = {"input_tokens": 12, "output_tokens": 6, "total_tokens": 18, "cached_tokens": 0}
+            status, detail = "COMPLETED", None
         else:
-            config = self.config
-            body = {"model": config["model"], "reasoning": {"effort": config["reasoning"]},
-                    "input": [{"role": "system", "content": [{"type": "input_text", "text": system}]},
-                              {"role": "user", "content": [{"type": "input_text", "text": user}]}],
-                    "text": {"format": {"type": "json_schema", "name": name, "strict": True, "schema": schema}},
-                    "max_output_tokens": max_tokens, "store": False}
+            body = {"model": MODEL, "reasoning": {"effort": effort},
+                "input": [{"role": "system", "content": [{"type": "input_text", "text": system}]},
+                          {"role": "user", "content": [{"type": "input_text", "text": user}]}],
+                "text": {"format": {"type": "json_schema", "name": name, "strict": True, "schema": schema}},
+                "max_output_tokens": max_tokens, "store": False}
             req = urllib.request.Request("https://api.openai.com/v1/responses", data=json.dumps(body).encode(),
-                    headers={"Authorization": "Bearer " + config["api_key"], "Content-Type": "application/json"}, method="POST")
+                headers={"Authorization": "Bearer " + self.config["api_key"], "Content-Type": "application/json"}, method="POST")
             try:
                 with urllib.request.urlopen(req, timeout=180) as response:
                     result = json.load(response)
             except urllib.error.HTTPError as exc:
-                detail = exc.read().decode("utf-8", "replace")
-                self._record(role, {}, time.monotonic() - start, "FAILED")
-                raise RuntimeError("HTTP %s: %s" % (exc.code, detail[:1000]))
-            usage = self._usage(result.get("usage") or {})
-            if result.get("status") not in (None, "completed"):
-                self._record(role, usage, time.monotonic() - start, "INCOMPLETE")
-                raise RuntimeError("Responses API returned incomplete output: %s (%s)" %
-                                   (result.get("status"), (result.get("incomplete_details") or {}).get("reason", "no reason reported")))
-            raw = result.get("output_text")
+                detail = exc.read().decode("utf-8", "replace")[:1000]
+                self.record(role, effort, {}, time.monotonic() - start, "FAILED", detail)
+                raise RuntimeError("HTTP %s: %s" % (exc.code, detail))
+            except (urllib.error.URLError, TimeoutError) as exc:
+                self.record(role, effort, {}, time.monotonic() - start, "FAILED", str(exc))
+                raise
+            raw_usage = result.get("usage") or {}
+            usage = {"input_tokens": raw_usage.get("input_tokens"), "output_tokens": raw_usage.get("output_tokens"),
+                     "total_tokens": raw_usage.get("total_tokens"),
+                     "cached_tokens": (raw_usage.get("input_tokens_details") or {}).get("cached_tokens", 0),
+                     "reasoning_tokens": (raw_usage.get("output_tokens_details") or {}).get("reasoning_tokens")}
+            status = result.get("status")
+            if status != "completed":
+                detail = str(result.get("incomplete_details"))
+                self.record(role, effort, usage, time.monotonic() - start, "INCOMPLETE", detail)
+                raise RuntimeError("Responses API %s: %s" % (status, detail))
+            raw = result.get("output_text") or next((x.get("text") for row in result.get("output", [])
+                for x in row.get("content", []) if x.get("type") == "output_text"), None)
             if not raw:
-                raw = next((x.get("text") for item in result.get("output", []) for x in item.get("content", [])
-                            if x.get("type") == "output_text"), None)
-            if not raw:
-                self._record(role, usage, time.monotonic() - start, "FAILED")
-                raise RuntimeError("No structured output returned")
+                self.record(role, effort, usage, time.monotonic() - start, "INCOMPLETE", "no output_text")
+                raise RuntimeError("Responses API returned no structured output")
             try:
                 payload = json.loads(raw)
-            except json.JSONDecodeError:
-                self._record(role, usage, time.monotonic() - start, "INVALID_JSON")
+            except json.JSONDecodeError as exc:
+                self.record(role, effort, usage, time.monotonic() - start, "INVALID_JSON", str(exc))
                 raise
-        duration = round(time.monotonic() - start, 3)
-        self._record(role, usage, duration, "COMPLETED")
-        return payload, usage, duration
+        self.record(role, effort, usage, time.monotonic() - start, "COMPLETED", None)
+        return payload, usage, round(time.monotonic() - start, 3)
+
+    def record(self, role, effort, usage, duration, outcome, detail):
+        row = {"role": role, "transport": "fake" if self.dry else "responses_api", "model": MODEL,
+               "reasoning": effort, "usage": usage, "latency_seconds": round(duration, 3),
+               "outcome": outcome, "detail": detail}
+        self.records.append(row)
+        if self.journal:
+            with self.journal.open("a") as file:
+                file.write(json.dumps(row, ensure_ascii=False) + "\n")
+                file.flush()
+                os.fsync(file.fileno())
 
     @staticmethod
-    def _usage(usage):
-        details = usage.get("input_tokens_details") or {}
-        return {"input_tokens": usage.get("input_tokens"), "output_tokens": usage.get("output_tokens"),
-                "total_tokens": usage.get("total_tokens"), "cached_tokens": details.get("cached_tokens", 0)}
-
-    def _record(self, role, usage, duration, outcome):
-        self.records.append({"role": role, "transport": "fake" if self.dry else "responses_api", "model": MODEL,
-                             "reasoning": self.config["reasoning"], "usage": usage,
-                             "latency_seconds": round(duration, 3), "outcome": outcome})
-
-    @staticmethod
-    def fake(role, name, user, schema):
+    def fake(role, user):
         if role == "sales_strategy":
-            return {"customer_intent": "The customer is exploring.", "known_customer_context": [],
-                    "unresolved_items": [], "buyer_signal": "QUESTION", "immediate_objective": "Answer clearly.", "knowledge_query": None}
-        if role == "sales_v2" or role == "sales_v3":
+            from app.sales_core_v3 import PROGRESS_FIELDS
+            progress = {key: [] for key in PROGRESS_FIELDS[:-1]}
+            progress["next_opportunity"] = {"action": "answer", "why": "customer asked", "feedback_to_watch": "next reply"}
+            return {"progress": progress, "buyer_signal": "QUESTION", "reaction_to_previous_action": "unknown",
+                    "immediate_objective": "Answer accurately", "knowledge_query": None}
+        if role in ("sales_v2", "sales_v3"):
             return {"action": "REPLY", "sales_move": "ANSWER", "buyer_signal": "QUESTION",
-                    "reply": "Thanks for asking. I can share verified details and check anything current that is not confirmed.",
+                    "reply": "Thanks for asking. I can share the verified details.",
                     "lead_updates": {key: None for key in PROFILE_FIELDS}, "support_request": None,
                     "handoff_reason": None, "handoff_details": None}
         if role == "customer_simulator":
-            try:
-                state = json.loads(user)
-                count = len([m for m in state["history"] if m["speaker"] == "customer"])
-            except Exception:
-                count = 0
-            return {"message": "Thanks, that helps. I will think about it.", "done": True, "ending_reason": "dry-run transport check"}
-        return {"winner": "TIE", "scores": {side: {key: 3 for key in SCORE_DIMENSIONS} for side in ("A", "B")},
-                "stronger_examples": [], "weaker_examples": [], "simulator_quality": "Transport smoke only; not a quality result.",
-                "factuality_findings": [], "summary": "dry-run transport check"}
+            return {"message": "Thanks, I will think about it.", "state": "END", "reason": "natural pause after answer",
+                    "interest_change": "UNCHANGED"}
+        return {"winner": "TIE", "scores": {s: {k: 3 for k in WEIGHTS} for s in ("A", "B")},
+                "examples": [], "material_errors": [], "simulator_quality": "Fake transport only", "summary": "Dry run"}
 
 
 class V3EvalProvider:
     def __init__(self, api): self.api = api
     def request(self, name, schema, system, user, max_output_tokens):
-        if name == "sales_strategy_v3":
-            return self.api.request("sales_strategy", system, user, schema, name, max_output_tokens)
-        return self.api.request("sales_v3", system, user, schema, name, max_output_tokens)
+        role = "sales_strategy" if name == "sales_strategy_v3" else "sales_v3"
+        return self.api.request(role, system, user, schema, name, max_output_tokens, "high")
 
 
 class V2EvalProvider:
-    def __init__(self, config, api): self.inner = None if api.dry else OpenAIProvider(config); self.api = api
+    def __init__(self, api): self.api = api
     def decide(self, system, user):
-        start = time.monotonic()
-        if self.api.dry:
-            decision = self.api.fake("sales_v2", "property_agent_decision", user, self.inner_schema())
-            usage = {"input_tokens": 12, "output_tokens": 6, "total_tokens": 18, "cached_tokens": 0}
-        else:
-            try:
-                decision, usage = self.inner.decide(system, user)
-            except Exception:
-                self.api.records.append({"role": "sales_v2", "transport": "responses_api", "model": MODEL,
-                                         "reasoning": self.api.config["reasoning"], "usage": {},
-                                         "latency_seconds": round(time.monotonic() - start, 3), "outcome": "FAILED"})
-                raise
-            usage = dict(usage)
-            usage["cached_tokens"] = ((usage.get("input_tokens_details") or {}).get("cached_tokens", 0))
-        self.api.records.append({"role": "sales_v2", "transport": "fake" if self.api.dry else "responses_api", "model": MODEL, "reasoning": self.api.config["reasoning"],
-                                 "usage": usage, "latency_seconds": round(time.monotonic() - start, 3), "outcome": "COMPLETED"})
+        decision, usage, _ = self.api.request("sales_v2", system, user, agent_schema(),
+                                               "property_agent_decision", 5500, "high")
         return decision, usage
 
-    @staticmethod
-    def inner_schema():
-        from app.provider import agent_schema
-        return agent_schema()
 
+class FakeOperations:
+    """Stateful offline adapter; fixture resolution is explicit and never a live operation."""
+    def __init__(self, state=None):
+        self.requests = (state or {}).get("requests", [])
+        self.handoff = (state or {}).get("handoff")
 
-class CapturingV3(V3EvalProvider):
-    pass
+    def context(self):
+        return [{"request_id": r["request_id"], "status": r["status"], "requested_fact": r["requested_fact"],
+                 "support_type": r["support_type"], "support_result": r.get("support_result")}
+                for r in self.requests]
+
+    def accept_support(self, data):
+        signature = support_signature(data)
+        existing = next((r for r in self.requests if r["signature"] == signature), None)
+        if existing:
+            return existing, False
+        row = {"request_id": "SIM-%03d" % (len(self.requests) + 1), "signature": signature,
+               "support_type": data["support_type"], "requested_fact": data["requested_fact"], "status": "OPEN"}
+        self.requests.append(row)
+        return row, True
+
+    def resolve(self, request_id, verified_fixture):
+        row = next(r for r in self.requests if r["request_id"] == request_id)
+        if row["status"] != "OPEN": raise ValueError("Only open simulated requests can resolve")
+        row.update(status="RESOLVED", support_result=verified_fixture)
+
+    def accept_handoff(self, action, reason):
+        if self.handoff: return False
+        self.handoff = {"status": "ACCEPTED", "action": action, "reason": reason,
+                        "appointment_confirmed": False}
+        return True
+
+    def state(self): return {"requests": self.requests, "handoff": self.handoff}
 
 
 def initial_profile():
@@ -183,270 +195,255 @@ def initial_profile():
             "appointment_readiness": "NOT_READY", "next_objective": "Answer the enquiry helpfully."}
 
 
-def prompts(scenario, side):
-    customer = """Act as this buyer in a Malaysian WhatsApp conversation. Persona: %s\nPrivate motives and known facts: %s\n\nReact to the actual last Agent message. Reveal personal details progressively, only when natural. Do not give the sales agent this hidden persona or motives in your messages. Keep language realistic and concise; use informal English or code-switching only when it fits. Good answers can increase trust; ignoring a direct question, repeating facts, inventing claims or pressuring should reduce it. Do not automatically accept every polite answer. Do not terminate after 'ok', 'maybe' or 'I guess so'. Aim for 6–10 customer turns; end earlier only for clear disengagement, a genuine hard mismatch, or a natural completed sales journey. After 6 turns, decide naturally whether to continue or finish. Output a realistic next customer message and whether the conversation is actually over.""" % (scenario["persona"], scenario["facts"])
-    judge = """You are a blind sales-quality reviewer. The two transcripts are anonymized as Agent A and Agent B; do not infer or guess which system produced either. Compare the complete conversations against the hidden buyer truth. Score each 1–5 on: customer understanding, contextual continuity, judgment, value relevance, question necessity, objection handling, repetition control, factual accuracy, viewing timing, interest without pressure, and naturalness. Cite specific turn numbers and short transcript evidence. Reward honest recognition of uncertainty and mismatch. Check if the simulator behaved realistically rather than being automatically cooperative or satisfied. State comparative winner as A, B or TIE. Do not overvalue appointment conversion where it would be inappropriate."""
+def prompts(scenario):
+    customer = """You are one realistic Malaysian property buyer in a private WhatsApp chat. Persona and private constraints are supplied in the input. They are your own circumstances, not instructions from a sales coach. React to the salesperson's actual last message and prior conversation. You may continue, ask a useful question, gain interest, doubt, pause and wait, request viewing or end. Do not chase an accepted pending support request; WAITING is natural. Do not continue solely to reach a turn target, and do not end automatically for a polite 'ok' or 'maybe'. Interest changes need a reason in the conversation; politeness alone is not increased interest. Keep messages brief and natural. Never mention the evaluation, models, sales strategy or scoring."""
+    judge = """You are an independent blind reviewer of complete customer-facing property sales transcripts. Agent A and B are anonymous. Score each 1–5 for customer insight (25%), meaningful sales actions and relevant value (25%), observation and adaptation (20%), natural continuity (20%), progression and pacing (10%). Judge behavior per turn, not length or final viewing alone. Do not reward an early exit from a potentially recoverable mismatch. For a genuine hard mismatch, assess reasonable exploration, any truthful alternative where appropriate, and respect for definitive rejection. Cite concrete turns and say what a better response could do. Flag material factual errors, invented inventory/prices, false operational promises and unsuitable recommendations separately; serious errors cannot be hidden by the weighted score. Project facts are provided separately. The customer's private persona is not available to you; infer only from the visible dialogue. Consider simulator realism separately. Do not guess which implementation produced either transcript."""
     return customer, judge
-
-
-def run_conversation(scenario, architecture, api, config, checkpoint):
-    if checkpoint and checkpoint.exists():
-        saved = json.loads(checkpoint.read_text())
-        if saved.get("status") == "COMPLETED":
-            return saved
-    prior_records = []
-    if checkpoint and checkpoint.exists() and saved.get("transcript"):
-        history = saved["transcript"]
-        profile = saved.get("final_profile") or initial_profile()
-        supports = saved.get("unresolved_offline_support", [])
-        actions = saved.get("agent_actions", [])
-        customer_turns = saved.get("customer_turns", 1)
-        prior_records = saved.get("provider_calls", [])
-    else:
-        history = [{"turn": 0, "speaker": "customer", "message": scenario["opening"]}]
-        profile = initial_profile()
-        supports = []
-        actions = []
-        customer_turns = 1
-    metrics_start = len(api.records)
-    system, _ = prompts(scenario, "")
-    core = SalesAgent(config, provider=V2EvalProvider(config, api)) if architecture == "V2" else SalesCoreV3(config, provider=CapturingV3(api))
-    status, ending = "COMPLETED", None
-    max_turns = 10
-    try:
-        while customer_turns <= max_turns:
-            latest = next(x["message"] for x in reversed(history) if x["speaker"] == "customer")
-            latest_customer_record = next(x for x in reversed(history) if x["speaker"] == "customer")
-            context_history = [{"direction": "INBOUND" if x["speaker"] == "customer" else "OUTBOUND", "body": x["message"]}
-                               for x in history if x["speaker"] in ("customer", "agent")]
-            decision, usage = core.decide(latest, profile, context_history, supports)
-            actions.append({"turn": customer_turns, "action": decision["action"], "sales_move": decision.get("sales_move"),
-                            "buyer_signal": decision.get("buyer_signal"), "reply": decision["reply"]})
-            updates = {key: value for key, value in decision["lead_updates"].items() if key in PROFILE_FIELDS and value is not None}
-            profile.update(updates)
-            if decision["action"] == "SUPPORT_REQUEST":
-                supports.append({"status": "UNRESOLVED_OFFLINE", "request": decision.get("support_request"),
-                                 "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."})
-                # Retry the same customer turn with the unresolved request visible; this models support continuity without an external lookup.
-                decision, usage = core.decide(latest, profile, context_history, supports)
-                actions.append({"turn": customer_turns, "action": decision["action"], "sales_move": decision.get("sales_move"),
-                                "buyer_signal": decision.get("buyer_signal"), "reply": decision["reply"], "after_support_request": True})
-            reply = str(decision.get("reply", "")).strip()
-            if reply:
-                history.append({"turn": customer_turns, "speaker": "agent", "message": reply})
-            if latest_customer_record.get("simulator_done"):
-                ending = latest_customer_record.get("simulator_ending_reason") or "customer chose to end naturally"
-                break
-            if decision["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
-                ending = "agent requested " + decision["action"] + "; no operational handoff executed"
-                break
-            if not reply:
-                ending = "agent produced no customer-facing reply"
-                break
-            if customer_turns >= max_turns:
-                ending = "10 customer turns reached"
-                break
-            customer_user = json.dumps({"scenario_persona": scenario["persona"], "private_facts": scenario["facts"],
-                                        "motives": scenario["motives"], "history": history,
-                                        "completed_customer_turns": customer_turns, "target_turn_range": [6, 10]}, ensure_ascii=False)
-            next_customer, _, _ = api.request("customer_simulator", system, customer_user, CUSTOMER_SCHEMA,
-                                               "simulated_customer_turn", 700)
-            message = next_customer["message"].strip()
-            if not message:
-                status, ending = "INCOMPLETE", "customer simulator returned an empty message"
-                break
-            customer_turns += 1
-            history.append({"turn": customer_turns, "speaker": "customer", "message": message,
-                            "simulator_done": next_customer["done"], "simulator_ending_reason": next_customer["ending_reason"]})
-        if ending is None:
-            ending = "conversation ended"
-    except Exception as exc:
-        status, ending = "INCOMPLETE", "%s: %s" % (type(exc).__name__, str(exc)[:500])
-    report = {"architecture": architecture, "status": status, "customer_turns": customer_turns,
-              "natural_ending_reason": ending, "transcript": history, "agent_actions": actions,
-              "final_profile": profile, "unresolved_offline_support": supports,
-              "model": MODEL, "reasoning": config["reasoning"], "provider_calls": prior_records + api.records[metrics_start:]}
-    if checkpoint:
-        checkpoint.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
-    return report
 
 
 def report_metrics(records):
     usage = {key: 0 for key in ("input_tokens", "cached_tokens", "output_tokens", "total_tokens")}
-    available = {key: False for key in usage}
-    for record in records:
+    seen = {key: False for key in usage}
+    for row in records:
         for key in usage:
-            raw_usage = record.get("usage") or {}
-            value = raw_usage.get(key)
-            if key == "cached_tokens" and not isinstance(value, int):
-                value = (raw_usage.get("input_tokens_details") or {}).get("cached_tokens")
-            if isinstance(value, int):
-                usage[key] += value
-                available[key] = True
-    if not available["total_tokens"] and available["input_tokens"] and available["output_tokens"]:
-        usage["total_tokens"] = usage["input_tokens"] + usage["output_tokens"]
-        available["total_tokens"] = True
-    uncached = max(0, usage["input_tokens"] - usage["cached_tokens"])
-    fake_only = bool(records) and all(r.get("transport") == "fake" for r in records)
-    cost = (uncached * INPUT_RATE + usage["cached_tokens"] * CACHED_RATE + usage["output_tokens"] * OUTPUT_RATE) / 1_000_000 if available["input_tokens"] and available["output_tokens"] and not fake_only else None
-    return {"model_calls": len(records), "calls_by_role": _counts(r["role"] for r in records),
-            "failed_or_incomplete_calls": sum(r.get("outcome") not in (None, "COMPLETED") for r in records),
-            "latency_seconds_total": round(sum(r["latency_seconds"] for r in records), 3),
-            "latency_seconds_mean": round(sum(r["latency_seconds"] for r in records) / len(records), 3) if records else None,
-            "tokens": {k: usage[k] if available[k] else None for k in usage},
-            "estimated_standard_usd": round(cost, 6) if cost is not None else None,
-            "cost_basis": "Dry-run synthetic usage; no charges." if fake_only else "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."}
+            value = (row.get("usage") or {}).get(key)
+            if isinstance(value, int): usage[key] += value; seen[key] = True
+    cost = None
+    if seen["input_tokens"] and seen["output_tokens"] and any(x.get("transport") != "fake" for x in records):
+        cost = ((usage["input_tokens"] - usage["cached_tokens"]) * INPUT_RATE +
+                usage["cached_tokens"] * CACHED_RATE + usage["output_tokens"] * OUTPUT_RATE) / 1_000_000
+    return {"model_calls": len(records), "failed_or_incomplete_calls": sum(x["outcome"] != "COMPLETED" for x in records),
+            "latency_seconds_total": round(sum(x["latency_seconds"] for x in records), 3),
+            "tokens": {key: usage[key] if seen[key] else None for key in usage},
+            "estimated_standard_usd": round(cost, 6) if cost is not None else None}
 
 
-def _counts(values):
-    result = {}
-    for value in values: result[value] = result.get(value, 0) + 1
-    return result
+def deterministic_checks(report):
+    actions, operations = report["agent_actions"], report["operations"]
+    requests = operations["requests"]
+    return {"duplicate_support_requests": sum(a.get("operation_outcome") == "REUSED" for a in actions),
+            "pending_requests": sum(r["status"] == "OPEN" for r in requests),
+            "handoff_without_acceptance": sum(a["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF")
+                and a.get("operation_outcome") != "ACCEPTED" for a in actions),
+            "false_confirmation_phrase": [a["turn"] for a in actions if "appointment is confirmed" in a["reply"].lower()
+                and not (operations.get("handoff") or {}).get("appointment_confirmed")],
+            "invented_four_bedroom": [a["turn"] for a in actions if "we have a 4-bedroom" in a["reply"].lower()
+                or "we have four bedrooms" in a["reply"].lower()]}
 
 
-def run_pair(scenario, api, config, outdir, dry=False):
-    pair_path = outdir / (scenario["id"] + ".pair.json")
-    failure_path = outdir / (scenario["id"] + ".failure.json")
-    pair = json.loads(pair_path.read_text()) if pair_path.exists() else {"scenario_id": scenario["id"], "title": scenario["title"], "status": "INCOMPLETE"}
-    if pair.get("status") == "COMPLETED":
-        failure_path.unlink(missing_ok=True)
-        return pair
+def run_conversation(scenario, architecture, api, config, checkpoint):
+    saved = json.loads(checkpoint.read_text()) if checkpoint.exists() else {}
+    if saved.get("status") == "COMPLETED": return saved
+    history = saved.get("transcript") or [{"turn": 1, "speaker": "customer", "message": scenario["opening"]}]
+    profile = saved.get("final_profile") or initial_profile()
+    operations = FakeOperations(saved.get("operations"))
+    actions = saved.get("agent_actions") or []
+    states = saved.get("customer_state_transitions") or []
+    phase = saved.get("phase", "agent")
+    journal = checkpoint.with_suffix(".calls.jsonl")
+    api.journal = journal
+    core = SalesAgent(config, provider=V2EvalProvider(api)) if architecture == "V2" else SalesCoreV3(config, provider=V3EvalProvider(api))
+    status, ending = "IN_PROGRESS", None
+    customer_turn = len([x for x in history if x["speaker"] == "customer"])
+
+    def save(phase_value):
+        atomic_json(checkpoint, {"architecture": architecture, "status": "IN_PROGRESS", "phase": phase_value,
+            "customer_turns": customer_turn, "transcript": history, "agent_actions": actions,
+            "customer_state_transitions": states, "final_profile": profile, "operations": operations.state()})
+
+    try:
+        while customer_turn <= 10:
+            if phase == "agent":
+                latest = next(x["message"] for x in reversed(history) if x["speaker"] == "customer")
+                context_history = [{"direction": "INBOUND" if x["speaker"] == "customer" else "OUTBOUND", "body": x["message"]}
+                                   for x in history if x["speaker"] in ("customer", "agent")]
+                decision, _ = core.decide(latest, profile, context_history, operations.context())
+                progress = decision.pop("_conversation_progress", None)
+                if progress is not None: profile["conversation_progress"] = progress
+                profile.update({k: v for k, v in decision["lead_updates"].items() if k in PROFILE_FIELDS and v is not None})
+                action = {"turn": customer_turn, "action": decision["action"], "sales_move": decision["sales_move"],
+                          "buyer_signal": decision["buyer_signal"], "reply": decision["reply"]}
+                if decision["action"] == "SUPPORT_REQUEST":
+                    request, created = operations.accept_support(decision["support_request"])
+                    action["operation_outcome"] = "ACCEPTED" if created else "REUSED"
+                    action["request_id"] = request["request_id"]
+                    if architecture == "V3":
+                        decision["reply"] = ("I’ve registered that for verification. I don’t have the confirmed answer yet."
+                            if created else "That check is still pending; I don’t have a verified update yet.")
+                        action["reply"] = decision["reply"]
+                elif decision["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
+                    action["operation_outcome"] = "ACCEPTED" if operations.accept_handoff(decision["action"], decision["handoff_reason"]) else "REUSED"
+                actions.append(action)
+                reply = decision["reply"].strip()
+                if reply: history.append({"turn": customer_turn, "speaker": "agent", "message": reply})
+                phase = "customer"
+                save(phase)
+                if decision["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
+                    status, ending = "COMPLETED", "accepted formal handoff; appointment not confirmed"
+                    break
+                if not reply:
+                    status, ending = "INCOMPLETE", "empty agent reply"
+                    break
+                if customer_turn >= 10:
+                    status, ending = "COMPLETED", "10 customer turns reached"
+                    break
+            customer_system, _ = prompts(scenario)
+            customer_input = json.dumps({"persona": scenario["persona"], "private_needs": scenario["facts"],
+                "private_motivations": scenario["motives"], "conversation": history,
+                "operational_status": operations.context()}, ensure_ascii=False)
+            customer, _, _ = api.request("customer_simulator", customer_system, customer_input, CUSTOMER_SCHEMA,
+                                           "simulated_customer_turn", 1200, "medium")
+            states.append({"after_agent_turn": customer_turn, **customer})
+            if customer["message"].strip():
+                customer_turn += 1
+                history.append({"turn": customer_turn, "speaker": "customer", "message": customer["message"].strip()})
+            phase = "agent"
+            save(phase)
+            if customer["state"] in ("WAITING", "END"):
+                if customer["state"] == "WAITING" and scenario.get("simulated_support_result") and operations.requests:
+                    operations.resolve(operations.requests[0]["request_id"], scenario["simulated_support_result"])
+                    history.append({"turn": customer_turn + 1, "speaker": "customer", "message": "Any verified update on that?"})
+                    customer_turn += 1
+                    states.append({"after_agent_turn": customer_turn, "state": "RESUMED", "reason": "explicit simulated support event"})
+                    save(phase)
+                    continue
+                status, ending = "COMPLETED", "customer " + customer["state"].lower() + ": " + customer["reason"]
+                break
+            if not customer["message"].strip():
+                status, ending = "INCOMPLETE", "CONTINUE without customer message"
+                break
+    except Exception as exc:
+        status, ending = "INCOMPLETE", "%s: %s" % (type(exc).__name__, str(exc)[:600])
+    records = [json.loads(line) for line in journal.read_text().splitlines()] if journal.exists() else []
+    report = {"architecture": architecture, "status": status, "phase": phase, "customer_turns": customer_turn,
+        "natural_ending_reason": ending, "transcript": history, "agent_actions": actions,
+        "customer_state_transitions": states, "final_profile": profile, "operations": operations.state(),
+        "provider_calls": records}
+    report["deterministic_checks"] = deterministic_checks(report)
+    atomic_json(checkpoint, report)
+    api.journal = None
+    return report
+
+
+def run_pair(scenario, api, config, outdir):
+    path = outdir / (scenario["id"] + ".pair.json")
+    pair = json.loads(path.read_text()) if path.exists() else {"scenario_id": scenario["id"],
+        "title": scenario["title"], "status": "INCOMPLETE"}
+    if pair["status"] == "COMPLETED": return pair
     for arch in ("V2", "V3"):
-        if pair.get(arch, {}).get("status") == "COMPLETED":
-            continue
-        cp = outdir / (scenario["id"] + "." + arch.lower() + ".json")
-        metrics_start = len(api.records)
-        result = run_conversation(scenario, arch, api, config, cp)
+        if pair.get(arch, {}).get("status") == "COMPLETED": continue
+        result = run_conversation(scenario, arch, api, config, outdir / (scenario["id"] + "." + arch.lower() + ".json"))
         pair[arch] = result
-        pair.setdefault("metrics", {})[arch] = report_metrics(result.get("provider_calls", api.records[metrics_start:]))
         pair["status"] = "INCOMPLETE"
-        pair_path.write_text(json.dumps(pair, ensure_ascii=False, indent=2) + "\n")
-        if result["status"] != "COMPLETED":
-            return pair
-    if not all(pair.get(arch, {}).get("status") == "COMPLETED" for arch in ("V2", "V3")):
-        return pair
+        atomic_json(path, pair)
+        if result["status"] != "COMPLETED": return pair
     label_map = {"V2": "A", "V3": "B"} if int(hashlib.sha256(scenario["id"].encode()).hexdigest(), 16) % 2 else {"V2": "B", "V3": "A"}
-    _, judge_system = prompts(scenario, "")
-    blind = {label_map[arch]: {"transcript": pair[arch]["transcript"], "customer_turns": pair[arch]["customer_turns"],
-                               "ending_reason": pair[arch]["natural_ending_reason"]} for arch in ("V2", "V3")}
-    judge_user = json.dumps({"buyer_truth": {"persona": scenario["persona"], "motives": scenario["motives"], "facts": scenario["facts"]},
-                             "scenario": scenario["title"], "Agent A": blind["A"], "Agent B": blind["B"]}, ensure_ascii=False)
-    judge_records_start = len(api.records)
-    judge, _, _ = api.request("blind_judge", judge_system, judge_user, JUDGE_SCHEMA, "blind_sales_comparison", 6000)
-    pair["blind_judge_provider_calls"] = api.records[judge_records_start:]
-    pair["blind_label_map"] = label_map  # Kept in artifacts, omitted from judge input.
+    _, judge_system = prompts(scenario)
+    blind = {label_map[a]: {"transcript": pair[a]["transcript"], "ending_reason": pair[a]["natural_ending_reason"]}
+             for a in ("V2", "V3")}
+    verified_facts = {str(path.relative_to(KNOWLEDGE)): path.read_text(encoding="utf-8")
+                      for folder in ("01_facts", "02_commercial")
+                      for path in sorted((KNOWLEDGE / folder).glob("*.md"))}
+    judge_input = json.dumps({"verified_project_facts": verified_facts,
+        "customer_facing_name_policy": "Pearl Residences is the authorized customer-facing sales alias for SkyWorld Pearlmont. Using that alias in an ordinary introduction is correct. If the customer directly asks the real identity, answer truthfully. Do not flag the alias itself as an invented project.",
+        "scenario": scenario["title"],
+                              "Agent A": blind["A"], "Agent B": blind["B"]}, ensure_ascii=False)
+    judge_journal = outdir / (scenario["id"] + ".judge.calls.jsonl")
+    api.journal = judge_journal
+    try:
+        judge, _, _ = api.request("blind_judge", judge_system, judge_input, JUDGE_SCHEMA,
+                                   "blind_sales_comparison", 9000, "xhigh")
+    except RuntimeError as exc:
+        if "reasoning" in str(exc).lower() and ("unsupported" in str(exc).lower() or "invalid" in str(exc).lower()):
+            pair["judge_xhigh_error"] = str(exc)
+            atomic_json(path, pair)
+            judge, _, _ = api.request("blind_judge", judge_system, judge_input, JUDGE_SCHEMA,
+                                       "blind_sales_comparison", 9000, "high")
+        else: raise
+    pair["blind_label_map"] = label_map
     pair["blind_judge"] = judge
-    pair["paired_winner"] = "TIE" if judge["winner"] == "TIE" else next(arch for arch, label in label_map.items() if label == judge["winner"])
-    pair["metrics"]["blind_judge"] = report_metrics(pair["blind_judge_provider_calls"])
+    pair["paired_winner"] = "TIE" if judge["winner"] == "TIE" else next(a for a, label in label_map.items() if label == judge["winner"])
+    pair["blind_judge_provider_calls"] = [json.loads(line) for line in judge_journal.read_text().splitlines()]
     pair["status"] = "COMPLETED"
-    pair["pair_judged_at_utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
-    pair_path.write_text(json.dumps(pair, ensure_ascii=False, indent=2) + "\n")
-    failure_path.unlink(missing_ok=True)
+    atomic_json(path, pair)
+    api.journal = None
     return pair
 
 
-def main(argv=None):
-    parser = argparse.ArgumentParser(description="Run 10 paired, offline-from-WhatsApp Sales Core V2/V3 dialogs")
-    parser.add_argument("--dry-run", action="store_true", help="exercise the same paired operator path with fake model transports")
-    parser.add_argument("--output", help="new or existing report directory name; existing completed pairs are skipped")
-    parser.add_argument("--scenario", action="append", help="scenario ID; default evaluates all 10")
-    parser.add_argument("--env-file", help="load existing local API/model configuration without copying secrets")
-    args = parser.parse_args(argv)
-    if args.env_file:
-        load_env_file(args.env_file)
-    config = get_config()
-    if config["model"] != MODEL:
-        raise SystemExit("A/B comparison requires GPT-6 Luna for the existing runtime")
-    if not args.dry_run and not config["api_key"]:
-        raise SystemExit("OPENAI_API_KEY is required for paid evaluation; no fallback provider is used")
-    scenarios = json.loads((SIM / "sales_core_v3_scenarios.json").read_text())
-    selected = set(args.scenario or [s["id"] for s in scenarios])
-    scenarios = [s for s in scenarios if s["id"] in selected]
-    if selected != {s["id"] for s in scenarios}:
-        raise SystemExit("Unknown scenario id")
-    stamp = args.output or (("DRYRUN-" if args.dry_run else "RUN-") + dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
-    outdir = SIM / "reports" / stamp
-    outdir.mkdir(parents=True, exist_ok=bool(args.output))
-    run_start, api = time.monotonic(), API(config, args.dry_run)
-    pairs = []
-    for scenario in scenarios:
-        try:
-            pairs.append(run_pair(scenario, api, config, outdir, args.dry_run))
-            if not args.dry_run and pairs[-1].get("status") != "COMPLETED":
-                break
-        except Exception as exc:
-            failure = {"scenario_id": scenario["id"], "status": "INCOMPLETE", "error": "%s: %s" % (type(exc).__name__, str(exc)[:800])}
-            (outdir / (scenario["id"] + ".failure.json")).write_text(json.dumps(failure, indent=2) + "\n")
-            pairs.append(failure)
-            if not args.dry_run:
-                break
-    complete = [p for p in pairs if p.get("status") == "COMPLETED"]
-    aggregates = {arch: {"mean_scores": {}, "wins": 0, "completed_conversations": sum(p.get(arch, {}).get("status") == "COMPLETED" for p in pairs),
-                         "metrics": report_metrics([c for p in pairs for c in p.get(arch, {}).get("provider_calls", [])])}
-                  for arch in ("V2", "V3")}
-    for p in complete:
-        for arch in ("V2", "V3"):
-            for dim in SCORE_DIMENSIONS:
-                label = p["blind_label_map"][arch]
-                bucket = aggregates[arch]["mean_scores"].setdefault(dim, [])
-                bucket.append(p["blind_judge"]["scores"][label][dim])
-        if p["paired_winner"] != "TIE": aggregates[p["paired_winner"]]["wins"] += 1
-    for arch in aggregates:
-        aggregates[arch]["mean_scores"] = {k: round(sum(v) / len(v), 2) for k, v in aggregates[arch]["mean_scores"].items()}
-    all_records = [c for p in pairs for arch in ("V2", "V3") for c in p.get(arch, {}).get("provider_calls", [])]
-    all_records.extend(c for p in pairs for c in p.get("blind_judge_provider_calls", []))
-    roles = ("sales_v2", "sales_strategy", "sales_v3", "customer_simulator", "blind_judge")
-    role_metrics = {role: report_metrics([record for record in all_records if record.get("role") == role])
-                    for role in roles}
-    judge_times = [dt.datetime.fromisoformat(p["pair_judged_at_utc"]) for p in complete if p.get("pair_judged_at_utc")]
-    judged_span_seconds = round((max(judge_times) - min(judge_times)).total_seconds(), 3) if len(judge_times) > 1 else None
-    report = {"run_id": stamp, "status": "COMPLETED" if len(complete) == 10 else "INCOMPLETE",
-              "scenario_count": len(scenarios), "completed_pairs": len(complete),
-              "failed_or_incomplete_pairs": [p["scenario_id"] for p in pairs if p.get("status") != "COMPLETED"],
-              "model": MODEL, "reasoning": config["reasoning"], "dry_run": args.dry_run,
-              "aggregate": aggregates, "pair_results": [{"scenario_id": p["scenario_id"], "title": p.get("title"),
-                   "status": p.get("status"), "winner": p.get("paired_winner"),
-                   "customer_turns": {a: p.get(a, {}).get("customer_turns") for a in ("V2", "V3")},
-                   "ending_reasons": {a: p.get(a, {}).get("natural_ending_reason") for a in ("V2", "V3")}}
-                   for p in pairs], "provider_metrics": report_metrics(all_records), "api_usage_by_role": role_metrics,
-              "first_to_last_pair_judgment_seconds": judged_span_seconds,
-              "duration_seconds": round(time.monotonic() - run_start, 3),
-              "limits": ["Ten pairs are descriptive and not statistically significant.",
-                         "Estimated charges use standard short-context text rates and retained provider-reported tokens.",
-                         "During earlier resumes, one partial five-turn V3 attempt and three incomplete API responses were overwritten before their usage could be retained; the final token and cost totals therefore understate actual experiment usage by an unknown amount.",
-                         "No CRM, SQLite, WhatsApp, live inventory, calendar or human-support transport is invoked."]}
-    (outdir / "aggregate.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
-    (outdir / "aggregate.md").write_text(render(report, pairs))
-    print(json.dumps({"report_dir": str(outdir), "completed_pairs": len(complete),
-                      "status": report["status"], "provider_metrics": report["provider_metrics"]}, ensure_ascii=False, indent=2))
-    return 0 if args.dry_run or report["status"] == "COMPLETED" else 2
-
-
 def render(report, pairs):
-    lines = ["# Sales Core V2/V3 paired evaluation", "", f"- Run: {report['run_id']}",
-             f"- Status: {report['status']} ({report['completed_pairs']}/{report['scenario_count']} pairs)",
-             f"- Model: {report['model']} / {report['reasoning']}", "", "## Scenario outcomes", "",
-             "| Scenario | Pair | V2 turns | V3 turns | Winner |", "|---|---|---:|---:|---|"]
-    for row in report["pair_results"]:
-        lines.append(f"| {row['scenario_id']} {row.get('title') or ''} | {row['status']} | {row['customer_turns']['V2']} | {row['customer_turns']['V3']} | {row['winner'] or '—'} |")
-    lines += ["", "## Paired blind scores", "", "| Dimension | V2 | V3 |", "|---|---:|---:|"]
-    for dim in SCORE_DIMENSIONS:
-        lines.append(f"| {dim} | {report['aggregate']['V2']['mean_scores'].get(dim, '—')} | {report['aggregate']['V3']['mean_scores'].get(dim, '—')} |")
-    lines += ["", "## Usage", "", "```json", json.dumps(report["provider_metrics"], ensure_ascii=False, indent=2), "```", "", "## Transcript evidence", ""]
+    lines = ["# Sales Brain V3 完整 A/B 评估", "", f"运行：{report['run_id']}；完成 {report['completed_pairs']}/{report['scenario_count']} 对。", "",
+             "| 场景 | V2轮数 | V3轮数 | 判定 |", "|---|---:|---:|---|"]
     for p in pairs:
-        if p.get("status") != "COMPLETED":
-            lines += [f"### {p['scenario_id']}: incomplete", ""]
-            continue
-        judge = p["blind_judge"]
-        lines += [f"### {p['scenario_id']} — {p['title']} ({p['paired_winner']})", "", judge["summary"], ""]
-        for label in ("stronger_examples", "weaker_examples"):
-            for example in judge[label]:
-                arch = next(a for a, side in p["blind_label_map"].items() if side == example["side"])
-                reason = example.get("why_better", example.get("why_worse", ""))
-                lines.append(f"- {label.replace('_', ' ').title()}: {arch}, turn {example['turn']}: “{example['evidence']}” — {reason}")
+        lines.append(f"| {p['scenario_id']} {p.get('title','')} | {p.get('V2',{}).get('customer_turns','—')} | {p.get('V3',{}).get('customer_turns','—')} | {p.get('paired_winner','—')} |")
+    lines += ["", "## 加权评分", "", "| 维度 | 权重 | V2 | V3 |", "|---|---:|---:|---:|"]
+    for key, weight in WEIGHTS.items():
+        lines.append(f"| {key} | {weight}% | {report['aggregate']['V2']['mean_scores'].get(key,'—')} | {report['aggregate']['V3']['mean_scores'].get(key,'—')} |")
+    lines += ["", "## Token、费用、延迟", "", "```json", json.dumps(report["provider_metrics"], ensure_ascii=False, indent=2), "```", ""]
+    for p in pairs:
+        if p.get("status") != "COMPLETED": continue
+        lines += [f"## {p['scenario_id']} {p['title']}", "", p["blind_judge"]["summary"], ""]
+        for arch in ("V2", "V3"):
+            lines.append(f"### {arch} 对话及状态")
+            for turn in p[arch]["transcript"]: lines.append(f"- {turn['turn']} {turn['speaker']}: {turn['message']}")
+            lines.append("- 运营动作与客户状态：" + json.dumps({"actions": p[arch]["agent_actions"],
+                "operations": p[arch]["operations"], "states": p[arch]["customer_state_transitions"]}, ensure_ascii=False))
+            lines.append("")
+        for example in p["blind_judge"]["examples"]:
+            arch = next(a for a, label in p["blind_label_map"].items() if label == example["side"])
+            lines.append(f"- 评审 {arch} 第{example['turn']}轮：{example['evidence']}；{example['assessment']}；更好做法：{example['better_response']}")
+        for error in p["blind_judge"]["material_errors"]: lines.append("- 严重问题：" + json.dumps(error, ensure_ascii=False))
         lines.append("")
     return "\n".join(lines) + "\n"
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Run isolated paired Sales Core V2/V3 conversations")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--output", help="new or resumable report directory under simulator/reports")
+    parser.add_argument("--scenario", action="append")
+    parser.add_argument("--env-file")
+    args = parser.parse_args(argv)
+    if args.env_file: load_env_file(args.env_file)
+    config = get_config()
+    if config["model"] != MODEL or (not args.dry_run and not config["api_key"]):
+        raise SystemExit("GPT-6 Luna and an existing OPENAI_API_KEY are required for paid evaluation")
+    scenarios = json.loads((SIM / "sales_core_v3_scenarios.json").read_text())
+    selected = set(args.scenario or [s["id"] for s in scenarios])
+    scenarios = [s for s in scenarios if s["id"] in selected]
+    if selected != {s["id"] for s in scenarios}: raise SystemExit("Unknown scenario ID")
+    stamp = args.output or (("DRYRUN-" if args.dry_run else "RUN-") + dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
+    outdir = SIM / "reports" / stamp
+    outdir.mkdir(parents=True, exist_ok=bool(args.output))
+    api, started = API(config, args.dry_run), time.monotonic()
+    pairs = []
+    for scenario in scenarios:
+        try:
+            pair = run_pair(scenario, api, config, outdir)
+        except Exception as exc:
+            pair = {"scenario_id": scenario["id"], "status": "INCOMPLETE", "error": "%s: %s" % (type(exc).__name__, str(exc)[:1000])}
+            atomic_json(outdir / (scenario["id"] + ".failure.json"), pair)
+        pairs.append(pair)
+        if pair["status"] != "COMPLETED" and not args.dry_run: break
+    completed = [p for p in pairs if p["status"] == "COMPLETED"]
+    aggregates = {a: {"wins": sum(p["paired_winner"] == a for p in completed), "mean_scores": {}} for a in ("V2", "V3")}
+    for arch in ("V2", "V3"):
+        for key in WEIGHTS:
+            scores = [p["blind_judge"]["scores"][p["blind_label_map"][arch]][key] for p in completed]
+            aggregates[arch]["mean_scores"][key] = round(sum(scores) / len(scores), 2) if scores else None
+    records = [row for p in pairs for arch in ("V2", "V3") for row in p.get(arch, {}).get("provider_calls", [])]
+    records.extend(row for p in pairs for row in p.get("blind_judge_provider_calls", []))
+    report = {"run_id": stamp, "status": "COMPLETED" if len(completed) == len(scenarios) else "INCOMPLETE",
+        "scenario_count": len(scenarios), "completed_pairs": len(completed), "dry_run": args.dry_run,
+        "aggregate": aggregates, "provider_metrics": report_metrics(records),
+        "api_usage_by_role": {role: report_metrics([r for r in records if r["role"] == role])
+            for role in ("sales_v2", "sales_strategy", "sales_v3", "customer_simulator", "blind_judge")},
+        "duration_seconds": round(time.monotonic() - started, 3),
+        "pair_results": [{"scenario_id": p["scenario_id"], "status": p["status"], "winner": p.get("paired_winner")}
+                         for p in pairs]}
+    atomic_json(outdir / "aggregate.json", report)
+    (outdir / "aggregate.md").write_text(render(report, pairs))
+    print(json.dumps({"report_dir": str(outdir), "completed_pairs": len(completed),
+        "status": report["status"], "provider_metrics": report["provider_metrics"]}, ensure_ascii=False, indent=2))
+    return 0 if report["status"] == "COMPLETED" else 2
+
+if __name__ == "__main__": raise SystemExit(main())

@@ -1,0 +1,495 @@
+{
+  "scenario_id": "SCV3-04",
+  "title": "Investor asking about rental return",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has already accepted the request and is checking the figures, so I’ll wait for the evidence before assessing the investment.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, considering for investment. What rental yield can expect around there?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "I can’t give you a reliable yield figure without current rental comparables and the unit’s purchase price, so I don’t want to guess. I’ll check the latest figures for Pearl Residences so we can estimate a realistic gross yield. Is rental income your main objective, or are you also weighing long-term appreciation?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Rental income is the main objective—I’m looking for net yield above 4%. I’ll also consider appreciation, but need to understand vacancy and other costs before comparing it with my alternatives."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Understood—net yield above 4% is your target, and vacancy and holding costs need to be included, not just gross rent. One verified cost: the Phase 1 Type A is 900 sq ft, with maintenance incl. sinking fund at RM0.18 psf, or about RM162/month. Current pricing and rental comparables are already being checked; I’ll also verify the vacancy and other holding-cost assumptions rather than guess."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. Please send the rental comps and cost assumptions once you’ve verified them—then I can compare properly."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can’t give you a reliable yield figure without current rental comparables and the unit’s purchase price, so I don’t want to guess. I’ll check the latest figures for Pearl Residences so we can estimate a realistic gross yield. Is rental income your main objective, or are you also weighing long-term appreciation?",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Understood—net yield above 4% is your target, and vacancy and holding costs need to be included, not just gross rent. One verified cost: the Phase 1 Type A is 900 sq ft, with maintenance incl. sinking fund at RM0.18 psf, or about RM162/month. Current pricing and rental comparables are already being checked; I’ll also verify the vacancy and other holding-cost assumptions rather than guess.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-002"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Rental income is the main objective—I’m looking for net yield above 4%. I’ll also consider appreciation, but need to understand vacancy and other costs before comparing it with my alternatives.",
+        "state": "CONTINUE",
+        "reason": "Answers the agent’s question and clarifies the investment criteria while their request for current figures is still open.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. Please send the rental comps and cost assumptions once you’ve verified them—then I can compare properly.",
+        "state": "WAITING",
+        "reason": "The agent has already accepted the request and is checking the figures, so I’ll wait for the evidence before assessing the investment.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "INVESTMENT",
+      "sales_stage": "HANDLE",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Verify vacancy and holding-cost assumptions alongside the pending price and rental-comparable check, then assess whether the net-yield target is realistic.",
+      "purchase_reason": "Rental income is the main objective; target net yield above 4%, with appreciation as a secondary consideration.",
+      "primary_motivations": [
+        "Rental income",
+        "Potential appreciation"
+      ],
+      "decision_factors": [
+        "Net yield above 4%",
+        "Vacancy",
+        "Holding costs"
+      ],
+      "active_concerns": [
+        "Needs current vacancy and cost assumptions to compare net yield with alternatives"
+      ],
+      "last_progress": "Buyer clarified rental income is the main objective, with a net-yield target above 4%; appreciation is secondary.",
+      "next_action": "Obtain verified vacancy and recurring holding-cost information.",
+      "conversation_summary": "Investor prioritises rental income and wants net yield above 4%; also considers appreciation and needs vacancy and ownership costs to compare alternatives."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "OTHER|achievable and comparables current estimate gross or pearl price range realistic recent rent rental residences sufficient yield",
+          "support_type": "OTHER",
+          "requested_fact": "Current unit pricing and recent rental comparables or achievable rent range for Pearl Residences, sufficient to estimate a realistic gross rental yield.",
+          "status": "OPEN"
+        },
+        {
+          "request_id": "SIM-002",
+          "signature": "OTHER|and applicable are assumptions based beyond charges confirmation costs current estimating evidence fee figures including maintenance net or owner pearl recurring relevant reliable rental residences unavailable vacancy verified where yield",
+          "support_type": "OTHER",
+          "requested_fact": "Current evidence-based vacancy assumptions and recurring owner costs relevant to estimating Pearl Residences net rental yield, including applicable charges beyond the verified maintenance fee, or confirmation where reliable figures are unavailable.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2124,
+          "output_tokens": 1286,
+          "total_tokens": 3410,
+          "cached_tokens": 0,
+          "reasoning_tokens": 818
+        },
+        "latency_seconds": 14.994,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 493,
+          "output_tokens": 210,
+          "total_tokens": 703,
+          "cached_tokens": 0,
+          "reasoning_tokens": 124
+        },
+        "latency_seconds": 3.35,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2848,
+          "output_tokens": 2075,
+          "total_tokens": 4923,
+          "cached_tokens": 0,
+          "reasoning_tokens": 1421
+        },
+        "latency_seconds": 23.993,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 723,
+          "output_tokens": 142,
+          "total_tokens": 865,
+          "cached_tokens": 0,
+          "reasoning_tokens": 65
+        },
+        "latency_seconds": 2.778,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 2,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 3,
+    "natural_ending_reason": "customer waiting: The agent has registered the request and says the information is not yet confirmed, so there is nothing useful to follow up on yet.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi, considering for investment. What rental yield can expect around there?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Rental yield depends on the achievable rent and purchase price, so I don’t want to guess a figure. Are you asking about Pearl Residences, or another area or property?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Pearl Residences. Do you have recent rental comparables or occupancy data for similar units nearby? I’m looking for net yield above 4%, not just a general estimate."
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. I’ll wait for the verified comparables and occupancy data before assessing whether it meets my net yield target."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Rental yield depends on the achievable rent and purchase price, so I don’t want to guess a figure. Are you asking about Pearl Residences, or another area or property?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+        "operation_outcome": "ACCEPTED",
+        "request_id": "SIM-001"
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Pearl Residences. Do you have recent rental comparables or occupancy data for similar units nearby? I’m looking for net yield above 4%, not just a general estimate.",
+        "state": "CONTINUE",
+        "reason": "Clarifies the project and asks for evidence relevant to the stated investment goal.",
+        "interest_change": "UNCHANGED"
+      },
+      {
+        "after_agent_turn": 2,
+        "message": "Okay, thanks. I’ll wait for the verified comparables and occupancy data before assessing whether it meets my net yield target.",
+        "state": "WAITING",
+        "reason": "The agent has registered the request and says the information is not yet confirmed, so there is nothing useful to follow up on yet.",
+        "interest_change": "UNCHANGED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "INVESTMENT",
+      "sales_stage": "QUALIFY",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Assess the buyer’s 4% net-yield threshold using verified rental and occupancy evidence alongside their purchase-price and cost assumptions.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Wants recent rental comparables or occupancy data for similar units near Pearl Residences.",
+          "Looking for net yield above 4%, not a general estimate."
+        ],
+        "confirmed_motivations": [
+          "Considering a property for investment."
+        ],
+        "hypotheses": [
+          "Wants to validate investment returns using evidence before deciding whether to proceed."
+        ],
+        "tradeoffs": [],
+        "objections": [],
+        "communicated_facts": [
+          "Rental yield depends on achievable rent and purchase price; no figure was guessed."
+        ],
+        "sales_attempts": [
+          "Explained yield depends on rent and price and clarified the property; continue with evidence-led discussion, revising from general framing to verified comparables and net-yield basis."
+        ],
+        "open_questions": [
+          "What unit type/size and purchase price is the buyer assessing?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Check for verified recent nearby rental comparables and occupancy data; use relevant unit pricing and costs to assess whether net yield can exceed 4%.",
+          "why": "The buyer specified Pearl Residences and a clear net-yield threshold, and asked for supporting market evidence.",
+          "feedback_to_watch": "Whether reliable data supports the threshold and what unit type, price, and cost assumptions the buyer is using."
+        }
+      },
+      "last_progress": "Buyer specified Pearl Residences and requested recent nearby rental comparables or occupancy data to assess a net yield above 4%.",
+      "next_action": "Use verified rental and occupancy evidence, if available, with the buyer’s purchase-price and cost assumptions to assess the target.",
+      "conversation_summary": "Buyer is considering Pearl Residences for investment and wants recent nearby rental comparables or occupancy data to assess whether net yield can exceed 4%."
+    },
+    "operations": {
+      "requests": [
+        {
+          "request_id": "SIM-001",
+          "signature": "OTHER|900 and availability comparables data dates evidence ft nearby occupancy pearl recent rental residences similar sources sq type units with",
+          "support_type": "OTHER",
+          "requested_fact": "Recent rental comparables and occupancy data, with dates and sources if available, for units similar to Pearl Residences’ 900 sq. ft. Type A units nearby.",
+          "status": "OPEN"
+        }
+      ],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 521,
+          "output_tokens": 432,
+          "total_tokens": 953,
+          "cached_tokens": 0,
+          "reasoning_tokens": 233
+        },
+        "latency_seconds": 6.757,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2760,
+          "output_tokens": 1207,
+          "total_tokens": 3967,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 836
+        },
+        "latency_seconds": 12.143,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 408,
+          "output_tokens": 153,
+          "total_tokens": 561,
+          "cached_tokens": 0,
+          "reasoning_tokens": 74
+        },
+        "latency_seconds": 2.779,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 890,
+          "output_tokens": 1135,
+          "total_tokens": 2025,
+          "cached_tokens": 0,
+          "reasoning_tokens": 702
+        },
+        "latency_seconds": 12.598,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3448,
+          "output_tokens": 1859,
+          "total_tokens": 5307,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 1299
+        },
+        "latency_seconds": 16.764,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 560,
+          "output_tokens": 116,
+          "total_tokens": 676,
+          "cached_tokens": 0,
+          "reasoning_tokens": 37
+        },
+        "latency_seconds": 2.541,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 1,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 2,
+        "meaningful_sales_actions": 2,
+        "observation_and_adaptation": 2,
+        "natural_continuity": 2,
+        "progression_and_pacing": 2
+      },
+      "B": {
+        "customer_insight": 4,
+        "meaningful_sales_actions": 4,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 3
+      }
+    },
+    "examples": [
+      {
+        "side": "A",
+        "turn": 2,
+        "evidence": "After the customer specifies a net-yield target above 4% and asks for comparable rents and occupancy, the agent only says the request is registered and the answer is unconfirmed.",
+        "assessment": "Avoids inventing data, but provides no useful analysis, clarifying question, or defined next step. A better response could clarify what the customer includes in net yield and say whether verified comps are actually available or need a salesperson to obtain them.",
+        "better_response": "I don’t have verified rental or occupancy data in front of me, so I can’t assess the 4% net target yet. For the comparison, should net yield include financing costs, or are you comparing before financing? I can share the verified rent, price and cost inputs once they’re confirmed."
+      },
+      {
+        "side": "B",
+        "turn": 1,
+        "evidence": "The agent appropriately says it will not guess a yield without current rental comparables and purchase price, then asks whether rental income or appreciation is the main objective.",
+        "assessment": "A relevant discovery question that helps shape the next response.",
+        "better_response": "Could also ask whether the customer is comparing cash-on-cash return or property-level net yield, since financing treatment changes the calculation."
+      },
+      {
+        "side": "B",
+        "turn": 2,
+        "evidence": "The agent reflects the customer’s >4% net target and concern about vacancy and costs, and supplies the stated RM0.18 psf maintenance rate for a 900 sq ft unit, calculating about RM162/month.",
+        "assessment": "More tailored and useful than A; the arithmetic is correct and maintenance is relevant to net yield. The agent could label the monthly figure as an estimate and distinguish verified project costs from unverified market assumptions.",
+        "better_response": "Present the RM162/month as an estimate based on the stated rate, then ask what other costs the customer wants included and whether the calculation should be before or after financing."
+      }
+    ],
+    "material_errors": [
+      {
+        "side": "A",
+        "turn": 2,
+        "kind": "unsupported_operational_follow_up_claim",
+        "evidence": "“I’ve registered that for verification.” The transcript does not show that a request was actually logged or who will provide the promised follow-up; the customer then says they will wait for the data."
+      },
+      {
+        "side": "B",
+        "turn": 2,
+        "kind": "unsupported_operational_follow_up_claim",
+        "evidence": "“Current pricing and rental comparables are already being checked; I’ll also verify…” The transcript does not establish that this work is underway or identify a follow-up owner, while the customer relies on receiving the results."
+      }
+    ],
+    "simulator_quality": "Both are plausible short exchanges, but A’s bare registration line feels canned. B is more natural and responsive. Both rely on an off-chat verification process that is not demonstrated in the transcripts.",
+    "summary": "B wins on the weighted criteria. It better understands the customer’s stated investment hurdle and adapts its answer to vacancy and holding costs, while also offering a relevant maintenance-cost input. A avoids fabricated yield figures but stalls after the customer provides a clear target and data request. Both should avoid implying that follow-up work is already logged or underway unless that is true; they should identify a real next step or clearly state what they can and cannot verify."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20797,
+        "output_tokens": 3612,
+        "total_tokens": 24409,
+        "cached_tokens": 0,
+        "reasoning_tokens": 2863
+      },
+      "latency_seconds": 35.731,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}

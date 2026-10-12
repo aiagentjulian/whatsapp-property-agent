@@ -1,0 +1,224 @@
+{
+  "architecture": "V3",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 3,
+  "natural_ending_reason": "customer waiting: The agent has registered the request and says the information is not yet confirmed, so there is nothing useful to follow up on yet.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi, considering for investment. What rental yield can expect around there?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! Rental yield depends on the achievable rent and purchase price, so I don’t want to guess a figure. Are you asking about Pearl Residences, or another area or property?"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Pearl Residences. Do you have recent rental comparables or occupancy data for similar units nearby? I’m looking for net yield above 4%, not just a general estimate."
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I’ve registered that for verification. I don’t have the confirmed answer yet."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Okay, thanks. I’ll wait for the verified comparables and occupancy data before assessing whether it meets my net yield target."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Hi! Rental yield depends on the achievable rent and purchase price, so I don’t want to guess a figure. Are you asking about Pearl Residences, or another area or property?"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I’ve registered that for verification. I don’t have the confirmed answer yet.",
+      "operation_outcome": "ACCEPTED",
+      "request_id": "SIM-001"
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Pearl Residences. Do you have recent rental comparables or occupancy data for similar units nearby? I’m looking for net yield above 4%, not just a general estimate.",
+      "state": "CONTINUE",
+      "reason": "Clarifies the project and asks for evidence relevant to the stated investment goal.",
+      "interest_change": "UNCHANGED"
+    },
+    {
+      "after_agent_turn": 2,
+      "message": "Okay, thanks. I’ll wait for the verified comparables and occupancy data before assessing whether it meets my net yield target.",
+      "state": "WAITING",
+      "reason": "The agent has registered the request and says the information is not yet confirmed, so there is nothing useful to follow up on yet.",
+      "interest_change": "UNCHANGED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "INVESTMENT",
+    "sales_stage": "QUALIFY",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Assess the buyer’s 4% net-yield threshold using verified rental and occupancy evidence alongside their purchase-price and cost assumptions.",
+    "conversation_progress": {
+      "explicit_requirements": [
+        "Wants recent rental comparables or occupancy data for similar units near Pearl Residences.",
+        "Looking for net yield above 4%, not a general estimate."
+      ],
+      "confirmed_motivations": [
+        "Considering a property for investment."
+      ],
+      "hypotheses": [
+        "Wants to validate investment returns using evidence before deciding whether to proceed."
+      ],
+      "tradeoffs": [],
+      "objections": [],
+      "communicated_facts": [
+        "Rental yield depends on achievable rent and purchase price; no figure was guessed."
+      ],
+      "sales_attempts": [
+        "Explained yield depends on rent and price and clarified the property; continue with evidence-led discussion, revising from general framing to verified comparables and net-yield basis."
+      ],
+      "open_questions": [
+        "What unit type/size and purchase price is the buyer assessing?"
+      ],
+      "commitments": [],
+      "next_opportunity": {
+        "action": "Check for verified recent nearby rental comparables and occupancy data; use relevant unit pricing and costs to assess whether net yield can exceed 4%.",
+        "why": "The buyer specified Pearl Residences and a clear net-yield threshold, and asked for supporting market evidence.",
+        "feedback_to_watch": "Whether reliable data supports the threshold and what unit type, price, and cost assumptions the buyer is using."
+      }
+    },
+    "last_progress": "Buyer specified Pearl Residences and requested recent nearby rental comparables or occupancy data to assess a net yield above 4%.",
+    "next_action": "Use verified rental and occupancy evidence, if available, with the buyer’s purchase-price and cost assumptions to assess the target.",
+    "conversation_summary": "Buyer is considering Pearl Residences for investment and wants recent nearby rental comparables or occupancy data to assess whether net yield can exceed 4%."
+  },
+  "operations": {
+    "requests": [
+      {
+        "request_id": "SIM-001",
+        "signature": "OTHER|900 and availability comparables data dates evidence ft nearby occupancy pearl recent rental residences similar sources sq type units with",
+        "support_type": "OTHER",
+        "requested_fact": "Recent rental comparables and occupancy data, with dates and sources if available, for units similar to Pearl Residences’ 900 sq. ft. Type A units nearby.",
+        "status": "OPEN"
+      }
+    ],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 521,
+        "output_tokens": 432,
+        "total_tokens": 953,
+        "cached_tokens": 0,
+        "reasoning_tokens": 233
+      },
+      "latency_seconds": 6.757,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2760,
+        "output_tokens": 1207,
+        "total_tokens": 3967,
+        "cached_tokens": 1134,
+        "reasoning_tokens": 836
+      },
+      "latency_seconds": 12.143,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 408,
+        "output_tokens": 153,
+        "total_tokens": 561,
+        "cached_tokens": 0,
+        "reasoning_tokens": 74
+      },
+      "latency_seconds": 2.779,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 890,
+        "output_tokens": 1135,
+        "total_tokens": 2025,
+        "cached_tokens": 0,
+        "reasoning_tokens": 702
+      },
+      "latency_seconds": 12.598,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3448,
+        "output_tokens": 1859,
+        "total_tokens": 5307,
+        "cached_tokens": 1134,
+        "reasoning_tokens": 1299
+      },
+      "latency_seconds": 16.764,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 560,
+        "output_tokens": 116,
+        "total_tokens": 676,
+        "cached_tokens": 0,
+        "reasoning_tokens": 37
+      },
+      "latency_seconds": 2.541,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 1,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

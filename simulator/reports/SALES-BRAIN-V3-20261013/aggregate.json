@@ -1,0 +1,166 @@
+{
+  "run_id": "SALES-BRAIN-V3-20261013",
+  "status": "COMPLETED",
+  "scenario_count": 12,
+  "completed_pairs": 12,
+  "dry_run": false,
+  "aggregate": {
+    "V2": {
+      "wins": 10,
+      "mean_scores": {
+        "customer_insight": 3.75,
+        "meaningful_sales_actions": 3.33,
+        "observation_and_adaptation": 4.0,
+        "natural_continuity": 4.08,
+        "progression_and_pacing": 3.33
+      }
+    },
+    "V3": {
+      "wins": 2,
+      "mean_scores": {
+        "customer_insight": 2.83,
+        "meaningful_sales_actions": 2.5,
+        "observation_and_adaptation": 2.58,
+        "natural_continuity": 2.58,
+        "progression_and_pacing": 2.5
+      }
+    }
+  },
+  "provider_metrics": {
+    "model_calls": 148,
+    "failed_or_incomplete_calls": 0,
+    "latency_seconds_total": 1526.181,
+    "tokens": {
+      "input_tokens": 477926,
+      "cached_tokens": 32386,
+      "output_tokens": 133650,
+      "total_tokens": 611576
+    },
+    "estimated_standard_usd": 0.111703
+  },
+  "api_usage_by_role": {
+    "sales_v2": {
+      "model_calls": 25,
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 260.626,
+      "tokens": {
+        "input_tokens": 60498,
+        "cached_tokens": 0,
+        "output_tokens": 23322,
+        "total_tokens": 83820
+      },
+      "estimated_standard_usd": 0.017711
+    },
+    "sales_strategy": {
+      "model_calls": 29,
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 379.4,
+      "tokens": {
+        "input_tokens": 27448,
+        "cached_tokens": 1768,
+        "output_tokens": 29969,
+        "total_tokens": 57417
+      },
+      "estimated_standard_usd": 0.01757
+    },
+    "sales_v3": {
+      "model_calls": 28,
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 285.074,
+      "tokens": {
+        "input_tokens": 85970,
+        "cached_tokens": 30618,
+        "output_tokens": 29231,
+        "total_tokens": 115201
+      },
+      "estimated_standard_usd": 0.020457
+    },
+    "customer_simulator": {
+      "model_calls": 52,
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 181.707,
+      "tokens": {
+        "input_tokens": 31849,
+        "cached_tokens": 0,
+        "output_tokens": 9410,
+        "total_tokens": 41259
+      },
+      "estimated_standard_usd": 0.00789
+    },
+    "blind_judge": {
+      "model_calls": 14,
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 419.374,
+      "tokens": {
+        "input_tokens": 272161,
+        "cached_tokens": 0,
+        "output_tokens": 41718,
+        "total_tokens": 313879
+      },
+      "estimated_standard_usd": 0.048075
+    }
+  },
+  "duration_seconds": 1185.661,
+  "pair_results": [
+    {
+      "scenario_id": "SCV3-01",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-02",
+      "status": "COMPLETED",
+      "winner": "V3"
+    },
+    {
+      "scenario_id": "SCV3-03",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-04",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-05",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-06",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-07",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-08",
+      "status": "COMPLETED",
+      "winner": "V3"
+    },
+    {
+      "scenario_id": "SCV3-09",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-10",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-11",
+      "status": "COMPLETED",
+      "winner": "V2"
+    },
+    {
+      "scenario_id": "SCV3-12",
+      "status": "COMPLETED",
+      "winner": "V2"
+    }
+  ]
+}

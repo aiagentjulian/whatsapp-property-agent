@@ -1,0 +1,145 @@
+{
+  "architecture": "V3",
+  "status": "COMPLETED",
+  "phase": "agent",
+  "customer_turns": 2,
+  "natural_ending_reason": "customer end: The agent confirmed the units have only three bedrooms, which is a non-negotiable mismatch.",
+  "transcript": [
+    {
+      "turn": 1,
+      "speaker": "customer",
+      "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! Pearl Residences’ Phase 1 units have 3 bedrooms, not 4, so they wouldn’t meet your requirement for four separate bedrooms for your parents and kids."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Okay, thanks for being clear. We need four separate bedrooms, so this one won’t work for us."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "HANDLE",
+      "buyer_signal": "QUESTION",
+      "reply": "Hi! Pearl Residences’ Phase 1 units have 3 bedrooms, not 4, so they wouldn’t meet your requirement for four separate bedrooms for your parents and kids."
+    }
+  ],
+  "customer_state_transitions": [
+    {
+      "after_agent_turn": 1,
+      "message": "Okay, thanks for being clear. We need four separate bedrooms, so this one won’t work for us.",
+      "state": "END",
+      "reason": "The agent confirmed the units have only three bedrooms, which is a non-negotiable mismatch.",
+      "interest_change": "DECREASED"
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "HANDLE",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Respect the stated bedroom requirement; proceed only if the buyer is open to considering a 3-bedroom layout.",
+    "conversation_progress": {
+      "explicit_requirements": [
+        "Needs 4 bedrooms."
+      ],
+      "confirmed_motivations": [
+        "Needs the space for parents and children."
+      ],
+      "hypotheses": [],
+      "tradeoffs": [],
+      "objections": [],
+      "communicated_facts": [],
+      "sales_attempts": [],
+      "open_questions": [
+        "Which property or unit is the buyer referring to?"
+      ],
+      "commitments": [],
+      "next_opportunity": {
+        "action": "Confirm the bedroom count for the specific unit and answer directly.",
+        "why": "The buyer asked whether the unit has four bedrooms.",
+        "feedback_to_watch": "Whether four bedrooms are essential or the buyer would consider other layouts."
+      }
+    },
+    "preferred_language": "English",
+    "purchase_reason": "Needs space for parents and children",
+    "size_or_layout_preference": "Needs 4 bedrooms",
+    "important_features": [
+      "4 bedrooms"
+    ],
+    "primary_motivations": [
+      "Space for parents and children"
+    ],
+    "fit_assessment": "Phase 1 units have 3 bedrooms and do not meet the stated 4-bedroom requirement.",
+    "last_progress": "Confirmed that Phase 1 units have 3 bedrooms, not 4.",
+    "next_action": "Give the buyer space to decide whether a 3-bedroom layout is worth considering.",
+    "conversation_summary": "Buyer needs 4 bedrooms for parents and children. Pearl Residences Phase 1 units have 3 bedrooms, so there is a mismatch."
+  },
+  "operations": {
+    "requests": [],
+    "handoff": null
+  },
+  "provider_calls": [
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 531,
+        "output_tokens": 420,
+        "total_tokens": 951,
+        "cached_tokens": 0,
+        "reasoning_tokens": 222
+      },
+      "latency_seconds": 5.733,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2736,
+        "output_tokens": 846,
+        "total_tokens": 3582,
+        "cached_tokens": 1134,
+        "reasoning_tokens": 516
+      },
+      "latency_seconds": 8.566,
+      "outcome": "COMPLETED",
+      "detail": null
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "medium",
+      "usage": {
+        "input_tokens": 412,
+        "output_tokens": 145,
+        "total_tokens": 557,
+        "cached_tokens": 0,
+        "reasoning_tokens": 76
+      },
+      "latency_seconds": 2.732,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ],
+  "deterministic_checks": {
+    "duplicate_support_requests": 0,
+    "pending_requests": 0,
+    "handoff_without_acceptance": 0,
+    "false_confirmation_phrase": [],
+    "invented_four_bedroom": []
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "scenario_id": "SCV3-05",
+  "title": "Layout requirement and mismatch",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 2,
+    "natural_ending_reason": "customer end: The project only offers three-bedroom units, which does not meet the household’s non-negotiable requirement.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Pearl Residences Phase 1 only has 3-bedroom, 2-bathroom units, so there isn’t a 4-bedroom option. If 4 bedrooms are essential for your parents and kids, this likely won’t be the right fit."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks for being upfront. We do need four separate bedrooms, so this one won’t work for us. We’ll look elsewhere."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences Phase 1 only has 3-bedroom, 2-bathroom units, so there isn’t a 4-bedroom option. If 4 bedrooms are essential for your parents and kids, this likely won’t be the right fit."
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Thanks for being upfront. We do need four separate bedrooms, so this one won’t work for us. We’ll look elsewhere.",
+        "state": "END",
+        "reason": "The project only offers three-bedroom units, which does not meet the household’s non-negotiable requirement.",
+        "interest_change": "DECREASED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully.",
+      "purchase_reason": "Needs space for parents and kids",
+      "size_or_layout_preference": "4 bedrooms required",
+      "fit_assessment": "Mismatch: Phase 1 units have 3 bedrooms; buyer needs 4."
+    },
+    "operations": {
+      "requests": [],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2530,
+          "output_tokens": 623,
+          "total_tokens": 3153,
+          "cached_tokens": 0,
+          "reasoning_tokens": 363
+        },
+        "latency_seconds": 7.956,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 428,
+          "output_tokens": 120,
+          "total_tokens": 548,
+          "cached_tokens": 0,
+          "reasoning_tokens": 45
+        },
+        "latency_seconds": 2.502,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 0,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "phase": "agent",
+    "customer_turns": 2,
+    "natural_ending_reason": "customer end: The agent confirmed the units have only three bedrooms, which is a non-negotiable mismatch.",
+    "transcript": [
+      {
+        "turn": 1,
+        "speaker": "customer",
+        "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! Pearl Residences’ Phase 1 units have 3 bedrooms, not 4, so they wouldn’t meet your requirement for four separate bedrooms for your parents and kids."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Okay, thanks for being clear. We need four separate bedrooms, so this one won’t work for us."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences’ Phase 1 units have 3 bedrooms, not 4, so they wouldn’t meet your requirement for four separate bedrooms for your parents and kids."
+      }
+    ],
+    "customer_state_transitions": [
+      {
+        "after_agent_turn": 1,
+        "message": "Okay, thanks for being clear. We need four separate bedrooms, so this one won’t work for us.",
+        "state": "END",
+        "reason": "The agent confirmed the units have only three bedrooms, which is a non-negotiable mismatch.",
+        "interest_change": "DECREASED"
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "HANDLE",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Respect the stated bedroom requirement; proceed only if the buyer is open to considering a 3-bedroom layout.",
+      "conversation_progress": {
+        "explicit_requirements": [
+          "Needs 4 bedrooms."
+        ],
+        "confirmed_motivations": [
+          "Needs the space for parents and children."
+        ],
+        "hypotheses": [],
+        "tradeoffs": [],
+        "objections": [],
+        "communicated_facts": [],
+        "sales_attempts": [],
+        "open_questions": [
+          "Which property or unit is the buyer referring to?"
+        ],
+        "commitments": [],
+        "next_opportunity": {
+          "action": "Confirm the bedroom count for the specific unit and answer directly.",
+          "why": "The buyer asked whether the unit has four bedrooms.",
+          "feedback_to_watch": "Whether four bedrooms are essential or the buyer would consider other layouts."
+        }
+      },
+      "preferred_language": "English",
+      "purchase_reason": "Needs space for parents and children",
+      "size_or_layout_preference": "Needs 4 bedrooms",
+      "important_features": [
+        "4 bedrooms"
+      ],
+      "primary_motivations": [
+        "Space for parents and children"
+      ],
+      "fit_assessment": "Phase 1 units have 3 bedrooms and do not meet the stated 4-bedroom requirement.",
+      "last_progress": "Confirmed that Phase 1 units have 3 bedrooms, not 4.",
+      "next_action": "Give the buyer space to decide whether a 3-bedroom layout is worth considering.",
+      "conversation_summary": "Buyer needs 4 bedrooms for parents and children. Pearl Residences Phase 1 units have 3 bedrooms, so there is a mismatch."
+    },
+    "operations": {
+      "requests": [],
+      "handoff": null
+    },
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 531,
+          "output_tokens": 420,
+          "total_tokens": 951,
+          "cached_tokens": 0,
+          "reasoning_tokens": 222
+        },
+        "latency_seconds": 5.733,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2736,
+          "output_tokens": 846,
+          "total_tokens": 3582,
+          "cached_tokens": 1134,
+          "reasoning_tokens": 516
+        },
+        "latency_seconds": 8.566,
+        "outcome": "COMPLETED",
+        "detail": null
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "medium",
+        "usage": {
+          "input_tokens": 412,
+          "output_tokens": 145,
+          "total_tokens": 557,
+          "cached_tokens": 0,
+          "reasoning_tokens": 76
+        },
+        "latency_seconds": 2.732,
+        "outcome": "COMPLETED",
+        "detail": null
+      }
+    ],
+    "deterministic_checks": {
+      "duplicate_support_requests": 0,
+      "pending_requests": 0,
+      "handoff_without_acceptance": 0,
+      "false_confirmation_phrase": [],
+      "invented_four_bedroom": []
+    }
+  },
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_insight": 3,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 3,
+        "natural_continuity": 4,
+        "progression_and_pacing": 3
+      },
+      "B": {
+        "customer_insight": 3,
+        "meaningful_sales_actions": 3,
+        "observation_and_adaptation": 4,
+        "natural_continuity": 4,
+        "progression_and_pacing": 4
+      }
+    },
+    "examples": [],
+    "material_errors": [],
+    "simulator_quality": "Reasonably realistic but very sparse: this is a clear specification mismatch, and the brief exchange does not test how either agent handles further questions or alternatives.",
+    "summary": "Both agents correctly state at turn 1 that Phase 1 has no four-bedroom option, and neither invents a workaround. B edges ahead because “if 4 bedrooms are essential” and “likely won’t be the right fit” leave modest room for the customer to clarify flexibility, whereas A concludes more firmly that the units would not meet the need. Still, both could better avoid an early exit from a mismatch that has not yet been confirmed as non-negotiable: after stating the 3-bedroom fact, they could ask whether four separate rooms are essential or whether the customer would like to assess the 3-bedroom layout. The customer then confirms at turn 2 that four separate bedrooms are required; respecting that rejection is appropriate, and there is no supported four-bedroom alternative to recommend."
+  },
+  "paired_winner": "V2",
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "usage": {
+        "input_tokens": 20534,
+        "output_tokens": 2425,
+        "total_tokens": 22959,
+        "cached_tokens": 0,
+        "reasoning_tokens": 2070
+      },
+      "latency_seconds": 23.94,
+      "outcome": "COMPLETED",
+      "detail": null
+    }
+  ]
+}
