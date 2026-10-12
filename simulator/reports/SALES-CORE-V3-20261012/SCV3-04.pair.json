@@ -1,0 +1,1622 @@
+{
+  "scenario_id": "SCV3-04",
+  "title": "Investor asking about rental return",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "customer_turns": 8,
+    "natural_ending_reason": "Pausing until verified project and rental information is available.",
+    "transcript": [
+      {
+        "turn": 0,
+        "speaker": "customer",
+        "message": "Hi, considering for investment. What rental yield can expect around there?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "I can’t give you a reliable rental-yield figure yet because I don’t have verified current rents for comparable units or current pricing. I’d rather not guess. Gross yield depends on the rent achieved compared with the purchase price, and it isn’t guaranteed."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Fair enough. Do you have recent rental comparables for similar units nearby, or any data on occupancy and tenant demand? Even a sourced range would help me compare it with the other projects I’m looking at.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I don’t have verified recent rental comparables or occupancy and tenant-demand data for the area, so I can’t give you a sourced range right now. If you have figures from the other projects, I can help compare the assumptions on a like-for-like basis."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Could you check with the sales team for recent achieved rents or speak to owners there? I’m mainly comparing net yield, so maintenance fees and vacancy assumptions matter too. What unit types and prices are available?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "For Phase 1, the unit type I can verify is Type A: 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony. At RM0.18 psf including sinking fund, maintenance is about RM162 per month. I can’t contact the sales team or owners from this chat, so I can’t verify current prices or availability, achieved rents, or vacancy assumptions. I don’t want to guess at those figures."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "Understood. Do you have an official brochure or price list with the starting price, even if availability isn’t current? I can work out the net yield once I have a price and a realistic rent range.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "I don’t have an official brochure or price list available here, and the earlier price check hasn’t produced a verified starting price. I can’t quote one without guessing. If you get an official price sheet and a sourced rent range, I can help calculate the net yield using your assumptions."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "Thanks. What can you verify about the exact location and nearby demand drivers—like major employers, universities or transport links? That’d help me judge the likely tenant pool while I look for actual rent and price data.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "message": "I can verify the location as Mukim 1, Seberang Jaya, Seberang Perai Tengah, Penang (13700). The project materials point to Sunway Carnival Mall, Chai Leng Park and the wider Butterworth/mainland urban network nearby; maps also show Butterworth Jetty and surrounding roads. I don’t have verified details for specific major employers, universities or public transport services, so I wouldn’t want to present those as established tenant-demand drivers. I also can’t provide a verified street address from the information available to me."
+      },
+      {
+        "turn": 6,
+        "speaker": "customer",
+        "message": "Thanks, that helps narrow the area. Without the exact site pin it’s hard to judge access properly—do you have a project location pin or site plan showing the nearest main road and distances to those places?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "message": "I don’t have a verified project pin or site plan showing the nearest main road or distances, so I can’t confirm those details. I’d rather not estimate from the general area."
+      },
+      {
+        "turn": 7,
+        "speaker": "customer",
+        "message": "Got it. What’s the project name and developer? I can try to check the official materials myself if you can share a link.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "message": "Pearl Residences is the name I’ve been using here; the project is SkyWorld Pearlmont, developed by SkyWorld Mutiara Development Sdn. Bhd. I don’t have a verified official link to share in this chat."
+      },
+      {
+        "turn": 8,
+        "speaker": "customer",
+        "message": "Thanks, I’ll check SkyWorld’s official channels. I’ll hold off for now—without a verified price, rent comparables and site pin, I can’t really assess it against the other projects. Feel free to send those over if they become available.",
+        "simulator_done": true,
+        "simulator_ending_reason": "Pausing until verified project and rental information is available."
+      },
+      {
+        "turn": 8,
+        "speaker": "agent",
+        "message": "Understood. I don’t have verified pricing, rental comparables or a site pin to share right now, so I won’t ask you to assess it without those. If you find official figures, I’m happy to help compare the net-yield assumptions."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! I wouldn’t want to quote a yield without current rental comparisons and the actual purchase price—there’s no guaranteed yield. I’ll check the latest figures so we can work out a realistic estimate."
+      },
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can’t give you a reliable rental-yield figure yet because I don’t have verified current rents for comparable units or current pricing. I’d rather not guess. Gross yield depends on the rent achieved compared with the purchase price, and it isn’t guaranteed.",
+        "after_support_request": true
+      },
+      {
+        "turn": 2,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have verified recent rental comparables or occupancy and tenant-demand data for the area, so I can’t give you a sourced range right now. If you have figures from the other projects, I can help compare the assumptions on a like-for-like basis."
+      },
+      {
+        "turn": 3,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For Phase 1, the unit type I can verify is Type A: 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony. At RM0.18 psf including sinking fund, maintenance is about RM162 per month. I can’t contact the sales team or owners from this chat, so I can’t verify current prices or availability, achieved rents, or vacancy assumptions. I don’t want to guess at those figures."
+      },
+      {
+        "turn": 4,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have an official brochure or price list available here, and the earlier price check hasn’t produced a verified starting price. I can’t quote one without guessing. If you get an official price sheet and a sourced rent range, I can help calculate the net yield using your assumptions."
+      },
+      {
+        "turn": 5,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in Mukim 1, Seberang Jaya, Seberang Perai Tengah, Penang 13700. The project materials position it toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland urban network; maps also show Butterworth Jetty and surrounding roads. I don’t have verified details on nearby major employers, universities or specific public transport services, so I can’t draw a reliable conclusion about tenant demand from those. I’ll request a sourced check on those details."
+      },
+      {
+        "turn": 5,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can verify the location as Mukim 1, Seberang Jaya, Seberang Perai Tengah, Penang (13700). The project materials point to Sunway Carnival Mall, Chai Leng Park and the wider Butterworth/mainland urban network nearby; maps also show Butterworth Jetty and surrounding roads. I don’t have verified details for specific major employers, universities or public transport services, so I wouldn’t want to present those as established tenant-demand drivers. I also can’t provide a verified street address from the information available to me.",
+        "after_support_request": true
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified location pin or site plan with road names and distances to share right now. I can confirm the area as Mukim 1, Seberang Jaya, but I don’t want to guess at the exact access details."
+      },
+      {
+        "turn": 6,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified project pin or site plan showing the nearest main road or distances, so I can’t confirm those details. I’d rather not estimate from the general area.",
+        "after_support_request": true
+      },
+      {
+        "turn": 7,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is the name I’ve been using here; the project is SkyWorld Pearlmont, developed by SkyWorld Mutiara Development Sdn. Bhd. I don’t have a verified official link to share in this chat."
+      },
+      {
+        "turn": 8,
+        "action": "REPLY",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "DISENGAGED",
+        "reply": "Understood. I don’t have verified pricing, rental comparables or a site pin to share right now, so I won’t ask you to assess it without those. If you find official figures, I’m happy to help compare the net-yield assumptions."
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "INVESTMENT",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Share a realistic rental-yield estimate using verified comparable rents and current pricing",
+      "purchase_reason": "Assessing rental yield and income potential"
+    },
+    "unresolved_offline_support": [
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Current comparable monthly rents for Pearl Residences' 900 sq.ft. 3-bedroom units or genuinely comparable nearby units, plus current unit pricing sufficient to estimate gross rental yield.",
+          "subject": "Rental yield estimate",
+          "customer_need": "The buyer is considering the property as an investment and wants to know the rental yield they might expect.",
+          "reason": "No verified rental comparables or current pricing are available to calculate a reliable estimate.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified rent and price figures with a clearly qualified gross-yield estimate; do not imply a guaranteed return."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Sourced details of major employers, universities and specific public transport links serving the Seberang Jaya location, without unsupported commute-time claims.",
+          "subject": "Nearby tenant-demand drivers",
+          "customer_need": "The buyer is assessing the likely tenant pool and investment potential.",
+          "reason": "Available verified materials identify nearby urban destinations and Butterworth Jetty on location maps, but do not establish specific employers, universities or public transport services.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share any verified, sourced tenant-demand and transport details, while distinguishing them from unverified rental and occupancy data."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "An official project location pin or site plan showing the nearest main road and distances to nearby destinations such as Sunway Carnival Mall and Chai Leng Park.",
+          "subject": "Project access and location details",
+          "customer_need": "The buyer is comparing investment projects and needs to assess access and nearby demand drivers.",
+          "reason": "Available verified information confirms the general area but does not include a site pin, road access details or distances.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share any verified pin or site-plan details and distances without estimating or implying unverified travel times."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      }
+    ],
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2124,
+          "input_tokens_details": {
+            "cache_write_tokens": 2121,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1098,
+          "output_tokens_details": {
+            "reasoning_tokens": 727
+          },
+          "total_tokens": 3222
+        },
+        "latency_seconds": 11.024
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2323,
+          "input_tokens_details": {
+            "cache_write_tokens": 2320,
+            "cached_tokens": 0
+          },
+          "output_tokens": 608,
+          "output_tokens_details": {
+            "reasoning_tokens": 297
+          },
+          "total_tokens": 2931
+        },
+        "latency_seconds": 6.23
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 493,
+          "output_tokens": 231,
+          "total_tokens": 724,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.337
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2509,
+          "input_tokens_details": {
+            "cache_write_tokens": 2506,
+            "cached_tokens": 0
+          },
+          "output_tokens": 827,
+          "output_tokens_details": {
+            "reasoning_tokens": 515
+          },
+          "total_tokens": 3336
+        },
+        "latency_seconds": 8.692
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 637,
+          "output_tokens": 178,
+          "total_tokens": 815,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.408
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3378,
+          "input_tokens_details": {
+            "cache_write_tokens": 3375,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1808,
+          "output_tokens_details": {
+            "reasoning_tokens": 1458
+          },
+          "total_tokens": 5186
+        },
+        "latency_seconds": 16.695
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 818,
+          "output_tokens": 285,
+          "total_tokens": 1103,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.071
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3078,
+          "input_tokens_details": {
+            "cache_write_tokens": 3075,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1138,
+          "output_tokens_details": {
+            "reasoning_tokens": 893
+          },
+          "total_tokens": 4216
+        },
+        "latency_seconds": 12.022
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 967,
+          "output_tokens": 410,
+          "total_tokens": 1377,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.403
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2924,
+          "input_tokens_details": {
+            "cache_write_tokens": 2921,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1778,
+          "output_tokens_details": {
+            "reasoning_tokens": 1268
+          },
+          "total_tokens": 4702
+        },
+        "latency_seconds": 15.536
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3100,
+          "input_tokens_details": {
+            "cache_write_tokens": 3097,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1080,
+          "output_tokens_details": {
+            "reasoning_tokens": 708
+          },
+          "total_tokens": 4180
+        },
+        "latency_seconds": 10.085
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1172,
+          "output_tokens": 309,
+          "total_tokens": 1481,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.698
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3177,
+          "input_tokens_details": {
+            "cache_write_tokens": 3174,
+            "cached_tokens": 0
+          },
+          "output_tokens": 565,
+          "output_tokens_details": {
+            "reasoning_tokens": 208
+          },
+          "total_tokens": 3742
+        },
+        "latency_seconds": 5.852
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3349,
+          "input_tokens_details": {
+            "cache_write_tokens": 3346,
+            "cached_tokens": 0
+          },
+          "output_tokens": 585,
+          "output_tokens_details": {
+            "reasoning_tokens": 361
+          },
+          "total_tokens": 3934
+        },
+        "latency_seconds": 6.076
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1300,
+          "output_tokens": 336,
+          "total_tokens": 1636,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.109
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3439,
+          "input_tokens_details": {
+            "cache_write_tokens": 3436,
+            "cached_tokens": 0
+          },
+          "output_tokens": 687,
+          "output_tokens_details": {
+            "reasoning_tokens": 451
+          },
+          "total_tokens": 4126
+        },
+        "latency_seconds": 6.585
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1425,
+          "output_tokens": 683,
+          "total_tokens": 2108,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 8.752
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3589,
+          "input_tokens_details": {
+            "cache_write_tokens": 3586,
+            "cached_tokens": 0
+          },
+          "output_tokens": 971,
+          "output_tokens_details": {
+            "reasoning_tokens": 656
+          },
+          "total_tokens": 4560
+        },
+        "latency_seconds": 9.872
+      }
+    ]
+  },
+  "metrics": {
+    "V2": {
+      "model_calls": 18,
+      "calls_by_role": {
+        "sales_v2": 11,
+        "customer_simulator": 7
+      },
+      "latency_seconds_total": 144.447,
+      "latency_seconds_mean": 8.025,
+      "tokens": {
+        "input_tokens": 39802,
+        "cached_tokens": 0,
+        "output_tokens": 13577,
+        "total_tokens": 53379
+      },
+      "estimated_standard_usd": 0.010769,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "V3": {
+      "model_calls": 42,
+      "calls_by_role": {
+        "sales_strategy": 17,
+        "sales_v3": 17,
+        "customer_simulator": 8
+      },
+      "latency_seconds_total": 316.643,
+      "latency_seconds_mean": 7.539,
+      "tokens": {
+        "input_tokens": 78389,
+        "cached_tokens": 22285,
+        "output_tokens": 29358,
+        "total_tokens": 107747
+      },
+      "estimated_standard_usd": 0.020512,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "blind_judge": {
+      "model_calls": 1,
+      "calls_by_role": {
+        "blind_judge": 1
+      },
+      "latency_seconds_total": 24.326,
+      "latency_seconds_mean": 24.326,
+      "tokens": {
+        "input_tokens": 3171,
+        "cached_tokens": 0,
+        "output_tokens": 2785,
+        "total_tokens": 5956
+      },
+      "estimated_standard_usd": 0.00171,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "customer_turns": 9,
+    "natural_ending_reason": "Pausing until verified project details and rental evidence are available",
+    "transcript": [
+      {
+        "turn": 0,
+        "speaker": "customer",
+        "message": "Hi, considering for investment. What rental yield can expect around there?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Hi! For Pearl Residences, I don’t have verified rental and purchase-price figures to give you a reliable yield estimate yet, so I don’t want to guess. Which unit type are you considering?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Probably a 2-bedroom. Do you have any recent rental transactions or asking rents for similar units nearby?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "I don’t have verified recent rental transactions or current asking rents for comparable nearby units, so I don’t want to quote figures that may mislead you. One important point: Pearl Residences Phase 1 has 900 sq ft, 3-bedroom units, not 2-bedroom units. I’ll request verified rental comparables for nearby 2-bedroom units."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Ah, I see—3 bedrooms may be more than I’m looking for. What’s the price range for the 900 sq ft units? If you get the rental comps, could you separate actual achieved rents from asking rents?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "I don’t have a verified current price range for the 900 sq ft units, so I can’t quote one reliably. I’ll check for current pricing and nearby rental comparables, with achieved rents clearly separated from asking rents; I don’t have verified figures for either yet."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "Thanks. Could you also check the monthly maintenance and sinking fund for the 900 sq ft units? I’d need those alongside the price and achieved rents to compare net yield properly.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "The stated rate is RM0.18 per sq ft, inclusive of sinking fund. For 900 sq ft, that works out to about RM162 per month total—not RM162 plus a separate sinking fund. I still don’t have verified current pricing or achieved-rent comparables, so I can’t calculate a reliable net yield yet."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "That helps. I already own one rental unit, so I’m comparing net returns rather than headline yield. Are there any other recurring charges besides the RM162, and can you share the price and rental figures once you’ve verified them, with dates and sources?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "message": "RM162/month is the only recurring charge I can confirm; I can’t verify whether there are others. I also don’t have verified pricing or rental figures yet. I’ll request the charges and dated, sourced price and rental evidence, with achieved rents kept separate from asking rents, and share only what can be verified."
+      },
+      {
+        "turn": 6,
+        "speaker": "customer",
+        "message": "I’m looking for net returns above 4%, so I’d rather wait for solid figures than use a broad estimate. Could you let me know when you’ve checked, and whether the rental evidence is for this project or nearby comparable buildings?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "message": "I don’t have verified figures or a confirmed checking timeline yet, so I can’t say whether the rental evidence will be from Pearl Residences or nearby comparable buildings. I can’t promise when I’ll have an update. Any figures shared should identify the property, date and source, and separate achieved rents from asking rents."
+      },
+      {
+        "turn": 7,
+        "speaker": "customer",
+        "message": "Understood. Could you share the exact project location or address, and expected completion date? I can check nearby rental comparables myself in the meantime.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "message": "I can confirm Pearl Residences is in Seberang Jaya, but I don’t have a verified exact address or expected completion date to share. I’ll request confirmation and only pass on details once verified."
+      },
+      {
+        "turn": 8,
+        "speaker": "customer",
+        "message": "Thanks. Seberang Jaya is quite broad—could you send a map pin or nearest landmark once you’ve confirmed it? And please update me when you have the address and completion date; no need to estimate if they’re not verified.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 8,
+        "speaker": "agent",
+        "message": "I don’t have a verified map pin or nearest landmark, or the expected completion date, so I can’t share them without guessing. I can’t give you a reliable update timeline, but I’ll share the details if they’re confirmed."
+      },
+      {
+        "turn": 9,
+        "speaker": "customer",
+        "message": "Thanks. Without the exact location, completion date and verified price/rental figures, I can’t really compare it with the other projects yet. Please send them through if you’re able to confirm them.",
+        "simulator_done": true,
+        "simulator_ending_reason": "Pausing until verified project details and rental evidence are available"
+      },
+      {
+        "turn": 9,
+        "speaker": "agent",
+        "message": "Understood. I don’t have verified details to share yet, and there’s no confirmed update timeline. I’ll only send them if I can verify them."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For Pearl Residences, I don’t have verified rental comparables and unit pricing to quote a reliable yield yet—I’d rather not guess. Which unit type are you considering?"
+      },
+      {
+        "turn": 1,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! For Pearl Residences, I don’t have verified rental and purchase-price figures to give you a reliable yield estimate yet, so I don’t want to guess. Which unit type are you considering?",
+        "after_support_request": true
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have verified recent transactions or current asking rents for similar nearby 2-bedroom units, so I can’t quote reliable figures. One note: the Pearl Residences Phase 1 units I have details for are 3-bedroom, 900 sq ft, so 2-bedroom rentals nearby would be a market benchmark rather than a like-for-like comparison."
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have verified recent rental transactions or current asking rents for comparable nearby units, so I don’t want to quote figures that may mislead you. One important point: Pearl Residences Phase 1 has 900 sq ft, 3-bedroom units, not 2-bedroom units. I’ll request verified rental comparables for nearby 2-bedroom units.",
+        "after_support_request": true
+      },
+      {
+        "turn": 3,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified current price range for the 900 sq ft units yet, so I don’t want to guess. The rental comparables are still unverified too; if I can verify them, I’ll separate achieved rents from asking rents. I understand the 3-bedroom layout may be larger than you want."
+      },
+      {
+        "turn": 3,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified current price range for the 900 sq ft units, so I can’t quote one reliably. I’ll check for current pricing and nearby rental comparables, with achieved rents clearly separated from asking rents; I don’t have verified figures for either yet.",
+        "after_support_request": true
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks—project information lists maintenance at RM0.18 per sq ft per month, inclusive of sinking fund. For 900 sq ft, that’s about RM162 per month combined; no separate sinking fund amount is listed. I still need verified current pricing and achieved rental comparables to help assess net yield, and will keep asking rents clearly separate."
+      },
+      {
+        "turn": 4,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The stated rate is RM0.18 per sq ft, inclusive of sinking fund. For 900 sq ft, that works out to about RM162 per month total—not RM162 plus a separate sinking fund. I still don’t have verified current pricing or achieved-rent comparables, so I can’t calculate a reliable net yield yet.",
+        "after_support_request": true
+      },
+      {
+        "turn": 5,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The RM162/month covers maintenance and sinking fund, but I can’t confirm whether there are any other recurring charges yet. I’ll request confirmation, along with verified pricing and rental comparables dated and sourced, with achieved rents separated from asking rents. I don’t have those figures to share yet."
+      },
+      {
+        "turn": 5,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "RM162/month is the only recurring charge I can confirm; I can’t verify whether there are others. I also don’t have verified pricing or rental figures yet. I’ll request the charges and dated, sourced price and rental evidence, with achieved rents kept separate from asking rents, and share only what can be verified.",
+        "after_support_request": true
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified update or a reliable ETA yet. I also can’t confirm whether the rental evidence will be for Pearl Residences or nearby comparable buildings until the sources are checked. I’ll request dated, sourced figures with achieved rents separated from asking rents, and only share what can be verified."
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have verified figures or a confirmed checking timeline yet, so I can’t say whether the rental evidence will be from Pearl Residences or nearby comparable buildings. I can’t promise when I’ll have an update. Any figures shared should identify the property, date and source, and separate achieved rents from asking rents.",
+        "after_support_request": true
+      },
+      {
+        "turn": 7,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The project is in Seberang Jaya, but I don’t have a verified exact address or expected completion date to share. I’ll check both rather than guess; you can use Seberang Jaya as the broad area for your comparable search for now."
+      },
+      {
+        "turn": 7,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can confirm Pearl Residences is in Seberang Jaya, but I don’t have a verified exact address or expected completion date to share. I’ll request confirmation and only pass on details once verified.",
+        "after_support_request": true
+      },
+      {
+        "turn": 8,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Understood. I don’t have a verified map pin, nearest landmark or expected completion date yet. I’ll request confirmation and share them only if verified—no estimates in the meantime."
+      },
+      {
+        "turn": 8,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified map pin or nearest landmark, or the expected completion date, so I can’t share them without guessing. I can’t give you a reliable update timeline, but I’ll share the details if they’re confirmed.",
+        "after_support_request": true
+      },
+      {
+        "turn": 9,
+        "action": "REPLY",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Understood. I don’t have verified details to share yet, and there’s no confirmed update timeline. I’ll only send them if I can verify them."
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "INVESTMENT",
+      "sales_stage": "QUALIFY",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Verify the exact project address and expected completion date.",
+      "size_or_layout_preference": "Initially considering 2 bedrooms; feels 900 sq ft, 3-bedroom units may be larger than desired.",
+      "active_concerns": [
+        "No verified current price range for 900 sq ft units",
+        "Needs rental comparables separated into achieved rents and asking rents",
+        "3-bedroom layout may be larger than preferred"
+      ],
+      "fit_assessment": "Pearl Residences Phase 1's 900 sq ft, 3-bedroom layout may not fit the buyer's preference for a smaller unit.",
+      "last_progress": "Buyer asked for pricing on the 900 sq ft units and requested rental evidence separated by achieved and asking rents.",
+      "next_action": "Check the exact address and expected completion date before sharing.",
+      "conversation_summary": "Investment buyer initially preferred a 2-bedroom unit and is concerned Pearl Residences Phase 1's 900 sq ft, 3-bedroom layout may be too large. Asked for current price range and rental comparables split into achieved and asking rents."
+    },
+    "unresolved_offline_support": [
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified rental comparables and current purchase prices by unit type to estimate rental yield at Pearl Residences.",
+          "subject": "Expected rental yield at Pearl Residences",
+          "customer_need": "An evidence-based estimate of potential rental yield for an investment purchase.",
+          "reason": "No verified rental or purchase-price figures are available in the provided information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share a verified yield estimate if available, then refine it for the customer's preferred unit type."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Recent rental transactions or current asking rents for comparable nearby 2-bedroom units.",
+          "subject": "Nearby 2-bedroom rental comparables",
+          "customer_need": "Assess rental potential for a likely investment purchase.",
+          "reason": "No verified nearby rental figures are available; unverified numbers could mislead the buyer.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified rental comparables and clarify that Pearl Residences Phase 1 units are 3-bedroom when assessing investment potential."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Current verified price range for Pearl Residences Phase 1 900 sq ft units, plus recent nearby 2-bedroom rental comparables clearly separated into achieved rents and asking rents.",
+          "subject": "Price and rental comparables for investment assessment",
+          "customer_need": "Assess whether the 900 sq ft units are viable and compare nearby 2-bedroom rental evidence for investment potential.",
+          "reason": "No verified current prices or rental comparables are available to quote reliably.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified pricing and rental comparables, distinguishing achieved rents from asking rents, and account for the buyer's preference for a smaller layout."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Current verified price range for Pearl Residences Phase 1 900 sq ft units and recent nearby comparable rental figures, clearly separating achieved rents from asking rents.",
+          "subject": "900 sq ft investment costs and rental comparables",
+          "customer_need": "Compare purchase cost and achieved rents to assess net yield, with asking rents shown separately.",
+          "reason": "Current pricing and verified comparable rental figures are not available to quote reliably.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified pricing and rental comparables, with achieved rents distinguished from asking rents, so the buyer can assess investment fit."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirm whether 900 sq ft units have any recurring charges beyond RM162/month maintenance inclusive of sinking fund; provide verified current pricing and nearby rental comparables with dates and sources, separating achieved rents from asking rents.",
+          "subject": "Recurring charges, pricing and rental evidence for investment comparison",
+          "customer_need": "Compare net returns against an existing rental unit using verified costs and rental evidence.",
+          "reason": "The buyer needs to assess net yield; other recurring charges, current pricing and rental comparables are not verified in the information available.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified recurring charges, current pricing and dated, sourced rental comparables, with achieved rents distinguished from asking rents."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Status and availability of verified current pricing and dated, sourced rental evidence, identifying whether each rent is for Pearl Residences or a nearby comparable building and separating achieved rents from asking rents; include any confirmed ETA for checking.",
+          "subject": "Verified pricing and rental evidence for net-return assessment",
+          "customer_need": "Assess whether the investment can meet a net return above 4% using reliable evidence.",
+          "reason": "No verified pricing or rental figures, source classifications, or checking timeline are available.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Provide verified pricing and dated rental evidence with sources and achieved-versus-asking rents clearly distinguished, or explain what remains unavailable."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified exact project address or location details and expected completion date for Pearl Residences.",
+          "subject": "Project address and expected completion date",
+          "customer_need": "Research nearby rental comparables independently.",
+          "reason": "Only the broad Seberang Jaya location is verified in the available information; the exact address and completion date are not.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the verified address and expected completion date, or clarify what remains unavailable."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified exact address or map pin/nearest landmark and expected completion date for Pearl Residences.",
+          "subject": "Project location and expected completion date",
+          "customer_need": "Research nearby rental comparables independently.",
+          "reason": "Only the broad Seberang Jaya location is verified; the exact location details and expected completion date are not.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the verified project location and expected completion date, or clarify what remains unavailable."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      }
+    ],
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 285,
+          "output_tokens": 302,
+          "total_tokens": 587,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.694
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1845,
+          "output_tokens": 1536,
+          "total_tokens": 3381,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 15.828
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 295,
+          "output_tokens": 342,
+          "total_tokens": 637,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.09
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2009,
+          "output_tokens": 977,
+          "total_tokens": 2986,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 8.987
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 482,
+          "output_tokens": 129,
+          "total_tokens": 611,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 2.67
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 388,
+          "output_tokens": 297,
+          "total_tokens": 685,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.768
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2283,
+          "output_tokens": 1365,
+          "total_tokens": 3648,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 14.566
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 388,
+          "output_tokens": 274,
+          "total_tokens": 662,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.728
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2391,
+          "output_tokens": 1094,
+          "total_tokens": 3485,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 11.507
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 624,
+          "output_tokens": 218,
+          "total_tokens": 842,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.311
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 555,
+          "output_tokens": 388,
+          "total_tokens": 943,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.589
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2837,
+          "output_tokens": 1519,
+          "total_tokens": 4356,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 15.662
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 717,
+          "output_tokens": 394,
+          "total_tokens": 1111,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.169
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3145,
+          "output_tokens": 1310,
+          "total_tokens": 4455,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 12.594
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 775,
+          "output_tokens": 240,
+          "total_tokens": 1015,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.982
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 823,
+          "output_tokens": 355,
+          "total_tokens": 1178,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.307
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3454,
+          "output_tokens": 1877,
+          "total_tokens": 5331,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 18.786
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 823,
+          "output_tokens": 388,
+          "total_tokens": 1211,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.18
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3271,
+          "output_tokens": 845,
+          "total_tokens": 4116,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.984
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 928,
+          "output_tokens": 426,
+          "total_tokens": 1354,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.064
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 983,
+          "output_tokens": 432,
+          "total_tokens": 1415,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.568
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3301,
+          "output_tokens": 1003,
+          "total_tokens": 4304,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 10.088
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 983,
+          "output_tokens": 523,
+          "total_tokens": 1506,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.573
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3528,
+          "output_tokens": 1253,
+          "total_tokens": 4781,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 12.372
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1093,
+          "output_tokens": 266,
+          "total_tokens": 1359,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.558
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1115,
+          "output_tokens": 601,
+          "total_tokens": 1716,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 6.791
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3492,
+          "output_tokens": 1377,
+          "total_tokens": 4869,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 13.824
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1115,
+          "output_tokens": 615,
+          "total_tokens": 1730,
+          "cached_tokens": 1112
+        },
+        "latency_seconds": 6.206
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 4095,
+          "output_tokens": 1128,
+          "total_tokens": 5223,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 11.986
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1254,
+          "output_tokens": 402,
+          "total_tokens": 1656,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.051
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1215,
+          "output_tokens": 531,
+          "total_tokens": 1746,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.483
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3743,
+          "output_tokens": 1035,
+          "total_tokens": 4778,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 11.8
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1215,
+          "output_tokens": 557,
+          "total_tokens": 1772,
+          "cached_tokens": 1212
+        },
+        "latency_seconds": 6.04
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3859,
+          "output_tokens": 681,
+          "total_tokens": 4540,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 6.989
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1375,
+          "output_tokens": 221,
+          "total_tokens": 1596,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.629
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1349,
+          "output_tokens": 608,
+          "total_tokens": 1957,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 7.081
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3909,
+          "output_tokens": 848,
+          "total_tokens": 4757,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 8.378
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1349,
+          "output_tokens": 528,
+          "total_tokens": 1877,
+          "cached_tokens": 1346
+        },
+        "latency_seconds": 5.278
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 4076,
+          "output_tokens": 778,
+          "total_tokens": 4854,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.871
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1521,
+          "output_tokens": 234,
+          "total_tokens": 1755,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.536
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1452,
+          "output_tokens": 620,
+          "total_tokens": 2072,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 7.695
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 4049,
+          "output_tokens": 841,
+          "total_tokens": 4890,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 9.38
+      }
+    ]
+  },
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3171,
+        "output_tokens": 2785,
+        "total_tokens": 5956,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 24.326
+    }
+  ],
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_understanding": 4,
+        "contextual_continuity": 4,
+        "sales_judgment": 3,
+        "value_relevance": 4,
+        "question_quality": 3,
+        "objection_handling": 4,
+        "repetition_control": 2,
+        "factual_accuracy": 4,
+        "viewing_timing": 5,
+        "interest_without_pressure": 5,
+        "naturalness": 3
+      },
+      "B": {
+        "customer_understanding": 4,
+        "contextual_continuity": 5,
+        "sales_judgment": 5,
+        "value_relevance": 5,
+        "question_quality": 2,
+        "objection_handling": 5,
+        "repetition_control": 4,
+        "factual_accuracy": 4,
+        "viewing_timing": 5,
+        "interest_without_pressure": 5,
+        "naturalness": 4
+      }
+    },
+    "stronger_examples": [
+      {
+        "side": "B",
+        "turn": 1,
+        "evidence": "“Gross yield depends on the rent achieved compared with the purchase price, and it isn’t guaranteed.”",
+        "why_better": "Explains why a reliable yield needs verified rent and price rather than substituting a generic estimate."
+      },
+      {
+        "side": "B",
+        "turn": 3,
+        "evidence": "“I can’t contact the sales team or owners from this chat, so I can’t verify current prices or availability, achieved rents, or vacancy assumptions.”",
+        "why_better": "States a clear capability limit instead of implying that requested checks will be carried out."
+      },
+      {
+        "side": "B",
+        "turn": 5,
+        "evidence": "Names nearby places but says it lacks verified details for specific employers, universities, or public transport as demand drivers.",
+        "why_better": "Offers potentially useful location context while distinguishing it from evidence of tenant demand."
+      },
+      {
+        "side": "B",
+        "turn": 8,
+        "evidence": "“I won’t ask you to assess it without those.”",
+        "why_better": "Accepts the buyer’s decision to pause and does not push an appointment or unsupported conclusion."
+      }
+    ],
+    "weaker_examples": [
+      {
+        "side": "A",
+        "turn": 2,
+        "evidence": "“Pearl Residences Phase 1 has 900 sq ft, 3-bedroom units, not 2-bedroom units. I’ll request verified rental comparables…”",
+        "why_worse": "The unit correction is useful, but promising to request information is less transparent than clarifying whether the agent can actually obtain it."
+      },
+      {
+        "side": "A",
+        "turn": 5,
+        "evidence": "“I’ll request the charges and dated, sourced price and rental evidence…”",
+        "why_worse": "This repeats the promise to request information without a confirmed process or timeline; later turns establish that no update timeline is available."
+      },
+      {
+        "side": "A",
+        "turn": 6,
+        "evidence": "“I don’t have verified figures or a confirmed checking timeline yet…”",
+        "why_worse": "The candid caveat comes after multiple requests to follow up, making the earlier assurances sound more actionable than they are."
+      },
+      {
+        "side": "B",
+        "turn": 7,
+        "evidence": "Identifies the developer but says it has no verified official link to share.",
+        "why_worse": "This is potentially useful, but the specific project/developer identification is not corroborated by the supplied buyer truth, so it should be checked before being relied on."
+      }
+    ],
+    "simulator_quality": "The buyer behaves realistically and is not automatically satisfied: they ask for sourced rents, prices, costs, vacancy and location evidence, then pause when key information remains unavailable. The buyer also shares existing ownership and a 4% net-return threshold without being asked; both agents could have elicited those useful comparison criteria naturally. The long, structured sequence of requests is somewhat test-like, but the buyer’s continued interest is conditional on evidence rather than automatic cooperation.",
+    "factuality_findings": [
+      "Neither agent invents a project-specific rental yield, price, achieved rent, or occupancy figure; both correctly acknowledge that these are unverified.",
+      "Both give the same maintenance calculation: RM0.18 per sq. ft. including sinking fund, or RM162 monthly for 900 sq. ft. The supplied buyer truth does not independently verify this project detail.",
+      "B gives specific location, nearby-place, project, and developer information that is not established by the supplied buyer truth. B qualifies some of this information and acknowledges the lack of an exact address or site pin; the claims should not be treated as independently verified here."
+    ],
+    "summary": "B wins on judgment, continuity, and relevance: it is more explicit about what it cannot verify or do, offers useful but bounded location context, and respects the buyer’s decision to pause. A is honest about missing figures and provides the maintenance calculation, but repeatedly promises to request and send information despite having no confirmed timeline. Both avoid pressure and neither asks the natural follow-up questions about the buyer’s existing investment or their above-4% net-yield target."
+  },
+  "paired_winner": "V2",
+  "pair_judged_at_utc": "2026-10-12T15:53:35.278657+00:00"
+}

@@ -1,0 +1,554 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "customer_turns": 8,
+  "natural_ending_reason": "agent requested MANDATORY_HANDOFF; no operational handoff executed",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, saw your Pearl Residences post. Looking for own stay with family. Can share more?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! Pearl Residences is in Seberang Jaya. Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. For your family’s own stay, what matters most—layout, facilities or nearby conveniences?"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Probably the layout first—want to make sure 900 sqft feels comfortable for a family. We’re renting at the moment. How are the bedrooms sized?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "The information I have shows all three bedrooms are designed to accommodate queen-sized beds, but I don’t have verified dimensions for each room, so I can’t confirm the exact fit. The master-bedroom concept also allows for a walk-in wardrobe. Whether 900 sq ft feels comfortable will depend on your furniture and how you use the space."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "That makes sense. We’re two adults with two kids, so the room sizes matter quite a bit—do you have a floor plan with the dimensions, or a show unit we could view?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "I don’t have a verified dimensioned floor plan to share, and show-unit availability and viewing arrangements aren’t confirmed, so I can’t promise a viewing right now. For two adults and two kids, checking the approved plan or seeing the unit would be the best way to judge the room sizes."
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Could you check with the sales team whether they can share the approved floor plan or arrange a viewing? We both work around Seberang Jaya, so the location sounds convenient, but we’d rather not guess about the space.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "That’s sensible—you shouldn’t have to guess about the space, especially with two kids. I can’t reach the sales team from this chat right now, so I can’t confirm whether they can share the approved floor plan or arrange a viewing. I don’t have verified bedroom dimensions or show-unit availability yet, so I don’t want to promise either."
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Okay, thanks for being upfront. If you get the approved floor plan or viewing details later, could you send them over? In the meantime, could you share what facilities are included and the estimated monthly maintenance fee?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "For a 900 sq ft unit, RM0.18 per sq ft works out to about RM162 per month, inclusive of the sinking fund. I don’t have a verified list of which facilities are included; selected clubhouse facilities are pay-per-use, so I wouldn’t want to imply they’re all covered by the maintenance fee. The floor plan and viewing details are still unconfirmed, and I can’t proactively message you later from this chat. If you check back here, I can share any verified update available then."
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Thanks, RM162 gives us a rough idea. Do you have anything confirmed about the facilities, like a pool or play area, or would I need to check back later for that too?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Yes—the project information lists a main swimming pool, a kids’ pool/water-play area, and a children’s playground. Some clubhouse facilities are pay-per-use, though I can’t confirm which facilities are included in the maintenance fee."
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "The pool and play area would be nice for the kids. Are those included for residents, or do they come under the pay-per-use facilities too?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "I can’t confirm that yet. We know selected clubhouse facilities are pay-per-use, but I don’t have verified information on whether the main pool and kids’ pool/play area are included for residents or fall under that model, so I don’t want to guess."
+    },
+    {
+      "turn": 8,
+      "speaker": "customer",
+      "message": "Understood, thanks for being clear. The facilities sound appealing, but we’d still want to check the layout and any extra charges before deciding. Is there a sales office or contact we can follow up with directly for the approved floor plan and facility details?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 8,
+      "speaker": "agent",
+      "message": "I don’t have a verified sales-office contact to share here. I’m handing your request to the sales team so they can follow up about the approved floor plan and confirm which facilities are included and any extra charges."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "POSITION",
+      "buyer_signal": "POSITIVE",
+      "reply": "Hi! Pearl Residences is in Seberang Jaya. Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. For your family’s own stay, what matters most—layout, facilities or nearby conveniences?"
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "The layout shows all three bedrooms accommodating queen-sized beds, and the master has a walk-in wardrobe concept. I don’t have the exact bedroom measurements to confirm, so I’ll check the approved floor plan for you before you judge the fit."
+    },
+    {
+      "turn": 2,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "The information I have shows all three bedrooms are designed to accommodate queen-sized beds, but I don’t have verified dimensions for each room, so I can’t confirm the exact fit. The master-bedroom concept also allows for a walk-in wardrobe. Whether 900 sq ft feels comfortable will depend on your furniture and how you use the space.",
+      "after_support_request": true
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "VIEWING",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have a verified floor plan with exact bedroom dimensions, so I can’t confirm the room sizes. A show unit could help you judge the space, but I can’t confirm whether one is currently available to view. I’ll check on the show-unit availability for you."
+    },
+    {
+      "turn": 3,
+      "action": "REPLY",
+      "sales_move": "VIEWING",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have a verified dimensioned floor plan to share, and show-unit availability and viewing arrangements aren’t confirmed, so I can’t promise a viewing right now. For two adults and two kids, checking the approved plan or seeing the unit would be the best way to judge the room sizes.",
+      "after_support_request": true
+    },
+    {
+      "turn": 4,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "That’s sensible—you shouldn’t have to guess about the space, especially with two kids. I can’t reach the sales team from this chat right now, so I can’t confirm whether they can share the approved floor plan or arrange a viewing. I don’t have verified bedroom dimensions or show-unit availability yet, so I don’t want to promise either."
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "The maintenance fee is RM0.18 per sq ft, inclusive of sinking fund—about RM162 per month for a 900 sq ft unit. Selected clubhouse facilities are pay-per-use, so they’re not all covered by the maintenance fee. I don’t have a verified list of the other included facilities, so I’ll request one rather than guess. The approved floor plan and viewing arrangements are still unconfirmed too, and I can’t arrange an automatic follow-up from this chat."
+    },
+    {
+      "turn": 5,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "For a 900 sq ft unit, RM0.18 per sq ft works out to about RM162 per month, inclusive of the sinking fund. I don’t have a verified list of which facilities are included; selected clubhouse facilities are pay-per-use, so I wouldn’t want to imply they’re all covered by the maintenance fee. The floor plan and viewing details are still unconfirmed, and I can’t proactively message you later from this chat. If you check back here, I can share any verified update available then.",
+      "after_support_request": true
+    },
+    {
+      "turn": 6,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Yes—the project information lists a main swimming pool, a kids’ pool/water-play area, and a children’s playground. Some clubhouse facilities are pay-per-use, though I can’t confirm which facilities are included in the maintenance fee."
+    },
+    {
+      "turn": 7,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I can’t confirm that yet. We know selected clubhouse facilities are pay-per-use, but I don’t have verified information on whether the main pool and kids’ pool/play area are included for residents or fall under that model, so I don’t want to guess."
+    },
+    {
+      "turn": 8,
+      "action": "MANDATORY_HANDOFF",
+      "sales_move": "HANDLE",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have a verified sales-office contact to share here. I’m handing your request to the sales team so they can follow up about the approved floor plan and confirm which facilities are included and any extra charges."
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "OWN_STAY",
+    "sales_stage": "QUALIFY",
+    "intent_level": "MEDIUM",
+    "appointment_readiness": "EMERGING",
+    "next_objective": "Confirm whether a show unit is available to view",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a home to stay in with family",
+    "last_progress": "Buyer shared they are two adults with two children and asked about bedroom dimensions or viewing a show unit.",
+    "next_action": "Check current show-unit viewing availability",
+    "conversation_summary": "Buyer saw a Pearl Residences post and is looking for an own-stay home with family.",
+    "viewing_interest": "Interested in viewing a show unit to assess room sizes and family fit",
+    "important_features": [
+      "Bedroom dimensions",
+      "Family-suitable layout"
+    ],
+    "decision_factors": [
+      "Room sizes",
+      "Whether 900 sq ft feels comfortable for a family"
+    ],
+    "active_concerns": [
+      "Exact bedroom dimensions are unverified"
+    ],
+    "preferred_location": "Seberang Jaya (both work nearby)"
+  },
+  "unresolved_offline_support": [
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "LAYOUT",
+        "requested_fact": "Exact dimensions of each of the three bedrooms on the approved Phase 1 Type A floor plan.",
+        "subject": "Pearl Residences Phase 1 Type A bedroom measurements",
+        "customer_need": "The buyer wants to assess whether the 900 sq ft layout will feel comfortable for their family and asks how the bedrooms are sized.",
+        "reason": "Available information only indicates that the bedrooms are shown accommodating queen-sized beds; exact dimensions are not provided.",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Share verified bedroom measurements and help the buyer assess layout fit."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    },
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "AVAILABILITY",
+        "requested_fact": "Whether a Pearl Residences show unit is currently available for viewing, and how a viewing can be arranged.",
+        "subject": "Pearl Residences show-unit viewing",
+        "customer_need": "The buyer wants to assess the bedroom sizes and whether the 900 sq ft layout suits two adults and two children.",
+        "reason": "Current show-unit availability and viewing arrangements are unverified.",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Update the buyer on show-unit viewing availability and help assess the layout."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    },
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "PACKAGE",
+        "requested_fact": "A verified list of facilities included for Pearl Residences residents, distinguishing included facilities from any pay-per-use clubhouse facilities.",
+        "subject": "Pearl Residences included facilities",
+        "customer_need": "The buyer wants to know what facilities are included before evaluating the home for their family.",
+        "reason": "The available information confirms selected clubhouse facilities are pay-per-use but does not provide a verified list of other included facilities.",
+        "resume_stage": "QUALIFY",
+        "resume_objective": "Share the verified facilities inclusions and clarify which clubhouse facilities, if any, are pay-per-use."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    }
+  ],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2253,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2250
+        },
+        "output_tokens": 1161,
+        "output_tokens_details": {
+          "reasoning_tokens": 783
+        },
+        "total_tokens": 3414
+      },
+      "latency_seconds": 11.174
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 511,
+        "output_tokens": 141,
+        "total_tokens": 652,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.587
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2541,
+        "input_tokens_details": {
+          "cache_write_tokens": 2538,
+          "cached_tokens": 0
+        },
+        "output_tokens": 598,
+        "output_tokens_details": {
+          "reasoning_tokens": 246
+        },
+        "total_tokens": 3139
+      },
+      "latency_seconds": 6.145
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2710,
+        "input_tokens_details": {
+          "cache_write_tokens": 2707,
+          "cached_tokens": 0
+        },
+        "output_tokens": 841,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 3551
+      },
+      "latency_seconds": 8.125
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 658,
+        "output_tokens": 142,
+        "total_tokens": 800,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.154
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3124,
+        "input_tokens_details": {
+          "cache_write_tokens": 3121,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1505,
+        "output_tokens_details": {
+          "reasoning_tokens": 980
+        },
+        "total_tokens": 4629
+      },
+      "latency_seconds": 13.388
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3354,
+        "input_tokens_details": {
+          "cache_write_tokens": 3351,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1465,
+        "output_tokens_details": {
+          "reasoning_tokens": 1173
+        },
+        "total_tokens": 4819
+      },
+      "latency_seconds": 13.413
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 806,
+        "output_tokens": 216,
+        "total_tokens": 1022,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.339
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3314,
+        "input_tokens_details": {
+          "cache_write_tokens": 3311,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1661,
+        "output_tokens_details": {
+          "reasoning_tokens": 1394
+        },
+        "total_tokens": 4975
+      },
+      "latency_seconds": 15.938
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 972,
+        "output_tokens": 170,
+        "total_tokens": 1142,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.866
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3288,
+        "input_tokens_details": {
+          "cache_write_tokens": 3285,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1684,
+        "output_tokens_details": {
+          "reasoning_tokens": 1285
+        },
+        "total_tokens": 4972
+      },
+      "latency_seconds": 15.706
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3458,
+        "input_tokens_details": {
+          "cache_write_tokens": 3455,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1027,
+        "output_tokens_details": {
+          "reasoning_tokens": 733
+        },
+        "total_tokens": 4485
+      },
+      "latency_seconds": 9.757
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1169,
+        "output_tokens": 282,
+        "total_tokens": 1451,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 4.169
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3742,
+        "input_tokens_details": {
+          "cache_write_tokens": 3739,
+          "cached_tokens": 0
+        },
+        "output_tokens": 822,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 4564
+      },
+      "latency_seconds": 7.657
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1303,
+        "output_tokens": 176,
+        "total_tokens": 1479,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.458
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3780,
+        "input_tokens_details": {
+          "cache_write_tokens": 3777,
+          "cached_tokens": 0
+        },
+        "output_tokens": 591,
+        "output_tokens_details": {
+          "reasoning_tokens": 349
+        },
+        "total_tokens": 4371
+      },
+      "latency_seconds": 5.305
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1435,
+        "output_tokens": 344,
+        "total_tokens": 1779,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 4.923
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3958,
+        "input_tokens_details": {
+          "cache_write_tokens": 3955,
+          "cached_tokens": 0
+        },
+        "output_tokens": 924,
+        "output_tokens_details": {
+          "reasoning_tokens": 664
+        },
+        "total_tokens": 4882
+      },
+      "latency_seconds": 8.341
+    }
+  ]
+}

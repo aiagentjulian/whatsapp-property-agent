@@ -1,0 +1,122 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "customer_turns": 2,
+  "natural_ending_reason": "agent requested APPOINTMENT_HANDOFF; no operational handoff executed",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I may want to see the show unit this weekend. But don't want agent keep chasing me after ya."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Of course — I won’t chase you. If you decide you’d like to view this weekend, just message me which day suits and I’ll help arrange it. Nothing will be booked unless you confirm."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Saturday afternoon would be good for us. Could you check what time slots are available and let me know before confirming anything?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Sure — I’ll check which Saturday afternoon slots are available and let you know first. I won’t confirm or book anything unless you say so."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "VIEWING",
+      "buyer_signal": "POSITIVE",
+      "reply": "Of course — I won’t chase you. If you decide you’d like to view this weekend, just message me which day suits and I’ll help arrange it. Nothing will be booked unless you confirm."
+    },
+    {
+      "turn": 2,
+      "action": "APPOINTMENT_HANDOFF",
+      "sales_move": "VIEWING",
+      "buyer_signal": "POSITIVE",
+      "reply": "Sure — I’ll check which Saturday afternoon slots are available and let you know first. I won’t confirm or book anything unless you say so."
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "INTENT",
+    "intent_level": "MEDIUM",
+    "appointment_readiness": "EMERGING",
+    "next_objective": "Check Saturday afternoon viewing slot availability and report back without booking.",
+    "viewing_interest": "Interested in a possible show-unit viewing Saturday afternoon; wants available slots checked before confirming.",
+    "active_concerns": [
+      "Does not want repeated agent follow-up."
+    ],
+    "fit_assessment": "Tentative Saturday afternoon show-unit viewing interest; availability needs checking and no appointment is confirmed.",
+    "last_progress": "Buyer proposed Saturday afternoon and asked to hear available times before confirming.",
+    "next_action": "Have the team check Saturday afternoon show-unit viewing availability; wait for buyer confirmation before booking.",
+    "conversation_summary": "Buyer may view the show unit Saturday afternoon, wants available slots checked first, and does not want repeated agent follow-up."
+  },
+  "unresolved_offline_support": [],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2182,
+        "input_tokens_details": {
+          "cache_write_tokens": 2179,
+          "cached_tokens": 0
+        },
+        "output_tokens": 934,
+        "output_tokens_details": {
+          "reasoning_tokens": 612
+        },
+        "total_tokens": 3116,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 10.376,
+      "outcome": "COMPLETED"
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 507,
+        "output_tokens": 137,
+        "total_tokens": 644,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.008,
+      "outcome": "COMPLETED"
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2399,
+        "input_tokens_details": {
+          "cache_write_tokens": 2396,
+          "cached_tokens": 0
+        },
+        "output_tokens": 841,
+        "output_tokens_details": {
+          "reasoning_tokens": 412
+        },
+        "total_tokens": 3240,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 9.777,
+      "outcome": "COMPLETED"
+    }
+  ]
+}

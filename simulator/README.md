@@ -19,3 +19,14 @@ python3 simulator/runner/run.py --dry-run
 ```
 
 To run selected scenarios, add `--scenario PEA-001` (repeat the option for multiple IDs). Each invocation creates a directory under `reports/` with per-scenario transcript JSON, report JSON/Markdown, and aggregate JSON/Markdown. Run-level and scenario-level accounting records provider/model, calls by role, duration, retry count, and exact token counts when reported by the provider. Token values are left unavailable when the provider does not expose them. Rate limits, usage exhaustion, authentication failures, and unavailable models stop the run before another scenario starts.
+
+## Sales Core V3 paired evaluation
+
+The opt-in V3 implementation defaults off; `SALES_CORE_VERSION` remains `v2` unless explicitly set to `v3`. Run the paired offline evaluator from the repository root:
+
+```sh
+python3 simulator/runner/sales_core_ab.py --dry-run
+python3 simulator/runner/sales_core_ab.py --env-file .env --output SALES-CORE-V3-YYYYMMDD
+```
+
+The evaluator compares the same 10 scenarios across V2 and V3, saves resumable per-pair transcripts and usage reports, and does not invoke CRM, SQLite, WhatsApp, inventory, calendar, or human-support transports. `--dry-run` exercises the same operator path with fake provider transports.

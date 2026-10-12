@@ -1,0 +1,139 @@
+{
+  "architecture": "V3",
+  "status": "COMPLETED",
+  "customer_turns": 2,
+  "natural_ending_reason": "agent requested APPOINTMENT_HANDOFF; no operational handoff executed",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi, I may want to see the show unit this weekend. But don't want agent keep chasing me after ya."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Sure, no worries—I won’t keep following up. If you decide you’d like to visit this weekend, just message me and I’ll help arrange it. No need to confirm now."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, that’s helpful. We’re interested in seeing the layout—could we try Saturday afternoon? Can you confirm if that time’s available, or would someone need to check first? No pressure if you need to confirm with the team.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Thanks—Saturday afternoon may be possible, but I’ll need to check with the team first. I’ll confirm whether there’s a slot before treating anything as booked, and I won’t keep chasing you."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "VIEWING",
+      "buyer_signal": "OBJECTION",
+      "reply": "Sure, no worries—I won’t keep following up. If you decide you’d like to visit this weekend, just message me and I’ll help arrange it. No need to confirm now."
+    },
+    {
+      "turn": 2,
+      "action": "APPOINTMENT_HANDOFF",
+      "sales_move": "VIEWING",
+      "buyer_signal": "POSITIVE",
+      "reply": "Thanks—Saturday afternoon may be possible, but I’ll need to check with the team first. I’ll confirm whether there’s a slot before treating anything as booked, and I won’t keep chasing you."
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "CLOSE",
+    "intent_level": "MEDIUM",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "next_objective": "Check whether a Saturday afternoon show-unit viewing slot is available",
+    "viewing_interest": "Interested in viewing the show unit Saturday afternoon; availability unconfirmed",
+    "active_concerns": [
+      "Does not want repeated follow-up"
+    ],
+    "last_progress": "Customer expressed interest in a Saturday afternoon viewing and asked for availability confirmation",
+    "next_action": "Check Saturday afternoon viewing availability with the team",
+    "conversation_summary": "Customer is interested in seeing the show-unit layout Saturday afternoon, subject to team availability, and prefers not to receive repeated follow-up.",
+    "size_or_layout_preference": "Interested in seeing the layout at the show unit",
+    "important_features": [
+      "Layout"
+    ]
+  },
+  "unresolved_offline_support": [],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "provider_calls": [
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 303,
+        "output_tokens": 238,
+        "total_tokens": 541,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 4.047,
+      "outcome": "COMPLETED"
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1639,
+        "output_tokens": 827,
+        "total_tokens": 2466,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 9.714,
+      "outcome": "COMPLETED"
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 504,
+        "output_tokens": 223,
+        "total_tokens": 727,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.522,
+      "outcome": "COMPLETED"
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 510,
+        "output_tokens": 326,
+        "total_tokens": 836,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 4.585,
+      "outcome": "COMPLETED"
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2034,
+        "output_tokens": 823,
+        "total_tokens": 2857,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 27.618,
+      "outcome": "COMPLETED"
+    }
+  ]
+}

@@ -25,7 +25,13 @@ class Runtime:
     def __init__(self, config, store=None, agent=None):
         self.config = config
         self.store = store or Store(config["database"])
-        self.agent = agent or SalesAgent(config)
+        if agent is not None:
+            self.agent = agent
+        elif config.get("sales_core", "v2") == "v3":
+            from .sales_core_v3 import SalesCoreV3
+            self.agent = SalesCoreV3(config)
+        else:
+            self.agent = SalesAgent(config)
         self._sheets_client = None
         self._sheets_checked = False
 

@@ -22,16 +22,20 @@ def get_config():
     model = os.getenv("RUNTIME_MODEL", "gpt-6-luna")
     provider = os.getenv("RUNTIME_PROVIDER", "openai_api")
     reasoning = os.getenv("RUNTIME_REASONING", "high")
+    sales_core = os.getenv("SALES_CORE_VERSION", "v2").lower()
     if provider != "openai_api":
         raise ValueError("RUNTIME_PROVIDER must be openai_api for the runtime.")
     if model != "gpt-6-luna":
         raise ValueError("This MVP is pinned to gpt-6-luna; model substitution is disabled.")
     if reasoning not in ("low", "medium", "high"):
         raise ValueError("RUNTIME_REASONING must be low, medium, or high.")
+    if sales_core not in ("v2", "v3"):
+        raise ValueError("SALES_CORE_VERSION must be v2 or v3.")
     return {
         "provider": provider,
         "model": model,
         "reasoning": reasoning,
+        "sales_core": sales_core,
         "api_key": os.getenv("OPENAI_API_KEY", ""),
         "database": Path(os.getenv("DATABASE_PATH", "data/lead/agent.sqlite3")),
         "allowlist": [x.strip() for x in os.getenv("WHATSAPP_ALLOWLIST", "").split(",") if x.strip()],

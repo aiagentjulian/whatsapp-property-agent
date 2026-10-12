@@ -1,0 +1,1770 @@
+{
+  "scenario_id": "SCV3-06",
+  "title": "Location and commuting",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "customer_turns": 8,
+    "natural_ending_reason": "Waiting for the verified location before deciding on a viewing",
+    "transcript": [
+      {
+        "turn": 0,
+        "speaker": "customer",
+        "message": "Hi, is this convenient for going to work? I work around Prai, wife near Sunway Carnival."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Pearl Residences is in an established Seberang Jaya area, with connectivity towards Sunway Carnival and the wider mainland network, so it could be a practical location for both of you. Prai covers a broad area, though, so I don’t want to guess commute times. Which part of Prai do you work in?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Around the Prai industrial area, though I don’t have the exact road handy. We’re still checking the location for both our commutes—what’s the usual road access like from Seberang Jaya?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Thanks, that helps. I don’t have verified road-by-road details from Pearl Residences towards the Prai industrial area or Sunway Carnival, so I don’t want to guess. I’ll check the connecting roads; actual commute times will also depend on your exact destinations and traffic."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Okay, thanks. We both drive to work, so it’d help to know which roads we’d actually use from the residence towards the Prai industrial area and Sunway Carnival once you’ve checked.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "Sorry, I don’t have a verified route check back yet, so I can’t reliably name the roads from Pearl Residences to the Prai industrial area or Sunway Carnival. I don’t want to guess, and the best route may depend on your exact destination and traffic."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "Understood. Could you share the Google Maps pin for the residence? We can compare the routes ourselves, especially the way out towards Prai and Sunway Carnival.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "Sorry, I still don’t have a verified Google Maps pin to share, and I don’t want to send you the wrong location. Once I can confirm the correct pin, I’ll pass it over so you can compare the routes."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "No worries. Could you send the confirmed pin or exact address when you have it? We’re comparing a few places for our own stay, so the nearest main road or entrance would help too.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "message": "I can confirm the general area is Seberang Jaya, but I still don’t have a verified pin, exact address or entrance to share. The location check hasn’t returned confirmation yet, so I don’t want to guess and send you to the wrong place."
+      },
+      {
+        "turn": 6,
+        "speaker": "customer",
+        "message": "Got it. Without a pin it’s hard for us to compare the daily routes. Could you check with your project team and send the confirmed location when you have it? Even a nearby landmark would help.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "message": "I understand—it’s hard to compare the commutes without a confirmed location. I’ve asked the project team to verify the pin or address and the nearest road access. I don’t have it confirmed yet, so I won’t guess; I’ll share the details once they’re verified."
+      },
+      {
+        "turn": 7,
+        "speaker": "customer",
+        "message": "Thanks for checking. Any idea when they might confirm? We’d like to compare the location before arranging a viewing.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "message": "I don’t have a confirmed ETA from the team yet, so I can’t give you a reliable timeframe. It makes sense to compare the location first before arranging a viewing. I’ll pass on the confirmed pin or address once I have a verified update."
+      },
+      {
+        "turn": 8,
+        "speaker": "customer",
+        "message": "No worries, we’ll wait for the confirmed location before arranging a viewing. Please send the pin or address over when you have it.",
+        "simulator_done": true,
+        "simulator_ending_reason": "Waiting for the verified location before deciding on a viewing"
+      },
+      {
+        "turn": 8,
+        "speaker": "agent",
+        "message": "Understood. I’ll share the confirmed pin or address and nearest access point once verified, so you can compare the routes before deciding about a viewing."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in an established Seberang Jaya area, with connectivity towards Sunway Carnival and the wider mainland network, so it could be a practical location for both of you. Prai covers a broad area, though, so I don’t want to guess commute times. Which part of Prai do you work in?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "It’s in Seberang Jaya, but I don’t have verified details on the usual roads from the project towards the Prai industrial area and Sunway Carnival, so I don’t want to guess. I’ll check the road connections and share what I can confirm."
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks, that helps. I don’t have verified road-by-road details from Pearl Residences towards the Prai industrial area or Sunway Carnival, so I don’t want to guess. I’ll check the connecting roads; actual commute times will also depend on your exact destinations and traffic.",
+        "after_support_request": true
+      },
+      {
+        "turn": 3,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Sorry, I don’t have a verified route check back yet, so I can’t reliably name the roads from Pearl Residences to the Prai industrial area or Sunway Carnival. I don’t want to guess, and the best route may depend on your exact destination and traffic."
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified, shareable Google Maps pin for Pearl Residences yet, so I don’t want to send you the wrong location. I’ll check for the correct pin so you can compare the routes yourselves."
+      },
+      {
+        "turn": 4,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Sorry, I still don’t have a verified Google Maps pin to share, and I don’t want to send you the wrong location. Once I can confirm the correct pin, I’ll pass it over so you can compare the routes.",
+        "after_support_request": true
+      },
+      {
+        "turn": 5,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I have the general location as Mukim 1, Seberang Jaya, 13700, but not a confirmed pin or exact street address. I don’t want to guess the nearest road or entrance, so I’ll get those details checked before sending them over."
+      },
+      {
+        "turn": 5,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can confirm the general area is Seberang Jaya, but I still don’t have a verified pin, exact address or entrance to share. The location check hasn’t returned confirmation yet, so I don’t want to guess and send you to the wrong place.",
+        "after_support_request": true
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "You’re right—without a confirmed location, it’s hard to compare properly. I still don’t have a verified pin, address or nearest road/entrance, so I won’t guess. I’ll ask the project team to confirm those and share them once verified."
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I understand—it’s hard to compare the commutes without a confirmed location. I’ve asked the project team to verify the pin or address and the nearest road access. I don’t have it confirmed yet, so I won’t guess; I’ll share the details once they’re verified.",
+        "after_support_request": true
+      },
+      {
+        "turn": 7,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a confirmed ETA from the team yet, so I can’t give you a reliable timeframe. It makes sense to compare the location first before arranging a viewing. I’ll pass on the confirmed pin or address once I have a verified update."
+      },
+      {
+        "turn": 8,
+        "action": "REPLY",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Understood. I’ll share the confirmed pin or address and nearest access point once verified, so you can compare the routes before deciding about a viewing."
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "OWN_STAY",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Provide confirmed location details when available so the buyers can assess commute suitability.",
+      "primary_motivations": [
+        "Convenient commutes for both spouses"
+      ],
+      "decision_factors": [
+        "Road access towards Prai industrial area and Sunway Carnival"
+      ],
+      "active_concerns": [
+        "Commute routes and road access"
+      ],
+      "fit_assessment": "Location fit is still being evaluated; specific road access has not been verified.",
+      "last_progress": "Buyer wants to compare the location before arranging a viewing; no confirmed ETA for the pin or address.",
+      "next_action": "Share the verified pin or address once available; do not push a viewing before then.",
+      "conversation_summary": "Buyer is evaluating Seberang Jaya for commute convenience to the Prai industrial area and Sunway Carnival.",
+      "viewing_interest": "Interested in considering a viewing after comparing the confirmed location and commute routes."
+    },
+    "unresolved_offline_support": [
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified usual road access and connecting roads from Pearl Residences in Seberang Jaya towards the Prai industrial area and Sunway Carnival.",
+          "subject": "Road access and commute routes",
+          "customer_need": "Assess whether the location is practical for both spouses' work commutes.",
+          "reason": "The buyer directly asked about usual road access; no verified route details are available in the current knowledge.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified road connections without guessing commute times."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "A verified, shareable Google Maps pin for Pearl Residences.",
+          "subject": "Google Maps location pin",
+          "customer_need": "Compare driving routes from the residence towards the Prai industrial area and Sunway Carnival.",
+          "reason": "The buyer directly requested the pin; the current knowledge does not provide a verified shareable map location.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the verified pin so the buyer can assess the routes themselves."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirmed exact street address and nearest main-road access or vehicle entrance for Pearl Residences.",
+          "subject": "Exact address and entrance",
+          "customer_need": "Compare routes for both spouses' own-stay commutes towards the Prai industrial area and Sunway Carnival.",
+          "reason": "The buyer requested a confirmed pin or exact address and the nearest main road or entrance; only a general location is currently available.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified address and entrance details so the buyer can assess the location."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "A confirmed, shareable Google Maps pin or exact address for Pearl Residences, plus the nearest main road, vehicle entrance or landmark.",
+          "subject": "Confirmed residence location and access",
+          "customer_need": "Compare daily driving routes towards the Prai industrial area and Sunway Carnival.",
+          "reason": "The buyer has directly requested confirmed location details; no verified pin, address or access point is currently available.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share confirmed location and access details so the buyers can assess commute suitability."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      }
+    ],
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2147,
+          "input_tokens_details": {
+            "cache_write_tokens": 2144,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1099,
+          "output_tokens_details": {
+            "reasoning_tokens": 841
+          },
+          "total_tokens": 3246
+        },
+        "latency_seconds": 9.834
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 514,
+          "output_tokens": 194,
+          "total_tokens": 708,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.626
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2221,
+          "input_tokens_details": {
+            "cache_write_tokens": 2218,
+            "cached_tokens": 0
+          },
+          "output_tokens": 849,
+          "output_tokens_details": {
+            "reasoning_tokens": 401
+          },
+          "total_tokens": 3070
+        },
+        "latency_seconds": 8.134
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2473,
+          "input_tokens_details": {
+            "cache_write_tokens": 2470,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1001,
+          "output_tokens_details": {
+            "reasoning_tokens": 659
+          },
+          "total_tokens": 3474
+        },
+        "latency_seconds": 9.81
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 663,
+          "output_tokens": 253,
+          "total_tokens": 916,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.979
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2478,
+          "input_tokens_details": {
+            "cache_write_tokens": 2475,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1020,
+          "output_tokens_details": {
+            "reasoning_tokens": 777
+          },
+          "total_tokens": 3498
+        },
+        "latency_seconds": 10.131
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 808,
+          "output_tokens": 265,
+          "total_tokens": 1073,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.557
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2987,
+          "input_tokens_details": {
+            "cache_write_tokens": 2984,
+            "cached_tokens": 0
+          },
+          "output_tokens": 498,
+          "output_tokens_details": {
+            "reasoning_tokens": 171
+          },
+          "total_tokens": 3485
+        },
+        "latency_seconds": 6.038
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3135,
+          "input_tokens_details": {
+            "cache_write_tokens": 3132,
+            "cached_tokens": 0
+          },
+          "output_tokens": 466,
+          "output_tokens_details": {
+            "reasoning_tokens": 232
+          },
+          "total_tokens": 3601
+        },
+        "latency_seconds": 5.544
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 937,
+          "output_tokens": 227,
+          "total_tokens": 1164,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 3.426
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3066,
+          "input_tokens_details": {
+            "cache_write_tokens": 3063,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1812,
+          "output_tokens_details": {
+            "reasoning_tokens": 1364
+          },
+          "total_tokens": 4878
+        },
+        "latency_seconds": 15.716
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3239,
+          "input_tokens_details": {
+            "cache_write_tokens": 3236,
+            "cached_tokens": 0
+          },
+          "output_tokens": 900,
+          "output_tokens_details": {
+            "reasoning_tokens": 587
+          },
+          "total_tokens": 4139
+        },
+        "latency_seconds": 8.711
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1079,
+          "output_tokens": 288,
+          "total_tokens": 1367,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.052
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3626,
+          "input_tokens_details": {
+            "cache_write_tokens": 3623,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1663,
+          "output_tokens_details": {
+            "reasoning_tokens": 1191
+          },
+          "total_tokens": 5289
+        },
+        "latency_seconds": 15.302
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3789,
+          "input_tokens_details": {
+            "cache_write_tokens": 3786,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1468,
+          "output_tokens_details": {
+            "reasoning_tokens": 1113
+          },
+          "total_tokens": 5257
+        },
+        "latency_seconds": 13.103
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1226,
+          "output_tokens": 256,
+          "total_tokens": 1482,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.265
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3760,
+          "input_tokens_details": {
+            "cache_write_tokens": 3757,
+            "cached_tokens": 0
+          },
+          "output_tokens": 783,
+          "output_tokens_details": {
+            "reasoning_tokens": 488
+          },
+          "total_tokens": 4543
+        },
+        "latency_seconds": 8.386
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1349,
+          "output_tokens": 464,
+          "total_tokens": 1813,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 6.198
+      },
+      {
+        "role": "sales_v2",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3939,
+          "input_tokens_details": {
+            "cache_write_tokens": 3936,
+            "cached_tokens": 0
+          },
+          "output_tokens": 808,
+          "output_tokens_details": {
+            "reasoning_tokens": 587
+          },
+          "total_tokens": 4747
+        },
+        "latency_seconds": 8.771
+      }
+    ]
+  },
+  "metrics": {
+    "V2": {
+      "model_calls": 19,
+      "calls_by_role": {
+        "sales_v2": 12,
+        "customer_simulator": 7
+      },
+      "latency_seconds_total": 151.583,
+      "latency_seconds_mean": 7.978,
+      "tokens": {
+        "input_tokens": 43436,
+        "cached_tokens": 0,
+        "output_tokens": 14314,
+        "total_tokens": 57750
+      },
+      "estimated_standard_usd": 0.011501,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "V3": {
+      "model_calls": 47,
+      "calls_by_role": {
+        "sales_strategy": 19,
+        "sales_v3": 19,
+        "customer_simulator": 9
+      },
+      "latency_seconds_total": 363.108,
+      "latency_seconds_mean": 7.726,
+      "tokens": {
+        "input_tokens": 80864,
+        "cached_tokens": 25593,
+        "output_tokens": 26968,
+        "total_tokens": 107832
+      },
+      "estimated_standard_usd": 0.019267,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "blind_judge": {
+      "model_calls": 1,
+      "calls_by_role": {
+        "blind_judge": 1
+      },
+      "latency_seconds_total": 25.818,
+      "latency_seconds_mean": 25.818,
+      "tokens": {
+        "input_tokens": 3090,
+        "cached_tokens": 0,
+        "output_tokens": 2471,
+        "total_tokens": 5561
+      },
+      "estimated_standard_usd": 0.001545,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "customer_turns": 10,
+    "natural_ending_reason": "10 customer turns reached",
+    "transcript": [
+      {
+        "turn": 0,
+        "speaker": "customer",
+        "message": "Hi, is this convenient for going to work? I work around Prai, wife near Sunway Carnival."
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Pearl Residences is in Seberang Jaya, with connectivity toward Sunway Carnival, so it may suit your wife’s commute. For Prai, it depends on the exact area; I don’t have verified travel times. Which part of Prai do you work in?"
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "I work around the Prai industrial area, though I don’t have the exact address handy. We’re trying to see if the location would work for both of us day to day.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Got it—you’re assessing both daily commutes, and the exact Prai address would help with a closer comparison. Pearl Residences is in Seberang Jaya, with project information noting connectivity toward Sunway Carnival and the mainland road network, but I don’t have verified commute times to confirm it works well for both. I’ll check whether verified route guidance is available."
+      },
+      {
+        "turn": 3,
+        "speaker": "customer",
+        "message": "Thanks, that would help. We’re looking for our own stay, so everyday errands matter too—are there supermarkets or shops nearby, or would we need to drive out for those?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 3,
+        "speaker": "agent",
+        "message": "That’s important for day-to-day living. I don’t have verified information on which supermarkets or shops are nearby, or whether they’re practical to reach on foot, so I don’t want to guess. I’ll check that along with the commute guidance we discussed."
+      },
+      {
+        "turn": 4,
+        "speaker": "customer",
+        "message": "Appreciate it. Could you share the project location pin as well? We can compare it with both our work locations and the places we usually run errands.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 4,
+        "speaker": "agent",
+        "message": "I don’t have a verified project pin available right now, so I don’t want to send you an inaccurate one. I’ll check the official pin; the commute and nearby-shop details are still being verified too."
+      },
+      {
+        "turn": 5,
+        "speaker": "customer",
+        "message": "Sure, please send the official pin once you’ve confirmed it. We can check the routes ourselves—an exact address or nearest landmark would help too.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 5,
+        "speaker": "agent",
+        "message": "I can confirm Pearl Residences is in Mukim 1, Seberang Jaya, Seberang Perai Tengah, 13700, but I don’t have a verified map pin or nearer landmark yet. I’ll check the official details before sending so I don’t give you the wrong location."
+      },
+      {
+        "turn": 6,
+        "speaker": "customer",
+        "message": "Okay, please send it once you’ve confirmed. Just to avoid confusion, is that address for the actual residence site, or for the sales gallery?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 6,
+        "speaker": "agent",
+        "message": "I can’t confirm whether the address I shared is for the residence site or the sales gallery, so I don’t want to guess. I’ll have the official site details checked before sending the pin."
+      },
+      {
+        "turn": 7,
+        "speaker": "customer",
+        "message": "Okay, please confirm whether it’s the actual residence site or the gallery before sending the pin—we don’t want to compare routes to the wrong place.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 7,
+        "speaker": "agent",
+        "message": "You’re right—we shouldn’t compare routes to the wrong place. I can’t verify yet whether that address is for the residence site or the sales gallery, so I won’t send it as the residence pin. I’ll request confirmation of the official site address and pin."
+      },
+      {
+        "turn": 8,
+        "speaker": "customer",
+        "message": "Alright, please send the confirmed residence pin once you have it. Is there an official project page or brochure with the site location in the meantime?",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 8,
+        "speaker": "agent",
+        "message": "I don’t have a verified official page or brochure showing the residence-site location, or a confirmed site pin yet. I’ll have those checked and send them once I can confirm they’re for the residence itself, not the sales gallery."
+      },
+      {
+        "turn": 9,
+        "speaker": "customer",
+        "message": "We usually drive, so the confirmed site pin would let us check both routes ourselves. Please send it once you’ve verified it—no need to guess in the meantime.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 9,
+        "speaker": "agent",
+        "message": "Understood. I don’t have a verified residence-site pin yet, so I won’t send an unconfirmed location. I’ll check that the pin is for the actual residence site, not the sales gallery, and share it once confirmed."
+      },
+      {
+        "turn": 10,
+        "speaker": "customer",
+        "message": "Thanks. Could you let us know when you expect to have the confirmed site pin? We can’t really compare the routes until we know it’s the actual residence location.",
+        "simulator_done": false,
+        "simulator_ending_reason": null
+      },
+      {
+        "turn": 10,
+        "speaker": "agent",
+        "message": "Sorry—I still don’t have a confirmed ETA for the residence-site pin, so I can’t give you a reliable timeframe yet. I’ll share it once it’s verified as the actual residence site, not the gallery."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in Seberang Jaya, with connectivity toward Sunway Carnival, so it may suit your wife’s commute. For Prai, it depends on the exact area; I don’t have verified travel times. Which part of Prai do you work in?"
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "That helps. Prai’s industrial area covers a broad area, so I can’t reliably judge your commute without a nearby landmark or exact worksite, and I don’t have verified travel times for either journey. If you get a landmark later, I can check both routes more meaningfully."
+      },
+      {
+        "turn": 2,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Got it—you’re assessing both daily commutes, and the exact Prai address would help with a closer comparison. Pearl Residences is in Seberang Jaya, with project information noting connectivity toward Sunway Carnival and the mainland road network, but I don’t have verified commute times to confirm it works well for both. I’ll check whether verified route guidance is available.",
+        "after_support_request": true
+      },
+      {
+        "turn": 3,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have verified details yet on nearby supermarkets or shops, or whether they’re easy to reach on foot. I’ll check that, and keep the commute information open too."
+      },
+      {
+        "turn": 3,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "That’s important for day-to-day living. I don’t have verified information on which supermarkets or shops are nearby, or whether they’re practical to reach on foot, so I don’t want to guess. I’ll check that along with the commute guidance we discussed.",
+        "after_support_request": true
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified location pin to share right now, and I don’t want to send you the wrong spot. I’ll check for the official Pearl Residences pin, along with the commute and nearby-shop details we discussed."
+      },
+      {
+        "turn": 4,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified project pin available right now, so I don’t want to send you an inaccurate one. I’ll check the official pin; the commute and nearby-shop details are still being verified too.",
+        "after_support_request": true
+      },
+      {
+        "turn": 5,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified official pin, exact address or nearest landmark to share yet, so I don’t want to guess. I’ve flagged it for confirmation and will share it once verified."
+      },
+      {
+        "turn": 5,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can confirm Pearl Residences is in Mukim 1, Seberang Jaya, Seberang Perai Tengah, 13700, but I don’t have a verified map pin or nearer landmark yet. I’ll check the official details before sending so I don’t give you the wrong location.",
+        "after_support_request": true
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can’t confirm yet whether that address is for the residence site or the sales gallery, so please don’t use it to compare routes just yet. I’ll verify which it is and send the official pin once confirmed."
+      },
+      {
+        "turn": 6,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can’t confirm whether the address I shared is for the residence site or the sales gallery, so I don’t want to guess. I’ll have the official site details checked before sending the pin.",
+        "after_support_request": true
+      },
+      {
+        "turn": 7,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "You’re right—we should confirm it’s the residence site, not the sales gallery, before comparing routes. I can’t verify that from the information I have, so I won’t send a pin until the official site location is confirmed."
+      },
+      {
+        "turn": 7,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "You’re right—we shouldn’t compare routes to the wrong place. I can’t verify yet whether that address is for the residence site or the sales gallery, so I won’t send it as the residence pin. I’ll request confirmation of the official site address and pin.",
+        "after_support_request": true
+      },
+      {
+        "turn": 8,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified official project page or brochure showing the residence-site location to share yet. I’ll get that checked along with the confirmed residence pin, clearly distinguished from the sales gallery, and send it once confirmed."
+      },
+      {
+        "turn": 8,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a verified official page or brochure showing the residence-site location, or a confirmed site pin yet. I’ll have those checked and send them once I can confirm they’re for the residence itself, not the sales gallery.",
+        "after_support_request": true
+      },
+      {
+        "turn": 9,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Understood—we’ll only send the pin once the actual residence-site location is confirmed, not the sales gallery."
+      },
+      {
+        "turn": 9,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Understood. I don’t have a verified residence-site pin yet, so I won’t send an unconfirmed location. I’ll check that the pin is for the actual residence site, not the sales gallery, and share it once confirmed.",
+        "after_support_request": true
+      },
+      {
+        "turn": 10,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have a confirmed timeframe yet, so I don’t want to guess. I’ll ask when the actual residence-site pin can be confirmed and share it once it’s verified—not the gallery pin."
+      },
+      {
+        "turn": 10,
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Sorry—I still don’t have a confirmed ETA for the residence-site pin, so I can’t give you a reliable timeframe yet. I’ll share it once it’s verified as the actual residence site, not the gallery.",
+        "after_support_request": true
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "OWN_STAY",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Verify nearby supermarkets and shops and how they can be reached; follow up on commute guidance.",
+      "important_features": [
+        "Convenient everyday errands"
+      ],
+      "decision_factors": [
+        "Suitability for both partners’ commutes",
+        "Access to supermarkets and shops"
+      ],
+      "active_concerns": [
+        "Whether nearby supermarkets and shops are accessible without driving"
+      ],
+      "last_progress": "Buyer confirmed the property is for own stay and raised everyday errands as a location consideration.",
+      "next_action": "Check verified information about nearby shops and supermarkets, including access by walking or driving."
+    },
+    "unresolved_offline_support": [
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified routes, distances, and typical travel times from Pearl Residences to Sunway Carnival and the Prai industrial area, if available.",
+          "subject": "Commute suitability for both spouses",
+          "customer_need": "Assess whether the location works for their day-to-day journeys.",
+          "reason": "No verified route or travel-time information is available, and the Prai worksite is not exact.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Give an evidence-based comparison of the two commutes and assess location fit."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified nearby supermarkets and shops, including distances and whether they are reasonably accessible on foot or require driving.",
+          "subject": "Everyday errands near Pearl Residences",
+          "customer_need": "Assess whether the location is practical for the couple’s own stay and routine errands.",
+          "reason": "No verified information about nearby shops or walking access is available.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified information about nearby shops and continue assessing the location for daily errands and both partners’ commutes."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified official map pin or coordinates for Pearl Residences in Seberang Jaya.",
+          "subject": "Project location pin",
+          "customer_need": "Compare the project location with both partners’ workplaces and regular errand locations.",
+          "reason": "No verified pin or coordinates are available in the provided information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the verified project pin and continue with evidence-based commute and everyday-errand guidance."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified official map pin or coordinates, exact project address, or nearest landmark for Pearl Residences.",
+          "subject": "Project location details",
+          "customer_need": "Compare the project location with both partners’ workplaces and regular errand destinations.",
+          "reason": "No verified pin, coordinates, address, or nearest landmark is available in the provided information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified project location details so the customer can compare routes."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirm whether the stated address in Mukim 1, Seberang Jaya, Seberang Perai Tengah, 13700 is the Pearl Residences residence site or the sales gallery, and provide the official residence-site pin if available.",
+          "subject": "Residence site versus sales gallery address",
+          "customer_need": "Compare the actual residence location with both partners’ workplaces and regular errand destinations.",
+          "reason": "The customer needs to know whether the previously shared address identifies the residence site or the sales gallery; this is not verified in the available information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Confirm which location the address identifies and share verified residence-site location details so the customer can compare routes."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirm whether the previously shared address in Mukim 1, Seberang Jaya, Seberang Perai Tengah, 13700 identifies the Pearl Residences residence site or the sales gallery, and provide the verified residence-site pin or nearest landmark if available.",
+          "subject": "Residence site versus sales gallery location",
+          "customer_need": "Compare routes to the actual residence site, not the sales gallery.",
+          "reason": "The customer explicitly needs the location type confirmed before using a pin to assess commutes and errands; available information does not verify it.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Confirm which location the address identifies, then share verified residence-site location details."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Provide the official Pearl Residences project page or brochure showing the residence-site location, and confirm the residence-site address and map pin, clearly distinguished from the sales gallery.",
+          "subject": "Official project location details",
+          "customer_need": "Verify the actual residence-site location before comparing routes to workplaces and nearby errands.",
+          "reason": "The customer requested an official project page or brochure and a confirmed residence-site pin; available information does not verify either or establish whether the previously shared address is for the residence or gallery.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the verified official project location source and residence-site pin, then continue with evidence-based commute and everyday-errand guidance."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirm whether the previously shared address is for the Pearl Residences residence site or sales gallery, and provide the verified official residence-site map pin if available.",
+          "subject": "Confirmed residence-site pin",
+          "customer_need": "Compare driving routes to both partners’ workplaces using the actual residence location.",
+          "reason": "The residence-site pin and whether the shared address refers to the site or gallery remain unverified.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Send the confirmed residence-site pin, clearly distinguished from the sales gallery."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      },
+      {
+        "status": "UNRESOLVED_OFFLINE",
+        "request": {
+          "support_type": "OTHER",
+          "requested_fact": "Expected timeframe for confirming the official Pearl Residences residence-site pin, clearly distinguished from the sales gallery, and the verified residence-site pin when available.",
+          "subject": "ETA for confirmed residence-site pin",
+          "customer_need": "Compare driving routes to both partners’ workplaces using the actual residence location.",
+          "reason": "The customer asked when the verified site pin will be available; neither the pin nor a timeframe is confirmed.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the confirmed residence-site pin and its expected availability once verified, then support the customer’s route comparison."
+        },
+        "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+      }
+    ],
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 301,
+          "output_tokens": 330,
+          "total_tokens": 631,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.192
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1625,
+          "output_tokens": 996,
+          "total_tokens": 2621,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 11.767
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 503,
+          "output_tokens": 277,
+          "total_tokens": 780,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.352
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 434,
+          "output_tokens": 472,
+          "total_tokens": 906,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 8.036
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1788,
+          "output_tokens": 1198,
+          "total_tokens": 2986,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 18.624
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 434,
+          "output_tokens": 375,
+          "total_tokens": 809,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.742
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1963,
+          "output_tokens": 1577,
+          "total_tokens": 3540,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 18.94
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 664,
+          "output_tokens": 362,
+          "total_tokens": 1026,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 6.109
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 570,
+          "output_tokens": 346,
+          "total_tokens": 916,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.477
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2276,
+          "output_tokens": 803,
+          "total_tokens": 3079,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 9.051
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 630,
+          "output_tokens": 476,
+          "total_tokens": 1106,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 7.119
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2329,
+          "output_tokens": 827,
+          "total_tokens": 3156,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 9.247
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 803,
+          "output_tokens": 250,
+          "total_tokens": 1053,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.187
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 734,
+          "output_tokens": 395,
+          "total_tokens": 1129,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 6.917
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2469,
+          "output_tokens": 559,
+          "total_tokens": 3028,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.363
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 734,
+          "output_tokens": 393,
+          "total_tokens": 1127,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.033
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2958,
+          "output_tokens": 559,
+          "total_tokens": 3517,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.087
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 927,
+          "output_tokens": 267,
+          "total_tokens": 1194,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.386
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 829,
+          "output_tokens": 900,
+          "total_tokens": 1729,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 9.648
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2866,
+          "output_tokens": 624,
+          "total_tokens": 3490,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.661
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 829,
+          "output_tokens": 764,
+          "total_tokens": 1593,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 9.156
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2841,
+          "output_tokens": 1016,
+          "total_tokens": 3857,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 11.471
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1068,
+          "output_tokens": 464,
+          "total_tokens": 1532,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 6.873
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 945,
+          "output_tokens": 411,
+          "total_tokens": 1356,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.012
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2905,
+          "output_tokens": 711,
+          "total_tokens": 3616,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 9.125
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 945,
+          "output_tokens": 537,
+          "total_tokens": 1482,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.994
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3312,
+          "output_tokens": 683,
+          "total_tokens": 3995,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 9.118
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1187,
+          "output_tokens": 306,
+          "total_tokens": 1493,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.07
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1039,
+          "output_tokens": 426,
+          "total_tokens": 1465,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 5.3
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 2972,
+          "output_tokens": 604,
+          "total_tokens": 3576,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.655
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1039,
+          "output_tokens": 406,
+          "total_tokens": 1445,
+          "cached_tokens": 1036
+        },
+        "latency_seconds": 5.028
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3375,
+          "output_tokens": 710,
+          "total_tokens": 4085,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.793
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1320,
+          "output_tokens": 222,
+          "total_tokens": 1542,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.184
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1145,
+          "output_tokens": 441,
+          "total_tokens": 1586,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 12.308
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3061,
+          "output_tokens": 571,
+          "total_tokens": 3632,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 6.497
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1145,
+          "output_tokens": 384,
+          "total_tokens": 1529,
+          "cached_tokens": 1142
+        },
+        "latency_seconds": 5.08
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3338,
+          "output_tokens": 651,
+          "total_tokens": 3989,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.395
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1445,
+          "output_tokens": 471,
+          "total_tokens": 1916,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 7.079
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1255,
+          "output_tokens": 621,
+          "total_tokens": 1876,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 13.181
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3134,
+          "output_tokens": 899,
+          "total_tokens": 4033,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 11.683
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1255,
+          "output_tokens": 420,
+          "total_tokens": 1675,
+          "cached_tokens": 1252
+        },
+        "latency_seconds": 5.494
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3808,
+          "output_tokens": 614,
+          "total_tokens": 4422,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 7.806
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1576,
+          "output_tokens": 199,
+          "total_tokens": 1775,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 4.407
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1361,
+          "output_tokens": 619,
+          "total_tokens": 1980,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 7.236
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3513,
+          "output_tokens": 602,
+          "total_tokens": 4115,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 8.192
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 1361,
+          "output_tokens": 422,
+          "total_tokens": 1783,
+          "cached_tokens": 1358
+        },
+        "latency_seconds": 5.436
+      },
+      {
+        "role": "sales_v3",
+        "transport": "responses_api",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 3853,
+          "output_tokens": 808,
+          "total_tokens": 4661,
+          "cached_tokens": 1095
+        },
+        "latency_seconds": 9.597
+      }
+    ]
+  },
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 3090,
+        "output_tokens": 2471,
+        "total_tokens": 5561,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 25.818
+    }
+  ],
+  "blind_label_map": {
+    "V2": "A",
+    "V3": "B"
+  },
+  "blind_judge": {
+    "winner": "B",
+    "scores": {
+      "A": {
+        "customer_understanding": 4,
+        "contextual_continuity": 4,
+        "sales_judgment": 4,
+        "value_relevance": 3,
+        "question_quality": 4,
+        "objection_handling": 4,
+        "repetition_control": 2,
+        "factual_accuracy": 5,
+        "viewing_timing": 5,
+        "interest_without_pressure": 5,
+        "naturalness": 3
+      },
+      "B": {
+        "customer_understanding": 5,
+        "contextual_continuity": 4,
+        "sales_judgment": 4,
+        "value_relevance": 5,
+        "question_quality": 4,
+        "objection_handling": 4,
+        "repetition_control": 2,
+        "factual_accuracy": 3,
+        "viewing_timing": 5,
+        "interest_without_pressure": 5,
+        "naturalness": 4
+      }
+    },
+    "stronger_examples": [
+      {
+        "side": "B",
+        "turn": 3,
+        "evidence": "“That’s important for day-to-day living. I don’t have verified information” about nearby shops and says it will check them along with commute guidance.",
+        "why_better": "It responds to the buyer’s own-stay errands concern without inventing nearby amenities, broadening the help beyond commute alone."
+      },
+      {
+        "side": "B",
+        "turn": 6,
+        "evidence": "“I can’t confirm whether the address I shared is for the residence site or the sales gallery, so I don’t want to guess.”",
+        "why_better": "It recognizes that a wrong destination would undermine the buyer’s route comparison and explicitly avoids presenting the address as a confirmed residence pin."
+      },
+      {
+        "side": "A",
+        "turn": 7,
+        "evidence": "“It makes sense to compare the location first before arranging a viewing.”",
+        "why_better": "It respects the buyer’s stated decision process rather than pushing an appointment before the essential location information is available."
+      }
+    ],
+    "weaker_examples": [
+      {
+        "side": "A",
+        "turn": 3,
+        "evidence": "“I don’t have a verified route check back yet, so I can’t reliably name the roads,” after the buyer asks which roads they would use.",
+        "why_worse": "The caution is appropriate, but the repeated lack of route details does not add much practical help; the agent could more clearly offer a concrete follow-up or explain what information it will verify."
+      },
+      {
+        "side": "B",
+        "turn": 5,
+        "evidence": "“I can confirm Pearl Residences is in Mukim 1, Seberang Jaya, Seberang Perai Tengah, 13700,” then says it cannot confirm whether that address is for the residence site or sales gallery at turn 6.",
+        "why_worse": "Giving a precise address before establishing that it identifies the actual residence site risks confusing the buyer’s route comparison."
+      },
+      {
+        "side": "B",
+        "turn": 9,
+        "evidence": "“I don’t have a verified residence-site pin yet… I’ll check… and share it once confirmed.”",
+        "why_worse": "This repeats the same unresolved commitment after several similar requests, without providing a new status, useful alternative, or confirmed timeframe."
+      }
+    ],
+    "simulator_quality": "Both buyers remain polite but do not prematurely agree to a viewing: A explicitly waits for the verified location, and B continues to insist on confirming the actual site rather than the gallery. That is reasonably realistic rather than automatically satisfied. B’s buyer adds errands and later clarifies that they usually drive, which develops the needs naturally, though the repeated pin requests and the turn-limit ending leave the conversation unresolved. A’s buyer also follows up persistently, but the exchange becomes repetitive.",
+    "factuality_findings": [
+      "Neither agent invents commute minutes or claims verified traffic conditions, which appropriately reflects the available information.",
+      "A consistently distinguishes the general Seberang Jaya area from an unverified pin, address, or route.",
+      "B gives a specific postal address at turn 5 but cannot confirm whether it identifies the residence site or sales gallery at turn 6. The transcript does not establish that the address is false, but it should not be treated as a verified residence location."
+    ],
+    "summary": "B wins narrowly for better coverage of the couple’s broader daily-living needs and for explicitly recognizing the risk of comparing routes to a sales gallery instead of the residence. A is stronger on factual restraint and clearly supports waiting to view until the location is confirmed. Both agents avoid fabricated travel times and avoid pressuring the buyer, but both repeat unfulfilled verification promises. B’s specific address before confirming what it refers to is its main weakness."
+  },
+  "paired_winner": "V3",
+  "pair_judged_at_utc": "2026-10-12T16:06:48.044397+00:00"
+}

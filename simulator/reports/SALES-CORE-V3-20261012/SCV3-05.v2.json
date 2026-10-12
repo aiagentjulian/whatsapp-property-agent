@@ -1,0 +1,117 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "customer_turns": 2,
+  "natural_ending_reason": "The three-bedroom unit is a genuine mismatch with the household’s non-negotiable need for four separate bedrooms.",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi! Pearl Residences’ Phase 1 units are 3 bedrooms and 2 bathrooms, so we don’t have a 4-bedroom option. Since you need space for your parents and kids, it may not be the right fit. Is 4 bedrooms essential, or would you still consider a 3-bedroom unit?"
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Yes, 4 separate bedrooms is essential—my parents need their own rooms for privacy, so a 3-bedroom unit won’t work for us. Thanks for being upfront.",
+      "simulator_done": true,
+      "simulator_ending_reason": "The three-bedroom unit is a genuine mismatch with the household’s non-negotiable need for four separate bedrooms."
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Understood—four separate bedrooms are essential for your family’s privacy, so Pearl Residences Phase 1 won’t be the right fit. Thanks for clarifying, and I hope you find a home that suits everyone."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Hi! Pearl Residences’ Phase 1 units are 3 bedrooms and 2 bathrooms, so we don’t have a 4-bedroom option. Since you need space for your parents and kids, it may not be the right fit. Is 4 bedrooms essential, or would you still consider a 3-bedroom unit?"
+    },
+    {
+      "turn": 2,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "OBJECTION",
+      "reply": "Understood—four separate bedrooms are essential for your family’s privacy, so Pearl Residences Phase 1 won’t be the right fit. Thanks for clarifying, and I hope you find a home that suits everyone."
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Clarify whether 4 bedrooms is essential",
+    "size_or_layout_preference": "Needs 4 bedrooms for parents and kids",
+    "active_concerns": [
+      "Pearl Residences Phase 1 offers 3-bedroom units, not the 4 bedrooms needed"
+    ],
+    "fit_assessment": "Potential mismatch due to 4-bedroom requirement",
+    "last_progress": "Buyer stated they need 4 bedrooms for their parents and children",
+    "next_action": "Wait to learn whether a 3-bedroom unit could still be considered",
+    "conversation_summary": "Buyer asked whether the units have 4 bedrooms and said they need 4 bedrooms for parents and children."
+  },
+  "unresolved_offline_support": [],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2530,
+        "input_tokens_details": {
+          "cache_write_tokens": 2527,
+          "cached_tokens": 0
+        },
+        "output_tokens": 773,
+        "output_tokens_details": {
+          "reasoning_tokens": 437
+        },
+        "total_tokens": 3303
+      },
+      "latency_seconds": 8.508
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 511,
+        "output_tokens": 209,
+        "total_tokens": 720,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.647
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2694,
+        "input_tokens_details": {
+          "cache_write_tokens": 2691,
+          "cached_tokens": 0
+        },
+        "output_tokens": 469,
+        "output_tokens_details": {
+          "reasoning_tokens": 235
+        },
+        "total_tokens": 3163
+      },
+      "latency_seconds": 5.719
+    }
+  ]
+}

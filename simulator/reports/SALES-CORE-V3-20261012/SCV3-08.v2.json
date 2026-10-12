@@ -1,0 +1,445 @@
+{
+  "architecture": "V2",
+  "status": "COMPLETED",
+  "customer_turns": 7,
+  "natural_ending_reason": "Natural pause while browsing; the agent has no confirmed area to share yet.",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi. Just browsing only, not planning anything yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "No worries at all—feel free to browse. I’m here if you’d like to know more about Pearl Residences later."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks, just wanted to see what kind of homes it is.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "Pearl Residences’ Phase 1 homes are Type A: 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "Oh, 3 bedrooms is decent. Is it a condo or landed? Just trying to picture it.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "It’s a high-rise home in one of three residential towers, so more apartment/condo-style than landed."
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Ah okay, condo-style. Are there basic facilities like parking and a pool?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "Yes, there’s a main swimming pool and a wading pool. I don’t have confirmed details on the parking provision yet, so I don’t want to guess."
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Pool sounds nice. What area is it in? Just want to get a rough idea.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "I don’t have the confirmed area yet, so I don’t want to guess. I’ll check and share the rough location once I have it."
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "Okay, thanks. Just send the area when you find it—I’m only browsing for now.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "I still don’t have a verified area to share, so I don’t want to guess. No rush while you’re browsing—feel free to message again if you’d like to revisit it."
+    },
+    {
+      "turn": 7,
+      "speaker": "customer",
+      "message": "No worries, I’ll leave it for now. Thanks!",
+      "simulator_done": true,
+      "simulator_ending_reason": "Natural pause while browsing; the agent has no confirmed area to share yet."
+    },
+    {
+      "turn": 7,
+      "speaker": "agent",
+      "message": "Of course, no rush. Thanks for having a look—feel free to message anytime if you’d like to pick it up again."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "NEUTRAL",
+      "reply": "No worries at all—feel free to browse. I’m here if you’d like to know more about Pearl Residences later."
+    },
+    {
+      "turn": 2,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Pearl Residences’ Phase 1 homes are Type A: 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony."
+    },
+    {
+      "turn": 3,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "It’s a high-rise home in one of three residential towers, so more apartment/condo-style than landed."
+    },
+    {
+      "turn": 4,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Yes—the project information lists a main swimming pool and a wading pool. I’ll check the parking provision so I don’t give you the wrong detail."
+    },
+    {
+      "turn": 4,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "Yes, there’s a main swimming pool and a wading pool. I don’t have confirmed details on the parking provision yet, so I don’t want to guess.",
+      "after_support_request": true
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have the confirmed area details in front of me, so I don’t want to point you to the wrong place. Let me check and get back to you."
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have the confirmed area yet, so I don’t want to guess. I’ll check and share the rough location once I have it.",
+      "after_support_request": true
+    },
+    {
+      "turn": 6,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "NEUTRAL",
+      "reply": "I still don’t have a verified area to share, so I don’t want to guess. No rush while you’re browsing—feel free to message again if you’d like to revisit it."
+    },
+    {
+      "turn": 7,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "DISENGAGED",
+      "reply": "Of course, no rush. Thanks for having a look—feel free to message anytime if you’d like to pick it up again."
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Answer the enquiry helpfully."
+  },
+  "unresolved_offline_support": [
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "OTHER",
+        "requested_fact": "Confirm the parking provision for Phase 1 residential units, including what parking is provided per unit if verified.",
+        "subject": "Pearl Residences Phase 1 parking",
+        "customer_need": "The customer wants to know whether the condo-style homes have parking.",
+        "reason": "Parking provision is not stated in the available verified project information.",
+        "resume_stage": "UNDERSTAND",
+        "resume_objective": "Share the confirmed parking information with the customer."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    },
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "OTHER",
+        "requested_fact": "Confirm the general area or location of Pearl Residences that can be shared with a buyer seeking a rough idea.",
+        "subject": "Pearl Residences location",
+        "customer_need": "The customer wants to know what area the project is in, just for a rough idea.",
+        "reason": "No verified location information is available in the supplied project knowledge.",
+        "resume_stage": "UNDERSTAND",
+        "resume_objective": "Share the confirmed general area with the customer."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    }
+  ],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "provider_calls": [
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1920,
+        "input_tokens_details": {
+          "cache_write_tokens": 1917,
+          "cached_tokens": 0
+        },
+        "output_tokens": 417,
+        "output_tokens_details": {
+          "reasoning_tokens": 200
+        },
+        "total_tokens": 2337
+      },
+      "latency_seconds": 5.143
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 451,
+        "output_tokens": 91,
+        "total_tokens": 542,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.611
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1985,
+        "input_tokens_details": {
+          "cache_write_tokens": 1982,
+          "cached_tokens": 0
+        },
+        "output_tokens": 393,
+        "output_tokens_details": {
+          "reasoning_tokens": 175
+        },
+        "total_tokens": 2378
+      },
+      "latency_seconds": 4.67
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 544,
+        "output_tokens": 136,
+        "total_tokens": 680,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.665
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2467,
+        "input_tokens_details": {
+          "cache_write_tokens": 2464,
+          "cached_tokens": 0
+        },
+        "output_tokens": 406,
+        "output_tokens_details": {
+          "reasoning_tokens": 196
+        },
+        "total_tokens": 2873
+      },
+      "latency_seconds": 5.215
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 637,
+        "output_tokens": 162,
+        "total_tokens": 799,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.881
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2356,
+        "input_tokens_details": {
+          "cache_write_tokens": 2353,
+          "cached_tokens": 0
+        },
+        "output_tokens": 674,
+        "output_tokens_details": {
+          "reasoning_tokens": 364
+        },
+        "total_tokens": 3030
+      },
+      "latency_seconds": 8.034
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2500,
+        "input_tokens_details": {
+          "cache_write_tokens": 2497,
+          "cached_tokens": 0
+        },
+        "output_tokens": 573,
+        "output_tokens_details": {
+          "reasoning_tokens": 352
+        },
+        "total_tokens": 3073
+      },
+      "latency_seconds": 6.451
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 736,
+        "output_tokens": 126,
+        "total_tokens": 862,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.748
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2559,
+        "input_tokens_details": {
+          "cache_write_tokens": 2556,
+          "cached_tokens": 0
+        },
+        "output_tokens": 487,
+        "output_tokens_details": {
+          "reasoning_tokens": 172
+        },
+        "total_tokens": 3046
+      },
+      "latency_seconds": 5.557
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2707,
+        "input_tokens_details": {
+          "cache_write_tokens": 2704,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1240,
+        "output_tokens_details": {
+          "reasoning_tokens": 835
+        },
+        "total_tokens": 3947
+      },
+      "latency_seconds": 12.831
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 833,
+        "output_tokens": 178,
+        "total_tokens": 1011,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.546
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2579,
+        "input_tokens_details": {
+          "cache_write_tokens": 2576,
+          "cached_tokens": 0
+        },
+        "output_tokens": 568,
+        "output_tokens_details": {
+          "reasoning_tokens": 338
+        },
+        "total_tokens": 3147
+      },
+      "latency_seconds": 6.745
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 940,
+        "output_tokens": 159,
+        "total_tokens": 1099,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.785
+    },
+    {
+      "role": "sales_v2",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2647,
+        "input_tokens_details": {
+          "cache_write_tokens": 2644,
+          "cached_tokens": 0
+        },
+        "output_tokens": 292,
+        "output_tokens_details": {
+          "reasoning_tokens": 74
+        },
+        "total_tokens": 2939
+      },
+      "latency_seconds": 5.322
+    }
+  ]
+}

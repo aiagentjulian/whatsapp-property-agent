@@ -1,0 +1,497 @@
+{
+  "architecture": "V3",
+  "status": "COMPLETED",
+  "customer_turns": 6,
+  "natural_ending_reason": "Natural pause; the customer has enough information for now and does not want follow-up.",
+  "transcript": [
+    {
+      "turn": 0,
+      "speaker": "customer",
+      "message": "Hi. Just browsing only, not planning anything yet."
+    },
+    {
+      "turn": 1,
+      "speaker": "agent",
+      "message": "Hi, no worries—feel free to browse. If you have any questions about Pearl Residences later, I’m happy to help."
+    },
+    {
+      "turn": 2,
+      "speaker": "customer",
+      "message": "Thanks. What kind of homes are they—mostly condos? Just curious.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 2,
+      "speaker": "agent",
+      "message": "I don’t have the confirmed home types on hand, so I don’t want to guess whether they’re mostly condos. I can check for you."
+    },
+    {
+      "turn": 3,
+      "speaker": "customer",
+      "message": "No need to check, thanks. Just browsing for now—if there’s a quick overview or link, can send it over.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 3,
+      "speaker": "agent",
+      "message": "I don’t have a verified overview or link to share right now, so I don’t want to send you the wrong one. No rush—if I get one, I’ll pass it along."
+    },
+    {
+      "turn": 4,
+      "speaker": "customer",
+      "message": "Sure, thanks. Mostly just curious about the home types and layout, not looking to discuss buying yet.",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 4,
+      "speaker": "agent",
+      "message": "For Phase 1, the verified offering is one main layout: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. It has an open-plan living, dining and kitchen area, plus a small storage space. I don’t have verified information to confirm whether it’s officially classified as a condo."
+    },
+    {
+      "turn": 5,
+      "speaker": "customer",
+      "message": "Ah, 3 bedrooms in 900 sq ft—good to know. Is there a floor plan image available to view?",
+      "simulator_done": false,
+      "simulator_ending_reason": null
+    },
+    {
+      "turn": 5,
+      "speaker": "agent",
+      "message": "I don’t have a verified floor plan image or link to share right now, so I don’t want to send you the wrong one. If I get a confirmed copy, I’ll pass it along."
+    },
+    {
+      "turn": 6,
+      "speaker": "customer",
+      "message": "No worries, thanks. If you get one later, can send it here—no need to follow up for now.",
+      "simulator_done": true,
+      "simulator_ending_reason": "Natural pause; the customer has enough information for now and does not want follow-up."
+    },
+    {
+      "turn": 6,
+      "speaker": "agent",
+      "message": "Understood—no follow-up for now. If I get a verified floor plan, I’ll share it here."
+    }
+  ],
+  "agent_actions": [
+    {
+      "turn": 1,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "NEUTRAL",
+      "reply": "Hi, no worries—feel free to browse. If you have any questions about Pearl Residences later, I’m happy to help."
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I’m not certain of the home mix, so I’d rather check than guess. I can confirm that for you."
+    },
+    {
+      "turn": 2,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have the confirmed home types on hand, so I don’t want to guess whether they’re mostly condos. I can check for you.",
+      "after_support_request": true
+    },
+    {
+      "turn": 3,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "NEUTRAL",
+      "reply": "I don’t have a verified overview link handy right now, so I don’t want to send you the wrong one. If I find the official link, I’ll share it—no rush."
+    },
+    {
+      "turn": 3,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "NEUTRAL",
+      "reply": "I don’t have a verified overview or link to share right now, so I don’t want to send you the wrong one. No rush—if I get one, I’ll pass it along.",
+      "after_support_request": true
+    },
+    {
+      "turn": 4,
+      "action": "REPLY",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "For Phase 1, the verified offering is one main layout: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. It has an open-plan living, dining and kitchen area, plus a small storage space. I don’t have verified information to confirm whether it’s officially classified as a condo."
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have a verified floor plan image to share right now, so I don’t want to send you the wrong one. I can check whether one’s available."
+    },
+    {
+      "turn": 5,
+      "action": "SUPPORT_REQUEST",
+      "sales_move": "ANSWER",
+      "buyer_signal": "QUESTION",
+      "reply": "I don’t have a verified floor plan image or link to share right now, so I don’t want to send you the wrong one. If I get a confirmed copy, I’ll pass it along.",
+      "after_support_request": true
+    },
+    {
+      "turn": 6,
+      "action": "REPLY",
+      "sales_move": "GIVE_SPACE",
+      "buyer_signal": "NEUTRAL",
+      "reply": "Understood—no follow-up for now. If I get a verified floor plan, I’ll share it here."
+    }
+  ],
+  "final_profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "UNDERSTAND",
+    "intent_level": "LOW",
+    "appointment_readiness": "NOT_READY",
+    "next_objective": "Answer the enquiry helpfully."
+  },
+  "unresolved_offline_support": [
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "OTHER",
+        "requested_fact": "What types of homes are offered at Pearl Residences, and are they mostly condos?",
+        "subject": "Pearl Residences home types",
+        "customer_need": "The customer is casually browsing and wants to know what kind of homes the project offers.",
+        "reason": "The available verified knowledge does not confirm the home types.",
+        "resume_stage": "UNDERSTAND",
+        "resume_objective": "Confirm the home types and answer the customer without pressuring them."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    },
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "OTHER",
+        "requested_fact": "Official quick overview or project link for Pearl Residences",
+        "subject": "Pearl Residences overview",
+        "customer_need": "The customer is casually browsing and asked for a quick overview or link.",
+        "reason": "No verified overview or link is available in the current information.",
+        "resume_stage": "UNDERSTAND",
+        "resume_objective": "Share a verified overview or official link if available, without pushing for a viewing or appointment."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    },
+    {
+      "status": "UNRESOLVED_OFFLINE",
+      "request": {
+        "support_type": "LAYOUT",
+        "requested_fact": "Whether a verified floor plan image is available for Pearl Residences Phase 1's 900 sq ft, 3-bedroom layout, and where it can be viewed or shared.",
+        "subject": "Phase 1 floor plan image",
+        "customer_need": "The customer is casually browsing and wants to view the floor plan image.",
+        "reason": "No verified floor plan image or access link is available in the current information.",
+        "resume_stage": "UNDERSTAND",
+        "resume_objective": "Share the verified floor plan image or viewing link if available, without steering into a buying discussion."
+      },
+      "note": "No human, live inventory, price, calendar, CRM or WhatsApp connection exists in this offline simulation."
+    }
+  ],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "provider_calls": [
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 279,
+        "output_tokens": 224,
+        "total_tokens": 503,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.607
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1285,
+        "output_tokens": 373,
+        "total_tokens": 1658,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 4.932
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 452,
+        "output_tokens": 117,
+        "total_tokens": 569,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 2.466
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 349,
+        "output_tokens": 274,
+        "total_tokens": 623,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.584
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1582,
+        "output_tokens": 456,
+        "total_tokens": 2038,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 5.278
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 349,
+        "output_tokens": 222,
+        "total_tokens": 571,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.286
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1864,
+        "output_tokens": 485,
+        "total_tokens": 2349,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 6.31
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 546,
+        "output_tokens": 187,
+        "total_tokens": 733,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.794
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 440,
+        "output_tokens": 319,
+        "total_tokens": 759,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 4.378
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 1869,
+        "output_tokens": 1101,
+        "total_tokens": 2970,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 12.386
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 440,
+        "output_tokens": 361,
+        "total_tokens": 801,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 11.856
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2160,
+        "output_tokens": 680,
+        "total_tokens": 2840,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 8.673
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 661,
+        "output_tokens": 147,
+        "total_tokens": 808,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.059
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 520,
+        "output_tokens": 366,
+        "total_tokens": 886,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 5.117
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2271,
+        "output_tokens": 1035,
+        "total_tokens": 3306,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 12.182
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 796,
+        "output_tokens": 195,
+        "total_tokens": 991,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.472
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 638,
+        "output_tokens": 377,
+        "total_tokens": 1015,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 5.482
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2437,
+        "output_tokens": 484,
+        "total_tokens": 2921,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 5.574
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 638,
+        "output_tokens": 278,
+        "total_tokens": 916,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 4.675
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2569,
+        "output_tokens": 496,
+        "total_tokens": 3065,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 12.302
+    },
+    {
+      "role": "customer_simulator",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 911,
+        "output_tokens": 266,
+        "total_tokens": 1177,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 3.956
+    },
+    {
+      "role": "sales_strategy",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 726,
+        "output_tokens": 498,
+        "total_tokens": 1224,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 6.856
+    },
+    {
+      "role": "sales_v3",
+      "transport": "responses_api",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 2931,
+        "output_tokens": 728,
+        "total_tokens": 3659,
+        "cached_tokens": 1095
+      },
+      "latency_seconds": 8.175
+    }
+  ]
+}

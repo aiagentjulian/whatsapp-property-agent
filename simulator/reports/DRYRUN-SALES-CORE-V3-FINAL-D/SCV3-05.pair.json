@@ -1,0 +1,347 @@
+{
+  "scenario_id": "SCV3-05",
+  "title": "Layout requirement and mismatch",
+  "status": "COMPLETED",
+  "V2": {
+    "architecture": "V2",
+    "status": "COMPLETED",
+    "customer_turns": 2,
+    "natural_ending_reason": "dry-run transport check",
+    "transcript": [
+      {
+        "turn": 0,
+        "speaker": "customer",
+        "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks, that helps. I will think about it.",
+        "simulator_done": true,
+        "simulator_ending_reason": "dry-run transport check"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      },
+      {
+        "turn": 2,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully."
+    },
+    "unresolved_offline_support": [],
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "provider_calls": [
+      {
+        "role": "sales_v2",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      },
+      {
+        "role": "sales_v2",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      }
+    ]
+  },
+  "metrics": {
+    "V2": {
+      "model_calls": 3,
+      "calls_by_role": {
+        "sales_v2": 2,
+        "customer_simulator": 1
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 0.0,
+      "latency_seconds_mean": 0.0,
+      "tokens": {
+        "input_tokens": 36,
+        "cached_tokens": 0,
+        "output_tokens": 18,
+        "total_tokens": 54
+      },
+      "estimated_standard_usd": null,
+      "cost_basis": "Dry-run synthetic usage; no charges."
+    },
+    "V3": {
+      "model_calls": 5,
+      "calls_by_role": {
+        "sales_strategy": 2,
+        "sales_v3": 2,
+        "customer_simulator": 1
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 0.0,
+      "latency_seconds_mean": 0.0,
+      "tokens": {
+        "input_tokens": 60,
+        "cached_tokens": 0,
+        "output_tokens": 30,
+        "total_tokens": 90
+      },
+      "estimated_standard_usd": null,
+      "cost_basis": "Dry-run synthetic usage; no charges."
+    },
+    "blind_judge": {
+      "model_calls": 1,
+      "calls_by_role": {
+        "blind_judge": 1
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 0.0,
+      "latency_seconds_mean": 0.0,
+      "tokens": {
+        "input_tokens": 12,
+        "cached_tokens": 0,
+        "output_tokens": 6,
+        "total_tokens": 18
+      },
+      "estimated_standard_usd": null,
+      "cost_basis": "Dry-run synthetic usage; no charges."
+    }
+  },
+  "V3": {
+    "architecture": "V3",
+    "status": "COMPLETED",
+    "customer_turns": 2,
+    "natural_ending_reason": "dry-run transport check",
+    "transcript": [
+      {
+        "turn": 0,
+        "speaker": "customer",
+        "message": "Hi. Need 4 bedrooms for my parents and kids. Your unit got 4 room?"
+      },
+      {
+        "turn": 1,
+        "speaker": "agent",
+        "message": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      },
+      {
+        "turn": 2,
+        "speaker": "customer",
+        "message": "Thanks, that helps. I will think about it.",
+        "simulator_done": true,
+        "simulator_ending_reason": "dry-run transport check"
+      },
+      {
+        "turn": 2,
+        "speaker": "agent",
+        "message": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      }
+    ],
+    "agent_actions": [
+      {
+        "turn": 1,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      },
+      {
+        "turn": 2,
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks for asking. I can share verified details and check anything current that is not confirmed."
+      }
+    ],
+    "final_profile": {
+      "purchase_purpose": "UNKNOWN",
+      "sales_stage": "UNDERSTAND",
+      "intent_level": "LOW",
+      "appointment_readiness": "NOT_READY",
+      "next_objective": "Answer the enquiry helpfully."
+    },
+    "unresolved_offline_support": [],
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "provider_calls": [
+      {
+        "role": "sales_strategy",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      },
+      {
+        "role": "sales_v3",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      },
+      {
+        "role": "customer_simulator",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      },
+      {
+        "role": "sales_strategy",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      },
+      {
+        "role": "sales_v3",
+        "transport": "fake",
+        "model": "gpt-6-luna",
+        "reasoning": "high",
+        "usage": {
+          "input_tokens": 12,
+          "output_tokens": 6,
+          "total_tokens": 18,
+          "cached_tokens": 0
+        },
+        "latency_seconds": 0.0,
+        "outcome": "COMPLETED"
+      }
+    ]
+  },
+  "blind_judge_provider_calls": [
+    {
+      "role": "blind_judge",
+      "transport": "fake",
+      "model": "gpt-6-luna",
+      "reasoning": "high",
+      "usage": {
+        "input_tokens": 12,
+        "output_tokens": 6,
+        "total_tokens": 18,
+        "cached_tokens": 0
+      },
+      "latency_seconds": 0.0,
+      "outcome": "COMPLETED"
+    }
+  ],
+  "blind_label_map": {
+    "V2": "B",
+    "V3": "A"
+  },
+  "blind_judge": {
+    "winner": "TIE",
+    "scores": {
+      "A": {
+        "customer_understanding": 3,
+        "contextual_continuity": 3,
+        "sales_judgment": 3,
+        "value_relevance": 3,
+        "question_quality": 3,
+        "objection_handling": 3,
+        "repetition_control": 3,
+        "factual_accuracy": 3,
+        "viewing_timing": 3,
+        "interest_without_pressure": 3,
+        "naturalness": 3
+      },
+      "B": {
+        "customer_understanding": 3,
+        "contextual_continuity": 3,
+        "sales_judgment": 3,
+        "value_relevance": 3,
+        "question_quality": 3,
+        "objection_handling": 3,
+        "repetition_control": 3,
+        "factual_accuracy": 3,
+        "viewing_timing": 3,
+        "interest_without_pressure": 3,
+        "naturalness": 3
+      }
+    },
+    "stronger_examples": [],
+    "weaker_examples": [],
+    "simulator_quality": "Transport smoke only; not a quality result.",
+    "factuality_findings": [],
+    "summary": "dry-run transport check"
+  },
+  "paired_winner": "TIE",
+  "pair_judged_at_utc": "2026-10-12T16:32:22.101698+00:00"
+}

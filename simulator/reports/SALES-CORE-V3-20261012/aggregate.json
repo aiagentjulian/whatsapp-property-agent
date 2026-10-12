@@ -1,0 +1,341 @@
+{
+  "run_id": "SALES-CORE-V3-20261012",
+  "status": "COMPLETED",
+  "scenario_count": 10,
+  "completed_pairs": 10,
+  "failed_or_incomplete_pairs": [],
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "dry_run": false,
+  "aggregate": {
+    "V2": {
+      "mean_scores": {
+        "customer_understanding": 4.5,
+        "contextual_continuity": 4.6,
+        "sales_judgment": 4.5,
+        "value_relevance": 4.2,
+        "question_quality": 4.2,
+        "objection_handling": 4.6,
+        "repetition_control": 3.7,
+        "factual_accuracy": 3.7,
+        "viewing_timing": 4.9,
+        "interest_without_pressure": 4.9,
+        "naturalness": 4.0
+      },
+      "wins": 5,
+      "completed_conversations": 10,
+      "metrics": {
+        "model_calls": 146,
+        "calls_by_role": {
+          "sales_v2": 89,
+          "customer_simulator": 57
+        },
+        "failed_or_incomplete_calls": 0,
+        "latency_seconds_total": 1136.706,
+        "latency_seconds_mean": 7.786,
+        "tokens": {
+          "input_tokens": 324817,
+          "cached_tokens": 2250,
+          "output_tokens": 101968,
+          "total_tokens": 426785
+        },
+        "estimated_standard_usd": 0.083263,
+        "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+      }
+    },
+    "V3": {
+      "mean_scores": {
+        "customer_understanding": 4.6,
+        "contextual_continuity": 4.2,
+        "sales_judgment": 3.8,
+        "value_relevance": 4.4,
+        "question_quality": 4.4,
+        "objection_handling": 4.4,
+        "repetition_control": 3.0,
+        "factual_accuracy": 3.8,
+        "viewing_timing": 5.0,
+        "interest_without_pressure": 4.9,
+        "naturalness": 3.5
+      },
+      "wins": 5,
+      "completed_conversations": 10,
+      "metrics": {
+        "model_calls": 348,
+        "calls_by_role": {
+          "sales_strategy": 139,
+          "sales_v3": 139,
+          "customer_simulator": 70
+        },
+        "failed_or_incomplete_calls": 0,
+        "latency_seconds_total": 2558.267,
+        "latency_seconds_mean": 7.351,
+        "tokens": {
+          "input_tokens": 589655,
+          "cached_tokens": 175536,
+          "output_tokens": 207031,
+          "total_tokens": 796686
+        },
+        "estimated_standard_usd": 0.146683,
+        "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+      }
+    }
+  },
+  "pair_results": [
+    {
+      "scenario_id": "SCV3-01",
+      "title": "Family buying for own stay",
+      "status": "COMPLETED",
+      "winner": "V3",
+      "customer_turns": {
+        "V2": 8,
+        "V3": 10
+      },
+      "ending_reasons": {
+        "V2": "agent requested MANDATORY_HANDOFF; no operational handoff executed",
+        "V3": "10 customer turns reached"
+      }
+    },
+    {
+      "scenario_id": "SCV3-02",
+      "title": "First-time buyer unsure of priorities",
+      "status": "COMPLETED",
+      "winner": "V3",
+      "customer_turns": {
+        "V2": 10,
+        "V3": 10
+      },
+      "ending_reasons": {
+        "V2": "The agent provided the requested checklist, and the customer has a clear next step.",
+        "V3": "Natural pause while the agent checks availability."
+      }
+    },
+    {
+      "scenario_id": "SCV3-03",
+      "title": "Budget constraints and price concern",
+      "status": "COMPLETED",
+      "winner": "V2",
+      "customer_turns": {
+        "V2": 4,
+        "V3": 7
+      },
+      "ending_reasons": {
+        "V2": "agent requested MANDATORY_HANDOFF; no operational handoff executed",
+        "V3": "No verified way to get the price breakdown through this chat"
+      }
+    },
+    {
+      "scenario_id": "SCV3-04",
+      "title": "Investor asking about rental return",
+      "status": "COMPLETED",
+      "winner": "V2",
+      "customer_turns": {
+        "V2": 8,
+        "V3": 9
+      },
+      "ending_reasons": {
+        "V2": "Pausing until verified project and rental information is available.",
+        "V3": "Pausing until verified project details and rental evidence are available"
+      }
+    },
+    {
+      "scenario_id": "SCV3-05",
+      "title": "Layout requirement and mismatch",
+      "status": "COMPLETED",
+      "winner": "V2",
+      "customer_turns": {
+        "V2": 2,
+        "V3": 7
+      },
+      "ending_reasons": {
+        "V2": "The three-bedroom unit is a genuine mismatch with the household’s non-negotiable need for four separate bedrooms.",
+        "V3": "The confirmed layout doesn’t meet the family’s non-negotiable requirement."
+      }
+    },
+    {
+      "scenario_id": "SCV3-06",
+      "title": "Location and commuting",
+      "status": "COMPLETED",
+      "winner": "V3",
+      "customer_turns": {
+        "V2": 8,
+        "V3": 10
+      },
+      "ending_reasons": {
+        "V2": "Waiting for the verified location before deciding on a viewing",
+        "V3": "10 customer turns reached"
+      }
+    },
+    {
+      "scenario_id": "SCV3-07",
+      "title": "Safety, flood and infrastructure concerns",
+      "status": "COMPLETED",
+      "winner": "V2",
+      "customer_turns": {
+        "V2": 8,
+        "V3": 9
+      },
+      "ending_reasons": {
+        "V2": "Pausing the inquiry until the safety information can be independently verified.",
+        "V3": "Buyer is pausing the viewing until they can independently verify the site and relevant records."
+      }
+    },
+    {
+      "scenario_id": "SCV3-08",
+      "title": "Cold and hesitant customer",
+      "status": "COMPLETED",
+      "winner": "V2",
+      "customer_turns": {
+        "V2": 7,
+        "V3": 6
+      },
+      "ending_reasons": {
+        "V2": "Natural pause while browsing; the agent has no confirmed area to share yet.",
+        "V3": "Natural pause; the customer has enough information for now and does not want follow-up."
+      }
+    },
+    {
+      "scenario_id": "SCV3-09",
+      "title": "Changing requirement and returning question",
+      "status": "COMPLETED",
+      "winner": "V3",
+      "customer_turns": {
+        "V2": 10,
+        "V3": 10
+      },
+      "ending_reasons": {
+        "V2": "The buyer has asked for the outstanding details and is waiting for a follow-up.",
+        "V3": "10 customer turns reached"
+      }
+    },
+    {
+      "scenario_id": "SCV3-10",
+      "title": "High intent, sensitive to pressure",
+      "status": "COMPLETED",
+      "winner": "V3",
+      "customer_turns": {
+        "V2": 2,
+        "V3": 2
+      },
+      "ending_reasons": {
+        "V2": "agent requested APPOINTMENT_HANDOFF; no operational handoff executed",
+        "V3": "agent requested APPOINTMENT_HANDOFF; no operational handoff executed"
+      }
+    }
+  ],
+  "provider_metrics": {
+    "model_calls": 504,
+    "calls_by_role": {
+      "sales_v2": 89,
+      "customer_simulator": 127,
+      "sales_strategy": 139,
+      "sales_v3": 139,
+      "blind_judge": 10
+    },
+    "failed_or_incomplete_calls": 0,
+    "latency_seconds_total": 3977.111,
+    "latency_seconds_mean": 7.891,
+    "tokens": {
+      "input_tokens": 942022,
+      "cached_tokens": 181694,
+      "output_tokens": 338894,
+      "total_tokens": 1280916
+    },
+    "estimated_standard_usd": 0.247297,
+    "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+  },
+  "api_usage_by_role": {
+    "sales_v2": {
+      "model_calls": 89,
+      "calls_by_role": {
+        "sales_v2": 89
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 897.609,
+      "latency_seconds_mean": 10.085,
+      "tokens": {
+        "input_tokens": 268960,
+        "cached_tokens": 2250,
+        "output_tokens": 87118,
+        "total_tokens": 356078
+      },
+      "estimated_standard_usd": 0.070252,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "sales_strategy": {
+      "model_calls": 139,
+      "calls_by_role": {
+        "sales_strategy": 139
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 753.846,
+      "latency_seconds_mean": 5.423,
+      "tokens": {
+        "input_tokens": 120272,
+        "cached_tokens": 24426,
+        "output_tokens": 57685,
+        "total_tokens": 177957
+      },
+      "estimated_standard_usd": 0.038671,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "sales_v3": {
+      "model_calls": 139,
+      "calls_by_role": {
+        "sales_v3": 139
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 1515.575,
+      "latency_seconds_mean": 10.903,
+      "tokens": {
+        "input_tokens": 400687,
+        "cached_tokens": 151110,
+        "output_tokens": 131600,
+        "total_tokens": 532287
+      },
+      "estimated_standard_usd": 0.092269,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "customer_simulator": {
+      "model_calls": 127,
+      "calls_by_role": {
+        "customer_simulator": 127
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 527.943,
+      "latency_seconds_mean": 4.157,
+      "tokens": {
+        "input_tokens": 124553,
+        "cached_tokens": 0,
+        "output_tokens": 32596,
+        "total_tokens": 157149
+      },
+      "estimated_standard_usd": 0.028753,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    },
+    "blind_judge": {
+      "model_calls": 10,
+      "calls_by_role": {
+        "blind_judge": 10
+      },
+      "failed_or_incomplete_calls": 0,
+      "latency_seconds_total": 282.138,
+      "latency_seconds_mean": 28.214,
+      "tokens": {
+        "input_tokens": 27550,
+        "cached_tokens": 3908,
+        "output_tokens": 29895,
+        "total_tokens": 57445
+      },
+      "estimated_standard_usd": 0.017351,
+      "cost_basis": "Standard GPT-6 Luna text token rates, short-context tier; cached input separated. Estimate excludes any unreported cache writes, taxes, and account-level adjustments."
+    }
+  },
+  "first_to_last_pair_judgment_seconds": 3790.597,
+  "duration_seconds": 0.008,
+  "limits": [
+    "Ten pairs are descriptive and not statistically significant.",
+    "Estimated charges use standard short-context text rates and retained provider-reported tokens.",
+    "During earlier resumes, one partial five-turn V3 attempt and three incomplete API responses were overwritten before their usage could be retained; the final token and cost totals therefore understate actual experiment usage by an unknown amount.",
+    "No CRM, SQLite, WhatsApp, live inventory, calendar or human-support transport is invoked."
+  ]
+}
