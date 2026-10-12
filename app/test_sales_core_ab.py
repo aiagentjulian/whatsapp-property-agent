@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 from simulator.runner.sales_core_ab import API, FakeOperations, run_conversation, report_metrics
 from app.service import support_customer_reply
+from app.provider import PROFILE_FIELDS
 
 
 class EvalTests(unittest.TestCase):
@@ -47,5 +48,22 @@ class EvalTests(unittest.TestCase):
         metrics = report_metrics(rows)
         self.assertEqual(metrics["failed_or_incomplete_calls"], 1)
         self.assertEqual(metrics["tokens"]["total_tokens"], 1000)
+
+    def test_formal_handoff_suppresses_draft_reply_as_runtime_does(self):
+        class HandoffAPI(API):
+            def fake(self, role, user):
+                if role == "sales_v2":
+                    return {"action": "APPOINTMENT_HANDOFF", "sales_move": "VIEWING", "buyer_signal": "POSITIVE",
+                            "reply": "I will confirm Saturday", "lead_updates": {key: None for key in PROFILE_FIELDS},
+                            "support_request": None, "handoff_reason": "OPERATIONAL_BOOKING", "handoff_details": "Buyer ready"}
+                return super().fake(role, user)
+        scenario = {"opening": "I want to view", "persona": "ready buyer", "facts": "ready", "motives": "see layout"}
+        config = {"model": "gpt-6-luna", "reasoning": "high", "api_key": ""}
+        with tempfile.TemporaryDirectory() as temp:
+            result = run_conversation(scenario, "V2", HandoffAPI(config, dry=True), config, Path(temp) / "pair.json")
+        self.assertEqual(result["status"], "COMPLETED")
+        self.assertEqual(len(result["transcript"]), 1)
+        self.assertEqual(result["agent_actions"][0]["suppressed_draft"], "I will confirm Saturday")
+        self.assertFalse(result["operations"]["handoff"]["appointment_confirmed"])
 
 if __name__ == "__main__": unittest.main()

@@ -274,6 +274,10 @@ def run_conversation(scenario, architecture, api, config, checkpoint):
                         action["reply"] = decision["reply"]
                 elif decision["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
                     action["operation_outcome"] = "ACCEPTED" if operations.accept_handoff(decision["action"], decision["handoff_reason"]) else "REUSED"
+                    # Production Runtime suppresses model reply after formal handoff.
+                    action["suppressed_draft"] = decision["reply"]
+                    action["reply"] = ""
+                    decision["reply"] = ""
                 actions.append(action)
                 reply = decision["reply"].strip()
                 if reply: history.append({"turn": customer_turn, "speaker": "agent", "message": reply})
