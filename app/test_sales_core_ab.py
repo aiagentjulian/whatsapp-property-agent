@@ -66,4 +66,37 @@ class EvalTests(unittest.TestCase):
         self.assertEqual(result["agent_actions"][0]["suppressed_draft"], "I will confirm Saturday")
         self.assertFalse(result["operations"]["handoff"]["appointment_confirmed"])
 
+    def test_waiting_support_event_resumes_only_with_explicit_fixture(self):
+        class EventAPI(API):
+            def __init__(self, config):
+                super().__init__(config, dry=True)
+                self.sales_calls = 0
+                self.customer_calls = 0
+            def fake(self, role, user):
+                if role == "sales_v2":
+                    self.sales_calls += 1
+                    answer = super().fake(role, user)
+                    if self.sales_calls == 1:
+                        answer.update(action="SUPPORT_REQUEST", reply="I can register a layout check.",
+                            support_request={"support_type": "LAYOUT", "subject": "Type A",
+                                "requested_fact": "approved floor plan and bedroom dimensions"})
+                    else:
+                        answer["reply"] = "The simulated result confirms three bedrooms."
+                    return answer
+                if role == "customer_simulator":
+                    self.customer_calls += 1
+                    return {"message": "Okay, thanks.", "state": "WAITING" if self.customer_calls == 1 else "END",
+                            "reason": "waiting for result" if self.customer_calls == 1 else "answered",
+                            "interest_change": "UNCHANGED"}
+                return super().fake(role, user)
+        scenario = {"opening": "Could you check the plan?", "persona": "buyer", "facts": "needs layout",
+                    "motives": "room fit", "simulated_support_result": "Synthetic fixture: verified three bedrooms"}
+        config = {"model": "gpt-6-luna", "reasoning": "high", "api_key": ""}
+        with tempfile.TemporaryDirectory() as temp:
+            result = run_conversation(scenario, "V2", EventAPI(config), config, Path(temp) / "pair.json")
+        self.assertEqual(result["status"], "COMPLETED")
+        self.assertEqual(result["operations"]["requests"][0]["status"], "RESOLVED")
+        self.assertTrue(any(s["state"] == "RESUMED" for s in result["customer_state_transitions"]))
+        self.assertIn("Synthetic fixture", str(result["operations"]["requests"][0]["support_result"]))
+
 if __name__ == "__main__": unittest.main()

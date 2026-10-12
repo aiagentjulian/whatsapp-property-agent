@@ -152,7 +152,7 @@ class V2EvalProvider:
     def __init__(self, api): self.api = api
     def decide(self, system, user):
         decision, usage, _ = self.api.request("sales_v2", system, user, agent_schema(),
-                                               "property_agent_decision", 5500, "high")
+                                               "property_agent_decision", 4500, "high")
         return decision, usage
 
 
