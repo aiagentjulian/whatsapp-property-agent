@@ -1,0 +1,972 @@
+{
+  "run_at_utc": "2026-10-13T15:09:16.666604+00:00",
+  "requested_model_id": "@cf/cloudflare/clef",
+  "model_selector": "clef",
+  "source_run_id": "20261013T144448Z",
+  "source_luna_arm": "A_V2",
+  "resource_catalog": {
+    "knowledge/project/pearlmont/01_facts/building-and-access.md": " Use this file for factual questions about building levels, lifts, corridors, drop-off, link bridges, access flow, and residential/common-area circulation.",
+    "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md": " Use this file for factual questions about carpark allocation, parking levels, bay type, EV charging, extra parking, utility rooms, and related maintenance.",
+    "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md": "  Use this file when customers ask about the Super Clubhouse, swimming pool, gym / fitness, sports facilities, community halls, who can access the clubhouse, whether facilities are free, or how the pay-per-use model works.  This file separates the private residential podium facilities from the public / pay-per-use clubhouse concept.  ---",
+    "knowledge/project/pearlmont/01_facts/commercial-component.md": " Use this file for factual questions about the commercial component, shoplots, public access, parking, and completion timing.",
+    "knowledge/project/pearlmont/01_facts/developer-and-track-record.md": "  Use this file when the customer asks who the developer is, whether the developer is established, what the developer has delivered before, or what quality track record supports the project.  Keep factual claims separate from sales interpretation.  ---",
+    "knowledge/project/pearlmont/01_facts/facilities-and-quality.md": "  Factual knowledge for Phase 1 facilities, green features, construction quality, clubhouse and common areas.  Primary source: `2026.09.21_PearlMont Phase 1_FAQ-update.pdf`.  Secondary source: `SkyWorld Pearlmont Project Brief - V4 FULL.pdf` where consistent with the newer FAQ.",
+    "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md": "  Use this file when customers ask about GreenRE, ventilation, natural lighting, solar panels, rainwater harvesting, EV charging, energy efficiency, or other sustainability features.  This file contains project facts and project-material claims. Do not expand them into guaranteed utility savings, health outcomes, or investment returns.  ---",
+    "knowledge/project/pearlmont/01_facts/location-and-connectivity.md": "  Factual knowledge for where Pearlmont is, how the site connects internally and externally, and what location-related claims are supported by the provided project materials.  Primary source: `2026.09.21_PearlMont Phase 1_FAQ-update.pdf`.  Secondary source: `SkyWorld Pearlmont Project Brief - V4 FULL.pdf` for masterplan/connectivity descriptions.",
+    "knowledge/project/pearlmont/01_facts/maintenance-and-management.md": "  This file contains factual maintenance, management, resident-access, and ongoing ownership information for SkyWorld Pearlmont Phase 1.  Use this file when the customer asks about maintenance fees, sinking fund, management, common-area operations, utility rooms, clubhouse management, resident privileges, or digital resident services.  Do not use this file as a sales script. Sales positioning belongs in the sales/USP",
+    "knowledge/project/pearlmont/01_facts/orientation-and-view.md": "  Use this file when a customer asks about tower orientation, unit facing, podium view, sea view, Plot 2 / pylon facing, blocked or unblocked views, or floor bands associated with those categories.  Do not treat a broad facing category as a guarantee of a precise visual outcome. Exact unit availability and final view should be confirmed against the latest unit chart / sales system.  ---",
+    "knowledge/project/pearlmont/01_facts/overview.md": "  Canonical high-level project facts for SkyWorld Pearlmont Phase 1.  Use this file for stable project identity and top-level factual questions. Do not use this file as the source for current rebate/package calculations; use the commercial knowledge files for those.",
+    "knowledge/project/pearlmont/01_facts/parking-access-and-security.md": "  Factual knowledge for parking allocation, access routes, EV charging, security layers and resident movement.  Primary source: `2026.09.21_PearlMont Phase 1_FAQ-update.pdf`.  Secondary source: `SkyWorld Pearlmont Project Brief - V4 FULL.pdf` for access-system descriptions where consistent with the FAQ.",
+    "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md": " Use this file for factual questions about expected completion, Phase 1 handover timing, clubhouse/school/commercial completion, and date-sensitive project milestones.",
+    "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md": "  Use this file when the customer raises concerns that require careful, factual answers rather than marketing language.  These topics can materially affect trust. Answer directly, do not dismiss the concern, do not exaggerate safety, and do not invent reassurance beyond the project materials.  ---",
+    "knowledge/project/pearlmont/01_facts/school-access-and-family.md": " Use this file for factual questions about the vertical school, school access, resident privacy, family convenience, and related project facilities.",
+    "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md": "  Use this file for customer questions about unit finishes, flooring, walls, doors, ceiling, electrical points, air-conditioning provisions, sanitary fittings, balcony details, windows, and internal specifications.  Use factual wording only. Do not imply that items are provided when the source only states that a point, sleeve, pipe, or provision is included.  ---",
+    "knowledge/project/pearlmont/01_facts/unit-and-layout.md": "  Canonical factual knowledge for Phase 1 unit configuration, orientation, internal space, specifications and layout-related questions.  Primary source: `2026.09.21_PearlMont Phase 1_FAQ-update.pdf`.  Secondary source: `SkyWorld Pearlmont Project Brief - V4 FULL.pdf` for additional layout explanation where consistent with the FAQ.",
+    "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md": "  Factual knowledge for the planned vertical school and commercial component within the Pearlmont development.  Primary source: `2026.09.21_PearlMont Phase 1_FAQ-update.pdf`.",
+    "knowledge/project/pearlmont/02_commercial/financing-and-booking.md": "  Factual knowledge for panel financiers, loan margins, booking refund rules, progressive payment, Bumi-related purchase terms and booking-stage cautions.  Primary source: `2026.09.21_PearlMont Phase 1_FAQ-update.pdf`.  LPPSA is maintained separately because it is a specific government-financing route and can change independently.",
+    "knowledge/project/pearlmont/02_commercial/lppsa.md": "  Use this file when a customer asks about LPPSA / government-sector housing financing.  LPPSA eligibility is regulated and customer-specific. The Agent may explain the current promotional information supplied to the sales team, but must not guarantee eligibility, approval, financing margin, or rate for a specific customer.  ---",
+    "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md": "  Use this file when a customer asks about panel banks, legal firms, loan support, booking refund conditions, land encumbrance, or transaction/legal support.  This file is factual project knowledge. It is not legal or financing advice.  ---",
+    "knowledge/project/pearlmont/02_commercial/pricing.md": "  Canonical reference for original/base pricing structure before current rebate/package application.  This file is not the source for the latest effective customer price. For current rebate and package mechanics, use `sales-package.md` together with this file.",
+    "knowledge/project/pearlmont/02_commercial/sales-package.md": "  Dynamic commercial knowledge for current rebate/package positioning.  This file is intentionally separate from `pricing.md` because developer rebates/packages can change without changing the original/base price structure.  When a newer official sales-package document is provided, update this file rather than rewriting historical/base pricing.",
+    "knowledge/project/pearlmont/03_sales/usp-map.md": "Pearlmont — Verified USP Reference  This is a compact reference of possible project strengths, **not** a sales sequence, customer classification, objection playbook, or required pitch. The Agent chooses independently which facts, if any, are relevant. Verify all numerical claims against the relevant factual or commercial Knowledge file."
+  },
+  "questions_per_decision": 29,
+  "quota_preflight": {
+    "authentication": "active; token verification HTTP 200",
+    "dashboard_neurons_used_today": 0.0,
+    "daily_free_limit": 10000,
+    "dashboard_observed_at_utc": "2026-10-13T14:43:05Z",
+    "usage_query_api": "GraphQL HTTP 200 but account usage query not authorized; quota confirmed from authenticated Cloudflare dashboard."
+  },
+  "cases": [
+    {
+      "scenario_id": "E14-price-after-rebate",
+      "label": "价格询问",
+      "context": [
+        {
+          "speaker": "customer",
+          "text": "What is the price after rebate for a unit now?"
+        }
+      ],
+      "luna_reply": "I’ll check the current package and confirm the after-rebate price for you—I don’t want to give you an outdated figure.",
+      "luna": {
+        "buyer_signal": "QUESTION",
+        "sales_move": "ANSWER",
+        "action": "SUPPORT_REQUEST",
+        "retrieved_knowledge_paths": [
+          "02_commercial/sales-package.md",
+          "02_commercial/pricing.md"
+        ]
+      },
+      "clef": {
+        "http_status": 200,
+        "success": true,
+        "latency_ms": 1651,
+        "endpoint_model_id": "@cf/cloudflare/clef",
+        "model_selector": "clef",
+        "response_model": "clef",
+        "answers": {
+          "buyer_signal": {
+            "type": "choice",
+            "choice": "QUESTION",
+            "probabilities": {
+              "QUESTION": 0.8751,
+              "POSITIVE": 0.0595,
+              "NEUTRAL": 0.0418,
+              "OBJECTION": 0.009,
+              "DISENGAGED": 0.0037,
+              "UNKNOWN": 0.0109
+            },
+            "confidence": 0.7255
+          },
+          "purchase_intent": {
+            "type": "choice",
+            "choice": "UNKNOWN",
+            "probabilities": {
+              "OWN_STAY": 0.0654,
+              "INVESTMENT": 0.0436,
+              "BOTH": 0.0089,
+              "EXPLORING": 0.3632,
+              "UNKNOWN": 0.5189
+            },
+            "confidence": 0.2592
+          },
+          "sales_move": {
+            "type": "choice",
+            "choice": "ANSWER",
+            "probabilities": {
+              "ANSWER": 0.8963,
+              "EXPLORE": 0.0718,
+              "POSITION": 0.0144,
+              "HANDLE": 0.0043,
+              "VIEWING": 0.0055,
+              "GIVE_SPACE": 0.0077
+            },
+            "confidence": 0.7707
+          },
+          "runtime_action": {
+            "type": "choice",
+            "choice": "REPLY",
+            "probabilities": {
+              "REPLY": 0.8876,
+              "SUPPORT_REQUEST": 0.0761,
+              "APPOINTMENT_HANDOFF": 0.0103,
+              "MANDATORY_HANDOFF": 0.026
+            },
+            "confidence": 0.7259
+          },
+          "should_give_space": {
+            "type": "noul",
+            "noul": 0.0114
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_building_and_access_md": {
+            "type": "noul",
+            "noul": 0.0121
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_carpark_and_utility_room_md": {
+            "type": "noul",
+            "noul": 0.012
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_clubhouse_and_pay_per_use_md": {
+            "type": "noul",
+            "noul": 0.011
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_commercial_component_md": {
+            "type": "noul",
+            "noul": 0.0128
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_developer_and_track_record_md": {
+            "type": "noul",
+            "noul": 0.011
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_facilities_and_quality_md": {
+            "type": "noul",
+            "noul": 0.015
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_green_building_and_sustainability_md": {
+            "type": "noul",
+            "noul": 0.012
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_location_and_connectivity_md": {
+            "type": "noul",
+            "noul": 0.014
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_maintenance_and_management_md": {
+            "type": "noul",
+            "noul": 0.0156
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_orientation_and_view_md": {
+            "type": "noul",
+            "noul": 0.0202
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_overview_md": {
+            "type": "noul",
+            "noul": 0.2027
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_parking_access_and_security_md": {
+            "type": "noul",
+            "noul": 0.0149
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_project_timeline_and_completion_md": {
+            "type": "noul",
+            "noul": 0.0101
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_risks_and_sensitive_faq_md": {
+            "type": "noul",
+            "noul": 0.015
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_school_access_and_family_md": {
+            "type": "noul",
+            "noul": 0.0153
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_specifications_and_finishes_md": {
+            "type": "noul",
+            "noul": 0.022
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_unit_and_layout_md": {
+            "type": "noul",
+            "noul": 0.167
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_vertical_school_and_commercial_md": {
+            "type": "noul",
+            "noul": 0.0141
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_financing_and_booking_md": {
+            "type": "noul",
+            "noul": 0.0403
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_lppsa_md": {
+            "type": "noul",
+            "noul": 0.0435
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_panel_financiers_and_legal_md": {
+            "type": "noul",
+            "noul": 0.0198
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_pricing_md": {
+            "type": "noul",
+            "noul": 0.8624
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_sales_package_md": {
+            "type": "noul",
+            "noul": 0.9439
+          },
+          "knowledge_knowledge_project_pearlmont_03_sales_usp_map_md": {
+            "type": "noul",
+            "noul": 0.0188
+          }
+        },
+        "usage": {
+          "input_tokens": 5547,
+          "output_tokens": 0
+        },
+        "errors": [],
+        "top_choices": {
+          "buyer_signal": "QUESTION",
+          "purchase_intent": "UNKNOWN",
+          "sales_move": "ANSWER",
+          "runtime_action": "REPLY"
+        },
+        "knowledge_routes_ranked": [
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+            "probability_relevant": 0.9439
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+            "probability_relevant": 0.8624
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/overview.md",
+            "probability_relevant": 0.2027
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+            "probability_relevant": 0.167
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+            "probability_relevant": 0.0435
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+            "probability_relevant": 0.0403
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+            "probability_relevant": 0.022
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+            "probability_relevant": 0.0202
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+            "probability_relevant": 0.0198
+          },
+          {
+            "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+            "probability_relevant": 0.0188
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+            "probability_relevant": 0.0156
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+            "probability_relevant": 0.0153
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+            "probability_relevant": 0.015
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+            "probability_relevant": 0.015
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+            "probability_relevant": 0.0149
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+            "probability_relevant": 0.0141
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+            "probability_relevant": 0.014
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+            "probability_relevant": 0.0128
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+            "probability_relevant": 0.0121
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+            "probability_relevant": 0.012
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+            "probability_relevant": 0.012
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+            "probability_relevant": 0.011
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+            "probability_relevant": 0.011
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+            "probability_relevant": 0.0101
+          }
+        ],
+        "luna_comparison": {
+          "luna": {
+            "buyer_signal": "QUESTION",
+            "sales_move": "ANSWER",
+            "action": "SUPPORT_REQUEST",
+            "retrieved_knowledge_paths": [
+              "02_commercial/sales-package.md",
+              "02_commercial/pricing.md"
+            ]
+          },
+          "clef": {
+            "buyer_signal": "QUESTION",
+            "sales_move": "ANSWER",
+            "action": "REPLY"
+          }
+        }
+      }
+    },
+    {
+      "scenario_id": "E13-maintenance-fee",
+      "label": "管理费询问",
+      "context": [
+        {
+          "speaker": "customer",
+          "text": "What's the maintenance fee and what does it cover?"
+        }
+      ],
+      "luna_reply": "The stated maintenance fee is RM0.18 per sq.ft., inclusive of the sinking fund. Selected clubhouse facilities are pay-per-use, so they aren’t all covered for unlimited use under that fee. I’m checking the exact common-area service breakdown so I can give you an accurate answer.",
+      "luna": {
+        "buyer_signal": "QUESTION",
+        "sales_move": "ANSWER",
+        "action": "SUPPORT_REQUEST",
+        "retrieved_knowledge_paths": [
+          "01_facts/clubhouse-and-pay-per-use.md",
+          "01_facts/maintenance-and-management.md"
+        ]
+      },
+      "clef": {
+        "http_status": 200,
+        "success": true,
+        "latency_ms": 733,
+        "endpoint_model_id": "@cf/cloudflare/clef",
+        "model_selector": "clef",
+        "response_model": "clef",
+        "answers": {
+          "buyer_signal": {
+            "type": "choice",
+            "choice": "QUESTION",
+            "probabilities": {
+              "QUESTION": 0.9281,
+              "POSITIVE": 0.0076,
+              "NEUTRAL": 0.0405,
+              "OBJECTION": 0.0148,
+              "DISENGAGED": 0.0032,
+              "UNKNOWN": 0.0058
+            },
+            "confidence": 0.8359
+          },
+          "purchase_intent": {
+            "type": "choice",
+            "choice": "UNKNOWN",
+            "probabilities": {
+              "OWN_STAY": 0.0641,
+              "INVESTMENT": 0.026,
+              "BOTH": 0.0062,
+              "EXPLORING": 0.3508,
+              "UNKNOWN": 0.5529
+            },
+            "confidence": 0.292
+          },
+          "sales_move": {
+            "type": "choice",
+            "choice": "ANSWER",
+            "probabilities": {
+              "ANSWER": 0.9605,
+              "EXPLORE": 0.0158,
+              "POSITION": 0.0082,
+              "HANDLE": 0.0068,
+              "VIEWING": 0.0039,
+              "GIVE_SPACE": 0.0048
+            },
+            "confidence": 0.9076
+          },
+          "runtime_action": {
+            "type": "choice",
+            "choice": "REPLY",
+            "probabilities": {
+              "REPLY": 0.9587,
+              "SUPPORT_REQUEST": 0.0175,
+              "APPOINTMENT_HANDOFF": 0.0098,
+              "MANDATORY_HANDOFF": 0.014
+            },
+            "confidence": 0.8929
+          },
+          "should_give_space": {
+            "type": "noul",
+            "noul": 0.0077
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_building_and_access_md": {
+            "type": "noul",
+            "noul": 0.0116
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_carpark_and_utility_room_md": {
+            "type": "noul",
+            "noul": 0.1236
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_clubhouse_and_pay_per_use_md": {
+            "type": "noul",
+            "noul": 0.2275
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_commercial_component_md": {
+            "type": "noul",
+            "noul": 0.0073
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_developer_and_track_record_md": {
+            "type": "noul",
+            "noul": 0.0072
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_facilities_and_quality_md": {
+            "type": "noul",
+            "noul": 0.3057
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_green_building_and_sustainability_md": {
+            "type": "noul",
+            "noul": 0.0155
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_location_and_connectivity_md": {
+            "type": "noul",
+            "noul": 0.0074
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_maintenance_and_management_md": {
+            "type": "noul",
+            "noul": 0.9905
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_orientation_and_view_md": {
+            "type": "noul",
+            "noul": 0.0067
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_overview_md": {
+            "type": "noul",
+            "noul": 0.0599
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_parking_access_and_security_md": {
+            "type": "noul",
+            "noul": 0.0434
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_project_timeline_and_completion_md": {
+            "type": "noul",
+            "noul": 0.0113
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_risks_and_sensitive_faq_md": {
+            "type": "noul",
+            "noul": 0.0225
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_school_access_and_family_md": {
+            "type": "noul",
+            "noul": 0.011
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_specifications_and_finishes_md": {
+            "type": "noul",
+            "noul": 0.01
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_unit_and_layout_md": {
+            "type": "noul",
+            "noul": 0.0123
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_vertical_school_and_commercial_md": {
+            "type": "noul",
+            "noul": 0.0166
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_financing_and_booking_md": {
+            "type": "noul",
+            "noul": 0.0086
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_lppsa_md": {
+            "type": "noul",
+            "noul": 0.008
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_panel_financiers_and_legal_md": {
+            "type": "noul",
+            "noul": 0.0107
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_pricing_md": {
+            "type": "noul",
+            "noul": 0.0131
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_sales_package_md": {
+            "type": "noul",
+            "noul": 0.0151
+          },
+          "knowledge_knowledge_project_pearlmont_03_sales_usp_map_md": {
+            "type": "noul",
+            "noul": 0.0152
+          }
+        },
+        "usage": {
+          "input_tokens": 5547,
+          "output_tokens": 0
+        },
+        "errors": [],
+        "top_choices": {
+          "buyer_signal": "QUESTION",
+          "purchase_intent": "UNKNOWN",
+          "sales_move": "ANSWER",
+          "runtime_action": "REPLY"
+        },
+        "knowledge_routes_ranked": [
+          {
+            "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+            "probability_relevant": 0.9905
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+            "probability_relevant": 0.3057
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+            "probability_relevant": 0.2275
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+            "probability_relevant": 0.1236
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/overview.md",
+            "probability_relevant": 0.0599
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+            "probability_relevant": 0.0434
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+            "probability_relevant": 0.0225
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+            "probability_relevant": 0.0166
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+            "probability_relevant": 0.0155
+          },
+          {
+            "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+            "probability_relevant": 0.0152
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+            "probability_relevant": 0.0151
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+            "probability_relevant": 0.0131
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+            "probability_relevant": 0.0123
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+            "probability_relevant": 0.0116
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+            "probability_relevant": 0.0113
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+            "probability_relevant": 0.011
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+            "probability_relevant": 0.0107
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+            "probability_relevant": 0.01
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+            "probability_relevant": 0.0086
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+            "probability_relevant": 0.008
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+            "probability_relevant": 0.0074
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+            "probability_relevant": 0.0073
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+            "probability_relevant": 0.0072
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+            "probability_relevant": 0.0067
+          }
+        ],
+        "luna_comparison": {
+          "luna": {
+            "buyer_signal": "QUESTION",
+            "sales_move": "ANSWER",
+            "action": "SUPPORT_REQUEST",
+            "retrieved_knowledge_paths": [
+              "01_facts/clubhouse-and-pay-per-use.md",
+              "01_facts/maintenance-and-management.md"
+            ]
+          },
+          "clef": {
+            "buyer_signal": "QUESTION",
+            "sales_move": "ANSWER",
+            "action": "REPLY"
+          }
+        }
+      }
+    },
+    {
+      "scenario_id": "E15-facility-overload",
+      "label": "家庭设施询问",
+      "context": [
+        {
+          "speaker": "customer",
+          "text": "Which facilities could be useful for a family with kids?"
+        }
+      ],
+      "luna_reply": "For kids, the children’s playground and kids’ pool/water-play facilities could be useful. There’s also a large 10-acre facilities and landscape deck, plus a tadika and community halls. The pool and water-play facilities are part of the clubhouse concept, which is pay-per-use.",
+      "luna": {
+        "buyer_signal": "QUESTION",
+        "sales_move": "ANSWER",
+        "action": "REPLY",
+        "retrieved_knowledge_paths": [
+          "01_facts/school-access-and-family.md"
+        ]
+      },
+      "clef": {
+        "http_status": 200,
+        "success": true,
+        "latency_ms": 720,
+        "endpoint_model_id": "@cf/cloudflare/clef",
+        "model_selector": "clef",
+        "response_model": "clef",
+        "answers": {
+          "buyer_signal": {
+            "type": "choice",
+            "choice": "QUESTION",
+            "probabilities": {
+              "QUESTION": 0.884,
+              "POSITIVE": 0.0428,
+              "NEUTRAL": 0.0498,
+              "OBJECTION": 0.0089,
+              "DISENGAGED": 0.0028,
+              "UNKNOWN": 0.0117
+            },
+            "confidence": 0.7431
+          },
+          "purchase_intent": {
+            "type": "choice",
+            "choice": "EXPLORING",
+            "probabilities": {
+              "OWN_STAY": 0.3674,
+              "INVESTMENT": 0.0152,
+              "BOTH": 0.0196,
+              "EXPLORING": 0.3907,
+              "UNKNOWN": 0.2071
+            },
+            "confidence": 0.1639
+          },
+          "sales_move": {
+            "type": "choice",
+            "choice": "ANSWER",
+            "probabilities": {
+              "ANSWER": 0.7559,
+              "EXPLORE": 0.0798,
+              "POSITION": 0.149,
+              "HANDLE": 0.0064,
+              "VIEWING": 0.0033,
+              "GIVE_SPACE": 0.0056
+            },
+            "confidence": 0.5201
+          },
+          "runtime_action": {
+            "type": "choice",
+            "choice": "REPLY",
+            "probabilities": {
+              "REPLY": 0.9774,
+              "SUPPORT_REQUEST": 0.0095,
+              "APPOINTMENT_HANDOFF": 0.0064,
+              "MANDATORY_HANDOFF": 0.0067
+            },
+            "confidence": 0.9406
+          },
+          "should_give_space": {
+            "type": "noul",
+            "noul": 0.0115
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_building_and_access_md": {
+            "type": "noul",
+            "noul": 0.049
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_carpark_and_utility_room_md": {
+            "type": "noul",
+            "noul": 0.0111
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_clubhouse_and_pay_per_use_md": {
+            "type": "noul",
+            "noul": 0.8643
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_commercial_component_md": {
+            "type": "noul",
+            "noul": 0.0446
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_developer_and_track_record_md": {
+            "type": "noul",
+            "noul": 0.0076
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_facilities_and_quality_md": {
+            "type": "noul",
+            "noul": 0.8585
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_green_building_and_sustainability_md": {
+            "type": "noul",
+            "noul": 0.0808
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_location_and_connectivity_md": {
+            "type": "noul",
+            "noul": 0.0711
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_maintenance_and_management_md": {
+            "type": "noul",
+            "noul": 0.0332
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_orientation_and_view_md": {
+            "type": "noul",
+            "noul": 0.007
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_overview_md": {
+            "type": "noul",
+            "noul": 0.0961
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_parking_access_and_security_md": {
+            "type": "noul",
+            "noul": 0.0101
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_project_timeline_and_completion_md": {
+            "type": "noul",
+            "noul": 0.0357
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_risks_and_sensitive_faq_md": {
+            "type": "noul",
+            "noul": 0.008
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_school_access_and_family_md": {
+            "type": "noul",
+            "noul": 0.907
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_specifications_and_finishes_md": {
+            "type": "noul",
+            "noul": 0.0102
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_unit_and_layout_md": {
+            "type": "noul",
+            "noul": 0.0316
+          },
+          "knowledge_knowledge_project_pearlmont_01_facts_vertical_school_and_commercial_md": {
+            "type": "noul",
+            "noul": 0.7099
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_financing_and_booking_md": {
+            "type": "noul",
+            "noul": 0.0053
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_lppsa_md": {
+            "type": "noul",
+            "noul": 0.0064
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_panel_financiers_and_legal_md": {
+            "type": "noul",
+            "noul": 0.008
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_pricing_md": {
+            "type": "noul",
+            "noul": 0.0071
+          },
+          "knowledge_knowledge_project_pearlmont_02_commercial_sales_package_md": {
+            "type": "noul",
+            "noul": 0.008
+          },
+          "knowledge_knowledge_project_pearlmont_03_sales_usp_map_md": {
+            "type": "noul",
+            "noul": 0.1164
+          }
+        },
+        "usage": {
+          "input_tokens": 5547,
+          "output_tokens": 0
+        },
+        "errors": [],
+        "top_choices": {
+          "buyer_signal": "QUESTION",
+          "purchase_intent": "EXPLORING",
+          "sales_move": "ANSWER",
+          "runtime_action": "REPLY"
+        },
+        "knowledge_routes_ranked": [
+          {
+            "path": "knowledge/project/pearlmont/01_facts/school-access-and-family.md",
+            "probability_relevant": 0.907
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/clubhouse-and-pay-per-use.md",
+            "probability_relevant": 0.8643
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+            "probability_relevant": 0.8585
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/vertical-school-and-commercial.md",
+            "probability_relevant": 0.7099
+          },
+          {
+            "path": "knowledge/project/pearlmont/03_sales/usp-map.md",
+            "probability_relevant": 0.1164
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/overview.md",
+            "probability_relevant": 0.0961
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/green-building-and-sustainability.md",
+            "probability_relevant": 0.0808
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+            "probability_relevant": 0.0711
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/building-and-access.md",
+            "probability_relevant": 0.049
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/commercial-component.md",
+            "probability_relevant": 0.0446
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/project-timeline-and-completion.md",
+            "probability_relevant": 0.0357
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/maintenance-and-management.md",
+            "probability_relevant": 0.0332
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/unit-and-layout.md",
+            "probability_relevant": 0.0316
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/carpark-and-utility-room.md",
+            "probability_relevant": 0.0111
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/specifications-and-finishes.md",
+            "probability_relevant": 0.0102
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/parking-access-and-security.md",
+            "probability_relevant": 0.0101
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/risks-and-sensitive-faq.md",
+            "probability_relevant": 0.008
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/panel-financiers-and-legal.md",
+            "probability_relevant": 0.008
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/sales-package.md",
+            "probability_relevant": 0.008
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/developer-and-track-record.md",
+            "probability_relevant": 0.0076
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/pricing.md",
+            "probability_relevant": 0.0071
+          },
+          {
+            "path": "knowledge/project/pearlmont/01_facts/orientation-and-view.md",
+            "probability_relevant": 0.007
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/lppsa.md",
+            "probability_relevant": 0.0064
+          },
+          {
+            "path": "knowledge/project/pearlmont/02_commercial/financing-and-booking.md",
+            "probability_relevant": 0.0053
+          }
+        ],
+        "luna_comparison": {
+          "luna": {
+            "buyer_signal": "QUESTION",
+            "sales_move": "ANSWER",
+            "action": "REPLY",
+            "retrieved_knowledge_paths": [
+              "01_facts/school-access-and-family.md"
+            ]
+          },
+          "clef": {
+            "buyer_signal": "QUESTION",
+            "sales_move": "ANSWER",
+            "action": "REPLY"
+          }
+        }
+      }
+    }
+  ],
+  "status": "complete",
+  "usage_summary": {
+    "calls": 3,
+    "input_tokens": 16641,
+    "output_tokens": 0,
+    "neurons_reported_by_api": null,
+    "dashboard_neurons_after_run": 121.03,
+    "dashboard_neurons_consumed_by_run": 121.03,
+    "daily_limit_neurons": 10000,
+    "mean_latency_ms": 1035,
+    "latency_ms_by_case": [
+      1651,
+      733,
+      720
+    ],
+    "dashboard_observed_at_utc": "2026-10-13T15:11:16Z"
+  },
+  "estimated_cost_usd": 0.0,
+  "cost_note": "Dashboard showed 121.03 of 10,000 daily free Neurons used after these three calls; no usage.neurons field was present in the individual API responses. Estimated marginal cost is USD 0.00 within the daily free allocation."
+}
