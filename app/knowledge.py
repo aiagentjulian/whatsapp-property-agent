@@ -172,6 +172,14 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
         # ownership costs, without implying it is the buyer's full monthly cost.
         terms.update({"maintenance", "fee"})
     lower_query = (query or "").lower()
+    # A buyer may reveal a budget or price concern without asking a question.
+    # Retrieve commercial evidence for that signal; leave the sales decision to the LLM.
+    commercial_context = bool(raw_terms & {
+        "budget", "afford", "affordable", "expensive", "cheap", "price",
+        "pricing", "rebate", "package", "deposit",
+    }) or bool(re.search(r"\\brm\\s*[\\d,]+(?:\\.\\d+)?\\s*[km]?\\b", lower_query))
+    if commercial_context:
+        terms.update({"price", "rebate", "package"})
     general_intro = "project" in raw_terms and any(
         phrase in lower_query for phrase in ("more about", "tell me about", "know more", "about this project")
     )
@@ -256,6 +264,12 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
             continue
         if relative.startswith("04_internal/"):
             content = INTERNAL_MARKER + "\n" + content
+        if commercial_context and relative == "02_commercial/sales-package.md":
+            # Keep the package date and validity warning with the selected
+            # passage; a rebate sheet is not proof of today's offer.
+            package_sections = dict(_passages((KNOWLEDGE / relative).read_text(encoding="utf-8")))
+            content += "\n\nPackage provenance:\n" + package_sections.get("Current source", "")
+            content += "\n" + package_sections.get("Dynamic-data warning", "")
         selected.append({"path": relative, "heading": heading, "score": score, "content": content})
         files_seen[relative] = files_seen.get(relative, 0) + 1
         if len(selected) >= min(limit, 2):
