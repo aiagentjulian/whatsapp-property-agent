@@ -177,7 +177,7 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
     commercial_context = bool(raw_terms & {
         "budget", "afford", "affordable", "expensive", "cheap", "price",
         "pricing", "rebate", "package", "deposit",
-    }) or bool(re.search(r"\\brm\\s*[\\d,]+(?:\\.\\d+)?\\s*[km]?\\b", lower_query))
+    }) or bool(re.search(r"\brm\s*[\d,]+(?:\.\d+)?\s*[km]?\b", lower_query))
     if commercial_context:
         terms.update({"price", "rebate", "package"})
     general_intro = "project" in raw_terms and any(
