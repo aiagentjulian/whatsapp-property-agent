@@ -149,6 +149,19 @@ class RuntimeTests(unittest.TestCase):
         pool_details = retrieve("Could you give me a fuller explanation of the main pool and kids’ pool, including their approximate lengths and depths?")
         self.assertTrue(any("55m" in row["content"] or "55 m" in row["content"] for row in pool_details))
 
+    def test_implicit_budget_signals_retrieve_commercial_knowledge(self):
+        # A buyer can reveal a sales opportunity without asking a direct question.
+        for utterance in ("My budget is around RM600k to RM700k", "Around RM650k"):
+            with self.subTest(utterance=utterance):
+                passages = retrieve(utterance)
+                self.assertTrue(any(row["path"].startswith("02_commercial/")
+                                    for row in passages), passages)
+                self.assertFalse(any(row["path"].startswith("04_internal/")
+                                     for row in passages))
+                for row in passages:
+                    if row["path"] == "02_commercial/sales-package.md":
+                        self.assertIn("14 August 2026", row["content"])
+
     def test_history_order_is_stable_for_equal_timestamps(self):
         store = Store(self.path)
         lead, _, _ = store.ingest("Alice Example", "h1", "first")
@@ -212,10 +225,11 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("BPG", context)
         self.assertIn("Pearl Residences", SYSTEM_PROMPT)
         self.assertIn("Pearl Residences", context)
-        self.assertIn("independent sales judgment", context.lower())
+        self.assertIn("Choose your own approach", context)
         self.assertIn("Malaysian", SYSTEM_PROMPT)
-        self.assertIn("Never force jokes", context)
-        self.assertIn("answer truthfully", SYSTEM_PROMPT)
+        self.assertIn("Answer truthfully", SYSTEM_PROMPT)
+        self.assertIn("using your own judgment", SYSTEM_PROMPT)
+        self.assertNotIn("four bedrooms", context.lower())
         self.assertNotIn("if the customer says 'own stay'", SYSTEM_PROMPT.lower())
         self.assertNotIn("oh ok", SYSTEM_PROMPT.lower())
 
