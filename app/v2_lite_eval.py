@@ -25,9 +25,9 @@ BASE_SHA = "778104a3c14b2cc3a870206d83934039b898819b"
 LITE_SHA = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
 MAIN_ROOT = Path(os.environ.get("V2_MAIN_WORKTREE", ROOT.parent / "whatsapp-property-agent-main-v2-eval-20261013")).resolve()
 SCENARIO_IDS = (
-    "P3-family-four-bedroom-budget", "E05-layout-four-bedrooms", "P3-too-expensive-ambiguous",
-    "E02-first-home-unsure", "P3-short-oh-okay", "P3-pricing-rebates-maintenance",
-    "E30-ready-but-no-pressure", "P3-explicit-no-contact",
+    "E09-vague-more-info", "E14-price-after-rebate", "E04-tight-budget",
+    "E13-maintenance-fee", "E31-floor-plan-room-sizes", "E32-building-floors",
+    "E15-facility-overload", "E10-viewing-saturday",
 )
 CRITERIA = (
     "intent_understanding", "natural_continuation", "valuable_questions", "relevant_advantages",
