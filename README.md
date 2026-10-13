@@ -40,14 +40,16 @@ The access token is stored in ignored, permission-restricted `data/lead/google-t
 
 Prospects can be reviewed and created locally. `create-prospect` only creates a `NOT_SENT` Prospect after checking the exact `WHATSAPP_OUTBOUND_ALLOWLIST`; it does not send a message.
 
-The core sales journey is `UNDERSTAND → QUALIFY → POSITION → HANDLE → INTENT → CLOSE`.
+Sales-stage labels are for internal CRM tracking, not a mandatory order for the LLM to follow. The V2 Lite Brain defines the mission, independent judgment and boundaries; Knowledge supplies property facts and optional selling evidence.
 
 ## Sales Core V2: local model evaluation and clean test sessions
 
 The Runtime loads a compact Sales Brain, verified factual Knowledge, recent
-conversation, and at most two focused selling possibilities. It records an
-internal customer signal and sales move alongside each reply. These are
-decision aids, not customer-facing scripts.
+conversation, and at most two focused selling possibilities. These are retrieval
+hints, not a limit on the LLM's sales strategies. It records an internal customer
+signal and sales move alongside each reply; they are not customer-facing scripts.
+Unprompted buyer-budget statements can retrieve commercial evidence. Dated sales
+packages still require validity checks before quoting an offer as current.
 
 To test real GPT-6 Luna / High responses **without sending WhatsApp messages
 or writing to the production CRM**, run:
