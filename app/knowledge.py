@@ -224,9 +224,7 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
     sales_query = bool(terms & {"concern", "concerns", "objection", "small", "suit", "suitable", "fit", "invest", "investment", "yield", "view", "viewing", "priority", "recommend", "compare", "comparison"})
     for path in KNOWLEDGE.rglob("*.md"):
         relative = path.relative_to(KNOWLEDGE).as_posix()
-        if sales_only and relative not in (
-            "03_sales/selling-angles.md", "03_sales/usp-map.md",
-        ):
+        if sales_only and relative != "03_sales/usp-map.md":
             continue
         if not sales_only and relative.startswith("04_internal/") and not allow_internal:
             continue
