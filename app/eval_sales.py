@@ -29,9 +29,20 @@ SCENARIOS = {
         "Can you tell me the maintenance fee, and what is included?",
         "What is the price after rebate?",
     ],
-    "hard_mismatch": [
-        "We need a four-bedroom unit. Must have 4 bedrooms.",
-        "Three bedrooms definitely cannot work for us.",
+    "layout": [
+        "Is this the 900 sqft 3-bedroom project?",
+        "Do you have a floor plan and how big are the bedrooms?",
+    ],
+    "floors": [
+        "How many floors are there and what are the blocks?",
+        "Can I choose a higher floor?",
+    ],
+    "facilities": [
+        "Does the condo have swimming pool, gym and other facilities?",
+        "Are the clubhouse facilities included in maintenance?",
+    ],
+    "parking": [
+        "Does the unit come with one or two car parks?",
     ],
     "viewing": [
         "I am buying for own stay. Can I visit the show unit this Saturday?",
@@ -48,7 +59,7 @@ QUALITY_CRITERIA = (
     "avoids a brochure-style information dump on general enquiry",
     "distinguishes neutral acknowledgement from a strong buying signal",
     "does not repeat previously pitched benefits without reason",
-    "does not claim nonexistent four-bedroom units or invented facts",
+    "answers from verified layouts, unit categories and pricing without inventing facts",
     "acknowledges overload and gives the customer room",
     "responds to viewing interest without promising an unverified booking",
     "maintains a natural, commercially helpful Malaysian WhatsApp conversation",
