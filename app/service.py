@@ -91,6 +91,7 @@ class Runtime:
         updates.update({"lead_id": lead["lead_id"], "phone": lead["phone"], "lead_source": lead["lead_source"], "owner": lead["owner"], "ai_session_status": lead["ai_session_status"]})
         self.store.update_profile(lead["lead_id"], updates)
         action = decision["action"]
+        handoff_reply = False
         if action == "SUPPORT_REQUEST":
             request = dict(decision["support_request"])
             request["signature"] = support_signature(request)
@@ -99,14 +100,28 @@ class Runtime:
         elif action in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
             formal_type = "APPOINTMENT_HANDOFF" if action == "APPOINTMENT_HANDOFF" else "MANDATORY_OPERATIONAL_HANDOFF"
             success = self.store.formal_handoff(lead["lead_id"], formal_type, decision["handoff_reason"], decision.get("handoff_details") or body)
-            return {"status": "handed_off" if success else "handoff_suppressed", "lead_id": lead["lead_id"], "reply": None}
+            if not success:
+                return {"status": "handoff_suppressed", "lead_id": lead["lead_id"], "reply": None}
+            handoff_reply = True
+            reply = (
+                "I’ve shared your viewing request with our team. They’ll follow up to confirm availability."
+                if action == "APPOINTMENT_HANDOFF"
+                else "I’ve passed this to our team, and someone will follow up with you."
+            )
+            result = {"status": "handed_off", "lead_id": lead["lead_id"]}
         else:
             result = {"status": "reply_ready", "lead_id": lead["lead_id"]}
-        reply = decision["reply"].strip()
+        if not handoff_reply:
+            reply = decision["reply"].strip()
         if reply:
             # Recheck persisted authority immediately before creating/sending an outbound message.
             current = self.store.get(lead["lead_id"])
-            if current["owner"] != "AI" or current["ai_session_status"] != "ACTIVE":
+            authorized = (
+                current["owner"] == "HUMAN" and current["ai_session_status"] == "ENDED"
+                if handoff_reply
+                else current["owner"] == "AI" and current["ai_session_status"] == "ACTIVE"
+            )
+            if not authorized:
                 return {"status": "suppressed", "reason": "ownership_changed_before_send", "lead_id": lead["lead_id"]}
             out_id = self.store.add_message(lead["lead_id"], "OUTBOUND", reply, "pending_send" if send_reply else "not_sent")
             if send_reply:

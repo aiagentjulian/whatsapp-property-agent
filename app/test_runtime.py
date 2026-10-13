@@ -94,8 +94,17 @@ class RuntimeTests(unittest.TestCase):
                          "appointment_readiness": "READY_FOR_APPOINTMENT"})
         agent = FakeAgent(ready, decision(reply="should never be called"))
         runtime = Runtime(self.config, Store(self.path), agent)
-        result = runtime.process_inbound("Alice Example", "h1", "I want to view this Saturday.")
+        sends = []
+        result = runtime.process_inbound("Alice Example", "h1", "I want to view this Saturday.", True,
+                                         lambda contact, text: sends.append((contact, text)) or {"message_id": "out-h1"})
         self.assertEqual(result["status"], "handed_off")
+        self.assertIn("follow up to confirm availability", result["reply"])
+        self.assertNotIn("confirmed", result["reply"].lower())
+        self.assertEqual(result["send_status"], "sent")
+        self.assertEqual(sends, [("Alice Example", result["reply"])])
+        self.assertEqual(runtime.process_inbound("Alice Example", "h1", "I want to view this Saturday.", True,
+                                                  lambda contact, text: self.fail("duplicate must not send"))["status"],
+                         "duplicate")
         lead = runtime.store.get(result["lead_id"])
         self.assertEqual(lead["owner"], "HUMAN")
         self.assertEqual(lead["ai_session_status"], "ENDED")
@@ -103,6 +112,21 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(len(runtime.store.handoffs()), 1)
         self.assertEqual(len(agent.decisions), 1)
         self.assertFalse(runtime.store.formal_handoff(lead["lead_id"], "APPOINTMENT_HANDOFF", "OTHER", "again"))
+
+    def test_mandatory_handoff_sends_acknowledgment_after_owner_transfer(self):
+        mandatory = decision("MANDATORY_HANDOFF", "Use this LLM reply only.", handoff_reason="EXPLICIT_HUMAN_REQUEST",
+                             handoff_details="Buyer requested a human agent")
+        runtime = Runtime(self.config, Store(self.path), FakeAgent(mandatory))
+        sends = []
+        result = runtime.process_inbound("Alice Example", "mh1", "Can a person help me?", True,
+                                         lambda contact, text: sends.append((contact, text)) or {"message_id": "out-mh1"})
+        self.assertEqual(result["status"], "handed_off")
+        self.assertEqual(result["send_status"], "sent")
+        self.assertEqual(result["reply"], "I’ve passed this to our team, and someone will follow up with you.")
+        self.assertEqual(sends, [("Alice Example", result["reply"])])
+        lead = runtime.store.get(result["lead_id"])
+        self.assertEqual((lead["owner"], lead["ai_session_status"]), ("HUMAN", "ENDED"))
+        self.assertEqual(len(runtime.store.handoffs()), 1)
 
     def test_appointment_handoff_requires_ready_state(self):
         malformed = decision("APPOINTMENT_HANDOFF", handoff_reason="OPERATIONAL_BOOKING")
