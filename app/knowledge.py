@@ -26,7 +26,59 @@ def tokenize(text):
         "depths": "depth", "facilities": "facility", "children": "child",
         "costs": "cost",
     }
-    return {aliases.get(term, term) for term in terms}
+    normalized = {aliases.get(term, term) for term in terms}
+    # Lightweight vocabulary expansion: no extra model, service, or index.
+    # These are retrieval cues, never assertions about the buyer.
+    related = {
+        "instalment": {"mortgage", "loan", "financing", "price"},
+        "installment": {"instalment", "mortgage", "loan", "price"},
+        "repayment": {"mortgage", "loan", "financing", "price"},
+        "mortgage": {"loan", "financing", "price"},
+        "monthly": {"maintenance", "instalment"},
+        "budget": {"price", "maintenance"},
+        "mum": {"mother", "lift", "access"},
+        "mom": {"mother", "lift", "access"},
+        "mother": {"lift", "access"},
+        "elderly": {"lift", "access"},
+        "wheelchair": {"lift", "access"},
+        "elevator": {"lift"},
+        "lifts": {"lift"},
+        "schools": {"school"},
+        "schooling": {"school"},
+        "flooding": {"flood"},
+        "nearby": {"location", "school"},
+        "four": {"bedroom", "layout"},
+    }
+    for term in tuple(normalized):
+        normalized.update(related.get(term, ()))
+    # Recognize common Chinese WhatsApp questions without adding an NLP stack.
+    zh_terms = {
+        "月供": {"instalment", "mortgage", "price"},
+        "贷款": {"loan", "financing"},
+        "房贷": {"loan", "mortgage"},
+        "价格": {"price"},
+        "多少钱": {"price"},
+        "预算": {"budget", "price"},
+        "管理费": {"maintenance", "fee"},
+        "维修费": {"maintenance", "fee"},
+        "学校": {"school"},
+        "附近": {"nearby", "location"},
+        "电梯": {"lift"},
+        "老人": {"lift", "access"},
+        "妈妈": {"mother", "lift"},
+        "母亲": {"mother", "lift"},
+        "房间": {"bedroom", "layout"},
+        "户型": {"layout"},
+        "四房": {"bedroom", "layout"},
+        "水灾": {"flood"},
+        "淹水": {"flood"},
+        "看房": {"viewing"},
+    }
+    lowered = text.lower()
+    for phrase, mapped in zh_terms.items():
+        if phrase in lowered:
+            normalized.update(mapped)
+    return normalized
 
 
 def _passages(text):
@@ -160,7 +212,7 @@ def _non_identifying_facts(content):
     return "\n".join(line for line in content.splitlines() if line.strip().startswith(labels))
 
 
-def retrieve(query, lead_profile=None, limit=3, sales_only=False):
+def retrieve(query, lead_profile=None, limit=5, sales_only=False):
     """Return the most relevant short Knowledge passages; gate internal ownership material."""
     profile = lead_profile or {}
     raw_terms = tokenize(query)
@@ -209,7 +261,7 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
                 return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
                          "heading": "General property facts", "score": 1,
                          "content": _non_identifying_facts(content)}]
-    if not terms or (not sales_only and "?" not in (query or "") and not terms & {"project", "layout", "bedroom", "room", "price", "cost", "location", "facility", "facilities", "freehold", "tenure", "developer", "completion", "maintenance", "package", "rebate", "floor", "facing", "balcony", "unit", "transport", "school", "financing", "loan", "booking", "view", "viewing", "safety", "flood", "pylon", "cable"}):
+    if not terms:
         return []
 
     ranked = []
@@ -246,7 +298,7 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
     best_score = ranked[0][0]
     if sales_only and best_score < 2:
         return []
-    relevant = [item for item in ranked if item[0] >= max(2, best_score - 1)]
+    relevant = [item for item in ranked if item[0] >= max(2, best_score - 3)]
     if not relevant:
         relevant = ranked[:1]
     selected = []
@@ -258,6 +310,6 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
             content = INTERNAL_MARKER + "\n" + content
         selected.append({"path": relative, "heading": heading, "score": score, "content": content})
         files_seen[relative] = files_seen.get(relative, 0) + 1
-        if len(selected) >= min(limit, 2):
+        if len(selected) >= limit:
             break
     return selected
