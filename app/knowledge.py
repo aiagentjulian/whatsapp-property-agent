@@ -27,6 +27,8 @@ def tokenize(text):
         "costs": "cost",
     }
     normalized = {aliases.get(term, term) for term in terms}
+    if "4" in normalized:
+        normalized.add("four")
     # Lightweight vocabulary expansion: no extra model, service, or index.
     # These are retrieval cues, never assertions about the buyer.
     related = {
@@ -36,11 +38,11 @@ def tokenize(text):
         "mortgage": {"loan", "financing", "price"},
         "monthly": {"maintenance", "instalment"},
         "budget": {"price", "maintenance"},
-        "mum": {"mother", "lift", "access"},
-        "mom": {"mother", "lift", "access"},
-        "mother": {"lift", "access"},
-        "elderly": {"lift", "access"},
-        "wheelchair": {"lift", "access"},
+        "mum": {"mother", "lift"},
+        "mom": {"mother", "lift"},
+        "mother": {"lift"},
+        "elderly": {"lift"},
+        "wheelchair": {"lift"},
         "elevator": {"lift"},
         "lifts": {"lift"},
         "schools": {"school"},
@@ -64,12 +66,12 @@ def tokenize(text):
         "学校": {"school"},
         "附近": {"nearby", "location"},
         "电梯": {"lift"},
-        "老人": {"lift", "access"},
+        "老人": {"lift"},
         "妈妈": {"mother", "lift"},
         "母亲": {"mother", "lift"},
         "房间": {"bedroom", "layout"},
         "户型": {"layout"},
-        "四房": {"bedroom", "layout"},
+        "四房": {"four", "bedroom", "layout"},
         "水灾": {"flood"},
         "淹水": {"flood"},
         "看房": {"viewing"},
@@ -244,6 +246,7 @@ def retrieve(query, lead_profile=None, limit=5, sales_only=False):
             "which project", "what project", "project name", "name of the project",
             "who is the developer", "who's the developer", "which developer",
             "developer name", "name of the developer", "who developed",
+            "项目叫什么", "项目名称", "什么项目", "开发商", "谁开发", "由谁开发", "开发公司",
         )
     )
     if identity_request and not sales_only:
@@ -261,7 +264,15 @@ def retrieve(query, lead_profile=None, limit=5, sales_only=False):
                 return [{"path": path.relative_to(KNOWLEDGE).as_posix(),
                          "heading": "General property facts", "score": 1,
                          "content": _non_identifying_facts(content)}]
-    if not terms:
+    topical_terms = {
+        "project", "layout", "bedroom", "room", "price", "cost", "location", "facility",
+        "facilities", "freehold", "tenure", "developer", "completion", "maintenance", "package",
+        "rebate", "floor", "facing", "balcony", "unit", "transport", "school", "financing", "loan",
+        "mortgage", "instalment", "installment", "repayment", "monthly", "budget", "fee", "mother",
+        "elderly", "lift", "elevator", "flood", "viewing", "access", "four", "four-bedroom",
+    }
+    if not terms or (not sales_only and not any(mark in (query or "") for mark in ("?", "？"))
+                     and not terms & topical_terms):
         return []
 
     ranked = []
@@ -277,6 +288,14 @@ def retrieve(query, lead_profile=None, limit=5, sales_only=False):
         if not sales_only and relative.startswith("03_sales/") and not sales_query:
             continue
         text = path.read_text(encoding="utf-8")
+        if not sales_only and {"four", "bedroom"} <= terms and relative != "01_facts/unit-and-layout.md":
+            continue
+        if not sales_only and "flood" in terms and not re.search(
+                r"flood|river|water level|flood-gate|flooding", text, re.I):
+            continue
+        if not sales_only and relative == "02_commercial/lppsa.md" and not re.search(
+                r"\b(lppsa|government|civil servant|civil service)\b|政府|公务员", internal_context):
+            continue
         for heading, content in _passages(text):
             heading_terms = tokenize(heading)
             overlap = terms & (heading_terms | tokenize(content))
@@ -284,8 +303,14 @@ def retrieve(query, lead_profile=None, limit=5, sales_only=False):
                 continue
             heading_weight = 1 if sales_only else 3
             score = len(overlap) + heading_weight * len(terms & heading_terms)
+            if "layout" in terms and heading.lower() == "layout and room arrangement":
+                score += 2
+            if "lift" in terms and re.search(r"\b\d+ passenger lifts?\b", content, re.I):
+                score += 3
             if relative.startswith("02_commercial/") and terms & {"price", "pricing", "package", "rebate", "booking", "financing", "financier"}:
                 score += 2
+            if "lppsa" in terms and relative == "02_commercial/lppsa.md":
+                score += 5
             if relative.startswith("04_internal/"):
                 score += 3
             if heading.lower() == "project identity" and not identity_request:
@@ -298,7 +323,8 @@ def retrieve(query, lead_profile=None, limit=5, sales_only=False):
     best_score = ranked[0][0]
     if sales_only and best_score < 2:
         return []
-    relevant = [item for item in ranked if item[0] >= max(2, best_score - 3)]
+    score_floor = best_score - (2 if "lift" in terms else 0)
+    relevant = [item for item in ranked if item[0] >= max(2, score_floor)]
     if not relevant:
         relevant = ranked[:1]
     selected = []

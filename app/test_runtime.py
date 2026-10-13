@@ -149,6 +149,32 @@ class RuntimeTests(unittest.TestCase):
         pool_details = retrieve("Could you give me a fuller explanation of the main pool and kids’ pool, including their approximate lengths and depths?")
         self.assertTrue(any("55m" in row["content"] or "55 m" in row["content"] for row in pool_details))
 
+    def test_bilingual_customer_facts_and_identity_retrieval(self):
+        cases = (
+            ("What would the monthly repayment be?", ("financing-and-booking.md", "pricing.md")),
+            ("管理费每月多少钱？", ("maintenance-and-management.md",)),
+            ("附近有什么学校？", ("location-and-connectivity.md",)),
+            ("Does every block have lifts?", ("building-and-access.md",)),
+            ("每栋楼有电梯吗？", ("building-and-access.md",)),
+            ("My elderly mother may move in; what layout would work?", ("unit-and-layout.md",)),
+            ("4-bedroom layout", ("unit-and-layout.md",)),
+            ("这个地区会淹水吗？", ("location-and-connectivity.md",)),
+            ("这个项目的开发商是谁？", ("overview.md",)),
+            ("这个项目叫什么名字？", ("overview.md",)),
+        )
+        for query, expected_paths in cases:
+            with self.subTest(query=query):
+                rows = retrieve(query)
+                self.assertTrue(any(any(path in row["path"] for path in expected_paths) for row in rows), rows)
+                self.assertFalse(any(row["path"].startswith("04_internal/") for row in rows), rows)
+        lifts = retrieve("每栋楼有电梯吗？")
+        self.assertTrue(any("4 passenger lifts" in row["content"] for row in lifts), lifts)
+        identity = retrieve("这个项目叫什么名字？")
+        self.assertTrue(any("SkyWorld Pearlmont" in row["content"] for row in identity), identity)
+        self.assertFalse(retrieve("Own stay."))
+        four_bedroom = retrieve("4-bedroom layout")
+        self.assertFalse(any("lppsa.md" in row["path"] for row in four_bedroom), four_bedroom)
+
     def test_history_order_is_stable_for_equal_timestamps(self):
         store = Store(self.path)
         lead, _, _ = store.ingest("Alice Example", "h1", "first")
