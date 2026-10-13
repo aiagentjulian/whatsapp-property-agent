@@ -1,0 +1,3444 @@
+{
+  "run_id": "20261013T080807Z",
+  "status": "complete",
+  "git": {
+    "main_base": "778104a3c14b2cc3a870206d83934039b898819b",
+    "lite_commit": "fea979c8e2b88aec40eda9f45e9871b8037a8129",
+    "prompt_sha256": {
+      "A_V2": "7cb490a8347190ce3ec90e2e2bef07b74e63c741c31bcf76f390bb20f7f5959f",
+      "B_V2_LITE": "1ffd1ff885f2e774b61ff06c57ea1ab9bb7bc05ff2a1654d423b8be309453a0d"
+    },
+    "changed_paths_between_commits": [
+      "brain/AGENT.md"
+    ]
+  },
+  "model_configuration": {
+    "sales_agent": "gpt-6-luna/high",
+    "customer_simulator": "gpt-6-luna/medium",
+    "blind_judge": "gpt-6-luna/xhigh"
+  },
+  "protocol": {
+    "paired_scenarios": [
+      "E01-own-stay-small-family",
+      "E02-first-home-unsure",
+      "E04-tight-budget",
+      "E15-facility-overload",
+      "E29-requirements-shift",
+      "E08-cold-short-replies"
+    ],
+    "max_customer_turns": 12,
+    "minimum_customer_turns": 0,
+    "blind_judge_receives_arm_identity": false,
+    "production_side_effects": false,
+    "operations_adapter": "conversation-local in-memory fake"
+  },
+  "dialogues": [
+    {
+      "arm": "A_V2",
+      "scenario_id": "E01-own-stay-small-family",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Pearl Residences could be worth considering: the Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. It’s in established Seberang Jaya, with access towards Sunway Carnival Mall and Chai Leng Park. What matters most to you in the area day to day?"
+        },
+        {
+          "speaker": "customer",
+          "text": "Schools and everyday errands nearby are important, and we need to keep the monthly cost manageable. Are there schools close by, and roughly what would the monthly repayment be?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Schools and manageable monthly costs make sense. I don’t have verified nearby school names and distances or Pearl Residences’ current pricing here, so I don’t want to guess. Repayments also depend on the price, down payment, loan tenure and interest rate. I’ll check the school options and current pricing so I can give you a more useful estimate."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, thanks. Please send the nearby school options and an estimated monthly repayment once you’ve checked—we’re considering it for our family, but need to see if it fits our budget."
+        },
+        {
+          "speaker": "agent",
+          "text": "One detail I can confirm: a vertical school is planned to connect to the development via a covered walkway. I’m still waiting on verified school details and current pricing, so I can’t give you a reliable repayment estimate yet. I’ll send both once they’re confirmed."
+        },
+        {
+          "speaker": "customer",
+          "text": "That would be convenient, though since the school is only planned, could you let us know when it’s expected to be ready? Please send the school details and repayment estimate once you’ve confirmed them."
+        },
+        {
+          "speaker": "agent",
+          "text": "The latest information says the school is expected to be completed together with Phase 1, but that isn’t a confirmed completion date. I’m still checking the nearby school options and current pricing for a repayment estimate, and I’ll share them once verified."
+        },
+        {
+          "speaker": "customer",
+          "text": "Understood, thanks. We’ll wait for the confirmed school options and pricing—keeping the monthly cost manageable is important for us before we decide."
+        },
+        {
+          "speaker": "agent",
+          "text": "Understood—monthly affordability is important before you decide. I’m still waiting on verified school details and current pricing, and I’ll share both once confirmed so you can assess the fit."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, please send them through when you have them. We’ll need the numbers to see if it’s within our budget."
+        },
+        {
+          "speaker": "agent",
+          "text": "Absolutely. I’m still waiting on the verified school options and current pricing. I’ll send them through once I have them so you can assess the monthly cost against your budget."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?",
+          "customer_stance": "neutral",
+          "agent_reply": "Pearl Residences could be worth considering: the Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. It’s in established Seberang Jaya, with access towards Sunway Carnival Mall and Chai Leng Park. What matters most to you in the area day to day?",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2594,
+            "input_tokens_details": {
+              "cache_write_tokens": 2591,
+              "cached_tokens": 0
+            },
+            "output_tokens": 836,
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            },
+            "total_tokens": 3430
+          },
+          "agent_latency_ms": 11831,
+          "retrieved_knowledge_paths": [
+            "03_sales/usp-map.md",
+            "03_sales/objection-to-usp-map.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 358,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 147,
+            "output_tokens_details": {
+              "reasoning_tokens": 77
+            },
+            "total_tokens": 505
+          },
+          "customer_simulator_latency_ms": 7273
+        },
+        {
+          "turn": 2,
+          "customer": "Schools and everyday errands nearby are important, and we need to keep the monthly cost manageable. Are there schools close by, and roughly what would the monthly repayment be?",
+          "customer_stance": "interested",
+          "agent_reply": "Schools and manageable monthly costs make sense. I don’t have verified nearby school names and distances or Pearl Residences’ current pricing here, so I don’t want to guess. Repayments also depend on the price, down payment, loan tenure and interest rate. I’ll check the school options and current pricing so I can give you a more useful estimate.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2586,
+            "input_tokens_details": {
+              "cache_write_tokens": 2583,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1168,
+            "output_tokens_details": {
+              "reasoning_tokens": 699
+            },
+            "total_tokens": 3754
+          },
+          "agent_latency_ms": 14694,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "support_request": {
+            "support_type": "OTHER",
+            "requested_fact": "Verify nearby schools by name and approximate distance, and current Pearl Residences pricing needed to estimate monthly repayment with clearly stated loan assumptions.",
+            "subject": "Nearby schools and indicative monthly repayment",
+            "customer_need": "Assess whether the location suits day-to-day needs and whether a home may fit their monthly budget.",
+            "reason": "The customer directly asked about nearby schools and an approximate repayment, but verified school details and current pricing are unavailable.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified nearby school information and, once price and financing assumptions are clear, an indicative monthly repayment.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 477,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 143,
+            "output_tokens_details": {
+              "reasoning_tokens": 65
+            },
+            "total_tokens": 620
+          },
+          "customer_simulator_latency_ms": 3660
+        },
+        {
+          "turn": 3,
+          "customer": "Okay, thanks. Please send the nearby school options and an estimated monthly repayment once you’ve checked—we’re considering it for our family, but need to see if it fits our budget.",
+          "customer_stance": "interested",
+          "agent_reply": "One detail I can confirm: a vertical school is planned to connect to the development via a covered walkway. I’m still waiting on verified school details and current pricing, so I can’t give you a reliable repayment estimate yet. I’ll send both once they’re confirmed.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2792,
+            "input_tokens_details": {
+              "cache_write_tokens": 2789,
+              "cached_tokens": 0
+            },
+            "output_tokens": 984,
+            "output_tokens_details": {
+              "reasoning_tokens": 671
+            },
+            "total_tokens": 3776
+          },
+          "agent_latency_ms": 10304,
+          "retrieved_knowledge_paths": [
+            "01_facts/location-and-connectivity.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 582,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 174,
+            "output_tokens_details": {
+              "reasoning_tokens": 93
+            },
+            "total_tokens": 756
+          },
+          "customer_simulator_latency_ms": 3985
+        },
+        {
+          "turn": 4,
+          "customer": "That would be convenient, though since the school is only planned, could you let us know when it’s expected to be ready? Please send the school details and repayment estimate once you’ve confirmed them.",
+          "customer_stance": "interested",
+          "agent_reply": "The latest information says the school is expected to be completed together with Phase 1, but that isn’t a confirmed completion date. I’m still checking the nearby school options and current pricing for a repayment estimate, and I’ll share them once verified.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 3043,
+            "input_tokens_details": {
+              "cache_write_tokens": 3040,
+              "cached_tokens": 0
+            },
+            "output_tokens": 535,
+            "output_tokens_details": {
+              "reasoning_tokens": 226
+            },
+            "total_tokens": 3578
+          },
+          "agent_latency_ms": 6447,
+          "retrieved_knowledge_paths": [
+            "01_facts/location-and-connectivity.md",
+            "01_facts/school-access-and-family.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 686,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 149,
+            "output_tokens_details": {
+              "reasoning_tokens": 80
+            },
+            "total_tokens": 835
+          },
+          "customer_simulator_latency_ms": 3412
+        },
+        {
+          "turn": 5,
+          "customer": "Understood, thanks. We’ll wait for the confirmed school options and pricing—keeping the monthly cost manageable is important for us before we decide.",
+          "customer_stance": "interested",
+          "agent_reply": "Understood—monthly affordability is important before you decide. I’m still waiting on verified school details and current pricing, and I’ll share both once confirmed so you can assess the fit.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 3142,
+            "input_tokens_details": {
+              "cache_write_tokens": 3139,
+              "cached_tokens": 0
+            },
+            "output_tokens": 544,
+            "output_tokens_details": {
+              "reasoning_tokens": 316
+            },
+            "total_tokens": 3686
+          },
+          "agent_latency_ms": 7620,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "customer_next_stance": "neutral",
+          "customer_simulator_usage": {
+            "input_tokens": 766,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 153,
+            "output_tokens_details": {
+              "reasoning_tokens": 88
+            },
+            "total_tokens": 919
+          },
+          "customer_simulator_latency_ms": 3510
+        },
+        {
+          "turn": 6,
+          "customer": "Thanks, please send them through when you have them. We’ll need the numbers to see if it’s within our budget.",
+          "customer_stance": "neutral",
+          "agent_reply": "Absolutely. I’m still waiting on the verified school options and current pricing. I’ll send them through once I have them so you can assess the monthly cost against your budget.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2997,
+            "input_tokens_details": {
+              "cache_write_tokens": 2994,
+              "cached_tokens": 0
+            },
+            "output_tokens": 388,
+            "output_tokens_details": {
+              "reasoning_tokens": 162
+            },
+            "total_tokens": 3385
+          },
+          "agent_latency_ms": 5306,
+          "retrieved_knowledge_paths": [],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 840,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 220,
+            "output_tokens_details": {
+              "reasoning_tokens": 158
+            },
+            "total_tokens": 1060
+          },
+          "customer_simulator_latency_ms": 4389
+        }
+      ],
+      "customer_turn_count": 6,
+      "end_reason": "customer_ended",
+      "blind_judgment": "complete",
+      "customer_profile_for_blind_judge": {
+        "background": "A married couple with two school-age children is looking for a home in Seberang Jaya.",
+        "needs": "Own stay; three bedrooms; convenient school and daily errands access.",
+        "hidden_motive": "One child has asthma and the parent quietly prioritizes ventilation and green space.",
+        "obstacle": "They fear a high monthly carrying cost.",
+        "acceptable_behavior": "Understand the family use, ask about a real priority, and mention a verified relevant feature only when it fits."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 3,
+          "natural_continuation": 4,
+          "valuable_questions": 3,
+          "relevant_advantages": 4,
+          "customer_interest": 3,
+          "non_repetition": 2,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "A1 matched the 900 sq ft, three-bedroom layout to a family and asked what mattered day to day. A2 addressed school access and affordability, but did not explore ventilation or green space, which are relevant to the family context.",
+          "natural_continuation": "A2 appropriately acknowledged the school and pricing uncertainties and explained what repayment depends on. Later replies stay on topic, though they become repetitive.",
+          "valuable_questions": "A1's “What matters most to you in the area day to day?” was useful and elicited schools, errands, and budget concerns. A2 listed repayment inputs but did not ask which assumptions to use for an estimate.",
+          "relevant_advantages": "A1 mentioned access toward Sunway Carnival Mall and Chai Leng Park; A3's planned vertical school and covered walkway were verified and directly relevant to the customer's school-access question.",
+          "customer_interest": "The agent avoids pressure and offers to check the requested details, but does not provide a concrete estimate or school options despite relevant project information being supplied.",
+          "non_repetition": "A4, A5, and A6 repeatedly say verified school details and pricing are still pending and will be shared once confirmed, with little new information.",
+          "factual_accuracy": "The unit layout, covered walkway, and school completion-together-with-Phase-1 statements align with Knowledge. However, A1 calls it “Pearl Residences” while the supplied project is SkyWorld Pearlmont; A2 also says current pricing is not available despite supplied pricing and package references.",
+          "appropriate_pacing": "The customer repeatedly asks to wait for school details and budget numbers. The agent does not push a viewing or booking before the customer is ready."
+        },
+        "factual_issues": [
+          "A1 names the development “Pearl Residences”; the supplied Knowledge identifies it as SkyWorld Pearlmont. This appears to be a project-name mismatch.",
+          "A2 says there is no verified current pricing “here,” although the supplied Knowledge includes base pricing and a current sales-package reference dated 14 August 2026. The agent could have shared an appropriately qualified indicative figure or explained that the package needed freshness confirmation."
+        ],
+        "overall_note": "The agent listens to the customer's stated school and affordability concerns, uses a relevant verified school feature, and appropriately avoids inventing a repayment figure or pressing for a viewing. The main weaknesses are repeated status-only replies, not making practical use of the supplied pricing information, and missing an opportunity to raise the project's ventilation/daylighting design as a potentially relevant family feature.",
+        "usage": {
+          "input_tokens": 20844,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 20841
+          },
+          "output_tokens": 3395,
+          "output_tokens_details": {
+            "reasoning_tokens": 2762
+          },
+          "total_tokens": 24239
+        },
+        "latency_ms": 37325
+      },
+      "composite_score_1_to_5": 3.375
+    },
+    {
+      "arm": "B_V2_LITE",
+      "scenario_id": "E01-own-stay-small-family",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?"
+        },
+        {
+          "speaker": "agent",
+          "text": "For a family home around Seberang Jaya, Pearl Residences’ Phase 1 Type A may be worth considering: 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony. It’s in an established area, with connectivity towards Sunway Carnival Mall and the wider Butterworth/mainland network. Would 3 bedrooms work for your household?"
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes, three bedrooms should work for us. Could you share the estimated monthly instalment and maintenance fees? We’d also need to know what schools are nearby."
+        },
+        {
+          "speaker": "agent",
+          "text": "The maintenance fee is RM0.18 per sq ft, inclusive of sinking fund. I’d need the current unit price and financing assumptions to give you a useful monthly instalment estimate, and I’ll verify the nearby schools rather than guess."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks. For 900 sq ft, that works out to about RM162 a month for maintenance, right? Could you check the current price, an instalment estimate assuming 10% down and a 30-year loan, and which schools are nearby? We’re trying to keep the monthly costs manageable."
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes—at RM0.18 per sq ft, 900 sq ft works out to about RM162 a month, inclusive of sinking fund. I don’t have verified current pricing or nearby-school details back yet, so I can’t give you a reliable instalment estimate or name schools just yet."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, thanks. Could you send the price, estimated instalment and nearby school details once you’ve checked? We’ll need to see the total monthly cost before deciding whether to view it."
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes, I’ll share those details once they’re verified. They’re still pending, so I can’t give you reliable figures yet. We can review the total monthly cost first, before you decide whether to view."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, please send them through once you’ve checked. We’ll hold off on a viewing until we know the monthly cost is manageable."
+        },
+        {
+          "speaker": "agent",
+          "text": "Understood—we’ll hold off on a viewing for now. The price, instalment estimate and nearby-school details are still pending verification. Once confirmed, I’ll send them through so you can assess the monthly cost first."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Hi, we're looking for a family home around Seberang Jaya. What might suit us?",
+          "customer_stance": "neutral",
+          "agent_reply": "For a family home around Seberang Jaya, Pearl Residences’ Phase 1 Type A may be worth considering: 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony. It’s in an established area, with connectivity towards Sunway Carnival Mall and the wider Butterworth/mainland network. Would 3 bedrooms work for your household?",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2368,
+            "input_tokens_details": {
+              "cache_write_tokens": 2365,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1237,
+            "output_tokens_details": {
+              "reasoning_tokens": 894
+            },
+            "total_tokens": 3605
+          },
+          "agent_latency_ms": 13283,
+          "retrieved_knowledge_paths": [
+            "03_sales/usp-map.md",
+            "03_sales/objection-to-usp-map.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 364,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 151,
+            "output_tokens_details": {
+              "reasoning_tokens": 77
+            },
+            "total_tokens": 515
+          },
+          "customer_simulator_latency_ms": 3288
+        },
+        {
+          "turn": 2,
+          "customer": "Yes, three bedrooms should work for us. Could you share the estimated monthly instalment and maintenance fees? We’d also need to know what schools are nearby.",
+          "customer_stance": "interested",
+          "agent_reply": "The maintenance fee is RM0.18 per sq ft, inclusive of sinking fund. I’d need the current unit price and financing assumptions to give you a useful monthly instalment estimate, and I’ll verify the nearby schools rather than guess.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2329,
+            "input_tokens_details": {
+              "cache_write_tokens": 2326,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1527,
+            "output_tokens_details": {
+              "reasoning_tokens": 1093
+            },
+            "total_tokens": 3856
+          },
+          "agent_latency_ms": 16988,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "support_request": {
+            "support_type": "OTHER",
+            "requested_fact": "Current Type A price and financing assumptions needed to estimate the monthly instalment, plus verified nearby schools and their locations or distances.",
+            "subject": "Monthly instalment estimate and nearby schools",
+            "customer_need": "Assess affordability and school options for a family home.",
+            "reason": "The current price and financing assumptions, as well as verified nearby school information, are not available in the provided knowledge.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Provide verified instalment and nearby school information.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 458,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 304,
+            "output_tokens_details": {
+              "reasoning_tokens": 199
+            },
+            "total_tokens": 762
+          },
+          "customer_simulator_latency_ms": 5722
+        },
+        {
+          "turn": 3,
+          "customer": "Thanks. For 900 sq ft, that works out to about RM162 a month for maintenance, right? Could you check the current price, an instalment estimate assuming 10% down and a 30-year loan, and which schools are nearby? We’re trying to keep the monthly costs manageable.",
+          "customer_stance": "interested",
+          "agent_reply": "Yes—at RM0.18 per sq ft, 900 sq ft works out to about RM162 a month, inclusive of sinking fund. I don’t have verified current pricing or nearby-school details back yet, so I can’t give you a reliable instalment estimate or name schools just yet.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2418,
+            "input_tokens_details": {
+              "cache_write_tokens": 2415,
+              "cached_tokens": 0
+            },
+            "output_tokens": 700,
+            "output_tokens_details": {
+              "reasoning_tokens": 453
+            },
+            "total_tokens": 3118
+          },
+          "agent_latency_ms": 7922,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md"
+          ],
+          "customer_next_stance": "neutral",
+          "customer_simulator_usage": {
+            "input_tokens": 593,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 136,
+            "output_tokens_details": {
+              "reasoning_tokens": 56
+            },
+            "total_tokens": 729
+          },
+          "customer_simulator_latency_ms": 3231
+        },
+        {
+          "turn": 4,
+          "customer": "Okay, thanks. Could you send the price, estimated instalment and nearby school details once you’ve checked? We’ll need to see the total monthly cost before deciding whether to view it.",
+          "customer_stance": "neutral",
+          "agent_reply": "Yes, I’ll share those details once they’re verified. They’re still pending, so I can’t give you reliable figures yet. We can review the total monthly cost first, before you decide whether to view.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2702,
+            "input_tokens_details": {
+              "cache_write_tokens": 2699,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1433,
+            "output_tokens_details": {
+              "reasoning_tokens": 964
+            },
+            "total_tokens": 4135
+          },
+          "agent_latency_ms": 14791,
+          "retrieved_knowledge_paths": [
+            "01_facts/location-and-connectivity.md",
+            "03_sales/unit-fit.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 688,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 171,
+            "output_tokens_details": {
+              "reasoning_tokens": 103
+            },
+            "total_tokens": 859
+          },
+          "customer_simulator_latency_ms": 3995
+        },
+        {
+          "turn": 5,
+          "customer": "Okay, please send them through once you’ve checked. We’ll hold off on a viewing until we know the monthly cost is manageable.",
+          "customer_stance": "interested",
+          "agent_reply": "Understood—we’ll hold off on a viewing for now. The price, instalment estimate and nearby-school details are still pending verification. Once confirmed, I’ll send them through so you can assess the monthly cost first.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2992,
+            "input_tokens_details": {
+              "cache_write_tokens": 2989,
+              "cached_tokens": 0
+            },
+            "output_tokens": 498,
+            "output_tokens_details": {
+              "reasoning_tokens": 263
+            },
+            "total_tokens": 3490
+          },
+          "agent_latency_ms": 6625,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 773,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 118,
+            "output_tokens_details": {
+              "reasoning_tokens": 74
+            },
+            "total_tokens": 891
+          },
+          "customer_simulator_latency_ms": 2716
+        }
+      ],
+      "customer_turn_count": 5,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "OTHER",
+            "requested_fact": "Current Type A price and financing assumptions needed to estimate the monthly instalment, plus verified nearby schools and their locations or distances.",
+            "subject": "Monthly instalment estimate and nearby schools",
+            "customer_need": "Assess affordability and school options for a family home.",
+            "reason": "The current price and financing assumptions, as well as verified nearby school information, are not available in the provided knowledge.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Provide verified instalment and nearby school information.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A married couple with two school-age children is looking for a home in Seberang Jaya.",
+        "needs": "Own stay; three bedrooms; convenient school and daily errands access.",
+        "hidden_motive": "One child has asthma and the parent quietly prioritizes ventilation and green space.",
+        "obstacle": "They fear a high monthly carrying cost.",
+        "acceptable_behavior": "Understand the family use, ask about a real priority, and mention a verified relevant feature only when it fits."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 3,
+          "natural_continuation": 4,
+          "valuable_questions": 3,
+          "relevant_advantages": 3,
+          "customer_interest": 3,
+          "non_repetition": 3,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "Agent 1 matches the family’s three-bedroom need; Agents 4–5 respect the stated cost concern. However, the agent does not explore family priorities or provide the verified school information requested.",
+          "natural_continuation": "Agent 2 answers the maintenance question and says it will verify rather than guess about schools; Agent 5 coherently confirms the customer can assess costs before viewing.",
+          "valuable_questions": "Agent 1 asks, “Would 3 bedrooms work for your household?”—a relevant check, but no question explores a practical family priority such as school access or ventilation.",
+          "relevant_advantages": "Agent 1 mentions the balcony and connectivity toward Sunway Carnival Mall, which fit some family convenience needs. It does not surface the verified planned school or ventilation-oriented design when relevant.",
+          "customer_interest": "Agents 4–5 agree to share details and review total monthly cost before a viewing, but the customer receives little actionable information beyond the maintenance figure.",
+          "non_repetition": "Agents 3–5 repeatedly say price, instalment, and school details are pending. The customer renews the request, but the replies add little new information.",
+          "factual_accuracy": "Agent 2 correctly states RM0.18/sq.ft. inclusive of sinking fund; Agent 3 correctly confirms RM162 for 900 sq.ft. Agent 1 uses a project name not found in the supplied knowledge and calls the area “established” without support.",
+          "appropriate_pacing": "Agent 5 says, “we’ll hold off on a viewing for now” and agrees the customer should assess monthly cost first, directly respecting their preference."
+        },
+        "factual_issues": [
+          "Agent 1 calls the project “Pearl Residences”; the supplied project knowledge identifies it as SkyWorld Pearlmont. This may confuse the customer.",
+          "Agent 1 describes the area as “established” without support in the supplied knowledge. The stated Seberang Jaya location and connectivity are supported.",
+          "Agent 3 says verified nearby-school details are not available yet, but the supplied knowledge identifies a planned on-site vertical school for SK and SMK, with covered-walkway access. The agent could have shared this with the appropriate caveat that admission is not guaranteed."
+        ],
+        "overall_note": "The agent is polite, avoids inventing an instalment without financing assumptions, correctly confirms the maintenance calculation, and does not pressure the family to view. It understands the explicit bedroom and budget needs, but misses an opportunity to use verified family-relevant school information and to explore priorities that could help assess fit.",
+        "usage": {
+          "input_tokens": 20777,
+          "input_tokens_details": {
+            "cache_write_tokens": 20774,
+            "cached_tokens": 0
+          },
+          "output_tokens": 3692,
+          "output_tokens_details": {
+            "reasoning_tokens": 3049
+          },
+          "total_tokens": 24469
+        },
+        "latency_ms": 42747
+      },
+      "composite_score_1_to_5": 3.375,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "B_V2_LITE",
+      "scenario_id": "E02-first-home-unsure",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Hi, this would be my first home. Where should I start?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Hi! A good first step is to work out a comfortable monthly budget and check what financing you may qualify for, then compare homes and their ongoing costs. Pearl Residences’ Phase 1 homes are 900 sq ft with 3 bedrooms and 2 bathrooms. Have you got a budget in mind, or are you still figuring that out?"
+        },
+        {
+          "speaker": "customer",
+          "text": "I’m still figuring that out. I rent nearby—could you give me a rough idea of the price and monthly costs before I visit?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Sure. The stated maintenance rate is RM0.18 per sq ft, inclusive of sinking fund. I don’t have a verified current price to quote, so I’ll check the latest indicative price and any confirmed monthly charges rather than guess."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, that would help. Could you include a rough monthly loan payment too, if possible? No rush—I’m just trying to understand the overall cost before visiting."
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes, I’ll check whether we can provide a rough loan estimate with the assumptions shown. It depends on the confirmed price and financing terms, so I won’t guess. I’ve requested the current price and confirmed monthly charges too, so you can get a clearer cost picture before deciding whether to visit."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, thanks. It’d be helpful to see the estimated upfront amount as well, if you can include that."
+        },
+        {
+          "speaker": "agent",
+          "text": "Absolutely—I’ll include an estimated upfront amount with the assumptions and any confirmed upfront charges. The price and financing checks are still pending, so I don’t want to guess a figure."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, appreciate it. Could you send the figures here once you have them? I’m just comparing for now, not ready to visit yet."
+        },
+        {
+          "speaker": "agent",
+          "text": "Of course—I’ll send the figures here once the checks come back, including the assumptions for the loan and upfront estimate. No need to visit while you’re still comparing."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Hi, this would be my first home. Where should I start?",
+          "customer_stance": "neutral",
+          "agent_reply": "Hi! A good first step is to work out a comfortable monthly budget and check what financing you may qualify for, then compare homes and their ongoing costs. Pearl Residences’ Phase 1 homes are 900 sq ft with 3 bedrooms and 2 bathrooms. Have you got a budget in mind, or are you still figuring that out?",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 1863,
+            "input_tokens_details": {
+              "cache_write_tokens": 1860,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1066,
+            "output_tokens_details": {
+              "reasoning_tokens": 735
+            },
+            "total_tokens": 2929
+          },
+          "agent_latency_ms": 11956,
+          "retrieved_knowledge_paths": [
+            "02_commercial/panel-financiers-and-legal.md",
+            "01_facts/unit-and-layout.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 341,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 148,
+            "output_tokens_details": {
+              "reasoning_tokens": 75
+            },
+            "total_tokens": 489
+          },
+          "customer_simulator_latency_ms": 3846
+        },
+        {
+          "turn": 2,
+          "customer": "I’m still figuring that out. I rent nearby—could you give me a rough idea of the price and monthly costs before I visit?",
+          "customer_stance": "interested",
+          "agent_reply": "Sure. The stated maintenance rate is RM0.18 per sq ft, inclusive of sinking fund. I don’t have a verified current price to quote, so I’ll check the latest indicative price and any confirmed monthly charges rather than guess.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2287,
+            "input_tokens_details": {
+              "cache_write_tokens": 2284,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1118,
+            "output_tokens_details": {
+              "reasoning_tokens": 684
+            },
+            "total_tokens": 3405
+          },
+          "agent_latency_ms": 12048,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "support_request": {
+            "support_type": "PRICING",
+            "requested_fact": "Latest indicative Phase 1 unit price and any confirmed monthly ownership charges beyond the stated maintenance rate.",
+            "subject": "Pearl Residences Phase 1 pricing and monthly costs",
+            "customer_need": "A rough price and monthly-cost picture before deciding whether to visit.",
+            "reason": "The customer is a first-home buyer still working out their budget and rents nearby.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified price and monthly-cost information to help the customer assess affordability before a visit.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 431,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 175,
+            "output_tokens_details": {
+              "reasoning_tokens": 103
+            },
+            "total_tokens": 606
+          },
+          "customer_simulator_latency_ms": 3734
+        },
+        {
+          "turn": 3,
+          "customer": "Thanks, that would help. Could you include a rough monthly loan payment too, if possible? No rush—I’m just trying to understand the overall cost before visiting.",
+          "customer_stance": "interested",
+          "agent_reply": "Yes, I’ll check whether we can provide a rough loan estimate with the assumptions shown. It depends on the confirmed price and financing terms, so I won’t guess. I’ve requested the current price and confirmed monthly charges too, so you can get a clearer cost picture before deciding whether to visit.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2315,
+            "input_tokens_details": {
+              "cache_write_tokens": 2312,
+              "cached_tokens": 0
+            },
+            "output_tokens": 975,
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            },
+            "total_tokens": 3290
+          },
+          "agent_latency_ms": 10423,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md"
+          ],
+          "support_request": {
+            "support_type": "FINANCING",
+            "requested_fact": "Whether an indicative monthly loan repayment estimate can be provided, including the price, down-payment, interest-rate and tenure assumptions used.",
+            "subject": "Indicative monthly loan payment for Pearl Residences",
+            "customer_need": "A rough monthly loan payment to understand the overall cost before visiting.",
+            "reason": "The customer is a first-home buyer still working out their budget and wants an initial cost picture without rushing into a visit.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share any verified indicative loan estimate and its assumptions alongside the pending price and monthly-charge information.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 538,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 200,
+            "output_tokens_details": {
+              "reasoning_tokens": 138
+            },
+            "total_tokens": 738
+          },
+          "customer_simulator_latency_ms": 4018
+        },
+        {
+          "turn": 4,
+          "customer": "Okay, thanks. It’d be helpful to see the estimated upfront amount as well, if you can include that.",
+          "customer_stance": "interested",
+          "agent_reply": "Absolutely—I’ll include an estimated upfront amount with the assumptions and any confirmed upfront charges. The price and financing checks are still pending, so I don’t want to guess a figure.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2437,
+            "input_tokens_details": {
+              "cache_write_tokens": 2434,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1136,
+            "output_tokens_details": {
+              "reasoning_tokens": 693
+            },
+            "total_tokens": 3573
+          },
+          "agent_latency_ms": 14091,
+          "retrieved_knowledge_paths": [],
+          "support_request": {
+            "support_type": "FINANCING",
+            "requested_fact": "Please supplement the existing financing request with an estimated upfront amount, including the down-payment and any confirmed upfront charges, with the assumptions stated.",
+            "subject": "Estimated upfront amount for Pearl Residences Phase 1",
+            "customer_need": "A rough upfront-cost estimate to understand affordability before deciding whether to visit.",
+            "reason": "The customer is a first-home buyer still working out their budget and has asked to include the upfront amount in the cost picture.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified upfront-cost information and assumptions alongside the pending price, monthly-charge, and loan-estimate details.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 611,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 147,
+            "output_tokens_details": {
+              "reasoning_tokens": 77
+            },
+            "total_tokens": 758
+          },
+          "customer_simulator_latency_ms": 3439
+        },
+        {
+          "turn": 5,
+          "customer": "Thanks, appreciate it. Could you send the figures here once you have them? I’m just comparing for now, not ready to visit yet.",
+          "customer_stance": "interested",
+          "agent_reply": "Of course—I’ll send the figures here once the checks come back, including the assumptions for the loan and upfront estimate. No need to visit while you’re still comparing.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 3099,
+            "input_tokens_details": {
+              "cache_write_tokens": 3096,
+              "cached_tokens": 0
+            },
+            "output_tokens": 811,
+            "output_tokens_details": {
+              "reasoning_tokens": 506
+            },
+            "total_tokens": 3910
+          },
+          "agent_latency_ms": 9587,
+          "retrieved_knowledge_paths": [
+            "01_facts/specifications-and-finishes.md",
+            "01_facts/unit-and-layout.md"
+          ],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 688,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 159,
+            "output_tokens_details": {
+              "reasoning_tokens": 102
+            },
+            "total_tokens": 847
+          },
+          "customer_simulator_latency_ms": 3014
+        }
+      ],
+      "customer_turn_count": 5,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "PRICING",
+            "requested_fact": "Latest indicative Phase 1 unit price and any confirmed monthly ownership charges beyond the stated maintenance rate.",
+            "subject": "Pearl Residences Phase 1 pricing and monthly costs",
+            "customer_need": "A rough price and monthly-cost picture before deciding whether to visit.",
+            "reason": "The customer is a first-home buyer still working out their budget and rents nearby.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified price and monthly-cost information to help the customer assess affordability before a visit.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          {
+            "support_type": "FINANCING",
+            "requested_fact": "Whether an indicative monthly loan repayment estimate can be provided, including the price, down-payment, interest-rate and tenure assumptions used.",
+            "subject": "Indicative monthly loan payment for Pearl Residences",
+            "customer_need": "A rough monthly loan payment to understand the overall cost before visiting.",
+            "reason": "The customer is a first-home buyer still working out their budget and wants an initial cost picture without rushing into a visit.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share any verified indicative loan estimate and its assumptions alongside the pending price and monthly-charge information.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          {
+            "support_type": "FINANCING",
+            "requested_fact": "Please supplement the existing financing request with an estimated upfront amount, including the down-payment and any confirmed upfront charges, with the assumptions stated.",
+            "subject": "Estimated upfront amount for Pearl Residences Phase 1",
+            "customer_need": "A rough upfront-cost estimate to understand affordability before deciding whether to visit.",
+            "reason": "The customer is a first-home buyer still working out their budget and has asked to include the upfront amount in the cost picture.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified upfront-cost information and assumptions alongside the pending price, monthly-charge, and loan-estimate details.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A 27-year-old first-time buyer rents nearby and has never visited a sales gallery.",
+        "needs": "A manageable first home and a clear explanation of how to compare options.",
+        "hidden_motive": "They are embarrassed about not understanding booking and financing terms.",
+        "obstacle": "Fear of being pressured into signing.",
+        "acceptable_behavior": "Explain plainly, let the buyer set the pace, and avoid assuming readiness."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 4,
+          "natural_continuation": 4,
+          "valuable_questions": 5,
+          "relevant_advantages": 4,
+          "customer_interest": 4,
+          "non_repetition": 4,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "T2 starts with budget and financing; T4 gives the maintenance rate after the customer asks about ongoing costs. T10 respects that the customer is only comparing. The conversation does not yet explain booking or financing terms in plain language.",
+          "natural_continuation": "T6 incorporates the request for a loan estimate alongside the earlier price and monthly-cost questions; T10 confirms the figures can be sent in chat.",
+          "valuable_questions": "T2 asks, “Have you got a budget in mind, or are you still figuring that out?”—a useful, low-pressure question for a first-time buyer.",
+          "relevant_advantages": "T2 gives the verified 900 sq ft, 3-bedroom, 2-bathroom layout, and T4 gives the maintenance rate, both relevant to comparing a manageable first home and its costs.",
+          "customer_interest": "T10 says, “No need to visit while you’re still comparing,” and offers to send the figures here. However, the customer asked for a rough price and costs, and receives no price estimate in the exchange.",
+          "non_repetition": "T6, T8, and T10 each repeat that price or financing checks are pending and that the agent will not guess. This is understandable, but could be consolidated.",
+          "factual_accuracy": "T2 accurately gives the unit size and configuration, and T4 gives the stated RM0.18 psf maintenance rate inclusive of sinking fund. However, T2 names the project “Pearl Residences,” while the supplied knowledge identifies it as SkyWorld Pearlmont; T4 also says there is no verified current price despite supplied pricing and a current-package reference.",
+          "appropriate_pacing": "T10 explicitly accepts that the customer is not ready to visit and offers information before any decision, without urgency or pressure."
+        },
+        "factual_issues": [
+          "T2 calls the project “Pearl Residences”; the supplied project knowledge identifies it as SkyWorld Pearlmont.",
+          "T4 says, “I don’t have a verified current price to quote.” The supplied knowledge includes base prices and a current sales-package reference, so the agent could at least give a cautiously qualified indicative starting point or explain that the exact unit price needs confirmation."
+        ],
+        "overall_note": "The agent is patient, responsive, and appropriately avoids pressuring a first-time buyer. It understands the customer wants to compare total costs before visiting, but leaves the central price question unanswered despite relevant pricing information being supplied. A plain, qualified price indication and a simple explanation of any booking or financing terms when relevant would better support this customer.",
+        "usage": {
+          "input_tokens": 20692,
+          "input_tokens_details": {
+            "cache_write_tokens": 20689,
+            "cached_tokens": 0
+          },
+          "output_tokens": 3580,
+          "output_tokens_details": {
+            "reasoning_tokens": 2938
+          },
+          "total_tokens": 24272
+        },
+        "latency_ms": 36877
+      },
+      "composite_score_1_to_5": 4.125,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "A_V2",
+      "scenario_id": "E02-first-home-unsure",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Hi, this would be my first home. Where should I start?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Good place to start is with what you need from your first home and a monthly budget that feels comfortable; then you can check financing eligibility and compare suitable options. Pearl Residences’ Phase 1 units are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. Are you looking to live there yourself?"
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes, for myself. I rent nearby now, so I’m mainly trying to understand what monthly costs I’d need to plan for before comparing units."
+        },
+        {
+          "speaker": "agent",
+          "text": "For Pearl Residences, the maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund. Your home-loan instalment and utilities would be separate, and selected clubhouse facilities are pay-per-use—not included in the maintenance fee. I can’t give a reliable all-in monthly figure without the unit price and financing details."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, so maintenance would be about RM162 a month for a 900 sq ft unit, right? Could you share the unit price range and any other regular charges I should factor in? A rough picture is fine for now."
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes—RM0.18 × 900 sq ft works out to RM162 a month, with the sinking fund included. Your loan instalment and utilities are separate, and clubhouse use is pay-per-use. I don’t have a verified current unit price range or a complete list of other recurring charges, so I’ll check those rather than guess."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, that makes sense. Please send the verified price range and any other regular charges when you find out—I’m just trying to get a rough monthly budget together for now."
+        },
+        {
+          "speaker": "agent",
+          "text": "Of course. I’ll share the verified price range and any confirmed regular charges once I have them, rather than guess. The RM162/month maintenance figure is confirmed."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Hi, this would be my first home. Where should I start?",
+          "customer_stance": "neutral",
+          "agent_reply": "Good place to start is with what you need from your first home and a monthly budget that feels comfortable; then you can check financing eligibility and compare suitable options. Pearl Residences’ Phase 1 units are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. Are you looking to live there yourself?",
+          "action": "REPLY",
+          "sales_move": "EXPLORE",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2089,
+            "input_tokens_details": {
+              "cache_write_tokens": 2086,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1082,
+            "output_tokens_details": {
+              "reasoning_tokens": 777
+            },
+            "total_tokens": 3171
+          },
+          "agent_latency_ms": 11879,
+          "retrieved_knowledge_paths": [
+            "02_commercial/panel-financiers-and-legal.md",
+            "01_facts/unit-and-layout.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 338,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 143,
+            "output_tokens_details": {
+              "reasoning_tokens": 72
+            },
+            "total_tokens": 481
+          },
+          "customer_simulator_latency_ms": 3552
+        },
+        {
+          "turn": 2,
+          "customer": "Yes, for myself. I rent nearby now, so I’m mainly trying to understand what monthly costs I’d need to plan for before comparing units.",
+          "customer_stance": "interested",
+          "agent_reply": "For Pearl Residences, the maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund. Your home-loan instalment and utilities would be separate, and selected clubhouse facilities are pay-per-use—not included in the maintenance fee. I can’t give a reliable all-in monthly figure without the unit price and financing details.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2544,
+            "input_tokens_details": {
+              "cache_write_tokens": 2541,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1661,
+            "output_tokens_details": {
+              "reasoning_tokens": 1252
+            },
+            "total_tokens": 4205
+          },
+          "agent_latency_ms": 18009,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 450,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 212,
+            "output_tokens_details": {
+              "reasoning_tokens": 128
+            },
+            "total_tokens": 662
+          },
+          "customer_simulator_latency_ms": 4354
+        },
+        {
+          "turn": 3,
+          "customer": "Okay, so maintenance would be about RM162 a month for a 900 sq ft unit, right? Could you share the unit price range and any other regular charges I should factor in? A rough picture is fine for now.",
+          "customer_stance": "interested",
+          "agent_reply": "Yes—RM0.18 × 900 sq ft works out to RM162 a month, with the sinking fund included. Your loan instalment and utilities are separate, and clubhouse use is pay-per-use. I don’t have a verified current unit price range or a complete list of other recurring charges, so I’ll check those rather than guess.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2520,
+            "input_tokens_details": {
+              "cache_write_tokens": 2517,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1048,
+            "output_tokens_details": {
+              "reasoning_tokens": 564
+            },
+            "total_tokens": 3568
+          },
+          "agent_latency_ms": 11243,
+          "retrieved_knowledge_paths": [
+            "02_commercial/pricing.md"
+          ],
+          "support_request": {
+            "support_type": "PRICING",
+            "requested_fact": "Current Phase 1 Type A unit price range and any other regular recurring charges buyers should budget for beyond the RM0.18 per sq ft maintenance fee, including sinking fund.",
+            "subject": "Pearl Residences Phase 1 Type A pricing and recurring charges",
+            "customer_need": "A rough monthly ownership-cost picture before comparing units as a first-home buyer.",
+            "reason": "The verified information confirms maintenance and certain SPA pricing components, but not the current unit price range or a complete list of recurring charges.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified pricing and recurring-charge details to help the buyer estimate ownership costs.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 580,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 245,
+            "output_tokens_details": {
+              "reasoning_tokens": 172
+            },
+            "total_tokens": 825
+          },
+          "customer_simulator_latency_ms": 4679
+        },
+        {
+          "turn": 4,
+          "customer": "Thanks, that makes sense. Please send the verified price range and any other regular charges when you find out—I’m just trying to get a rough monthly budget together for now.",
+          "customer_stance": "interested",
+          "agent_reply": "Of course. I’ll share the verified price range and any confirmed regular charges once I have them, rather than guess. The RM162/month maintenance figure is confirmed.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2931,
+            "input_tokens_details": {
+              "cache_write_tokens": 2928,
+              "cached_tokens": 0
+            },
+            "output_tokens": 800,
+            "output_tokens_details": {
+              "reasoning_tokens": 576
+            },
+            "total_tokens": 3731
+          },
+          "agent_latency_ms": 10323,
+          "retrieved_knowledge_paths": [
+            "02_commercial/pricing.md",
+            "02_commercial/pricing.md"
+          ],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 662,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 280,
+            "output_tokens_details": {
+              "reasoning_tokens": 224
+            },
+            "total_tokens": 942
+          },
+          "customer_simulator_latency_ms": 5643
+        }
+      ],
+      "customer_turn_count": 4,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "PRICING",
+            "requested_fact": "Current Phase 1 Type A unit price range and any other regular recurring charges buyers should budget for beyond the RM0.18 per sq ft maintenance fee, including sinking fund.",
+            "subject": "Pearl Residences Phase 1 Type A pricing and recurring charges",
+            "customer_need": "A rough monthly ownership-cost picture before comparing units as a first-home buyer.",
+            "reason": "The verified information confirms maintenance and certain SPA pricing components, but not the current unit price range or a complete list of recurring charges.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified pricing and recurring-charge details to help the buyer estimate ownership costs.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A 27-year-old first-time buyer rents nearby and has never visited a sales gallery.",
+        "needs": "A manageable first home and a clear explanation of how to compare options.",
+        "hidden_motive": "They are embarrassed about not understanding booking and financing terms.",
+        "obstacle": "Fear of being pressured into signing.",
+        "acceptable_behavior": "Explain plainly, let the buyer set the pace, and avoid assuming readiness."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 4,
+          "natural_continuation": 4,
+          "valuable_questions": 4,
+          "relevant_advantages": 4,
+          "customer_interest": 3,
+          "non_repetition": 3,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "Turns 2 and 4 focus on the buyer’s monthly budget and distinguish maintenance from loan, utility, and pay-per-use costs. When the customer asks for a rough budget, the agent doesn’t provide the price range available in the supplied knowledge.",
+          "natural_continuation": "Turn 4 directly answers the monthly-cost question; Turn 6 responds to the request for prices and other charges by saying it will check rather than guess.",
+          "valuable_questions": "Turn 2 asks, “Are you looking to live there yourself?”—a relevant buyer-fit question, and the agent does not continue collecting unnecessary details.",
+          "relevant_advantages": "Turn 2 gives the unit’s size and bedroom/bathroom configuration; Turn 4 explains that selected clubhouse facilities are pay-per-use, which is relevant to the customer’s cost concerns.",
+          "customer_interest": "The agent offers to send confirmed figures later and avoids pressure, but Turns 6 and 8 leave the customer without the rough price picture requested despite price and package information in the supplied knowledge.",
+          "non_repetition": "Turns 4 and 6 repeat that loan and utilities are separate and clubhouse use is pay-per-use; Turn 8 repeats the RM162 maintenance figure after it was already discussed.",
+          "factual_accuracy": "The maintenance rate and arithmetic are supported, but Turn 2 calls the project “Pearl Residences,” and Turn 8 calls the calculated monthly amount “confirmed” rather than qualifying it as an estimate.",
+          "appropriate_pacing": "The customer says they are only budgeting for now and asks for information to be sent later; the agent agrees and does not push a viewing, booking, or signing."
+        },
+        "factual_issues": [
+          "Turn 2 names the development “Pearl Residences”; the supplied project knowledge identifies it as SkyWorld Pearlmont.",
+          "Turns 6 and 8 say the agent lacks a verified current price range, although supplied knowledge includes base pricing and a current sales-package reference. The agent could have shared a caveated indicative range or said it would confirm the latest package.",
+          "Turn 8 calls RM162/month “confirmed.” The arithmetic is correct for 900 sq.ft. at RM0.18 psf, but the knowledge says a calculated total should be presented as an estimate subject to latest project confirmation."
+        ],
+        "overall_note": "The interaction is clear, calm, and well paced for a first-time buyer wary of pressure. It handles the maintenance and pay-per-use distinction well, but misses an opportunity to provide the rough price comparison the customer explicitly requested using the supplied pricing information.",
+        "usage": {
+          "input_tokens": 20666,
+          "input_tokens_details": {
+            "cache_write_tokens": 20663,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2713,
+          "output_tokens_details": {
+            "reasoning_tokens": 2070
+          },
+          "total_tokens": 23379
+        },
+        "latency_ms": 29614
+      },
+      "composite_score_1_to_5": 3.75,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "A_V2",
+      "scenario_id": "E04-tight-budget",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "We're trying to keep to a tight monthly budget. What costs should I expect?"
+        },
+        {
+          "speaker": "agent",
+          "text": "The confirmed recurring charge I have is maintenance at RM0.18 per sq. ft., inclusive of sinking fund. I don’t want to guess at the full monthly or upfront cost, so I’ll check the latest itemised figures for a Type A unit. Any loan repayment would also depend on the purchase price and your financing terms."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks. Could you check the Type A floor area too, so I can work out the maintenance amount? And let me know if there are any other confirmed recurring charges."
+        },
+        {
+          "speaker": "agent",
+          "text": "Type A is 900 sq. ft. At the confirmed RM0.18 per sq. ft. maintenance rate, inclusive of sinking fund, you can work out the amount using 900 × RM0.18. I don’t have any other recurring charges confirmed yet; I’m checking the itemised costs through the existing request and will share what’s verified."
+        },
+        {
+          "speaker": "customer",
+          "text": "Got it, so maintenance would be RM162 a month. Please let me know when you have the other confirmed charges."
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes, that’s right—900 × RM0.18 comes to RM162 a month. The itemised cost check is still in progress, and I’ll let you know once any other recurring charges are confirmed rather than guess."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, thanks. I’ll wait for the itemised figures before comparing the monthly costs."
+        },
+        {
+          "speaker": "agent",
+          "text": "Of course. I’ll share the itemised figures once the check comes back, so you can compare the costs properly."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "We're trying to keep to a tight monthly budget. What costs should I expect?",
+          "customer_stance": "neutral",
+          "agent_reply": "The confirmed recurring charge I have is maintenance at RM0.18 per sq. ft., inclusive of sinking fund. I don’t want to guess at the full monthly or upfront cost, so I’ll check the latest itemised figures for a Type A unit. Any loan repayment would also depend on the purchase price and your financing terms.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2253,
+            "input_tokens_details": {
+              "cache_write_tokens": 2250,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1398,
+            "output_tokens_details": {
+              "reasoning_tokens": 929
+            },
+            "total_tokens": 3651
+          },
+          "agent_latency_ms": 17625,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "support_request": {
+            "support_type": "PRICING",
+            "requested_fact": "Latest indicative Type A purchase price and itemised upfront and recurring owner costs, beyond the confirmed maintenance rate.",
+            "subject": "Pearl Residences Type A cost breakdown",
+            "customer_need": "Understand likely upfront and ongoing costs to assess whether the unit fits a tight monthly budget.",
+            "reason": "Only the maintenance rate is verified; a reliable full cost breakdown cannot be provided without current project figures.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified cost figures and clarify which ongoing costs depend on the buyer’s financing terms.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 343,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 179,
+            "output_tokens_details": {
+              "reasoning_tokens": 104
+            },
+            "total_tokens": 522
+          },
+          "customer_simulator_latency_ms": 3785
+        },
+        {
+          "turn": 2,
+          "customer": "Thanks. Could you check the Type A floor area too, so I can work out the maintenance amount? And let me know if there are any other confirmed recurring charges.",
+          "customer_stance": "interested",
+          "agent_reply": "Type A is 900 sq. ft. At the confirmed RM0.18 per sq. ft. maintenance rate, inclusive of sinking fund, you can work out the amount using 900 × RM0.18. I don’t have any other recurring charges confirmed yet; I’m checking the itemised costs through the existing request and will share what’s verified.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2531,
+            "input_tokens_details": {
+              "cache_write_tokens": 2528,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1046,
+            "output_tokens_details": {
+              "reasoning_tokens": 784
+            },
+            "total_tokens": 3577
+          },
+          "agent_latency_ms": 10681,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/maintenance-and-management.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 464,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 132,
+            "output_tokens_details": {
+              "reasoning_tokens": 70
+            },
+            "total_tokens": 596
+          },
+          "customer_simulator_latency_ms": 3370
+        },
+        {
+          "turn": 3,
+          "customer": "Got it, so maintenance would be RM162 a month. Please let me know when you have the other confirmed charges.",
+          "customer_stance": "interested",
+          "agent_reply": "Yes, that’s right—900 × RM0.18 comes to RM162 a month. The itemised cost check is still in progress, and I’ll let you know once any other recurring charges are confirmed rather than guess.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2533,
+            "input_tokens_details": {
+              "cache_write_tokens": 2530,
+              "cached_tokens": 0
+            },
+            "output_tokens": 432,
+            "output_tokens_details": {
+              "reasoning_tokens": 195
+            },
+            "total_tokens": 2965
+          },
+          "agent_latency_ms": 5284,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 548,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 120,
+            "output_tokens_details": {
+              "reasoning_tokens": 65
+            },
+            "total_tokens": 668
+          },
+          "customer_simulator_latency_ms": 3971
+        },
+        {
+          "turn": 4,
+          "customer": "Okay, thanks. I’ll wait for the itemised figures before comparing the monthly costs.",
+          "customer_stance": "interested",
+          "agent_reply": "Of course. I’ll share the itemised figures once the check comes back, so you can compare the costs properly.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2715,
+            "input_tokens_details": {
+              "cache_write_tokens": 2712,
+              "cached_tokens": 0
+            },
+            "output_tokens": 394,
+            "output_tokens_details": {
+              "reasoning_tokens": 177
+            },
+            "total_tokens": 3109
+          },
+          "agent_latency_ms": 4677,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "customer_next_stance": "silent",
+          "customer_simulator_usage": {
+            "input_tokens": 604,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 156,
+            "output_tokens_details": {
+              "reasoning_tokens": 112
+            },
+            "total_tokens": 760
+          },
+          "customer_simulator_latency_ms": 3227
+        }
+      ],
+      "customer_turn_count": 4,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "PRICING",
+            "requested_fact": "Latest indicative Type A purchase price and itemised upfront and recurring owner costs, beyond the confirmed maintenance rate.",
+            "subject": "Pearl Residences Type A cost breakdown",
+            "customer_need": "Understand likely upfront and ongoing costs to assess whether the unit fits a tight monthly budget.",
+            "reason": "Only the maintenance rate is verified; a reliable full cost breakdown cannot be provided without current project figures.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified cost figures and clarify which ongoing costs depend on the buyer’s financing terms.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A young couple has a firm budget and is researching homes after a recent salary change.",
+        "needs": "Understand which unit and ownership costs might fit their budget.",
+        "hidden_motive": "They are anxious about monthly commitments more than headline price.",
+        "obstacle": "They do not want to share income or loan details in chat.",
+        "acceptable_behavior": "Respect privacy, distinguish verified charges from total cost, and avoid financial promises."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 5,
+          "customer_interest": 5,
+          "non_repetition": 4,
+          "factual_accuracy": 4,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "Agent reply 1 avoids estimating total costs and notes that loan repayment depends on financing terms; replies 2–3 give the Type A area and maintenance calculation without asking for private financial details.",
+          "natural_continuation": "Agent replies directly answer the requests for Type A floor area, the calculated maintenance amount, and other confirmed recurring charges.",
+          "valuable_questions": "The agent asks no unnecessary questions and does not press the couple for income or loan details, which are not needed to answer their requests.",
+          "relevant_advantages": "The agent sticks to the relevant, verified ownership-cost information—RM0.18 per sq. ft. inclusive of sinking fund—and avoids unrelated sales claims.",
+          "customer_interest": "Agent replies 2–4 provide a useful calculation and offer verified itemised figures so the couple can compare monthly costs, without urgency or pressure.",
+          "non_repetition": "There is no repeated pitch or re-asking, though the agent reiterates that the itemised check is in progress in replies 2 and 3.",
+          "factual_accuracy": "The 900 sq. ft. Type A area and RM0.18 rate match the supplied Knowledge, and 900 × RM0.18 = RM162. The agent appropriately does not invent other charges or a loan payment.",
+          "appropriate_pacing": "After the customer says they will wait for itemised figures, the agent agrees to follow up rather than pushing for a viewing or further personal information."
+        },
+        "factual_issues": [
+          "The supplied Knowledge confirms the RM0.18 psf maintenance fee but does not explicitly specify its billing cadence. The agent's and customer's phrasing of RM162 “a month” is plausible in context, but the monthly cadence is not independently confirmed in the provided material.",
+          "The agent says an itemised-cost check is being made “through the existing request” and is “still in progress.” Those are operational status claims not verifiable from the supplied project Knowledge; they should be used only if the check is genuinely underway."
+        ],
+        "overall_note": "A considerate, well-calibrated exchange that recognizes the couple's concern about monthly commitments, protects their privacy, and distinguishes confirmed costs from unknowns. Minor caution: confirm the billing cadence and ensure the promised itemised-cost follow-up is actually in progress.",
+        "usage": {
+          "input_tokens": 20608,
+          "input_tokens_details": {
+            "cache_write_tokens": 20605,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1944,
+          "output_tokens_details": {
+            "reasoning_tokens": 1361
+          },
+          "total_tokens": 22552
+        },
+        "latency_ms": 22277
+      },
+      "composite_score_1_to_5": 4.75,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "B_V2_LITE",
+      "scenario_id": "E04-tight-budget",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "We're trying to keep to a tight monthly budget. What costs should I expect?"
+        },
+        {
+          "speaker": "agent",
+          "text": "The confirmed recurring fee I can share is RM0.18 per sq.ft., inclusive of the sinking fund. Selected clubhouse facilities are pay-per-use, so they aren’t all covered by that fee. I’d need to confirm the latest figures for the other upfront and ongoing costs rather than guess."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks. Could you check what other ongoing costs there are, like utilities or assessment, and give me an example of the monthly fee for a typical unit size?"
+        },
+        {
+          "speaker": "agent",
+          "text": "For the standard 900 sq.ft. unit, maintenance works out to about RM162/month (RM0.18 × 900), including the sinking fund. I don’t have confirmed figures for utilities, assessment or other charges yet; I’ve already requested a check on those and it’s still pending."
+        },
+        {
+          "speaker": "customer",
+          "text": "Got it, thanks. Please let me know once you have the confirmed figures for utilities and assessment too—I’m trying to get a realistic monthly total."
+        },
+        {
+          "speaker": "agent",
+          "text": "Of course—the check is still pending. I’ll share the confirmed utilities and assessment figures once they’re available, rather than guess at a monthly total."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "We're trying to keep to a tight monthly budget. What costs should I expect?",
+          "customer_stance": "neutral",
+          "agent_reply": "The confirmed recurring fee I can share is RM0.18 per sq.ft., inclusive of the sinking fund. Selected clubhouse facilities are pay-per-use, so they aren’t all covered by that fee. I’d need to confirm the latest figures for the other upfront and ongoing costs rather than guess.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2027,
+            "input_tokens_details": {
+              "cache_write_tokens": 2024,
+              "cached_tokens": 0
+            },
+            "output_tokens": 777,
+            "output_tokens_details": {
+              "reasoning_tokens": 334
+            },
+            "total_tokens": 2804
+          },
+          "agent_latency_ms": 9265,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "support_request": {
+            "support_type": "OTHER",
+            "requested_fact": "Latest upfront and ongoing costs for Pearl Residences beyond the stated maintenance fee, including which charges are confirmed and any applicable amounts.",
+            "subject": "Pearl Residences expected costs",
+            "customer_need": "Understand the costs involved while keeping to a tight monthly budget.",
+            "reason": "Only the maintenance rate and pay-per-use clubhouse arrangement are verified here; other costs should not be guessed.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share the confirmed cost breakdown and help the customer assess affordability.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 335,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 133,
+            "output_tokens_details": {
+              "reasoning_tokens": 60
+            },
+            "total_tokens": 468
+          },
+          "customer_simulator_latency_ms": 3203
+        },
+        {
+          "turn": 2,
+          "customer": "Thanks. Could you check what other ongoing costs there are, like utilities or assessment, and give me an example of the monthly fee for a typical unit size?",
+          "customer_stance": "interested",
+          "agent_reply": "For the standard 900 sq.ft. unit, maintenance works out to about RM162/month (RM0.18 × 900), including the sinking fund. I don’t have confirmed figures for utilities, assessment or other charges yet; I’ve already requested a check on those and it’s still pending.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2175,
+            "input_tokens_details": {
+              "cache_write_tokens": 2172,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1016,
+            "output_tokens_details": {
+              "reasoning_tokens": 585
+            },
+            "total_tokens": 3191
+          },
+          "agent_latency_ms": 12508,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 442,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 118,
+            "output_tokens_details": {
+              "reasoning_tokens": 47
+            },
+            "total_tokens": 560
+          },
+          "customer_simulator_latency_ms": 2723
+        },
+        {
+          "turn": 3,
+          "customer": "Got it, thanks. Please let me know once you have the confirmed figures for utilities and assessment too—I’m trying to get a realistic monthly total.",
+          "customer_stance": "interested",
+          "agent_reply": "Of course—the check is still pending. I’ll share the confirmed utilities and assessment figures once they’re available, rather than guess at a monthly total.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2171,
+            "input_tokens_details": {
+              "cache_write_tokens": 2168,
+              "cached_tokens": 0
+            },
+            "output_tokens": 618,
+            "output_tokens_details": {
+              "reasoning_tokens": 399
+            },
+            "total_tokens": 2789
+          },
+          "agent_latency_ms": 8737,
+          "retrieved_knowledge_paths": [],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 516,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 143,
+            "output_tokens_details": {
+              "reasoning_tokens": 88
+            },
+            "total_tokens": 659
+          },
+          "customer_simulator_latency_ms": 3599
+        }
+      ],
+      "customer_turn_count": 3,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "OTHER",
+            "requested_fact": "Latest upfront and ongoing costs for Pearl Residences beyond the stated maintenance fee, including which charges are confirmed and any applicable amounts.",
+            "subject": "Pearl Residences expected costs",
+            "customer_need": "Understand the costs involved while keeping to a tight monthly budget.",
+            "reason": "Only the maintenance rate and pay-per-use clubhouse arrangement are verified here; other costs should not be guessed.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share the confirmed cost breakdown and help the customer assess affordability.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A young couple has a firm budget and is researching homes after a recent salary change.",
+        "needs": "Understand which unit and ownership costs might fit their budget.",
+        "hidden_motive": "They are anxious about monthly commitments more than headline price.",
+        "obstacle": "They do not want to share income or loan details in chat.",
+        "acceptable_behavior": "Respect privacy, distinguish verified charges from total cost, and avoid financial promises."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 5,
+          "customer_interest": 5,
+          "non_repetition": 5,
+          "factual_accuracy": 5,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "T2–T6: Gives the requested typical-unit calculation, distinguishes it from unknown utilities and assessment, and avoids promising a total before confirmation.",
+          "natural_continuation": "T2 responds to the broad cost question; T4 answers the specific 900 sq.ft. example and status request; T6 acknowledges the customer’s follow-up request.",
+          "valuable_questions": "No unnecessary questions or requests for income or loan details; the agent sticks to the cost information the customer asked for.",
+          "relevant_advantages": "T2 explains the verified RM0.18/sq.ft. fee includes sinking fund and clarifies that selected clubhouse facilities are pay-per-use.",
+          "customer_interest": "T4 calculates RM162/month with the formula, while T6 offers to share confirmed figures rather than guessing at the customer’s monthly total.",
+          "non_repetition": "T6 repeats that the check is pending only in response to the customer’s request for an update; it does not repeat a sales pitch.",
+          "factual_accuracy": "T2’s fee and clubhouse explanation match the supplied knowledge; T4’s RM0.18 × 900 = RM162 calculation is correct and other charges are explicitly left unconfirmed.",
+          "appropriate_pacing": "The exchange remains focused on costs and follow-up; the agent does not push a viewing or ask for private financial details when the customer is seeking information."
+        },
+        "factual_issues": [],
+        "overall_note": "A careful, budget-aware exchange. The agent distinguishes the confirmed maintenance charge from the still-unknown total ownership costs, provides the requested example, and respects the customer’s privacy.",
+        "usage": {
+          "input_tokens": 20520,
+          "input_tokens_details": {
+            "cache_write_tokens": 20517,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2860,
+          "output_tokens_details": {
+            "reasoning_tokens": 2419
+          },
+          "total_tokens": 23380
+        },
+        "latency_ms": 35266
+      },
+      "composite_score_1_to_5": 5.0,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "A_V2",
+      "scenario_id": "E15-facility-overload",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Which facilities could be useful for a family with kids?"
+        },
+        {
+          "speaker": "agent",
+          "text": "For kids, the playground and kids’ pool/water-play area would be the most directly useful. The plan also includes a tadika, community halls and a roughly 10-acre landscaped facilities deck for outdoor space. The pool and water-play area are part of the clubhouse concept, which is pay-per-use."
+        },
+        {
+          "speaker": "customer",
+          "text": "That 10-acre landscaped area sounds interesting. Is it actually usable open space for residents, or mostly landscaping around the facilities?"
+        },
+        {
+          "speaker": "agent",
+          "text": "It’s intended as a landscaped podium space for residents, not just decorative planting around the facilities, and it isn’t open to the general public. It’s a facilities deck rather than 10 acres of uninterrupted lawn; the pay-per-use clubhouse areas are kept separate."
+        },
+        {
+          "speaker": "customer",
+          "text": "Got it, thanks—that distinction helps. Is there a proper open lawn where kids can run around, or is it mostly paths and planted areas?"
+        },
+        {
+          "speaker": "agent",
+          "text": "There is an open lawn/amphitheatre seating listed in the facilities plan, so it’s not described as only paths and planting. I can’t confirm how large or unobstructed the lawn is from the information I have, though—I’ll check the layout to see whether it’s suitable for kids to run around."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, thanks. I’d be keen to see the layout when you’ve checked."
+        },
+        {
+          "speaker": "agent",
+          "text": "Absolutely — I’m still checking the facilities layout, especially the lawn’s size and how open it is. I’ll share what I can confirm once I have it."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Which facilities could be useful for a family with kids?",
+          "customer_stance": "neutral",
+          "agent_reply": "For kids, the playground and kids’ pool/water-play area would be the most directly useful. The plan also includes a tadika, community halls and a roughly 10-acre landscaped facilities deck for outdoor space. The pool and water-play area are part of the clubhouse concept, which is pay-per-use.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2211,
+            "input_tokens_details": {
+              "cache_write_tokens": 2208,
+              "cached_tokens": 0
+            },
+            "output_tokens": 910,
+            "output_tokens_details": {
+              "reasoning_tokens": 661
+            },
+            "total_tokens": 3121
+          },
+          "agent_latency_ms": 11568,
+          "retrieved_knowledge_paths": [
+            "01_facts/school-access-and-family.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 318,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 173,
+            "output_tokens_details": {
+              "reasoning_tokens": 109
+            },
+            "total_tokens": 491
+          },
+          "customer_simulator_latency_ms": 4399
+        },
+        {
+          "turn": 2,
+          "customer": "That 10-acre landscaped area sounds interesting. Is it actually usable open space for residents, or mostly landscaping around the facilities?",
+          "customer_stance": "interested",
+          "agent_reply": "It’s intended as a landscaped podium space for residents, not just decorative planting around the facilities, and it isn’t open to the general public. It’s a facilities deck rather than 10 acres of uninterrupted lawn; the pay-per-use clubhouse areas are kept separate.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2528,
+            "input_tokens_details": {
+              "cache_write_tokens": 2525,
+              "cached_tokens": 0
+            },
+            "output_tokens": 704,
+            "output_tokens_details": {
+              "reasoning_tokens": 464
+            },
+            "total_tokens": 3232
+          },
+          "agent_latency_ms": 9260,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 410,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 183,
+            "output_tokens_details": {
+              "reasoning_tokens": 108
+            },
+            "total_tokens": 593
+          },
+          "customer_simulator_latency_ms": 3720
+        },
+        {
+          "turn": 3,
+          "customer": "Got it, thanks—that distinction helps. Is there a proper open lawn where kids can run around, or is it mostly paths and planted areas?",
+          "customer_stance": "interested",
+          "agent_reply": "There is an open lawn/amphitheatre seating listed in the facilities plan, so it’s not described as only paths and planting. I can’t confirm how large or unobstructed the lawn is from the information I have, though—I’ll check the layout to see whether it’s suitable for kids to run around.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2653,
+            "input_tokens_details": {
+              "cache_write_tokens": 2650,
+              "cached_tokens": 0
+            },
+            "output_tokens": 807,
+            "output_tokens_details": {
+              "reasoning_tokens": 335
+            },
+            "total_tokens": 3460
+          },
+          "agent_latency_ms": 9930,
+          "retrieved_knowledge_paths": [
+            "01_facts/clubhouse-and-pay-per-use.md",
+            "01_facts/clubhouse-and-pay-per-use.md"
+          ],
+          "support_request": {
+            "support_type": "LAYOUT",
+            "requested_fact": "Confirm the open lawn's size and whether it is a clear, usable area for children to run around, rather than mainly paths and planted areas.",
+            "subject": "Pearl Residences facilities deck",
+            "customer_need": "The customer wants to know if there is a proper open lawn where kids can run around.",
+            "reason": "The facilities information lists an open lawn/amphitheatre seating but does not establish its size or how unobstructed it is.",
+            "resume_stage": "POSITION",
+            "resume_objective": "Clarify the lawn's size and usability accurately, then relate it to the customer's interest in family facilities.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 517,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 180,
+            "output_tokens_details": {
+              "reasoning_tokens": 119
+            },
+            "total_tokens": 697
+          },
+          "customer_simulator_latency_ms": 3120
+        },
+        {
+          "turn": 4,
+          "customer": "Okay, thanks. I’d be keen to see the layout when you’ve checked.",
+          "customer_stance": "interested",
+          "agent_reply": "Absolutely — I’m still checking the facilities layout, especially the lawn’s size and how open it is. I’ll share what I can confirm once I have it.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "POSITIVE",
+          "openai_usage": {
+            "input_tokens": 2818,
+            "input_tokens_details": {
+              "cache_write_tokens": 2815,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1739,
+            "output_tokens_details": {
+              "reasoning_tokens": 1490
+            },
+            "total_tokens": 4557
+          },
+          "agent_latency_ms": 18405,
+          "retrieved_knowledge_paths": [
+            "01_facts/unit-and-layout.md"
+          ],
+          "customer_next_stance": "silent",
+          "customer_simulator_usage": {
+            "input_tokens": 581,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 116,
+            "output_tokens_details": {
+              "reasoning_tokens": 72
+            },
+            "total_tokens": 697
+          },
+          "customer_simulator_latency_ms": 3627
+        }
+      ],
+      "customer_turn_count": 4,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "LAYOUT",
+            "requested_fact": "Confirm the open lawn's size and whether it is a clear, usable area for children to run around, rather than mainly paths and planted areas.",
+            "subject": "Pearl Residences facilities deck",
+            "customer_need": "The customer wants to know if there is a proper open lawn where kids can run around.",
+            "reason": "The facilities information lists an open lawn/amphitheatre seating but does not establish its size or how unobstructed it is.",
+            "resume_stage": "POSITION",
+            "resume_objective": "Clarify the lawn's size and usability accurately, then relate it to the customer's interest in family facilities.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A parent is interested in shared facilities but overwhelmed by long lists.",
+        "needs": "One or two facilities that could support family routines.",
+        "hidden_motive": "They care more about usable green space than luxury branding.",
+        "obstacle": "They dislike repeated feature pitches.",
+        "acceptable_behavior": "Select a relevant verified fact, then pause for their reaction."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 4,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 4,
+          "customer_interest": 5,
+          "non_repetition": 5,
+          "factual_accuracy": 4,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "T2 identifies the playground and kids’ pool as the most directly useful, then responds to the customer’s interest in green space by discussing the deck and lawn. The initial extra facilities are a little more than this list-weary customer needed.",
+          "natural_continuation": "T4 directly addresses whether the deck is resident-use space; T6 answers the lawn question and clearly distinguishes what is listed from what remains unknown.",
+          "valuable_questions": "The agent asks no unnecessary questions and offers to check the layout because that would help answer the customer’s specific concern.",
+          "relevant_advantages": "T2 names verified family facilities and the landscaped deck, which relates to family routines and the customer’s underlying preference for green space, though it adds several facilities beyond the most relevant one or two.",
+          "customer_interest": "T6–T8 offer to check the lawn’s size and openness and share what can be confirmed, without pressure or manufactured urgency.",
+          "non_repetition": "The agent does not repeat a feature pitch; each clarification about the deck, clubhouse separation, or lawn responds to a new customer question.",
+          "factual_accuracy": "T2’s facilities and pay-per-use distinction, and T6’s listed open lawn/amphitheatre, match the supplied knowledge. T6 appropriately says lawn size and openness cannot be confirmed from the available information.",
+          "appropriate_pacing": "The customer asks to see the layout once checked, and T8 acknowledges that request rather than pushing for a viewing or asking for unrelated details."
+        },
+        "factual_issues": [
+          "T4’s wording that the deck is “not just decorative planting” and that clubhouse areas “are kept separate” is somewhat more definite than the source, which describes a facilities/landscape deck and says separation is planned. The agent could frame these as intended/planned features, especially before checking the layout."
+        ],
+        "overall_note": "A considerate, coherent exchange that recognizes the customer’s real interest in usable green space and appropriately leaves the lawn’s suitability unresolved pending a layout check. The main opportunity is to keep the opening facility list tighter and qualify planned features.",
+        "usage": {
+          "input_tokens": 20585,
+          "input_tokens_details": {
+            "cache_write_tokens": 20582,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2867,
+          "output_tokens_details": {
+            "reasoning_tokens": 2324
+          },
+          "total_tokens": 23452
+        },
+        "latency_ms": 32318
+      },
+      "composite_score_1_to_5": 4.625,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "B_V2_LITE",
+      "scenario_id": "E15-facility-overload",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Which facilities could be useful for a family with kids?"
+        },
+        {
+          "speaker": "agent",
+          "text": "For kids, the children’s playground and kids’ pool/water-play facilities would be the most directly useful. There’s also a tadika and community halls. The pool and water-play facilities are part of the clubhouse concept."
+        },
+        {
+          "speaker": "customer",
+          "text": "Is there a proper outdoor green space for kids to run around in, besides the playground?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Yes—besides the playground, there’s an approximately 10-acre elevated landscaped space on Level 9 for residents. It’s a much larger shared green area, though it’s a landscaped podium rather than a ground-level park."
+        },
+        {
+          "speaker": "customer",
+          "text": "That sounds promising. Is there an open grassy area for running around, or is it mostly landscaped paths and planting?"
+        },
+        {
+          "speaker": "agent",
+          "text": "It’s confirmed as an elevated landscaped space, but I don’t have verified details on whether there’s an open grassy area for running or if it’s mainly planting and paths. I’ll check that specific detail for you."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, thanks—let me know when you find out."
+        },
+        {
+          "speaker": "agent",
+          "text": "You’re welcome—I’ll let you know once I have a confirmed answer about whether there’s open grass for running."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Which facilities could be useful for a family with kids?",
+          "customer_stance": "neutral",
+          "agent_reply": "For kids, the children’s playground and kids’ pool/water-play facilities would be the most directly useful. There’s also a tadika and community halls. The pool and water-play facilities are part of the clubhouse concept.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 1985,
+            "input_tokens_details": {
+              "cache_write_tokens": 1982,
+              "cached_tokens": 0
+            },
+            "output_tokens": 750,
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            },
+            "total_tokens": 2735
+          },
+          "agent_latency_ms": 9571,
+          "retrieved_knowledge_paths": [
+            "01_facts/school-access-and-family.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 301,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 182,
+            "output_tokens_details": {
+              "reasoning_tokens": 127
+            },
+            "total_tokens": 483
+          },
+          "customer_simulator_latency_ms": 4686
+        },
+        {
+          "turn": 2,
+          "customer": "Is there a proper outdoor green space for kids to run around in, besides the playground?",
+          "customer_stance": "interested",
+          "agent_reply": "Yes—besides the playground, there’s an approximately 10-acre elevated landscaped space on Level 9 for residents. It’s a much larger shared green area, though it’s a landscaped podium rather than a ground-level park.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2243,
+            "input_tokens_details": {
+              "cache_write_tokens": 2240,
+              "cached_tokens": 0
+            },
+            "output_tokens": 693,
+            "output_tokens_details": {
+              "reasoning_tokens": 458
+            },
+            "total_tokens": 2936
+          },
+          "agent_latency_ms": 9497,
+          "retrieved_knowledge_paths": [
+            "01_facts/developer-and-track-record.md",
+            "01_facts/green-building-and-sustainability.md"
+          ],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 379,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 175,
+            "output_tokens_details": {
+              "reasoning_tokens": 105
+            },
+            "total_tokens": 554
+          },
+          "customer_simulator_latency_ms": 3886
+        },
+        {
+          "turn": 3,
+          "customer": "That sounds promising. Is there an open grassy area for running around, or is it mostly landscaped paths and planting?",
+          "customer_stance": "interested",
+          "agent_reply": "It’s confirmed as an elevated landscaped space, but I don’t have verified details on whether there’s an open grassy area for running or if it’s mainly planting and paths. I’ll check that specific detail for you.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2335,
+            "input_tokens_details": {
+              "cache_write_tokens": 2332,
+              "cached_tokens": 0
+            },
+            "output_tokens": 626,
+            "output_tokens_details": {
+              "reasoning_tokens": 275
+            },
+            "total_tokens": 2961
+          },
+          "agent_latency_ms": 7252,
+          "retrieved_knowledge_paths": [
+            "01_facts/facilities-and-quality.md",
+            "01_facts/unit-and-layout.md"
+          ],
+          "support_request": {
+            "support_type": "OTHER",
+            "requested_fact": "Whether the approximately 10-acre elevated landscaped space includes an open grassy area suitable for children to run around, or is mainly landscaped paths and planting.",
+            "subject": "Level 9 elevated landscaped space",
+            "customer_need": "Wants an outdoor green area where children can run around, beyond the playground.",
+            "reason": "The available verified information confirms a landscaped space but does not specify its surface or whether it includes open lawn.",
+            "resume_stage": "POSITION",
+            "resume_objective": "Confirm the character of the landscaped space and explain whether it suits the customer's need for an open grassy area.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 460,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 133,
+            "output_tokens_details": {
+              "reasoning_tokens": 79
+            },
+            "total_tokens": 593
+          },
+          "customer_simulator_latency_ms": 2762
+        },
+        {
+          "turn": 4,
+          "customer": "Okay, thanks—let me know when you find out.",
+          "customer_stance": "interested",
+          "agent_reply": "You’re welcome—I’ll let you know once I have a confirmed answer about whether there’s open grass for running.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2335,
+            "input_tokens_details": {
+              "cache_write_tokens": 2332,
+              "cached_tokens": 0
+            },
+            "output_tokens": 561,
+            "output_tokens_details": {
+              "reasoning_tokens": 285
+            },
+            "total_tokens": 2896
+          },
+          "agent_latency_ms": 6611,
+          "retrieved_knowledge_paths": [],
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 509,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 164,
+            "output_tokens_details": {
+              "reasoning_tokens": 125
+            },
+            "total_tokens": 673
+          },
+          "customer_simulator_latency_ms": 4028
+        }
+      ],
+      "customer_turn_count": 4,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "OTHER",
+            "requested_fact": "Whether the approximately 10-acre elevated landscaped space includes an open grassy area suitable for children to run around, or is mainly landscaped paths and planting.",
+            "subject": "Level 9 elevated landscaped space",
+            "customer_need": "Wants an outdoor green area where children can run around, beyond the playground.",
+            "reason": "The available verified information confirms a landscaped space but does not specify its surface or whether it includes open lawn.",
+            "resume_stage": "POSITION",
+            "resume_objective": "Confirm the character of the landscaped space and explain whether it suits the customer's need for an open grassy area.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A parent is interested in shared facilities but overwhelmed by long lists.",
+        "needs": "One or two facilities that could support family routines.",
+        "hidden_motive": "They care more about usable green space than luxury branding.",
+        "obstacle": "They dislike repeated feature pitches.",
+        "acceptable_behavior": "Select a relevant verified fact, then pause for their reaction."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 5,
+          "customer_interest": 5,
+          "non_repetition": 5,
+          "factual_accuracy": 5,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "Agent turn 4 responds to the green-space priority with the approximately 10-acre Level 9 landscaped area, then Agent turn 6 addresses the customer’s specific question about open grass.",
+          "natural_continuation": "Agent turns 4 and 6 follow the customer’s shift from family facilities to outdoor green space and then to whether there is grass.",
+          "valuable_questions": "The agent asks no unnecessary questions; when the grass detail is unknown, Agent turn 6 offers to check it instead.",
+          "relevant_advantages": "Agent turn 2 names the playground and kids’ pool/water-play facilities; Agent turn 4 highlights the relevant landscaped space.",
+          "customer_interest": "After the customer says the green space sounds promising, Agent turn 6 offers to verify the detail that matters to them rather than pushing unrelated features.",
+          "non_repetition": "The agent does not repeat the initial facilities list or re-pitch the same benefit; each reply addresses the customer’s latest point.",
+          "factual_accuracy": "Agent turns 2 and 4 give facilities and deck details supported by the supplied Knowledge. Agent turns 6 and 8 explicitly leave the grass layout unconfirmed and promise to check it.",
+          "appropriate_pacing": "Agent turn 8 acknowledges the customer’s request to be updated and ends without pushing a viewing or adding more pitches."
+        },
+        "factual_issues": [],
+        "overall_note": "The agent selects relevant family facilities, adapts to the customer’s stronger interest in green space, and is appropriately candid about not knowing whether the landscaped deck has open grass. The exchange stays concise and leaves room for the customer’s reaction.",
+        "usage": {
+          "input_tokens": 20513,
+          "input_tokens_details": {
+            "cache_write_tokens": 20510,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1264,
+          "output_tokens_details": {
+            "reasoning_tokens": 819
+          },
+          "total_tokens": 21777
+        },
+        "latency_ms": 15740
+      },
+      "composite_score_1_to_5": 5.0,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "B_V2_LITE",
+      "scenario_id": "E29-requirements-shift",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "We first wanted a compact place, but my elderly mother may move in too."
+        },
+        {
+          "speaker": "agent",
+          "text": "That may change the space you need. Pearl Residences’ Phase 1 homes are 900 sq ft with 3 bedrooms and 2 bathrooms. For your mum, would having her own bedroom be the main need, or is easy day-to-day access more important?"
+        },
+        {
+          "speaker": "customer",
+          "text": "Her own room would matter, but easy access is a concern too. Are the bedrooms all on one level, and is there a lift?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Faham—bilik sendiri penting, dan akses mudah pun perlu untuk mak. Saya tak mahu teka tentang susun atur bilik atau lif, jadi saya perlu semak maklumat yang disahkan dulu."
+        },
+        {
+          "speaker": "customer",
+          "text": "Okay, please check. Could you also find out whether there are steps at the entrance?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Sure—I’ll include whether there are steps at the entrance in the check as well. I don’t have a confirmed answer yet."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, please let me know once you’ve checked. We’ll need to make sure she can get around easily."
+        },
+        {
+          "speaker": "agent",
+          "text": "Understood—easy access for your mum is important. The checks on the bedroom level, lift and entrance steps are still pending; I’ll let you know once we have confirmed details."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks. We’ll hold off deciding until we know whether the layout will work for her."
+        },
+        {
+          "speaker": "agent",
+          "text": "Understood. No need to decide until we have confirmed the layout and access details. I’ll share them once we have a verified answer."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "We first wanted a compact place, but my elderly mother may move in too.",
+          "customer_stance": "neutral",
+          "agent_reply": "That may change the space you need. Pearl Residences’ Phase 1 homes are 900 sq ft with 3 bedrooms and 2 bathrooms. For your mum, would having her own bedroom be the main need, or is easy day-to-day access more important?",
+          "action": "REPLY",
+          "sales_move": "EXPLORE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 1680,
+            "input_tokens_details": {
+              "cache_write_tokens": 1677,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1028,
+            "output_tokens_details": {
+              "reasoning_tokens": 643
+            },
+            "total_tokens": 2708
+          },
+          "agent_latency_ms": 11769,
+          "retrieved_knowledge_paths": [],
+          "customer_next_stance": "changed_need",
+          "customer_simulator_usage": {
+            "input_tokens": 319,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 178,
+            "output_tokens_details": {
+              "reasoning_tokens": 112
+            },
+            "total_tokens": 497
+          },
+          "customer_simulator_latency_ms": 3707
+        },
+        {
+          "turn": 2,
+          "customer": "Her own room would matter, but easy access is a concern too. Are the bedrooms all on one level, and is there a lift?",
+          "customer_stance": "changed_need",
+          "agent_reply": "Faham—bilik sendiri penting, dan akses mudah pun perlu untuk mak. Saya tak mahu teka tentang susun atur bilik atau lif, jadi saya perlu semak maklumat yang disahkan dulu.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2094,
+            "input_tokens_details": {
+              "cache_write_tokens": 2091,
+              "cached_tokens": 0
+            },
+            "output_tokens": 816,
+            "output_tokens_details": {
+              "reasoning_tokens": 386
+            },
+            "total_tokens": 2910
+          },
+          "agent_latency_ms": 10879,
+          "retrieved_knowledge_paths": [
+            "03_sales/objection-to-usp-map.md"
+          ],
+          "support_request": {
+            "support_type": "TECHNICAL",
+            "requested_fact": "Confirm whether all bedrooms in the Phase 1 Type A unit are on one level and whether the building has a lift.",
+            "subject": "Pearl Residences Phase 1 Type A layout and lift access",
+            "customer_need": "Assess whether the unit can accommodate an elderly mother who needs her own room and easy access.",
+            "reason": "Customer directly asked about bedroom levels and lift availability.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified details and assess whether the layout meets the mother's access needs.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 403,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 111,
+            "output_tokens_details": {
+              "reasoning_tokens": 50
+            },
+            "total_tokens": 514
+          },
+          "customer_simulator_latency_ms": 2775
+        },
+        {
+          "turn": 3,
+          "customer": "Okay, please check. Could you also find out whether there are steps at the entrance?",
+          "customer_stance": "interested",
+          "agent_reply": "Sure—I’ll include whether there are steps at the entrance in the check as well. I don’t have a confirmed answer yet.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2138,
+            "input_tokens_details": {
+              "cache_write_tokens": 2135,
+              "cached_tokens": 0
+            },
+            "output_tokens": 988,
+            "output_tokens_details": {
+              "reasoning_tokens": 673
+            },
+            "total_tokens": 3126
+          },
+          "agent_latency_ms": 10812,
+          "retrieved_knowledge_paths": [
+            "01_facts/parking-access-and-security.md"
+          ],
+          "support_request": {
+            "support_type": "TECHNICAL",
+            "requested_fact": "Confirm whether there are any steps at the entrance to the residential building.",
+            "subject": "Pearl Residences entrance access",
+            "customer_need": "Assess easy access for an elderly family member.",
+            "reason": "The customer asked whether there are steps at the entrance, in addition to the bedroom layout and lift details already being checked.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share confirmed bedroom layout, lift, and entrance-step details, then assess whether access meets the mother's needs.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 461,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 131,
+            "output_tokens_details": {
+              "reasoning_tokens": 72
+            },
+            "total_tokens": 592
+          },
+          "customer_simulator_latency_ms": 2598
+        },
+        {
+          "turn": 4,
+          "customer": "Thanks, please let me know once you’ve checked. We’ll need to make sure she can get around easily.",
+          "customer_stance": "interested",
+          "agent_reply": "Understood—easy access for your mum is important. The checks on the bedroom level, lift and entrance steps are still pending; I’ll let you know once we have confirmed details.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2293,
+            "input_tokens_details": {
+              "cache_write_tokens": 2290,
+              "cached_tokens": 0
+            },
+            "output_tokens": 571,
+            "output_tokens_details": {
+              "reasoning_tokens": 343
+            },
+            "total_tokens": 2864
+          },
+          "agent_latency_ms": 6837,
+          "retrieved_knowledge_paths": [],
+          "customer_next_stance": "changed_need",
+          "customer_simulator_usage": {
+            "input_tokens": 535,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 154,
+            "output_tokens_details": {
+              "reasoning_tokens": 94
+            },
+            "total_tokens": 689
+          },
+          "customer_simulator_latency_ms": 3745
+        },
+        {
+          "turn": 5,
+          "customer": "Thanks. We’ll hold off deciding until we know whether the layout will work for her.",
+          "customer_stance": "changed_need",
+          "agent_reply": "Understood. No need to decide until we have confirmed the layout and access details. I’ll share them once we have a verified answer.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2673,
+            "input_tokens_details": {
+              "cache_write_tokens": 2670,
+              "cached_tokens": 0
+            },
+            "output_tokens": 462,
+            "output_tokens_details": {
+              "reasoning_tokens": 243
+            },
+            "total_tokens": 3135
+          },
+          "agent_latency_ms": 6542,
+          "retrieved_knowledge_paths": [
+            "01_facts/building-and-access.md",
+            "01_facts/location-and-connectivity.md"
+          ],
+          "customer_next_stance": "silent",
+          "customer_simulator_usage": {
+            "input_tokens": 595,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 144,
+            "output_tokens_details": {
+              "reasoning_tokens": 103
+            },
+            "total_tokens": 739
+          },
+          "customer_simulator_latency_ms": 2961
+        }
+      ],
+      "customer_turn_count": 5,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "TECHNICAL",
+            "requested_fact": "Confirm whether all bedrooms in the Phase 1 Type A unit are on one level and whether the building has a lift.",
+            "subject": "Pearl Residences Phase 1 Type A layout and lift access",
+            "customer_need": "Assess whether the unit can accommodate an elderly mother who needs her own room and easy access.",
+            "reason": "Customer directly asked about bedroom levels and lift availability.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified details and assess whether the layout meets the mother's access needs.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          {
+            "support_type": "TECHNICAL",
+            "requested_fact": "Confirm whether there are any steps at the entrance to the residential building.",
+            "subject": "Pearl Residences entrance access",
+            "customer_need": "Assess easy access for an elderly family member.",
+            "reason": "The customer asked whether there are steps at the entrance, in addition to the bedroom layout and lift details already being checked.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share confirmed bedroom layout, lift, and entrance-step details, then assess whether access meets the mother's needs.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A buyer first asked for a compact unit but later says an elderly parent may move in.",
+        "needs": "Reconsider usable space, accessibility, and privacy.",
+        "hidden_motive": "The family decision is still evolving.",
+        "obstacle": "Earlier assumptions may no longer fit.",
+        "acceptable_behavior": "Recognize the changed need and revisit fit without defending the prior recommendation."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 5,
+          "customer_interest": 5,
+          "non_repetition": 4,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "T2 recognizes that the parent moving in may change the space needed and asks about a private bedroom versus easy access. T4 acknowledges both concerns.",
+          "natural_continuation": "T4 responds directly to the customer's bedroom-and-lift question without guessing; T6 adds the requested entrance-step check.",
+          "valuable_questions": "T2's question about whether a private room or easy access matters helps clarify the family's changing priorities.",
+          "relevant_advantages": "T2 offers the relevant, verified 900 sq ft, 3-bedroom, 2-bathroom configuration in response to the need for more space and privacy.",
+          "customer_interest": "T10 respects the customer's wish to wait: “No need to decide until we have confirmed the layout and access details.”",
+          "non_repetition": "T8 and T10 repeat that checks are pending, but this largely responds to the customer's repeated request to wait for confirmed information.",
+          "factual_accuracy": "T2 calls the project “Pearl Residences,” while the supplied project facts identify SkyWorld Pearlmont. T4 also defers on whether there is a lift, although the supplied building facts confirm lifts in each block.",
+          "appropriate_pacing": "T8 and T10 do not push a viewing or decision after the customer says accessibility must be checked first."
+        },
+        "factual_issues": [
+          "T2: “Pearl Residences” is not the project name supported by the supplied Knowledge, which identifies SkyWorld Pearlmont.",
+          "T4: The agent says lift information needs checking, but the supplied Knowledge states that each block has 4 passenger lifts plus 1 BOMBA lift. It could have confirmed that lifts exist while still checking bedroom layout and accessible routes."
+        ],
+        "overall_note": "The agent understands the family's evolving needs, avoids guessing about unconfirmed layout and entrance details, and gives the customer space to defer a decision. The main shortcomings are the inconsistent project name and the failure to answer the known lift-existence question.",
+        "usage": {
+          "input_tokens": 20599,
+          "input_tokens_details": {
+            "cache_write_tokens": 20596,
+            "cached_tokens": 0
+          },
+          "output_tokens": 3122,
+          "output_tokens_details": {
+            "reasoning_tokens": 2602
+          },
+          "total_tokens": 23721
+        },
+        "latency_ms": 36087
+      },
+      "composite_score_1_to_5": 4.625,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "A_V2",
+      "scenario_id": "E29-requirements-shift",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "We first wanted a compact place, but my elderly mother may move in too."
+        },
+        {
+          "speaker": "agent",
+          "text": "That does change the space question a bit. Pearl Residences’ Phase 1 homes are 900 sq ft, with 3 bedrooms and 2 bathrooms. Whether that feels comfortable will depend on what your mum needs day to day—would having her own room be the main priority?"
+        },
+        {
+          "speaker": "customer",
+          "text": "Yes, her own room would be important, but I’m also thinking about how easy it is for her to get around and reach a bathroom. Is it all on one level?"
+        },
+        {
+          "speaker": "agent",
+          "text": "That’s an important point for your mum. The confirmed details I have are 3 bedrooms and 2 bathrooms, but I don’t have the floor plan details to confirm the layout or how close the bathroom is to her room. I’ll check that before I advise you."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, please check. It’d also be helpful to know if there are any steps or other accessibility features we should consider."
+        },
+        {
+          "speaker": "agent",
+          "text": "Sure—I’m adding the steps and any accessibility features to the layout check too. I’ll share what’s confirmed rather than guess."
+        },
+        {
+          "speaker": "customer",
+          "text": "Thanks, that would be helpful. We’ll hold off deciding until we know whether the layout would work for her day to day."
+        },
+        {
+          "speaker": "agent",
+          "text": "Of course—no need to decide yet. I’ll come back once I have the confirmed floor plan and details on any steps or accessibility features, so you can see whether it would work for your mum."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "We first wanted a compact place, but my elderly mother may move in too.",
+          "customer_stance": "neutral",
+          "agent_reply": "That does change the space question a bit. Pearl Residences’ Phase 1 homes are 900 sq ft, with 3 bedrooms and 2 bathrooms. Whether that feels comfortable will depend on what your mum needs day to day—would having her own room be the main priority?",
+          "action": "REPLY",
+          "sales_move": "EXPLORE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 1906,
+            "input_tokens_details": {
+              "cache_write_tokens": 1903,
+              "cached_tokens": 0
+            },
+            "output_tokens": 776,
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            },
+            "total_tokens": 2682
+          },
+          "agent_latency_ms": 9340,
+          "retrieved_knowledge_paths": [],
+          "customer_next_stance": "changed_need",
+          "customer_simulator_usage": {
+            "input_tokens": 322,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 168,
+            "output_tokens_details": {
+              "reasoning_tokens": 93
+            },
+            "total_tokens": 490
+          },
+          "customer_simulator_latency_ms": 3511
+        },
+        {
+          "turn": 2,
+          "customer": "Yes, her own room would be important, but I’m also thinking about how easy it is for her to get around and reach a bathroom. Is it all on one level?",
+          "customer_stance": "changed_need",
+          "agent_reply": "That’s an important point for your mum. The confirmed details I have are 3 bedrooms and 2 bathrooms, but I don’t have the floor plan details to confirm the layout or how close the bathroom is to her room. I’ll check that before I advise you.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2351,
+            "input_tokens_details": {
+              "cache_write_tokens": 2348,
+              "cached_tokens": 0
+            },
+            "output_tokens": 880,
+            "output_tokens_details": {
+              "reasoning_tokens": 404
+            },
+            "total_tokens": 3231
+          },
+          "agent_latency_ms": 10488,
+          "retrieved_knowledge_paths": [
+            "01_facts/maintenance-and-management.md",
+            "01_facts/carpark-and-utility-room.md"
+          ],
+          "support_request": {
+            "support_type": "LAYOUT",
+            "requested_fact": "Confirm whether the Type A 900 sq ft unit is entirely on one level and provide the floor plan details showing bathroom access in relation to the bedrooms.",
+            "subject": "Type A unit layout and bathroom access",
+            "customer_need": "Buyer is considering a room for her elderly mother and wants to know how easily she can get around and reach a bathroom.",
+            "reason": "These accessibility details are not available in the verified information provided and are material to the buyer’s decision.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified layout and bathroom-access information, then assess whether it suits the buyer’s mother.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 427,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 129,
+            "output_tokens_details": {
+              "reasoning_tokens": 59
+            },
+            "total_tokens": 556
+          },
+          "customer_simulator_latency_ms": 3316
+        },
+        {
+          "turn": 3,
+          "customer": "Thanks, please check. It’d also be helpful to know if there are any steps or other accessibility features we should consider.",
+          "customer_stance": "interested",
+          "agent_reply": "Sure—I’m adding the steps and any accessibility features to the layout check too. I’ll share what’s confirmed rather than guess.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "HANDLE",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2387,
+            "input_tokens_details": {
+              "cache_write_tokens": 2384,
+              "cached_tokens": 0
+            },
+            "output_tokens": 833,
+            "output_tokens_details": {
+              "reasoning_tokens": 481
+            },
+            "total_tokens": 3220
+          },
+          "agent_latency_ms": 9006,
+          "retrieved_knowledge_paths": [],
+          "support_request": {
+            "support_type": "LAYOUT",
+            "requested_fact": "Please add to the existing open layout check: confirm whether Type A is entirely on one level, provide the floor plan showing bathroom access from the bedrooms, and verify any steps or accessibility features within the unit that may affect an elderly resident.",
+            "subject": "Type A layout and accessibility",
+            "customer_need": "Buyer is considering a separate room for her elderly mother and wants to understand how easily she can get around and reach a bathroom.",
+            "reason": "These unverified details are important to assessing whether the unit will suit her mother's needs.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share the verified layout and accessibility details, then assess whether they suit the buyer's mother.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          "customer_next_stance": "interested",
+          "customer_simulator_usage": {
+            "input_tokens": 492,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 151,
+            "output_tokens_details": {
+              "reasoning_tokens": 86
+            },
+            "total_tokens": 643
+          },
+          "customer_simulator_latency_ms": 2866
+        },
+        {
+          "turn": 4,
+          "customer": "Thanks, that would be helpful. We’ll hold off deciding until we know whether the layout would work for her day to day.",
+          "customer_stance": "interested",
+          "agent_reply": "Of course—no need to decide yet. I’ll come back once I have the confirmed floor plan and details on any steps or accessibility features, so you can see whether it would work for your mum.",
+          "action": "REPLY",
+          "sales_move": "GIVE_SPACE",
+          "buyer_signal": "NEUTRAL",
+          "openai_usage": {
+            "input_tokens": 2993,
+            "input_tokens_details": {
+              "cache_write_tokens": 2990,
+              "cached_tokens": 0
+            },
+            "output_tokens": 551,
+            "output_tokens_details": {
+              "reasoning_tokens": 319
+            },
+            "total_tokens": 3544
+          },
+          "agent_latency_ms": 6255,
+          "retrieved_knowledge_paths": [
+            "01_facts/unit-and-layout.md",
+            "01_facts/building-and-access.md"
+          ],
+          "customer_next_stance": "silent",
+          "customer_simulator_usage": {
+            "input_tokens": 573,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 108,
+            "output_tokens_details": {
+              "reasoning_tokens": 62
+            },
+            "total_tokens": 681
+          },
+          "customer_simulator_latency_ms": 3560
+        }
+      ],
+      "customer_turn_count": 4,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [
+          {
+            "support_type": "LAYOUT",
+            "requested_fact": "Confirm whether the Type A 900 sq ft unit is entirely on one level and provide the floor plan details showing bathroom access in relation to the bedrooms.",
+            "subject": "Type A unit layout and bathroom access",
+            "customer_need": "Buyer is considering a room for her elderly mother and wants to know how easily she can get around and reach a bathroom.",
+            "reason": "These accessibility details are not available in the verified information provided and are material to the buyer’s decision.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share verified layout and bathroom-access information, then assess whether it suits the buyer’s mother.",
+            "status": "OPEN",
+            "support_result": null
+          },
+          {
+            "support_type": "LAYOUT",
+            "requested_fact": "Please add to the existing open layout check: confirm whether Type A is entirely on one level, provide the floor plan showing bathroom access from the bedrooms, and verify any steps or accessibility features within the unit that may affect an elderly resident.",
+            "subject": "Type A layout and accessibility",
+            "customer_need": "Buyer is considering a separate room for her elderly mother and wants to understand how easily she can get around and reach a bathroom.",
+            "reason": "These unverified details are important to assessing whether the unit will suit her mother's needs.",
+            "resume_stage": "QUALIFY",
+            "resume_objective": "Share the verified layout and accessibility details, then assess whether they suit the buyer's mother.",
+            "status": "OPEN",
+            "support_result": null
+          }
+        ],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A buyer first asked for a compact unit but later says an elderly parent may move in.",
+        "needs": "Reconsider usable space, accessibility, and privacy.",
+        "hidden_motive": "The family decision is still evolving.",
+        "obstacle": "Earlier assumptions may no longer fit.",
+        "acceptable_behavior": "Recognize the changed need and revisit fit without defending the prior recommendation."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 5,
+          "customer_interest": 5,
+          "non_repetition": 5,
+          "factual_accuracy": 4,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "Agent turn 2 recognizes that the mother moving in changes the space question and asks whether her own room is the priority. Turns 4 and 6 address the newly raised mobility and accessibility concerns.",
+          "natural_continuation": "Turns 4 and 6 respond directly to the questions about layout, steps, and accessibility features, without guessing.",
+          "valuable_questions": "Turn 2 asks whether a private room is the main priority, a useful clarification about the family's changed needs.",
+          "relevant_advantages": "Turn 2 offers the verified 900 sq ft, 3-bedroom, 2-bathroom configuration as relevant context for reassessing space.",
+          "customer_interest": "Turns 6 and 8 offer to check and share confirmed details, helping the customer make an informed decision without pressure.",
+          "non_repetition": "The follow-up confirmations in turns 6 and 8 reinforce what will be checked; the agent does not re-ask answered questions or repeat a sales pitch.",
+          "factual_accuracy": "The 900 sq ft, 3-bedroom, 2-bathroom details are supported, and the agent is appropriately cautious about unknown accessibility details. However, turn 2 names the project “Pearl Residences,” while the supplied Knowledge identifies it as SkyWorld Pearlmont.",
+          "appropriate_pacing": "Turn 8 accepts the customer's decision to hold off and promises information rather than pushing for a viewing or decision."
+        },
+        "factual_issues": [
+          "Turn 2 calls the development “Pearl Residences”; supplied Knowledge identifies the project as SkyWorld Pearlmont. This project-name mismatch is unsupported."
+        ],
+        "overall_note": "The agent understands that the family's needs have changed and responds with relevant space information, a useful clarifying question, and careful handling of unknown accessibility details. It respects the customer's wish to wait for confirmation. The only clear factual issue is the project name used in turn 2.",
+        "usage": {
+          "input_tokens": 20577,
+          "input_tokens_details": {
+            "cache_write_tokens": 20574,
+            "cached_tokens": 0
+          },
+          "output_tokens": 2056,
+          "output_tokens_details": {
+            "reasoning_tokens": 1552
+          },
+          "total_tokens": 22633
+        },
+        "latency_ms": 23547
+      },
+      "composite_score_1_to_5": 4.875,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "A_V2",
+      "scenario_id": "E08-cold-short-replies",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Can you send me a very short overview? I'm at work."
+        },
+        {
+          "speaker": "agent",
+          "text": "Sure — Pearl Residences offers 900 sq ft homes with 3 bedrooms, 2 bathrooms and a balcony. I’ll keep it brief while you’re at work; we can go through more when you’re free."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Can you send me a very short overview? I'm at work.",
+          "customer_stance": "neutral",
+          "agent_reply": "Sure — Pearl Residences offers 900 sq ft homes with 3 bedrooms, 2 bathrooms and a balcony. I’ll keep it brief while you’re at work; we can go through more when you’re free.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2316,
+            "input_tokens_details": {
+              "cache_write_tokens": 2313,
+              "cached_tokens": 0
+            },
+            "output_tokens": 515,
+            "output_tokens_details": {
+              "reasoning_tokens": 284
+            },
+            "total_tokens": 2831
+          },
+          "agent_latency_ms": 7230,
+          "retrieved_knowledge_paths": [
+            "01_facts/specifications-and-finishes.md",
+            "01_facts/unit-and-layout.md"
+          ],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 302,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 128,
+            "output_tokens_details": {
+              "reasoning_tokens": 80
+            },
+            "total_tokens": 430
+          },
+          "customer_simulator_latency_ms": 3199
+        }
+      ],
+      "customer_turn_count": 1,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A busy prospect asked for information during a work break.",
+        "needs": "A very brief overview, if any.",
+        "hidden_motive": "They are testing whether the agent will spam them.",
+        "obstacle": "Low attention and no established need.",
+        "acceptable_behavior": "Keep it short, don't interrogate, and accept a neutral or quiet response."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 4,
+          "customer_interest": 5,
+          "non_repetition": 5,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "The customer asks for a very short overview while at work; the agent gives one brief sentence of project details and acknowledges the work constraint.",
+          "natural_continuation": "“Sure” directly answers the request, and “we can go through more when you’re free” is a coherent, low-pressure close.",
+          "valuable_questions": "The agent asks no questions, appropriately avoiding extra effort for a busy customer with no established need.",
+          "relevant_advantages": "The 900 sq ft, 3-bedroom, 2-bathroom layout and balcony are pertinent overview details, though they are features rather than a clearly articulated advantage.",
+          "customer_interest": "The agent provides the requested information without urgency or an intrusive invitation, and leaves further discussion optional.",
+          "non_repetition": "There is no repeated pitch or re-asking; the reply stays on the requested overview.",
+          "factual_accuracy": "The size, bedrooms, bathrooms, and balcony match the supplied project facts, but the agent calls it “Pearl Residences” rather than the documented “SkyWorld Pearlmont.”",
+          "appropriate_pacing": "“I’ll keep it brief while you’re at work” respects the customer’s limited attention, and the agent does not push for a viewing or continued conversation."
+        },
+        "factual_issues": [
+          "The supplied Knowledge identifies the project as SkyWorld Pearlmont, not “Pearl Residences.” The other stated unit details—900 sq ft, 3 bedrooms, 2 bathrooms, and a balcony—are supported."
+        ],
+        "overall_note": "A brief, considerate response that fits the customer’s request and does not behave like spam. The main issue is the unsupported project name; otherwise, the unit overview is accurate.",
+        "usage": {
+          "input_tokens": 20306,
+          "input_tokens_details": {
+            "cache_write_tokens": 20303,
+            "cached_tokens": 0
+          },
+          "output_tokens": 981,
+          "output_tokens_details": {
+            "reasoning_tokens": 516
+          },
+          "total_tokens": 21287
+        },
+        "latency_ms": 10666
+      },
+      "composite_score_1_to_5": 4.625,
+      "blind_judgment": "complete"
+    },
+    {
+      "arm": "B_V2_LITE",
+      "scenario_id": "E08-cold-short-replies",
+      "transcript": [
+        {
+          "speaker": "customer",
+          "text": "Can you send me a very short overview? I'm at work."
+        },
+        {
+          "speaker": "agent",
+          "text": "Sure—Pearl Residences’ Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony."
+        }
+      ],
+      "turns": [
+        {
+          "turn": 1,
+          "customer": "Can you send me a very short overview? I'm at work.",
+          "customer_stance": "neutral",
+          "agent_reply": "Sure—Pearl Residences’ Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony.",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "openai_usage": {
+            "input_tokens": 2090,
+            "input_tokens_details": {
+              "cache_write_tokens": 2087,
+              "cached_tokens": 0
+            },
+            "output_tokens": 454,
+            "output_tokens_details": {
+              "reasoning_tokens": 235
+            },
+            "total_tokens": 2544
+          },
+          "agent_latency_ms": 4947,
+          "retrieved_knowledge_paths": [
+            "01_facts/specifications-and-finishes.md",
+            "01_facts/unit-and-layout.md"
+          ],
+          "customer_next_stance": "ending",
+          "customer_simulator_usage": {
+            "input_tokens": 288,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 80,
+            "output_tokens_details": {
+              "reasoning_tokens": 38
+            },
+            "total_tokens": 368
+          },
+          "customer_simulator_latency_ms": 2462
+        }
+      ],
+      "customer_turn_count": 1,
+      "end_reason": "customer_ended",
+      "operations": {
+        "support_requests": [],
+        "handoffs": []
+      },
+      "customer_profile_for_blind_judge": {
+        "background": "A busy prospect asked for information during a work break.",
+        "needs": "A very brief overview, if any.",
+        "hidden_motive": "They are testing whether the agent will spam them.",
+        "obstacle": "Low attention and no established need.",
+        "acceptable_behavior": "Keep it short, don't interrogate, and accept a neutral or quiet response."
+      },
+      "judgment": {
+        "scores": {
+          "intent_understanding": 5,
+          "natural_continuation": 5,
+          "valuable_questions": 5,
+          "relevant_advantages": 5,
+          "customer_interest": 5,
+          "non_repetition": 5,
+          "factual_accuracy": 3,
+          "appropriate_pacing": 5
+        },
+        "evidence": {
+          "intent_understanding": "Turn 2: The agent responds with a single-sentence overview, matching the customer's request for something “very short” while at work.",
+          "natural_continuation": "Turn 2: “Sure—” followed by a concise summary directly answers the request.",
+          "valuable_questions": "Turn 2: The agent asks no follow-up questions, appropriately avoiding extra demands on the customer's attention.",
+          "relevant_advantages": "Turn 2: The agent provides the basic unit size and bedroom/bathroom configuration as a simple project overview, without adding unrelated selling points.",
+          "customer_interest": "Turn 2: The concise details make it easy for the customer to get the requested information, with no pressure or manufactured urgency.",
+          "non_repetition": "Turn 2: There is no repeated pitch or re-asking of information.",
+          "factual_accuracy": "Turn 2: The 900 sq. ft., 3-bedroom, 2-bathroom, balcony details are supported for Pearlmont Phase 1, but the name “Pearl Residences” is not the project name in the supplied Knowledge, which identifies it as SkyWorld Pearlmont.",
+          "appropriate_pacing": "Turn 2: The agent keeps the reply brief and ends without pushing for another response or a viewing."
+        },
+        "factual_issues": [
+          "Turn 2 calls the project “Pearl Residences”; supplied Knowledge identifies it as SkyWorld Pearlmont. The unit specifications stated are supported."
+        ],
+        "overall_note": "A well-paced, minimal response that respects the customer's low attention and does not probe or spam them. The only notable issue is the unsupported project name.",
+        "usage": {
+          "input_tokens": 20292,
+          "input_tokens_details": {
+            "cache_write_tokens": 20289,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1043,
+          "output_tokens_details": {
+            "reasoning_tokens": 593
+          },
+          "total_tokens": 21335
+        },
+        "latency_ms": 11227
+      },
+      "composite_score_1_to_5": 4.75,
+      "blind_judgment": "complete"
+    }
+  ],
+  "pairs": [
+    {
+      "scenario_id": "E01-own-stay-small-family",
+      "execution_order": [
+        "A_V2",
+        "B_V2_LITE"
+      ],
+      "A_score": 3.375,
+      "B_score": 3.375
+    },
+    {
+      "scenario_id": "E02-first-home-unsure",
+      "execution_order": [
+        "B_V2_LITE",
+        "A_V2"
+      ],
+      "B_score": 4.125,
+      "A_score": 3.75
+    },
+    {
+      "scenario_id": "E04-tight-budget",
+      "execution_order": [
+        "A_V2",
+        "B_V2_LITE"
+      ],
+      "A_score": 4.75,
+      "B_score": 5.0
+    },
+    {
+      "scenario_id": "E15-facility-overload",
+      "execution_order": [
+        "A_V2",
+        "B_V2_LITE"
+      ],
+      "A_score": 4.625,
+      "B_score": 5.0
+    },
+    {
+      "scenario_id": "E29-requirements-shift",
+      "execution_order": [
+        "B_V2_LITE",
+        "A_V2"
+      ],
+      "B_score": 4.625,
+      "A_score": 4.875
+    },
+    {
+      "scenario_id": "E08-cold-short-replies",
+      "execution_order": [
+        "A_V2",
+        "B_V2_LITE"
+      ],
+      "A_score": 4.625,
+      "B_score": 4.75
+    }
+  ],
+  "usage": {
+    "provider": "OpenAI Responses API",
+    "model": "gpt-6-luna",
+    "request_attempts": 105,
+    "successful_responses_with_usage": 104,
+    "failed_or_incomplete_responses": 1,
+    "input_tokens_successful_responses": 382129,
+    "output_tokens_successful_responses": 76753,
+    "completed_responses_cost_usd": 0.083175,
+    "failed_response_usage": "Not retained for the initial incomplete xhigh judge response; estimated separately from the identical retry input and the original 3,000-token output ceiling.",
+    "failed_response_input_tokens_estimate": 20844,
+    "failed_response_output_tokens_ceiling": 3000,
+    "failed_response_cost_ceiling_usd": 0.003584,
+    "estimated_total_cost_range_usd": [
+      0.083175,
+      0.086759
+    ],
+    "pricing_usd_per_million_tokens": {
+      "input": 0.1,
+      "cached_input": 0.01,
+      "cache_write_input": 0.125,
+      "output": 0.5
+    },
+    "pricing_basis": "Standard GPT-6 Luna text pricing; cached reads and cache writes use usage-reported token detail. One failed response is estimated separately.",
+    "latency_ms_mean_successful_calls": 9368,
+    "latency_ms_median_successful_calls": 6576,
+    "by_role": {
+      "sales_agent": {
+        "completed_calls": 46,
+        "input_tokens": 112482,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 112344,
+        "output_tokens": 39892,
+        "estimated_completed_call_cost_usd": 0.034003,
+        "latency_ms_mean": 10225,
+        "latency_ms_median": 10117
+      },
+      "customer_simulator": {
+        "completed_calls": 46,
+        "input_tokens": 22668,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7344,
+        "estimated_completed_call_cost_usd": 0.005939,
+        "latency_ms_mean": 3701,
+        "latency_ms_median": 3580
+      },
+      "blind_evaluator": {
+        "completed_calls": 12,
+        "input_tokens": 246979,
+        "cached_input_tokens": 20841,
+        "cache_write_input_tokens": 226102,
+        "output_tokens": 29517,
+        "estimated_completed_call_cost_usd": 0.043233,
+        "latency_ms_mean": 27808,
+        "latency_ms_median": 30966
+      }
+    }
+  },
+  "prompt_load_checks": [],
+  "summary": {
+    "arms": {
+      "A_V2": {
+        "n": 6,
+        "composite_mean": 4.333,
+        "mean_customer_turns": 3.83,
+        "criterion_means": {
+          "intent_understanding": 4.333,
+          "natural_continuation": 4.667,
+          "valuable_questions": 4.5,
+          "relevant_advantages": 4.333,
+          "customer_interest": 4.333,
+          "non_repetition": 4,
+          "factual_accuracy": 3.5,
+          "appropriate_pacing": 5
+        }
+      },
+      "B_V2_LITE": {
+        "n": 6,
+        "composite_mean": 4.479,
+        "mean_customer_turns": 3.83,
+        "criterion_means": {
+          "intent_understanding": 4.5,
+          "natural_continuation": 4.667,
+          "valuable_questions": 4.667,
+          "relevant_advantages": 4.5,
+          "customer_interest": 4.5,
+          "non_repetition": 4.333,
+          "factual_accuracy": 3.667,
+          "appropriate_pacing": 5
+        }
+      }
+    },
+    "paired_scenarios": {
+      "E01-own-stay-small-family": {
+        "A_V2": 3.375,
+        "B_V2_LITE": 3.375,
+        "B_minus_A": 0.0
+      },
+      "E02-first-home-unsure": {
+        "B_V2_LITE": 4.125,
+        "A_V2": 3.75,
+        "B_minus_A": 0.375
+      },
+      "E04-tight-budget": {
+        "A_V2": 4.75,
+        "B_V2_LITE": 5.0,
+        "B_minus_A": 0.25
+      },
+      "E15-facility-overload": {
+        "A_V2": 4.625,
+        "B_V2_LITE": 5.0,
+        "B_minus_A": 0.375
+      },
+      "E29-requirements-shift": {
+        "B_V2_LITE": 4.625,
+        "A_V2": 4.875,
+        "B_minus_A": -0.25
+      },
+      "E08-cold-short-replies": {
+        "A_V2": 4.625,
+        "B_V2_LITE": 4.75,
+        "B_minus_A": 0.125
+      }
+    },
+    "paired_mean_B_minus_A": 0.146
+  },
+  "recommendation": "Retain V2 for now. This evaluation does not show a clear enough V2 Lite improvement to justify adoption."
+}
