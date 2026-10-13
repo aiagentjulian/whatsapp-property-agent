@@ -37,12 +37,12 @@
   },
   {
     "id": "E05-layout-four-bedrooms",
-    "background": "A multigenerational household of five is planning a move.",
-    "needs": "Four separate bedrooms and enough privacy for an older parent.",
-    "hidden_motive": "They would consider alternatives only if an actual layout can work.",
-    "obstacle": "The verified standard unit has three bedrooms.",
-    "acceptable_behavior": "Acknowledge the mismatch directly and explore only if the customer invites alternatives.",
-    "opening_message": "We need four bedrooms. Does the project have that layout?"
+    "background": "A multigenerational household of five is planning a move and has one fixed physical requirement.",
+    "needs": "Four separate bedrooms are a non-negotiable condition; an older parent needs privacy.",
+    "hidden_motive": "They will not consider a smaller layout or combine rooms.",
+    "obstacle": "The verified standard unit has three bedrooms and no four-bedroom alternative is verified.",
+    "acceptable_behavior": "State the mismatch directly, do not try to persuade around a hard constraint, and offer to stop if no verified fit exists.",
+    "opening_message": "We need four separate bedrooms, and that is non-negotiable. Does this project have it?"
   },
   {
     "id": "E06-location-commute",
@@ -168,7 +168,17 @@
     "hidden_motive": "They may be politely ending the chat or processing the information.",
     "obstacle": "An over-eager follow-up would feel pushy.",
     "acceptable_behavior": "Treat the reply as ambiguous, offer space, and avoid reading it as strong intent.",
-    "opening_message": "Oh okay, I see."
+    "opening_message": "Oh okay, I see.",
+    "seeded_history": [
+      {
+        "direction": "INBOUND",
+        "body": "Do all units have the same number of lifts? My elderly father will be visiting."
+      },
+      {
+        "direction": "OUTBOUND",
+        "body": "The project has multiple passenger lifts; the exact lift-to-unit arrangement can depend on the block and floor."
+      }
+    ]
   },
   {
     "id": "E20-explicit-need-time",
@@ -267,6 +277,89 @@
     "hidden_motive": "They are interested but want to retain control of the decision.",
     "obstacle": "They dislike artificial urgency and unconfirmed availability.",
     "acceptable_behavior": "Offer viewing as an option, describe the existing handoff honestly, and avoid pressure.",
-    "opening_message": "We've discussed this for a week. What would be a sensible next step?"
+    "opening_message": "We've discussed this for a week. What would be a sensible next step?",
+    "seeded_history": [
+      {
+        "direction": "INBOUND",
+        "body": "We need a practical three-bedroom home. Is there school access nearby?"
+      },
+      {
+        "direction": "OUTBOUND",
+        "body": "Project materials describe a vertical school and covered school access within the development; admission and school operation details should be checked with the school."
+      },
+      {
+        "direction": "INBOUND",
+        "body": "That could suit us. My partner is now open to considering this project."
+      },
+      {
+        "direction": "OUTBOUND",
+        "body": "I can help you check the layout and the details that matter before you decide."
+      }
+    ]
+  },
+  {
+    "id": "P3-family-four-bedroom-budget",
+    "background": "A family of six is searching for an own-stay home. They first lead with a four-bedroom requirement; only if asked naturally may they explain their total budget is around RM600,000–RM700,000.",
+    "needs": "Enough usable sleeping space for six people, with a realistic total purchase budget.",
+    "hidden_motive": "The family may be open to a real, verified layout workaround if the salesperson first understands why they want four bedrooms.",
+    "obstacle": "The verified standard offering is three bedrooms; no adjacent-unit combination or four-bedroom configuration is established.",
+    "acceptable_behavior": "Understand the reason for the bedroom count and budget; explore only real, verified fit possibilities and be candid if none are known.",
+    "opening_message": "We are six in the family and need four bedrooms. What options do you have?"
+  },
+  {
+    "id": "P3-too-expensive-ambiguous",
+    "background": "A buyer has asked for a broad overview and reacts to an indicative price range.",
+    "needs": "Unclear whether the objection concerns purchase price, monthly instalment, upfront cash, or value.",
+    "hidden_motive": "They may have a manageable budget but dislike the commitment, or may simply be comparing alternatives.",
+    "obstacle": "The buyer has not explained what “expensive” means to them.",
+    "acceptable_behavior": "Acknowledge the concern and ask at most one useful, non-intrusive clarification before pitching affordability or value.",
+    "seeded_history": [
+      {
+        "direction": "INBOUND",
+        "body": "Could you give me a rough idea of the price?"
+      },
+      {
+        "direction": "OUTBOUND",
+        "body": "The project Knowledge has a recorded package reference with an indicative from-price in the RM3xxk range, depending on unit and floor. That package reference is dated, so I would need to confirm current validity and the exact unit price."
+      }
+    ],
+    "opening_message": "That sounds expensive."
+  },
+  {
+    "id": "P3-short-oh-okay",
+    "background": "A busy prospect has just received a concise factual answer and replies with a neutral acknowledgement.",
+    "needs": "Unclear; they may be processing information or ending the chat.",
+    "hidden_motive": "They are checking whether the salesperson will keep pushing.",
+    "obstacle": "There is no clear buying signal.",
+    "acceptable_behavior": "Acknowledge briefly or leave space; do not treat a short neutral reply as intent.",
+    "seeded_history": [
+      {
+        "direction": "INBOUND",
+        "body": "Is the project near daily shops?"
+      },
+      {
+        "direction": "OUTBOUND",
+        "body": "There are retail and daily-needs options within the wider Seberang Jaya area; exact walking distance depends on the destination."
+      }
+    ],
+    "opening_message": "Oh okay."
+  },
+  {
+    "id": "P3-pricing-rebates-maintenance",
+    "background": "A buyer is comparing the full monthly cost of buying and is comfortable discussing indicative project figures.",
+    "needs": "Understand indicative price, any current incentives/rebates, maintenance charges, and what monthly ownership calculation can and cannot include.",
+    "hidden_motive": "They are trying to avoid a purchase that looks affordable only before recurring costs.",
+    "obstacle": "Current package terms and personalized loan repayment are not guaranteed by static project Knowledge.",
+    "acceptable_behavior": "Separate verified indicative figures from dynamic pricing/incentives and personalized financing; explain verified maintenance calculation without pretending it is the total monthly cost.",
+    "opening_message": "Can you explain the price, any current rebate, maintenance fee and roughly what I might pay monthly?"
+  },
+  {
+    "id": "P3-explicit-no-contact",
+    "background": "A lead wants the conversation and follow-up to end.",
+    "needs": "No further contact.",
+    "hidden_motive": "They may be dissatisfied or may simply have changed their mind; no reason needs to be elicited.",
+    "obstacle": "Any continued sales pitch or attempt to retain the lead violates the expressed preference.",
+    "acceptable_behavior": "Confirm the request briefly, do not ask another sales question or make a follow-up promise unless the operational system can honor it, and end the interaction.",
+    "opening_message": "Please stop contacting me about this project. I am not interested; do not follow up."
   }
 ]
