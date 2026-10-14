@@ -240,7 +240,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("connect it to real features of this particular project", context)
         self.assertIn("deepen buying interest", context)
         self.assertIn("not a prescribed sequence or dialogue script", context)
-        self.assertIn("will materially improve your pitch", context)
+        self.assertIn("would materially improve your pitch", context)
         self.assertIn("not just a new list of facts", context)
         self.assertIn("Malaysian", SYSTEM_PROMPT)
         self.assertIn("answer truthfully", SYSTEM_PROMPT.lower())
