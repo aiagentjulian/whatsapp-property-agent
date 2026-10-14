@@ -246,7 +246,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Give value before asking", SYSTEM_PROMPT)
         self.assertIn("two or three useful choices", SYSTEM_PROMPT)
         self.assertIn('A tentative "I guess so"', SYSTEM_PROMPT)
-        self.assertIn("don't force a question at the end", SYSTEM_PROMPT.lower())
+        self.assertIn("never force a question at the end", SYSTEM_PROMPT.lower())
 
     def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
         from .knowledge import focused_sales_context
