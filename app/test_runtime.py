@@ -245,7 +245,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("some interest in the advertised property", SYSTEM_PROMPT)
         self.assertIn("Give value before asking", SYSTEM_PROMPT)
         self.assertIn("two or three useful choices", SYSTEM_PROMPT)
-        self.assertIn('A tentative "I guess so"', SYSTEM_PROMPT)
+        self.assertIn("Tentative acceptance of the home's fit", SYSTEM_PROMPT)
         self.assertIn("never force a question at the end", SYSTEM_PROMPT.lower())
 
     def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
