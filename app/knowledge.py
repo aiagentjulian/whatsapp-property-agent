@@ -108,7 +108,7 @@ SALES_EVIDENCE = (
     ("3. 10-Acre Elevated SkyPark / Large Community Green Space", ("family", "children", "kids", "green", "play", "facilities", "space"), ("skypark", "10-acre", "10 acre", "facilities deck"), "01_facts/facilities-and-quality.md", "Level 9 facilities deck"),
     ("4. Vertical School + Family Ecosystem", ("school", "education", "child", "children", "kids", "tadika"), ("vertical school", "covered walkway", "school access"), "01_facts/school-access-and-family.md", "Vertical School"),
     ("6. RM0.18 psf Maintenance + Pay-Per-Use Clubhouse", ("budget", "cost", "monthly", "maintenance", "expense", "afford", "fees"), ("maintenance fee", "0.18", "pay-per-use"), "01_facts/overview.md", "Maintenance"),
-    ("9. Efficient 900 sqft Layout", ("layout", "bedroom", "rooms", "floorplan", "sqft", "size", "own stay", "family", "couple"), ("404.7", "143.4", "117.4", "103.3", "room-by-room", "room sizes"), "01_facts/unit-and-layout.md", "Internal area breakdown"),
+    ("9. Efficient 900 sqft Layout", ("layout", "bedroom", "rooms", "floorplan", "sqft", "size", "own stay", "family", "couple"), ("open-plan", "open plan", "room arrangement", "living and dining", "internal corridor"), "01_facts/unit-and-layout.md", "Layout and room arrangement"),
     ("5. PPVC + Quality Assurance + 10-Year Waterproofing Warranty", ("quality", "defect", "leak", "waterproof", "construction"), ("qlassic", "waterproof", "ppvc"), "01_facts/facilities-and-quality.md", "QLASSIC and construction quality"),
     ("8. Green / Healthy Home Design", ("sunlight", "daylight", "ventilation", "green", "air"), ("greenre", "ventilation", "daylight"), "01_facts/facilities-and-quality.md", "Green building features"),
 )
@@ -120,16 +120,11 @@ def focused_sales_context(latest_message, profile, history):
     Use actual buyer context for retrieval. The model remains responsible for
     deciding whether to sell, ask, answer or give the buyer space.
     """
-    customer_turns = [row.get("body", "") for row in history[-12:]
-                      if row.get("direction") == "INBOUND"]
     recent_advisor = " ".join(row.get("body", "") for row in history[-16:]
                               if row.get("direction") == "OUTBOUND").lower()
-    buyer_text = " ".join(customer_turns[-6:]) + " " + str(profile.get("purchase_purpose", ""))
-    for key in ("primary_motivations", "active_concerns", "decision_factors"):
-        value = profile.get(key)
-        if value:
-            buyer_text += " " + (" ".join(value) if isinstance(value, list) else str(value))
-    buyer_tokens = tokenize(buyer_text)
+    # Earlier buyer topics and persistent profile fields should not make the
+    # same sales angle reappear after every short acknowledgement or new topic.
+    # The full conversation remains available to the LLM itself.
     explicit_tokens = tokenize(latest_message)
     catalog = project_sales_context()["selling_possibilities"]
     propositions = {item["topic"]: item["value"] for item in catalog}
@@ -142,7 +137,7 @@ def focused_sales_context(latest_message, profile, history):
         # Multi-word buyer signals (e.g. "own stay") must be tokenized, not
         # compared as an unsplittable string against individual buyer tokens.
         keyword_tokens = tokenize(" ".join(keywords))
-        score = 3 * len(explicit_tokens & keyword_tokens) + len(buyer_tokens & keyword_tokens)
+        score = 3 * len(explicit_tokens & keyword_tokens)
         if not score or was_pitched or title not in propositions:
             continue
         scored.append((-score, index, title, relative, heading))
