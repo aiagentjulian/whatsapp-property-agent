@@ -242,6 +242,10 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("answer truthfully", SYSTEM_PROMPT)
         self.assertNotIn("if the customer says 'own stay'", SYSTEM_PROMPT.lower())
         self.assertNotIn("oh ok", SYSTEM_PROMPT.lower())
+        self.assertIn("some interest in the advertised property", SYSTEM_PROMPT)
+        self.assertIn("a chain of questions", SYSTEM_PROMPT)
+        self.assertIn("two or three meaningful choices", SYSTEM_PROMPT)
+        self.assertIn("don't force a question at the end", SYSTEM_PROMPT.lower())
 
     def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
         from .knowledge import focused_sales_context
