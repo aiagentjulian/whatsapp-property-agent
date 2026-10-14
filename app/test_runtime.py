@@ -243,7 +243,9 @@ class RuntimeTests(unittest.TestCase):
         self.assertNotIn("if the customer says 'own stay'", SYSTEM_PROMPT.lower())
         self.assertNotIn("oh ok", SYSTEM_PROMPT.lower())
         self.assertIn("some interest in the advertised property", SYSTEM_PROMPT)
-        self.assertIn("Give value before asking", SYSTEM_PROMPT)
+        self.assertIn("Make the conversation useful", SYSTEM_PROMPT)
+        self.assertIn("Quote precise room measurements", SYSTEM_PROMPT)
+        self.assertIn("don't keep reintroducing that uncertainty", SYSTEM_PROMPT.lower())
         self.assertIn("two or three useful choices", SYSTEM_PROMPT)
         self.assertIn("Tentative acceptance of the home's fit", SYSTEM_PROMPT)
         self.assertIn("never force a question at the end", SYSTEM_PROMPT.lower())
@@ -272,7 +274,7 @@ class RuntimeTests(unittest.TestCase):
                              for x in cool["optional_sales_angles"]))
         self.assertTrue(any("SkyPark" in title for title in cool["already_presented"]))
 
-    def test_own_stay_and_tentative_reply_surface_new_room_facts(self):
+    def test_own_stay_context_is_human_readable_and_does_not_keep_reappearing(self):
         from .knowledge import focused_sales_context
         history = [
             {"direction": "INBOUND", "body": "Hi, I saw your property ad. Can share more details?"},
@@ -281,15 +283,21 @@ class RuntimeTests(unittest.TestCase):
         ]
         own_stay = focused_sales_context("own stay", {"purchase_purpose": "OWN_STAY"}, history)
         relevant = own_stay["optional_sales_angles"]
-        self.assertTrue(any("404.7" in row["verified_evidence"] for row in relevant))
-        self.assertFalse(any("Mature Seberang" in row["angle"] for row in relevant))
+        layout = [row for row in relevant if "Efficient 900 sqft Layout" in row["angle"]]
+        self.assertTrue(layout)
+        self.assertIn("open-plan", layout[0]["verified_evidence"].lower())
+        self.assertNotIn("404.7", layout[0]["verified_evidence"])
 
         history += [
-            {"direction": "OUTBOUND", "body": "Does the three-bedroom layout sound about right?"},
+            {"direction": "OUTBOUND", "body": "There's an open-plan living, dining and kitchen space."},
             {"direction": "INBOUND", "body": "I guess so"},
         ]
         tentative = focused_sales_context("I guess so", {"purchase_purpose": "OWN_STAY"}, history)
-        self.assertTrue(any("143.4" in row["verified_evidence"] for row in tentative["optional_sales_angles"]))
+        self.assertEqual(tentative["optional_sales_angles"], [])
+        history.append({"direction": "INBOUND", "body": "Two people and three cats"})
+        pets = focused_sales_context("Two people and three cats", {"purchase_purpose": "OWN_STAY"}, history)
+        self.assertFalse(any("Efficient 900 sqft Layout" in row["angle"]
+                             for row in pets["optional_sales_angles"]))
 
     def test_reset_test_lead_isolated_and_restores_new_conversation_state(self):
         store = Store(self.path)
