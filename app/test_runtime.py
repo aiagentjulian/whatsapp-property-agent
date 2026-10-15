@@ -240,6 +240,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Buyer discovery compass (not a questionnaire)", context)
         self.assertIn("Own stay:", context)
         self.assertIn("does **not** mean they care about room layout", context)
+        self.assertIn("discovering who would live there or why they are considering a home", context)
         self.assertIn("Investment:", context)
         self.assertIn("Both or undecided:", context)
         self.assertIn("rental income, capital appreciation, or a mix", context)
