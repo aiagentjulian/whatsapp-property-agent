@@ -239,6 +239,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Guided selling judgment", context)
         self.assertIn("Buyer discovery compass (not a questionnaire)", context)
         self.assertIn("Own stay:", context)
+        self.assertIn("does **not** mean they care about room layout", context)
         self.assertIn("Investment:", context)
         self.assertIn("Both or undecided:", context)
         self.assertIn("rental income, capital appreciation, or a mix", context)
@@ -272,9 +273,11 @@ class RuntimeTests(unittest.TestCase):
             {"direction": "INBOUND", "body": "with family"},
         ]
         family = focused_sales_context("with family", {"purchase_purpose": "OWN_STAY"}, messages)
-        self.assertLessEqual(len(family["optional_sales_angles"]), 2)
-        self.assertGreater(len(family["optional_sales_angles"]), 0)
-        self.assertFalse(any("Vertical School" in x["angle"] for x in family["optional_sales_angles"]))
+        self.assertEqual(family["optional_sales_angles"], [])
+        # An actual expressed preference can still trigger a relevant angle.
+        kids = focused_sales_context("We want somewhere with space for kids to play",
+                                     {"purchase_purpose": "OWN_STAY"}, messages)
+        self.assertTrue(any("SkyPark" in x["angle"] for x in kids["optional_sales_angles"]))
         messages += [
             {"direction": "OUTBOUND", "body": "There's a 10-acre SkyPark and Sunway Carnival Mall in the wider area."},
             {"direction": "INBOUND", "body": "oh ok"},
@@ -292,8 +295,18 @@ class RuntimeTests(unittest.TestCase):
             {"direction": "INBOUND", "body": "own stay"},
         ]
         own_stay = focused_sales_context("own stay", {"purchase_purpose": "OWN_STAY"}, history)
-        relevant = own_stay["optional_sales_angles"]
-        layout = [row for row in relevant if "Efficient 900 sqft Layout" in row["angle"]]
+        self.assertEqual(own_stay["optional_sales_angles"], [])
+        for buyer_reply in ("just me and wife", "a couple", "with family"):
+            result = focused_sales_context(buyer_reply, {"purchase_purpose": "OWN_STAY"}, history)
+            self.assertFalse(any("Efficient 900 sqft Layout" in row["angle"]
+                                 for row in result["optional_sales_angles"]))
+
+        # Explicit interest in room arrangement still retrieves the layout.
+        layout_request = focused_sales_context(
+            "Can you show how the bedrooms are laid out?",
+            {"purchase_purpose": "OWN_STAY"}, history)
+        layout = [row for row in layout_request["optional_sales_angles"]
+                  if "Efficient 900 sqft Layout" in row["angle"]]
         self.assertTrue(layout)
         self.assertIn("open-plan", layout[0]["verified_evidence"].lower())
         self.assertNotIn("404.7", layout[0]["verified_evidence"])
