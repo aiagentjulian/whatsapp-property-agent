@@ -1,0 +1,199 @@
+{
+  "trial": "candidate-r1-live",
+  "scenario": "genuine_interest",
+  "source_sha256": "ca7c896916c789c8c3e660ca99b09034f211b0208d59bc3888854553101b3ca6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Hoping to buy a home for own stay",
+    "preferred_location": "Around Seberang Jaya",
+    "size_or_layout_preference": "3 bedrooms",
+    "intent_level": "MEDIUM",
+    "sales_stage": "QUALIFY",
+    "important_features": [
+      "3 bedrooms",
+      "Monthly costs"
+    ],
+    "primary_motivations": [
+      "Own stay"
+    ],
+    "decision_factors": [
+      "Location",
+      "Monthly costs"
+    ],
+    "active_concerns": [
+      "Overall monthly ownership costs"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Type A matches the stated 3-bedroom interest; affordability remains unconfirmed while current pricing and other regular charges are being verified.",
+    "next_objective": "Share verified current Type A pricing and any confirmed recurring charges, then help estimate the overall monthly costs.",
+    "last_progress": "Buyer clarified the purchase is for their own home and asked for current Type A pricing and other regular charges to assess costs.",
+    "next_action": "Provide the verified pricing and recurring-charge information when available.",
+    "conversation_summary": "Buyer hopes to buy an own-stay home around Seberang Jaya and is interested in a 3-bedroom unit. They are assessing overall monthly costs; maintenance is RM162/month including sinking fund, while current Type A pricing and any other regular charges remain under verification."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The 3-bedroom Type A is 900 sq ft, with 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor, helping keep circulation space down. Maintenance is RM0.18 per sq ft including sinking fund, so about RM162/month for a 900 sq ft unit. That’s maintenance only; it excludes any mortgage, utilities and pay-per-use clubhouse facilities. I’ll check the current Type A pricing so I can give you a more useful estimate if you’d like to include a mortgage instalment too."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that gives me a clearer idea of the monthly maintenance. We’re looking for our own home, so please check the current Type A price and any other regular charges. It would help us work out the overall costs before we go further."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—you’ll want the full picture before deciding whether it fits your budget. The confirmed maintenance is RM162/month for Type A, including sinking fund; clubhouse use is pay-per-use. I don’t yet have confirmed current Type A pricing or confirmation of any other regular charges, so I won’t guess. Those details are being verified, and once confirmed I can help you work out the overall monthly costs."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current indicative pricing for the Type A 900 sq ft unit and any confirmed recurring charges beyond the RM0.18 per sq ft maintenance fee.",
+      "subject": "Pearl Residences Type A pricing and recurring costs",
+      "customer_need": "A fuller estimate of monthly ownership costs.",
+      "reason": "The verified maintenance fee can be calculated, but a mortgage estimate requires current unit pricing, and other recurring charges are not confirmed in the available information.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share verified pricing and refine the monthly estimate based on the buyer's financing assumptions if they want a mortgage included.",
+      "signature": "PRICING|18 900 and any beyond charges confirmed costs current fee ft indicative maintenance pearl per price recurring residences rm0 sq type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The 3-bedroom Type A is 900 sq ft, with 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor, helping keep circulation space down. Maintenance is RM0.18 per sq ft including sinking fund, so about RM162/month for a 900 sq ft unit. That’s maintenance only; it excludes any mortgage, utilities and pay-per-use clubhouse facilities. I’ll check the current Type A pricing so I can give you a more useful estimate if you’d like to include a mortgage instalment too.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": "Hoping to buy a home",
+          "preferred_location": "Around Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": [
+            "3 bedrooms",
+            "Monthly costs"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Location",
+            "Monthly costs"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "A 3-bedroom unit matches the stated bedroom interest; affordability is not yet established.",
+          "next_objective": "Provide current Type A pricing for a fuller monthly cost estimate.",
+          "last_progress": "Explained the Type A layout and calculated the estimated maintenance fee.",
+          "next_action": "Check current Type A pricing and any confirmed recurring charges beyond maintenance.",
+          "conversation_summary": "Buyer is hoping to buy around Seberang Jaya and asked about 3-bedroom units and monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current indicative pricing for the Type A 900 sq ft unit and any confirmed recurring charges beyond the RM0.18 per sq ft maintenance fee.",
+          "subject": "Pearl Residences Type A pricing and recurring costs",
+          "customer_need": "A fuller estimate of monthly ownership costs.",
+          "reason": "The verified maintenance fee can be calculated, but a mortgage estimate requires current unit pricing, and other recurring charges are not confirmed in the available information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified pricing and refine the monthly estimate based on the buyer's financing assumptions if they want a mortgage included."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3469,
+        "input_tokens_details": {
+          "cache_write_tokens": 3466,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2493,
+        "output_tokens_details": {
+          "reasoning_tokens": 1856
+        },
+        "total_tokens": 5962
+      }
+    },
+    {
+      "customer": "Thanks, that gives me a clearer idea of the monthly maintenance. We’re looking for our own home, so please check the current Type A price and any other regular charges. It would help us work out the overall costs before we go further.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "POSITIVE",
+        "reply": "That makes sense—you’ll want the full picture before deciding whether it fits your budget. The confirmed maintenance is RM162/month for Type A, including sinking fund; clubhouse use is pay-per-use. I don’t yet have confirmed current Type A pricing or confirmation of any other regular charges, so I won’t guess. Those details are being verified, and once confirmed I can help you work out the overall monthly costs.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Hoping to buy a home for own stay",
+          "preferred_location": "Around Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": [
+            "3 bedrooms",
+            "Monthly costs"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Location",
+            "Monthly costs"
+          ],
+          "active_concerns": [
+            "Overall monthly ownership costs"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Type A matches the stated 3-bedroom interest; affordability remains unconfirmed while current pricing and other regular charges are being verified.",
+          "next_objective": "Share verified current Type A pricing and any confirmed recurring charges, then help estimate the overall monthly costs.",
+          "last_progress": "Buyer clarified the purchase is for their own home and asked for current Type A pricing and other regular charges to assess costs.",
+          "next_action": "Provide the verified pricing and recurring-charge information when available.",
+          "conversation_summary": "Buyer hopes to buy an own-stay home around Seberang Jaya and is interested in a 3-bedroom unit. They are assessing overall monthly costs; maintenance is RM162/month including sinking fund, while current Type A pricing and any other regular charges remain under verification."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4466,
+        "input_tokens_details": {
+          "cache_write_tokens": 4463,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2246,
+        "output_tokens_details": {
+          "reasoning_tokens": 1713
+        },
+        "total_tokens": 6712
+      }
+    }
+  ],
+  "closed": false
+}

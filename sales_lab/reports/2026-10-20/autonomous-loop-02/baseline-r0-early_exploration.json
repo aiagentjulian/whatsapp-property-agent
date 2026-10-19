@@ -1,0 +1,173 @@
+{
+  "trial": "candidate-r3-live",
+  "scenario": "early_exploration",
+  "source_sha256": "d3c35f1d42d114a43a5338402126b8d40d49a82cadbcddf2346874bd5c453449",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya (currently browsing options)",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "QUALIFY",
+    "next_objective": "Share confirmed current pricing and inclusions when available, then assess fit against the buyer's target.",
+    "last_progress": "Buyer shared a target of around RM350,000 and asked whether a current option may be near it.",
+    "next_action": "Provide the confirmed pricing and inclusions when available.",
+    "conversation_summary": "Buyer is exploring options around Seberang Jaya, targeting about RM350,000 and still assessing full costs. Current pricing remains unconfirmed.",
+    "budget_range": "Around RM350,000",
+    "active_concerns": [
+      "Unclear full purchase costs and current pricing"
+    ],
+    "fit_assessment": "The earlier indicative base-price references include figures near the buyer's target, but current availability and all-in pricing are unconfirmed."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "As a rough guide, the base-price references I have are around RM328k–RM358k, depending on floor and facing. That isn’t a confirmed current all-in price—the car-park configuration and latest package can affect the final figure, so I’ll verify the current schedule before quoting an exact amount. If you have a rough budget ceiling, I can help narrow down the options."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I’m hoping to stay around RM350,000, though I’m still figuring out what the full costs look like. If the current range is confirmed, could you let me know whether anything is near that amount?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The earlier indicative base-price references were around RM328k–RM358k, so that range does include figures near your RM350k target. But I can’t confirm whether a current unit is available at that level or what the all-in price would be yet; the car-park configuration and current package can affect the total. For an ongoing cost reference, maintenance for the 900 sq ft unit is about RM162/month, inclusive of sinking fund. I’ll share the confirmed price and inclusions once they’re available."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest current indicative price range and applicable package for Pearl Residences, including whether the quoted range is net or before unit-specific charges.",
+      "subject": "Pearl Residences current pricing",
+      "customer_need": "A general price indication to assess options around Seberang Jaya.",
+      "reason": "Available price references are indicative and current package validity and unit-specific totals need confirmation.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share the verified current general price indication and continue helping the buyer explore options without assuming readiness.",
+      "signature": "PRICING|and applicable before charges current including indicative latest net or package pearl price quoted range residences specific",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "As a rough guide, the base-price references I have are around RM328k–RM358k, depending on floor and facing. That isn’t a confirmed current all-in price—the car-park configuration and latest package can affect the final figure, so I’ll verify the current schedule before quoting an exact amount. If you have a rough budget ceiling, I can help narrow down the options.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (currently browsing options)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide a current general price indication and help the buyer compare options at their pace.",
+          "last_progress": "Asked for a general price range while browsing around Seberang Jaya.",
+          "next_action": "Confirm the latest pricing and package schedule; continue exploratory assistance.",
+          "conversation_summary": "Buyer is exploring Pearl Residences and other options around Seberang Jaya and asked for a general price range."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest current indicative price range and applicable package for Pearl Residences, including whether the quoted range is net or before unit-specific charges.",
+          "subject": "Pearl Residences current pricing",
+          "customer_need": "A general price indication to assess options around Seberang Jaya.",
+          "reason": "Available price references are indicative and current package validity and unit-specific totals need confirmation.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share the verified current general price indication and continue helping the buyer explore options without assuming readiness."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3600,
+        "input_tokens_details": {
+          "cache_write_tokens": 3597,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2051,
+        "output_tokens_details": {
+          "reasoning_tokens": 1602
+        },
+        "total_tokens": 5651
+      }
+    },
+    {
+      "customer": "I’m hoping to stay around RM350,000, though I’m still figuring out what the full costs look like. If the current range is confirmed, could you let me know whether anything is near that amount?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The earlier indicative base-price references were around RM328k–RM358k, so that range does include figures near your RM350k target. But I can’t confirm whether a current unit is available at that level or what the all-in price would be yet; the car-park configuration and current package can affect the total. For an ongoing cost reference, maintenance for the 900 sq ft unit is about RM162/month, inclusive of sinking fund. I’ll share the confirmed price and inclusions once they’re available.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": "Around RM350,000",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Unclear full purchase costs and current pricing"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "The earlier indicative base-price references include figures near the buyer's target, but current availability and all-in pricing are unconfirmed.",
+          "next_objective": "Share confirmed current pricing and inclusions when available, then assess fit against the buyer's target.",
+          "last_progress": "Buyer shared a target of around RM350,000 and asked whether a current option may be near it.",
+          "next_action": "Provide the confirmed pricing and inclusions when available.",
+          "conversation_summary": "Buyer is exploring options around Seberang Jaya, targeting about RM350,000 and still assessing full costs. Current pricing remains unconfirmed."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3322,
+        "input_tokens_details": {
+          "cache_write_tokens": 3319,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2032,
+        "output_tokens_details": {
+          "reasoning_tokens": 1552
+        },
+        "total_tokens": 5354
+      }
+    }
+  ],
+  "closed": false
+}

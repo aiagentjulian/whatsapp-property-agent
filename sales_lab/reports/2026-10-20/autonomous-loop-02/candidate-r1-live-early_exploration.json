@@ -1,0 +1,166 @@
+{
+  "trial": "candidate-r1-live",
+  "scenario": "early_exploration",
+  "source_sha256": "ca7c896916c789c8c3e660ca99b09034f211b0208d59bc3888854553101b3ca6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_location": "Seberang Jaya (exploring)",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "fit_assessment": "Early-stage comparison around Seberang Jaya; would probably buy for own stay if they decide to purchase. No budget or timing stated.",
+    "next_objective": "Share verified current pricing, then help compare suitability for own stay if useful.",
+    "last_progress": "Buyer said the purchase would probably be for own stay, but they are still early in comparing areas.",
+    "next_action": "Verify current unit and package pricing and share a confirmed update.",
+    "conversation_summary": "Browsing options around Seberang Jaya; likely own-stay purpose if they decide to buy. Asked to be updated once current pricing is confirmed; no budget or timeline stated."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! The indicative base-price references run around RM328k–RM358k, depending on the unit category and floor. Treat that as a guide rather than an all-in quote: the car-park configuration and any applicable add-ons affect the SPA figure, and the latest unit and package pricing needs confirmation. Since you’re comparing options around Seberang Jaya, are you looking more for own stay or investment? I can tailor the comparison to that."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Probably for my own stay if I do decide to buy, but I’m still early in looking and comparing areas. Thanks for explaining the range is only indicative; please let me know once the current pricing is confirmed."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure—I’ll have the latest unit and package pricing checked and share a confirmed update. The RM328k–RM358k range is only indicative, not a current quote. No rush while you’re comparing areas."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest confirmed unit pricing and applicable current package pricing for Pearl Residences, including any relevant conditions.",
+      "subject": "Pearl Residences current pricing",
+      "customer_need": "Wants a reliable price comparison while exploring areas and options for a possible own-stay purchase.",
+      "reason": "The previously shared RM328k–RM358k range is indicative only, and current unit/package pricing is not confirmed.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share verified current pricing, then continue the own-stay comparison if helpful.",
+      "signature": "PRICING|and any applicable conditions confirmed current including latest package pearl price relevant residences",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! The indicative base-price references run around RM328k–RM358k, depending on the unit category and floor. Treat that as a guide rather than an all-in quote: the car-park configuration and any applicable add-ons affect the SPA figure, and the latest unit and package pricing needs confirmation. Since you’re comparing options around Seberang Jaya, are you looking more for own stay or investment? I can tailor the comparison to that.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (exploring)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Exploring options around Seberang Jaya; no specific purchase purpose or budget stated.",
+          "next_objective": "Learn whether the buyer is comparing mainly for own stay or investment.",
+          "last_progress": "Asked for a general price range and said they are getting a feel for the area and options.",
+          "next_action": "Offer a relevant comparison once purchase purpose is clearer.",
+          "conversation_summary": "Buyer is browsing options around Seberang Jaya and asked for Pearl Residences' general price range."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3897,
+        "input_tokens_details": {
+          "cache_write_tokens": 3894,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1844,
+        "output_tokens_details": {
+          "reasoning_tokens": 1399
+        },
+        "total_tokens": 5741
+      }
+    },
+    {
+      "customer": "Probably for my own stay if I do decide to buy, but I’m still early in looking and comparing areas. Thanks for explaining the range is only indicative; please let me know once the current pricing is confirmed.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Sure—I’ll have the latest unit and package pricing checked and share a confirmed update. The RM328k–RM358k range is only indicative, not a current quote. No rush while you’re comparing areas.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Early-stage comparison around Seberang Jaya; would probably buy for own stay if they decide to purchase. No budget or timing stated.",
+          "next_objective": "Share verified current pricing, then help compare suitability for own stay if useful.",
+          "last_progress": "Buyer said the purchase would probably be for own stay, but they are still early in comparing areas.",
+          "next_action": "Verify current unit and package pricing and share a confirmed update.",
+          "conversation_summary": "Browsing options around Seberang Jaya; likely own-stay purpose if they decide to buy. Asked to be updated once current pricing is confirmed; no budget or timeline stated."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest confirmed unit pricing and applicable current package pricing for Pearl Residences, including any relevant conditions.",
+          "subject": "Pearl Residences current pricing",
+          "customer_need": "Wants a reliable price comparison while exploring areas and options for a possible own-stay purchase.",
+          "reason": "The previously shared RM328k–RM358k range is indicative only, and current unit/package pricing is not confirmed.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share verified current pricing, then continue the own-stay comparison if helpful."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4151,
+        "input_tokens_details": {
+          "cache_write_tokens": 4148,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1800,
+        "output_tokens_details": {
+          "reasoning_tokens": 1349
+        },
+        "total_tokens": 5951
+      }
+    }
+  ],
+  "closed": false
+}

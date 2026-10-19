@@ -1,0 +1,58 @@
+{
+  "objective": "Improve buyer visualization, desire creation, persuasive guidance and realism while preserving guided-selling and viewing judgment.",
+  "starting_commit": "4b1bfaf7303afd8549eaecb4efc5446b0f741000",
+  "starting_candidate": "candidate-r3-live from autonomous-loop-01; genuine-interest and early-exploration transcripts/scores inherited, not rerun.",
+  "new_scenario": "couple_own_stay; requires new actual baseline and candidate turns.",
+  "multi_agent": "Codex native Customer Simulator and independent Sales Judge subagents; no extra paid API calls.",
+  "sales_agent": "app.agent.SalesAgent with GPT-6 Luna / high, real OpenAI API, Sales Brain, retrieval, history and Runtime-equivalent support context.",
+  "api_limit": 24,
+  "max_repairs": 3,
+  "rubric_legacy": {
+    "effective_discovery": 20,
+    "product_connection_buying_desire": 35,
+    "sales_progression_appointment": 35,
+    "conversation_realism": 10
+  },
+  "new_quality_checks": [
+    "buyer_visualization_and_desire_creation",
+    "persuasive_sales_guidance"
+  ],
+  "acceptance": [
+    "retain legacy rubric comparability",
+    "improve visualization and persuasion with specific transcript evidence",
+    "preserve appointment judgment",
+    "no fact/handoff errors",
+    "no scripted or ad-like deterioration",
+    "fresh holdout not used for repair"
+  ],
+  "holdout": "reserved final-only",
+  "status": "KEEP",
+  "repairs_completed": 2,
+  "stop_reason": "Round 2 met the development acceptance threshold and the final-only holdout improved; no third repair was needed.",
+  "best_candidate": "candidate-r2-live",
+  "development_result": {
+    "baseline_legacy_mean": 6.53,
+    "best_candidate_legacy_mean": 7.1,
+    "improvement_points_out_of_100": 5.7,
+    "judge": "judge-round2-loop02.json"
+  },
+  "round_1_result": {
+    "candidate_legacy_mean": 5.96,
+    "baseline_legacy_mean": 6.5,
+    "improvement_points_out_of_100": -5.4,
+    "result": "REVERTED_BEFORE_ROUND_2"
+  },
+  "holdout_result": {
+    "baseline_legacy_weighted_score": 5.9,
+    "best_candidate_legacy_weighted_score": 6.8,
+    "improvement_points_out_of_100": 9.0,
+    "judge": "judge-final-holdout-loop02.json",
+    "result": "PASS_WITH_CONDITIONAL_VIEWING_INTEREST_ONLY"
+  },
+  "sales_agent_calls": 18,
+  "sales_agent_call_limit": 24,
+  "customer_and_judge_api_calls": 0,
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "api_cost": "Not returned by provider usage; token counts are recorded in ledger.json."
+}

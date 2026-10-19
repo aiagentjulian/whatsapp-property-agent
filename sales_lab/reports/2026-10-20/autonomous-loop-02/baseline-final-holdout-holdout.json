@@ -1,0 +1,198 @@
+{
+  "trial": "baseline-final-holdout",
+  "scenario": "holdout",
+  "source_sha256": "d3c35f1d42d114a43a5338402126b8d40d49a82cadbcddf2346874bd5c453449",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Comparing condos for own stay",
+    "preferred_location": "Seberang Jaya",
+    "preferred_property_type": "Condo",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "primary_motivations": [
+      "Finding a suitable home for own stay"
+    ],
+    "decision_factors": [
+      "Price",
+      "What is included",
+      "Overall value compared with other condos",
+      "Confirmed total cost for a Type A with one car park"
+    ],
+    "active_concerns": [
+      "Pearl Residences may be expensive",
+      "Needs confirmed current unit-specific total and clarity on any required extra charges"
+    ],
+    "fit_assessment": "Early comparison for own stay; value depends on confirmed unit-specific pricing and inclusions.",
+    "next_objective": "Provide the confirmed current Type A one-car-park cost breakdown, including any applicable required charges and package eligibility.",
+    "last_progress": "Buyer confirmed the Type A layout could work but wants the full cost before comparing value.",
+    "next_action": "Follow up with the itemised current pricing once the existing pricing check is resolved.",
+    "conversation_summary": "Buyer is comparing condos around Seberang Jaya for own stay. Type A may suit them, but they want a confirmed total for one car park and clarity on required extras before assessing value."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re comparing condos around Seberang Jaya for our own stay, and Pearl Residences seems a little expensive from what I’ve seen. Could you help me understand what the price includes and how it compares on overall value?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Fair question, especially when you’re comparing for your own stay. The price structure can include the unit’s base price and an applicable car-park premium; some units may also have extra motorcycle bay or utility charges, and an upgrading package. Any rebate or package is separate and depends on the exact unit category, floor and car-park allocation.\n\nThe pricing reference I have is indicative, not a confirmed current quote, so I don’t want to give you a figure that may be out of date. For context, the Phase 1 Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony; you can weigh that layout against the final total cost when comparing options. I’ll request the latest unit-specific breakdown and package. If you have another condo’s quote, feel free to share it and I can help compare the inclusions like-for-like."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that helps explain why the headline price can differ from the final amount. I don’t have a formal quote from another condo yet, just a few lower advertised prices I’ve seen. Could you send the current total for a Type A with one car park and note any required extra charges? The layout could work for us, but I’d like to compare the full costs first."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Absolutely—checking the full cost is the right way to compare. I don’t yet have the confirmed current unit-specific total, so I can’t responsibly quote a figure or say which extras are compulsory. For a Type A with one car park, the breakdown needs to confirm the applicable base price and car-park premium, plus whether any motorcycle-bay or utility charges, upgrade items, or current package/rebate apply. That pricing check is still pending; once confirmed, I’ll share the itemised total so you can compare it properly."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest unit-specific price breakdown, including base price, applicable car-park premium and any extra charges or upgrade package, plus current rebate/package eligibility.",
+      "subject": "Pearl Residences current pricing and package",
+      "customer_need": "Understand the total cost and what is included to compare overall value for own stay.",
+      "reason": "The available pricing reference is indicative and current package validity and unit-specific applicability need confirmation.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Provide a confirmed cost breakdown and help compare it like-for-like with other options.",
+      "signature": "PRICING|and any applicable base breakdown car charges current eligibility extra including latest or package park pearl plus premium price rebate residences specific upgrade",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re comparing condos around Seberang Jaya for our own stay, and Pearl Residences seems a little expensive from what I’ve seen. Could you help me understand what the price includes and how it compares on overall value?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair question, especially when you’re comparing for your own stay. The price structure can include the unit’s base price and an applicable car-park premium; some units may also have extra motorcycle bay or utility charges, and an upgrading package. Any rebate or package is separate and depends on the exact unit category, floor and car-park allocation.\n\nThe pricing reference I have is indicative, not a confirmed current quote, so I don’t want to give you a figure that may be out of date. For context, the Phase 1 Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony; you can weigh that layout against the final total cost when comparing options. I’ll request the latest unit-specific breakdown and package. If you have another condo’s quote, feel free to share it and I can help compare the inclusions like-for-like.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Comparing condos for own stay",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": "Condo",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": [
+            "Finding a suitable home for own stay"
+          ],
+          "decision_factors": [
+            "Price",
+            "What is included",
+            "Overall value compared with other condos"
+          ],
+          "active_concerns": [
+            "Pearl Residences may be expensive",
+            "Needs clarity on current price inclusions and overall value"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Early comparison for own stay; value depends on confirmed unit-specific pricing and inclusions.",
+          "next_objective": "Confirm the latest applicable price breakdown and package, then support a like-for-like value comparison.",
+          "last_progress": "Buyer said they are comparing condos around Seberang Jaya for own stay and raised a price/value concern.",
+          "next_action": "Request the latest unit-specific pricing and package applicability.",
+          "conversation_summary": "Buyer is comparing condos around Seberang Jaya for own stay and wants to understand Pearl Residences pricing inclusions and value."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest unit-specific price breakdown, including base price, applicable car-park premium and any extra charges or upgrade package, plus current rebate/package eligibility.",
+          "subject": "Pearl Residences current pricing and package",
+          "customer_need": "Understand the total cost and what is included to compare overall value for own stay.",
+          "reason": "The available pricing reference is indicative and current package validity and unit-specific applicability need confirmation.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Provide a confirmed cost breakdown and help compare it like-for-like with other options."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3618,
+        "input_tokens_details": {
+          "cache_write_tokens": 3615,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2565,
+        "output_tokens_details": {
+          "reasoning_tokens": 1828
+        },
+        "total_tokens": 6183
+      }
+    },
+    {
+      "customer": "Thanks, that helps explain why the headline price can differ from the final amount. I don’t have a formal quote from another condo yet, just a few lower advertised prices I’ve seen. Could you send the current total for a Type A with one car park and note any required extra charges? The layout could work for us, but I’d like to compare the full costs first.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Absolutely—checking the full cost is the right way to compare. I don’t yet have the confirmed current unit-specific total, so I can’t responsibly quote a figure or say which extras are compulsory. For a Type A with one car park, the breakdown needs to confirm the applicable base price and car-park premium, plus whether any motorcycle-bay or utility charges, upgrade items, or current package/rebate apply. That pricing check is still pending; once confirmed, I’ll share the itemised total so you can compare it properly.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price",
+            "What is included",
+            "Overall value compared with other condos",
+            "Confirmed total cost for a Type A with one car park"
+          ],
+          "active_concerns": [
+            "Pearl Residences may be expensive",
+            "Needs confirmed current unit-specific total and clarity on any required extra charges"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide the confirmed current Type A one-car-park cost breakdown, including any applicable required charges and package eligibility.",
+          "last_progress": "Buyer confirmed the Type A layout could work but wants the full cost before comparing value.",
+          "next_action": "Follow up with the itemised current pricing once the existing pricing check is resolved.",
+          "conversation_summary": "Buyer is comparing condos around Seberang Jaya for own stay. Type A may suit them, but they want a confirmed total for one car park and clarity on required extras before assessing value."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4824,
+        "input_tokens_details": {
+          "cache_write_tokens": 4821,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1190,
+        "output_tokens_details": {
+          "reasoning_tokens": 671
+        },
+        "total_tokens": 6014
+      }
+    }
+  ],
+  "closed": false
+}

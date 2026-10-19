@@ -1,0 +1,83 @@
+{
+  "judge": "independent_blind_sales_judge",
+  "scope": "Final-only holdout pair. Labels A/B are randomized; source and variant mapping are omitted. Assessment uses the two public dialogues and supplied customer reactions only. No code or prompt inspection.",
+  "rubric": {
+    "legacy_weighted": [
+      {"name": "discovery", "weight_percent": 20},
+      {"name": "product_connection_buying_desire", "weight_percent": 35},
+      {"name": "progression_appointment_opportunity", "weight_percent": 35},
+      {"name": "naturalness", "weight_percent": 10}
+    ],
+    "additional_independent_dimensions": ["buyer_visualization_desire_creation", "persuasive_sales_guidance", "conversation_realism"],
+    "scale": "Each dimension is scored 0-10. The three additional dimensions are independent and excluded from the legacy weighted score."
+  },
+  "dialogues": {
+    "A": {
+      "legacy_scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 acknowledges the own-stay comparison and asks, 'If you share the competing quote or its unit size and parking, I can help compare like for like.' Customer says they have no formal quote, only lower advertised prices. Turn 2 asks for the current Type A total with one car park and says, 'If the full amount is within reach, the layout may be worth looking at more closely.' This clarifies their decision condition, but no budget amount or timeline is established."},
+        "product_connection_buying_desire": {"score": 7, "evidence": "Turn 1 connects the 900 sq.ft. three-bedroom unit to same-size comparison and lists base price, parking, upgrade/accessory items and rebates as separate components. Customer says this is 'useful context, especially comparing the same size and checking the parking and package.' Turn 2 describes the open-plan layout and reduced corridor area. Customer says it may be worth looking at more closely if affordable. This supports value assessment and interest, but current price remains unknown."},
+        "progression_appointment_opportunity": {"score": 7, "evidence": "Customer turn 2 says, 'If the full amount is within reach, the layout may be worth looking at more closely.' Agent responds with, 'If it would help you assess the layout while you consider the price, we can look at arranging an optional viewing; nothing is booked.' This is a relevant, low-pressure invitation prompted by conditional layout interest. It does not resolve the requested current total, and there is no subsequent customer response accepting the invitation."},
+        "naturalness": {"score": 7, "evidence": "The agent is clear and measured, and it does not claim Pearl is better value without a like-for-like comparison. Turn 1 is information-dense, with several price components and amounts; turn 2 balances the price limitation with a layout description and optional invitation."}
+      },
+      "legacy_weighted_score": 6.8,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 7, "evidence": "The 900 sq.ft., three-bedroom comparison gives the customer a concrete basis, and the open-plan/circulation description follows the customer's statement that the layout may be worth looking at. It supports imagining the space but does not demonstrate a definite desire to visit."},
+        "persuasive_sales_guidance": {"score": 7, "evidence": "The agent explains base price versus conditional extras and rebates, asks for comparable size/parking, then makes a non-committal viewing offer tied to the customer's own condition. The offer comes before current affordability is confirmed, but explicitly leaves booking optional."},
+        "conversation_realism": {"score": 7, "evidence": "The follow-up responds to the customer's full-cost request and conditional curiosity. The first answer's itemized price list is somewhat dense; the second feels conversational and low pressure."}
+      },
+      "customer_replies_and_reactions": {
+        "turn_2_public": "The customer says the pricing context is useful, asks for a current one-car-park total, and adds, 'If the full amount is within reach, the layout may be worth looking at more closely.'",
+        "private_reaction": "The detail earns some confidence and strengthens own-stay interest, but no current unit-specific total or parking confirmation is available; the customer is not ready to arrange a viewing."
+      },
+      "concern_handling_and_accuracy": {
+        "status": "No material factual error observed; current price remains unresolved.",
+        "notes": ["The RM328k–RM358k historic base-price examples, floor/facing variation, RM5k extra motorcycle bay, RM8k extra utility and RM10k upgrade package are documented. The response says these items are conditional and separates rebates as a dynamic layer.", "The historical base-price examples are not a current effective price. The response explicitly says the unit-level price and current package are unconfirmed and avoids giving an all-in total.", "The customer asked for a current one-car-park total; that answer remains pending. This is an unresolved concern, not a false claim."]
+      },
+      "handoff_and_pressure": {
+        "agent_viewing_invitation": true,
+        "customer_viewing_interest": "The customer expresses conditional interest in looking more closely at the layout if the total cost is affordable. This is not an explicit acceptance of an in-person viewing.",
+        "appointment_agreement": false,
+        "formal_handoff_to_human": false,
+        "pressure_assessment": "Low pressure. The agent calls it optional, states nothing is booked, and does not imply urgency. The customer reaction says they are not ready to arrange a viewing."
+      }
+    },
+    "B": {
+      "legacy_scores": {
+        "discovery": {"score": 6, "evidence": "The opening establishes own-stay comparison and price concern. Agent turn 1 asks for another condo's quote; customer says they have only lower advertised prices. Turn 2 asks for the one-car-park Type A total and required charges. The comparison criteria are clear, but no budget or timing is established."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 gives the 900 sq.ft., three-bedroom, two-bathroom, balcony context and says it can be weighed against total cost. Customer says, 'The layout could work for us,' but asks to compare full costs first. The response explains price structure but offers little concrete value differentiation or lifestyle connection."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "The agent promises an itemized unit-specific cost breakdown after verification. Customer turn 2 asks for a Type A one-car-park total and required charges, and says they want full costs first. Turn 2 confirms it cannot yet quote and lists what must be checked. This handles the request accurately, but there is no viewing invitation or additional step beyond pending price confirmation."},
+        "naturalness": {"score": 8, "evidence": "The agent validates the comparison concern and keeps the answer focused. The detailed list is understandable though somewhat formal. The customer replies that the explanation helped them understand why headline and final totals differ."}
+      },
+      "legacy_weighted_score": 5.9,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 6, "evidence": "The agent names unit size and layout, and the customer says the layout could work. It does not develop a specific benefit or scene that would make the home more desirable."},
+        "persuasive_sales_guidance": {"score": 6, "evidence": "The answer is careful about unknown pricing and explains potential cost components. It invites a like-for-like comparison if the customer has a quote, but the customer does not; the response does not offer a viewing or other customer-facing progression beyond itemized pricing follow-up."},
+        "conversation_realism": {"score": 8, "evidence": "The exchange sounds measured and credible. The agent does not argue against the price objection or make unsupported value claims; it acknowledges that full cost is needed."}
+      },
+      "customer_replies_and_reactions": {
+        "turn_2_public": "The customer says the explanation helps, has only lower advertised prices, and asks for a current one-car-park total with required charges. They add, 'The layout could work for us, but I’d like to compare the full costs first.'",
+        "private_reaction": "The customer sees a fair comparison as possible but has not received the actual price; affordability and whether to visit remain unresolved."
+      },
+      "concern_handling_and_accuracy": {
+        "status": "Accurate and appropriately cautious; full price remains pending.",
+        "notes": ["The listed base-price/car-park/extra utility/motorcycle bay/upgrading/rebate components are described as conditional on the exact unit and package.", "The agent does not invent a current total or say extras are compulsory. It explicitly says it cannot confirm which apply.", "The known unit layout is stated accurately. No material factual error observed."]
+      },
+      "handoff_and_pressure": {
+        "agent_viewing_invitation": false,
+        "customer_viewing_interest": "No explicit viewing interest. The customer says the layout could work but requests full costs first.",
+        "appointment_agreement": false,
+        "formal_handoff_to_human": false,
+        "pressure_assessment": "No pressure. The agent keeps the discussion on the requested full-cost comparison."
+      }
+    }
+  },
+  "paired_assessment": {
+    "legacy_weighted_difference_A_minus_B": 0.9,
+    "actual_customer_value": "The conversation labeled A makes a modest customer-visible gain: the customer responds that the price context is useful and says the layout may be worth looking at more closely if the total is affordable. The private reaction says this earns some confidence and strengthens own-stay interest, while confirming the customer is not ready to arrange a visit. The invitation is earned as an optional next step by that conditional interest. The other conversation also handles the cost concern well and gets a positive layout-fit statement, but leaves the visit opportunity unraised.",
+    "viewing_opportunity": "The clearer invitation is relevant, but customer interest remains conditional and not an explicit acceptance of an in-person viewing. No appointment date/time is agreed. The other dialogue misses an opportunity to offer a low-pressure next step after the customer says the layout could work, though waiting for the requested full cost is also reasonable.",
+    "appointment_and_handoff": "An invitation occurs in one dialogue. There is no appointment agreement in either, and no formal handoff to a human. Invitation, conditional layout interest, and booking are distinct states here.",
+    "factual_and_commercial_accuracy": "No serious factual regression. Historical base-price and accessory amounts are documented, while current package and unit-specific total are correctly left pending. The historic base examples are not an effective current price, and the customer still lacks the one-car-park total needed to decide affordability.",
+    "pressure_and_realism": "The optional viewing line is not coercive and says nothing is booked. Its timing is slightly ahead of the customer's cost condition, but it is paired with an explicit affordability caveat and no pressure. The customer reaction confirms no readiness to schedule.",
+    "holdout_decision": "Slight positive progression signal, with the commercial question still unresolved. The agent earns a conditional opening to discuss a viewing but does not yet secure actual viewing interest or appointment agreement."
+  }
+}

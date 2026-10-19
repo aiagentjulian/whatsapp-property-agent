@@ -1,0 +1,223 @@
+{
+  "trial": "baseline-r0",
+  "scenario": "own_stay",
+  "source_sha256": "d3c35f1d42d114a43a5338402126b8d40d49a82cadbcddf2346874bd5c453449",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a home with a separate bedroom for their young child",
+    "preferred_location": "Seberang Jaya",
+    "preferred_property_type": "Condominium",
+    "size_or_layout_preference": "3 bedrooms, including a separate bedroom for their child",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Separate bedroom for young child",
+      "3-bedroom layout",
+      "Monthly ownership costs"
+    ],
+    "primary_motivations": [
+      "Find a home in Seberang Jaya for the family"
+    ],
+    "decision_factors": [
+      "Bedroom layout",
+      "Monthly costs"
+    ],
+    "active_concerns": [
+      "Total recurring monthly ownership costs beyond maintenance fee",
+      "Whether a car park is included in the unit price"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The 3-bedroom Type A layout appears to meet the stated need for a separate bedroom for their child; exact furniture fit should be checked against the approved plan.",
+    "next_objective": "Confirm the applicable car-park inclusion and share the verified recurring ownership-cost breakdown.",
+    "last_progress": "Buyer said the 3-bedroom layout sounds promising for their own stay and asked whether a car park is included in the price.",
+    "next_action": "Share verified car-park and recurring-cost details when confirmed; offer a viewing if useful.",
+    "conversation_summary": "Buyer is looking in Seberang Jaya for an own-stay home with a separate bedroom for their young child. The Type A layout sounds promising; they are waiting for confirmation of other recurring charges and asked whether a car park is included."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Type A is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony, so it has a separate bedroom that could be your child’s room. The plan also avoids a long internal corridor, with the living, dining and kitchen in an open-plan arrangement. Exact furniture fit is best checked against the approved plan.\n\nThe maintenance fee is RM0.18 per sq.ft. inclusive of sinking fund, which works out to about RM162 per month for 900 sq.ft. I don’t have verified details of any other recurring charges, so I’ll confirm those rather than give you an incomplete monthly total."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds promising for our own stay; a separate room for our child is important, and the open-plan area could work for us. Please let me know what other regular charges there are when you’ve confirmed them. Also, is a car park included in the price?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "It depends on the unit category. The pricing structure can list a car-park premium separately, and some configurations show two bays, so I can’t confirm what’s included for a specific unit without the latest schedule. I’ll verify that rather than guess. The other recurring charges are still awaiting confirmation; I’ll share the breakdown once it’s verified. Glad the layout sounds promising for your family’s own stay. If you’d like, I can also arrange a viewing so you can get a feel for the space."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Any other recurring charges payable by a Pearl Residences owner beyond the RM0.18 psf maintenance fee inclusive of sinking fund, including their amounts and frequency.",
+      "subject": "Pearl Residences monthly ownership costs",
+      "customer_need": "Budget for the usual monthly costs of owning the home.",
+      "reason": "Only the maintenance fee is verified; a complete monthly cost estimate cannot be provided without confirming other applicable recurring charges.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Give the buyer a verified breakdown of recurring ownership costs.",
+      "signature": "OTHER|18 amounts and any beyond by charges costs fee frequency fund including inclusive maintenance monthly other owner ownership payable pearl psf recurring residences rm0 sinking their",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Whether a car park is included in the current unit price and the applicable car-park allocation or premium by unit category.",
+      "subject": "Pearl Residences car-park inclusion and pricing",
+      "customer_need": "Understand the upfront price and parking arrangement for a potential own-stay purchase.",
+      "reason": "Car-park allocation and any premium vary by unit category, and the current unit-specific inclusion is not verified.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Give the buyer a verified answer on car-park inclusion for the relevant unit or category.",
+      "signature": "PRICING|allocation and applicable by car category current in included inclusion or park pearl premium price residences",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Type A is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony, so it has a separate bedroom that could be your child’s room. The plan also avoids a long internal corridor, with the living, dining and kitchen in an open-plan arrangement. Exact furniture fit is best checked against the approved plan.\n\nThe maintenance fee is RM0.18 per sq.ft. inclusive of sinking fund, which works out to about RM162 per month for 900 sq.ft. I don’t have verified details of any other recurring charges, so I’ll confirm those rather than give you an incomplete monthly total.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a home with a separate bedroom for their young child",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": "Condominium",
+          "size_or_layout_preference": "3 bedrooms, including a separate bedroom for their child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Separate bedroom for young child",
+            "3-bedroom layout",
+            "Monthly ownership costs"
+          ],
+          "primary_motivations": [
+            "Find a home in Seberang Jaya for the family"
+          ],
+          "decision_factors": [
+            "Bedroom layout",
+            "Monthly costs"
+          ],
+          "active_concerns": [
+            "Total recurring monthly ownership costs beyond maintenance fee"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom Type A layout appears to meet the stated need for a separate bedroom for their child; exact furniture fit should be checked against the approved plan.",
+          "next_objective": "Confirm any other recurring charges and their amounts or frequency.",
+          "last_progress": "Shared verified Type A layout details and calculated the maintenance fee at approximately RM162 per month, inclusive of sinking fund.",
+          "next_action": "Provide a verified breakdown of other recurring ownership charges when available.",
+          "conversation_summary": "Buyer is looking in Seberang Jaya and needs a separate bedroom for their young child. They asked about the 3-bedroom layout and usual monthly costs."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Any other recurring charges payable by a Pearl Residences owner beyond the RM0.18 psf maintenance fee inclusive of sinking fund, including their amounts and frequency.",
+          "subject": "Pearl Residences monthly ownership costs",
+          "customer_need": "Budget for the usual monthly costs of owning the home.",
+          "reason": "Only the maintenance fee is verified; a complete monthly cost estimate cannot be provided without confirming other applicable recurring charges.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Give the buyer a verified breakdown of recurring ownership costs."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3158,
+        "input_tokens_details": {
+          "cache_write_tokens": 3155,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1530,
+        "output_tokens_details": {
+          "reasoning_tokens": 936
+        },
+        "total_tokens": 4688
+      }
+    },
+    {
+      "customer": "That sounds promising for our own stay; a separate room for our child is important, and the open-plan area could work for us. Please let me know what other regular charges there are when you’ve confirmed them. Also, is a car park included in the price?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "It depends on the unit category. The pricing structure can list a car-park premium separately, and some configurations show two bays, so I can’t confirm what’s included for a specific unit without the latest schedule. I’ll verify that rather than guess. The other recurring charges are still awaiting confirmation; I’ll share the breakdown once it’s verified. Glad the layout sounds promising for your family’s own stay. If you’d like, I can also arrange a viewing so you can get a feel for the space.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Total recurring monthly ownership costs beyond maintenance fee",
+            "Whether a car park is included in the unit price"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm the applicable car-park inclusion and share the verified recurring ownership-cost breakdown.",
+          "last_progress": "Buyer said the 3-bedroom layout sounds promising for their own stay and asked whether a car park is included in the price.",
+          "next_action": "Share verified car-park and recurring-cost details when confirmed; offer a viewing if useful.",
+          "conversation_summary": "Buyer is looking in Seberang Jaya for an own-stay home with a separate bedroom for their young child. The Type A layout sounds promising; they are waiting for confirmation of other recurring charges and asked whether a car park is included."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Whether a car park is included in the current unit price and the applicable car-park allocation or premium by unit category.",
+          "subject": "Pearl Residences car-park inclusion and pricing",
+          "customer_need": "Understand the upfront price and parking arrangement for a potential own-stay purchase.",
+          "reason": "Car-park allocation and any premium vary by unit category, and the current unit-specific inclusion is not verified.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Give the buyer a verified answer on car-park inclusion for the relevant unit or category."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4535,
+        "input_tokens_details": {
+          "cache_write_tokens": 4532,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2406,
+        "output_tokens_details": {
+          "reasoning_tokens": 1769
+        },
+        "total_tokens": 6941
+      }
+    }
+  ],
+  "closed": false
+}

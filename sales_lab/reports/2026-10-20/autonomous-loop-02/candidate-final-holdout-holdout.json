@@ -1,0 +1,197 @@
+{
+  "trial": "candidate-final-holdout",
+  "scenario": "holdout",
+  "source_sha256": "88418dc5cf39be4337d3e8d532d92976d8a9d81e4029aa2cdb3885b86249f27a",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_location": "Seberang Jaya",
+    "preferred_property_type": "Condo",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "primary_motivations": [
+      "Own stay"
+    ],
+    "decision_factors": [
+      "Overall value",
+      "Price inclusions",
+      "Total price for a Type A with one car park"
+    ],
+    "active_concerns": [
+      "Perceived high price and overall value",
+      "Current total for a Type A with one car park is unconfirmed"
+    ],
+    "fit_assessment": "Potential own-stay fit; buyer is interested in assessing the layout if the full amount is within reach, but the current unit-level total remains unconfirmed.",
+    "next_objective": "Provide the verified current total and applicable price components, then help the buyer assess fit.",
+    "last_progress": "Buyer asked for the current total for a Type A with one car park and expressed conditional interest in looking at the layout.",
+    "next_action": "Resume once the pending pricing verification is available; keep viewing optional and do not treat it as agreed.",
+    "conversation_summary": "Buyer is comparing condos around Seberang Jaya for own stay. They are concerned Pearl Residences may be expensive, want to understand inclusions and value, and asked for the current Type A total with one car park. They may want to assess the layout if the amount is within reach.",
+    "size_or_layout_preference": "Considering Pearl Residences Type A; interested in assessing the layout, conditional on the total price being within reach.",
+    "viewing_interest": "May consider looking at the layout if the total price is within reach; no viewing agreed."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re comparing condos around Seberang Jaya for our own stay, and Pearl Residences seems a little expensive from what I’ve seen. Could you help me understand what the price includes and how it compares on overall value?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I understand—headline prices can be hard to compare fairly. Pearl Residences Phase 1 Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The pricing reference I have shows base-price examples around RM328k–RM358k, varying by floor and facing; that isn’t a confirmed total for a specific unit. The SPA pricing structure can include the unit base price and applicable car-park or upgrade/accessory components. The materials also list an extra motorcycle bay at RM5k or extra utility at RM8k where applicable, and an upgrading package worth RM10k. These aren’t automatically applicable to every unit, and any rebate is a separate, category-specific item that needs current confirmation.\n\nFor an own-stay comparison, it’s worth lining up the total price against a similar 900 sq ft, 3-bedroom unit and checking the car-park allocation and any package items—not just the advertised starting price. If you share the competing quote or its unit size and parking, I can help compare like for like."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s useful context, especially comparing the same size and checking the parking and package. I don’t have a formal quote from another condo yet, just lower advertised prices I’ve noticed. Could you confirm the current total for a Type A with one car park? If the full amount is within reach, the layout may be worth looking at more closely."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I can’t confirm the current total yet—the unit-level price for a Type A with one car park and any applicable package items is still being verified, so I don’t want to give you a misleading figure. On the layout, the open-plan living, dining and kitchen arrangement and lack of a long internal corridor are intended to make the 900 sq ft more usable. If it would help you assess the layout while you consider the price, we can look at arranging an optional viewing; nothing is booked."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest itemised Phase 1 Type A unit pricing and applicable package/rebate eligibility by floor, facing and car-park allocation, including confirmation of which components are included in the SPA price.",
+      "subject": "Pearl Residences Phase 1 Type A pricing and package",
+      "customer_need": "Understand what the price includes and assess overall value for an own-stay purchase.",
+      "reason": "Available price and package material is indicative and category-specific; a current unit-level total and eligibility cannot be confirmed from it.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Give the buyer an accurate itemised price and support a like-for-like value comparison.",
+      "signature": "PRICING|1 allocation and applicable are by car components confirmation eligibility facing floor in included including itemised latest package park pearl phase price rebate residences spa type which",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re comparing condos around Seberang Jaya for our own stay, and Pearl Residences seems a little expensive from what I’ve seen. Could you help me understand what the price includes and how it compares on overall value?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "I understand—headline prices can be hard to compare fairly. Pearl Residences Phase 1 Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The pricing reference I have shows base-price examples around RM328k–RM358k, varying by floor and facing; that isn’t a confirmed total for a specific unit. The SPA pricing structure can include the unit base price and applicable car-park or upgrade/accessory components. The materials also list an extra motorcycle bay at RM5k or extra utility at RM8k where applicable, and an upgrading package worth RM10k. These aren’t automatically applicable to every unit, and any rebate is a separate, category-specific item that needs current confirmation.\n\nFor an own-stay comparison, it’s worth lining up the total price against a similar 900 sq ft, 3-bedroom unit and checking the car-park allocation and any package items—not just the advertised starting price. If you share the competing quote or its unit size and parking, I can help compare like for like.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": "Condo",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Overall value",
+            "Price inclusions"
+          ],
+          "active_concerns": [
+            "Perceived high price; wants to understand inclusions and compare value"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay fit; value concern remains unresolved pending an exact current unit/package comparison.",
+          "next_objective": "Provide a current itemised Pearl Residences price and compare it with the buyer's alternative on a like-for-like basis.",
+          "last_progress": "Buyer is comparing condos around Seberang Jaya for own stay and raised concern that Pearl Residences seems expensive.",
+          "next_action": "Confirm latest unit-specific pricing and package eligibility; use competitor quote/details if provided for comparison.",
+          "conversation_summary": "Buyer is comparing condos around Seberang Jaya for own stay and wants to understand Pearl Residences price inclusions and overall value."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest itemised Phase 1 Type A unit pricing and applicable package/rebate eligibility by floor, facing and car-park allocation, including confirmation of which components are included in the SPA price.",
+          "subject": "Pearl Residences Phase 1 Type A pricing and package",
+          "customer_need": "Understand what the price includes and assess overall value for an own-stay purchase.",
+          "reason": "Available price and package material is indicative and category-specific; a current unit-level total and eligibility cannot be confirmed from it.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Give the buyer an accurate itemised price and support a like-for-like value comparison."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3859,
+        "input_tokens_details": {
+          "cache_write_tokens": 3856,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2345,
+        "output_tokens_details": {
+          "reasoning_tokens": 1675
+        },
+        "total_tokens": 6204
+      }
+    },
+    {
+      "customer": "That’s useful context, especially comparing the same size and checking the parking and package. I don’t have a formal quote from another condo yet, just lower advertised prices I’ve noticed. Could you confirm the current total for a Type A with one car park? If the full amount is within reach, the layout may be worth looking at more closely.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I can’t confirm the current total yet—the unit-level price for a Type A with one car park and any applicable package items is still being verified, so I don’t want to give you a misleading figure. On the layout, the open-plan living, dining and kitchen arrangement and lack of a long internal corridor are intended to make the 900 sq ft more usable. If it would help you assess the layout while you consider the price, we can look at arranging an optional viewing; nothing is booked.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": "Condo",
+          "size_or_layout_preference": "Considering Pearl Residences Type A; interested in assessing the layout, conditional on the total price being within reach.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "May consider looking at the layout if the total price is within reach; no viewing agreed.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Overall value",
+            "Price inclusions",
+            "Total price for a Type A with one car park"
+          ],
+          "active_concerns": [
+            "Perceived high price and overall value",
+            "Current total for a Type A with one car park is unconfirmed"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay fit; buyer is interested in assessing the layout if the full amount is within reach, but the current unit-level total remains unconfirmed.",
+          "next_objective": "Provide the verified current total and applicable price components, then help the buyer assess fit.",
+          "last_progress": "Buyer asked for the current total for a Type A with one car park and expressed conditional interest in looking at the layout.",
+          "next_action": "Resume once the pending pricing verification is available; keep viewing optional and do not treat it as agreed.",
+          "conversation_summary": "Buyer is comparing condos around Seberang Jaya for own stay. They are concerned Pearl Residences may be expensive, want to understand inclusions and value, and asked for the current Type A total with one car park. They may want to assess the layout if the amount is within reach."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3973,
+        "input_tokens_details": {
+          "cache_write_tokens": 3970,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2003,
+        "output_tokens_details": {
+          "reasoning_tokens": 1386
+        },
+        "total_tokens": 5976
+      }
+    }
+  ],
+  "closed": false
+}

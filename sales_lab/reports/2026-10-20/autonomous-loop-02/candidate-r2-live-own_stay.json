@@ -1,0 +1,242 @@
+{
+  "trial": "candidate-r2-live",
+  "scenario": "own_stay",
+  "source_sha256": "88418dc5cf39be4337d3e8d532d92976d8a9d81e4029aa2cdb3885b86249f27a",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Needs a separate bedroom for their young child",
+    "preferred_location": "Seberang Jaya",
+    "size_or_layout_preference": "3 bedrooms, including a separate bedroom for their child",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Separate bedroom for child",
+      "3-bedroom layout",
+      "Monthly ownership costs",
+      "Car-park inclusion"
+    ],
+    "primary_motivations": [
+      "Buying a home for their household"
+    ],
+    "decision_factors": [
+      "Bedroom layout",
+      "Monthly costs",
+      "Seberang Jaya location",
+      "Car-park inclusion"
+    ],
+    "active_concerns": [
+      "Other recurring ownership costs beyond maintenance are not yet verified",
+      "Current unit price and applicable package are unconfirmed",
+      "Car-park inclusion for a specific unit is unconfirmed"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The 3-bedroom Type A layout appears relevant to the need for a separate bedroom for their child; buyer is open to viewing but wants price and ownership costs clarified first.",
+    "next_objective": "Share verified current Type A pricing, package and car-park details, along with the result of the pending recurring-cost check.",
+    "last_progress": "Buyer responded positively to the layout and is open to viewing, subject to understanding the current price, other regular charges and car-park inclusion.",
+    "next_action": "Confirm current Type A unit pricing/package and car-park allocation; follow up with the pending recurring-cost information before the buyer decides about a viewing.",
+    "conversation_summary": "Buyer is looking to buy in Seberang Jaya and has a young child who needs a separate bedroom. They are positive about the 3-bedroom layout and open to viewing, but want current pricing, other regular charges and car-park inclusion clarified first.",
+    "viewing_interest": "Open to viewing the layout after understanding current pricing and regular charges; no visit arranged",
+    "appointment_readiness": "EMERGING"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. One bedroom can be your child’s separate room; the layout also has an entrance foyer before the open-plan living, dining and kitchen area, without a long internal corridor. Maintenance is RM0.18 per sq ft inclusive of sinking fund, which works out to RM162 a month for 900 sq ft. That’s the maintenance fee only; utilities vary by use, and I’m checking whether there are other project-specific recurring charges. If the layout looks promising, a viewing could help you assess the room arrangement in person."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds promising for our family, especially having a separate room for our child. I’d be open to seeing the layout, but we’d like to understand the current price and any other regular charges first. Could you also check whether a car park is included?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I understand—you’d like the costs clear before deciding about a visit. The pricing references I have are roughly RM328k–RM358k in base prices, but they’re not a confirmed current quote or necessarily the final total. The price and whether a car park is included depend on the specific unit and current package, so I don’t want to guess. The RM162/month maintenance figure is confirmed; the other project-specific recurring charges are still being verified. I’ll confirm the current Type A pricing and car-park details for the available options, then you can decide whether you’d like to view the layout."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Verified additional recurring monthly or annual ownership charges for a Phase 1 Type A unit beyond the RM162 monthly maintenance fee, including each charge's amount or calculation basis and frequency. Distinguish project charges from variable utilities.",
+      "subject": "Other recurring ownership costs",
+      "customer_need": "Understand the usual monthly cost of owning the unit.",
+      "reason": "The maintenance fee can be calculated from verified information, but other project-specific recurring charges have not been verified.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share verified additional costs and continue assessing whether the layout and ownership costs suit the buyer.",
+      "signature": "PRICING|1 additional amount and annual basis beyond calculation charge charges costs distinguish each fee frequency from including maintenance monthly or other ownership phase project recurring rm162 s type utilities variable verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current price or SPA breakdown for available Phase 1 Type A units under the applicable current package, including the exact car-park allocation/inclusion and any applicable car-park premium.",
+      "subject": "Current Type A pricing and car-park inclusion",
+      "customer_need": "Understand the current purchase price and whether a car park is included before deciding whether to view.",
+      "reason": "Available pricing references are not a confirmed current unit quote, and parking configuration and package applicability vary by unit.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share verified current Type A pricing, package and car-park details, together with the result of the separate pending recurring-cost check, so the buyer can decide about a viewing.",
+      "signature": "PRICING|1 allocation and any applicable availability breakdown car current exact including inclusion or package park phase premium price spa type under units",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. One bedroom can be your child’s separate room; the layout also has an entrance foyer before the open-plan living, dining and kitchen area, without a long internal corridor. Maintenance is RM0.18 per sq ft inclusive of sinking fund, which works out to RM162 a month for 900 sq ft. That’s the maintenance fee only; utilities vary by use, and I’m checking whether there are other project-specific recurring charges. If the layout looks promising, a viewing could help you assess the room arrangement in person.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Needs a separate bedroom for their young child",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms, including a separate bedroom for their child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Separate bedroom for child",
+            "3-bedroom layout",
+            "Monthly ownership costs"
+          ],
+          "primary_motivations": [
+            "Buying a home for their household"
+          ],
+          "decision_factors": [
+            "Bedroom layout",
+            "Monthly costs",
+            "Seberang Jaya location"
+          ],
+          "active_concerns": [
+            "Other recurring ownership costs beyond maintenance are not yet verified"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom Type A layout appears relevant to the need for a separate bedroom for their child.",
+          "next_objective": "Provide verified information on any additional recurring project-specific ownership costs.",
+          "last_progress": "Shared Type A layout details and calculated the monthly maintenance fee.",
+          "next_action": "Verify any additional recurring ownership charges; continue discussion of fit and viewing interest.",
+          "conversation_summary": "Buyer is looking to buy in Seberang Jaya and has a young child who needs a separate bedroom. They asked about the 3-bedroom layout and usual monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Verified additional recurring monthly or annual ownership charges for a Phase 1 Type A unit beyond the RM162 monthly maintenance fee, including each charge's amount or calculation basis and frequency. Distinguish project charges from variable utilities.",
+          "subject": "Other recurring ownership costs",
+          "customer_need": "Understand the usual monthly cost of owning the unit.",
+          "reason": "The maintenance fee can be calculated from verified information, but other project-specific recurring charges have not been verified.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share verified additional costs and continue assessing whether the layout and ownership costs suit the buyer."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3399,
+        "input_tokens_details": {
+          "cache_write_tokens": 3396,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2787,
+        "output_tokens_details": {
+          "reasoning_tokens": 2070
+        },
+        "total_tokens": 6186
+      }
+    },
+    {
+      "customer": "That sounds promising for our family, especially having a separate room for our child. I’d be open to seeing the layout, but we’d like to understand the current price and any other regular charges first. Could you also check whether a car park is included?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "I understand—you’d like the costs clear before deciding about a visit. The pricing references I have are roughly RM328k–RM358k in base prices, but they’re not a confirmed current quote or necessarily the final total. The price and whether a car park is included depend on the specific unit and current package, so I don’t want to guess. The RM162/month maintenance figure is confirmed; the other project-specific recurring charges are still being verified. I’ll confirm the current Type A pricing and car-park details for the available options, then you can decide whether you’d like to view the layout.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Needs a separate bedroom for their young child",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms, including a separate bedroom for their child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Open to viewing the layout after understanding current pricing and regular charges; no visit arranged",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Separate bedroom for child",
+            "3-bedroom layout",
+            "Monthly ownership costs",
+            "Car-park inclusion"
+          ],
+          "primary_motivations": [
+            "Buying a home for their household"
+          ],
+          "decision_factors": [
+            "Bedroom layout",
+            "Monthly costs",
+            "Seberang Jaya location",
+            "Car-park inclusion"
+          ],
+          "active_concerns": [
+            "Other recurring ownership costs beyond maintenance are not yet verified",
+            "Current unit price and applicable package are unconfirmed",
+            "Car-park inclusion for a specific unit is unconfirmed"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom Type A layout appears relevant to the need for a separate bedroom for their child; buyer is open to viewing but wants price and ownership costs clarified first.",
+          "next_objective": "Share verified current Type A pricing, package and car-park details, along with the result of the pending recurring-cost check.",
+          "last_progress": "Buyer responded positively to the layout and is open to viewing, subject to understanding the current price, other regular charges and car-park inclusion.",
+          "next_action": "Confirm current Type A unit pricing/package and car-park allocation; follow up with the pending recurring-cost information before the buyer decides about a viewing.",
+          "conversation_summary": "Buyer is looking to buy in Seberang Jaya and has a young child who needs a separate bedroom. They are positive about the 3-bedroom layout and open to viewing, but want current pricing, other regular charges and car-park inclusion clarified first."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current price or SPA breakdown for available Phase 1 Type A units under the applicable current package, including the exact car-park allocation/inclusion and any applicable car-park premium.",
+          "subject": "Current Type A pricing and car-park inclusion",
+          "customer_need": "Understand the current purchase price and whether a car park is included before deciding whether to view.",
+          "reason": "Available pricing references are not a confirmed current unit quote, and parking configuration and package applicability vary by unit.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share verified current Type A pricing, package and car-park details, together with the result of the separate pending recurring-cost check, so the buyer can decide about a viewing."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4967,
+        "input_tokens_details": {
+          "cache_write_tokens": 4964,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2951,
+        "output_tokens_details": {
+          "reasoning_tokens": 2224
+        },
+        "total_tokens": 7918
+      }
+    }
+  ],
+  "closed": false
+}

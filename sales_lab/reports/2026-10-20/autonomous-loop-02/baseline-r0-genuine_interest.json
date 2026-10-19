@@ -1,0 +1,226 @@
+{
+  "trial": "candidate-r3-live",
+  "scenario": "genuine_interest",
+  "source_sha256": "d3c35f1d42d114a43a5338402126b8d40d49a82cadbcddf2346874bd5c453449",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Hoping to buy somewhere around Seberang Jaya; reason not specified.",
+    "preferred_location": "Around Seberang Jaya",
+    "size_or_layout_preference": "Enquired about 3-bedroom units; no specific layout preference stated.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "3-bedroom unit",
+      "Monthly ownership costs",
+      "Car-park inclusion"
+    ],
+    "primary_motivations": [],
+    "decision_factors": [
+      "Location around Seberang Jaya",
+      "Monthly costs",
+      "Current price",
+      "Car-park inclusion"
+    ],
+    "active_concerns": [
+      "Wants the price and monthly costs understood, and car-park inclusion confirmed, before deciding about a viewing."
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit for own stay based on interest in the 3-bedroom layout and location around Seberang Jaya; price, monthly costs and car-park allocation need confirmation.",
+    "next_objective": "Provide confirmed current price and car-park details alongside the pending monthly-cost information, then support the buyer in deciding whether to view.",
+    "last_progress": "Buyer confirmed the home would be for own stay and is open to viewing once price and monthly costs are understood; asked whether a car park is included.",
+    "next_action": "Confirm the current unit price/package and car-park allocation; follow up with the pending monthly-cost details.",
+    "conversation_summary": "Buyer hopes to buy around Seberang Jaya for own stay. They are interested in a 3-bedroom unit and are open to viewing after understanding price and monthly costs. They asked whether a car park is included.",
+    "viewing_interest": "Open to viewing after understanding the price and monthly costs."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Phase 1’s Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor, so more of the space is kept for living areas. Maintenance is RM0.18 per sq ft monthly, inclusive of sinking fund; selected clubhouse facilities are pay-per-use. I’ll confirm the exact monthly maintenance amount and any other recurring charges. Since you’re hoping to buy, a viewing could help you assess the layout in person. Is this mainly for your own stay or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "It would be for our own stay. The three-bedroom layout sounds like it could suit us, and I’d be open to viewing it once we understand the price and monthly costs. Could you also check whether a car park is included?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For your own stay, the 3 bedrooms and 2 bathrooms could give you flexibility as your household needs change, while the open-plan living area keeps the shared space connected. I can’t confirm the car-park inclusion or current total price without checking the specific unit and package; the exact monthly ownership total is still being confirmed too. I’ll verify the current price and car-park allocation so you can assess the costs before deciding about a viewing."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Confirmed monthly maintenance amount for a 900 sq ft Type A unit and any other recurring monthly ownership charges.",
+      "subject": "Pearl Residences Phase 1 Type A",
+      "customer_need": "Understand the approximate ongoing monthly cost of owning the unit.",
+      "reason": "The maintenance rate is verified, but the exact monthly total and other recurring charges have not been confirmed.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Provide the confirmed monthly cost details and continue assessing fit for the buyer's intended use.",
+      "signature": "PRICING|1 900 amount and any charges confirmed ft maintenance monthly other ownership pearl phase recurring residences sq type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current unit-specific price/package and whether a car park is included, including the number of bays, for a Phase 1 Type A 900 sq ft 3-bedroom unit.",
+      "subject": "Pearl Residences Phase 1 Type A",
+      "customer_need": "Understand the purchase price and car-park inclusion before deciding whether to view.",
+      "reason": "Current pricing and car-park allocation depend on the specific unit and package; the buyer needs confirmation.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share confirmed price and car-park details along with the already-pending monthly-cost information, then help the buyer decide whether to arrange a viewing.",
+      "signature": "PRICING|1 3 900 and bays bedroom car current ft included including number package park pearl phase price residences specific sq type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "Phase 1’s Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor, so more of the space is kept for living areas. Maintenance is RM0.18 per sq ft monthly, inclusive of sinking fund; selected clubhouse facilities are pay-per-use. I’ll confirm the exact monthly maintenance amount and any other recurring charges. Since you’re hoping to buy, a viewing could help you assess the layout in person. Is this mainly for your own stay or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": "Hoping to buy somewhere around Seberang Jaya; reason not specified.",
+          "preferred_location": "Around Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Enquired about 3-bedroom units; no specific layout preference stated.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "3-bedroom unit",
+            "Monthly ownership costs"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Location around Seberang Jaya",
+            "Monthly costs"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit based on interest in a 3-bedroom unit around Seberang Jaya; purpose and affordability remain unconfirmed.",
+          "next_objective": "Confirm recurring monthly costs and understand whether the purchase is for own stay or investment.",
+          "last_progress": "Buyer asked about the 3-bedroom units and approximate monthly costs.",
+          "next_action": "Confirm the monthly maintenance total and other recurring charges; continue based on the buyer's purchase purpose.",
+          "conversation_summary": "Buyer is hoping to buy somewhere around Seberang Jaya and asked about Pearl Residences' 3-bedroom units and monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Confirmed monthly maintenance amount for a 900 sq ft Type A unit and any other recurring monthly ownership charges.",
+          "subject": "Pearl Residences Phase 1 Type A",
+          "customer_need": "Understand the approximate ongoing monthly cost of owning the unit.",
+          "reason": "The maintenance rate is verified, but the exact monthly total and other recurring charges have not been confirmed.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Provide the confirmed monthly cost details and continue assessing fit for the buyer's intended use."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3172,
+        "input_tokens_details": {
+          "cache_write_tokens": 3169,
+          "cached_tokens": 0
+        },
+        "output_tokens": 3140,
+        "output_tokens_details": {
+          "reasoning_tokens": 2467
+        },
+        "total_tokens": 6312
+      }
+    },
+    {
+      "customer": "It would be for our own stay. The three-bedroom layout sounds like it could suit us, and I’d be open to viewing it once we understand the price and monthly costs. Could you also check whether a car park is included?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "POSITIVE",
+        "reply": "For your own stay, the 3 bedrooms and 2 bathrooms could give you flexibility as your household needs change, while the open-plan living area keeps the shared space connected. I can’t confirm the car-park inclusion or current total price without checking the specific unit and package; the exact monthly ownership total is still being confirmed too. I’ll verify the current price and car-park allocation so you can assess the costs before deciding about a viewing.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Open to viewing after understanding the price and monthly costs.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "3-bedroom unit",
+            "Monthly ownership costs",
+            "Car-park inclusion"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Location around Seberang Jaya",
+            "Monthly costs",
+            "Current price",
+            "Car-park inclusion"
+          ],
+          "active_concerns": [
+            "Wants the price and monthly costs understood, and car-park inclusion confirmed, before deciding about a viewing."
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential fit for own stay based on interest in the 3-bedroom layout and location around Seberang Jaya; price, monthly costs and car-park allocation need confirmation.",
+          "next_objective": "Provide confirmed current price and car-park details alongside the pending monthly-cost information, then support the buyer in deciding whether to view.",
+          "last_progress": "Buyer confirmed the home would be for own stay and is open to viewing once price and monthly costs are understood; asked whether a car park is included.",
+          "next_action": "Confirm the current unit price/package and car-park allocation; follow up with the pending monthly-cost details.",
+          "conversation_summary": "Buyer hopes to buy around Seberang Jaya for own stay. They are interested in a 3-bedroom unit and are open to viewing after understanding price and monthly costs. They asked whether a car park is included."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current unit-specific price/package and whether a car park is included, including the number of bays, for a Phase 1 Type A 900 sq ft 3-bedroom unit.",
+          "subject": "Pearl Residences Phase 1 Type A",
+          "customer_need": "Understand the purchase price and car-park inclusion before deciding whether to view.",
+          "reason": "Current pricing and car-park allocation depend on the specific unit and package; the buyer needs confirmation.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share confirmed price and car-park details along with the already-pending monthly-cost information, then help the buyer decide whether to arrange a viewing."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4390,
+        "input_tokens_details": {
+          "cache_write_tokens": 4387,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2281,
+        "output_tokens_details": {
+          "reasoning_tokens": 1531
+        },
+        "total_tokens": 6671
+      }
+    }
+  ],
+  "closed": false
+}

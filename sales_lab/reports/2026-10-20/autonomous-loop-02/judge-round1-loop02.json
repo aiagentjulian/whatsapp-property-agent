@@ -1,0 +1,135 @@
+{
+  "judge": "independent_blind_sales_judge",
+  "scope": "Six dialogues scored as three anonymous pairs. Labels are randomized; trial/source mapping is omitted. Judgments use only customer-visible conversations and verified project facts, without code or prompt inspection.",
+  "rubrics": {
+    "legacy_weighted": [
+      {"name": "discovery", "weight_percent": 20},
+      {"name": "product_connection_buying_desire", "weight_percent": 35},
+      {"name": "progression_appointment_opportunity", "weight_percent": 35},
+      {"name": "naturalness", "weight_percent": 10}
+    ],
+    "additional_independent_dimensions": [
+      "buyer_visualization_desire_creation",
+      "persuasive_sales_guidance",
+      "conversation_realism"
+    ],
+    "scale": "Every dimension is scored 0-10. The three additional dimensions are independent and excluded from the legacy weighted score."
+  },
+  "anonymous_dialogues": {
+    "A": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Agent turn 1 asks, 'are you looking more for own stay or investment?' Customer says, 'Probably for my own stay if I do decide to buy, but I’m still early in looking and comparing areas.' This identifies purpose but misses the useful budget signal seen in the paired dialogue."},
+        "product_connection_buying_desire": {"score": 5, "evidence": "Agent gives the RM328k–RM358k base-price reference and says current package/parking can change the total. Customer replies, 'Thanks for explaining the range is only indicative; please let me know once the current pricing is confirmed.' No unit benefit or personal fit is established."},
+        "progression_appointment_opportunity": {"score": 4, "evidence": "The customer remains early-stage and the agent promises to share confirmed pricing. The exchange does not qualify budget, estimate costs, or create a further comparison step. No viewing ask is appropriate for this customer's low readiness."},
+        "naturalness": {"score": 8, "evidence": "The question about own stay versus investment is easy to answer. 'No rush while you’re comparing areas' is relaxed and matches the customer's tone, though the customer is left waiting for the same price confirmation."}
+      },
+      "legacy_weighted_score": 5.2,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 4, "evidence": "The reply stays on price mechanics and purpose; it gives no experiential or product-fit reason to picture choosing the home."},
+        "persuasive_sales_guidance": {"score": 6, "evidence": "The historic base price and uncertainty are stated transparently, and the purpose question is relevant. The conversation does not translate the answer into a useful affordability or fit assessment."},
+        "conversation_realism": {"score": 8, "evidence": "The wording is concise, non-pressuring, and consistent with an exploratory buyer. The exchange feels natural even though it yields little commercial detail."}
+      },
+      "customer_signal_and_handoff": {"agent_viewing_invitation": false, "customer_viewing_interest": false, "appointment_agreement": false, "formal_handoff_to_human": false, "customer_response": "Please let me know once the current pricing is confirmed."},
+      "accuracy": "Historical base price is caveated as indicative and not current. Floor/category and car-park components are described as affecting final price; no current quote is invented."
+    },
+    "B": {
+      "scores": {
+        "discovery": {"score": 7, "evidence": "Customer opens with, 'We have a young child and need a separate bedroom for them.' Agent directly addresses this concern. Customer later confirms, 'a separate room for our child is important.' Purpose, location and core household need are clear; budget and timeline remain unknown."},
+        "product_connection_buying_desire": {"score": 8, "evidence": "Agent turn 1 says the 3-bedroom Type A 'has a separate bedroom that could be your child’s room' and notes that exact furniture fit should be checked against the approved plan. Customer responds, 'That sounds promising for our own stay' and says the separate room is important and the open-plan area could work. This is a strong personal fit connection."},
+        "progression_appointment_opportunity": {"score": 6, "evidence": "Turn 1 gives the RM162 maintenance calculation and says other recurring charges will be confirmed. Customer asks for those charges and whether parking is included. Turn 2 accurately says parking and other charges need verification, then offers, 'If you’d like, I can also arrange a viewing.' The invitation follows a positive fit response but comes before cost concerns are resolved. The customer reaction states no viewing was requested or accepted."},
+        "naturalness": {"score": 7, "evidence": "The family-specific language sounds warm and relevant. Turn 2 is a little long, with the parking caveat, cost follow-up, positive acknowledgment and viewing offer all in one message."}
+      },
+      "legacy_weighted_score": 7.0,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 8, "evidence": "The separate bedroom is linked to the child's room, and the customer says it sounds promising and the open-plan area could work. The layout is made relevant to family use without guaranteeing furniture fit."},
+        "persuasive_sales_guidance": {"score": 7, "evidence": "The agent identifies an important family benefit, calculates the known maintenance amount and avoids guessing the other charges or parking. The optional viewing invitation is soft, but arrives while the buyer is still asking for affordability details."},
+        "conversation_realism": {"score": 7, "evidence": "The exchange follows the customer's actual family concern. The last reply's several separate assurances make it slightly scripted, but the viewing offer is phrased without pressure."}
+      },
+      "customer_signal_and_handoff": {"agent_viewing_invitation": true, "customer_viewing_interest": false, "appointment_agreement": false, "formal_handoff_to_human": false, "customer_response": "Customer asks for costs and parking; the supplied reaction says no viewing was requested or accepted."},
+      "accuracy": "Unit layout and RM162 maintenance facts are correct. The agent appropriately flags furniture fit for the approved plan and does not guess the current parking inclusion or other charges."
+    },
+    "C": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Agent turn 1 asks about monthly cost needs and offers to check Type A pricing. Customer says, 'We’re looking for our own home' and asks for current price and regular charges. The agent learns purpose, but budget and timeline remain unknown."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Agent turn 1 explains the Type A layout and RM162 maintenance, and distinguishes mortgage, utilities and pay-per-use clubhouse charges. Customer says this gives a 'clearer idea of the monthly maintenance' and asks for costs before proceeding. The product is described clearly, but no personal layout benefit is developed."},
+        "progression_appointment_opportunity": {"score": 4, "evidence": "The customer requests current price and other regular charges to assess overall cost. Turn 2 says those facts are being verified and offers to calculate overall monthly costs later. This is careful but yields no viewing invitation or new cost information. Unlike its paired dialogue, it does not elicit conditional viewing interest."},
+        "naturalness": {"score": 8, "evidence": "The two replies are concise, clear and responsive. 'You’ll want the full picture before deciding whether it fits your budget' reflects the customer's stated concern without adding pressure."}
+      },
+      "legacy_weighted_score": 5.5,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 5, "evidence": "The agent provides the physical layout but no personalized image of how it could support the buyer's own home. The customer responds to the maintenance information rather than to a lifestyle benefit."},
+        "persuasive_sales_guidance": {"score": 6, "evidence": "The agent explains what is known and unknown and offers a relevant mortgage-cost follow-up. It does not ask about a visit; with affordability unresolved, that restraint is reasonable, though the paired dialogue did obtain conditional visit interest."},
+        "conversation_realism": {"score": 8, "evidence": "The cost-focused exchange reads naturally and avoids sales pressure. The response appropriately waits for customer-specific financing information before estimating a mortgage."}
+      },
+      "customer_signal_and_handoff": {"agent_viewing_invitation": false, "customer_viewing_interest": false, "appointment_agreement": false, "formal_handoff_to_human": false, "customer_response": "It would help us work out the overall costs before we go further."},
+      "accuracy": "The 900 sq.ft. Type A details and RM162 maintenance calculation are correct. Mortgage, utilities and other recurring charges are correctly kept separate or unconfirmed."
+    },
+    "D": {
+      "scores": {
+        "discovery": {"score": 8, "evidence": "Agent turn 1 asks, 'If you have a rough budget ceiling, I can help narrow down the options.' Customer replies, 'I’m hoping to stay around RM350,000.' This elicits a concrete affordability signal, while purpose and timing remain unknown."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 2 relates the RM328k–RM358k historic base range to the customer's RM350k target and gives the RM162 maintenance amount. Customer says they are still figuring out full costs and asks whether a current option is near the target. This helps frame affordability but does not establish a current unit fit or create product desire."},
+        "progression_appointment_opportunity": {"score": 7, "evidence": "The budget question leads to a specific target. The agent clearly says it cannot confirm whether a current unit is available at that price or the all-in total, and promises confirmed price/inclusions. This is real qualification progress. A viewing invitation is not appropriate yet."},
+        "naturalness": {"score": 7, "evidence": "The budget question is conversational and the customer answers naturally. Turn 2 repeats the price range and qualifies it carefully, which is slightly repetitive but understandable."}
+      },
+      "legacy_weighted_score": 6.9,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 5, "evidence": "The conversation is an affordability check rather than a product or lifestyle visualization. The customer remains exploratory."},
+        "persuasive_sales_guidance": {"score": 7, "evidence": "The budget question advances the comparison and the agent avoids representing historical base prices as a current all-in quote. It maintains a clear next step."},
+        "conversation_realism": {"score": 7, "evidence": "The budget question and reply feel credible. The second response repeats the historical range but uses clear caveats."}
+      },
+      "customer_signal_and_handoff": {"agent_viewing_invitation": false, "customer_viewing_interest": false, "appointment_agreement": false, "formal_handoff_to_human": false, "customer_response": "If the current range is confirmed, could you let me know whether anything is near that amount?"},
+      "accuracy": "The RM328k–RM358k historic base references and floor/facing tiers are documented. The reply distinguishes them from an unconfirmed current all-in price and correctly reports maintenance at about RM162."
+    },
+    "E": {
+      "scores": {
+        "discovery": {"score": 7, "evidence": "The opening identifies a young child and the need for a separate bedroom. Turn 1 learns that exact furniture fit should be checked, and turn 2 customer says, 'We’re looking for our own stay.' Core purpose and need are clear; budget and timing remain unknown."},
+        "product_connection_buying_desire": {"score": 8, "evidence": "Agent describes the foyer, open-plan living/dining/kitchen, storage and bedrooms shown with queen-sized beds, then connects the separate bedroom to the child. Customer responds, 'that sounds like it could suit our family, especially having a separate room for our child.' These verified details give a more concrete picture; the customer's stated fit is positive but not stronger than the paired conversation's fit response."},
+        "progression_appointment_opportunity": {"score": 6, "evidence": "The agent calculates RM162 maintenance, identifies other costs as unknown and asks to verify them, but adds a viewing invitation in turn 1 before hearing whether the layout fits or learning purchase purpose. Customer says, 'We’d want to understand the costs before deciding about a viewing.' Turn 2 respects this and says the buyer can decide after car-park details are clarified. The invitation is premature in timing but not pushy; no visit interest or appointment follows."},
+        "naturalness": {"score": 7, "evidence": "The detailed layout response is organized, and the customer reaction says the details were useful. The early viewing line interrupts the cost answer slightly; turn 2 recovers by recognizing that costs should come first. The parking explanation includes specific premiums, which is accurate but adds complexity."}
+      },
+      "legacy_weighted_score": 7.2,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 8, "evidence": "The foyer, storage area, queen-bed plan and separate child's bedroom provide concrete spatial detail. Customer says the layout could suit the family. The detail adds visualization, although the buyer's positive response remains conditional on costs."},
+        "persuasive_sales_guidance": {"score": 6, "evidence": "The agent uses verified details and states exact parking premiums without pretending to know the buyer's unit allocation. The viewing invitation arrives before fit and cost clarification; the customer explicitly defers deciding until costs are clearer. The agent then does not press."},
+        "conversation_realism": {"score": 7, "evidence": "The customer response feels natural and states a clear condition. The agent's first turn is informative but long and closes with a viewing pitch before the customer has reacted to the fit; the second turn is appropriately restrained."}
+      },
+      "customer_signal_and_handoff": {"agent_viewing_invitation": true, "customer_viewing_interest": "No current viewing interest; customer says they want to understand costs before deciding about a viewing.", "appointment_agreement": false, "formal_handoff_to_human": false},
+      "accuracy": "The foyer, small storage area and queen-sized bed fit are documented. The RM0.18 × 900 sq.ft. maintenance calculation is correct. RM15k/RM20k/RM30k car-park premiums and two-bay configurations are documented, and the agent correctly says the applicable inclusion requires a unit-specific schedule. Other recurring charges remain unconfirmed."
+    },
+    "F": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Agent asks, 'Is this mainly for your own stay or as an investment?' Customer says it is for own stay and volunteers that the three-bedroom layout could suit them. It does not elicit a budget or timeline."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Agent turn 2 says the 3 bedrooms and 2 bathrooms 'could give you flexibility as your household needs change.' Customer already said the layout could suit them, but no specific future household need was stated. The benefit is plausible but generic."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Agent turn 1 says, 'a viewing could help you assess the layout in person.' Customer replies, 'I’d be open to viewing it once we understand the price and monthly costs.' This is explicit conditional viewing interest, not an appointment. Turn 2 appropriately returns to price/parking checks, but leaves the calculable RM162 maintenance amount pending."},
+        "naturalness": {"score": 6, "evidence": "The invitation and customer's response form a plausible exchange, but the agent asks about a viewing before clarifying purpose and affordability, then adds a generic flexibility benefit while leaving a calculable cost unanswered."}
+      },
+      "legacy_weighted_score": 5.7,
+      "additional_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 6, "evidence": "The shared-space and household-flexibility framing gives a basic own-stay picture. It is not closely tied to an expressed need, unlike the family-specific layout dialogue."},
+        "persuasive_sales_guidance": {"score": 5, "evidence": "The soft invitation does produce conditional viewing interest, but is made before purpose and affordability are clear. The subsequent response does not provide the known RM162 maintenance figure and instead leaves exact monthly cost pending."},
+        "conversation_realism": {"score": 6, "evidence": "Customer language is natural and sets a clear condition. Agent wording is polished but generic, and the sequence is less responsive than the customer’s explicit need to understand monthly costs first."}
+      },
+      "customer_signal_and_handoff": {"agent_viewing_invitation": true, "customer_viewing_interest": "Yes, explicitly open to viewing after price and monthly costs are understood.", "appointment_agreement": false, "formal_handoff_to_human": false},
+      "accuracy": "The 900 sq.ft. unit details and maintenance rate are correct, but RM162 is directly derivable and is unnecessarily treated as awaiting confirmation. Current price and parking are appropriately left unconfirmed."
+    }
+  },
+  "paired_assessment": {
+    "pairs": [
+      {"pair": "B-E", "legacy_weighted_difference_first_minus_second": -0.2, "assessment": "The more detailed conversation gains some visualization detail through foyer, storage and bed fit, but it invites a viewing earlier. The customer says costs should be understood before deciding. Neither dialogue produces viewing interest or agreement; the added detail does not show a stronger customer desire response."},
+      {"pair": "C-F", "legacy_weighted_difference_first_minus_second": -0.2, "assessment": "There is a possible regression in viewing progression: one conversation offers a soft viewing and elicits explicit conditional interest; the other focuses on costs and gets no visit signal. The cost-first approach is also responsive to the customer's concern, so the practical value is mixed. One of the conversations leaves the calculable RM162 maintenance amount pending."},
+      {"pair": "A-D", "legacy_weighted_difference_first_minus_second": -1.7, "assessment": "The conversation that asks for a budget ceiling elicits a concrete RM350,000 target. The other asks purpose and learns own-stay intent but gets no budget. This is a meaningful loss in affordability qualification; both keep current package pricing pending and neither creates viewing interest."}
+    ],
+    "mean_legacy_weighted_score_first_set": 5.96,
+    "mean_legacy_weighted_score_second_set": 6.5,
+    "mean_buyer_visualization_desire_creation_first_set": 5.67,
+    "mean_buyer_visualization_desire_creation_second_set": 6.33,
+    "mean_persuasive_sales_guidance_first_set": 6.33,
+    "mean_persuasive_sales_guidance_second_set": 6.33,
+    "mean_conversation_realism_first_set": 7.67,
+    "mean_conversation_realism_second_set": 6.67,
+    "actual_sales_value_assessment": "Mixed, with an overall deterioration in legacy weighted score and material sales progression risk. The family dialogue adds spatial detail without improving the customer's fit response and introduces the invitation earlier. The genuine-interest dialogue no longer elicits conditional viewing interest. The exploratory dialogue asks about purpose but loses a concrete budget signal. The corresponding improvements are clearer cost presentation and less pressure in two exchanges, but those do not offset the lost progression evidence in this packet.",
+    "invitation_interest_agreement_handoff": "Across the six conversations, invitations are soft and no appointment agreement or formal human handoff occurs. One conversation elicits explicit conditional viewing interest; another customer says costs should be understood before deciding whether to view; the remaining customers show no viewing interest. Invitation alone is not counted as customer interest or agreement.",
+    "accuracy_and_cost_handling": "Unit layout details, storage and queen-bed fit are verified. RM162/month is calculable and correct wherever stated. Historical base pricing and parking premium tiers/configurations are documented, but are not a current effective package quote. No material false pricing fact is observed. Unknown recurring charges and unit-specific parking are appropriately left unconfirmed; in one exchange the known maintenance amount is nevertheless described as pending confirmation.",
+    "dialogue_only_diagnosis": "Across these conversations, the strongest customer value comes from specific connections to a stated household need and from cost transparency. The weakest progression appears when a useful buyer signal is replaced by a different qualification question: the RM350,000 budget is absent from one exchange, and conditional viewing interest is absent from another. More layout detail improves the picture of the home, but the customer responses do not show a corresponding rise in desire. Viewing invitations generally remain optional, yet two are introduced before the customer's affordability condition is resolved."
+  }
+}
