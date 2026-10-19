@@ -127,4 +127,3 @@ SalesAgent 3 [REPLY]: Absolutely—I’ll share the approved Type A plan and the
 客户反应: The agent handled the price concern carefully, explained why they are waiting for a confirmed figure, and tied a possible viewing to our nursery and layout needs. We’re open to a viewing if the price is close to budget, but we haven’t booked one yet.
 
 最后客户回应（未再调用 SalesAgent）: That sounds fair. Please send the approved plan and confirmed all-in figure when you have them. If it’s close to our budget, we’d be happy to discuss a viewing then.
-
