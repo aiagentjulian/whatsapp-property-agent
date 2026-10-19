@@ -1,0 +1,168 @@
+{
+  "trial": "candidate-r2-live",
+  "scenario": "early_exploration",
+  "source_sha256": "18a349c27cf6f536c70d4543a8e5a243b9e926322d46a579f6f7110272e5e3fc",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Exploring Seberang Jaya",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "fit_assessment": "Early-stage browsing around Seberang Jaya; comparing options and has no clear budget yet. Current Pearl Residences pricing/package details remain unconfirmed.",
+    "next_objective": "Share confirmed current price guidance and the matching car-park costs when available.",
+    "last_progress": "Buyer clarified they are just beginning to compare and do not yet have a clear budget.",
+    "next_action": "Await the open pricing confirmation, then update the buyer with the current range and applicable car-park configuration costs.",
+    "conversation_summary": "Buyer is exploring options around Seberang Jaya and requested the current Pearl Residences price range and how car-park configuration affects the total. They are just starting to compare and have no clear budget yet; current pricing confirmation is pending.",
+    "budget_range": "No clear budget yet; comparing options"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The available base-price references for Pearl Residences are roughly RM328k–RM358k, depending on floor and facing. That’s a reference range, not a confirmed current all-in quote: the exact car-park configuration and current package can affect the final figure, so I’d confirm the latest schedule before quoting it. The homes are 900 sq. ft., with 3 bedrooms and 2 bathrooms. If you have a rough budget in mind, I can help narrow down which options may be relevant."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I don’t have a clear budget yet; I’m just starting to compare options. Please let me know once you’ve confirmed the current range and what the car-park configuration does to the total."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Understood—you don’t need to settle on a budget while you’re comparing. The current price and package details are still awaiting confirmation, so I can’t confirm the latest all-in figures yet. The pricing material lists car-park premiums of RM15k, RM20k or RM30k, depending on the unit category and configuration; I can’t safely add one of those to the earlier RM328k–RM358k base reference without the matching schedule. I’ll update you with the confirmed range and corresponding car-park costs once they’re available."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest valid general price range and current package details for Pearl Residences, including how car-park configuration affects the indicative figures.",
+      "subject": "Current Pearl Residences pricing",
+      "customer_need": "A general price indication to compare the area and available options.",
+      "reason": "The available pricing reference is historical and the current package validity and exact selling structure need confirmation.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share the confirmed current price guidance and help narrow options if the buyer provides a rough budget.",
+      "signature": "PRICING|affects and car configuration current details figures general how including indicative latest package park pearl price range residences valid",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The available base-price references for Pearl Residences are roughly RM328k–RM358k, depending on floor and facing. That’s a reference range, not a confirmed current all-in quote: the exact car-park configuration and current package can affect the final figure, so I’d confirm the latest schedule before quoting it. The homes are 900 sq. ft., with 3 bedrooms and 2 bathrooms. If you have a rough budget in mind, I can help narrow down which options may be relevant.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Exploring Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Early-stage browsing; asked for a general price range and is exploring options around Seberang Jaya.",
+          "next_objective": "Confirm current pricing and package details; offer more relevant options if the buyer shares a rough budget.",
+          "last_progress": "Provided an indicative historical base-price reference and explained that current exact pricing needs confirmation.",
+          "next_action": "Obtain the latest general pricing and package schedule.",
+          "conversation_summary": "Buyer is browsing options around Seberang Jaya and asked for Pearl Residences' general price range."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest valid general price range and current package details for Pearl Residences, including how car-park configuration affects the indicative figures.",
+          "subject": "Current Pearl Residences pricing",
+          "customer_need": "A general price indication to compare the area and available options.",
+          "reason": "The available pricing reference is historical and the current package validity and exact selling structure need confirmation.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share the confirmed current price guidance and help narrow options if the buyer provides a rough budget."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3895,
+        "input_tokens_details": {
+          "cache_write_tokens": 3892,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1758,
+        "output_tokens_details": {
+          "reasoning_tokens": 1166
+        },
+        "total_tokens": 5653
+      }
+    },
+    {
+      "customer": "I don’t have a clear budget yet; I’m just starting to compare options. Please let me know once you’ve confirmed the current range and what the car-park configuration does to the total.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Understood—you don’t need to settle on a budget while you’re comparing. The current price and package details are still awaiting confirmation, so I can’t confirm the latest all-in figures yet. The pricing material lists car-park premiums of RM15k, RM20k or RM30k, depending on the unit category and configuration; I can’t safely add one of those to the earlier RM328k–RM358k base reference without the matching schedule. I’ll update you with the confirmed range and corresponding car-park costs once they’re available.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Exploring Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": "No clear budget yet; comparing options",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Early-stage browsing around Seberang Jaya; comparing options and has no clear budget yet. Current Pearl Residences pricing/package details remain unconfirmed.",
+          "next_objective": "Share confirmed current price guidance and the matching car-park costs when available.",
+          "last_progress": "Buyer clarified they are just beginning to compare and do not yet have a clear budget.",
+          "next_action": "Await the open pricing confirmation, then update the buyer with the current range and applicable car-park configuration costs.",
+          "conversation_summary": "Buyer is exploring options around Seberang Jaya and requested the current Pearl Residences price range and how car-park configuration affects the total. They are just starting to compare and have no clear budget yet; current pricing confirmation is pending."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3811,
+        "input_tokens_details": {
+          "cache_write_tokens": 3808,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1280,
+        "output_tokens_details": {
+          "reasoning_tokens": 838
+        },
+        "total_tokens": 5091
+      }
+    }
+  ],
+  "closed": false
+}

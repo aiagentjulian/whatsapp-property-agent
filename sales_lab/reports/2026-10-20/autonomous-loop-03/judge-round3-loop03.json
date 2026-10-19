@@ -1,0 +1,116 @@
+{
+  "report_type": "independent_blind_dialogue_judgment",
+  "scope": "Three anonymized complete two-turn own-stay dialogues scored with randomized labels. Source/version mapping omitted.",
+  "rubric": {
+    "legacy_weights": {
+      "discovery": 0.2,
+      "product_connection_buying_desire": 0.35,
+      "progression_appointment_opportunity": 0.35,
+      "naturalness": 0.1
+    },
+    "score_scale": "Each category is 0–10; weighted legacy total is a 0–10 weighted average.",
+    "strict_anchors": "Feature facts alone do not count as buyer visualization or strong persuasion. Practical benefit means a plausible consequence for the buyer; buyer-specific visualization requires a vivid use scene tied to the customer's stated need; desire creation requires evidence of increased preference or commitment. Invitations alone do not count as progression.",
+    "additional_scores": {
+      "buyer_visualization_and_desire_creation": "0–10, separate from legacy total.",
+      "persuasive_sales_guidance": "0–10.",
+      "conversation_realism": "0–10."
+    }
+  },
+  "dialogues": {
+    "A": {
+      "scores": {
+        "discovery": 6.0,
+        "product_connection_buying_desire": 6.8,
+        "progression_appointment_opportunity": 6.2,
+        "naturalness": 7.8,
+        "weighted_legacy_total": 6.53,
+        "buyer_visualization_and_desire_creation": 5.2,
+        "persuasive_sales_guidance": 6.4,
+        "conversation_realism": 7.3
+      },
+      "evidence": [
+        {
+          "turn": 1,
+          "agent": "“With three bedrooms, your child can have a separate room, and there’s another bedroom for your household’s needs.” It gives 900 sq ft, open-plan shared space, and RM162/month maintenance; it says it will verify other recurring charges.",
+          "customer": "“That does sound promising for us, and the maintenance figure is helpful. Please let me know what other recurring charges apply and whether parking has a separate cost, so we can judge the overall monthly amount.”",
+          "assessment": "The room assignment ties directly to the stated child need; noting the remaining bedroom's household use adds some flexibility, but leaves the use generic. The customer signals modest positive fit, while cost remains the clear condition. No vivid daily routine or strong buying desire is evidenced."
+        },
+        {
+          "turn": 2,
+          "agent": "Confirms RM162/month maintenance; says other charges and parking cost are not confirmed and promises to check both.",
+          "customer": "Asks for recurring charges and separate parking cost to judge the total monthly amount.",
+          "assessment": "Clearly addresses the cost-first boundary and does not turn a positive fit signal into a booking push. The pending verification is the only meaningful next step."
+        }
+      ],
+      "fact_and_state_check": "Type A layout and RM162 calculation are accurate. A separate parking cost and other recurring charges are correctly left unconfirmed. No agent viewing invitation, no customer viewing interest (interest is about the layout, not a visit), no appointment agreement, and no formal handoff.",
+      "opportunity": "Customer says the layout sounds promising but asks for charges and parking cost before judging total monthly amount. Waiting for those details is appropriate. Since no viewing invitation is made, openness to viewing remains untested; there is not enough evidence to call this a missed earned appointment."
+    },
+    "B": {
+      "scores": {
+        "discovery": 6.5,
+        "product_connection_buying_desire": 6.7,
+        "progression_appointment_opportunity": 6.8,
+        "naturalness": 7.5,
+        "weighted_legacy_total": 6.78,
+        "buyer_visualization_and_desire_creation": 5.0,
+        "persuasive_sales_guidance": 6.7,
+        "conversation_realism": 7.1
+      },
+      "evidence": [
+        {
+          "turn": 1,
+          "agent": "“One bedroom can be your child’s separate room”; it adds foyer/open-plan shared space, the RM162 maintenance figure and offers a viewing “to assess the room arrangement in person.”",
+          "customer": "“That sounds promising for our family… I’d be open to seeing the layout, but we’d like to understand the current price and any other regular charges first.”",
+          "assessment": "Clear need-to-feature connection, with a conditional viewing invitation that earns explicit customer openness. The actual use is not visualized beyond a separate room; desire remains conditional."
+        },
+        {
+          "turn": 2,
+          "agent": "Gives historic base references with caveat, says parking/current package and other charges need confirmation, and leaves viewing decision to customer after follow-up.",
+          "customer": "Asks for current price, regular charges and parking inclusion.",
+          "assessment": "Respects the stated condition and makes no appointment claim."
+        }
+      ],
+      "fact_and_state_check": "Layout and maintenance are accurate. Historic base figures are labeled as such, not current price. Parking and additional charges remain unconfirmed. Conditional agent invitation; conditional customer viewing interest; no appointment agreement or formal handoff.",
+      "opportunity": "The invitation is relevant and customer explicitly says they are open to a visit after cost clarity. That is earned conditional interest, not a booking."
+    },
+    "C": {
+      "scores": {
+        "discovery": 6.2,
+        "product_connection_buying_desire": 6.3,
+        "progression_appointment_opportunity": 5.7,
+        "naturalness": 8.0,
+        "weighted_legacy_total": 6.24,
+        "buyer_visualization_and_desire_creation": 4.8,
+        "persuasive_sales_guidance": 6.2,
+        "conversation_realism": 7.8
+      },
+      "evidence": [
+        {
+          "turn": 1,
+          "agent": "“There’s a separate bedroom for your child”; open-plan shared space and no long internal corridor are described as “helping keep the shared space practical.” Maintenance is RM162 and other charges are being checked.",
+          "customer": "“The layout sounds like it could suit us. Please let me know once you’ve confirmed the other regular charges; we’d like to understand the full monthly cost before deciding what to do next.”",
+          "assessment": "The practical benefit is plausible, but generic. There is a tentative fit signal and an explicit request to defer next-step decision until costs are known."
+        },
+        {
+          "turn": 2,
+          "agent": "Confirms maintenance, says other charges remain pending, and promises to share them before the customer decides what to do next.",
+          "customer": "Maintains a full-cost-first sequence.",
+          "assessment": "Natural, concise and non-pressuring, but no viewing opportunity is tested."
+        }
+      ],
+      "fact_and_state_check": "Layout and RM162 maintenance are accurate. Other charges are correctly unconfirmed. No viewing invitation; customer states possible fit but no viewing interest; no appointment or formal handoff.",
+      "opportunity": "Waiting is appropriate under the customer's explicit condition. The agent did not miss a clear visit request."
+    }
+  },
+  "comparative_judgment": {
+    "does_final_dialogue_add_concrete_buyer_specific_value": "A makes the most direct connection: the child receives a separate room, and another bedroom is framed as available for household needs. That is somewhat more personalized than C's separate-room/practical-shared-space phrasing. However, the extra bedroom's use is not tied to an expressed need, and neither gives a vivid everyday scene; calibrated visualization/desire moves only slightly (A 5.2 versus C 4.8). B also directly maps a bedroom to the child's need and offers an in-person check, so A is not a clear improvement over the strongest comparator on commercial progression.",
+    "does_customer_response_support_material_score_change": "The customer response to A says “does sound promising” and maintenance is helpful, indicating modest positive interest. But they ask for other charges and parking cost before judging the total monthly amount. Their openness to viewing is untested. B's customer explicitly says they would be open to seeing the layout, conditional on cost; C's says it “could suit us” and wants full cost before deciding. These different customer replies show positive fit in all three, but do not establish that A increased buying motivation materially or outperformed B in viewing progression.",
+    "naturalness_and_progression": "A is a clear, reasonable reply, though “another bedroom for your household’s needs” sounds generalized and slightly sales-formulaic. It neither over-invites nor under-responds to an expressed viewing request because none was made. Its progression correctly stops at confirming costs. B is the only dialogue to convert an invitation into explicit conditional viewing interest; it does not obtain an appointment. C is natural but leaves viewing openness untested.",
+    "overall": "The final dialogue slightly improves explicit household-specific connection over C, but it does not establish a material increase in desire or sales progression. Its score change is supported only by a modest customer response (“does sound promising”), while the customer's cost/parking question keeps readiness low. Against B, it has less viewing progression because it does not invite a visit; given unresolved monthly costs, waiting is defensible, but no evidence shows greater commercial value than the stronger invitation dialogue."
+  },
+  "overall_checks": {
+    "appointment_and_handoff": "Invitation, customer interest, appointment agreement and formal handoff are distinct. In A there is no invitation, no viewing interest, no agreement and no handoff. B contains a conditional invitation and conditional viewing interest only. C has neither invitation nor viewing interest. No appointment is agreed and no formal handoff is represented.",
+    "factual_accuracy": "No material factual error found. RM162 is correctly calculated from 900 sq ft × RM0.18 including sinking fund. Parking and other recurring charges are not asserted without confirmation.",
+    "limits": "Dialogue-only assessment; customer replies vary across transcripts, so differences in interest cannot be causally credited to agent language. Strict calibrated scores do not treat feature recital or an invitation as desire/progression by itself."
+  }
+}

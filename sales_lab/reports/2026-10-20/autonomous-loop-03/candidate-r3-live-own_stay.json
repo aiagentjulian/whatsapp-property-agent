@@ -1,0 +1,237 @@
+{
+  "trial": "candidate-r3-live",
+  "scenario": "own_stay",
+  "source_sha256": "831cd98f7df8442df5a5e9c8381d04003b3999326209ea1d2243dbb23379ba90",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "purchase_reason": "Needs a separate bedroom for their young child",
+    "preferred_location": "Seberang Jaya",
+    "preferred_property_type": "3-bedroom home",
+    "size_or_layout_preference": "Needs a separate bedroom for their child",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Separate bedroom for child",
+      "3-bedroom layout",
+      "Monthly costs",
+      "Parking cost"
+    ],
+    "primary_motivations": [
+      "Provide a separate bedroom for their young child"
+    ],
+    "decision_factors": [
+      "Location",
+      "Bedroom layout",
+      "Monthly costs",
+      "Parking cost"
+    ],
+    "active_concerns": [
+      "Other recurring charges",
+      "Whether parking has a separate cost"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The 3-bedroom layout appears to fit their need for a separate room for their child; overall costs remain to be clarified.",
+    "next_objective": "Confirm parking costs and share the verified recurring charges so they can assess the overall monthly amount.",
+    "last_progress": "Buyer said the layout sounds promising and found the maintenance figure helpful; asked about other recurring charges and parking costs.",
+    "next_action": "Confirm whether parking has a separate charge and its amount, without duplicating the open check on other recurring charges.",
+    "conversation_summary": "Looking to buy around Seberang Jaya; has a young child and wants a separate bedroom for them. Type A's three-bedroom layout sounds promising. RM162 monthly maintenance inclusive of sinking fund is confirmed; other recurring charges are pending verification, and parking cost needs confirmation."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The open-plan living, dining and kitchen area keeps the shared space connected, while the layout avoids a long internal corridor. With three bedrooms, your child can have a separate room, and there’s another bedroom for your household’s needs. The monthly maintenance, inclusive of sinking fund, works out to RM162 (900 sq ft × RM0.18). That’s the confirmed maintenance portion; I’ll verify whether there are other recurring charges so I don’t give you an incomplete monthly total."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That does sound promising for us, and the maintenance figure is helpful. Please let me know what other recurring charges apply and whether parking has a separate cost, so we can judge the overall monthly amount."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Good to hear the layout sounds promising for your family. RM162 a month is the confirmed maintenance charge, inclusive of sinking fund. I don’t yet have confirmed details on other recurring charges or whether parking has a separate cost, so I can’t give you a reliable all-in monthly amount. The other-charges check is still pending; I’ll confirm the parking charge separately too."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Any other recurring monthly charges for a Phase 1 Type A unit, beyond the RM0.18 psf monthly maintenance inclusive of sinking fund.",
+      "subject": "Pearl Residences monthly ownership costs",
+      "customer_need": "A realistic estimate of usual monthly costs for a 900 sq ft unit.",
+      "reason": "Only the maintenance rate is verified; other recurring charges are not available in the provided information.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share verified additional recurring charges, keeping them distinct from the confirmed RM162 monthly maintenance.",
+      "signature": "PRICING|1 18 any beyond charges costs fund inclusive maintenance monthly other ownership pearl phase psf recurring residences rm0 sinking type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Whether parking for a Phase 1 Type A unit is included or subject to a separate charge, and the amount and whether it is one-time or recurring if verified.",
+      "subject": "Pearl Residences parking cost",
+      "customer_need": "Understand whether parking adds to the overall monthly or upfront cost.",
+      "reason": "The buyer asked whether parking has a separate cost; available verified information does not specify this.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the verified parking charge or clarify if it is included, alongside the result of the already-open check for other recurring charges.",
+      "signature": "PRICING|1 amount and charge cost included it one or parking pearl phase recurring residences separate subject time type verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The open-plan living, dining and kitchen area keeps the shared space connected, while the layout avoids a long internal corridor. With three bedrooms, your child can have a separate room, and there’s another bedroom for your household’s needs. The monthly maintenance, inclusive of sinking fund, works out to RM162 (900 sq ft × RM0.18). That’s the confirmed maintenance portion; I’ll verify whether there are other recurring charges so I don’t give you an incomplete monthly total.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": "Needs a separate bedroom for their young child",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": "3-bedroom home",
+          "size_or_layout_preference": "Needs a separate bedroom for their child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Separate bedroom for child",
+            "3-bedroom layout",
+            "Monthly costs"
+          ],
+          "primary_motivations": [
+            "Provide a separate bedroom for their young child"
+          ],
+          "decision_factors": [
+            "Location",
+            "Bedroom layout",
+            "Monthly costs"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom layout appears to fit their need for a separate room for their child.",
+          "next_objective": "Provide verified information on any other recurring charges beyond maintenance.",
+          "last_progress": "Explained the 3-bedroom layout and calculated the monthly maintenance including sinking fund.",
+          "next_action": "Confirm other recurring monthly charges.",
+          "conversation_summary": "Looking to buy around Seberang Jaya; has a young child and wants a separate bedroom for them. Asked about the layout and usual monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Any other recurring monthly charges for a Phase 1 Type A unit, beyond the RM0.18 psf monthly maintenance inclusive of sinking fund.",
+          "subject": "Pearl Residences monthly ownership costs",
+          "customer_need": "A realistic estimate of usual monthly costs for a 900 sq ft unit.",
+          "reason": "Only the maintenance rate is verified; other recurring charges are not available in the provided information.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share verified additional recurring charges, keeping them distinct from the confirmed RM162 monthly maintenance."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3450,
+        "input_tokens_details": {
+          "cache_write_tokens": 3447,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1899,
+        "output_tokens_details": {
+          "reasoning_tokens": 1238
+        },
+        "total_tokens": 5349
+      }
+    },
+    {
+      "customer": "That does sound promising for us, and the maintenance figure is helpful. Please let me know what other recurring charges apply and whether parking has a separate cost, so we can judge the overall monthly amount.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Good to hear the layout sounds promising for your family. RM162 a month is the confirmed maintenance charge, inclusive of sinking fund. I don’t yet have confirmed details on other recurring charges or whether parking has a separate cost, so I can’t give you a reliable all-in monthly amount. The other-charges check is still pending; I’ll confirm the parking charge separately too.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Separate bedroom for child",
+            "3-bedroom layout",
+            "Monthly costs",
+            "Parking cost"
+          ],
+          "primary_motivations": [
+            "Provide a separate bedroom for their young child"
+          ],
+          "decision_factors": [
+            "Location",
+            "Bedroom layout",
+            "Monthly costs",
+            "Parking cost"
+          ],
+          "active_concerns": [
+            "Other recurring charges",
+            "Whether parking has a separate cost"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom layout appears to fit their need for a separate room for their child; overall costs remain to be clarified.",
+          "next_objective": "Confirm parking costs and share the verified recurring charges so they can assess the overall monthly amount.",
+          "last_progress": "Buyer said the layout sounds promising and found the maintenance figure helpful; asked about other recurring charges and parking costs.",
+          "next_action": "Confirm whether parking has a separate charge and its amount, without duplicating the open check on other recurring charges.",
+          "conversation_summary": "Looking to buy around Seberang Jaya; has a young child and wants a separate bedroom for them. Type A's three-bedroom layout sounds promising. RM162 monthly maintenance inclusive of sinking fund is confirmed; other recurring charges are pending verification, and parking cost needs confirmation."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Whether parking for a Phase 1 Type A unit is included or subject to a separate charge, and the amount and whether it is one-time or recurring if verified.",
+          "subject": "Pearl Residences parking cost",
+          "customer_need": "Understand whether parking adds to the overall monthly or upfront cost.",
+          "reason": "The buyer asked whether parking has a separate cost; available verified information does not specify this.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the verified parking charge or clarify if it is included, alongside the result of the already-open check for other recurring charges."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3723,
+        "input_tokens_details": {
+          "cache_write_tokens": 3720,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1672,
+        "output_tokens_details": {
+          "reasoning_tokens": 1112
+        },
+        "total_tokens": 5395
+      }
+    }
+  ],
+  "closed": false
+}

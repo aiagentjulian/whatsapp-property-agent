@@ -1,0 +1,101 @@
+{
+  "report_type": "independent_blind_paired_holdout_judgment",
+  "scope": "Two complete holdout dialogues including public customer replies and private reaction notes. Randomized labels; source mapping omitted.",
+  "rubric": {
+    "legacy_weights": {
+      "discovery": 0.2,
+      "product_connection_buying_desire": 0.35,
+      "progression_appointment_opportunity": 0.35,
+      "naturalness": 0.1
+    },
+    "scale": "Each legacy dimension scored 0–10; weighted total is on a 0–10 scale.",
+    "strict_calibration": "Feature mention alone does not earn high visualization or desire. Practical benefit must connect to buyer impact; visualization needs a buyer-specific lived-use scene; desire needs evidence of increased preference. An invitation alone is not progression.",
+    "separate_dimensions": {
+      "buyer_visualization_and_desire_creation": "0–10.",
+      "persuasive_sales_guidance": "0–10.",
+      "conversation_realism": "0–10."
+    }
+  },
+  "dialogues": {
+    "A": {
+      "scores": {
+        "discovery": 6.5,
+        "product_connection_buying_desire": 7.0,
+        "progression_appointment_opportunity": 6.0,
+        "naturalness": 7.2,
+        "weighted_legacy_total": 6.57,
+        "buyer_visualization_and_desire_creation": 5.5,
+        "persuasive_sales_guidance": 7.1,
+        "conversation_realism": 7.1
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "Explains base price plus applicable parking/configuration items; mentions RM10,000 upgrading package and possible utility/motorcycle-bay charges; says current offer/inclusions depend on unit. For the parents, describes 900 sq ft / 3-bedroom / 2-bath layout and open-plan area, foyer, short corridor; says it could make space more usable, notes bedroom flexibility, and explicitly says layout alone does not confirm accessibility. Then: “I’d recommend viewing it while you compare.”",
+          "customer": "“I appreciate you being clear that accessibility features aren’t confirmed. I’d prefer to see the current unit-specific breakdown and what’s included before arranging a viewing.”",
+          "assessment": "More concrete price components and directly addresses the parents’ accessibility concern without claiming accessibility features. Layout utility is plausible, but not a vivid use-specific scene; the customer values the clarity, while maintaining a firm cost-before-viewing boundary. The viewing recommendation precedes the requested current breakdown and is premature."
+        },
+        {
+          "turn": 2,
+          "agent": "“I don’t have the verified current unit-specific total yet, so I won’t guess. Once it’s confirmed, I can walk you through the price and inclusions, and you can decide whether a viewing makes sense.”",
+          "customer": "Says the visit can be considered once the total is known to be workable.",
+          "assessment": "Good recovery: explicitly agrees with the customer's order and does not press for an appointment."
+        }
+      ],
+      "fact_check": "The cited base-plus-parking structure, RM10k upgrading package, and possible RM5k motorcycle-bay/RM8k extra-utility components are documented, with applicability conditional on unit/configuration. No current unit-specific total or rebate is asserted. Accessibility caveat is appropriately explicit; the layout does not establish accessibility. Wording “any rebate or package is separate” is somewhat ambiguous because the upgrading component and current rebate/package are distinct concepts; it does not amount to a false price quote but could leave inclusions less clear than intended.",
+      "states": {
+        "agent_invitation": "Agent recommends viewing in turn 1.",
+        "customer_viewing_interest": "Customer is open to considering a visit only after confirming price/workability; not an acceptance of the recommendation.",
+        "appointment_agreement": "None.",
+        "formal_handoff": "None."
+      },
+      "concern_and_opportunity": "Answers price-inclusion concern with more detail and addresses accessibility responsibly. However, customer explicitly asks for total price before deciding whether a visit is worthwhile. The invitation is premature; follow-up with the unit-specific breakdown is the earned next step."
+    },
+    "B": {
+      "scores": {
+        "discovery": 6.5,
+        "product_connection_buying_desire": 6.6,
+        "progression_appointment_opportunity": 6.7,
+        "naturalness": 7.8,
+        "weighted_legacy_total": 6.74,
+        "buyer_visualization_and_desire_creation": 5.2,
+        "persuasive_sales_guidance": 6.8,
+        "conversation_realism": 7.8
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "Acknowledges price concern for the parents; describes 900 sq ft, 3/2 layout, foyer and no long corridor as focusing more space on everyday living; suggests checking the floor plan against their needs. Explains unit base price and applicable parking/other components, with current package/rebate separate and dependent on unit; promises a current unit-specific breakdown.",
+          "customer": "“The main thing I need to compare is the actual total once parking and the current package are included… then I can judge whether it’s worth coming to see.”",
+          "assessment": "The explanation is buyer-relevant and appropriately conditions visit consideration on actual total. The everyday-living benefit is practical but not a specific parent-use scene. No accessibility claim is made."
+        },
+        {
+          "turn": 2,
+          "agent": "Says exact total/package is pending, does not assume rebate or parking allocation, and offers a clear inclusions comparison before the customer decides whether to visit.",
+          "customer": "Wants confirmed unit-specific price and inclusions before deciding whether to see it.",
+          "assessment": "Strongly respects the price-first boundary, but provides no actual current number because it is unavailable."
+        }
+      ],
+      "fact_check": "Base price, parking and package variability are described cautiously. No unsupported current price or accessibility claim. No false inclusion is asserted.",
+      "states": {
+        "agent_invitation": "No agent viewing invitation; the agent says the customer can decide after receiving the breakdown.",
+        "customer_viewing_interest": "Conditional openness: may judge whether it is worth a visit after seeing total price/inclusions.",
+        "appointment_agreement": "None.",
+        "formal_handoff": "None."
+      },
+      "concern_and_opportunity": "Accurately recognizes price is the main concern and ties the visit decision to affordability. Since customer requests confirmed total first, waiting is exactly appropriate; no viewing opportunity is missed."
+    }
+  },
+  "comparison": {
+    "dialogue_value": "A gives more specific price-component information and explicitly handles the parents' accessibility concern, producing a somewhat stronger customer reaction (“increases confidence” and makes the layout more worth considering) than B's slight increase in value interest. That is a real dialogue-level improvement in perceived relevance, but purchase interest stays conditional and affordability unresolved. A's recommendation to view is not earned: the customer says they prefer the breakdown before arranging. B handles that sequence better and leaves the viewing decision to the customer. The stronger positive reaction therefore does not translate into stronger progression or appointment readiness.",
+    "score_interpretation": "A's product-connection/guidance advantage is modest and supported by customer response; its progression score is lower because of the premature recommendation, despite a good turn-2 correction. B is more natural and disciplined about the price-first boundary. No appointment is achieved in either dialogue.",
+    "naturalness": "B is concise and coherent. A's detailed price-component list is useful but dense, and the recommendation to view while comparing runs ahead of the customer's explicit concern. Turn 2 then restores a natural buyer-led sequence.",
+    "commercial_value": "A modestly improves confidence/value perception, not demonstrated willingness to buy or visit. Price and package confirmation remain decisive. Current unit-specific price details are the earned next step before any viewing push."
+  },
+  "overall_checks": {
+    "viewing_states": "Invitation (A only) is not customer interest; customer interest in both cases is conditional on seeing the current total; neither buyer agrees to an appointment; there is no formal handoff.",
+    "factual_accuracy": "No serious factual error found. A's named conditional charges and upgrading package are documented. Maintain distinction between the RM10k upgrading component and current rebate/offer; exact applicable inclusions require the unit schedule. Accessibility caveat is correct and useful.",
+    "holdout_regression": "No serious factual or handoff regression. A has improved perceived value but a premature first-turn viewing recommendation; it does not produce a visit commitment. B's cost-first progression is stronger.",
+    "limitations": "Dialogue-only judgment. Customer replies vary, so the difference in interest cannot be attributed solely to agent language. Strict scores do not reward an invitation as an outcome."
+  }
+}

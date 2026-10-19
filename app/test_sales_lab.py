@@ -55,6 +55,27 @@ class SalesLabTests(unittest.TestCase):
     def test_budget_and_dry_gate_block_before_transport(self, transport):
         with self.assertRaises(SystemExit): main(self.args + ['--live'])
         (self.root / 'dry_run.json').write_text(json.dumps({'source_sha256': fingerprint()}))
-        (self.root / 'ledger.json').write_text(json.dumps({'attempts': [{}] * 24, 'stopped': False}))
-        with self.assertRaises(SystemExit): main(self.args + ['--live'])
+        (self.root / 'ledger.json').write_text(json.dumps({'limit': 1, 'attempts': [{}], 'stopped': False}))
+        with self.assertRaises(SystemExit): main(self.args + ['--api-limit', '1', '--live'])
         transport.assert_not_called()
+
+    @patch.dict('os.environ', {'OPENAI_API_KEY': 'test-not-real'})
+    @patch('app.sales_lab.SalesAgent.decide')
+    def test_custom_call_limit_is_persisted_and_enforced(self, decide):
+        decide.return_value = ({'action': 'REPLY', 'reply': 'A useful response.', 'lead_updates': {}}, {})
+        main(self.args)
+        live = self.args + ['--api-limit', '1', '--live']
+        live[live.index('dry')] = 'baseline'
+        main(live)
+        ledger = json.loads((self.root / 'ledger.json').read_text())
+        self.assertEqual(ledger['limit'], 1)
+        self.assertEqual(len(ledger['attempts']), 1)
+        self.assertFalse(ledger['stopped'])
+        completed_calls = decide.call_count
+        self.assertEqual(completed_calls, 2)  # one fake dry turn and one live turn
+
+        second = self.args + ['--api-limit', '1', '--live']
+        second[second.index('dry')] = 'candidate'
+        with self.assertRaises(SystemExit): main(second)
+        self.assertEqual(decide.call_count, completed_calls)
+        self.assertEqual(len(json.loads((self.root / 'ledger.json').read_text())['attempts']), 1)

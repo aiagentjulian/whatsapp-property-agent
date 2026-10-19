@@ -1,0 +1,165 @@
+{
+  "trial": "candidate-r1-live",
+  "scenario": "early_exploration",
+  "source_sha256": "2ad7c2bb2e28d18be508d99a1146b160b261aaeda7dc147e1da1c94124bd59a8",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "next_objective": "Share the confirmed current price range and package when available, so the buyer can compare total costs.",
+    "last_progress": "Buyer is comparing options and wants confirmed current pricing and package details before judging the total.",
+    "next_action": "Continue the existing pricing check; provide the confirmed figures when available without pressing for further details.",
+    "conversation_summary": "Buyer is exploring options around Seberang Jaya and is comparing Pearl Residences with other options. They received an indicative base-price guide and want the confirmed current range and package before assessing total cost; no budget or purchase purpose beyond exploration is known."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The indicative base-price references I have are roughly RM328k–RM358k, depending on the floor, facing and car-park configuration. That isn’t a confirmed current total, as the latest package and applicable charges can change it. Phase 1 units are 900 sq. ft. with 3 bedrooms and 2 bathrooms. I’m checking the latest pricing package so I can give you an up-to-date picture."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that’s a useful rough guide. I’m just comparing options for now, so I’ll wait for the confirmed current range and package before judging the total."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Absolutely, that makes sense. The package and applicable charges are important for comparing total costs fairly, so the rough base range alone isn’t enough to judge it. No rush while you compare."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest valid general price range and applicable current package for Pearl Residences Phase 1.",
+      "subject": "Pearl Residences Phase 1 pricing",
+      "customer_need": "A current general price indication to compare area and property options.",
+      "reason": "Available pricing references are indicative base prices, and the current package and final applicable amounts need confirmation.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share the confirmed current general price picture and continue helping the buyer compare options.",
+      "signature": "PRICING|1 and applicable current general latest package pearl phase price range residences valid",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The indicative base-price references I have are roughly RM328k–RM358k, depending on the floor, facing and car-park configuration. That isn’t a confirmed current total, as the latest package and applicable charges can change it. Phase 1 units are 900 sq. ft. with 3 bedrooms and 2 bathrooms. I’m checking the latest pricing package so I can give you an up-to-date picture.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide an up-to-date general price picture for exploratory comparison.",
+          "last_progress": "Asked for Pearl Residences’ general price range while browsing options around Seberang Jaya.",
+          "next_action": "Confirm the latest valid indicative pricing and package details.",
+          "conversation_summary": "Buyer is exploring options around Seberang Jaya and asked for Pearl Residences’ general price range; no budget or purchase purpose beyond exploration was stated."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest valid general price range and applicable current package for Pearl Residences Phase 1.",
+          "subject": "Pearl Residences Phase 1 pricing",
+          "customer_need": "A current general price indication to compare area and property options.",
+          "reason": "Available pricing references are indicative base prices, and the current package and final applicable amounts need confirmation.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share the confirmed current general price picture and continue helping the buyer compare options."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3893,
+        "input_tokens_details": {
+          "cache_write_tokens": 3890,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1465,
+        "output_tokens_details": {
+          "reasoning_tokens": 1021
+        },
+        "total_tokens": 5358
+      }
+    },
+    {
+      "customer": "Thanks, that’s a useful rough guide. I’m just comparing options for now, so I’ll wait for the confirmed current range and package before judging the total.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Absolutely, that makes sense. The package and applicable charges are important for comparing total costs fairly, so the rough base range alone isn’t enough to judge it. No rush while you compare.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share the confirmed current price range and package when available, so the buyer can compare total costs.",
+          "last_progress": "Buyer is comparing options and wants confirmed current pricing and package details before judging the total.",
+          "next_action": "Continue the existing pricing check; provide the confirmed figures when available without pressing for further details.",
+          "conversation_summary": "Buyer is exploring options around Seberang Jaya and is comparing Pearl Residences with other options. They received an indicative base-price guide and want the confirmed current range and package before assessing total cost; no budget or purchase purpose beyond exploration is known."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3521,
+        "input_tokens_details": {
+          "cache_write_tokens": 3518,
+          "cached_tokens": 0
+        },
+        "output_tokens": 844,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 4365
+      }
+    }
+  ],
+  "closed": false
+}

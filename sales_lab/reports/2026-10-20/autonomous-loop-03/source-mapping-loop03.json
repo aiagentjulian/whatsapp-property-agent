@@ -1,0 +1,47 @@
+{
+  "purpose": "Post-scoring deblind mapping only. Scores and judgments in the referenced reports were not changed.",
+  "reports": {
+    "judge-round1-loop03.json": {
+      "own_stay": {
+        "A": "Loop02 candidate-r2-live own_stay starting baseline",
+        "B": "Loop03 candidate-r1-live own_stay"
+      },
+      "genuine_interest": {
+        "A": "Loop02 candidate-r2-live genuine_interest starting baseline",
+        "B": "Loop03 candidate-r1-live genuine_interest"
+      },
+      "early_exploration": {
+        "A": "Loop03 candidate-r1-live early_exploration",
+        "B": "Loop02 candidate-r2-live early_exploration starting baseline"
+      }
+    },
+    "judge-round2-loop03.json": {
+      "own_stay": {
+        "A": "Loop02 candidate-r2-live own_stay starting baseline",
+        "B": "Loop03 candidate-r2-live own_stay"
+      },
+      "genuine_interest": {
+        "A": "Loop03 candidate-r2-live genuine_interest",
+        "B": "Loop02 candidate-r2-live genuine_interest starting baseline"
+      },
+      "early_exploration": {
+        "A": "Loop02 candidate-r2-live early_exploration starting baseline",
+        "B": "Loop03 candidate-r2-live early_exploration"
+      }
+    },
+    "judge-round3-loop03.json": {
+      "own_stay": {
+        "A": "Loop03 candidate-r3-live own_stay",
+        "B": "Loop02 candidate-r2-live own_stay starting-best baseline",
+        "C": "Loop03 candidate-r2-live own_stay"
+      }
+    },
+    "judge-final-holdout-loop03.json": {
+      "holdout": {
+        "A": "final-holdout-r3-holdout.json",
+        "B": "baseline-final-holdout-holdout.json"
+      }
+    }
+  },
+  "mapping_note": "A/B/C labels are local to each report/scenario and were randomized before scoring. This file supplies the deblind mapping after all judgments were completed."
+}

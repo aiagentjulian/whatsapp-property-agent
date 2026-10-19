@@ -36,11 +36,15 @@ def main(argv=None):
     parser.add_argument('--trial', required=True)
     parser.add_argument('--scenario', choices=SCENARIOS, required=True)
     parser.add_argument('--customer', required=True)
+    parser.add_argument('--api-limit', type=int, default=None,
+                        help='maximum live calls for this new run (default: 24; persisted in ledger)')
     parser.add_argument('--live', action='store_true')
     parser.add_argument('--env-file', type=Path)
     args = parser.parse_args(argv)
     if not args.trial.replace('-', '').replace('_', '').isalnum():
         parser.error('trial must be a simple label')
+    if args.api_limit is not None and not 1 <= args.api_limit <= LIMIT:
+        parser.error('api-limit must be between 1 and %d' % LIMIT)
     args.run_dir.mkdir(parents=True, exist_ok=True)
     with (args.run_dir / '.lock').open('w') as lock:
         try:
@@ -52,7 +56,10 @@ def main(argv=None):
 
 def run_turn(args, parser):
     ledger_path = args.run_dir / 'ledger.json'
-    ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else {'limit': LIMIT, 'attempts': [], 'stopped': False}
+    ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else {
+        'limit': args.api_limit or LIMIT, 'attempts': [], 'stopped': False}
+    if args.api_limit is not None and ledger.get('limit', LIMIT) != args.api_limit:
+        parser.error('api-limit differs from the run ledger; do not change a started experiment budget')
     if ledger['stopped']:
         parser.error('experiment stopped after an error; inspect ledger, do not retry live')
     path = args.run_dir / (args.trial + '-' + args.scenario + '.json')
@@ -76,8 +83,8 @@ def run_turn(args, parser):
         config['api_key'] = os.getenv('OPENAI_API_KEY', '')
         if not config['api_key']:
             parser.error('OPENAI_API_KEY required; no fallback')
-        if len(ledger['attempts']) >= LIMIT:
-            parser.error('24-call experiment budget exhausted')
+        if len(ledger['attempts']) >= ledger.get('limit', LIMIT):
+            parser.error('%d-call experiment budget exhausted' % ledger.get('limit', LIMIT))
         attempt = {'trial': args.trial, 'scenario': args.scenario, 'turn': len(state['turns']) + 1, 'status': 'started'}
         ledger['attempts'].append(attempt)
         # Reserve before transport: timeout/crash must never silently refund a call.

@@ -1,0 +1,48 @@
+{
+  "objective": "Increase buyer-specific realistic visualization, personal value and confident, natural recommendation while preserving facts, cost concern handling and measured appointment judgment.",
+  "starting_commit": "8d3717dd27998aceb41cad7e2e6fa61c726129f4",
+  "starting_best": "Loop02 candidate-r2-live; its three development dialogues and scores are reused as paired baseline, with no extra baseline API calls.",
+  "judge_calibration": "Completed before SalesAgent changes; see judge-calibration-loop03.json. Original legacy rubric retained; refined visualization/persuasion anchors are separate and not retroactively treated as direct improvements.",
+  "sales_agent": "app.agent.SalesAgent, actual GPT-6 Luna / High API, Sales Brain, Knowledge Retrieval and structured decisions.",
+  "roles": "Main Codex coordinator/developer; native Codex Customer Simulator and independent Sales Judge; no extra paid API for simulator/judge.",
+  "api_limit": 18,
+  "max_repairs": 3,
+  "development_scenarios": [
+    "own_stay_visualization",
+    "genuine_purchase_interest",
+    "early_exploration"
+  ],
+  "holdout": "Fresh price-concern / value-comparison case reserved for final-only validation; not given to candidate or used for repair.",
+  "original_rubric": {
+    "effective_discovery": 20,
+    "product_connection_buying_desire": 35,
+    "sales_progression_appointment": 35,
+    "natural_conversation": 10
+  },
+  "additional_dimensions": [
+    "feature_description",
+    "practical_benefit",
+    "buyer_specific_visualization",
+    "persuasive_desire_creation",
+    "natural_confident_guidance"
+  ],
+  "acceptance": "KEEP only if actual buyer-specific visualizations and customer interest improve with quoted evidence, persuasion is more confident but natural, facts/support/appointment boundaries remain sound, and no forced invitation or loss of progression.",
+  "status": "complete",
+  "rounds_completed": 3,
+  "final_recommendation": "REVERT sales Brain candidate; retain Loop02 best and commit budget-control/report infrastructure only.",
+  "sales_brain_final_state": "Restored to starting commit 8d3717dd27998aceb41cad7e2e6fa61c726129f4 after no qualifying improvement.",
+  "live_usage": {
+    "api_calls": 18,
+    "api_call_limit": 18,
+    "input_tokens": 70744,
+    "output_tokens": 32782,
+    "total_tokens": 103526,
+    "reasoning_tokens": 22140,
+    "monetary_cost": "Not available from the run."
+  },
+  "validation": {
+    "fake_entrypoint_dry_runs": "Passed for each source fingerprint before live requests.",
+    "unit_tests": "26 passed: app.test_sales_lab, app.test_sales_lab_retrieval, app.test_runtime",
+    "git_diff_check": "Passed"
+  }
+}

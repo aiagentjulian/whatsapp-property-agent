@@ -1,0 +1,63 @@
+{
+  "judge": "independent_sales_judge_calibration",
+  "scope": "One family own-stay dialogue pair, rescored blind under stricter explicit visualization and persuasion anchors. Labels A/B are randomized; source mapping omitted. No code, Brain or prompt inspected.",
+  "strict_anchor_definitions": {
+    "feature_description": "How clearly and specifically the agent describes verified physical features. Feature mention alone does not establish benefit, visualization or desire.",
+    "practical_benefit": "Whether a feature is connected to a useful outcome for the buyer's stated need.",
+    "buyer_specific_visualization": "Whether the buyer can picture how the home would work for their own stated circumstances; generic feature lists score low.",
+    "persuasive_desire_creation": "Requires customer-visible evidence of increased interest or desire tied to the buyer-specific benefit. An agent invitation alone does not earn points. Strong scores require a voluntary positive signal beyond merely answering an invitation; conditional interest is capped below strong purchase intent."
+  },
+  "dialogues": {
+    "A": {
+      "original_legacy_scores": {"discovery": 7, "product_connection_buying_desire": 8, "progression_appointment_opportunity": 6, "naturalness": 7, "weighted_score": 7.0},
+      "recalibrated_legacy_scores": {
+        "discovery": {"score": 7, "evidence": "The customer says, 'We have a young child and need a separate bedroom for them.' The agent directly addresses that need. The customer then says, 'a separate room for our child is important, and the open-plan area could work for us.' Budget and timing remain unknown."},
+        "product_connection_buying_desire": {"score": 7, "evidence": "The agent says Type A 'has a separate bedroom that could be your child’s room' and describes an open-plan layout. The customer says the layout sounds promising and could work. This is a direct feature-to-need connection, but the answer does not develop a concrete buyer-specific scene beyond the room allocation."},
+        "progression_appointment_opportunity": {"score": 5.5, "evidence": "After the customer says the layout is promising and asks about costs and parking, the agent offers, 'If you’d like, I can also arrange a viewing.' This is a relevant optional invitation after a fit signal. The conversation ends before any customer response to the invitation, so it does not establish viewing interest, agreement or forward movement from the invitation itself."},
+        "naturalness": {"score": 7, "evidence": "The family-specific phrasing is warm and clear. The final turn is somewhat long, with multiple caveats, confirmation promises and a viewing invitation combined."}
+      },
+      "recalibrated_legacy_weighted_score": 6.5,
+      "feature_benefit_visualization_layers": {
+        "feature_description": {"score": 8, "evidence": "The reply identifies 900 sq.ft., three bedrooms, two bathrooms, balcony, open-plan living/dining/kitchen and no long internal corridor. It also cautions that furniture fit should be checked against the approved plan."},
+        "practical_benefit": {"score": 7.5, "evidence": "The separate bedroom is explicitly connected to use as the child's room. The customer confirms that this need is important and that the open-plan area could work."},
+        "buyer_specific_visualization": {"score": 6.5, "evidence": "The child’s separate room gives the family a concrete way to picture the layout, and the customer says it sounds promising. The exchange does not visualize furniture placement or daily use beyond assigning that room."},
+        "persuasive_desire_creation": {"score": 6.5, "evidence": "The customer says the layout sounds promising and could work for the family. This is a positive fit signal, but there is no customer response to the later viewing offer and no expressed desire to visit or buy."}
+      },
+      "additional_independent_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 6.5, "anchor_rationale": "The separate-room need is personalized and receives a positive fit response, but the evidence supports an initial fit impression rather than strong desire or an action."},
+        "persuasive_sales_guidance": {"score": 7, "evidence": "The agent gives the verified maintenance calculation, identifies unknown charges and parking, and offers a low-commitment viewing after a positive layout response. It does not guess about costs."},
+        "conversation_realism": {"score": 7, "evidence": "The exchange follows the family concern naturally. The agent's final multi-part reply is slightly scripted, and the viewing invitation receives no observed customer answer."}
+      },
+      "customer_signal_and_handoff": {"agent_invitation": true, "customer_viewing_interest": false, "appointment_agreement": false, "formal_handoff_to_human": false, "evidence": "The customer asks about regular charges and parking before any invitation. There is no subsequent customer reply to 'If you’d like, I can also arrange a viewing.'"}
+    },
+    "B": {
+      "original_legacy_scores": {"discovery": 7, "product_connection_buying_desire": 8, "progression_appointment_opportunity": 7, "naturalness": 7, "weighted_score": 7.4},
+      "recalibrated_legacy_scores": {
+        "discovery": {"score": 7, "evidence": "The customer says, 'We have a young child and need a separate bedroom for them.' Agent turn 1 answers that need. Customer responds, 'I’d be open to seeing the layout, but we’d like to understand the current price and any other regular charges first.' The family need is clear; budget and timing are not."},
+        "product_connection_buying_desire": {"score": 7, "evidence": "The agent describes Type A's 900 sq.ft. layout, says one bedroom can be the child's room and explains the open-plan arrangement. The customer says the layout sounds promising for the family. This matches the stated need, but does not provide a more vivid buyer-specific use picture than the paired conversation."},
+        "progression_appointment_opportunity": {"score": 6.5, "evidence": "The agent says, 'If the layout looks promising, a viewing could help you assess the room arrangement in person.' The customer replies, 'I’d be open to seeing the layout,' but wants price and other regular charges first. This earns explicit conditional viewing interest. The agent then respects the cost condition and says the buyer can decide after price/parking details are confirmed. No appointment is agreed."},
+        "naturalness": {"score": 7, "evidence": "The invitation is softly framed and the customer answers with a natural condition. The second reply repeats the maintenance amount and pending status, but follows the cost-first concern."}
+      },
+      "recalibrated_legacy_weighted_score": 6.8,
+      "feature_benefit_visualization_layers": {
+        "feature_description": {"score": 8, "evidence": "The agent gives 900 sq.ft., three bedrooms, two bathrooms, balcony, foyer, open-plan living/dining/kitchen and no long corridor. The foyer is an added feature detail, but the customer-specific bedroom description is similar to dialogue A."},
+        "practical_benefit": {"score": 7.5, "evidence": "The separate bedroom is connected to the child's use. The customer says the layout could suit the family and confirms openness to seeing the arrangement after costs are known."},
+        "buyer_specific_visualization": {"score": 6.5, "evidence": "The child’s room and open-plan living area are tied to the family's own stay. The customer affirms possible fit but the agent does not describe a specific daily scene or furniture arrangement."},
+        "persuasive_desire_creation": {"score": 7, "evidence": "The customer says the layout could suit them and explicitly says they would be open to seeing it. This is conditional interest in further assessment, not a booking or strong purchase desire; the invitation itself is not counted as customer interest."}
+      },
+      "additional_independent_dimensions": {
+        "buyer_visualization_desire_creation": {"score": 7, "anchor_rationale": "There is a buyer-specific child-room connection and an explicit, though conditional, customer statement of openness to seeing the layout. The signal remains gated on price and other charges."},
+        "persuasive_sales_guidance": {"score": 7, "evidence": "The agent explains the known maintenance amount and keeps unknown price, parking and recurring charges unconfirmed. The viewing offer is optional; the reply follows the customer's price-first condition."},
+        "conversation_realism": {"score": 7, "evidence": "The customer response is a plausible reaction to the unit details and invitation. The message is clear but has a slightly staged sequence of feature description, invitation and purpose question; the second response repeats known cost information."}
+      },
+      "customer_signal_and_handoff": {"agent_invitation": true, "customer_viewing_interest": "Yes, explicitly open to seeing the layout after understanding price and charges.", "appointment_agreement": false, "formal_handoff_to_human": false, "evidence": "The customer's exact reply is, 'I’d be open to seeing the layout, but we’d like to understand the current price and any other regular charges first.' The private reaction says they are open to viewing later, not ready to schedule."}
+    }
+  },
+  "paired_calibration": {
+    "recalibrated_legacy_weighted_difference_B_minus_A": 0.35,
+    "independent_visualization_desire_difference_B_minus_A": 0.5,
+    "naturalness_and_progression": "The second dialogue earns a modest progression advantage because the customer explicitly expresses conditional viewing interest; the invitation alone earns no credit. The customer still requires price and charges, and no appointment is agreed. Naturalness is similar in both: clear and warm, with somewhat long or repetitive replies. The earlier invitation in B is soft but appears before the affordability condition is resolved; the customer accepts only a possible future visit, not immediate scheduling.",
+    "whether_prior_8_was_too_generous": "Yes. The prior 8/10 product-connection and buyer-visualization ratings conflated relevant feature description and a positive fit statement with vivid buyer-specific visualization and desire. Both dialogues clearly connect a separate bedroom to the child's need and receive a positive response, but neither develops a detailed daily-use scene or evidence of strong purchase motivation. Under the stricter anchor, the product connection is 7/10 in both, and buyer-specific visualization/desire is 6.5/10 for A and 7/10 for B. The additional half-point for B reflects the customer's explicit conditional openness to seeing the layout, not the invitation itself.",
+    "overall_read": "Both dialogues make a relevant family-specific product connection. B earns a small progression and desire-signal advantage through explicit conditional viewing interest, while the core visualization remains similar and cost concerns remain unresolved."
+  }
+}

@@ -25,17 +25,17 @@ No WhatsApp, database, Google Sheets or runtime services are loaded.
 7. Diagnose the complete exposed path once. Change only the demonstrated cause;
    no fixed dialogue scripts or unnecessary prompt rules. Retest same opening,
    private persona, model/reasoning, three-turn cap and source evidence.
-8. At most two repair rounds. Reserve holdout for final promising candidate; never
+8. At most three repair rounds. Reserve holdout for final promising candidate; never
    use it for tuning. No clear improvement or new severe issue: revert candidate.
 9. Save KEEP / REVERT / NEEDS REVIEW, evidence, source mapping, call ledger and
    token usage. Commit infrastructure and qualified changes; push experiment only.
 
 ```sh
 python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
-  --trial dry --scenario own_stay --customer 'Hi, own stay from your ad'
+  --trial dry --scenario own_stay --customer 'Hi, own stay from your ad' --api-limit 18
 python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
   --trial baseline --scenario own_stay --customer 'PUBLIC CUSTOMER MESSAGE' \
-  --live --env-file /absolute/path/to/existing/.env
+  --api-limit 18 --live --env-file /absolute/path/to/existing/.env
 ```
 
 Repeat the second command for each public turn and scenario, serially. Fake and
@@ -46,9 +46,11 @@ back to SalesAgent in the same shape as Runtime `support_context`; no fake answe
 are generated and requests remain OPEN for this offline evaluation. Do not edit a dialogue's source midway.
 Use ONE run directory across baseline, candidates and holdout: the 24-attempt
 budget applies to the whole experiment, including failed/uncertain attempts.
-The ledger reserves before HTTP, locks concurrent turns, stops on any error and
-never retries. A process crash leaves the experiment stopped for operator review.
-Do not reset its ledger to bypass a limit. Synthetic reports contain no real leads.
+`--api-limit` sets and persists a run's cap from 1 through 24; later calls must
+use the same cap. The ledger reserves before HTTP, locks concurrent turns, stops
+on any error and never retries. A process crash leaves the experiment stopped for
+operator review. Do not reset its ledger to bypass a limit. Synthetic reports
+contain no real leads.
 
 A SUPPORT_REQUEST stays pending with no invented human answer. The customer may
 continue naturally; stop if they choose to wait for verification. Formal handoff

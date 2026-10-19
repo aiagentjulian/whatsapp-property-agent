@@ -1,0 +1,233 @@
+{
+  "trial": "candidate-r1-live",
+  "scenario": "own_stay",
+  "source_sha256": "2ad7c2bb2e28d18be508d99a1146b160b261aaeda7dc147e1da1c94124bd59a8",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Needs a separate bedroom for their young child",
+    "preferred_location": "Seberang Jaya",
+    "size_or_layout_preference": "Three-bedroom layout with a separate bedroom for their child",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Separate bedroom for young child",
+      "Three-bedroom layout"
+    ],
+    "primary_motivations": [
+      "A separate bedroom for their young child"
+    ],
+    "decision_factors": [
+      "Three-bedroom layout",
+      "Usual monthly costs",
+      "Seberang Jaya location",
+      "Approved plan and room fit"
+    ],
+    "active_concerns": [
+      "Approved Type A plan and room fit",
+      "Other regular recurring charges"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Type A's three-bedroom layout appears promising for the need for a separate child’s bedroom; the approved plan and exact room fit are unconfirmed.",
+    "next_objective": "Provide verified approved-plan details and a recurring-cost breakdown so the buyer can assess fit before deciding about a viewing.",
+    "last_progress": "Buyer says the three-bedroom layout could work and wants the approved plan and other regular charges before deciding whether to view.",
+    "next_action": "Obtain the approved Type A plan and confirm other regular recurring charges.",
+    "conversation_summary": "Buyer is looking to buy in Seberang Jaya for own stay and needs a separate bedroom for their young child. They are considering Type A but want the approved plan and other regular charges before deciding about a viewing. RM162/month maintenance including sinking fund is confirmed; other charges remain unconfirmed.",
+    "viewing_interest": "Considering a viewing after reviewing the approved plan and other regular charges",
+    "appointment_readiness": "NOT_READY"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! Pearl Residences’ Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so there’s a separate bedroom for your child and two other bedrooms. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor. Exact room and furniture fit should be checked against the approved plan.\n\nThe verified maintenance fee is RM0.18 per sq ft, inclusive of the sinking fund—RM162/month for 900 sq ft. I’m checking whether there are other regular project charges before giving you a fuller monthly-cost picture. A viewing could also help you judge whether the layout works for your family; happy to help arrange one if useful."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, having a separate room for our child is important, so the layout sounds like it could work. I’d like to check the approved plan and understand the other regular charges before deciding whether to come see it. Could you let me know once you’ve confirmed those costs?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Understood. Type A still looks promising for your child to have a separate bedroom, but the layout information I have is a concept, not the approved plan, so I can’t confirm the exact room arrangement or fit yet. RM162/month for maintenance, including the sinking fund, is the only recurring charge I can confirm so far; I don’t have a verified total for other regular charges. I’ll update you when I have the approved-plan details and charge confirmation, so you can decide about a viewing with a clearer picture."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Confirm any other regular or mandatory recurring charges for a Phase 1 Type A unit beyond the RM162/month maintenance fee, and distinguish monthly charges from costs that vary by usage or are billed on a different schedule.",
+      "subject": "Pearl Residences Phase 1 Type A monthly costs",
+      "customer_need": "Understand the usual monthly cost of owning the unit.",
+      "reason": "Only the RM0.18 per sq ft maintenance fee inclusive of sinking fund is verified; the buyer asked about usual monthly costs.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Give the buyer an accurate recurring-cost breakdown while relating the three-bedroom layout to their family’s need.",
+      "signature": "PRICING|1 and any are beyond billed by charges costs different distinguish fee from maintenance mandatory month monthly on or other pearl phase recurring regular residences rm162 schedule that type usage vary",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "The approved Phase 1 Type A floor plan, including the bedroom arrangement and relevant room dimensions.",
+      "subject": "Pearl Residences Phase 1 Type A approved plan",
+      "customer_need": "Assess whether Type A provides a suitable separate bedroom for their young child.",
+      "reason": "The buyer wants to review the approved plan before deciding whether to view; current information is conceptual and does not confirm exact room fit.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share verified approved-plan details and the confirmed recurring-cost breakdown, then let the buyer decide whether a viewing would help.",
+      "signature": "LAYOUT|1 and approved arrangement bedroom dimensions floor including pearl phase plan relevant residences room type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re looking around Seberang Jaya for a place to buy and Pearl Residences came up. We have a young child and need a separate bedroom for them, so could you tell me about the 3-bedroom layout and the usual monthly costs?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences’ Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so there’s a separate bedroom for your child and two other bedrooms. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor. Exact room and furniture fit should be checked against the approved plan.\n\nThe verified maintenance fee is RM0.18 per sq ft, inclusive of the sinking fund—RM162/month for 900 sq ft. I’m checking whether there are other regular project charges before giving you a fuller monthly-cost picture. A viewing could also help you judge whether the layout works for your family; happy to help arrange one if useful.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Needs a separate bedroom for their young child",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three-bedroom layout with a separate bedroom for their child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Separate bedroom for young child",
+            "Three-bedroom layout"
+          ],
+          "primary_motivations": [
+            "A separate bedroom for their young child"
+          ],
+          "decision_factors": [
+            "Three-bedroom layout",
+            "Usual monthly costs",
+            "Seberang Jaya location"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Type A’s three bedrooms appear to match the need for a separate child’s room; exact room and furniture fit should be checked against the approved plan.",
+          "next_objective": "Confirm any other regular project charges beyond the verified maintenance fee.",
+          "last_progress": "Shared Type A layout details and calculated the RM162 monthly maintenance fee based on 900 sq ft.",
+          "next_action": "Provide the verified recurring-cost breakdown when available; offer a viewing to assess the layout.",
+          "conversation_summary": "Buyer is looking to buy in Seberang Jaya and has a young child, with a need for a separate bedroom. Asked about the three-bedroom layout and usual monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Confirm any other regular or mandatory recurring charges for a Phase 1 Type A unit beyond the RM162/month maintenance fee, and distinguish monthly charges from costs that vary by usage or are billed on a different schedule.",
+          "subject": "Pearl Residences Phase 1 Type A monthly costs",
+          "customer_need": "Understand the usual monthly cost of owning the unit.",
+          "reason": "Only the RM0.18 per sq ft maintenance fee inclusive of sinking fund is verified; the buyer asked about usual monthly costs.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Give the buyer an accurate recurring-cost breakdown while relating the three-bedroom layout to their family’s need."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3451,
+        "input_tokens_details": {
+          "cache_write_tokens": 3448,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2396,
+        "output_tokens_details": {
+          "reasoning_tokens": 1647
+        },
+        "total_tokens": 5847
+      }
+    },
+    {
+      "customer": "Thanks, having a separate room for our child is important, so the layout sounds like it could work. I’d like to check the approved plan and understand the other regular charges before deciding whether to come see it. Could you let me know once you’ve confirmed those costs?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Understood. Type A still looks promising for your child to have a separate bedroom, but the layout information I have is a concept, not the approved plan, so I can’t confirm the exact room arrangement or fit yet. RM162/month for maintenance, including the sinking fund, is the only recurring charge I can confirm so far; I don’t have a verified total for other regular charges. I’ll update you when I have the approved-plan details and charge confirmation, so you can decide about a viewing with a clearer picture.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Needs a separate bedroom for their young child",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three-bedroom layout with a separate bedroom for their child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Considering a viewing after reviewing the approved plan and other regular charges",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Separate bedroom for young child",
+            "Three-bedroom layout"
+          ],
+          "primary_motivations": [
+            "A separate bedroom for their young child"
+          ],
+          "decision_factors": [
+            "Three-bedroom layout",
+            "Usual monthly costs",
+            "Seberang Jaya location",
+            "Approved plan and room fit"
+          ],
+          "active_concerns": [
+            "Approved Type A plan and room fit",
+            "Other regular recurring charges"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Type A's three-bedroom layout appears promising for the need for a separate child’s bedroom; the approved plan and exact room fit are unconfirmed.",
+          "next_objective": "Provide verified approved-plan details and a recurring-cost breakdown so the buyer can assess fit before deciding about a viewing.",
+          "last_progress": "Buyer says the three-bedroom layout could work and wants the approved plan and other regular charges before deciding whether to view.",
+          "next_action": "Obtain the approved Type A plan and confirm other regular recurring charges.",
+          "conversation_summary": "Buyer is looking to buy in Seberang Jaya for own stay and needs a separate bedroom for their young child. They are considering Type A but want the approved plan and other regular charges before deciding about a viewing. RM162/month maintenance including sinking fund is confirmed; other charges remain unconfirmed."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "The approved Phase 1 Type A floor plan, including the bedroom arrangement and relevant room dimensions.",
+          "subject": "Pearl Residences Phase 1 Type A approved plan",
+          "customer_need": "Assess whether Type A provides a suitable separate bedroom for their young child.",
+          "reason": "The buyer wants to review the approved plan before deciding whether to view; current information is conceptual and does not confirm exact room fit.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share verified approved-plan details and the confirmed recurring-cost breakdown, then let the buyer decide whether a viewing would help."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4049,
+        "input_tokens_details": {
+          "cache_write_tokens": 4046,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2000,
+        "output_tokens_details": {
+          "reasoning_tokens": 1230
+        },
+        "total_tokens": 6049
+      }
+    }
+  ],
+  "closed": false
+}
