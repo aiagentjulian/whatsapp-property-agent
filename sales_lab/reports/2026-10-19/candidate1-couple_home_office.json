@@ -1,0 +1,175 @@
+{
+  "trial": "candidate1",
+  "scenario": "couple_home_office",
+  "source_sha256": "378a900dfb0ec4933aadae69c26f7d0932b8da11568d05d827e76aef2edfebf0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "Space for a home office"
+    ],
+    "primary_motivations": [
+      "A home for the buyer and their partner"
+    ],
+    "decision_factors": [
+      "Whether the layout can accommodate a comfortable desk spot",
+      "Price range"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "The three-bedroom layout may offer a shared room with a desk, but the approved floor plan is needed to assess usable space.",
+    "next_objective": "Provide the approved floor plan and clarify current pricing so the buyer can assess space and budget.",
+    "last_progress": "Buyer said a comfortable desk spot in a shared room would probably be enough and asked for the approved floor plan and price range.",
+    "next_action": "Obtain the approved floor plan; confirm the latest applicable price and package.",
+    "conversation_summary": "Buyer and partner are considering Pearl Residences for own stay and want space for a home office. A shared room with a comfortable desk may be sufficient. They requested the approved floor plan and price range.",
+    "purchase_reason": "Looking for a home for the buyer and their partner.",
+    "size_or_layout_preference": "A comfortable desk spot in a room they could share is likely sufficient."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, my partner and I saw your Pearl Residences ad. We’re looking for a home with space for a home office. Could you tell me more?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Thanks — Pearl Residences has a 900 sq ft layout with 3 bedrooms and 2 bathrooms, so one of the bedrooms could potentially give you a dedicated work-from-home space. The living, dining and kitchen are open-plan, and the layout avoids a long internal corridor to make better use of the space. Whether a bedroom suits your desk and storage setup would need to be checked against the approved plan. Are you looking for a fully dedicated office room, or mainly a comfortable spot for a desk?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "A comfortable desk spot would probably be enough, since we could share the room. Could you send the approved floor plan and price range so we can check the space and budget?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "A shared room with a comfortable desk sounds like a practical option to explore in the three-bedroom layout, though the approved plan is needed to judge the usable space. The pricing reference shows indicative base prices of about RM328k–RM358k, depending on unit category and floor, before any applicable car-park or package adjustments. The current exact price and package need confirmation, so that isn’t a confirmed all-in range."
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, my partner and I saw your Pearl Residences ad. We’re looking for a home with space for a home office. Could you tell me more?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks — Pearl Residences has a 900 sq ft layout with 3 bedrooms and 2 bathrooms, so one of the bedrooms could potentially give you a dedicated work-from-home space. The living, dining and kitchen are open-plan, and the layout avoids a long internal corridor to make better use of the space. Whether a bedroom suits your desk and storage setup would need to be checked against the approved plan. Are you looking for a fully dedicated office room, or mainly a comfortable spot for a desk?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Space for a home office"
+          ],
+          "primary_motivations": [
+            "A home for the buyer and their partner"
+          ],
+          "decision_factors": [
+            "Whether the layout can accommodate a home office"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom layout may offer a room for home-office use, but suitability depends on the buyer's desk and storage needs and should be checked against the approved plan.",
+          "next_objective": "Clarify whether they need a dedicated office room or space for a desk.",
+          "last_progress": "Buyer shared that they and their partner want a home with space for a home office.",
+          "next_action": "Ask whether they need a dedicated office room or a desk area.",
+          "conversation_summary": "Buyer and partner enquired about Pearl Residences and want space for a home office."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2691,
+        "input_tokens_details": {
+          "cache_write_tokens": 2688,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1224,
+        "output_tokens_details": {
+          "reasoning_tokens": 735
+        },
+        "total_tokens": 3915
+      }
+    },
+    {
+      "customer": "A comfortable desk spot would probably be enough, since we could share the room. Could you send the approved floor plan and price range so we can check the space and budget?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "POSITIVE",
+        "reply": "A shared room with a comfortable desk sounds like a practical option to explore in the three-bedroom layout, though the approved plan is needed to judge the usable space. The pricing reference shows indicative base prices of about RM328k–RM358k, depending on unit category and floor, before any applicable car-park or package adjustments. The current exact price and package need confirmation, so that isn’t a confirmed all-in range.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a home for the buyer and their partner.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "A comfortable desk spot in a room they could share is likely sufficient.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Space for a home office"
+          ],
+          "primary_motivations": [
+            "A home for the buyer and their partner"
+          ],
+          "decision_factors": [
+            "Whether the layout can accommodate a comfortable desk spot",
+            "Price range"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom layout may offer a shared room with a desk, but the approved floor plan is needed to assess usable space.",
+          "next_objective": "Provide the approved floor plan and clarify current pricing so the buyer can assess space and budget.",
+          "last_progress": "Buyer said a comfortable desk spot in a shared room would probably be enough and asked for the approved floor plan and price range.",
+          "next_action": "Obtain the approved floor plan; confirm the latest applicable price and package.",
+          "conversation_summary": "Buyer and partner are considering Pearl Residences for own stay and want space for a home office. A shared room with a comfortable desk may be sufficient. They requested the approved floor plan and price range."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "The approved Pearl Residences Type A floor plan.",
+          "subject": "Approved floor plan",
+          "customer_need": "The buyer wants to check whether a shared room can accommodate a comfortable desk spot.",
+          "reason": "The approved plan is not included in the available verified information, and exact usable space should not be assumed.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share the approved plan and help the buyer assess the desk-space fit alongside confirmed current pricing."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3899,
+        "input_tokens_details": {
+          "cache_write_tokens": 3896,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2049,
+        "output_tokens_details": {
+          "reasoning_tokens": 1401
+        },
+        "total_tokens": 5948
+      }
+    }
+  ],
+  "closed": false
+}

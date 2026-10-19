@@ -1,0 +1,49 @@
+{
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. I like that it’s freehold and has three bedrooms, but I’m worried it may be beyond my budget. Could you tell me a bit more?",
+      "salesperson": "Hi! Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The maintenance is RM0.18 per sq ft, inclusive of sinking fund—about RM162 a month for this size. I don’t want to guess the purchase price, so I’ll confirm the current pricing for you. What overall price range would feel comfortable?",
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "viewing_interest": null,
+      "handoff_reason": null
+    },
+    {
+      "customer": "Ideally we’d stay around RM420,000 all-in, though we might stretch a little if the layout works well for us. The extra bedroom could be useful for a nursery later. Is there a floor plan we could look at while you check the current price?",
+      "salesperson": "Sure — I’ll get the Type A floor plan for you. It’s 900 sq ft with 3 bedrooms and 2 bathrooms; the living, dining and kitchen are open-plan, and the layout avoids a long internal corridor. The third bedroom could give you flexibility for a nursery later. The plan should help you assess the room arrangement, and exact dimensions or furniture fit should be checked against the approved plan.",
+      "action": "SUPPORT_REQUEST",
+      "appointment_readiness": "NOT_READY",
+      "viewing_interest": null,
+      "handoff_reason": null
+    },
+    {
+      "customer": "That layout sounds promising for us, especially the third bedroom. Once you have the approved plan and current all-in price, could you share them? If the price is close to our range, we’d be open to seeing the unit and checking whether the space works in person.",
+      "salesperson": "Absolutely—I’ll share the approved Type A plan and the current all-in figure once they’re confirmed. The total depends on the specific unit and current package, so I don’t want to give you a misleading number. If it’s close to RM420,000, we can then arrange a viewing so you can judge whether the third bedroom works for your nursery plans.",
+      "action": "REPLY",
+      "appointment_readiness": "EMERGING",
+      "viewing_interest": "Open to viewing if the confirmed all-in price is close to budget and the layout suits",
+      "handoff_reason": null
+    }
+  ],
+  "customer_responses_and_reactions": {
+    "holdout": {
+      "turns": [
+        {
+          "customer": "Ideally we’d stay around RM420,000 all-in, though we might stretch a little if the layout works well for us. The extra bedroom could be useful for a nursery later. Is there a floor plan we could look at while you check the current price?",
+          "stop": false,
+          "reaction": "The agent gave useful, specific maintenance information and was transparent about checking the purchase price. Asking my budget was reasonable. I shared a comfortable all-in limit and explained what makes the three-bedroom layout appealing; seeing the floor plan would help us judge value."
+        },
+        {
+          "customer": "That layout sounds promising for us, especially the third bedroom. Once you have the approved plan and current all-in price, could you share them? If the price is close to our range, we’d be open to seeing the unit and checking whether the space works in person.",
+          "stop": false,
+          "reaction": "The agent connected the third bedroom to our possible nursery and set a sensible expectation that dimensions need checking against the approved plan. That makes the layout feel relevant. We’re interested in reviewing the plan and price, and would consider a viewing if the cost is within reach."
+        },
+        {
+          "customer": "That sounds fair. Please send the approved plan and confirmed all-in figure when you have them. If it’s close to our budget, we’d be happy to discuss a viewing then.",
+          "stop": true,
+          "reaction": "The agent handled the price concern carefully, explained why they are waiting for a confirmed figure, and tied a possible viewing to our nursery and layout needs. We’re open to a viewing if the price is close to budget, but we haven’t booked one yet."
+        }
+      ]
+    }
+  }
+}

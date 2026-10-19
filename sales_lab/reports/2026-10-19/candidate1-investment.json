@@ -1,0 +1,167 @@
+{
+  "trial": "candidate1",
+  "scenario": "investment",
+  "source_sha256": "378a900dfb0ec4933aadae69c26f7d0932b8da11568d05d827e76aef2edfebf0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "INVESTMENT",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "next_objective": "Compare a verified unit price and nearby rental comparables to assess potential rental cash flow.",
+    "last_progress": "Buyer prioritizes rental income and found the RM162 monthly maintenance helpful; asked for expected price and nearby rental comparables.",
+    "next_action": "Verify current unit-specific pricing/package and nearby rental comparables.",
+    "conversation_summary": "Buyer is considering Pearl Residences as an investment focused mainly on rental income. They appreciated the RM162 monthly maintenance estimate and asked for expected unit pricing and nearby rental comparables. Shared an indicative base-price reference, while clarifying that current exact pricing and rents require verification.",
+    "primary_motivations": [
+      "Rental income"
+    ],
+    "decision_factors": [
+      "Expected unit price",
+      "Nearby rental comparables",
+      "Maintenance cost"
+    ],
+    "active_concerns": [
+      "Rental-income viability cannot yet be assessed without verified rental comparables and current unit pricing"
+    ],
+    "fit_assessment": "Investment fit is not yet assessable; viability depends on verified rents and the current price for a specific unit."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw your Pearl Residences ad and am considering it as an investment. Could you share more details?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure. Pearl Residences is a freehold condominium in Seberang Jaya. Phase 1 Type A units are 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony; expected completion is Q4 2029.\n\nFor an investment, the freehold tenure and known holding cost may be useful factors to weigh: maintenance is RM0.18 psf inclusive of sinking fund—about RM162/month for a 900 sq.ft. unit, for maintenance only. Are you mainly looking at rental income, longer-term capital growth, or a mix?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Mainly rental income. The RM162 monthly maintenance is helpful to know. What’s the expected unit price, and do you have nearby rental comparables to estimate whether the numbers could work?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For an initial benchmark, the pricing reference shows base prices around RM328k–RM358k, depending on the unit category and floor. That isn’t a confirmed current all-in price; the exact unit, car-park configuration and applicable package can change the figure. I don’t have verified nearby rental comparables to estimate rent or yield reliably, so I’ll verify those along with the latest unit pricing rather than guess. We can then compare the figures against the RM162/month maintenance, before allowing for vacancy, other costs and financing."
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw your Pearl Residences ad and am considering it as an investment. Could you share more details?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Sure. Pearl Residences is a freehold condominium in Seberang Jaya. Phase 1 Type A units are 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony; expected completion is Q4 2029.\n\nFor an investment, the freehold tenure and known holding cost may be useful factors to weigh: maintenance is RM0.18 psf inclusive of sinking fund—about RM162/month for a 900 sq.ft. unit, for maintenance only. Are you mainly looking at rental income, longer-term capital growth, or a mix?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "INVESTMENT",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the buyer is focused on rental income, capital growth, or both.",
+          "last_progress": "Buyer is considering Pearl Residences as an investment and requested more details.",
+          "next_action": "Explore the buyer's investment objective and tailor further details accordingly.",
+          "conversation_summary": "Buyer saw the Pearl Residences ad and is considering the property as an investment. Shared verified project and unit details, including tenure, maintenance rate and expected completion."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2483,
+        "input_tokens_details": {
+          "cache_write_tokens": 2480,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1440,
+        "output_tokens_details": {
+          "reasoning_tokens": 984
+        },
+        "total_tokens": 3923
+      }
+    },
+    {
+      "customer": "Mainly rental income. The RM162 monthly maintenance is helpful to know. What’s the expected unit price, and do you have nearby rental comparables to estimate whether the numbers could work?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "For an initial benchmark, the pricing reference shows base prices around RM328k–RM358k, depending on the unit category and floor. That isn’t a confirmed current all-in price; the exact unit, car-park configuration and applicable package can change the figure. I don’t have verified nearby rental comparables to estimate rent or yield reliably, so I’ll verify those along with the latest unit pricing rather than guess. We can then compare the figures against the RM162/month maintenance, before allowing for vacancy, other costs and financing.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "INVESTMENT",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": [
+            "Rental income"
+          ],
+          "decision_factors": [
+            "Expected unit price",
+            "Nearby rental comparables",
+            "Maintenance cost"
+          ],
+          "active_concerns": [
+            "Rental-income viability cannot yet be assessed without verified rental comparables and current unit pricing"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Investment fit is not yet assessable; viability depends on verified rents and the current price for a specific unit.",
+          "next_objective": "Compare a verified unit price and nearby rental comparables to assess potential rental cash flow.",
+          "last_progress": "Buyer prioritizes rental income and found the RM162 monthly maintenance helpful; asked for expected price and nearby rental comparables.",
+          "next_action": "Verify current unit-specific pricing/package and nearby rental comparables.",
+          "conversation_summary": "Buyer is considering Pearl Residences as an investment focused mainly on rental income. They appreciated the RM162 monthly maintenance estimate and asked for expected unit pricing and nearby rental comparables. Shared an indicative base-price reference, while clarifying that current exact pricing and rents require verification."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Current unit-specific price and applicable package, plus verified nearby rental comparables suitable for estimating rent.",
+          "subject": "Rental-income assessment for Pearl Residences",
+          "customer_need": "Assess whether the investment numbers could work for rental income.",
+          "reason": "The available pricing is an indicative reference rather than a confirmed current all-in unit price, and verified rental comparables are not available in the supplied information.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Compare verified unit pricing and rental comparables to give a realistic rental-income assessment without promising a yield."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3868,
+        "input_tokens_details": {
+          "cache_write_tokens": 3865,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1964,
+        "output_tokens_details": {
+          "reasoning_tokens": 1406
+        },
+        "total_tokens": 5832
+      }
+    }
+  ],
+  "closed": false
+}

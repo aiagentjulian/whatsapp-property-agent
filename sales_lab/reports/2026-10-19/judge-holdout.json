@@ -1,0 +1,45 @@
+{
+  "judge": "independent_blind_sales_judge",
+  "case": "held_out_price_concern_and_appointment_opportunity",
+  "scores": {
+    "effective_discovery": {
+      "score": 8,
+      "evidence": "The agent asks, ‘What overall price range would feel comfortable?’ The customer answers ‘around RM420,000 all-in’ and adds that the third bedroom may be useful for a future nursery. This elicits both a practical affordability boundary and a relevant household motive."
+    },
+    "product_connection_buying_desire": {
+      "score": 8,
+      "evidence": "The agent connects the three-bedroom layout to the possible nursery and states that actual dimensions and furniture fit should be checked against the approved plan. The customer says the layout sounds promising, especially the third bedroom. The agent also gives the relevant maintenance estimate, but does not provide an indicative purchase-price benchmark while awaiting current all-in pricing."
+    },
+    "sales_progression_appointment": {
+      "score": 7,
+      "evidence": "After the customer says they would be open to seeing the unit if confirmed price is close to budget, the agent says ‘If it’s close to RM420,000, we can then arrange a viewing so you can judge whether the third bedroom works for your nursery plans.’ This is a low-pressure, buyer-specific conditional next step tied to the unresolved layout question. The customer then says they would be ‘happy to discuss a viewing then.’ This is conditional willingness to discuss a viewing, not agreement to attend, appointment intent on a date/time, a human handoff, or a confirmed booking. The customer's initial willingness was customer-led; the agent does subsequently articulate the viewing path."
+    },
+    "natural_conversation": {
+      "score": 8,
+      "evidence": "The agent responds to the budget and nursery context, gives a clear reason for waiting on verified pricing, and keeps the viewing conditional. The repeated request for ‘approved plan and current all-in price’ is appropriate to the customer's stated decision criteria rather than repetitive qualification."
+    }
+  },
+  "weighted_total": 76.5,
+  "factual_accuracy": {
+    "verdict": "PASS",
+    "evidence": "Type A 900 sq.ft., 3 bedrooms and 2 bathrooms, open-plan living/dining/kitchen, and a layout without a long internal corridor are supported by verified Pearlmont unit/layout knowledge. RM0.18 psf inclusive of sinking fund and approximately RM162/month for 900 sq.ft. are consistent with the maintenance reference, and the amount is described as approximate. The agent does not claim the nursery or furniture will fit; it directs the customer to check against the approved plan. Current price is explicitly left for confirmation, with no invented all-in figure."
+  },
+  "handoff_compliance": {
+    "verdict": "PASS",
+    "evidence": "The agent promises to share the approved plan and confirmed all-in price once checked, and conditionally discusses arranging a viewing later. It does not claim that support has returned, a human has taken over, the customer has agreed to attend, or an appointment has been booked."
+  },
+  "holdout_readout": "PASS: the segment provides useful discovery, relevant layout connection, and a reason-based conditional viewing path without a serious factual or handoff boundary issue. The buyer expresses conditional willingness to discuss a viewing after price confirmation; this must not be counted as a booking or confirmed appointment.",
+  "development_readout": {
+    "mean_X": 64.83,
+    "mean_Y": 56.0,
+    "mean_difference_X_minus_Y": 8.83,
+    "case_differences_X_minus_Y": {
+      "own_stay": 10.5,
+      "couple_home_office": 7.0,
+      "investment": 9.0
+    },
+    "limits": "The development set is three short, persona-specific segments. X led in all three and exceeded the predeclared +5 mean threshold. The investment gap narrowed materially when Y's complete second response arrived. These results support a provisional comparison, not broad proof of improved performance; do not infer actual viewing conversion from conditional willingness."
+  },
+  "final_recommendation": "KEEP",
+  "recommendation_basis": "Retain provisionally selected X for this first round: the corrected development mean advantage is +8.83, with no development case declining by more than 10 points and no new severe fact or handoff issue. The holdout passes the stated criterion with useful response and progression. The customer has not booked a viewing. No further repair or paid call is needed to complete this first round; selection remains limited to the evaluated sample."
+}

@@ -1,0 +1,167 @@
+{
+  "trial": "candidate1",
+  "scenario": "own_stay",
+  "source_sha256": "378a900dfb0ec4933aadae69c26f7d0932b8da11568d05d827e76aef2edfebf0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "next_objective": "Provide a confirmed current Type A price range and package details.",
+    "last_progress": "Buyer is considering a first home for own stay and asked about price and Q4 2029 completion.",
+    "next_action": "Confirm the latest Type A price range and applicable package.",
+    "conversation_summary": "Buyer is looking for a first home for own stay, currently rents near Seberang Jaya, and wants to remain close to family. Asked for the price range and whether Q4 2029 is still the expected completion; the current reference indicates Q4 2029.",
+    "purchase_reason": "Considering a first home; currently renting near Seberang Jaya.",
+    "preferred_location": "Wants to stay close to family; currently renting near Seberang Jaya.",
+    "primary_motivations": [
+      "First home",
+      "Staying close to family"
+    ],
+    "decision_factors": [
+      "Price",
+      "Expected completion timing",
+      "Staying close to family"
+    ],
+    "fit_assessment": "The Type A layout may suit an own-stay first-home purchase; suitability of the location for staying near family is not established."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m enquiring from your Pearl Residences ad. I’m looking for a place for my own stay. Could you share more details?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure — Pearl Residences Phase 1 homes are Type A, with 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony. What’s prompting the move for you — a first home, an upgrade, or something else? That’ll help me share the details most relevant to your own stay."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "It’d be my first home. I’m renting near Seberang Jaya now and hope to stay close to family. What’s the price range, and is Q4 2029 still the expected completion?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Congrats on taking the first-home step. The price guide I have shows indicative base-price references of about RM328k–RM358k, depending on floor and facing. That isn’t a confirmed current all-in range: the car-park configuration and current package affect the final figure, so I’ll confirm the latest Type A pricing for you. And yes, Phase 1 is currently expected to complete in Q4 2029. The 900 sq. ft., 3-bedroom, 2-bathroom layout could give you some flexibility as your needs change."
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m enquiring from your Pearl Residences ad. I’m looking for a place for my own stay. Could you share more details?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Sure — Pearl Residences Phase 1 homes are Type A, with 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony. What’s prompting the move for you — a first home, an upgrade, or something else? That’ll help me share the details most relevant to your own stay.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand what is prompting the buyer’s own-stay purchase.",
+          "last_progress": "Buyer is looking for a home for their own stay and asked for more details.",
+          "next_action": "Learn the buyer’s reason for moving, then tailor the property information to that need.",
+          "conversation_summary": "Buyer enquired from the Pearl Residences ad, is looking for a place for their own stay, and asked for more details. Shared verified Phase 1 Type A unit facts and asked what is prompting the move."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2283,
+        "input_tokens_details": {
+          "cache_write_tokens": 2280,
+          "cached_tokens": 0
+        },
+        "output_tokens": 814,
+        "output_tokens_details": {
+          "reasoning_tokens": 477
+        },
+        "total_tokens": 3097
+      }
+    },
+    {
+      "customer": "It’d be my first home. I’m renting near Seberang Jaya now and hope to stay close to family. What’s the price range, and is Q4 2029 still the expected completion?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Congrats on taking the first-home step. The price guide I have shows indicative base-price references of about RM328k–RM358k, depending on floor and facing. That isn’t a confirmed current all-in range: the car-park configuration and current package affect the final figure, so I’ll confirm the latest Type A pricing for you. And yes, Phase 1 is currently expected to complete in Q4 2029. The 900 sq. ft., 3-bedroom, 2-bathroom layout could give you some flexibility as your needs change.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a first home; currently renting near Seberang Jaya.",
+          "preferred_location": "Wants to stay close to family; currently renting near Seberang Jaya.",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": [
+            "First home",
+            "Staying close to family"
+          ],
+          "decision_factors": [
+            "Price",
+            "Expected completion timing",
+            "Staying close to family"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "The Type A layout may suit an own-stay first-home purchase; suitability of the location for staying near family is not established.",
+          "next_objective": "Provide a confirmed current Type A price range and package details.",
+          "last_progress": "Buyer is considering a first home for own stay and asked about price and Q4 2029 completion.",
+          "next_action": "Confirm the latest Type A price range and applicable package.",
+          "conversation_summary": "Buyer is looking for a first home for own stay, currently rents near Seberang Jaya, and wants to remain close to family. Asked for the price range and whether Q4 2029 is still the expected completion; the current reference indicates Q4 2029."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest current Type A Phase 1 price range and applicable package, including how the range varies by unit category and car-park configuration.",
+          "subject": "Pearl Residences Phase 1 Type A pricing",
+          "customer_need": "Budgeting for a first home purchase.",
+          "reason": "Available pricing is indicative and the current unit schedule and package applicability need confirmation.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share a reliable current price range and explain any relevant pricing variation."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3586,
+        "input_tokens_details": {
+          "cache_write_tokens": 3583,
+          "cached_tokens": 0
+        },
+        "output_tokens": 3029,
+        "output_tokens_details": {
+          "reasoning_tokens": 2341
+        },
+        "total_tokens": 6615
+      }
+    }
+  ],
+  "closed": false
+}

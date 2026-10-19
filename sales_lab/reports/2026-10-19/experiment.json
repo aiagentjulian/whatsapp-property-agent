@@ -1,0 +1,39 @@
+{
+  "base_commit": "889bb8ad22aad86041ba7e81f1bb9d6a69d64535",
+  "branch": "codex/sales-lab-v1",
+  "codex_cli": "0.154.0",
+  "cli_multi_agent_enabled": true,
+  "coordination": "native collaboration tools in current session; Python only runs SalesAgent turns",
+  "coordinator_model": "host session retained; cannot change own model/reasoning through collaboration tools",
+  "customer_model": "gpt-6-luna",
+  "customer_reasoning": "low",
+  "judge_model": "gpt-6-luna",
+  "judge_reasoning": "medium",
+  "sales_model": "gpt-6-luna",
+  "sales_reasoning": "high",
+  "candidate1_source_sha256": "378a900dfb0ec4933aadae69c26f7d0932b8da11568d05d827e76aef2edfebf0",
+  "max_live_attempts": 24,
+  "max_repair_rounds": 2,
+  "selection_threshold": {
+    "mean_gain": 5,
+    "max_case_regression": 10,
+    "new_severe_fact_or_handoff_failure": false
+  },
+  "documentation": "https://developers.openai.com/api/docs/guides/responses-multi-agent",
+  "scope": "SalesAgent evaluation only; pending SUPPORT_REQUEST permits natural customer continuation; no fake support answers or Runtime services",
+  "harness_correction": "Removed premature terminal SUPPORT_REQUEST rule; resumed affected development segment from original 889bb8a source snapshot, kept persona/source/model unchanged. No sales-source repair after seeing holdout.",
+  "final_recommendation": "KEEP",
+  "blind_mapping": {
+    "X": "candidate1",
+    "Y": "baseline"
+  },
+  "repair_rounds_executed": 1,
+  "final_live_attempts": 15,
+  "validation": {
+    "unittest_count": 39,
+    "unittest_result": "PASS",
+    "fake_http_operator_entrypoint": "PASS",
+    "diff_check": "PASS",
+    "score_arithmetic": "PASS"
+  }
+}
