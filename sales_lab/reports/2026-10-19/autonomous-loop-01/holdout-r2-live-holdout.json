@@ -1,0 +1,193 @@
+{
+  "trial": "holdout-r2-live",
+  "scenario": "holdout",
+  "source_sha256": "66741f7ace9533d3b55610768ac643f96f188fb16fc0e30574c77f4808e9b2c6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya",
+    "sales_stage": "HANDLE",
+    "active_concerns": [
+      "Price feels high; wants to understand value compared with other options.",
+      "Needs current price and inclusions to assess upfront affordability and total monthly cost."
+    ],
+    "fit_assessment": "The verified maintenance cost is RM162/month inclusive of sinking fund, but overall affordability and value remain unclear pending current price and inclusions. Three bedrooms may offer future flexibility, though the space exceeds current needs.",
+    "next_objective": "Share verified current price and applicable inclusions when available, then compare total costs with the buyer's alternatives.",
+    "last_progress": "Confirmed the maintenance calculation for a 900 sq ft unit and related the layout to the buyer's longer-term flexibility consideration.",
+    "next_action": "Continue from the existing pending pricing support result; do not repeat the request.",
+    "conversation_summary": "Buyer is comparing properties around Seberang Jaya. Their main concerns are upfront amount and monthly cost; the three bedrooms may be useful long term but are more space than currently needed. Current price and inclusions are needed to assess value.",
+    "size_or_layout_preference": "Three bedrooms may be useful long term, though more space than needed right now.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "important_features": [
+      "Upfront amount",
+      "Monthly ownership cost",
+      "Three bedrooms for possible future flexibility"
+    ],
+    "primary_motivations": [],
+    "decision_factors": [
+      "Compare total upfront cost and monthly cost with other options around Seberang Jaya"
+    ],
+    "resolved_concerns": []
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m comparing a few places around Seberang Jaya and came across Pearl Residences. The prices seem a bit high for me—what would make the value worth considering?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Fair question. Phase 1 homes are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so the value really depends on whether that layout fits what you need and how the total cost compares with your other options. I’ll get the current price and cost details so we can compare properly. Is your main concern the upfront amount, or whether the space and layout justify the price?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "It’s mainly the upfront amount and the monthly cost together, since I’m comparing a couple of options. The three bedrooms could be useful long term, though it’s more space than I need right now. I’ll be able to judge the value better once we know the current price and what’s included."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the extra bedrooms only add value if the overall cost works for you. One monthly figure I can confirm is the maintenance: 900 sq ft at RM0.18 psf comes to RM162/month, inclusive of sinking fund. That’s separate from any loan instalment. The 900 sq ft layout is open-plan and avoids a long internal corridor, so the space is intended to be usable rather than taken up by hallway; the extra rooms could also give you flexibility later. But whether that’s worth the upfront amount depends on the current price and inclusions, which are still pending confirmation. Once those are confirmed, you’ll be able to compare the costs more fairly."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current Phase 1 Type A price range and verified applicable purchase costs or inclusions.",
+      "subject": "Pearl Residences Phase 1 Type A pricing",
+      "customer_need": "Assess whether the home offers suitable value compared with other properties around Seberang Jaya.",
+      "reason": "Current verified pricing and cost details are not available in the supplied project knowledge.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share verified pricing and cost details, then relate them to the buyer's comparison priorities.",
+      "signature": "PRICING|1 and applicable costs current inclusions or pearl phase price purchase range residences type verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m comparing a few places around Seberang Jaya and came across Pearl Residences. The prices seem a bit high for me—what would make the value worth considering?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair question. Phase 1 homes are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so the value really depends on whether that layout fits what you need and how the total cost compares with your other options. I’ll get the current price and cost details so we can compare properly. Is your main concern the upfront amount, or whether the space and layout justify the price?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Price feels high; wants to understand the value compared with other options."
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Value and affordability fit are unclear pending current price details and the buyer's comparison priorities.",
+          "next_objective": "Provide verified pricing and applicable cost details, then compare them with the buyer's priorities.",
+          "last_progress": "Buyer is comparing properties around Seberang Jaya and raised a concern that Pearl Residences seems expensive.",
+          "next_action": "Confirm current Phase 1 pricing and applicable purchase costs; clarify whether the buyer is most concerned about upfront cost or the unit's space and layout.",
+          "conversation_summary": "Buyer is comparing properties around Seberang Jaya and wants to know what makes Pearl Residences worth considering despite the perceived high price."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current Phase 1 Type A price range and verified applicable purchase costs or inclusions.",
+          "subject": "Pearl Residences Phase 1 Type A pricing",
+          "customer_need": "Assess whether the home offers suitable value compared with other properties around Seberang Jaya.",
+          "reason": "Current verified pricing and cost details are not available in the supplied project knowledge.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share verified pricing and cost details, then relate them to the buyer's comparison priorities."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2714,
+        "input_tokens_details": {
+          "cache_write_tokens": 2711,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1743,
+        "output_tokens_details": {
+          "reasoning_tokens": 1141
+        },
+        "total_tokens": 4457
+      }
+    },
+    {
+      "customer": "It’s mainly the upfront amount and the monthly cost together, since I’m comparing a couple of options. The three bedrooms could be useful long term, though it’s more space than I need right now. I’ll be able to judge the value better once we know the current price and what’s included.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "That makes sense—the extra bedrooms only add value if the overall cost works for you. One monthly figure I can confirm is the maintenance: 900 sq ft at RM0.18 psf comes to RM162/month, inclusive of sinking fund. That’s separate from any loan instalment. The 900 sq ft layout is open-plan and avoids a long internal corridor, so the space is intended to be usable rather than taken up by hallway; the extra rooms could also give you flexibility later. But whether that’s worth the upfront amount depends on the current price and inclusions, which are still pending confirmation. Once those are confirmed, you’ll be able to compare the costs more fairly.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms may be useful long term, though more space than needed right now.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Upfront amount",
+            "Monthly ownership cost",
+            "Three bedrooms for possible future flexibility"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Compare total upfront cost and monthly cost with other options around Seberang Jaya"
+          ],
+          "active_concerns": [
+            "Price feels high; wants to understand value compared with other options.",
+            "Needs current price and inclusions to assess upfront affordability and total monthly cost."
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The verified maintenance cost is RM162/month inclusive of sinking fund, but overall affordability and value remain unclear pending current price and inclusions. Three bedrooms may offer future flexibility, though the space exceeds current needs.",
+          "next_objective": "Share verified current price and applicable inclusions when available, then compare total costs with the buyer's alternatives.",
+          "last_progress": "Confirmed the maintenance calculation for a 900 sq ft unit and related the layout to the buyer's longer-term flexibility consideration.",
+          "next_action": "Continue from the existing pending pricing support result; do not repeat the request.",
+          "conversation_summary": "Buyer is comparing properties around Seberang Jaya. Their main concerns are upfront amount and monthly cost; the three bedrooms may be useful long term but are more space than currently needed. Current price and inclusions are needed to assess value."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4369,
+        "input_tokens_details": {
+          "cache_write_tokens": 4366,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1885,
+        "output_tokens_details": {
+          "reasoning_tokens": 1240
+        },
+        "total_tokens": 6254
+      }
+    }
+  ],
+  "closed": false
+}

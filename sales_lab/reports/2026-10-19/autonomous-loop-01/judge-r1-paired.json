@@ -1,0 +1,78 @@
+{
+  "judge": "independent_blind_sales_judge",
+  "labels": "A-D are randomized anonymous dialogue labels; this report does not identify trial, variant, or source mapping.",
+  "rubric": {
+    "categories": [
+      {"name": "discovery", "weight_percent": 20},
+      {"name": "product_connection_buying_desire", "weight_percent": 35},
+      {"name": "progression_appointment_opportunity", "weight_percent": 35},
+      {"name": "naturalness", "weight_percent": 10}
+    ],
+    "scale": "Each category is scored 0-10; weighted score is out of 10. Scores assess customer-visible dialogue and evidence, not internal labels."
+  },
+  "dialogues": {
+    "A": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 asks whether the purchase is for own stay or investment. Customer response: 'Probably for my own stay if I do end up buying, but I’m still comparing areas and haven’t made up my mind.' Turn 2 asks whether the buyer prioritizes lower total price or a smaller home. It does not establish motivation, budget, or timeline, but keeps questions proportionate to low intent."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 gives the rough RM328k–RM358k base reference and caveats current package/car-park components. Customer acknowledges the caveat and asks about smaller units near the lower end. Turn 2 answers that Phase 1 has only a 900 sq ft three-bedroom layout. It explains fit and price relation but does not create a personal reason to want the property."},
+        "progression_appointment_opportunity": {"score": 6, "evidence": "Turn 2 resolves the direct unit-availability question and asks a useful price-versus-size tradeoff question. The customer's response remains exploratory, with no expressed viewing interest. No appointment invitation is due yet. Current general price confirmation is pending and no follow-up timing is offered."},
+        "naturalness": {"score": 7, "evidence": "The answers are direct and mostly conversational. Turn 2 is a little dense, but the closing choice gives the customer an easy way to clarify priorities."}
+      },
+      "weighted_score": 6.1,
+      "missed_opportunities": ["The agent could first answer whether a smaller unit exists, then ask what range or footprint would work; the tradeoff question is useful but comes after several caveats.", "Offer a clear next step or expected timing for current pricing confirmation."],
+      "buying_motivation_effect": "Helps the customer compare size and price, but does not show an increase in desire. The response explicitly remains exploratory.",
+      "factual_accuracy": {"status": "Documented historical base-price details are caveated; current effective price remains pending.", "notes": ["The RM328k–RM358k base range and floor/facing variation are documented in the supplied pricing materials.", "This is original/base pricing, not the effective post-rebate price. The agent labels it an earlier rough reference and says the current range/package needs confirmation. The historical range can still anchor expectations, so the confirmed current package price should be the next follow-up."]},
+      "handoff": {"agent_invitation": false, "customer_interest_in_viewing": false, "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "A request to confirm current pricing is not a viewing invitation or formal handoff."}
+    },
+    "B": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 clarifies whether monthly costs means maintenance or also a loan; customer response: 'I’m trying to understand both, especially the loan instalment alongside the regular charges...' The opening already establishes location and three-bedroom interest. No purchase reason, budget, or timeline is elicited."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 links 900 sq ft, 3 bedrooms, 2 bathrooms, balcony, open-plan layout, RM162 estimated maintenance and separate utilities/loan/pay-per-use facilities to the cost question. The customer says the information is useful and asks for price and parking. This supports evaluation but the layout benefits remain generic."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Turn 2 says price and car-park allocation require confirmation and that a loan estimate can follow once price is known. Customer asks for the current price and whether parking is included, but receives no current number, next-step timing, or invitation. This is a reasonable response to unknown facts, though it leaves the customer waiting without a clear follow-up commitment."},
+        "naturalness": {"score": 7, "evidence": "The exchanges are clear. Turn 2 repeats the maintenance figure and uses a few extra caveats, but remains understandable."}
+      },
+      "weighted_score": 5.8,
+      "missed_opportunities": ["Ask what is driving the move or what the buyer needs in a Seberang Jaya home.", "State when the confirmed price and parking details will be shared, then offer to estimate monthly affordability using the buyer's financing assumptions."],
+      "buying_motivation_effect": "The dialogue makes costs clearer but does not build stronger buying desire. The customer response is practical information-seeking rather than viewing interest.",
+      "factual_accuracy": {"status": "No material factual error observed against the supplied facts.", "notes": ["Unit details and maintenance calculation match verified facts; current price and parking are not asserted."]},
+      "handoff": {"agent_invitation": false, "customer_interest_in_viewing": false, "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "An internal pricing check does not constitute a customer-facing invitation or formal handoff."}
+    },
+    "C": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 answers the unit/cost question and offers to check Type A price. Customer response: 'Thanks, please do check the current Type A price... We’d ideally keep the purchase around RM450,000 if possible.' The budget is valuable customer-provided discovery, but the agent did not ask why they are buying, their financing terms, or timing."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 clearly connects the Type A layout and estimated RM162 maintenance to the customer's cost question; the customer reaction calls these details useful. Turn 2 attempts to relate base price and possible parking cost to the RM450,000 target. That is useful affordability context, but the added figures are unverified and risk distorting rather than strengthening fit."},
+        "progression_appointment_opportunity": {"score": 6, "evidence": "Turn 1's offer to check price prompts the customer to disclose a target budget and specific loan/parking concerns. Turn 2 says current pricing is in progress and identifies follow-up around price and parking. This is a real qualification step. It still does not estimate loan cost, ask for financing assumptions, give follow-up timing, or invite a viewing. The customer has not signaled visit interest."},
+        "naturalness": {"score": 6, "evidence": "Turn 1 is concise and relevant. Turn 2 stacks historical price, floor/facing variation, car-park premium, a budget caveat, an in-progress check, and configuration details into a single long reply; it feels dense and potentially confusing."}
+      },
+      "weighted_score": 6.0,
+      "missed_opportunities": ["After receiving the RM450,000 target, clarify whether this is total purchase budget including parking and what loan assumptions the customer wants used.", "Give a concrete follow-up expectation for the active price and parking checks.", "Revisit a viewing only after the confirmed cost picture fits or customer signals interest."],
+      "buying_motivation_effect": "The exchange improves qualification and could help the customer test affordability, but it does not establish increased desire. The customer states a budget, which is a meaningful commercial signal, yet the response's unverified price and parking anchors weaken the reliability of that progress.",
+      "factual_accuracy": {"status": "Documented historical base-price and car-park details are caveated; current effective price remains pending.", "notes": ["The RM328,000–RM358,000 base range, floor/facing variation, RM15,000–RM30,000 car-park premiums and one-/two-car-park configurations are documented in the supplied commercial pricing materials.", "These are historic/base price references, not a current post-rebate effective price. The reply labels them rough references, says the current price check is in progress, and does not assert a final customer price. There is no confirmed factual error, though the historical anchor is less useful than the current effective package price and may shape affordability expectations."]},
+      "handoff": {"agent_invitation": false, "customer_interest_in_viewing": false, "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "The customer says 'please do check' about price, which is interest in receiving pricing information, not viewing interest or appointment agreement. Open internal pricing support requests do not evidence a formal human handoff."}
+    },
+    "D": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 provides a price guide without asking about purpose. Customer response: 'Got it, thanks. I’m still just comparing, but I’m wondering whether there are smaller units nearer the lower end of that range?' Turn 2 asks whether price or smaller size matters more, which is useful qualification. Budget and purchase timing remain unknown."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 gives the rough historical range and labels it unconfirmed. Customer follows up about smaller units and lower prices, indicating active comparison. Turn 2 explains that Phase 1 has one 900 sq ft, 3-bedroom layout, directly addressing fit. It does not present a personal benefit or preference match."},
+        "progression_appointment_opportunity": {"score": 6, "evidence": "Turn 2 resolves that no smaller Phase 1 layout exists and asks the relevant price-versus-size question. The customer remains low-intent and does not show viewing interest, so an appointment ask would be premature. Current pricing is pending without a promised timing or explicit customer-facing follow-up plan."},
+        "naturalness": {"score": 7, "evidence": "The replies read naturally and answer the direct question. Turn 1 is slightly overqualified for a customer who only asked for a general price range, but remains clear."}
+      },
+      "weighted_score": 6.1,
+      "missed_opportunities": ["Give a clear follow-up expectation for the current price confirmation.", "The price-versus-size question is relevant; the agent could ask for a rough acceptable budget only if the customer wants to continue comparing."],
+      "buying_motivation_effect": "Improves the customer's understanding of unit fit but does not increase buying motivation. The customer explicitly remains in comparison mode.",
+      "factual_accuracy": {"status": "Documented historic base-price variation is caveated; current effective package price is pending.", "notes": ["Floor/facing and car-park configuration variation are documented in the supplied pricing materials.", "The RM328k–RM358k figure is historical base pricing, not the effective post-rebate price. The dialogue calls it an earlier indicative reference and says current price/package confirmation is pending. This caveat helps, though it can still anchor the comparison on a non-current price."]},
+      "handoff": {"agent_invitation": false, "customer_interest_in_viewing": false, "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "No invitation, visit interest, agreement, or customer-facing handoff occurred."}
+    }
+  },
+  "paired_assessment": {
+    "paired_score_changes": [
+      {"pair": "A-D", "weighted_score_change": 0.0, "progression_change": 0, "assessment": "The customer-facing exchange resolves the size question and asks a useful priority question, but provides no meaningful evidence of increased buying motivation or appointment readiness."},
+      {"pair": "B-C", "weighted_score_change": 0.2, "progression_change": 1, "assessment": "The exchange advances qualification by eliciting an approximately RM450,000 target and identifying affordability criteria. The historical base-price and parking details are documented and caveated, but the current post-rebate package remains unresolved, so the customer still lacks a dependable total-cost comparison."}
+    ],
+    "sales_progression_materially_improved": "Some practical sales progression improved in one pair because the buyer disclosed a useful budget and the reply connected price and parking to affordability. This is real qualification value, though it does not establish stronger buying motivation. No dialogue produced customer viewing interest, an appointment agreement, or formal human handoff.",
+    "business_value_decision": "POSITIVE, WITH FOLLOW-UP CONDITIONS",
+    "reason": "There is modest real qualification progress because the buyer disclosed a useful budget. The historical base/parking facts are documented and caveated, with no serious factual or handoff regression. Buying motivation itself is not clearly stronger, and the current effective post-rebate price is still needed to assess affordability reliably.",
+    "serious_regression_facts_or_handoff": "No serious factual error or handoff-state confusion was observed. Historic base-price, floor/facing and parking details are documented; the main commercial risk is anchoring on a base range before confirming the current post-rebate package.",
+    "holdout": "Not scored in this report; reserved holdout packet was not supplied."
+  }
+}

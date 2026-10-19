@@ -1,0 +1,168 @@
+{
+  "trial": "baseline-v2",
+  "scenario": "early_exploration",
+  "source_sha256": "c904eeb5a3dce95ef41de70295dd8c307f02bd6dd2ebc18ce22f6c3d7a363b72",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya (area being explored)",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "next_objective": "Find out whether the 900 sq ft layout is within consideration, then continue the price comparison once current pricing is confirmed.",
+    "last_progress": "Buyer is probably considering a purchase for own stay but remains undecided and asked about a smaller, lower-priced option.",
+    "next_action": "Clarify whether 900 sq ft is a workable size; do not repeat the open pricing support request.",
+    "conversation_summary": "Buyer is exploring Seberang Jaya and may buy for own stay, but has not decided. They asked whether Pearl Residences has a smaller unit closer to the lower end of the earlier indicative price range. Phase 1 offers Type A only at 900 sq ft; latest pricing confirmation remains pending.",
+    "size_or_layout_preference": "Asked about a smaller unit; fit of the 900 sq ft Type A is not yet known.",
+    "fit_assessment": "Phase 1 has no smaller residential layout; buyer is still comparing areas and whether 900 sq ft would suit them."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The pricing reference I have shows indicative base prices around RM328k–RM358k. That’s before any unit-specific car-park costs or current package, so it may not reflect today’s final price. I’ll get the latest general range confirmed for you. Are you mainly comparing homes for your own stay or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Probably for my own stay if I do end up buying, but I’m still comparing areas and haven’t made up my mind. Is there a smaller unit option, and would its price be closer to the lower end of that range?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For Phase 1, the residential units are all Type A: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so there isn’t a smaller layout in this phase. The earlier RM328k–RM358k range was indicative base pricing, and the lower end isn’t specifically tied to a smaller unit; pricing varies by unit category and car-park configuration. The latest general price and package confirmation is still pending, so I can’t confirm today’s starting figure yet. Would 900 sq ft still be a size you’d consider, or are you specifically looking for something smaller?"
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "The latest general price range and current package for Pearl Residences, including the applicable basis for the advertised range.",
+      "subject": "Pearl Residences current pricing",
+      "customer_need": "A reliable general price range to compare area and property options.",
+      "reason": "The available reference gives indicative historical base prices, but current package validity and unit-specific costs need confirmation.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Provide the confirmed current general range, then tailor the comparison to the buyer’s purchase purpose.",
+      "signature": "PRICING|advertised and applicable basis current general including latest package pearl price range residences",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The pricing reference I have shows indicative base prices around RM328k–RM358k. That’s before any unit-specific car-park costs or current package, so it may not reflect today’s final price. I’ll get the latest general range confirmed for you. Are you mainly comparing homes for your own stay or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (area being explored)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm the latest general price range and understand whether the buyer is comparing for own stay or investment.",
+          "last_progress": "Buyer asked for a general price range while exploring Pearl Residences and options around Seberang Jaya.",
+          "next_action": "Confirm current general pricing and package before giving a current figure.",
+          "conversation_summary": "Buyer is casually exploring options around Seberang Jaya and asked for Pearl Residences’ general price range. Shared the indicative historical base range with caveats; current pricing needs confirmation."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "The latest general price range and current package for Pearl Residences, including the applicable basis for the advertised range.",
+          "subject": "Pearl Residences current pricing",
+          "customer_need": "A reliable general price range to compare area and property options.",
+          "reason": "The available reference gives indicative historical base prices, but current package validity and unit-specific costs need confirmation.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Provide the confirmed current general range, then tailor the comparison to the buyer’s purchase purpose."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3296,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 3293
+        },
+        "output_tokens": 1493,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 4789
+      }
+    },
+    {
+      "customer": "Probably for my own stay if I do end up buying, but I’m still comparing areas and haven’t made up my mind. Is there a smaller unit option, and would its price be closer to the lower end of that range?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For Phase 1, the residential units are all Type A: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so there isn’t a smaller layout in this phase. The earlier RM328k–RM358k range was indicative base pricing, and the lower end isn’t specifically tied to a smaller unit; pricing varies by unit category and car-park configuration. The latest general price and package confirmation is still pending, so I can’t confirm today’s starting figure yet. Would 900 sq ft still be a size you’d consider, or are you specifically looking for something smaller?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (area being explored)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Asked about a smaller unit; fit of the 900 sq ft Type A is not yet known.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Phase 1 has no smaller residential layout; buyer is still comparing areas and whether 900 sq ft would suit them.",
+          "next_objective": "Find out whether the 900 sq ft layout is within consideration, then continue the price comparison once current pricing is confirmed.",
+          "last_progress": "Buyer is probably considering a purchase for own stay but remains undecided and asked about a smaller, lower-priced option.",
+          "next_action": "Clarify whether 900 sq ft is a workable size; do not repeat the open pricing support request.",
+          "conversation_summary": "Buyer is exploring Seberang Jaya and may buy for own stay, but has not decided. They asked whether Pearl Residences has a smaller unit closer to the lower end of the earlier indicative price range. Phase 1 offers Type A only at 900 sq ft; latest pricing confirmation remains pending."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3716,
+        "input_tokens_details": {
+          "cache_write_tokens": 3713,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2039,
+        "output_tokens_details": {
+          "reasoning_tokens": 1470
+        },
+        "total_tokens": 5755
+      }
+    }
+  ],
+  "closed": false
+}

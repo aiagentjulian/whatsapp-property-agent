@@ -1,0 +1,36 @@
+{
+  "objective": "Test guided selling and natural viewing invitation under explicit genuine buying interest versus early exploration",
+  "base_commit": "de6a1f05c004bceeea9bcf127dc53997e4d7b31b",
+  "cli_multi_agent": true,
+  "customer": "gpt-6-luna/low native Codex subagent",
+  "judge": "gpt-6-luna/medium native Codex subagent, independent and blind",
+  "sales_agent": "real app.agent.SalesAgent using gpt-6-luna/high OpenAI API",
+  "max_repairs": 3,
+  "api_limit": 24,
+  "scoring": {
+    "effective_discovery": 20,
+    "product_connection_buying_desire": 35,
+    "sales_progression_appointment": 35,
+    "natural_conversation": 10
+  },
+  "acceptance": {
+    "development_mean_gain_min": 5,
+    "progression_actual_value_must_improve": true,
+    "no_severe_case_regression": true,
+    "holdout_no_obvious_regression": true
+  },
+  "holdout_reserved": true,
+  "final_status": "KEEP",
+  "final_candidate": "candidate-r3-live",
+  "rounds_completed": 3,
+  "holdout": "fresh final-only holdout, no obvious regression, score 6.6/10",
+  "api_calls_used": 24,
+  "api_calls_remaining": 0,
+  "notes": [
+    "Four initial baseline pilot calls were excluded from comparison because the harness omitted Runtime-equivalent support context; they remain counted in the API budget.",
+    "Canonical baseline-v2 and all candidate/holdout calls used Runtime-equivalent support context.",
+    "Round 3 was retained: blind judge found mean weighted gain 1.125/10 and progression gain 2/10, with customer-visible conditional viewing interest and a budget target.",
+    "No formal appointment agreement or formal handoff occurred.",
+    "Outstanding: calculate verified RM162 maintenance directly and obtain current effective post-rebate price before follow-up."
+  ]
+}

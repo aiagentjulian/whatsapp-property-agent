@@ -1,0 +1,169 @@
+{
+  "trial": "baseline",
+  "scenario": "early_exploration",
+  "source_sha256": "378a900dfb0ec4933aadae69c26f7d0932b8da11568d05d827e76aef2edfebf0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "important_features": [],
+    "primary_motivations": [],
+    "decision_factors": [
+      "Comparing basic costs, including car-park inclusion and maintenance"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "next_objective": "Confirm whether a car park is included in the quoted base price for the relevant unit configuration.",
+    "last_progress": "Shared the maintenance rate and car-park premium range; base-price car-park inclusion remains unverified.",
+    "next_action": "Confirm car-park inclusion against the applicable unit schedule.",
+    "conversation_summary": "Buyer is browsing around Seberang Jaya and comparing basic costs and property options. They asked about car-park inclusion and maintenance; the maintenance rate is RM0.18 per sq ft inclusive of sinking fund, while base-price car-park inclusion needs confirmation."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For a rough feel, the reference base prices are around RM328k–RM358k. The final figure can vary by floor, facing and car-park allocation, and the latest package or rebate needs confirmation, so I’ll verify the current overall range rather than quote a net price that may be outdated."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that gives me a rough idea. Do those base prices usually include a car park, and what’s the maintenance like? I’m mainly comparing the basic costs at the moment."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Maintenance is RM0.18 per sq ft, inclusive of sinking fund—about RM162 for a 900 sq ft unit at that rate. For car parks, the pricing materials list premiums of RM15k, RM20k or RM30k depending on the unit and configuration, so I can’t confirm whether a bay is included in the base price without the matching unit schedule. I’ll confirm which applies to the quoted base range."
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For a rough feel, the reference base prices are around RM328k–RM358k. The final figure can vary by floor, facing and car-park allocation, and the latest package or rebate needs confirmation, so I’ll verify the current overall range rather than quote a net price that may be outdated.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": [],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Price range",
+            "Comparing area and property options"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": null,
+          "next_objective": "Provide the verified current overall price range and applicable package details.",
+          "last_progress": "Asked for a general price range while exploring Seberang Jaya and comparing options.",
+          "next_action": "Verify current pricing and package before quoting a current overall range.",
+          "conversation_summary": "Buyer is browsing around Seberang Jaya and wants a general price range to compare options."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "The current overall indicative price range and applicable active package or rebate, including relevant car-park allocation differences.",
+          "subject": "Pearl Residences pricing",
+          "customer_need": "A reliable general price range for comparing homes and options around Seberang Jaya.",
+          "reason": "Available pricing references are indicative and the latest unit schedule and package need confirmation.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share the verified current price range without implying an unconfirmed unit-specific price."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3296,
+        "input_tokens_details": {
+          "cache_write_tokens": 3293,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1548,
+        "output_tokens_details": {
+          "reasoning_tokens": 1019
+        },
+        "total_tokens": 4844
+      }
+    },
+    {
+      "customer": "Thanks, that gives me a rough idea. Do those base prices usually include a car park, and what’s the maintenance like? I’m mainly comparing the basic costs at the moment.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Maintenance is RM0.18 per sq ft, inclusive of sinking fund—about RM162 for a 900 sq ft unit at that rate. For car parks, the pricing materials list premiums of RM15k, RM20k or RM30k depending on the unit and configuration, so I can’t confirm whether a bay is included in the base price without the matching unit schedule. I’ll confirm which applies to the quoted base range.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "LOW",
+          "sales_stage": null,
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Comparing basic costs, including car-park inclusion and maintenance"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm whether a car park is included in the quoted base price for the relevant unit configuration.",
+          "last_progress": "Shared the maintenance rate and car-park premium range; base-price car-park inclusion remains unverified.",
+          "next_action": "Confirm car-park inclusion against the applicable unit schedule.",
+          "conversation_summary": "Buyer is browsing around Seberang Jaya and comparing basic costs and property options. They asked about car-park inclusion and maintenance; the maintenance rate is RM0.18 per sq ft inclusive of sinking fund, while base-price car-park inclusion needs confirmation."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Whether the quoted reference base prices of RM328k–RM358k include a car-park bay for the relevant unit configurations, and which premium applies if not.",
+          "subject": "Pearl Residences base-price car-park inclusion",
+          "customer_need": "The buyer is comparing the basic costs of property options around Seberang Jaya.",
+          "reason": "Available materials list car-park premiums but do not confirm whether a bay is included in the quoted base prices.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Provide the verified car-park inclusion and applicable cost so the buyer can compare basic ownership costs."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2776,
+        "input_tokens_details": {
+          "cache_write_tokens": 2773,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1335,
+        "output_tokens_details": {
+          "reasoning_tokens": 823
+        },
+        "total_tokens": 4111
+      }
+    }
+  ],
+  "closed": false
+}

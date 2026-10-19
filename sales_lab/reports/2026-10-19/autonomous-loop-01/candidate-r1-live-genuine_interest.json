@@ -1,0 +1,230 @@
+{
+  "trial": "candidate-r1-live",
+  "scenario": "genuine_interest",
+  "source_sha256": "e36d9f99afb0eee093995b4c08733eaf4f6f41a7950e9fb579ba73151dd304bf",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya",
+    "preferred_property_type": "3-bedroom",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "3 bedrooms",
+      "Monthly costs",
+      "Car-park inclusion"
+    ],
+    "primary_motivations": [],
+    "decision_factors": [
+      "3-bedroom unit",
+      "Monthly costs",
+      "Fit within approximately RM450,000",
+      "Car-park inclusion"
+    ],
+    "active_concerns": [
+      "Current Type A price",
+      "Loan payment and regular charges",
+      "Whether a car park is included",
+      "Fit within approximately RM450,000"
+    ],
+    "resolved_concerns": [],
+    "next_objective": "Confirm current Type A pricing and car-park allocation, then help estimate the loan payment if useful.",
+    "last_progress": "Buyer shared an approximate RM450,000 target and asked about current Type A price, loan costs and car-park inclusion.",
+    "next_action": "Follow up on the existing price check and confirm the applicable car-park configuration or premium.",
+    "conversation_summary": "Buyer is considering a 3-bedroom purchase around Seberang Jaya, is assessing monthly costs, and would ideally keep the purchase around RM450,000. Current Type A pricing is pending confirmation; car-park inclusion is also being checked.",
+    "budget_range": "Around RM450,000",
+    "fit_assessment": "Unconfirmed pending current unit pricing, package and car-park allocation; rough reference pricing may be within budget but is not a confirmed total."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Phase 1 3-bedroom units are Type A: 900 sq ft, 2 bathrooms and a balcony. The layout has an open-plan living, dining and kitchen area, without a long internal corridor. At the stated RM0.18 per sq ft maintenance rate, that’s about RM162 a month for 900 sq ft, inclusive of sinking fund, subject to the latest project confirmation. That’s the maintenance fee only; loan instalments, utilities and selected pay-per-use clubhouse facilities are separate. I can check the current indicative Type A price to help estimate the loan instalment too."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, please do check the current Type A price. I’m trying to work out the loan payment along with the regular charges, and whether a car park is included. We’d ideally keep the purchase around RM450,000 if possible."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "As a rough reference only, the pricing material I have shows Type A base prices around RM328,000–RM358,000, depending on floor and facing. A car-park premium may apply—references show RM15,000–RM30,000 depending on the unit—so I can’t confirm the total will stay within RM450,000 until the current unit and package are verified. The current price check is already in progress. The materials show both one- and two-car-park configurations, so I’m checking what applies and whether a car park is included."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current indicative price or price range for a Phase 1 Type A unit.",
+      "subject": "Pearl Residences Type A pricing",
+      "customer_need": "Understand likely monthly ownership costs, including a possible loan instalment.",
+      "reason": "The maintenance estimate is available, but a loan instalment cannot be estimated without current unit pricing and financing assumptions.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share the indicative price and, if useful, estimate the loan instalment using the buyer’s financing assumptions.",
+      "signature": "PRICING|1 current indicative or pearl phase price range residences type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "For a current Phase 1 Type A unit, whether a car park is included and the applicable one- or two-car-park allocation or premium.",
+      "subject": "Pearl Residences Type A car-park allocation",
+      "customer_need": "Understand the total purchase cost and whether it can fit within an approximate RM450,000 budget.",
+      "reason": "The available pricing references show different car-park configurations and premiums; the allocation for a current unit is not confirmed.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share the confirmed car-park details alongside the current price, then help estimate the loan payment if useful.",
+      "signature": "PRICING|1 allocation and applicable car current included one or park pearl phase premium residences two type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Phase 1 3-bedroom units are Type A: 900 sq ft, 2 bathrooms and a balcony. The layout has an open-plan living, dining and kitchen area, without a long internal corridor. At the stated RM0.18 per sq ft maintenance rate, that’s about RM162 a month for 900 sq ft, inclusive of sinking fund, subject to the latest project confirmation. That’s the maintenance fee only; loan instalments, utilities and selected pay-per-use clubhouse facilities are separate. I can check the current indicative Type A price to help estimate the loan instalment too.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": "3-bedroom",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": [
+            "3 bedrooms",
+            "Monthly costs"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "3-bedroom unit",
+            "Monthly costs"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": null,
+          "next_objective": "Provide current indicative Type A pricing so a loan instalment estimate can be considered.",
+          "last_progress": "Buyer is hoping to buy around Seberang Jaya and asked about 3-bedroom units and monthly costs.",
+          "next_action": "Check current indicative Type A pricing.",
+          "conversation_summary": "Buyer is considering a purchase around Seberang Jaya and is assessing the 3-bedroom unit and monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current indicative price or price range for a Phase 1 Type A unit.",
+          "subject": "Pearl Residences Type A pricing",
+          "customer_need": "Understand likely monthly ownership costs, including a possible loan instalment.",
+          "reason": "The maintenance estimate is available, but a loan instalment cannot be estimated without current unit pricing and financing assumptions.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the indicative price and, if useful, estimate the loan instalment using the buyer’s financing assumptions."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3096,
+        "input_tokens_details": {
+          "cache_write_tokens": 3093,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2727,
+        "output_tokens_details": {
+          "reasoning_tokens": 2117
+        },
+        "total_tokens": 5823
+      }
+    },
+    {
+      "customer": "Thanks, please do check the current Type A price. I’m trying to work out the loan payment along with the regular charges, and whether a car park is included. We’d ideally keep the purchase around RM450,000 if possible.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "As a rough reference only, the pricing material I have shows Type A base prices around RM328,000–RM358,000, depending on floor and facing. A car-park premium may apply—references show RM15,000–RM30,000 depending on the unit—so I can’t confirm the total will stay within RM450,000 until the current unit and package are verified. The current price check is already in progress. The materials show both one- and two-car-park configurations, so I’m checking what applies and whether a car park is included.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": "Around RM450,000",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "3 bedrooms",
+            "Monthly costs",
+            "Car-park inclusion"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "3-bedroom unit",
+            "Monthly costs",
+            "Fit within approximately RM450,000",
+            "Car-park inclusion"
+          ],
+          "active_concerns": [
+            "Current Type A price",
+            "Loan payment and regular charges",
+            "Whether a car park is included",
+            "Fit within approximately RM450,000"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Unconfirmed pending current unit pricing, package and car-park allocation; rough reference pricing may be within budget but is not a confirmed total.",
+          "next_objective": "Confirm current Type A pricing and car-park allocation, then help estimate the loan payment if useful.",
+          "last_progress": "Buyer shared an approximate RM450,000 target and asked about current Type A price, loan costs and car-park inclusion.",
+          "next_action": "Follow up on the existing price check and confirm the applicable car-park configuration or premium.",
+          "conversation_summary": "Buyer is considering a 3-bedroom purchase around Seberang Jaya, is assessing monthly costs, and would ideally keep the purchase around RM450,000. Current Type A pricing is pending confirmation; car-park inclusion is also being checked."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "For a current Phase 1 Type A unit, whether a car park is included and the applicable one- or two-car-park allocation or premium.",
+          "subject": "Pearl Residences Type A car-park allocation",
+          "customer_need": "Understand the total purchase cost and whether it can fit within an approximate RM450,000 budget.",
+          "reason": "The available pricing references show different car-park configurations and premiums; the allocation for a current unit is not confirmed.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the confirmed car-park details alongside the current price, then help estimate the loan payment if useful."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4029,
+        "input_tokens_details": {
+          "cache_write_tokens": 4026,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2687,
+        "output_tokens_details": {
+          "reasoning_tokens": 1933
+        },
+        "total_tokens": 6716
+      }
+    }
+  ],
+  "closed": false
+}

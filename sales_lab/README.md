@@ -40,8 +40,10 @@ python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
 
 Repeat the second command for each public turn and scenario, serially. Fake and
 live dialogues use separate trial names. Candidate changes require another fake
-run with a new trial name. State is in-memory during inference, persisted only in
-this run directory for the next CLI turn. Do not edit a dialogue's source midway.
+run with a new trial name. Dialogue, profile and pending Support state are held in memory during inference
+and persisted only in this run directory. Pending Support requests are passed
+back to SalesAgent in the same shape as Runtime `support_context`; no fake answers
+are generated and requests remain OPEN for this offline evaluation. Do not edit a dialogue's source midway.
 Use ONE run directory across baseline, candidates and holdout: the 24-attempt
 budget applies to the whole experiment, including failed/uncertain attempts.
 The ledger reserves before HTTP, locks concurrent turns, stops on any error and
@@ -54,7 +56,8 @@ stops AI turns; no actual handoff is executed.
 A customer's final agreement can be recorded without another paid turn; label
 handoff processing as untested in that case. Never count invitations as bookings.
 
-Scenarios: own-stay motive; couple/home office need-to-product fit; investment
-income/appreciation motive; held-out price concern with potential viewing interest.
+Scenarios include own-stay, couple/home-office and investment, plus autonomous
+loop cases: genuine purchase interest with no customer-led viewing request,
+early exploration with explicit low intent, and a reserved price-concern holdout.
 Private fixtures are coordinator-only. Actual dialogue may branch between versions;
 this is qualitative paired evidence, not a statistically reliable sales conversion study.

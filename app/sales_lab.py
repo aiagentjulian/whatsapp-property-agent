@@ -16,7 +16,7 @@ from .provider import PROFILE_FIELDS
 
 MODEL = 'gpt-6-luna'
 LIMIT = 24
-SCENARIOS = ('own_stay', 'couple_home_office', 'investment', 'holdout')
+SCENARIOS = ('own_stay', 'couple_home_office', 'investment', 'genuine_interest', 'early_exploration', 'holdout')
 
 
 def save(path, value):
@@ -25,7 +25,7 @@ def save(path, value):
 
 def fingerprint():
     root = Path(__file__).resolve().parents[1]
-    files = [root / p for p in ('app/agent.py', 'app/knowledge.py', 'app/provider.py', 'brain/AGENT.md')]
+    files = [root / p for p in ('app/agent.py', 'app/knowledge.py', 'app/provider.py', 'app/sales_lab.py', 'brain/AGENT.md')]
     files += sorted((root / 'knowledge').rglob('*.md'))
     return hashlib.sha256(b''.join(p.read_bytes() for p in files)).hexdigest()
 
@@ -60,7 +60,7 @@ def run_turn(args, parser):
     state = json.loads(path.read_text()) if path.exists() else {
         'trial': args.trial, 'scenario': args.scenario, 'source_sha256': digest,
         'model': MODEL, 'reasoning': 'high', 'transport': 'live' if args.live else 'fake',
-        'profile': {'purchase_purpose': 'UNKNOWN'}, 'history': [], 'turns': [], 'closed': False}
+        'profile': {'purchase_purpose': 'UNKNOWN'}, 'history': [], 'support_context': [], 'turns': [], 'closed': False}
     if state['source_sha256'] != digest or state['transport'] != ('live' if args.live else 'fake'):
         parser.error('source/transport changed within a dialogue; start another trial')
     if state['closed'] or len(state['turns']) >= 3:
@@ -108,16 +108,31 @@ def run_turn(args, parser):
     try:
         # Intercept the real OpenAIProvider HTTP transport, not SalesAgent.decide.
         if args.live:
-            decision, usage = agent.decide(args.customer, state['profile'], history, [])
+            decision, usage = agent.decide(args.customer, state['profile'], history, state.get('support_context', []))
         else:
             with patch('app.provider.urllib.request.urlopen', fake_urlopen):
-                decision, usage = agent.decide(args.customer, state['profile'], history, [])
+                decision, usage = agent.decide(args.customer, state['profile'], history, state.get('support_context', []))
     except Exception as exc:
         if args.live:
             attempt['status'] = 'failed'
             attempt['error_type'] = type(exc).__name__
             save(ledger_path, ledger)
         raise SystemExit('Sales Lab stopped: ' + type(exc).__name__ + '; inspect provider failure locally, no retry') from None
+    if decision['action'] == 'SUPPORT_REQUEST':
+        from .service import support_signature
+        request = decision['support_request']
+        signature = support_signature(request)
+        duplicate = next((item for item in state.get('support_context', [])
+                          if item.get('signature') == signature and item.get('status') in ('OPEN', 'RESOLVED')), None)
+        if not duplicate:
+            state.setdefault('support_context', []).append({
+                'request_id': 'sales-lab-support-%d' % (len(state.get('support_context', [])) + 1),
+                'status': 'OPEN', 'support_type': request.get('support_type', 'OTHER'),
+                'requested_fact': request.get('requested_fact', ''), 'subject': request.get('subject', ''),
+                'customer_need': request.get('customer_need', ''), 'reason': request.get('reason', ''),
+                'resume_stage': request.get('resume_stage', ''), 'resume_objective': request.get('resume_objective', ''),
+                'signature': signature, 'support_result': None, 'created_at': 'SALES_LAB', 'resolved_at': None,
+            })
     state['profile'].update({k: v for k, v in decision['lead_updates'].items() if k in PROFILE_FIELDS and v is not None})
     history.append({'direction': 'OUTBOUND', 'body': decision['reply']})
     state['history'] = history

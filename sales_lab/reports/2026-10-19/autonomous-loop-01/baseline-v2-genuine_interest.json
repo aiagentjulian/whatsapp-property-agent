@@ -1,0 +1,178 @@
+{
+  "trial": "baseline-v2",
+  "scenario": "genuine_interest",
+  "source_sha256": "c904eeb5a3dce95ef41de70295dd8c307f02bd6dd2ebc18ce22f6c3d7a363b72",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "preferred_location": "Around Seberang Jaya",
+    "preferred_property_type": "3-bedroom unit",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "QUALIFY",
+    "fit_assessment": "Interested in a three-bedroom home around Seberang Jaya and comparing the total monthly cost; current price, car-park allocation and financing details are not yet established.",
+    "next_objective": "Confirm the latest Type A price, car-park allocation and applicable package, then estimate loan instalment using suitable financing assumptions.",
+    "last_progress": "Clarified that the buyer wants to understand both loan instalment and regular charges, and asked for current Type A pricing and car-park inclusion.",
+    "next_action": "Confirm current Type A unit pricing, applicable package and car-park allocation.",
+    "conversation_summary": "Buyer is considering a three-bedroom unit around Seberang Jaya and wants to compare the loan instalment and regular charges. They asked for the current Type A price and whether a car park is included.",
+    "financing_context": "Wants to understand the loan instalment alongside regular charges; specific financing terms not yet provided.",
+    "decision_factors": [
+      "Current Type A price",
+      "Whether a car park is included",
+      "Loan instalment and regular charges"
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! The Phase 1 three-bedroom is Type A: 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor, helping use the space efficiently. Maintenance is RM0.18 per sq ft inclusive of sinking fund—about RM162 a month for 900 sq ft, subject to latest confirmation. That’s maintenance only; utilities and any loan instalment are separate, and selected clubhouse facilities are pay-per-use. When you say monthly costs, are you mainly checking maintenance or would you like to consider the loan instalment too?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I’m trying to understand both, especially the loan instalment alongside the regular charges. We’re hoping to buy somewhere around Seberang Jaya, so could you also let me know the current price for Type A and whether a car park is included?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The regular maintenance for the 900 sq ft unit is about RM162 a month; utilities and any pay-per-use clubhouse charges are separate. I need to confirm the latest Type A price and the exact car-park allocation, as these can vary by unit and current package. I don’t want to give you a misleading price or say a car park is included before checking. The loan instalment will depend on the confirmed price and your financing terms; once the price is confirmed, I can help estimate it alongside the regular charges."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest current Type A unit price, applicable package and exact car-park allocation or premium.",
+      "subject": "Pearl Residences Phase 1 Type A",
+      "customer_need": "The buyer wants to know the current price and whether a car park is included so they can assess the loan instalment and overall monthly costs.",
+      "reason": "Current price and car-park configuration depend on the specific unit and applicable package; the available pricing information is not sufficient to confirm a current unit-level figure.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share the confirmed Type A price and car-park details, then establish financing assumptions if the buyer wants a loan estimate.",
+      "signature": "PRICING|1 allocation and applicable car current exact latest or package park pearl phase premium price residences type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! The Phase 1 three-bedroom is Type A: 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the layout avoids a long internal corridor, helping use the space efficiently. Maintenance is RM0.18 per sq ft inclusive of sinking fund—about RM162 a month for 900 sq ft, subject to latest confirmation. That’s maintenance only; utilities and any loan instalment are separate, and selected clubhouse facilities are pay-per-use. When you say monthly costs, are you mainly checking maintenance or would you like to consider the loan instalment too?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": "Around Seberang Jaya",
+          "preferred_property_type": "3-bedroom unit (enquiring)",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Asked about a three-bedroom unit and approximate monthly costs; purpose and financing needs are not yet known.",
+          "next_objective": "Clarify whether they want to understand loan instalments as well as maintenance.",
+          "last_progress": "Shared the verified Type A unit details and an estimated monthly maintenance amount.",
+          "next_action": "Clarify what monthly costs they want to include, then tailor the next information.",
+          "conversation_summary": "Buyer is looking to buy around Seberang Jaya and asked about three-bedroom units and monthly costs."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2868,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2865
+        },
+        "output_tokens": 2424,
+        "output_tokens_details": {
+          "reasoning_tokens": 1934
+        },
+        "total_tokens": 5292
+      }
+    },
+    {
+      "customer": "I’m trying to understand both, especially the loan instalment alongside the regular charges. We’re hoping to buy somewhere around Seberang Jaya, so could you also let me know the current price for Type A and whether a car park is included?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The regular maintenance for the 900 sq ft unit is about RM162 a month; utilities and any pay-per-use clubhouse charges are separate. I need to confirm the latest Type A price and the exact car-park allocation, as these can vary by unit and current package. I don’t want to give you a misleading price or say a car park is included before checking. The loan instalment will depend on the confirmed price and your financing terms; once the price is confirmed, I can help estimate it alongside the regular charges.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": "Around Seberang Jaya",
+          "preferred_property_type": "3-bedroom unit",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": "Wants to understand the loan instalment alongside regular charges; specific financing terms not yet provided.",
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Current Type A price",
+            "Whether a car park is included",
+            "Loan instalment and regular charges"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Interested in a three-bedroom home around Seberang Jaya and comparing the total monthly cost; current price, car-park allocation and financing details are not yet established.",
+          "next_objective": "Confirm the latest Type A price, car-park allocation and applicable package, then estimate loan instalment using suitable financing assumptions.",
+          "last_progress": "Clarified that the buyer wants to understand both loan instalment and regular charges, and asked for current Type A pricing and car-park inclusion.",
+          "next_action": "Confirm current Type A unit pricing, applicable package and car-park allocation.",
+          "conversation_summary": "Buyer is considering a three-bedroom unit around Seberang Jaya and wants to compare the loan instalment and regular charges. They asked for the current Type A price and whether a car park is included."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest current Type A unit price, applicable package and exact car-park allocation or premium.",
+          "subject": "Pearl Residences Phase 1 Type A",
+          "customer_need": "The buyer wants to know the current price and whether a car park is included so they can assess the loan instalment and overall monthly costs.",
+          "reason": "Current price and car-park configuration depend on the specific unit and applicable package; the available pricing information is not sufficient to confirm a current unit-level figure.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share the confirmed Type A price and car-park details, then establish financing assumptions if the buyer wants a loan estimate."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3646,
+        "input_tokens_details": {
+          "cache_write_tokens": 3643,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1653,
+        "output_tokens_details": {
+          "reasoning_tokens": 928
+        },
+        "total_tokens": 5299
+      }
+    }
+  ],
+  "closed": false
+}

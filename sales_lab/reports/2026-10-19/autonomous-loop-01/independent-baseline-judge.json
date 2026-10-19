@@ -1,0 +1,50 @@
+{
+  "judge": "independent_sales_judge",
+  "blindness": "Reviewed only the supplied anonymous dialogue and customer-reaction packets; no source, code, or diff mapping used.",
+  "labels": {
+    "X": "genuine-interest dialogue",
+    "Y": "early-exploration dialogue"
+  },
+  "rubric": {
+    "categories": [
+      {"name": "discovery", "weight_percent": 20},
+      {"name": "product_connection_buying_desire", "weight_percent": 35},
+      {"name": "progression_appointment_opportunity", "weight_percent": 35},
+      {"name": "naturalness", "weight_percent": 10}
+    ],
+    "scale": "0-10 for each category; weighted score is out of 10"
+  },
+  "dialogues": {
+    "X": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 asks whether the buyer means maintenance or loan instalment; the customer then clarifies both. It captures Seberang Jaya and three bedrooms from the opening, but never asks the practical purchase reason, budget, timing, or what makes this area attractive."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 connects the 900 sq ft Type A layout, balcony, open-plan areas, RM162 estimated maintenance, and pay-per-use facilities to the cost question. The space-efficiency benefit is relevant but asserted generically; no need or preference is elicited to make that benefit personal. The customer reaction confirms the cost answer was clear and useful."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Turn 2 appropriately identifies current price and parking as blockers to estimating affordability and avoids inventing either. It promises a follow-up estimate after price confirmation, but gives no concrete next step or expected timing and does not ask whether the customer wants a viewing once those details are available. The customer is asking practical purchase questions, but has not expressed viewing interest or appointment agreement, so a hard appointment ask would be premature."},
+        "naturalness": {"score": 7, "evidence": "Both replies are clear and professionally conversational. Turn 2 repeats the RM162 maintenance figure after it was already explained and uses several cautionary clauses, making it somewhat more procedural than necessary."}
+      },
+      "weighted_score": 5.8,
+      "missed_opportunities": ["Ask what is driving the move or what the buyer needs in a Seberang Jaya home.", "Offer a clear follow-up after price and parking are confirmed, with a chance to review the monthly estimate together.", "Revisit a viewing only after the requested affordability information is resolved or the buyer signals interest."],
+      "buying_motivation_effect": "The reply supports evaluation by clarifying recurring costs and avoiding a false price or parking promise. It does not establish stronger desire for the property; the customer's next turn indicates practical information-seeking, not a stated increase in motivation.",
+      "factual_accuracy": {"status": "No material factual error observed against the supplied verified facts.", "notes": ["900 sq ft, 3 bedrooms, 2 bathrooms, balcony, open-plan layout, RM0.18/sq ft inclusive of sinking fund (~RM162), and pay-per-use selected facilities are consistent with supplied facts.", "Current price and car-park allocation are explicitly left unconfirmed."]},
+      "handoff": {"agent_invitation": false, "customer_interest_in_viewing": false, "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "An internal pricing support request is not a customer-facing viewing invitation, customer interest, appointment agreement, or formal human handoff."}
+    },
+    "Y": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 asks whether the purchase is for own stay or investment. The customer answers that own stay is only a possibility and that they are comparing areas. Turn 2 follows the expressed smaller-unit concern by asking whether 900 sq ft could work. Purchase reason, budget, and timeline remain unknown, appropriately given the low-intent signal."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 provides an indicative RM328k–RM358k base range with caveats. Turn 2 directly answers that Phase 1 has only the 900 sq ft Type A and explains that the lower end is not tied to a smaller unit. This is relevant qualification, though it does not connect the available layout to a personal need or create a reason to prefer the project."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Turn 1 says current range will be confirmed, and turn 2 accurately states confirmation is pending while checking whether 900 sq ft fits. This advances product fit modestly. No viewing invitation is warranted yet: the customer explicitly says they have not made up their mind and is still comparing areas. There is no expected timing for the price follow-up."},
+        "naturalness": {"score": 6, "evidence": "The replies are understandable and answer the questions. Turn 2 packs unit facts, historical-price caveats, category and parking qualifications, and another question into a long message. The statement that pricing varies by unit category is not established by the supplied facts and is awkward when the stated Phase 1 offering is Type A only."}
+      },
+      "weighted_score": 5.7,
+      "missed_opportunities": ["Ask what the buyer is comparing in an area or what would make a home suitable for own stay, after answering the direct fit question.", "Give a clear follow-up expectation for the pending current price confirmation.", "Do not press for a viewing while the customer is openly undecided and has not indicated visit interest."],
+      "buying_motivation_effect": "The conversation answers unit-fit questions and helps the customer rule in or rule out the only Phase 1 layout. It does not show increased buying motivation; the customer's stated posture remains exploratory.",
+      "factual_accuracy": {"status": "One unsupported pricing detail; no confirmed false claim otherwise.", "notes": ["The historical RM328k–RM358k range is labeled indicative and unconfirmed, as required.", "The assertion that pricing varies by unit category is not substantiated by the supplied facts; car-park/package dependence is correctly treated as needing confirmation."]},
+      "handoff": {"agent_invitation": false, "customer_interest_in_viewing": false, "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "An internal pricing support request is not a customer-facing viewing invitation, customer interest, appointment agreement, or formal human handoff."}
+    }
+  },
+  "paired_assessment": {
+    "sales_progression_materially_improved": "Cannot assess from baseline-only packets; no paired alternative dialogue was supplied.",
+    "baseline_observation": "X has stronger immediate buying-relevant questions than Y, while Y's explicit low-intent exploratory posture calls for lighter qualification. Neither dialogue establishes increased buying motivation or appointment readiness.",
+    "serious_regression_or_handoff_error": "No serious factual or handoff error observed. Y contains one unsupported detail about category-based pricing variation."
+  }
+}

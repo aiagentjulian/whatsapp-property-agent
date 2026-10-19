@@ -1,0 +1,177 @@
+{
+  "trial": "candidate-r2-live",
+  "scenario": "early_exploration",
+  "source_sha256": "66741f7ace9533d3b55610768ac643f96f188fb16fc0e30574c77f4808e9b2c6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "decision_factors": [
+      "Price range",
+      "Unit size"
+    ],
+    "fit_assessment": "Comparing options around Seberang Jaya and checking unit sizes; Phase 1 offers only 900 sq.ft. Type A units. Price fit remains unknown.",
+    "next_objective": "Help assess whether the 900 sq.ft. offering and verified pricing fit their comparison.",
+    "last_progress": "Clarified that Phase 1 has one residential unit type: Type A, 900 sq.ft.",
+    "next_action": "Share the verified pricing range and package when available.",
+    "conversation_summary": "Customer is browsing options around Seberang Jaya, asked for general pricing and whether smaller units are available. They are still comparing; updated pricing and package are pending confirmation.",
+    "size_or_layout_preference": "Asked whether smaller units are available; specific size preference not confirmed."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For a rough feel, the reference base prices I have are around RM328k–RM358k. The final price can vary by floor, facing and car-park configuration, and the latest package needs confirmation, so please treat that as indicative rather than a current quote. I’ll check the latest pricing range and package for you."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, I’ll wait for the updated range and package. I’m still just comparing at this stage; do you have any smaller unit options as well?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For Phase 1, there isn’t a smaller unit type—the residential units are all Type A at 900 sq.ft., with 3 bedrooms, 2 bathrooms and a balcony. That’s the only Phase 1 size I can confirm."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest indicative price range and current package for Pearl Residences.",
+      "subject": "Current pricing and package",
+      "customer_need": "A general price comparison while exploring options around Seberang Jaya.",
+      "reason": "Available reference prices are indicative, and the current package and unit-specific pricing need confirmation.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Provide the verified current range and help the customer assess whether it fits their options.",
+      "signature": "PRICING|and current indicative latest package pearl price range residences",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For a rough feel, the reference base prices I have are around RM328k–RM358k. The final price can vary by floor, facing and car-park configuration, and the latest package needs confirmation, so please treat that as indicative rather than a current quote. I’ll check the latest pricing range and package for you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price range"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Browsing options around Seberang Jaya; current price fit is not yet known.",
+          "next_objective": "Share verified current indicative pricing and package details.",
+          "last_progress": "Asked for the general price range while exploring the area and options.",
+          "next_action": "Confirm the latest indicative price range and applicable package.",
+          "conversation_summary": "Customer is browsing around Seberang Jaya and wants a general feel for Pearl Residences pricing."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest indicative price range and current package for Pearl Residences.",
+          "subject": "Current pricing and package",
+          "customer_need": "A general price comparison while exploring options around Seberang Jaya.",
+          "reason": "Available reference prices are indicative, and the current package and unit-specific pricing need confirmation.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Provide the verified current range and help the customer assess whether it fits their options."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3564,
+        "input_tokens_details": {
+          "cache_write_tokens": 3561,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1631,
+        "output_tokens_details": {
+          "reasoning_tokens": 1104
+        },
+        "total_tokens": 5195
+      }
+    },
+    {
+      "customer": "Thanks, I’ll wait for the updated range and package. I’m still just comparing at this stage; do you have any smaller unit options as well?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For Phase 1, there isn’t a smaller unit type—the residential units are all Type A at 900 sq.ft., with 3 bedrooms, 2 bathrooms and a balcony. That’s the only Phase 1 size I can confirm.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Asked whether smaller units are available; specific size preference not confirmed.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price range",
+            "Unit size"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Comparing options around Seberang Jaya and checking unit sizes; Phase 1 offers only 900 sq.ft. Type A units. Price fit remains unknown.",
+          "next_objective": "Help assess whether the 900 sq.ft. offering and verified pricing fit their comparison.",
+          "last_progress": "Clarified that Phase 1 has one residential unit type: Type A, 900 sq.ft.",
+          "next_action": "Share the verified pricing range and package when available.",
+          "conversation_summary": "Customer is browsing options around Seberang Jaya, asked for general pricing and whether smaller units are available. They are still comparing; updated pricing and package are pending confirmation."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3128,
+        "input_tokens_details": {
+          "cache_write_tokens": 3125,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1253,
+        "output_tokens_details": {
+          "reasoning_tokens": 885
+        },
+        "total_tokens": 4381
+      }
+    }
+  ],
+  "closed": false
+}

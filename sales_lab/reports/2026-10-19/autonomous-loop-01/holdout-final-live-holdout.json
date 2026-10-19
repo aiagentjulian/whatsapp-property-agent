@@ -1,0 +1,175 @@
+{
+  "trial": "holdout-final-live",
+  "scenario": "holdout",
+  "source_sha256": "d3c35f1d42d114a43a5338402126b8d40d49a82cadbcddf2346874bd5c453449",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya (comparing condo prices there)",
+    "preferred_property_type": "Condo",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "active_concerns": [
+      "Perceives Pearl Residences as higher-priced than other condos in Seberang Jaya",
+      "Needs confirmed purchase price and ongoing costs to assess full value"
+    ],
+    "next_objective": "Provide a transparent like-for-like comparison once current pricing and applicable charges are confirmed.",
+    "last_progress": "Buyer clarified they are browsing listings without specific alternatives shortlisted and wants to understand the full ownership cost.",
+    "next_action": "Share confirmed pricing and applicable charges when available.",
+    "conversation_summary": "Buyer is browsing condo listings around Seberang Jaya and sees Pearl Residences as potentially higher-priced. They want the full ownership cost to judge whether the comparison is fair; the known maintenance rate is RM0.18 psf inclusive of sinking fund, and selected clubhouse facilities are pay-per-use."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’ve been comparing condo prices around Seberang Jaya and Pearl Residences looks on the higher side. What would make it good value compared with other options?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Fair question—if Pearl is higher, value comes down to what the difference gets you, not just the headline price. Phase 1 units are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony; listed shared facilities include community halls, a playground, surau and tadika. That gives us a basis to compare the homes and facilities, but I wouldn’t call it better value without checking the actual price and ongoing charges against the alternatives. I’ll verify the current pricing; if you share the condo or condos you’re comparing, I can line them up fairly."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I don’t have specific condo names shortlisted yet—I’ve just been browsing listings and comparing rough prices. The 900 sq ft and facilities are useful context, but I’m still trying to understand the full cost before I can tell whether the comparison is fair."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—you need the ongoing costs as well as the asking price to compare fairly. The known maintenance rate is RM0.18 per sq ft, inclusive of sinking fund; for a 900 sq ft unit, that’s about RM162 a month if the full built-up area is used for billing. Selected clubhouse facilities are pay-per-use, so usage isn’t automatically part of everyone’s fixed maintenance charge. That’s only part of the picture, though: without confirmed current pricing and the applicable charges, I can’t give you a reliable full ownership total yet."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current Phase 1 Type A selling price or price range and applicable recurring charges relevant to comparing ownership costs.",
+      "subject": "Pearl Residences Phase 1 Type A pricing and recurring charges",
+      "customer_need": "Assess whether Pearl Residences offers fair value compared with other condos around Seberang Jaya.",
+      "reason": "The buyer perceives Pearl Residences as higher-priced and asks what would make it good value.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Give a transparent like-for-like value comparison using verified pricing and recurring charges, then invite comparison with the buyer’s shortlisted condos.",
+      "signature": "PRICING|1 and applicable charges comparing costs current or ownership pearl phase price range recurring relevant residences selling type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’ve been comparing condo prices around Seberang Jaya and Pearl Residences looks on the higher side. What would make it good value compared with other options?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair question—if Pearl is higher, value comes down to what the difference gets you, not just the headline price. Phase 1 units are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony; listed shared facilities include community halls, a playground, surau and tadika. That gives us a basis to compare the homes and facilities, but I wouldn’t call it better value without checking the actual price and ongoing charges against the alternatives. I’ll verify the current pricing; if you share the condo or condos you’re comparing, I can line them up fairly.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (comparing condo prices there)",
+          "preferred_property_type": "Condo",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Perceives Pearl Residences as higher-priced than other condos in Seberang Jaya; asks about comparative value"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide current pricing and relevant recurring charges so the buyer can assess value against comparable condos.",
+          "last_progress": "Buyer is comparing condo prices around Seberang Jaya and perceives Pearl Residences as higher-priced.",
+          "next_action": "Verify current pricing and recurring charges; compare with the buyer’s shortlisted alternatives if shared.",
+          "conversation_summary": "Buyer is comparing Pearl Residences with condos around Seberang Jaya and wants to understand its value despite a perceived higher price."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current Phase 1 Type A selling price or price range and applicable recurring charges relevant to comparing ownership costs.",
+          "subject": "Pearl Residences Phase 1 Type A pricing and recurring charges",
+          "customer_need": "Assess whether Pearl Residences offers fair value compared with other condos around Seberang Jaya.",
+          "reason": "The buyer perceives Pearl Residences as higher-priced and asks what would make it good value.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Give a transparent like-for-like value comparison using verified pricing and recurring charges, then invite comparison with the buyer’s shortlisted condos."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2785,
+        "input_tokens_details": {
+          "cache_write_tokens": 2782,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2235,
+        "output_tokens_details": {
+          "reasoning_tokens": 1695
+        },
+        "total_tokens": 5020
+      }
+    },
+    {
+      "customer": "I don’t have specific condo names shortlisted yet—I’ve just been browsing listings and comparing rough prices. The 900 sq ft and facilities are useful context, but I’m still trying to understand the full cost before I can tell whether the comparison is fair.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "That makes sense—you need the ongoing costs as well as the asking price to compare fairly. The known maintenance rate is RM0.18 per sq ft, inclusive of sinking fund; for a 900 sq ft unit, that’s about RM162 a month if the full built-up area is used for billing. Selected clubhouse facilities are pay-per-use, so usage isn’t automatically part of everyone’s fixed maintenance charge. That’s only part of the picture, though: without confirmed current pricing and the applicable charges, I can’t give you a reliable full ownership total yet.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Perceives Pearl Residences as higher-priced than other condos in Seberang Jaya",
+            "Needs confirmed purchase price and ongoing costs to assess full value"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide a transparent like-for-like comparison once current pricing and applicable charges are confirmed.",
+          "last_progress": "Buyer clarified they are browsing listings without specific alternatives shortlisted and wants to understand the full ownership cost.",
+          "next_action": "Share confirmed pricing and applicable charges when available.",
+          "conversation_summary": "Buyer is browsing condo listings around Seberang Jaya and sees Pearl Residences as potentially higher-priced. They want the full ownership cost to judge whether the comparison is fair; the known maintenance rate is RM0.18 psf inclusive of sinking fund, and selected clubhouse facilities are pay-per-use."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3553,
+        "input_tokens_details": {
+          "cache_write_tokens": 3550,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2172,
+        "output_tokens_details": {
+          "reasoning_tokens": 1662
+        },
+        "total_tokens": 5725
+      }
+    }
+  ],
+  "closed": false
+}

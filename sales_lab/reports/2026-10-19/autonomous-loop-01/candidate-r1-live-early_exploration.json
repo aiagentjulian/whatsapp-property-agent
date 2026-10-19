@@ -1,0 +1,168 @@
+{
+  "trial": "candidate-r1-live",
+  "scenario": "early_exploration",
+  "source_sha256": "e36d9f99afb0eee093995b4c08733eaf4f6f41a7950e9fb579ba73151dd304bf",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya (exploring)",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "UNDERSTAND",
+    "fit_assessment": "Early-stage comparison around Seberang Jaya. Buyer asked whether smaller Pearl Residences units are available near the lower end of the price range; Phase 1 offers only the 900 sq ft Type A layout.",
+    "next_objective": "Clarify whether a lower total price or a smaller footprint is the main priority.",
+    "last_progress": "Explained that Phase 1 has one 900 sq ft layout and that the earlier price range was not a confirmed current quote.",
+    "next_action": "Clarify the buyer’s size-versus-price priority.",
+    "conversation_summary": "Buyer is comparing options around Seberang Jaya and asked about smaller, lower-priced units at Pearl Residences.",
+    "size_or_layout_preference": "Asked about smaller units; exact preferred size is not established."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For a rough guide, the pricing reference I have shows base prices around RM328k–RM358k, depending on the unit’s floor and facing. That’s before any applicable car-park or upgrade components, and the latest package may change the final figure, so I’m checking the current range rather than quoting this as today’s confirmed price."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Got it, thanks. I’m still just comparing, but I’m wondering whether there are smaller units nearer the lower end of that range?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences Phase 1 has one layout: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so there isn’t a smaller unit type there. The RM328k–RM358k figure I shared was only a rough earlier reference, not a confirmed current price; the lower end depended on floor and facing. Is keeping the total price down more important to you, or are you mainly looking for a smaller home?"
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Latest valid general price range for Pearl Residences, including whether current packages affect the indicative range.",
+      "subject": "Pearl Residences general pricing",
+      "customer_need": "A rough price guide to compare options around Seberang Jaya.",
+      "reason": "Available pricing is a historical reference and current package validity may change the present figures.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share a current indicative range and understand whether it fits the buyer's budget.",
+      "signature": "PRICING|affect current general including indicative latest packages pearl price range residences valid",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences while browsing around Seberang Jaya. What’s the general price range there? I’m just trying to get a feel for the area and options.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For a rough guide, the pricing reference I have shows base prices around RM328k–RM358k, depending on the unit’s floor and facing. That’s before any applicable car-park or upgrade components, and the latest package may change the final figure, so I’m checking the current range rather than quoting this as today’s confirmed price.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (exploring)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Early-stage enquiry; buyer is exploring price and options around Seberang Jaya.",
+          "next_objective": "Provide the latest general price range, then tailor options if the buyer shares a budget.",
+          "last_progress": "Buyer asked for a general price range and said they are getting a feel for the area and options.",
+          "next_action": "Confirm the latest indicative pricing and package.",
+          "conversation_summary": "Buyer is browsing Pearl Residences and nearby options in Seberang Jaya; asked for a general price range."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Latest valid general price range for Pearl Residences, including whether current packages affect the indicative range.",
+          "subject": "Pearl Residences general pricing",
+          "customer_need": "A rough price guide to compare options around Seberang Jaya.",
+          "reason": "Available pricing is a historical reference and current package validity may change the present figures.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share a current indicative range and understand whether it fits the buyer's budget."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3524,
+        "input_tokens_details": {
+          "cache_write_tokens": 3521,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1429,
+        "output_tokens_details": {
+          "reasoning_tokens": 879
+        },
+        "total_tokens": 4953
+      }
+    },
+    {
+      "customer": "Got it, thanks. I’m still just comparing, but I’m wondering whether there are smaller units nearer the lower end of that range?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences Phase 1 has one layout: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so there isn’t a smaller unit type there. The RM328k–RM358k figure I shared was only a rough earlier reference, not a confirmed current price; the lower end depended on floor and facing. Is keeping the total price down more important to you, or are you mainly looking for a smaller home?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (exploring)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Asked about smaller units; exact preferred size is not established.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Early-stage comparison around Seberang Jaya. Buyer asked whether smaller Pearl Residences units are available near the lower end of the price range; Phase 1 offers only the 900 sq ft Type A layout.",
+          "next_objective": "Clarify whether a lower total price or a smaller footprint is the main priority.",
+          "last_progress": "Explained that Phase 1 has one 900 sq ft layout and that the earlier price range was not a confirmed current quote.",
+          "next_action": "Clarify the buyer’s size-versus-price priority.",
+          "conversation_summary": "Buyer is comparing options around Seberang Jaya and asked about smaller, lower-priced units at Pearl Residences."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3146,
+        "input_tokens_details": {
+          "cache_write_tokens": 3143,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1179,
+        "output_tokens_details": {
+          "reasoning_tokens": 765
+        },
+        "total_tokens": 4325
+      }
+    }
+  ],
+  "closed": false
+}

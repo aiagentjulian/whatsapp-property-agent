@@ -34,6 +34,8 @@ class SalesLabTests(unittest.TestCase):
         self.assertEqual(len(state['turns']), 2)
         self.assertEqual([row['direction'] for row in decide.call_args.args[2]][:3],
                          ['INBOUND', 'OUTBOUND', 'INBOUND'])
+        self.assertEqual(decide.call_args.args[3][0]['status'], 'OPEN')
+        self.assertEqual(decide.call_args.args[3], state['support_context'])
 
     @patch.dict('os.environ', {'OPENAI_API_KEY': 'test-not-real'})
     @patch('app.provider.urllib.request.urlopen', side_effect=TimeoutError)

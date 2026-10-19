@@ -1,0 +1,185 @@
+{
+  "trial": "baseline",
+  "scenario": "genuine_interest",
+  "source_sha256": "378a900dfb0ec4933aadae69c26f7d0932b8da11568d05d827e76aef2edfebf0",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_location": "Around Seberang Jaya",
+    "preferred_property_type": "3-bedroom residential unit",
+    "size_or_layout_preference": "3 bedrooms",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "3 bedrooms",
+      "Monthly ownership costs",
+      "Location around Seberang Jaya"
+    ],
+    "primary_motivations": [],
+    "decision_factors": [
+      "Monthly costs",
+      "Car-park inclusion",
+      "Current availability"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "Initial interest in a 3-bedroom home around Seberang Jaya; RM162 monthly maintenance feels manageable, while total monthly charges, Type A availability and car-park inclusion need confirmation.",
+    "next_objective": "Confirm current Type A availability and car-park inclusion, then provide the full monthly charges once confirmed.",
+    "last_progress": "Buyer said the RM162 monthly maintenance sounds manageable and asked about Type A availability, car-park inclusion and full monthly charges.",
+    "next_action": "Verify current Type A availability and unit-specific car-park allocation and pricing; follow up with the pending full monthly charges.",
+    "conversation_summary": "Buyer is looking for a 3-bedroom home around Seberang Jaya. They asked about monthly costs; RM162 maintenance sounds manageable. They now want to know current Type A availability, whether the price includes a car park, and the full monthly charges."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Phase 1’s main 3-bedroom option is Type A: 900 sq ft, 2 bathrooms and a balcony. It has an open-plan living, dining and kitchen area, plus a short internal corridor and a small storage area. Maintenance is RM0.18 per sq ft, inclusive of sinking fund; selected clubhouse facilities are pay-per-use. I’ll confirm the current monthly total and any other recurring charges before quoting a figure."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that helps. RM162 a month for maintenance sounds manageable. Is Type A currently available, and does the price usually include a car park? I’d also be interested in the full monthly charges once you’ve confirmed them."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Good to hear RM162 a month for maintenance feels manageable. I wouldn’t assume the car park is included—the allocation and price can depend on the specific unit. I’ll verify current Type A availability and car-park inclusion for the available options. I’ve noted your request for the full monthly charges too."
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m looking at Pearl Residences because we’re hoping to buy somewhere around Seberang Jaya. Could you tell me what the 3-bedroom units are like and roughly what the monthly costs would be?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Phase 1’s main 3-bedroom option is Type A: 900 sq ft, 2 bathrooms and a balcony. It has an open-plan living, dining and kitchen area, plus a short internal corridor and a small storage area. Maintenance is RM0.18 per sq ft, inclusive of sinking fund; selected clubhouse facilities are pay-per-use. I’ll confirm the current monthly total and any other recurring charges before quoting a figure.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": "Around Seberang Jaya",
+          "preferred_property_type": "3-bedroom residential unit",
+          "size_or_layout_preference": "3 bedrooms",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": [
+            "3 bedrooms",
+            "Monthly ownership costs",
+            "Location around Seberang Jaya"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Monthly costs"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Initial interest in a 3-bedroom home around Seberang Jaya; total monthly costs need confirmation.",
+          "next_objective": "Provide confirmed monthly recurring costs, then continue with relevant buying needs.",
+          "last_progress": "Shared the verified unit type, layout overview and maintenance rate.",
+          "next_action": "Confirm the monthly total for a standard 900 sq ft unit and any other recurring charges.",
+          "conversation_summary": "Buyer is looking for a home around Seberang Jaya and asked about 3-bedroom units and monthly costs."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Confirmed monthly total for a standard 900 sq ft unit and any other recurring charges beyond the RM0.18 psf maintenance fee, inclusive of sinking fund.",
+          "subject": "Pearl Residences Phase 1 Type A unit",
+          "customer_need": "Understand the approximate monthly ownership costs.",
+          "reason": "The maintenance rate is verified, but the confirmed monthly total and any other recurring charges are not.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share confirmed monthly costs and continue assessing the buyer’s needs."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2868,
+        "input_tokens_details": {
+          "cache_write_tokens": 2865,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2104,
+        "output_tokens_details": {
+          "reasoning_tokens": 1503
+        },
+        "total_tokens": 4972
+      }
+    },
+    {
+      "customer": "Thanks, that helps. RM162 a month for maintenance sounds manageable. Is Type A currently available, and does the price usually include a car park? I’d also be interested in the full monthly charges once you’ve confirmed them.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Good to hear RM162 a month for maintenance feels manageable. I wouldn’t assume the car park is included—the allocation and price can depend on the specific unit. I’ll verify current Type A availability and car-park inclusion for the available options. I’ve noted your request for the full monthly charges too.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "3 bedrooms",
+            "Monthly ownership costs",
+            "Location around Seberang Jaya"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly costs",
+            "Car-park inclusion",
+            "Current availability"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Initial interest in a 3-bedroom home around Seberang Jaya; RM162 monthly maintenance feels manageable, while total monthly charges, Type A availability and car-park inclusion need confirmation.",
+          "next_objective": "Confirm current Type A availability and car-park inclusion, then provide the full monthly charges once confirmed.",
+          "last_progress": "Buyer said the RM162 monthly maintenance sounds manageable and asked about Type A availability, car-park inclusion and full monthly charges.",
+          "next_action": "Verify current Type A availability and unit-specific car-park allocation and pricing; follow up with the pending full monthly charges.",
+          "conversation_summary": "Buyer is looking for a 3-bedroom home around Seberang Jaya. They asked about monthly costs; RM162 maintenance sounds manageable. They now want to know current Type A availability, whether the price includes a car park, and the full monthly charges."
+        },
+        "support_request": {
+          "support_type": "AVAILABILITY",
+          "requested_fact": "Current Type A availability and, for available options, whether the quoted price includes a car park and the applicable car-park allocation.",
+          "subject": "Pearl Residences Type A availability and car-park inclusion",
+          "customer_need": "Buyer wants to know if a 3-bedroom Type A unit is currently available and whether the price includes a car park.",
+          "reason": "Live availability and unit-specific car-park pricing are not confirmed in the available information.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share confirmed availability and car-park details, alongside the previously requested full monthly charges."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3621,
+        "input_tokens_details": {
+          "cache_write_tokens": 3618,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1996,
+        "output_tokens_details": {
+          "reasoning_tokens": 1332
+        },
+        "total_tokens": 5617
+      }
+    }
+  ],
+  "closed": false
+}

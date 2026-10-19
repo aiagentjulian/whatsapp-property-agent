@@ -1,0 +1,79 @@
+{
+  "judge": "independent_blind_sales_judge",
+  "labels": "Four dialogues are labeled X, Y, Z and W in a randomized order. Trial and source mapping are omitted.",
+  "rubric": {
+    "categories": [
+      {"name": "discovery", "weight_percent": 20},
+      {"name": "product_connection_buying_desire", "weight_percent": 35},
+      {"name": "progression_appointment_opportunity", "weight_percent": 35},
+      {"name": "naturalness", "weight_percent": 10}
+    ],
+    "scale": "Each category is scored 0-10; weighted score is out of 10."
+  },
+  "dialogues": {
+    "X": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 responds to the requested three-bedroom layout and monthly costs, then offers a conditional viewing. The customer replies, 'The layout sounds like it could work for us, and yes, I’d be open to seeing it in person.' This surfaces fit and visit interest. The conversation still does not establish purchase purpose, budget, or timing."},
+        "product_connection_buying_desire": {"score": 7, "evidence": "Turn 1 gives the 900 sq.ft. three-bedroom, two-bath, balcony, open-plan details and the RM0.18/sq.ft. maintenance rate. The customer says the layout 'could work for us' and is open to an in-person visit. That is a customer-visible signal that the product may fit, though the desire is conditional on price, maintenance and parking."},
+        "progression_appointment_opportunity": {"score": 8, "evidence": "Turn 1 says, 'If the layout sounds suitable, I’d be happy to help arrange a viewing.' The customer responds that they would be open to seeing it, but wants current price, maintenance and parking clarified first. Turn 2 correctly gives the RM162 calculation, confirms price and parking are still being checked, and lets the customer decide whether a viewing makes sense. It advances a real viewing opportunity without treating conditional interest as a booking."},
+        "naturalness": {"score": 7, "evidence": "The language is clear and low pressure. RM162 is directly derivable from the verified RM0.18/sq.ft. rate and 900 sq.ft. area, so saying it would be confirmed and then repeating the calculation in turn 2 was unnecessary. 'Includes some storage' was not established by the facts supplied for that round."}
+      },
+      "weighted_score": 7.2,
+      "missed_opportunities": ["Ask what matters most about the home or the move after the customer says the layout could work.", "Once price and parking are confirmed, offer to find a suitable viewing time if the buyer remains interested."],
+      "buying_motivation_effect": "Yes, there is a meaningful increase in expressed buying engagement: the customer says the layout could work and volunteers openness to seeing it in person, conditional on price and parking. This establishes viewing interest, not a decision to buy or to book.",
+      "factual_accuracy": {"status": "Core facts are accurate; one low-impact feature detail needs verification.", "notes": ["Unit size, bedrooms, bathrooms, balcony, open-plan layout, maintenance calculation and separate pay-per-use facilities are consistent with the verified facts.", "'Includes some storage' is not supported by the verified facts provided for this review.", "The current effective price and parking inclusion remain expressly unconfirmed; the reply avoids inventing them."]},
+      "handoff": {"agent_invitation": true, "customer_viewing_interest": "Yes, explicitly open to seeing it in person, conditional on reviewing price and costs.", "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "The customer's 'open to seeing it' is genuine viewing interest but not an agreed date/time or appointment. No human handoff is represented."}
+    },
+    "Y": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 asks whether monthly costs means maintenance or also a loan; the customer clarifies they want both. Turn 2 asks no further question. Location and three-bedroom interest are known, but purchase purpose, budget and timing remain unknown."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 provides 900 sq.ft., three bedrooms, two bathrooms, balcony, open-plan design and RM162 maintenance estimate. The customer reaction says these details were useful, then asks for price and parking to assess affordability. It supports product evaluation without personalizing the benefit."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Turn 2 explains that price and parking must be confirmed before estimating loan cost. The customer asks for those facts but receives no timing or concrete customer-facing follow-up expectation. No viewing invitation or customer visit interest occurs."},
+        "naturalness": {"score": 7, "evidence": "Replies are understandable and professional. Turn 2 repeats the RM162 amount and uses extra caveats, but remains clear."}
+      },
+      "weighted_score": 5.8,
+      "missed_opportunities": ["Give a clear timing or commitment for following up with current price and parking details.", "Ask for financing assumptions after pricing is confirmed, then estimate monthly cost."],
+      "buying_motivation_effect": "The dialogue clarifies costs but does not show greater buying motivation or visit interest.",
+      "factual_accuracy": {"status": "No material factual error observed against the supplied verified facts.", "notes": ["The maintenance calculation is correct; unconfirmed price and parking are not asserted."]},
+      "handoff": {"agent_invitation": false, "customer_viewing_interest": "None stated.", "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "An internal price check does not equal customer-facing viewing interest or formal handoff."}
+    },
+    "Z": {
+      "scores": {
+        "discovery": {"score": 6, "evidence": "Turn 1 asks whether the customer is comparing for own stay or investment. Customer responds, 'Probably for my own stay if I do end up buying, but I’m still comparing areas and haven’t made up my mind.' Turn 2 asks whether 900 sq.ft. is a size they would consider. The questions are proportionate, though budget and timing are unknown."},
+        "product_connection_buying_desire": {"score": 6, "evidence": "Turn 1 gives the indicative RM328k–RM358k historic base range with a caveat. Turn 2 explains that Phase 1 has only a 900 sq.ft. Type A with three bedrooms, two bathrooms and a balcony, and that lower base price is not linked to a smaller unit. Customer remains undecided and asks about size and price fit. This helps comparison but does not personalize a reason to choose the project."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Turn 2 answers that no smaller unit exists and asks whether 900 sq.ft. would work. The customer has explicitly not made up their mind and has not signaled interest in visiting; not inviting an appointment is appropriate. Current price follow-up remains pending without timing."},
+        "naturalness": {"score": 6, "evidence": "The content is clear but turn 2 is long and caveat-heavy. The pricing discussion is technically qualified, yet its historic base range is not the current effective package price."}
+      },
+      "weighted_score": 5.7,
+      "missed_opportunities": ["State when the current effective price/package will be confirmed.", "After answering size availability, ask whether the only offered 900 sq.ft. layout is workable for the customer's comparison."],
+      "buying_motivation_effect": "No increase in buying motivation is evident; the customer remains exploratory and undecided.",
+      "factual_accuracy": {"status": "Historic base-price facts are accurately caveated; commercial framing could anchor the buyer on a non-current figure.", "notes": ["RM328k–RM358k is an original/base reference, not the current post-rebate effective price. It is labeled indicative, and the agent says current pricing must be confirmed.", "Variation by floor/facing and car-park configuration is documented in the supplied pricing materials. The risk is presenting historic base price as the salient opening reference when the package source contains a separate current effective-price layer; the caveat reduces but does not eliminate anchoring risk."]},
+      "handoff": {"agent_invitation": false, "customer_viewing_interest": "None stated.", "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "No invitation, expressed visit interest, agreement or formal human handoff occurred."}
+    },
+    "W": {
+      "scores": {
+        "discovery": {"score": 5, "evidence": "Turn 1 gives a price reference and promises to check current range/package but does not ask about purpose. Customer replies, 'Thanks, I’ll wait for the updated range and package. I’m still just comparing at this stage; do you have any smaller unit options as well?' Turn 2 answers the unit-size question but does not check if the 900 sq.ft. offering is workable."},
+        "product_connection_buying_desire": {"score": 5, "evidence": "Turn 1 provides the RM328k–RM358k historic base range and caveats it. Turn 2 states Phase 1 has only 900 sq.ft. Type A, with three bedrooms, two bathrooms and a balcony. Customer's response shows casual curiosity about smaller units, not a positive fit or stronger motivation. No benefit is tied to their needs."},
+        "progression_appointment_opportunity": {"score": 5, "evidence": "Turn 1 promises to check the latest range and package; the customer agrees to wait. Turn 2 answers there is no smaller unit. It could have asked if 900 sq.ft. is acceptable or offered to follow up when current effective pricing is available. No visit invitation is appropriate because the customer is still just comparing and has not shown visit readiness."},
+        "naturalness": {"score": 7, "evidence": "The exchanges are short and easy to follow. Turn 2 ends abruptly after giving the size information, without a useful next question."}
+      },
+      "weighted_score": 5.2,
+      "missed_opportunities": ["Ask whether 900 sq.ft. could work after explaining there is no smaller unit.", "Follow through on the customer's request for an updated current range/package with an expected time or clear next contact."],
+      "buying_motivation_effect": "No real increase. The customer stays in comparison mode and receives no fit question or reason to continue beyond waiting for price information.",
+      "factual_accuracy": {"status": "Historic base-price framing is caveated; current effective package price remains unprovided.", "notes": ["The base price range and variation by floor/facing/car-park configuration are documented historical base pricing facts.", "The sales-package reference dated 14 August has a separate post-rebate layer; the dialogue correctly says the current package needs confirmation but could better distinguish that the old base range is not an effective current price."]},
+      "handoff": {"agent_invitation": false, "customer_viewing_interest": "None stated; the customer says they are still just comparing.", "appointment_agreement": false, "formal_handoff_to_human": false, "notes": "No visit invitation or formal human handoff occurred."}
+    }
+  },
+  "paired_assessment": {
+    "pairs": [
+      {"pair": "X-Y", "weighted_score_difference": 1.4, "progression_difference": 3, "assessment": "The dialogue with an invitation outperforms the paired dialogue on progression: a soft, conditional invitation elicited explicit, conditional customer viewing interest and a positive layout-fit signal. It stops appropriately before booking while costs remain unresolved."},
+      {"pair": "Z-W", "weighted_score_difference": 0.5, "progression_difference": 0, "assessment": "Both remain exploratory and no appointment ask is warranted. One asks whether 900 sq.ft. works, which gives slightly more qualification value; the other answers the smaller-unit question and stops. Neither establishes increased buying motivation."}
+    ],
+    "sales_progression_materially_improved": "Yes, in one of the two paired conversations. The soft, conditional viewing invitation produced explicit customer interest and a positive statement that the layout could work. The customer still requires price and parking details before deciding whether to book, so this is a meaningful step toward a visit, not an appointment agreement or purchase commitment.",
+    "business_value_decision": "POSITIVE, WITH FOLLOW-UP CONDITIONS",
+    "reason": "Customer-visible progression and buying engagement materially improve in one pair, while the exploratory pair remains appropriately unpushed. The agent does not invent a current price or parking inclusion. Follow-up should provide the current effective post-rebate price and confirmed parking details before re-inviting or scheduling a visit.",
+    "factual_and_commercial_accuracy": "The specific floor/facing and car-park configuration/premium relationships are documented, so they are not factual errors. Historical RM328k–RM358k base pricing is not the effective post-rebate price. The dialogues label it as indicative/historical and say the current package must be checked, but this reference can still anchor expectations; current package confirmation should be the next customer-facing pricing step. One candidate dialogue also says the layout 'includes some storage,' which is not established in the supplied verified facts and should be checked.",
+    "handoff_assessment": "No formal handoff occurred. In the positive-progression dialogue the agent made an invitation, and the customer expressed conditional viewing interest. There was no date/time selection or appointment agreement. The other pair correctly did not invite an exploratory customer who had not expressed visit readiness.",
+    "mean_score_change": 0.45, "mean_progression_score_change": 1.5, "holdout": "Not scored yet; reserved holdout packet has not been supplied."
+  }
+}
