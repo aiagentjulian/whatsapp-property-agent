@@ -1,0 +1,315 @@
+{
+  "trial": "candidate2_hesitant_location",
+  "scenario": "early_exploration",
+  "source_sha256": "7a00ce09a13b3763ead410406d080426f747b58a91faaf93f59872149c39e7b1",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "preferred_location": "Perai area",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "QUALIFY",
+    "fit_assessment": "Exploring homes around Perai for possible own stay; comparing area, access and monthly costs with current rent.",
+    "next_objective": "Share verified access and recurring monthly-cost information when available, then help the customer compare with renting.",
+    "last_progress": "Customer asked for confirmed information to compare and said to leave the visit for now; access and additional monthly costs remain under verification.",
+    "next_action": "Wait for the pending verification and share confirmed details; do not arrange a viewing.",
+    "conversation_summary": "Customer is exploring the Perai area for possible own stay and comparing area, access and monthly costs with renting. They want confirmed information and are not considering a visit for now.",
+    "purchase_reason": "Considering a home for self; comparing the area and monthly costs with current rent.",
+    "important_features": [
+      "Monthly ownership cost",
+      "Area and access"
+    ],
+    "primary_motivations": [],
+    "decision_factors": [
+      "Monthly costs compared with current rent",
+      "Area and access"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "viewing_interest": "No visit for now; wants verified access and monthly-cost details to compare."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw your Pearl Residences post. I work around Perai and have been looking at a few places, just trying to understand the area and what the homes are like."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences Phase 1 has 900 sq. ft. homes with 3 bedrooms, 2 bathrooms and a balcony. That gives you a practical layout to compare as you look around Perai. Are you mainly considering a home for yourself, or looking at investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For myself if I decide to buy. I’m mainly comparing the area and monthly cost with where I’m renting now."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense. One verified recurring cost to include in your comparison is the maintenance fee: RM0.18 per sq. ft., inclusive of sinking fund. It isn’t the full monthly ownership cost, though. Since you’re comparing the area as well, a viewing could help you judge the home and its surroundings for yourself. Would you like me to help arrange one?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Maybe later, but I was hoping to get a general feel for the area and access first, and understand more of the monthly costs. I’m still comparing it with renting."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Absolutely—while you compare with renting, it makes sense to look at access and recurring costs side by side. The verified maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund, but that isn’t the full monthly ownership cost. I don’t have verified access details or a complete monthly-cost figure here, so I’ll check those rather than guess."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Okay, thanks. Please send what you’re able to confirm and I’ll compare it with the other places. We can leave the visit for now."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Thanks — I don’t have any additional verified access details or full monthly ownership-cost figures to add yet; those are still being checked, so I won’t guess. We can leave the visit aside. I’ll share the confirmed details when available so you can compare them with renting."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified Pearl Residences area and access information, plus current recurring monthly ownership costs beyond the RM0.18 per sq. ft. maintenance fee inclusive of sinking fund.",
+      "subject": "Area access and monthly ownership costs",
+      "customer_need": "A general understanding of access and monthly costs to compare Pearl Residences with renting.",
+      "reason": "Verified access details and a complete monthly ownership-cost figure are not available in the supplied evidence.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share verified access and recurring cost information, then continue helping the customer compare with renting.",
+      "signature": "OTHER|18 access and area beyond costs current fee ft fund inclusive information maintenance monthly ownership pearl per plus recurring residences rm0 sinking sq verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw your Pearl Residences post. I work around Perai and have been looking at a few places, just trying to understand the area and what the homes are like.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Pearl Residences Phase 1 has 900 sq. ft. homes with 3 bedrooms, 2 bathrooms and a balcony. That gives you a practical layout to compare as you look around Perai. Are you mainly considering a home for yourself, or looking at investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Perai area (works nearby; exploring)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Exploring homes around Perai; the three-bedroom layout may be worth comparing, but their needs are not yet clear.",
+          "next_objective": "Understand whether the search is for own stay or investment.",
+          "last_progress": "Customer is exploring several homes and works around Perai.",
+          "next_action": "Ask whether they are considering a home for themselves or as an investment.",
+          "conversation_summary": "Customer saw a Pearl Residences post and is exploring the Perai area and home options."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2654,
+        "input_tokens_details": {
+          "cache_write_tokens": 2651,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1143,
+        "output_tokens_details": {
+          "reasoning_tokens": 732
+        },
+        "total_tokens": 3797
+      }
+    },
+    {
+      "customer": "For myself if I decide to buy. I’m mainly comparing the area and monthly cost with where I’m renting now.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense. One verified recurring cost to include in your comparison is the maintenance fee: RM0.18 per sq. ft., inclusive of sinking fund. It isn’t the full monthly ownership cost, though. Since you’re comparing the area as well, a viewing could help you judge the home and its surroundings for yourself. Would you like me to help arrange one?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for self; comparing the area and monthly costs with current rent.",
+          "preferred_location": "Perai area",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Monthly ownership cost",
+            "Area"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Monthly costs compared with current rent",
+            "Area"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Exploring homes around Perai for possible own stay; comparing area and monthly costs with current rent.",
+          "next_objective": "See whether a viewing would help the customer assess the home and surroundings.",
+          "last_progress": "Customer said they would consider buying for themselves and are comparing the area and monthly cost with current rent.",
+          "next_action": "If the customer agrees to arrange a viewing, hand off to a human salesperson.",
+          "conversation_summary": "Customer is exploring the Perai area and may buy for own stay; their main comparison points are area and monthly cost versus rent."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2872,
+        "input_tokens_details": {
+          "cache_write_tokens": 2869,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1741,
+        "output_tokens_details": {
+          "reasoning_tokens": 1265
+        },
+        "total_tokens": 4613
+      }
+    },
+    {
+      "customer": "Maybe later, but I was hoping to get a general feel for the area and access first, and understand more of the monthly costs. I’m still comparing it with renting.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Absolutely—while you compare with renting, it makes sense to look at access and recurring costs side by side. The verified maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund, but that isn’t the full monthly ownership cost. I don’t have verified access details or a complete monthly-cost figure here, so I’ll check those rather than guess.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Maybe later; currently comparing area, access and monthly costs with renting.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": null,
+          "important_features": [
+            "Monthly ownership cost",
+            "Area and access"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly costs compared with current rent",
+            "Area and access"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Exploring homes around Perai for possible own stay; comparing area, access and monthly costs with current rent.",
+          "next_objective": "Provide verified information about Pearl Residences access and monthly ownership costs beyond maintenance.",
+          "last_progress": "Customer clarified they want a general feel for the area and access and more understanding of monthly costs; they may consider a viewing later.",
+          "next_action": "Verify access details and current recurring ownership costs beyond the maintenance fee.",
+          "conversation_summary": "Customer is exploring the Perai area for possible own stay and comparing area, access and monthly costs with renting. They prefer to understand these first and may consider a viewing later."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified Pearl Residences area and access information, plus current recurring monthly ownership costs beyond the RM0.18 per sq. ft. maintenance fee inclusive of sinking fund.",
+          "subject": "Area access and monthly ownership costs",
+          "customer_need": "A general understanding of access and monthly costs to compare Pearl Residences with renting.",
+          "reason": "Verified access details and a complete monthly ownership-cost figure are not available in the supplied evidence.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified access and recurring cost information, then continue helping the customer compare with renting."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3071,
+        "input_tokens_details": {
+          "cache_write_tokens": 3068,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1197,
+        "output_tokens_details": {
+          "reasoning_tokens": 687
+        },
+        "total_tokens": 4268
+      }
+    },
+    {
+      "customer": "Okay, thanks. Please send what you’re able to confirm and I’ll compare it with the other places. We can leave the visit for now.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Thanks — I don’t have any additional verified access details or full monthly ownership-cost figures to add yet; those are still being checked, so I won’t guess. We can leave the visit aside. I’ll share the confirmed details when available so you can compare them with renting.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for self; comparing the area and monthly costs with current rent.",
+          "preferred_location": "Perai area",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "No visit for now; wants verified access and monthly-cost details to compare.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "QUALIFY",
+          "important_features": [
+            "Monthly ownership cost",
+            "Area and access"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly costs compared with current rent",
+            "Area and access"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Exploring homes around Perai for possible own stay; comparing area, access and monthly costs with current rent.",
+          "next_objective": "Share verified access and recurring monthly-cost information when available, then help the customer compare with renting.",
+          "last_progress": "Customer asked for confirmed information to compare and said to leave the visit for now; access and additional monthly costs remain under verification.",
+          "next_action": "Wait for the pending verification and share confirmed details; do not arrange a viewing.",
+          "conversation_summary": "Customer is exploring the Perai area for possible own stay and comparing area, access and monthly costs with renting. They want confirmed information and are not considering a visit for now."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3392,
+        "input_tokens_details": {
+          "cache_write_tokens": 3389,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1162,
+        "output_tokens_details": {
+          "reasoning_tokens": 663
+        },
+        "total_tokens": 4554
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer wants verified details before reconsidering a visit"
+}

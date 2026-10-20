@@ -1,0 +1,441 @@
+{
+  "trial": "baseline_hesitant_location",
+  "scenario": "early_exploration",
+  "source_sha256": "46c2ec3e860e0addc3e19687c52da5b6b708d8b27a8e4c933ab727dd07fb2300",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "next_objective": "Confirm the latest starting price and package, then help the buyer assess whether a visit is worthwhile.",
+    "last_progress": "Buyer found the location worth comparing but does not yet know whether the indicative dated price fits.",
+    "next_action": "Verify current starting price and package, then share the result with the buyer.",
+    "conversation_summary": "Early-stage own-stay prospect working around Perai, comparing location, commute and monthly costs with renting and other developments. Interested in a price benchmark and wants current pricing confirmed before deciding whether to visit.",
+    "purchase_reason": "Considering a home for own stay and comparing the area and monthly costs with current rent.",
+    "important_features": [
+      "Monthly ownership costs",
+      "Area and location fit",
+      "Commute access",
+      "Current pricing"
+    ],
+    "primary_motivations": [
+      "Own stay"
+    ],
+    "decision_factors": [
+      "Monthly cost compared with rent",
+      "Area and location",
+      "Commute around Perai",
+      "Current price range"
+    ],
+    "active_concerns": [
+      "Whether the area and monthly ownership costs make sense compared with current renting",
+      "Whether the commute and access suit work around Perai",
+      "Whether current pricing fits before deciding on a visit"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential own-stay interest; location is worth comparing, but the buyer wants current pricing before deciding whether to visit.",
+    "viewing_interest": "Would consider a visit if current pricing fits.",
+    "appointment_readiness": "NOT_READY"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw your Pearl Residences post. I work around Perai and have been looking at a few places, just trying to understand the area and what the homes are like."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! The Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. That gives you a flexible layout to compare with the other places you’re looking at. Since you work around Perai, are you mainly considering a home for your own stay, or looking at investment too?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For my own stay if I decide to buy. I’m mainly comparing whether the area and monthly cost make sense against where I’m renting now."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense. The stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund; it’s one part of ownership costs, not the full monthly commitment. Since you’re comparing the area with where you rent and work around Perai, I’ll check the verified location and access details rather than guess. Which matters most in that comparison: your work commute or everyday amenities?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "The commute is probably the main thing, since I work around Perai. I’m not looking for an exact travel time yet—just trying to get a general feel for the access and nearby day-to-day amenities."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "At a general level, Pearl Residences is in established Seberang Jaya, with connections toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland network. Those give you useful reference points for comparing the area with your Perai commute, though I won’t guess travel times. An exploratory visit could help you judge the surroundings and route for yourself."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s useful, I know those places. The everyday access sounds convenient, though I’m still comparing a few developments and would want to understand the price range before deciding whether to visit."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "From the 14 August 2026 package snapshot, one listed starting reference works out to RM301,760 (RM328,000 base less the listed 8% rebate). That’s indicative only—not a confirmed current offer or an all-in SPA price; the exact unit, any parking or accessory components, and the latest package need confirmation. If that benchmark is within the range you’re comparing, a visit could help you judge the surroundings and your Perai route firsthand."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s a useful benchmark, but since it’s indicative and not confirmed as current, I can’t say yet whether it fits. The location is worth comparing, though I’d want to check current pricing before deciding on a visit."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Fair point—the figure I shared came from a dated package, so I can’t confirm it’s current. I’ll check the latest starting price and package for you, so you can judge whether it fits before deciding on a visit."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified Pearl Residences location and relevant area/access information, including any substantiated details useful for assessing travel around Perai and nearby everyday amenities.",
+      "subject": "Location and area fit",
+      "customer_need": "Compare the area with the buyer's current rental location and work around Perai.",
+      "reason": "Available knowledge does not include verified location or access details, so these should not be guessed.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share verified location and access details and connect them to the buyer's area comparison.",
+      "signature": "OTHER|access amenities and any area around assessing details everyday fit including information location nearby pearl perai relevant residences substantiated travel useful verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "The latest verified Pearl Residences starting price and currently applicable package, including any material qualifications for a general starting-price reference.",
+      "subject": "Current starting price and package",
+      "customer_need": "Assess whether the current price range fits before deciding whether to visit.",
+      "reason": "The previously shared RM301,760 reference was calculated from a dated package snapshot and is not confirmed as current.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the verified current starting price and package, then help the buyer judge whether a visit makes sense.",
+      "signature": "PRICING|and any applicable current currently general including latest material package pearl price qualifications reference residences starting verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw your Pearl Residences post. I work around Perai and have been looking at a few places, just trying to understand the area and what the homes are like.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! The Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. That gives you a flexible layout to compare with the other places you’re looking at. Since you work around Perai, are you mainly considering a home for your own stay, or looking at investment too?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the buyer is considering own stay or investment, then tailor information accordingly.",
+          "last_progress": "Buyer is exploring homes and the area, works around Perai, and asked what the homes are like.",
+          "next_action": "Clarify the buyer's intended use and share relevant verified information.",
+          "conversation_summary": "Early-stage property exploration; buyer works around Perai and is comparing places."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2781,
+        "input_tokens_details": {
+          "cache_write_tokens": 2778,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1293,
+        "output_tokens_details": {
+          "reasoning_tokens": 974
+        },
+        "total_tokens": 4074
+      }
+    },
+    {
+      "customer": "For my own stay if I decide to buy. I’m mainly comparing whether the area and monthly cost make sense against where I’m renting now.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense. The stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund; it’s one part of ownership costs, not the full monthly commitment. Since you’re comparing the area with where you rent and work around Perai, I’ll check the verified location and access details rather than guess. Which matters most in that comparison: your work commute or everyday amenities?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay and comparing the area and monthly costs with current rent.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Monthly ownership costs",
+            "Area and location fit"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Monthly cost compared with rent",
+            "Area and location"
+          ],
+          "active_concerns": [
+            "Whether the area and monthly ownership costs make sense compared with current renting"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential own-stay interest; still exploring and comparing area and costs.",
+          "next_objective": "Share verified location and access information, then relate it to the buyer's priorities.",
+          "last_progress": "Buyer clarified that a purchase would be for own stay if they decide to buy.",
+          "next_action": "Confirm verified location and access details; follow up on whether commute or everyday amenities matter most.",
+          "conversation_summary": "Early-stage buyer works around Perai and is exploring an own-stay purchase, comparing the area and monthly costs with current rent."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified Pearl Residences location and relevant area/access information, including any substantiated details useful for assessing travel around Perai and nearby everyday amenities.",
+          "subject": "Location and area fit",
+          "customer_need": "Compare the area with the buyer's current rental location and work around Perai.",
+          "reason": "Available knowledge does not include verified location or access details, so these should not be guessed.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share verified location and access details and connect them to the buyer's area comparison."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2963,
+        "input_tokens_details": {
+          "cache_write_tokens": 2960,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2343,
+        "output_tokens_details": {
+          "reasoning_tokens": 1837
+        },
+        "total_tokens": 5306
+      }
+    },
+    {
+      "customer": "The commute is probably the main thing, since I work around Perai. I’m not looking for an exact travel time yet—just trying to get a general feel for the access and nearby day-to-day amenities.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "At a general level, Pearl Residences is in established Seberang Jaya, with connections toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland network. Those give you useful reference points for comparing the area with your Perai commute, though I won’t guess travel times. An exploratory visit could help you judge the surroundings and route for yourself.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay and comparing the area and monthly costs with current rent.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Monthly ownership costs",
+            "Area and location fit",
+            "Commute access"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Monthly cost compared with rent",
+            "Area and location",
+            "Commute around Perai"
+          ],
+          "active_concerns": [
+            "Whether the area and monthly ownership costs make sense compared with current renting",
+            "Whether the commute and access suit work around Perai"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential own-stay interest; still exploring and comparing location, commute and costs.",
+          "next_objective": "Help the buyer assess the area and commute using verified access details.",
+          "last_progress": "Buyer said commute is the main factor and wants a general sense of access and day-to-day amenities, not exact travel times.",
+          "next_action": "Share any verified route details when available; consider an exploratory viewing if interest develops.",
+          "conversation_summary": "Early-stage own-stay prospect who works around Perai and is comparing the area, commute and monthly costs with current rent."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3551,
+        "input_tokens_details": {
+          "cache_write_tokens": 3548,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1919,
+        "output_tokens_details": {
+          "reasoning_tokens": 1395
+        },
+        "total_tokens": 5470
+      }
+    },
+    {
+      "customer": "That’s useful, I know those places. The everyday access sounds convenient, though I’m still comparing a few developments and would want to understand the price range before deciding whether to visit.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "From the 14 August 2026 package snapshot, one listed starting reference works out to RM301,760 (RM328,000 base less the listed 8% rebate). That’s indicative only—not a confirmed current offer or an all-in SPA price; the exact unit, any parking or accessory components, and the latest package need confirmation. If that benchmark is within the range you’re comparing, a visit could help you judge the surroundings and your Perai route firsthand.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay and comparing the area and monthly costs with current rent.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Considering a visit if the price range is suitable.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Monthly ownership costs",
+            "Area and location fit",
+            "Commute access"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Monthly cost compared with rent",
+            "Area and location",
+            "Commute around Perai",
+            "Price range"
+          ],
+          "active_concerns": [
+            "Whether the area and monthly ownership costs make sense compared with current renting",
+            "Whether the commute and access suit work around Perai",
+            "Price range compared with other developments"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential own-stay interest; everyday access sounds convenient to the buyer, who is still comparing developments and wants a price benchmark before deciding whether to visit.",
+          "next_objective": "Help the buyer assess whether the indicative price reference fits their comparison, then encourage an exploratory visit if appropriate.",
+          "last_progress": "Shared an indicative starting reference from the dated package snapshot with qualifications; buyer has not agreed to arrange a visit.",
+          "next_action": "Invite the buyer to consider a visit if the indicative price benchmark is relevant to their comparison.",
+          "conversation_summary": "Early-stage own-stay prospect working around Perai, comparing location, commute, monthly costs and price with renting and other developments. Interested in a price benchmark before deciding whether to visit."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4371,
+        "input_tokens_details": {
+          "cache_write_tokens": 4368,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1434,
+        "output_tokens_details": {
+          "reasoning_tokens": 944
+        },
+        "total_tokens": 5805
+      }
+    },
+    {
+      "customer": "That’s a useful benchmark, but since it’s indicative and not confirmed as current, I can’t say yet whether it fits. The location is worth comparing, though I’d want to check current pricing before deciding on a visit.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair point—the figure I shared came from a dated package, so I can’t confirm it’s current. I’ll check the latest starting price and package for you, so you can judge whether it fits before deciding on a visit.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Would consider a visit if current pricing fits.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Monthly ownership costs",
+            "Area and location fit",
+            "Commute access",
+            "Current pricing"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Monthly cost compared with rent",
+            "Area and location",
+            "Commute around Perai",
+            "Current price range"
+          ],
+          "active_concerns": [
+            "Whether the area and monthly ownership costs make sense compared with current renting",
+            "Whether the commute and access suit work around Perai",
+            "Whether current pricing fits before deciding on a visit"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential own-stay interest; location is worth comparing, but the buyer wants current pricing before deciding whether to visit.",
+          "next_objective": "Confirm the latest starting price and package, then help the buyer assess whether a visit is worthwhile.",
+          "last_progress": "Buyer found the location worth comparing but does not yet know whether the indicative dated price fits.",
+          "next_action": "Verify current starting price and package, then share the result with the buyer.",
+          "conversation_summary": "Early-stage own-stay prospect working around Perai, comparing location, commute and monthly costs with renting and other developments. Interested in a price benchmark and wants current pricing confirmed before deciding whether to visit."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "The latest verified Pearl Residences starting price and currently applicable package, including any material qualifications for a general starting-price reference.",
+          "subject": "Current starting price and package",
+          "customer_need": "Assess whether the current price range fits before deciding whether to visit.",
+          "reason": "The previously shared RM301,760 reference was calculated from a dated package snapshot and is not confirmed as current.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the verified current starting price and package, then help the buyer judge whether a visit makes sense."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4608,
+        "input_tokens_details": {
+          "cache_write_tokens": 4605,
+          "cached_tokens": 0
+        },
+        "output_tokens": 927,
+        "output_tokens_details": {
+          "reasoning_tokens": 398
+        },
+        "total_tokens": 5535
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer wants current pricing verified before deciding about a visit"
+}

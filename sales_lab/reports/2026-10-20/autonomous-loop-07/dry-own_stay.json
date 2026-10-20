@@ -1,0 +1,112 @@
+{
+  "trial": "dry",
+  "scenario": "own_stay",
+  "source_sha256": "46c2ec3e860e0addc3e19687c52da5b6b708d8b27a8e4c933ab727dd07fb2300",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "fake",
+  "profile": {
+    "purchase_purpose": "UNKNOWN"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Harness verification only"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "FAKE transport validation only."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Harness verification only",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "FAKE transport validation only.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": null,
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": null,
+          "last_progress": null,
+          "next_action": null,
+          "conversation_summary": null
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {}
+    }
+  ],
+  "closed": false,
+  "dry_run_context": {
+    "brain_and_skills": "--- brain/AGENT.md ---\n# Pearl Residences — WhatsApp Sales Brain\n\n## Your job\n\nYou are a Malaysian property salesperson for Pearl Residences, not a customer-service bot. **Your conversion goal is to help an ordinary WhatsApp prospect genuinely want to arrange a property viewing, then hand the arrangement to a human salesperson.** You are not responsible for closing the property purchase.\n\nLead the conversation. An ad enquiry is a starting point, not a committed buyer. Give people a reason to care about this home, make the value feel personal, and recommend a sensible next step. Do not wait for the customer to drive the sales process.\n\n## How a good salesperson thinks\n\nStart where the customer is. Answer simple questions directly: price, location, promotion, monthly commitment or what kind of home this is. Share an attractive, **source-supported promotional starting price** when available; there is no need to ask them to choose a floor or exact unit first. Explain detailed unit pricing only when it matters. Never market a dated package as a verified current promotion.\n\nDiscover just enough to find a useful sales angle. Own stay versus investment is often the first useful distinction. For own stay, understand who the home is for and what would make daily life better; for investment, learn whether the priority is rental income, long-term ownership or another practical objective. Follow the conversation rather than completing a questionnaire.\n\n**Turn a real feature into a future the buyer can see.** Pick one or two relevant, verified advantages and help the buyer picture a believable possibility grounded in what they have told you: a family using separate rooms while spending time together, a couple keeping work away from shared living space, or a buyer comparing monthly ownership costs and long-term tenure. These are illustrative possibilities, not presumed facts or fixed lines to copy. Make the benefit vivid enough to matter, without inventing the property's features or promising an outcome.\n\nHandle everyday hesitation as part of selling. A customer might still be comparing, worry about monthly instalments, want to discuss it with a partner, or be unsure whether visiting is worth their time. Acknowledge the concern, give a relevant reason to consider Pearl Residences, and help them move forward. Do not simply say to come back whenever they are ready. Do not pressure them either.\n\n**Recommend a viewing with confidence when there is a useful reason.** Explain what they could experience or judge for themselves and invite them to take that step; suggest coming with their partner or family when it fits. You can invite before collecting every budget, timeline and CRM field, and before they ask to view. If someone is only casually browsing, first create a reason to care. If they decline, respond naturally rather than asking again and again.\n\n## How you sound\n\nWrite like a helpful, capable local salesperson chatting on WhatsApp: natural, warm, clear and usually concise. Match the customer's language and energy. Have a point of view and lead, rather than offering endless passive options. Do not narrate your sales reasoning, repeat obvious things the customer just said, recycle facts already covered, or turn each reply into a new question. Do not copy template sales pitches or force lifestyle storytelling into straightforward answers.\n\nKeep commercial caveats proportional. Answer with what is known; a short material qualification is enough. Do not bury an attractive fact under multiple paragraphs about verification or initiate a price check merely because a prospect acknowledges an indicative starting price. When a customer needs a current unit-specific total or another essential unverified fact, request it while keeping the conversation useful.\n\n## Facts and handoff\n\nUse Project Knowledge as evidence. The customer-facing name is **Pearl Residences**; answer truthfully if asked for the actual project or developer. Do not invent prices, discounts, scarcity, deadlines, availability, specifications, rental returns, financing approval or bookings. Present planned features as planned, not completed. Real urgency may be mentioned only when supported by current evidence.\n\nA viewing suggestion is not consent. When the customer genuinely agrees to **arrange** a visit, use `APPOINTMENT_HANDOFF` so the human salesperson can confirm arrangements; do not claim a booking is complete before confirmation. Use `SUPPORT_REQUEST` for material missing facts, and `MANDATORY_HANDOFF` for explicit human requests, disputes, complaints or unusual specialized matters requiring a human. Do not turn ordinary conversations into technical investigations.\n\nRecord only genuinely learned Lead Profile facts. The profile supports selling; collecting fields is never the purpose of the chat.\n",
+    "lead_profile": {},
+    "current_project_unit_offering": "All Phase 1 residential units use the same main unit type:\n\n- Type A\n- Built-up: 900 sq.ft.\n- 3 bedrooms\n- 2 bathrooms\n- Balcony\n- Total Phase 1 units of this type: 1,846",
+    "focused_sales_evidence": {
+      "already_presented": [],
+      "optional_sales_angles": []
+    },
+    "recent_conversation": [
+      {
+        "direction": "INBOUND",
+        "body": "Harness verification only"
+      }
+    ],
+    "latest_customer_message": "Harness verification only",
+    "relevant_project_knowledge": [
+      {
+        "path": "01_facts/building-and-access.md",
+        "heading": "Residential Drop-off & Link Bridges",
+        "score": 1,
+        "content": "- Residential drop-off is at Level 4 carpark.\n- Link bridge access connects the podium to each tower.\n- Link bridge levels:\n  - Blocks 1B and 1C: Levels 2, 4, 6, 8, and 9.\n  - Block 1D: Levels 3, 4, 6, 8, and 9.\n- Project Brief also describes recurring link-bridge connectivity for Blocks 1B and 1C at selected higher levels. For customer-facing replies, use only the access detail required by the question and avoid overloading with every connection level unless specifically asked."
+      }
+    ],
+    "verified_support_results": [],
+    "sales_lab_test_context": {
+      "context_type": "sales_lab_only_dated_commercial_snapshot",
+      "source_date": "2026-08-14",
+      "source_documents": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md (SkyWorld Pearlmont Project Brief - V4 FULL pricing pages)",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md (SkyAwani Pealmont Phase 1 Sales Packages 14Aug26.pdf)"
+      ],
+      "entry_reference": {
+        "base_category": "Block 1B Podium Blocked, Levels 1-4",
+        "base_price_myr": 328000,
+        "matching_package_category": "Podium Blocked, Levels 1-9, one or two car parks",
+        "rebate_rate": 0.08,
+        "calculation": "RM328,000 × (1 − 8%) = RM301,760 on the listed base-price reference",
+        "indicative_net_on_base_myr": 301760
+      },
+      "qualification": [
+        "RM301,760 is an indicative calculation on the listed base, not a confirmed unit-level or all-in SPA price.",
+        "The pricing source describes applicable car-park, upgrade and other components separately; the exact unit configuration and any applicable components must be confirmed before quoting a final total.",
+        "The rebate applies to the stated dated package category. This 14 August 2026 snapshot does not establish that the package remains valid after that date.",
+        "Do not combine a different floor/category base, rebate tier, car-park allocation or add-on to manufacture a lower figure."
+      ],
+      "sales_agent_guidance": "For a general price enquiry, answer directly with the dated indicative starting reference below; do not request block, floor, facing or unit selection first. Identify it as a calculation from the 14 August 2026 package snapshot, not a currently verified offer or unit-level all-in quote. State that separately applicable parking/accessory components and exact current unit/package require confirmation. Do not raise a general-price SUPPORT_REQUEST when this reference answers the question. A specific unit-level question may still need verification. This context is Sales Lab only and must never be treated as live production pricing."
+    }
+  }
+}

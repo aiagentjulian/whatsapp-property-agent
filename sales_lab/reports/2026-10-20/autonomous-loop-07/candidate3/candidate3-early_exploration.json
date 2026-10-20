@@ -1,0 +1,255 @@
+{
+  "trial": "candidate3",
+  "scenario": "early_exploration",
+  "source_sha256": "2ca190bb3f0b0bf4b81e67b6637e72c26054eebf9ac364473454546d8cf62ac4",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Considering a purchase for own stay; comparing the area and monthly cost with current rent. Works around Perai.",
+    "preferred_location": "Perai area; exploring",
+    "appointment_readiness": "NOT_READY",
+    "sales_stage": "HANDLE",
+    "fit_assessment": "Own-stay prospect working around Perai, comparing location and monthly costs with current rent; budget and financing are not yet known.",
+    "next_objective": "Provide a verified indicative ownership-cost picture to support the rent comparison",
+    "last_progress": "Customer says the stated maintenance fee is useful but insufficient to assess monthly ownership costs.",
+    "next_action": "Obtain verified current pricing and an indicative financing/ownership-cost breakdown",
+    "conversation_summary": "Own-stay prospect working around Perai is comparing Pearl Residences with current rent. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund, or about RM162 monthly for 900 sq. ft. Customer wants a clearer ownership-cost picture before deciding whether a viewing makes sense.",
+    "viewing_interest": "Suggested; wants a clearer ownership-cost picture before deciding whether to visit",
+    "intent_level": "MEDIUM",
+    "important_features": [
+      "RM0.18 per sq. ft. maintenance inclusive of sinking fund; about RM162 monthly for 900 sq. ft."
+    ],
+    "primary_motivations": [
+      "Compare monthly ownership costs with current rent",
+      "Assess the area in relation to work around Perai"
+    ],
+    "decision_factors": [
+      "Location",
+      "Monthly cost compared with current rent"
+    ],
+    "active_concerns": [
+      "Needs a clearer picture of ownership costs, beyond maintenance, to compare with current rent and decide whether a visit makes sense"
+    ],
+    "resolved_concerns": []
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw your Pearl Residences post. I work around Perai and have been looking at a few places, just trying to understand the area and what the homes are like."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences is in Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth mainland network. Phase 1 homes are Type A: 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony. Since you work around Perai, it may be worth comparing whether the Seberang Jaya location and layout suit your day-to-day. Are you looking for a home to stay in, or exploring for investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For my own stay if I decide to buy. I’m mainly comparing whether the area and monthly cost make sense against where I’m renting now."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a sensible comparison. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund—about RM162 a month for a 900 sq. ft. unit. That’s only the maintenance cost, not the loan instalment, utilities or other expenses; your instalment would depend on the unit price and your financing. Since you work around Perai, I’d recommend viewing the Seberang Jaya setting and 3-bedroom layout in person to see how they compare with your current rental. Would you be open to a visit? Roughly how much are you paying in rent now?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "The RM162 is useful, but it’s only one part of the monthly cost. I’m still comparing with rent and would need a clearer picture of the ownership costs before deciding whether a visit makes sense."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Fair point—the RM162 is only the stated maintenance fee, not the full monthly ownership cost. A useful comparison would also need a current unit price and financing assumptions, so I don’t want to guess at an instalment. I’ll check for a verified indicative ownership-cost breakdown; that should give you a clearer basis for deciding whether a visit makes sense."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "FINANCING",
+      "requested_fact": "A verified indicative monthly ownership-cost example, including current applicable unit pricing and the financing assumptions used for any instalment estimate; identify any other included or excluded recurring costs.",
+      "subject": "Indicative ownership costs for Pearl Residences Type A",
+      "customer_need": "Compare potential monthly ownership costs with current rent before deciding whether to visit.",
+      "reason": "Only the maintenance rate is verified; current unit pricing and financing assumptions needed for a meaningful monthly estimate are not available.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the verified cost picture and help the customer assess whether a viewing would be useful.",
+      "signature": "FINANCING|and any applicable assumptions cost costs current estimate example excluded financing identify included including indicative instalment monthly or other ownership pearl price recurring residences type used verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw your Pearl Residences post. I work around Perai and have been looking at a few places, just trying to understand the area and what the homes are like.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth mainland network. Phase 1 homes are Type A: 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony. Since you work around Perai, it may be worth comparing whether the Seberang Jaya location and layout suit your day-to-day. Are you looking for a home to stay in, or exploring for investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Works around Perai and is comparing properties while learning about the area and homes.",
+          "preferred_location": "Perai area; exploring",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Early-stage explorer who works around Perai; needs and purpose not yet established.",
+          "next_objective": "Understand whether the purchase is for own stay or investment, then tailor the relevant location and home benefits.",
+          "last_progress": "Shared the Seberang Jaya location context and Phase 1 unit layout.",
+          "next_action": "Ask whether the property is for own stay or investment.",
+          "conversation_summary": "Customer saw a Pearl Residences post, works around Perai, and is comparing places while learning about the area and homes."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2715,
+        "input_tokens_details": {
+          "cache_write_tokens": 2712,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1653,
+        "output_tokens_details": {
+          "reasoning_tokens": 1183
+        },
+        "total_tokens": 4368
+      }
+    },
+    {
+      "customer": "For my own stay if I decide to buy. I’m mainly comparing whether the area and monthly cost make sense against where I’m renting now.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That’s a sensible comparison. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund—about RM162 a month for a 900 sq. ft. unit. That’s only the maintenance cost, not the loan instalment, utilities or other expenses; your instalment would depend on the unit price and your financing. Since you work around Perai, I’d recommend viewing the Seberang Jaya setting and 3-bedroom layout in person to see how they compare with your current rental. Would you be open to a visit? Roughly how much are you paying in rent now?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a purchase for own stay; comparing the area and monthly cost with current rent. Works around Perai.",
+          "preferred_location": "Perai area; exploring",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Viewing suggested; no response yet",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "RM0.18 per sq. ft. maintenance inclusive of sinking fund; about RM162 monthly for 900 sq. ft."
+          ],
+          "primary_motivations": [
+            "Compare monthly ownership costs with current rent",
+            "Assess the area in relation to work around Perai"
+          ],
+          "decision_factors": [
+            "Location",
+            "Monthly cost compared with current rent"
+          ],
+          "active_concerns": [
+            "Whether the area and monthly cost make sense compared with current rent"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Own-stay prospect working around Perai, comparing location and monthly costs with current rent; budget and financing are not yet known.",
+          "next_objective": "Learn approximate current rent and whether the customer is open to viewing.",
+          "last_progress": "Clarified that the purchase would be for own stay if they decide to buy; they are comparing the area and monthly cost against current rent.",
+          "next_action": "If they share their rent, compare it with verified maintenance cost while clarifying that loan instalments and other costs depend on unit price and financing.",
+          "conversation_summary": "Customer works around Perai and is considering Pearl Residences for own stay if they decide to buy. They are comparing the area and monthly cost with current rent. Stated maintenance is RM0.18 per sq. ft. inclusive of sinking fund, or about RM162 per month for 900 sq. ft.; a viewing was suggested but not agreed."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3100,
+        "input_tokens_details": {
+          "cache_write_tokens": 3097,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1965,
+        "output_tokens_details": {
+          "reasoning_tokens": 1295
+        },
+        "total_tokens": 5065
+      }
+    },
+    {
+      "customer": "The RM162 is useful, but it’s only one part of the monthly cost. I’m still comparing with rent and would need a clearer picture of the ownership costs before deciding whether a visit makes sense.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair point—the RM162 is only the stated maintenance fee, not the full monthly ownership cost. A useful comparison would also need a current unit price and financing assumptions, so I don’t want to guess at an instalment. I’ll check for a verified indicative ownership-cost breakdown; that should give you a clearer basis for deciding whether a visit makes sense.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Suggested; wants a clearer ownership-cost picture before deciding whether to visit",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Needs a clearer picture of ownership costs, beyond maintenance, to compare with current rent and decide whether a visit makes sense"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide a verified indicative ownership-cost picture to support the rent comparison",
+          "last_progress": "Customer says the stated maintenance fee is useful but insufficient to assess monthly ownership costs.",
+          "next_action": "Obtain verified current pricing and an indicative financing/ownership-cost breakdown",
+          "conversation_summary": "Own-stay prospect working around Perai is comparing Pearl Residences with current rent. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund, or about RM162 monthly for 900 sq. ft. Customer wants a clearer ownership-cost picture before deciding whether a viewing makes sense."
+        },
+        "support_request": {
+          "support_type": "FINANCING",
+          "requested_fact": "A verified indicative monthly ownership-cost example, including current applicable unit pricing and the financing assumptions used for any instalment estimate; identify any other included or excluded recurring costs.",
+          "subject": "Indicative ownership costs for Pearl Residences Type A",
+          "customer_need": "Compare potential monthly ownership costs with current rent before deciding whether to visit.",
+          "reason": "Only the maintenance rate is verified; current unit pricing and financing assumptions needed for a meaningful monthly estimate are not available.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the verified cost picture and help the customer assess whether a viewing would be useful."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3331,
+        "input_tokens_details": {
+          "cache_write_tokens": 3328,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1541,
+        "output_tokens_details": {
+          "reasoning_tokens": 917
+        },
+        "total_tokens": 4872
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer needs verified current ownership cost before deciding whether viewing makes sense; external pricing/financing confirmation is pending."
+}

@@ -1,0 +1,259 @@
+{
+  "trial": "candidate4_holdout",
+  "scenario": "holdout",
+  "source_sha256": "051fe6d8ffbfe7be58c1c5d611fefe557ccc4728a6ae99dd0671c2e016ee501f",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Hoping to buy their first home together; currently staying with family and looking for a place of their own",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "next_objective": "Provide verified timing and cost information so the couple can assess whether a viewing is worthwhile.",
+    "last_progress": "Customer said the extra room could be useful for family visits and raised concerns about timing and costs before deciding on a visit.",
+    "next_action": "Verify expected completion or handover timing and current unit-level price and applicable cost breakdown.",
+    "conversation_summary": "Couple hopes to buy their first home together for their own stay. They are staying with family, have no fixed move date, and want to understand timing and costs before deciding about a visit; one partner is cautious about the long-term commitment.",
+    "purchase_timeline": "No fixed move date; still thinking through the commitment",
+    "active_concerns": [
+      "Partner is cautious about committing years ahead",
+      "Wants to understand timing and costs before deciding about a visit"
+    ],
+    "fit_assessment": "Potential fit for a first home together; own-stay purpose is confirmed, but timing, costs and commitment remain undecided.",
+    "viewing_interest": "Wants to understand timing and costs before deciding about a visit",
+    "important_features": [
+      "Extra room for family visits"
+    ],
+    "primary_motivations": [
+      "First home together",
+      "A place of their own"
+    ],
+    "decision_factors": [
+      "Completion or handover timing",
+      "Purchase and ownership costs",
+      "Partner's comfort with the long-term commitment"
+    ],
+    "resolved_concerns": []
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we saw the Pearl Residences ad online. We’re hoping to buy our first home together—could you tell us what it’s like?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. For a first home together, the extra room gives you flexibility to set up a study or keep it for guests as your needs change. Are you planning to live there yourselves?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, for ourselves. We’re currently staying with family, so it would be our first place of our own. We don’t have a fixed move date yet; we’re still thinking through the commitment."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s understandable—a first home together is a big commitment, especially when you don’t have a move date in mind. The extra bedroom gives you some flexibility as your life together changes, without needing to decide now exactly how you’ll use it. I’d suggest a viewing as a sensible next step: you can both get a feel for whether the space works for you before thinking further about timing. Would you be open to arranging one?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "The extra room could be useful when family visits, but my partner is cautious about committing years ahead. We’d want to understand the timing and costs better before deciding about a visit."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense, especially when you’re weighing a long-term commitment together. One recurring cost I can confirm is maintenance at RM0.18 per sq. ft., inclusive of sinking fund—about RM162 a month for a 900 sq. ft. home. That isn’t the full ownership cost, though. I’ll check the confirmed completion or handover timing and the current unit-level price and applicable cost breakdown, so you can assess both before deciding whether a visit makes sense. The third room could also give you space for family visits."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Confirmed expected completion or handover timing, plus current unit-level price and applicable cost breakdown.",
+      "subject": "Pearl Residences purchase timing and costs",
+      "customer_need": "The couple wants to understand the timing and financial commitment before deciding whether to visit.",
+      "reason": "These material details are not confirmed in the available information, and the customer's partner is cautious about committing years ahead.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the verified timing and cost information, then help the couple decide whether a viewing is a useful next step.",
+      "signature": "OTHER|and applicable breakdown completion confirmed cost costs current expected handover level or pearl plus price purchase residences timing",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we saw the Pearl Residences ad online. We’re hoping to buy our first home together—could you tell us what it’s like?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. For a first home together, the extra room gives you flexibility to set up a study or keep it for guests as your needs change. Are you planning to live there yourselves?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": "Hoping to buy their first home together",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Clarify whether they plan to live in the home themselves.",
+          "last_progress": "Asked what Pearl Residences is like and shared that they hope to buy their first home together.",
+          "next_action": "Ask whether they plan to live there themselves.",
+          "conversation_summary": "Initial enquiry from a couple hoping to buy their first home together; intended use is not yet clear."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2644,
+        "input_tokens_details": {
+          "cache_write_tokens": 2641,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1430,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 4074
+      }
+    },
+    {
+      "customer": "Yes, for ourselves. We’re currently staying with family, so it would be our first place of our own. We don’t have a fixed move date yet; we’re still thinking through the commitment.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "That’s understandable—a first home together is a big commitment, especially when you don’t have a move date in mind. The extra bedroom gives you some flexibility as your life together changes, without needing to decide now exactly how you’ll use it. I’d suggest a viewing as a sensible next step: you can both get a feel for whether the space works for you before thinking further about timing. Would you be open to arranging one?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Hoping to buy their first home together; currently staying with family and looking for a place of their own",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No fixed move date; still thinking through the commitment",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Thinking through the commitment of buying; no fixed move date"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential fit for a first home together; own-stay purpose is confirmed, but commitment and timing remain undecided.",
+          "next_objective": "Help them assess whether the home feels suitable before deciding on timing.",
+          "last_progress": "Confirmed they plan to live in the home themselves and are currently staying with family.",
+          "next_action": "Invite them to view the property; do not treat the invitation as agreement.",
+          "conversation_summary": "Couple hopes to buy their first home together for their own stay. They are currently staying with family, have no fixed move date, and are still thinking through the commitment."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2846,
+        "input_tokens_details": {
+          "cache_write_tokens": 2843,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2047,
+        "output_tokens_details": {
+          "reasoning_tokens": 1548
+        },
+        "total_tokens": 4893
+      }
+    },
+    {
+      "customer": "The extra room could be useful when family visits, but my partner is cautious about committing years ahead. We’d want to understand the timing and costs better before deciding about a visit.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "That makes sense, especially when you’re weighing a long-term commitment together. One recurring cost I can confirm is maintenance at RM0.18 per sq. ft., inclusive of sinking fund—about RM162 a month for a 900 sq. ft. home. That isn’t the full ownership cost, though. I’ll check the confirmed completion or handover timing and the current unit-level price and applicable cost breakdown, so you can assess both before deciding whether a visit makes sense. The third room could also give you space for family visits.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Hoping to buy their first home together; currently staying with family and looking for a place of their own",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No fixed move date; still thinking through the commitment",
+          "viewing_interest": "Wants to understand timing and costs before deciding about a visit",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Extra room for family visits"
+          ],
+          "primary_motivations": [
+            "First home together",
+            "A place of their own"
+          ],
+          "decision_factors": [
+            "Completion or handover timing",
+            "Purchase and ownership costs",
+            "Partner's comfort with the long-term commitment"
+          ],
+          "active_concerns": [
+            "Partner is cautious about committing years ahead",
+            "Wants to understand timing and costs before deciding about a visit"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a first home together; own-stay purpose is confirmed, but timing, costs and commitment remain undecided.",
+          "next_objective": "Provide verified timing and cost information so the couple can assess whether a viewing is worthwhile.",
+          "last_progress": "Customer said the extra room could be useful for family visits and raised concerns about timing and costs before deciding on a visit.",
+          "next_action": "Verify expected completion or handover timing and current unit-level price and applicable cost breakdown.",
+          "conversation_summary": "Couple hopes to buy their first home together for their own stay. They are staying with family, have no fixed move date, and want to understand timing and costs before deciding about a visit; one partner is cautious about the long-term commitment."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirmed expected completion or handover timing, plus current unit-level price and applicable cost breakdown.",
+          "subject": "Pearl Residences purchase timing and costs",
+          "customer_need": "The couple wants to understand the timing and financial commitment before deciding whether to visit.",
+          "reason": "These material details are not confirmed in the available information, and the customer's partner is cautious about committing years ahead.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the verified timing and cost information, then help the couple decide whether a viewing is a useful next step."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3613,
+        "input_tokens_details": {
+          "cache_write_tokens": 3610,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2216,
+        "output_tokens_details": {
+          "reasoning_tokens": 1458
+        },
+        "total_tokens": 5829
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer wants verified timing and full cost details before deciding whether to visit; no appointment agreement or handoff."
+}

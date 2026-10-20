@@ -1,0 +1,360 @@
+{
+  "blind_status": "LOCKED; A/B identities not accessed or inferred from experiment mapping.",
+  "scoring_method": {
+    "commercial_dimensions_0_to_10": [
+      "relevant_discovery",
+      "desire_visualization",
+      "everyday_objection",
+      "sales_leadership",
+      "appointment_progression",
+      "conversation_realism"
+    ],
+    "legacy_weighted_mapping": "Relevant discovery ×20% + desire/visualization ×35% + appointment progression ×35% + conversation realism ×10%. Everyday objection and sales leadership are reported separately, not inserted into the legacy formula."
+  },
+  "pairs": [
+    {
+      "pair_id": "P1",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 6.5,
+          "desire_visualization": 5.8,
+          "everyday_objection": 7.5,
+          "sales_leadership": 5.8,
+          "appointment_progression": 3.4,
+          "conversation_realism": 7.6
+        },
+        "legacy_weighted_score_0_to_10": 5.28,
+        "buyer_stage": "Enquiry → affordability comparison; no clear personal-fit recognition or viewing consideration.",
+        "invitation_assessment": "No invitation; reasonable to resolve the explicit monthly-cost/current-price blocker first, though it leaves the visit untested.",
+        "customer_response_to_specific_seller_reason": "No buyer response to a viewing reason was elicited. The customer responds to price information only: “That gives us a reference point,” then asks for current pricing and loan payment.",
+        "guardrails": "Price math/claims are internally plausible but not independently source-verified; dated package is explicitly qualified. No agreement or handoff.",
+        "evidence": "A answers the requested price with base and dated package caveats, then correctly routes current pricing to support. It asks the customer to state a comfortable payment twice across turns, even after they say they cannot yet do so. The closing loop repeats rent comparison rather than offering a low-pressure way to assess fit."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 6.4,
+          "desire_visualization": 5.8,
+          "everyday_objection": 7.2,
+          "sales_leadership": 5.3,
+          "appointment_progression": 3.3,
+          "conversation_realism": 7.4
+        },
+        "legacy_weighted_score_0_to_10": 5.21,
+        "buyer_stage": "Enquiry → affordability comparison; no personal-fit or viewing-consideration evidence.",
+        "invitation_assessment": "No invitation; not clearly missed given the buyer says cost is the main uncertainty.",
+        "customer_response_to_specific_seller_reason": "None for a visit. “Would that price level be worth exploring?” gets a request for current pricing and payment estimates, not willingness to view.",
+        "guardrails": "Price references are carefully dated/qualified; exact arithmetic is plausible but not independently verified. No agreement or handoff.",
+        "evidence": "B starts with a generic ownership-vs-renting discovery prompt, then repeats a monthly-ceiling question. Its price qualification is careful, but the “worth exploring” prompt is not connected to an in-person benefit and does not move the buyer toward viewing."
+      },
+      "pairwise_preference": "A (narrow): A more directly answers the price question and avoids an extra generic ownership/investment qualification. Neither creates viewing readiness; both stall on financial comparison."
+    },
+    {
+      "pair_id": "P2",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 6.5,
+          "desire_visualization": 5.8,
+          "everyday_objection": 7.5,
+          "sales_leadership": 5.8,
+          "appointment_progression": 3.4,
+          "conversation_realism": 7.6
+        },
+        "legacy_weighted_score_0_to_10": 5.28,
+        "buyer_stage": "Enquiry → affordability comparison; no viewing consideration.",
+        "invitation_assessment": "No invitation; cost remains the buyer’s explicit gating concern.",
+        "customer_response_to_specific_seller_reason": "None; buyer’s only positive response is that RM162 is useful “as one part” of cost, then asks for price/financing.",
+        "guardrails": "Numbers are internally consistent and cost components are distinguished, but source status is not independently verifiable. No agreement/handoff.",
+        "evidence": "A is careful and helpful about maintenance and dated price. It keeps asking for a budget ceiling despite the buyer explaining they need a price/financing reference first. It does not connect a visit to any unresolved lifestyle question."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 6.8,
+          "desire_visualization": 5.8,
+          "everyday_objection": 7.6,
+          "sales_leadership": 5.8,
+          "appointment_progression": 3.5,
+          "conversation_realism": 7.6
+        },
+        "legacy_weighted_score_0_to_10": 5.37,
+        "buyer_stage": "Enquiry → recognizes monthly affordability as the key issue; no viewing consideration.",
+        "invitation_assessment": "No invitation; reasonable while buyer is building a financial reference.",
+        "customer_response_to_specific_seller_reason": "Buyer says RM162 “is useful as one part,” but this reaction is to a cost figure, not a seller-provided reason to view.",
+        "guardrails": "Figures and caveats are internally plausible; not source-verified. No consent/handoff.",
+        "evidence": "B gives the same cost breakdown with a savings-buffer frame and clearer limits, but turns back to total monthly ceiling and pricing. The buyer does not become more willing to visit."
+      },
+      "pairwise_preference": "B (very slight): B better frames the buyer’s variable-income concern around preserving savings, but both remain financial FAQ loops and produce no observable appointment movement."
+    },
+    {
+      "pair_id": "P3",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 6.8,
+          "desire_visualization": 6.9,
+          "everyday_objection": 7.0,
+          "sales_leadership": 7.0,
+          "appointment_progression": 6.5,
+          "conversation_realism": 8.0
+        },
+        "legacy_weighted_score_0_to_10": 6.85,
+        "buyer_stage": "Enquiry → stronger area fit → viewing consideration conditional on current pricing. No agreement.",
+        "invitation_assessment": "Earned, low-pressure conditional invitation after the customer says nearby access sounds convenient; does not keep pushing after price is requested.",
+        "customer_response_to_specific_seller_reason": "Yes, limited but concrete: after the named destinations, customer says “The everyday access sounds convenient” and “The location is worth comparing,” while still requiring current pricing before deciding to visit.",
+        "guardrails": "Price is clearly labeled dated/indicative and not current/all-in; math is consistent but source not independently verified. Pricing support request is appropriate. No consent/handoff.",
+        "evidence": "A recovers a useful location answer after initially routing the question, ties named local destinations to the Perai commute, and explains what a visit would let the buyer assess. The buyer’s positive response is expressly linked to this location information."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 5.8,
+          "desire_visualization": 5.8,
+          "everyday_objection": 6.2,
+          "sales_leadership": 4.8,
+          "appointment_progression": 4.4,
+          "conversation_realism": 7.5
+        },
+        "legacy_weighted_score_0_to_10": 5.48,
+        "buyer_stage": "Enquiry → invitation declined/deferred; remains comparing. No viewing consideration after the customer says leave the visit for now.",
+        "invitation_assessment": "Early: asks to arrange before answering the customer’s request for a general area/access picture. The buyer says “Maybe later” and “We can leave the visit for now”; agent then stops.",
+        "customer_response_to_specific_seller_reason": "No. The customer’s action is a boundary in response to an early invitation, not increased willingness from a persuasive reason.",
+        "guardrails": "No evident fabricated fact; agent openly says it lacks verified access/cost details. Support integrity UNCERTAIN because the response repeatedly defers a general overview; the comparison transcript supplies several general landmarks. No agreement/handoff.",
+        "evidence": "B asks for a visit at T2 based only on “area and monthly cost” without providing either useful area detail or a personal benefit. After the buyer defers, it handles the boundary politely but leaves the customer to wait for a general overview."
+      },
+      "pairwise_preference": "A (clear): A provides general verified landmarks and the customer reacts positively; B invites too early, gets a deferral, and closes the visit path."
+    },
+    {
+      "pair_id": "P4",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.2,
+          "desire_visualization": 7.3,
+          "everyday_objection": 7.0,
+          "sales_leadership": 6.8,
+          "appointment_progression": 5.8,
+          "conversation_realism": 8.2
+        },
+        "legacy_weighted_score_0_to_10": 6.85,
+        "buyer_stage": "Enquiry → stronger fit (work corner and shared-space need) → weak viewing consideration; customer is not ready to arrange.",
+        "invitation_assessment": "Earned as an optional future step after learning the shared-space and work-corner priorities; invitation is deferred with spouse discussion.",
+        "customer_response_to_specific_seller_reason": "Some evidence of relevance, not clear increased viewing willingness: customer says “I can see how that layout might help” but immediately says they are not ready to arrange a visit.",
+        "guardrails": "No unsupported urgency or consent inference. Facts are plausible but not independently verified. No handoff.",
+        "evidence": "A connects the open-plan area/no long corridor and a separate room to the stated preferences. It offers a future comparison without pressure, then respects the spouse/timing objection. It could be more sales-led by proposing a concrete next step after the spouse review."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 6.5,
+          "desire_visualization": 7.2,
+          "everyday_objection": 7.0,
+          "sales_leadership": 7.4,
+          "appointment_progression": 6.8,
+          "conversation_realism": 8.3
+        },
+        "legacy_weighted_score_0_to_10": 7.03,
+        "buyer_stage": "Enquiry → stronger fit → explicit viewing consideration; no agreement to arrange.",
+        "invitation_assessment": "Earned after the customer names shared-space and quiet-work needs. Customer is open to considering, but says spouse discussion first and is not ready to arrange.",
+        "customer_response_to_specific_seller_reason": "Yes, moderately: customer’s “I’d be open to considering it” follows the targeted suggestion to see the shared layout and work corner, but the spouse objection remains.",
+        "guardrails": "No unsupported urgency; conceptual fit is qualified. No appointment agreement or handoff.",
+        "evidence": "B makes a concise recommendation tailored to the two expressed needs and asks permission, then accepts the boundary. It creates a small, observable step from fit to considering a visit, without converting that to agreement."
+      },
+      "pairwise_preference": "B (moderate): B earns a clearer viewing-consideration response with a relevant recommendation; neither dialogue reaches agreement."
+    },
+    {
+      "pair_id": "P5",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.2,
+          "desire_visualization": 7.4,
+          "everyday_objection": 7.2,
+          "sales_leadership": 6.4,
+          "appointment_progression": 5.7,
+          "conversation_realism": 7.8
+        },
+        "legacy_weighted_score_0_to_10": 6.81,
+        "buyer_stage": "Enquiry → clear personal fit (partner WFH/extra room) → layout review before deciding on a visit; no explicit viewing consideration beyond a conditional next step.",
+        "invitation_assessment": "A mentions a viewing after buyer says extra room useful and is comparing; reasonable but does not ask to start arranging. Later the buyer chooses to review layout first.",
+        "customer_response_to_specific_seller_reason": "The buyer’s workspace interest is explicit, but they do not state increased willingness to view; “we’d want to check” refers to layout and costs, and they ask for the plan.",
+        "guardrails": "Dated price is qualified. RM162 calculation is correct from stated rate and area, but source status is not independently verified. Support requests match pending plan/financing follow-up. No consent/handoff.",
+        "evidence": "A meaningfully connects the 3rd room to WFH and the open shared space. However it answers the customer’s plan request with another description and a multi-part follow-up, then ends with more pending checks rather than a clear decision path."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.1,
+          "desire_visualization": 7.8,
+          "everyday_objection": 7.3,
+          "sales_leadership": 7.3,
+          "appointment_progression": 6.2,
+          "conversation_realism": 7.8
+        },
+        "legacy_weighted_score_0_to_10": 7.1,
+        "buyer_stage": "Enquiry → personal fit → viewing consideration is conditional on reviewing the plan; no agreement.",
+        "invitation_assessment": "Earned to ask after the extra room has been tied to WFH, but the customer says “look at the layout first” and later “then decide if a visit makes sense.” Agent respects this.",
+        "customer_response_to_specific_seller_reason": "Yes, a small increase in openness to a future visit after the workspace reason is connected, but the observable commitment is only to review the plan; baseline also elicited the same plan request.",
+        "guardrails": "Price clearly dated/indicative; no false current offer. RM162 math correct but not source-verified. Plan/financing follow-ups are accurately pending in the transcript. No consent/handoff.",
+        "evidence": "B links open shared space and the extra bedroom to partner WFH, requests the approved plan, and makes the visit a sensible next step after review. Customer agrees to review together, not to visit. This is sound progression but incremental versus A."
+      },
+      "pairwise_preference": "B (slight): better sequencing from workspace fit to plan review to a possible visit. Buyer response is conditional and substantially similar to A; do not count as appointment conversion."
+    },
+    {
+      "pair_id": "P6",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.1,
+          "desire_visualization": 7.2,
+          "everyday_objection": 7.2,
+          "sales_leadership": 6.4,
+          "appointment_progression": 5.7,
+          "conversation_realism": 7.5
+        },
+        "legacy_weighted_score_0_to_10": 6.68,
+        "buyer_stage": "Enquiry → personal fit (extra room for WFH) → plan requested before visit; no viewing consideration commitment.",
+        "invitation_assessment": "Early at T1, before confirming own-stay motive; repeated viewing rationale at T2. Customer requests price and later asks for plan before deciding.",
+        "customer_response_to_specific_seller_reason": "No discernible increase caused by the initial visit invitation. Customer responds to the extra room/WFH link, then requests a plan.",
+        "guardrails": "Price caveated; no evident numerical error. Plan availability correctly pending. No agreement/handoff.",
+        "evidence": "A invites a visit in the first response before the buyer confirms the home is for own stay, then repeats the case. The buyer ignores the invitation and asks for price. The later WFH link is relevant, but the close remains plan-first."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.2,
+          "desire_visualization": 7.4,
+          "everyday_objection": 7.2,
+          "sales_leadership": 6.4,
+          "appointment_progression": 5.7,
+          "conversation_realism": 7.8
+        },
+        "legacy_weighted_score_0_to_10": 6.81,
+        "buyer_stage": "Enquiry → personal fit (extra room for WFH) → plan requested before visit; no agreement.",
+        "invitation_assessment": "The first viewing mention follows own-stay and extra-room context; it is low pressure, but customer never responds to it as a visit decision.",
+        "customer_response_to_specific_seller_reason": "No clear change in viewing willingness. Buyer asks for a floor plan before deciding; subsequent positive language is about the open shared area and separate workspace, not readiness to view.",
+        "guardrails": "Price caveated; RM162 math correct but source not independently verified. Plan/financing support requests are reasonable. No consent/handoff.",
+        "evidence": "B waits for own-stay confirmation and the useful extra-room need before suggesting a viewing, so timing is better than A. Yet the customer consistently prioritizes the plan; Agent should use plan follow-up to create a concrete later viewing step."
+      },
+      "pairwise_preference": "B (slight): B times the invitation better; neither version obtains a customer response to the invitation or changes the eventual plan-first position."
+    },
+    {
+      "pair_id": "P7",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.4,
+          "desire_visualization": 7.5,
+          "everyday_objection": 7.8,
+          "sales_leadership": 6.8,
+          "appointment_progression": 5.8,
+          "conversation_realism": 8.3
+        },
+        "legacy_weighted_score_0_to_10": 6.96,
+        "buyer_stage": "Enquiry → personal fit (small rental, child’s belongings) → viewing considered only after approved-plan review; no agreement.",
+        "invitation_assessment": "A low-pressure invitation at T2 is early but conditional. After customer says they need proof of usable space, Agent appropriately explains layout and offers plan first; final response defers visit.",
+        "customer_response_to_specific_seller_reason": "Buyer says the third room “could help” with belongings, but explicitly wants the plan with partner before deciding whether visit is worthwhile. That response follows the tailored room/storage explanation; it is fit evidence, not viewing agreement.",
+        "guardrails": "Completion timing is clearly stated as expected; no false urgency or promise that 900 sq ft is roomier. Layout claims are qualified. Plan support pending. No consent/handoff.",
+        "evidence": "A handles timeline honestly, then works through the real family-space concern and avoids promising that 900 sq ft is roomier. It misses a natural next step after the customer recognizes possible value: propose reviewing the plan and then decide on a viewing date."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.2,
+          "desire_visualization": 7.8,
+          "everyday_objection": 7.7,
+          "sales_leadership": 8.0,
+          "appointment_progression": 7.0,
+          "conversation_realism": 8.3
+        },
+        "legacy_weighted_score_0_to_10": 7.45,
+        "buyer_stage": "Enquiry → personal fit → explicit viewing consideration; buyer wants partner/plan check first; no agreement.",
+        "invitation_assessment": "T2 invitation is somewhat early, but Agent listens to the space objection and re-earns a second tailored invitation after learning the living area is crowded. It then respects the spouse/plan boundary.",
+        "customer_response_to_specific_seller_reason": "Yes: customer says “It could be worth looking at together, especially to compare the shared space with our rental,” following the explanation tied to the child’s belongings and shared-space crowding. That is credible viewing consideration, not agreement.",
+        "guardrails": "Timing is caveated; layout claims remain qualified; no pressure. No agreement/handoff, appropriately.",
+        "evidence": "B turns the customer’s specific crowding problem into a plausible use case, then asks to arrange a viewing. Customer advances to considering a joint look, while explicitly withholding arrangement until spouse discussion. This is the clearest conversion-stage gain in the set."
+      },
+      "pairwise_preference": "B (clear): Customer explicitly says a joint look could be worthwhile after the tailored shared-space case. B still correctly does not treat that as consent."
+    },
+    {
+      "pair_id": "P8",
+      "A": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.4,
+          "desire_visualization": 7.5,
+          "everyday_objection": 7.8,
+          "sales_leadership": 6.8,
+          "appointment_progression": 5.8,
+          "conversation_realism": 8.3
+        },
+        "legacy_weighted_score_0_to_10": 6.96,
+        "buyer_stage": "Enquiry → personal fit (crowded rental) → weak/conditional viewing consideration; wants plan/partner review first.",
+        "invitation_assessment": "Low-pressure early offer, then plan-first handling. It is reasonable to defer arrangement while checking the room dimensions and partner’s view, but should create a clear follow-up step.",
+        "customer_response_to_specific_seller_reason": "Customer says the third room “could help” but wants to see actual plan with partner before deciding on visit. This is specific fit, but not a seller-caused agreement or firm viewing interest.",
+        "guardrails": "No apparent overclaim, urgency or consent error. Source facts not independently verified; no handoff.",
+        "evidence": "A gives a cautious, useful space comparison and recognizes the plan/partner dependency. It does not secure an explicit next action beyond a follow-up with plan details."
+      },
+      "B": {
+        "scores_0_to_10": {
+          "relevant_discovery": 7.2,
+          "desire_visualization": 7.8,
+          "everyday_objection": 7.4,
+          "sales_leadership": 7.2,
+          "appointment_progression": 6.5,
+          "conversation_realism": 8.2
+        },
+        "legacy_weighted_score_0_to_10": 7.27,
+        "buyer_stage": "Enquiry → personal fit → viewing consideration conditional on partner reviewing approved plan; no agreement.",
+        "invitation_assessment": "T2 and T3 invitations may be repetitive, but T3 is re-grounded in the specific living-space concern and explicitly low-pressure. Buyer asks to review plan first; appropriate not to trigger handoff.",
+        "customer_response_to_specific_seller_reason": "Some specific fit response—“That could help, especially if the third room gives us somewhere to keep our little one’s things”—but customer’s stated next step is plan review, not arranging a visit. The explanation is relevant; the extra viewing willingness is weaker than P7B.",
+        "guardrails": "No unsupported urgency; conceptual details are disclosed. No consent/handoff.",
+        "evidence": "B explains why visit can test the family’s actual concern and then respects the request to review plan. Repeating an invitation after already asking at T2 is a slight sales-pressure/naturalness cost; later move to plan-first is appropriate."
+      },
+      "pairwise_preference": "B (slight): B gives a more relevant reason to view, though the customer still chooses partner/plan review. Repeat invitation makes the gain smaller than in P7."
+    }
+  ],
+  "holdout_H": {
+    "scores_0_to_10": {
+      "relevant_discovery": 5.8,
+      "desire_visualization": 3.5,
+      "everyday_objection": 5.5,
+      "sales_leadership": 4.0,
+      "appointment_progression": 2.5,
+      "conversation_realism": 7.2
+    },
+    "legacy_weighted_score_0_to_10": 3.98,
+    "buyer_stage": "Enquiry only; location curiosity, no stated buying motive, personal fit, or viewing consideration.",
+    "invitation_assessment": "No invitation; appropriate for an initial generic location enquiry.",
+    "customer_response_to_specific_seller_reason": "No seller-generated buying/viewing reason and no customer progression. Customer only agrees to receive confirmed access details.",
+    "guardrails": "Facts shared are limited and internally consistent, but cannot be source-verified from allowed evidence. Support integrity UNCERTAIN: two turns defer general landmarks/access before finally providing broad destinations, while correctly withholding unverified road specifics. No urgency, appointment agreement, or handoff.",
+    "evidence": "Agent is cautious and avoids invented commute times, but spends the first two turns saying it is checking verified location details. The buyer explicitly says general surroundings are enough. The later response provides broad destinations and accurately distinguishes them from road connections it cannot verify; no sales progression is expected yet."
+  },
+  "aggregate": {
+    "legacy_weighted_mean_0_to_10": {
+      "A": 6.46,
+      "B": 6.47
+    },
+    "legacy_delta_B_minus_A": 0.01,
+    "commercial_dimension_means_0_to_10": {
+      "A": {
+        "relevant_discovery": 7.01,
+        "desire_visualization": 6.93,
+        "everyday_objection": 7.38,
+        "sales_leadership": 6.47,
+        "appointment_progression": 5.26,
+        "conversation_realism": 7.91
+      },
+      "B": {
+        "relevant_discovery": 6.78,
+        "desire_visualization": 6.92,
+        "everyday_objection": 7.2,
+        "sales_leadership": 6.53,
+        "appointment_progression": 5.42,
+        "conversation_realism": 7.86
+      }
+    },
+    "pairwise_preference_counts": {
+      "A": 2,
+      "B": 6,
+      "tie": 0
+    },
+    "interpretation": "Nominal scores are effectively tied overall despite heterogeneous pair outcomes; pairs reuse highly similar/identical buyer paths, so they are not eight independent observations. B shows clearer customer-authored viewing consideration in P4/P7 and a smaller conditional gain in P5/P8; A is clearly better in P3. No dialogue reached agreement to arrange."
+  },
+  "journey_and_handoff_summary": {
+    "agreement_to_arrange": "None across P1–P8 or H. Statements of openness, a useful layout, or a possible joint look are not agreement.",
+    "human_scheduling_or_confirmed_booking": "None.",
+    "formal_handoff": "None. No handoff should be triggered on these transcripts.",
+    "invitation_vs_interest": "Several invitations occurred; only P4B, P7B and weakly P5/P8 show customer-authored consideration in response. No structured action represents accepted appointment consent."
+  },
+  "recommendation": "NEEDS REVIEW",
+  "reason": "No credible aggregate legacy-score gain; appointment progression improves in a few normal buyer conversations when the reason is tied to the stated use case, but most buyers defer for partner/plan/cost checks and none agrees to arrange. The strong P3 reverse result and duplicated buyer paths limit causal confidence. Do not KEEP solely from invitation counts; keep the evaluation focused on customer response and correct consent/handoff distinction.",
+  "limitations": "Scores are independent qualitative judgments from the anonymized transcripts. No project source dossier was part of the permitted evidence, so factual claims are checked for internal arithmetic/caveating only and marked UNCERTAIN where external verification is needed. Simulator differences are limited evidence, not causal proof."
+}

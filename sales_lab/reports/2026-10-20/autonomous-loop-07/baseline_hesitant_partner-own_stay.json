@@ -1,0 +1,304 @@
+{
+  "trial": "baseline_hesitant_partner",
+  "scenario": "own_stay",
+  "source_sha256": "46c2ec3e860e0addc3e19687c52da5b6b708d8b27a8e4c933ab727dd07fb2300",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "HANDLE",
+    "next_objective": "Give the buyer space to discuss the layout with their spouse and let them decide whether a viewing would be useful.",
+    "last_progress": "Buyer sees how the layout might help but is not ready to arrange a visit and wants to talk it over with spouse.",
+    "next_action": "Give the buyer space; do not pursue a viewing arrangement now.",
+    "conversation_summary": "Buyer is exploring Pearl Residences for own stay if they move and comparing layouts. They want a quieter work corner and more usable shared space; their current home is okay, so there is no rush. They see potential in the 900 sq. ft. three-bedroom layout but want to discuss it with their spouse and are not ready to arrange a visit.",
+    "purchase_reason": "Considering a home for own stay if they move",
+    "important_features": [
+      "Quieter work corner",
+      "Usable shared living area"
+    ],
+    "primary_motivations": [
+      "Finding a layout that suits own stay"
+    ],
+    "decision_factors": [
+      "Work-space potential",
+      "Usability of shared area",
+      "Spouse's input"
+    ],
+    "active_concerns": [
+      "Comparing layouts to see which would suit their own stay better",
+      "Wants to discuss the option with spouse before considering a visit"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The 900 sq. ft. three-bedroom layout may offer a separate room for work and an open-plan shared area without a long internal corridor; whether it feels more usable is for the buyer and spouse to assess.",
+    "size_or_layout_preference": "Would like a quieter work corner and more usable shared space",
+    "purchase_timeline": "No rush; current home is okay",
+    "viewing_interest": "May be useful to view and compare the shared area and work-space potential, but not ready to arrange a visit yet"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re only exploring for now—could you tell me what kind of home it is?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "It’s a 900 sq. ft. home with 3 bedrooms, 2 bathrooms and a balcony. That gives you a separate room you could use for work or guests, alongside the bedrooms. Are you exploring mainly for your own stay or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For our own stay if we move. We’re just exploring for now and seeing whether another layout might suit us better."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—layout can feel quite different for your own stay. This 900 sq. ft. plan avoids a long internal corridor, with an open living, dining and kitchen area and a small storage space, so it may be worth comparing for how the everyday space is used. What are you hoping the other layout does better?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "A quieter corner for work and a bit more usable space in the shared area would be nice. Our current place is okay, though, so there’s no rush."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense, especially if your current place is working well. One of the three bedrooms could be used as a separate work corner, while the open-plan living, dining and kitchen area has no long internal corridor taking up space. A look in person could help you judge whether that shared area feels more usable for you—no need to rush; we can arrange a viewing whenever comparing layouts becomes useful."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I can see how that layout might help. I’d need to talk it over with my spouse first; since we’re not in a rush to move, I’m not ready to arrange a visit yet."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Of course—this is something to decide together, especially since your current place is working well. The separate bedroom for work and open-plan shared area may be useful points to compare with your spouse. No need to arrange a visit now; you can see together whether an in-person look would help later."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re only exploring for now—could you tell me what kind of home it is?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "It’s a 900 sq. ft. home with 3 bedrooms, 2 bathrooms and a balcony. That gives you a separate room you could use for work or guests, alongside the bedrooms. Are you exploring mainly for your own stay or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the buyer is exploring for own stay or investment.",
+          "last_progress": "Asked what kind of home Pearl Residences offers; shared the Type A size and layout.",
+          "next_action": "Explore purchase purpose and connect relevant property benefits.",
+          "conversation_summary": "Buyer saw the Pearl Residences ad and is only exploring. They asked what kind of home it is; shared that it is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2717,
+        "input_tokens_details": {
+          "cache_write_tokens": 2714,
+          "cached_tokens": 0
+        },
+        "output_tokens": 705,
+        "output_tokens_details": {
+          "reasoning_tokens": 381
+        },
+        "total_tokens": 3422
+      }
+    },
+    {
+      "customer": "For our own stay if we move. We’re just exploring for now and seeing whether another layout might suit us better.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense—layout can feel quite different for your own stay. This 900 sq. ft. plan avoids a long internal corridor, with an open living, dining and kitchen area and a small storage space, so it may be worth comparing for how the everyday space is used. What are you hoping the other layout does better?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay if they move",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [],
+          "primary_motivations": [],
+          "decision_factors": [],
+          "active_concerns": [
+            "Comparing layouts to see which would suit their own stay better"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom, 900 sq. ft. layout may be relevant, but their preferred layout features and comparison criteria are not yet known.",
+          "next_objective": "Find out what they hope another layout would improve so the comparison can be more relevant.",
+          "last_progress": "Confirmed they are considering a home for own stay if they move; still exploring and comparing layouts.",
+          "next_action": "Ask what they hope the other layout does better, then connect the answer to verified layout features.",
+          "conversation_summary": "Buyer saw the Pearl Residences ad and is exploring. They are considering own stay if they move and are comparing layouts. The home discussed is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony; its layout avoids a long internal corridor and has an open-plan living, dining and kitchen area with a small storage space."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3133,
+        "input_tokens_details": {
+          "cache_write_tokens": 3130,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1414,
+        "output_tokens_details": {
+          "reasoning_tokens": 994
+        },
+        "total_tokens": 4547
+      }
+    },
+    {
+      "customer": "A quieter corner for work and a bit more usable space in the shared area would be nice. Our current place is okay, though, so there’s no rush.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense, especially if your current place is working well. One of the three bedrooms could be used as a separate work corner, while the open-plan living, dining and kitchen area has no long internal corridor taking up space. A look in person could help you judge whether that shared area feels more usable for you—no need to rush; we can arrange a viewing whenever comparing layouts becomes useful.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay if they move",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Would like a quieter work corner and more usable shared space",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No rush; current home is okay",
+          "viewing_interest": "May be useful to view and compare the shared area and work-space potential",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Quieter work corner",
+            "Usable shared living area"
+          ],
+          "primary_motivations": [
+            "Finding a layout that suits own stay"
+          ],
+          "decision_factors": [
+            "Work-space potential",
+            "Usability of shared area"
+          ],
+          "active_concerns": [
+            "Comparing layouts to see which would suit their own stay better"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "The 900 sq. ft. three-bedroom layout may offer a separate room for work and has an open-plan living, dining and kitchen area without a long internal corridor; whether it feels more usable is for the buyer to assess.",
+          "next_objective": "Help them compare the layout against their work-space and shared-area preferences without creating urgency.",
+          "last_progress": "Buyer identified a preference for a quieter work corner and more usable shared space, while noting there is no rush to move.",
+          "next_action": "Give them space to compare; a viewing can be arranged if they decide it would help.",
+          "conversation_summary": "Buyer is exploring Pearl Residences for own stay if they move and comparing layouts. They would like a quieter corner for work and more usable shared space; their current home is okay, so there is no rush. Pearl Residences has a 900 sq. ft. three-bedroom, two-bathroom layout with a balcony, open-plan living, dining and kitchen area, a small storage space and no long internal corridor."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3213,
+        "input_tokens_details": {
+          "cache_write_tokens": 3210,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1430,
+        "output_tokens_details": {
+          "reasoning_tokens": 902
+        },
+        "total_tokens": 4643
+      }
+    },
+    {
+      "customer": "I can see how that layout might help. I’d need to talk it over with my spouse first; since we’re not in a rush to move, I’m not ready to arrange a visit yet.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Of course—this is something to decide together, especially since your current place is working well. The separate bedroom for work and open-plan shared area may be useful points to compare with your spouse. No need to arrange a visit now; you can see together whether an in-person look would help later.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay if they move",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Would like a quieter work corner and more usable shared space",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No rush; current home is okay",
+          "viewing_interest": "May be useful to view and compare the shared area and work-space potential, but not ready to arrange a visit yet",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Quieter work corner",
+            "Usable shared living area"
+          ],
+          "primary_motivations": [
+            "Finding a layout that suits own stay"
+          ],
+          "decision_factors": [
+            "Work-space potential",
+            "Usability of shared area",
+            "Spouse's input"
+          ],
+          "active_concerns": [
+            "Comparing layouts to see which would suit their own stay better",
+            "Wants to discuss the option with spouse before considering a visit"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 900 sq. ft. three-bedroom layout may offer a separate room for work and an open-plan shared area without a long internal corridor; whether it feels more usable is for the buyer and spouse to assess.",
+          "next_objective": "Give the buyer space to discuss the layout with their spouse and let them decide whether a viewing would be useful.",
+          "last_progress": "Buyer sees how the layout might help but is not ready to arrange a visit and wants to talk it over with spouse.",
+          "next_action": "Give the buyer space; do not pursue a viewing arrangement now.",
+          "conversation_summary": "Buyer is exploring Pearl Residences for own stay if they move and comparing layouts. They want a quieter work corner and more usable shared space; their current home is okay, so there is no rush. They see potential in the 900 sq. ft. three-bedroom layout but want to discuss it with their spouse and are not ready to arrange a visit."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3448,
+        "input_tokens_details": {
+          "cache_write_tokens": 3445,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1103,
+        "output_tokens_details": {
+          "reasoning_tokens": 478
+        },
+        "total_tokens": 4551
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer will discuss with spouse; no appointment agreement or timing pressure"
+}

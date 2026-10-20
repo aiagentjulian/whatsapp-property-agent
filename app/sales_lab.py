@@ -7,6 +7,7 @@ import argparse
 import fcntl
 import hashlib
 import json
+import os
 from pathlib import Path
 from unittest.mock import patch
 
@@ -15,13 +16,20 @@ from .config import load_env_file
 from .provider import PROFILE_FIELDS
 
 MODEL = 'gpt-6-luna'
-LIMIT = 24
 SCENARIOS = ('own_stay', 'couple_home_office', 'investment', 'genuine_interest', 'early_exploration', 'holdout')
 SALES_LAB_CONTEXT_PATH = Path(__file__).resolve().parents[1] / 'sales_lab' / 'pricing_snapshot_2026-08-14.json'
 
 
 def save(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+
+
+def append_event(path, event):
+    """Durably append one API-ledger event; never rewrite prior events."""
+    with path.open('a', encoding='utf-8') as stream:
+        stream.write(json.dumps(event, ensure_ascii=False, separators=(',', ':')) + '\n')
+        stream.flush()
+        os.fsync(stream.fileno())
 
 
 def fingerprint():
@@ -53,16 +61,17 @@ def main(argv=None):
     parser.add_argument('--run-dir', type=Path, required=True)
     parser.add_argument('--trial', required=True)
     parser.add_argument('--scenario', choices=SCENARIOS, required=True)
-    parser.add_argument('--customer', required=True)
-    parser.add_argument('--api-limit', type=int, default=None,
-                        help='maximum live calls for this new run (default: 24; persisted in ledger)')
+    parser.add_argument('--customer')
+    parser.add_argument('--end-dialogue', action='store_true',
+                        help='close a completed customer journey without another SalesAgent call')
+    parser.add_argument('--close-reason', default='Natural conversation endpoint')
     parser.add_argument('--live', action='store_true')
     parser.add_argument('--env-file', type=Path)
     args = parser.parse_args(argv)
     if not args.trial.replace('-', '').replace('_', '').isalnum():
         parser.error('trial must be a simple label')
-    if args.api_limit is not None and not 1 <= args.api_limit <= LIMIT:
-        parser.error('api-limit must be between 1 and %d' % LIMIT)
+    if args.end_dialogue == bool(args.customer):
+        parser.error('provide --customer for an Agent turn, or --end-dialogue without --customer')
     args.run_dir.mkdir(parents=True, exist_ok=True)
     with (args.run_dir / '.lock').open('w') as lock:
         try:
@@ -75,12 +84,24 @@ def main(argv=None):
 def run_turn(args, parser):
     ledger_path = args.run_dir / 'ledger.json'
     ledger = json.loads(ledger_path.read_text()) if ledger_path.exists() else {
-        'limit': args.api_limit or LIMIT, 'attempts': [], 'stopped': False}
-    if args.api_limit is not None and ledger.get('limit', LIMIT) != args.api_limit:
-        parser.error('api-limit differs from the run ledger; do not change a started experiment budget')
+        'schema_version': 2, 'attempts': [], 'stopped': False}
     if ledger['stopped']:
         parser.error('experiment stopped after an error; inspect ledger, do not retry live')
+    # Legacy ledgers keep their originally recorded cap; only new schema-v2
+    # experiments omit a cap. Never turn an old budget into an unlimited run.
+    if args.live and ledger.get('limit') is not None and len(ledger['attempts']) >= ledger['limit']:
+        parser.error('%d-call legacy experiment budget exhausted' % ledger['limit'])
     path = args.run_dir / (args.trial + '-' + args.scenario + '.json')
+    if args.end_dialogue:
+        if not path.exists():
+            parser.error('cannot close a dialogue that has not started')
+        state = json.loads(path.read_text())
+        if not state['closed']:
+            state['closed'] = True
+            state['close_reason'] = args.close_reason
+            save(path, state)
+        print(json.dumps({'file': str(path), 'closed': True, 'close_reason': state.get('close_reason')}, ensure_ascii=False))
+        return
     digest = fingerprint()
     state = json.loads(path.read_text()) if path.exists() else {
         'trial': args.trial, 'scenario': args.scenario, 'source_sha256': digest,
@@ -88,8 +109,8 @@ def run_turn(args, parser):
         'profile': {'purchase_purpose': 'UNKNOWN'}, 'history': [], 'support_context': [], 'turns': [], 'closed': False}
     if state['source_sha256'] != digest or state['transport'] != ('live' if args.live else 'fake'):
         parser.error('source/transport changed within a dialogue; start another trial')
-    if state['closed'] or len(state['turns']) >= 3:
-        parser.error('dialogue ended or three customer turns reached')
+    if state['closed']:
+        parser.error('dialogue ended')
     config = {'model': MODEL, 'reasoning': 'high', 'api_key': 'fake'}
     if args.live:
         proof = args.run_dir / 'dry_run.json'
@@ -101,13 +122,18 @@ def run_turn(args, parser):
         config['api_key'] = os.getenv('OPENAI_API_KEY', '')
         if not config['api_key']:
             parser.error('OPENAI_API_KEY required; no fallback')
-        if len(ledger['attempts']) >= ledger.get('limit', LIMIT):
-            parser.error('%d-call experiment budget exhausted' % ledger.get('limit', LIMIT))
-        attempt = {'trial': args.trial, 'scenario': args.scenario, 'turn': len(state['turns']) + 1, 'status': 'started'}
+        attempt = {'attempt_id': len(ledger['attempts']) + 1, 'trial': args.trial, 'scenario': args.scenario,
+                   'turn': len(state['turns']) + 1, 'status': 'started'}
         ledger['attempts'].append(attempt)
         # Reserve before transport: timeout/crash must never silently refund a call.
         ledger['stopped'] = True
         save(ledger_path, ledger)
+        event_path = args.run_dir / 'ledger.jsonl'
+        if not event_path.exists():
+            # Preserve usage from older JSON ledgers before appending new attempts.
+            for previous in ledger['attempts'][:-1]:
+                append_event(event_path, {'event': 'legacy_attempt', **previous})
+        append_event(event_path, {'event': 'attempt_started', **attempt})
     history = state['history'] + [{'direction': 'INBOUND', 'body': args.customer}]
     agent = SalesAgent(config)
     lab_context = pricing_test_context()
@@ -147,6 +173,7 @@ def run_turn(args, parser):
             attempt['status'] = 'failed'
             attempt['error_type'] = type(exc).__name__
             save(ledger_path, ledger)
+            append_event(args.run_dir / 'ledger.jsonl', {'event': 'attempt_failed', **attempt})
         raise SystemExit('Sales Lab stopped: ' + type(exc).__name__ + '; inspect provider failure locally, no retry') from None
     if decision['action'] == 'SUPPORT_REQUEST':
         from .service import support_signature
@@ -175,6 +202,8 @@ def run_turn(args, parser):
         save(args.run_dir / 'dry_run.json', {'source_sha256': digest, 'status': 'passed', 'entrypoint': 'python3 -m app.sales_lab', 'transport': 'fake HTTP through real OpenAIProvider'})
     if args.live:
         attempt.update(status='completed', usage=usage)
+        save(ledger_path, ledger)
+        append_event(args.run_dir / 'ledger.jsonl', {'event': 'attempt_completed', **attempt})
         ledger['stopped'] = False
         save(ledger_path, ledger)
     print(json.dumps({'file': str(path), 'turn': len(state['turns']), 'decision': decision, 'usage': usage}, ensure_ascii=False))

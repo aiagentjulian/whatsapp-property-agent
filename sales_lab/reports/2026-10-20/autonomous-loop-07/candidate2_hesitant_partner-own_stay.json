@@ -1,0 +1,290 @@
+{
+  "trial": "candidate2_hesitant_partner",
+  "scenario": "own_stay",
+  "source_sha256": "7a00ce09a13b3763ead410406d080426f747b58a91faaf93f59872149c39e7b1",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "HANDLE",
+    "next_objective": "Give them space to discuss it with their spouse; continue toward a viewing only if they indicate readiness.",
+    "last_progress": "They are open to considering a viewing but are not ready to arrange one and want to speak with their spouse first.",
+    "next_action": "Allow time for their spouse discussion without pressing for an appointment.",
+    "conversation_summary": "Exploring Pearl Residences for possible own stay, with no immediate urgency. They want more usable shared space and a quiet work corner. They are open to considering a viewing but want to discuss it with their spouse first and are not ready to arrange anything.",
+    "purchase_reason": "Considering a move for own stay, but there is no rush and their current home is okay.",
+    "fit_assessment": "Potential own-stay fit; whether the shared area and room arrangement suit their needs is not yet established.",
+    "size_or_layout_preference": "Wants more usable shared space and a quiet corner for work.",
+    "purchase_timeline": "No rush; current home is okay.",
+    "viewing_interest": "Open to considering a viewing, but wants to discuss it with their spouse first and is not ready to arrange anything.",
+    "important_features": [
+      "Usable shared living area",
+      "Quiet work corner"
+    ],
+    "decision_factors": [
+      "Usable shared space",
+      "Room arrangement for a quiet work corner"
+    ],
+    "primary_motivations": [],
+    "active_concerns": [
+      "Wants to discuss a viewing with their spouse before arranging anything."
+    ],
+    "resolved_concerns": []
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re only exploring for now—could you tell me what kind of home it is?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Phase 1 homes are Type A: 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. That gives you separate bedroom space alongside a shared living area. Are you exploring for your own stay or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For our own stay if we move. We’re just seeing what’s available for now; there’s no rush."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Makes sense—no rush. For your own stay, the 3-bedroom layout could give you flexibility for family, guests or a work room, alongside a shared living area. If you do move, what would matter most in a home day to day?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "A bit more usable space in the shared area and a quiet corner for work would be nice. Our current place is okay, though, so we’re not in a rush."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "A quiet work corner could potentially be one of the bedrooms, keeping it separate from the shared living area. Since the feel of that shared space is important to you, I’d suggest a relaxed viewing so you can judge the actual layout for yourself—no need to make a decision on the spot. Would you be open to that?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I’d be open to considering it, but I’d need to talk it over with my spouse first. We’re not ready to arrange anything yet."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Of course—there’s no need to arrange anything now. Since the shared space and a quiet work corner matter to you, it could be useful to look at the layout together with your spouse whenever you’re both comfortable. You can see whether the 3-bedroom arrangement feels workable for you in person."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re only exploring for now—could you tell me what kind of home it is?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Phase 1 homes are Type A: 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. That gives you separate bedroom space alongside a shared living area. Are you exploring for your own stay or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the customer is exploring for own stay or investment.",
+          "last_progress": "Asked what kind of home Pearl Residences offers; shared the Phase 1 Type A layout.",
+          "next_action": "Clarify purchase purpose and tailor the relevant property benefits.",
+          "conversation_summary": "Customer saw the Pearl Residences ad and is only exploring. They asked what kind of home it is; Phase 1 Type A details were shared."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2590,
+        "input_tokens_details": {
+          "cache_write_tokens": 2587,
+          "cached_tokens": 0
+        },
+        "output_tokens": 663,
+        "output_tokens_details": {
+          "reasoning_tokens": 349
+        },
+        "total_tokens": 3253
+      }
+    },
+    {
+      "customer": "For our own stay if we move. We’re just seeing what’s available for now; there’s no rush.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "Makes sense—no rush. For your own stay, the 3-bedroom layout could give you flexibility for family, guests or a work room, alongside a shared living area. If you do move, what would matter most in a home day to day?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a move and exploring homes for own stay; no rush.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay buyer, currently exploring without urgency; needs and fit are not yet established.",
+          "next_objective": "Understand what would matter most in their day-to-day home life.",
+          "last_progress": "Customer said they are considering a move for their own stay and are not in a rush.",
+          "next_action": "Explore their own-stay priorities.",
+          "conversation_summary": "Customer is exploring Pearl Residences for possible own stay if they move, with no immediate urgency. Phase 1 Type A details have been shared."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2781,
+        "input_tokens_details": {
+          "cache_write_tokens": 2778,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1049,
+        "output_tokens_details": {
+          "reasoning_tokens": 633
+        },
+        "total_tokens": 3830
+      }
+    },
+    {
+      "customer": "A bit more usable space in the shared area and a quiet corner for work would be nice. Our current place is okay, though, so we’re not in a rush.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "NEUTRAL",
+        "reply": "A quiet work corner could potentially be one of the bedrooms, keeping it separate from the shared living area. Since the feel of that shared space is important to you, I’d suggest a relaxed viewing so you can judge the actual layout for yourself—no need to make a decision on the spot. Would you be open to that?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a move and exploring homes for own stay; no rush.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Wants more usable shared space and a quiet corner for work.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No rush; current home is okay.",
+          "viewing_interest": "Invited to consider a relaxed viewing to assess the layout; no agreement yet.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Usable shared living area",
+            "Quiet work corner"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Usable shared space",
+            "Room arrangement for a quiet work corner"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay fit; whether the shared area and room arrangement suit their needs is not yet established.",
+          "next_objective": "Find out whether they are open to viewing the layout and assessing the shared space in person.",
+          "last_progress": "Customer shared that more usable shared space and a quiet work corner would be desirable, but there is no urgency to move.",
+          "next_action": "Await their response to the viewing invitation.",
+          "conversation_summary": "Exploring Pearl Residences for possible own stay, with no immediate urgency. They would like more usable shared space and a quiet work corner; invited to consider a relaxed viewing, but have not agreed."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3097,
+        "input_tokens_details": {
+          "cache_write_tokens": 3094,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1809,
+        "output_tokens_details": {
+          "reasoning_tokens": 1288
+        },
+        "total_tokens": 4906
+      }
+    },
+    {
+      "customer": "I’d be open to considering it, but I’d need to talk it over with my spouse first. We’re not ready to arrange anything yet.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Of course—there’s no need to arrange anything now. Since the shared space and a quiet work corner matter to you, it could be useful to look at the layout together with your spouse whenever you’re both comfortable. You can see whether the 3-bedroom arrangement feels workable for you in person.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a move for own stay, but there is no rush and their current home is okay.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Wants more usable shared space and a quiet corner for work.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No rush; current home is okay.",
+          "viewing_interest": "Open to considering a viewing, but wants to discuss it with their spouse first and is not ready to arrange anything.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Usable shared living area",
+            "Quiet work corner"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Usable shared space",
+            "Room arrangement for a quiet work corner"
+          ],
+          "active_concerns": [
+            "Wants to discuss a viewing with their spouse before arranging anything."
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential own-stay fit; whether the shared area and room arrangement suit their needs is not yet established.",
+          "next_objective": "Give them space to discuss it with their spouse; continue toward a viewing only if they indicate readiness.",
+          "last_progress": "They are open to considering a viewing but are not ready to arrange one and want to speak with their spouse first.",
+          "next_action": "Allow time for their spouse discussion without pressing for an appointment.",
+          "conversation_summary": "Exploring Pearl Residences for possible own stay, with no immediate urgency. They want more usable shared space and a quiet work corner. They are open to considering a viewing but want to discuss it with their spouse first and are not ready to arrange anything."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3062,
+        "input_tokens_details": {
+          "cache_write_tokens": 3059,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1021,
+        "output_tokens_details": {
+          "reasoning_tokens": 463
+        },
+        "total_tokens": 4083
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer is open to considering a visit but wants spouse discussion before arranging"
+}

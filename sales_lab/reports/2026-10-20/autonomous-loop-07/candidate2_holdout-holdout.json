@@ -1,0 +1,246 @@
+{
+  "trial": "candidate2_holdout",
+  "scenario": "holdout",
+  "source_sha256": "7a00ce09a13b3763ead410406d080426f747b58a91faaf93f59872149c39e7b1",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "sales_stage": "UNDERSTAND",
+    "next_objective": "Share specific road connections once confirmed, then understand which nearby destinations matter most to them.",
+    "last_progress": "Customer is considering Seberang Jaya and asked for an overview of nearby places and access.",
+    "next_action": "Follow up with confirmed road-access details when available.",
+    "conversation_summary": "Customer enquired about Pearl Residences and is considering Seberang Jaya. They want a general overview of surroundings and access, without exact travel times. Shared the broad destinations described in project materials; specific road connections are still awaiting confirmation.",
+    "preferred_location": "Seberang Jaya, Seberang Perai"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad on Facebook. Could you tell me a bit about the project and where it’s located?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! Pearl Residences’ Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. I’m checking the verified location details so I can give you an accurate answer."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "We’re looking around Seberang Perai, so a general idea of the surroundings and access would be helpful. No exact travel times needed."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences is in Seberang Jaya, Seberang Perai Tengah, on Penang’s mainland. I’m checking the nearby landmarks and road connections so I can give you a reliable general overview without guessing."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Okay, thanks. Seberang Jaya is an area we’re considering. Please send the nearby places and road connections once you’ve confirmed them."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The broader picture from the project materials is connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland urban network. I don’t have a verified list of specific road connections yet, so I won’t guess at those. I’ll share them once confirmed."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified location of Pearl Residences.",
+      "subject": "Pearl Residences project location",
+      "customer_need": "The customer wants to know where the project is located.",
+      "reason": "The supplied project knowledge does not verify the location.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share the verified location and continue understanding the customer's needs.",
+      "signature": "OTHER|location pearl project residences verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified nearby landmarks, surrounding amenities, and road-access information for Pearl Residences in Seberang Jaya.",
+      "subject": "Surroundings and access near Pearl Residences",
+      "customer_need": "The customer wants a general idea of the surroundings and access while considering locations in Seberang Perai; exact travel times are not needed.",
+      "reason": "The available verified information establishes the project location but does not provide specific nearby landmarks, amenities, or road connections.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share verified surroundings and access information, then continue understanding the customer's location priorities.",
+      "signature": "OTHER|access amenities and in information jaya landmarks near nearby pearl residences road seberang surrounding surroundings verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad on Facebook. Could you tell me a bit about the project and where it’s located?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences’ Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. I’m checking the verified location details so I can give you an accurate answer.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide verified project location details and understand what the customer is looking for.",
+          "last_progress": "Asked for information about Pearl Residences and its location.",
+          "next_action": "Confirm the project location before replying with it.",
+          "conversation_summary": "Customer enquired via Facebook ad and asked for an overview of Pearl Residences and its location."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified location of Pearl Residences.",
+          "subject": "Pearl Residences project location",
+          "customer_need": "The customer wants to know where the project is located.",
+          "reason": "The supplied project knowledge does not verify the location.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share the verified location and continue understanding the customer's needs."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2621,
+        "input_tokens_details": {
+          "cache_write_tokens": 2618,
+          "cached_tokens": 0
+        },
+        "output_tokens": 734,
+        "output_tokens_details": {
+          "reasoning_tokens": 282
+        },
+        "total_tokens": 3355
+      }
+    },
+    {
+      "customer": "We’re looking around Seberang Perai, so a general idea of the surroundings and access would be helpful. No exact travel times needed.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in Seberang Jaya, Seberang Perai Tengah, on Penang’s mainland. I’m checking the nearby landmarks and road connections so I can give you a reliable general overview without guessing.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": "Seberang Perai",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share verified nearby surroundings and access information, then learn what matters most in the customer's location search.",
+          "last_progress": "Customer is looking around Seberang Perai and asked for a general overview of surroundings and access.",
+          "next_action": "Provide verified nearby landmarks and road-access information when available.",
+          "conversation_summary": "Customer enquired via Facebook about Pearl Residences and is looking around Seberang Perai. They would like a general overview of the surroundings and access, without exact travel times."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified nearby landmarks, surrounding amenities, and road-access information for Pearl Residences in Seberang Jaya.",
+          "subject": "Surroundings and access near Pearl Residences",
+          "customer_need": "The customer wants a general idea of the surroundings and access while considering locations in Seberang Perai; exact travel times are not needed.",
+          "reason": "The available verified information establishes the project location but does not provide specific nearby landmarks, amenities, or road connections.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share verified surroundings and access information, then continue understanding the customer's location priorities."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2919,
+        "input_tokens_details": {
+          "cache_write_tokens": 2916,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1217,
+        "output_tokens_details": {
+          "reasoning_tokens": 776
+        },
+        "total_tokens": 4136
+      }
+    },
+    {
+      "customer": "Okay, thanks. Seberang Jaya is an area we’re considering. Please send the nearby places and road connections once you’ve confirmed them.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "POSITIVE",
+        "reply": "The broader picture from the project materials is connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland urban network. I don’t have a verified list of specific road connections yet, so I won’t guess at those. I’ll share them once confirmed.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya, Seberang Perai",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share specific road connections once confirmed, then understand which nearby destinations matter most to them.",
+          "last_progress": "Customer is considering Seberang Jaya and asked for an overview of nearby places and access.",
+          "next_action": "Follow up with confirmed road-access details when available.",
+          "conversation_summary": "Customer enquired about Pearl Residences and is considering Seberang Jaya. They want a general overview of surroundings and access, without exact travel times. Shared the broad destinations described in project materials; specific road connections are still awaiting confirmation."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3305,
+        "input_tokens_details": {
+          "cache_write_tokens": 3302,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1044,
+        "output_tokens_details": {
+          "reasoning_tokens": 701
+        },
+        "total_tokens": 4349
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer is waiting for specific road-access details; no viewing invitation or agreement occurred."
+}

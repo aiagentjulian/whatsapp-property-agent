@@ -1,0 +1,435 @@
+{
+  "trial": "baseline_interest_couple",
+  "scenario": "genuine_interest",
+  "source_sha256": "46c2ec3e860e0addc3e19687c52da5b6b708d8b27a8e4c933ab727dd07fb2300",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for their first home for own stay; currently renting nearby.",
+    "purchase_timeline": "Starting to look and comparing a couple of places.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "active_concerns": [
+      "Needs the approved layout to assess whether the extra room works as a home office",
+      "Needs to understand the full monthly ownership cost, including loan payment"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential first-home owner-occupier fit; the Type A three-bedroom layout may suit the partner's work-from-home needs, subject to checking the approved plan and furniture fit. Full monthly ownership costs remain to be clarified.",
+    "next_objective": "Share the approved Type A layout and confirmed monthly-cost information when available, then help them assess office suitability and affordability.",
+    "last_progress": "Customer says the RM162 maintenance fee is useful but still needs the approved layout and full monthly cost information before deciding.",
+    "next_action": "Follow up with the approved Type A plan and verified monthly-cost details when available; do not imply either is confirmed yet.",
+    "conversation_summary": "They rent nearby and are starting to look for their first home for own stay. They are comparing options, value an extra room for the partner's work-from-home needs, and want the approved layout and full monthly costs before deciding.",
+    "size_or_layout_preference": "Interested in a 3-bedroom home with an extra room that could work as a home office for their partner; wants to assess the approved layout.",
+    "important_features": [
+      "Extra bedroom",
+      "Potential work-from-home room",
+      "Full monthly ownership costs"
+    ],
+    "primary_motivations": [
+      "First home for own stay",
+      "Useful room for partner working from home"
+    ],
+    "decision_factors": [
+      "Price",
+      "Usefulness of an extra room",
+      "Approved layout and furniture fit",
+      "Total monthly costs"
+    ],
+    "financing_context": "Wants to understand the loan payment and full monthly ownership cost; understands these depend on the unit and financing terms."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw your Pearl Residences ad. We’re renting nearby and starting to look for our first place. Can share a bit more?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure 🙂 Phase 1 homes are Type A: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. For a first home, that gives you flexibility in how you use the bedrooms. The established Seberang Jaya location also connects toward Sunway Carnival Mall, Chai Leng Park and Butterworth. Are you looking for a place to live in yourselves?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, for ourselves. We’re still comparing a couple of places, but having an extra room sounds useful. Do you have a general starting price?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The lowest listed reference I can share is an indicative RM301,760, calculated from a RM328,000 base with the 8% package in the 14 Aug 2026 snapshot. That isn’t a confirmed current offer or all-in price; current package eligibility and any applicable parking or accessory components need checking for a specific unit. With 3 bedrooms in 900 sq ft, the extra room could give you useful flexibility as a work or guest room. Since you’re comparing, a viewing could help you judge how the layout feels in person."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "The price is around what we had in mind, though we’d still need to check the total costs. My partner sometimes works from home, so an extra room could be useful. Do you have a layout we can look at?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes—the Type A is 900 sq ft, with 3 bedrooms and 2 bathrooms. Its layout concept shows an open living/dining/kitchen area and separate bedrooms, so one could potentially work as your partner’s home office while the shared area stays for both of you. I’ll check for the approved floor-plan image to share; exact furniture fit is best judged from that. The price mentioned is only a starting reference, so we can check a full total once you’ve narrowed down a unit."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Okay, please send it when you find it. The office setup is something we’d want to check, and we still need to understand the full monthly cost before deciding."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes—I’m still checking for the approved Type A plan and will share it when I have it. For a recurring cost, the stated maintenance fee is RM0.18 per sq ft, inclusive of the sinking fund—about RM162/month for 900 sq ft. That isn’t the full monthly cost: financing payments and any applicable charges depend on the unit and loan terms, so I won’t guess. I’ll check what we can confirm so you can assess both the office layout and the monthly commitment."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, the RM162 is useful as one part of the cost. We’ll still need to understand the loan payment too, but I know that depends on the unit and terms. Please share the layout once you find it."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Of course—I’ll share the approved Type A plan once I have it; I don’t have the diagram to send yet. The layout concept shows the bedrooms separate from the open living, dining and kitchen area, with two windows shown in each secondary bedroom. The approved plan will let you check the room dimensions and whether a desk setup fits alongside any other furniture. I’ll also share the monthly-cost details once they’re confirmed; for now, RM162 is the maintenance fee including sinking fund, not the full monthly cost."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "Approved Type A floor-plan image or diagram, and exact room dimensions if available.",
+      "subject": "Pearl Residences Phase 1 Type A layout",
+      "customer_need": "Assess whether an extra bedroom could work as a home office for their partner.",
+      "reason": "The customer asked for a layout to look at; only textual layout information is available here.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the verified floor plan and help them assess the room arrangement; check a full unit total if they narrow down a unit.",
+      "signature": "LAYOUT|1 and approved availability diagram dimensions exact floor image layout or pearl phase plan residences room type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "FINANCING",
+      "requested_fact": "An indicative monthly ownership-cost breakdown for a Type A 900 sq ft unit, including the financing assumptions and any applicable recurring charges; clarify what buyer or unit details are needed for a reliable estimate.",
+      "subject": "Pearl Residences Type A monthly ownership costs",
+      "customer_need": "Understand the full monthly cost before deciding whether the home is suitable.",
+      "reason": "Only the stated maintenance fee can be calculated from the information available; loan repayments and other applicable costs depend on unit and financing details.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the approved Type A layout and explain confirmed versus estimated monthly costs without presenting an unverified total as certain.",
+      "signature": "FINANCING|900 and any applicable are assumptions breakdown buyer charges clarify cost costs details estimate financing ft including indicative monthly needed or ownership pearl recurring reliable residences sq type what",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, saw your Pearl Residences ad. We’re renting nearby and starting to look for our first place. Can share a bit more?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "POSITIVE",
+        "reply": "Sure 🙂 Phase 1 homes are Type A: 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. For a first home, that gives you flexibility in how you use the bedrooms. The established Seberang Jaya location also connects toward Sunway Carnival Mall, Chai Leng Park and Butterworth. Are you looking for a place to live in yourselves?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Looking for their first place; currently renting nearby.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Starting to look",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential first-home fit; intended use and specific needs are not yet known.",
+          "next_objective": "Clarify whether they are looking for their own stay.",
+          "last_progress": "Shared the Phase 1 layout and relevant location context.",
+          "next_action": "Learn whether they plan to live in the home themselves, then tailor the next information.",
+          "conversation_summary": "They saw the Pearl Residences ad, currently rent nearby, and are starting to look for their first place."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2853,
+        "input_tokens_details": {
+          "cache_write_tokens": 2850,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1746,
+        "output_tokens_details": {
+          "reasoning_tokens": 1317
+        },
+        "total_tokens": 4599
+      }
+    },
+    {
+      "customer": "Yes, for ourselves. We’re still comparing a couple of places, but having an extra room sounds useful. Do you have a general starting price?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "The lowest listed reference I can share is an indicative RM301,760, calculated from a RM328,000 base with the 8% package in the 14 Aug 2026 snapshot. That isn’t a confirmed current offer or all-in price; current package eligibility and any applicable parking or accessory components need checking for a specific unit. With 3 bedrooms in 900 sq ft, the extra room could give you useful flexibility as a work or guest room. Since you’re comparing, a viewing could help you judge how the layout feels in person.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first place; currently renting nearby.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in a 3-bedroom home with an extra room.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Starting to look",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Extra bedroom"
+          ],
+          "primary_motivations": [
+            "First home for own stay"
+          ],
+          "decision_factors": [
+            "Price",
+            "Usefulness of an extra room"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential first-home owner-occupier fit; an extra room is useful to them and they are comparing options.",
+          "next_objective": "Help them assess whether the three-bedroom layout suits their needs.",
+          "last_progress": "Confirmed the home is for their own stay and that an extra room sounds useful; asked for a general starting price.",
+          "next_action": "Invite them to view the layout if they are interested.",
+          "conversation_summary": "They rent nearby and are starting to look for their first home for own stay. They are comparing a couple of places, value an extra room, and asked for a general starting price."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4007,
+        "input_tokens_details": {
+          "cache_write_tokens": 4004,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1537,
+        "output_tokens_details": {
+          "reasoning_tokens": 1021
+        },
+        "total_tokens": 5544
+      }
+    },
+    {
+      "customer": "The price is around what we had in mind, though we’d still need to check the total costs. My partner sometimes works from home, so an extra room could be useful. Do you have a layout we can look at?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Yes—the Type A is 900 sq ft, with 3 bedrooms and 2 bathrooms. Its layout concept shows an open living/dining/kitchen area and separate bedrooms, so one could potentially work as your partner’s home office while the shared area stays for both of you. I’ll check for the approved floor-plan image to share; exact furniture fit is best judged from that. The price mentioned is only a starting reference, so we can check a full total once you’ve narrowed down a unit.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first place; currently renting nearby.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in a 3-bedroom home with an extra room that could be used as a work-from-home room.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Starting to look",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Extra bedroom",
+            "Potential work-from-home room"
+          ],
+          "primary_motivations": [
+            "First home for own stay",
+            "Useful room for partner working from home"
+          ],
+          "decision_factors": [
+            "Price",
+            "Usefulness of an extra room",
+            "Total costs"
+          ],
+          "active_concerns": [
+            "Needs to check total costs"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential first-home owner-occupier fit; the Type A three-bedroom layout may suit their need for a separate work-from-home room, subject to checking the approved plan and furniture fit.",
+          "next_objective": "Share the approved floor plan so they can assess the room arrangement; verify a full unit total if they narrow down a unit.",
+          "last_progress": "They said the indicative price is around what they had in mind, noted their partner sometimes works from home, and asked to see a layout.",
+          "next_action": "Request the approved Type A floor-plan image and any available room dimensions.",
+          "conversation_summary": "They rent nearby and are starting to look for their first home for own stay. They are comparing options, value an extra room for the partner's work-from-home needs, and need to check total costs."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "Approved Type A floor-plan image or diagram, and exact room dimensions if available.",
+          "subject": "Pearl Residences Phase 1 Type A layout",
+          "customer_need": "Assess whether an extra bedroom could work as a home office for their partner.",
+          "reason": "The customer asked for a layout to look at; only textual layout information is available here.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the verified floor plan and help them assess the room arrangement; check a full unit total if they narrow down a unit."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4599,
+        "input_tokens_details": {
+          "cache_write_tokens": 4596,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2824,
+        "output_tokens_details": {
+          "reasoning_tokens": 2088
+        },
+        "total_tokens": 7423
+      }
+    },
+    {
+      "customer": "Okay, please send it when you find it. The office setup is something we’d want to check, and we still need to understand the full monthly cost before deciding.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes—I’m still checking for the approved Type A plan and will share it when I have it. For a recurring cost, the stated maintenance fee is RM0.18 per sq ft, inclusive of the sinking fund—about RM162/month for 900 sq ft. That isn’t the full monthly cost: financing payments and any applicable charges depend on the unit and loan terms, so I won’t guess. I’ll check what we can confirm so you can assess both the office layout and the monthly commitment.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first place; currently renting nearby.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in a 3-bedroom home with an extra room that could be used as a work-from-home room.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Starting to look",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Extra bedroom",
+            "Potential work-from-home room"
+          ],
+          "primary_motivations": [
+            "First home for own stay",
+            "Useful room for partner working from home"
+          ],
+          "decision_factors": [
+            "Price",
+            "Usefulness of an extra room",
+            "Total monthly costs"
+          ],
+          "active_concerns": [
+            "Needs to check total costs",
+            "Needs the approved layout to assess whether the extra room works as a home office"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential first-home owner-occupier fit; the Type A three-bedroom layout may suit the partner's work-from-home needs, subject to checking the approved plan and furniture fit. Full monthly ownership costs remain to be clarified.",
+          "next_objective": "Share the approved Type A layout when available and clarify the monthly ownership costs that can be confirmed.",
+          "last_progress": "Buyer asked for the Type A layout to assess a home-office setup and wants to understand full monthly costs before deciding. The layout request is pending; the stated maintenance fee implies about RM162/month for 900 sq ft.",
+          "next_action": "Follow up on the pending approved Type A layout and obtain an indicative monthly ownership-cost breakdown, clarifying any financing assumptions.",
+          "conversation_summary": "They rent nearby and are starting to look for their first home for own stay. They are comparing options, value an extra room for the partner's work-from-home needs, and want the approved layout and full monthly costs before deciding."
+        },
+        "support_request": {
+          "support_type": "FINANCING",
+          "requested_fact": "An indicative monthly ownership-cost breakdown for a Type A 900 sq ft unit, including the financing assumptions and any applicable recurring charges; clarify what buyer or unit details are needed for a reliable estimate.",
+          "subject": "Pearl Residences Type A monthly ownership costs",
+          "customer_need": "Understand the full monthly cost before deciding whether the home is suitable.",
+          "reason": "Only the stated maintenance fee can be calculated from the information available; loan repayments and other applicable costs depend on unit and financing details.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the approved Type A layout and explain confirmed versus estimated monthly costs without presenting an unverified total as certain."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4000,
+        "input_tokens_details": {
+          "cache_write_tokens": 3997,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2670,
+        "output_tokens_details": {
+          "reasoning_tokens": 1856
+        },
+        "total_tokens": 6670
+      }
+    },
+    {
+      "customer": "Thanks, the RM162 is useful as one part of the cost. We’ll still need to understand the loan payment too, but I know that depends on the unit and terms. Please share the layout once you find it.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Of course—I’ll share the approved Type A plan once I have it; I don’t have the diagram to send yet. The layout concept shows the bedrooms separate from the open living, dining and kitchen area, with two windows shown in each secondary bedroom. The approved plan will let you check the room dimensions and whether a desk setup fits alongside any other furniture. I’ll also share the monthly-cost details once they’re confirmed; for now, RM162 is the maintenance fee including sinking fund, not the full monthly cost.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first home for own stay; currently renting nearby.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in a 3-bedroom home with an extra room that could work as a home office for their partner; wants to assess the approved layout.",
+          "budget_range": null,
+          "financing_context": "Wants to understand the loan payment and full monthly ownership cost; understands these depend on the unit and financing terms.",
+          "purchase_timeline": "Starting to look and comparing a couple of places.",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Extra bedroom",
+            "Potential work-from-home room",
+            "Full monthly ownership costs"
+          ],
+          "primary_motivations": [
+            "First home for own stay",
+            "Useful room for partner working from home"
+          ],
+          "decision_factors": [
+            "Price",
+            "Usefulness of an extra room",
+            "Approved layout and furniture fit",
+            "Total monthly costs"
+          ],
+          "active_concerns": [
+            "Needs the approved layout to assess whether the extra room works as a home office",
+            "Needs to understand the full monthly ownership cost, including loan payment"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential first-home owner-occupier fit; the Type A three-bedroom layout may suit the partner's work-from-home needs, subject to checking the approved plan and furniture fit. Full monthly ownership costs remain to be clarified.",
+          "next_objective": "Share the approved Type A layout and confirmed monthly-cost information when available, then help them assess office suitability and affordability.",
+          "last_progress": "Customer says the RM162 maintenance fee is useful but still needs the approved layout and full monthly cost information before deciding.",
+          "next_action": "Follow up with the approved Type A plan and verified monthly-cost details when available; do not imply either is confirmed yet.",
+          "conversation_summary": "They rent nearby and are starting to look for their first home for own stay. They are comparing options, value an extra room for the partner's work-from-home needs, and want the approved layout and full monthly costs before deciding."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4338,
+        "input_tokens_details": {
+          "cache_write_tokens": 4335,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1502,
+        "output_tokens_details": {
+          "reasoning_tokens": 917
+        },
+        "total_tokens": 5840
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer will wait for the plan, compare alternatives, and discuss with partner"
+}

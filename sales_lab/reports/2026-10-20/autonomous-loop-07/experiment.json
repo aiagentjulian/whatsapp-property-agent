@@ -1,0 +1,85 @@
+{
+  "experiment": "WhatsApp Sales Lab Autonomous Loop 07",
+  "date": "2026-10-20",
+  "branch": "codex/sales-lab-v1",
+  "starting_commit": "5910331e68198e4cfa52ee174cb02ede782025b2",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "Real SalesAgent through existing OpenAI API; Codex-native customer and judges; no paid API for those roles",
+  "real_api_attempts": 74,
+  "completed_attempts": 74,
+  "failed_attempts": 0,
+  "unfinished_attempts": 0,
+  "token_usage": {
+    "input_tokens": 249259,
+    "output_tokens": 118332,
+    "total_tokens": 367591,
+    "reasoning_tokens": 79978,
+    "cached_input_tokens": 0
+  },
+  "verified_cost": "Not included in API responses; no billed-cost estimate recorded",
+  "calls_by_phase": {
+    "baseline": {
+      "calls": 24,
+      "input_tokens": 87166,
+      "output_tokens": 40988,
+      "total_tokens": 128154
+    },
+    "candidate1": {
+      "calls": 14,
+      "input_tokens": 48444,
+      "output_tokens": 23003,
+      "total_tokens": 71447
+    },
+    "candidate2_primary": {
+      "calls": 21,
+      "input_tokens": 68334,
+      "output_tokens": 32078,
+      "total_tokens": 100412
+    },
+    "candidate2_holdout": {
+      "calls": 3,
+      "input_tokens": 8845,
+      "output_tokens": 2995,
+      "total_tokens": 11840
+    },
+    "candidate4_primary": {
+      "calls": 3,
+      "input_tokens": 9383,
+      "output_tokens": 4558,
+      "total_tokens": 13941
+    },
+    "candidate4_final_holdout": {
+      "calls": 3,
+      "input_tokens": 9103,
+      "output_tokens": 5693,
+      "total_tokens": 14796
+    },
+    "candidate3_primary": {
+      "calls": 3,
+      "input_tokens": 9146,
+      "output_tokens": 5159,
+      "total_tokens": 14305
+    },
+    "candidate3_holdout": {
+      "calls": 3,
+      "input_tokens": 8838,
+      "output_tokens": 3858,
+      "total_tokens": 12696
+    }
+  },
+  "source_fingerprints": {
+    "candidate2": "7a00ce09a13b3763ead410406d080426f747b58a91faaf93f59872149c39e7b1",
+    "baseline": "46c2ec3e860e0addc3e19687c52da5b6b708d8b27a8e4c933ab727dd07fb2300",
+    "candidate1": "eb350dccb713b9834292830d709e0b2361e1a5b41bf39c38b8f048833517b2a2",
+    "candidate4": "051fe6d8ffbfe7be58c1c5d611fefe557ccc4728a6ae99dd0671c2e016ee501f",
+    "candidate3": "2ca190bb3f0b0bf4b81e67b6637e72c26054eebf9ac364473454546d8cf62ac4"
+  },
+  "subagent_model_availability": "Codex-native subagents used; effective runtime model identity was not independently exposed by the environment.",
+  "final_validation": {
+    "unittest": "43 tests passed",
+    "fake_transport_dry_run": "passed through python3 -m app.sales_lab using current final source",
+    "source_sha256": "46c2ec3e860e0addc3e19687c52da5b6b708d8b27a8e4c933ab727dd07fb2300",
+    "paid_calls": 0
+  }
+}

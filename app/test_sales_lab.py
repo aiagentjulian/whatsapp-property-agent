@@ -52,6 +52,8 @@ class SalesLabTests(unittest.TestCase):
         ledger = json.loads((self.root / 'ledger.json').read_text())
         self.assertTrue(ledger['stopped'])
         self.assertEqual(len(ledger['attempts']), 1)
+        events = [json.loads(line) for line in (self.root / 'ledger.jsonl').read_text().splitlines()]
+        self.assertEqual([event['event'] for event in events], ['attempt_started', 'attempt_failed'])
         with self.assertRaises(SystemExit): main(live)
         self.assertEqual(transport.call_count, 1)
 
@@ -61,26 +63,47 @@ class SalesLabTests(unittest.TestCase):
         with self.assertRaises(SystemExit): main(self.args + ['--live'])
         (self.root / 'dry_run.json').write_text(json.dumps({'source_sha256': fingerprint()}))
         (self.root / 'ledger.json').write_text(json.dumps({'limit': 1, 'attempts': [{}], 'stopped': False}))
-        with self.assertRaises(SystemExit): main(self.args + ['--api-limit', '1', '--live'])
+        with self.assertRaises(SystemExit): main(self.args + ['--live'])
         transport.assert_not_called()
 
     @patch.dict('os.environ', {'OPENAI_API_KEY': 'test-not-real'})
     @patch('app.sales_lab.SalesAgent.decide')
-    def test_custom_call_limit_is_persisted_and_enforced(self, decide):
+    def test_new_run_has_no_fixed_call_or_turn_limit_and_can_close_naturally(self, decide):
         decide.return_value = ({'action': 'REPLY', 'reply': 'A useful response.', 'lead_updates': {}}, {})
         main(self.args)
-        live = self.args + ['--api-limit', '1', '--live']
+        live = self.args + ['--live']
         live[live.index('dry')] = 'baseline'
-        main(live)
+        for turn in range(4):
+            main(live[:live.index('--customer') + 1] + ['Customer message %d' % (turn + 1)] + live[live.index('--customer') + 2:])
         ledger = json.loads((self.root / 'ledger.json').read_text())
-        self.assertEqual(ledger['limit'], 1)
-        self.assertEqual(len(ledger['attempts']), 1)
+        self.assertNotIn('limit', ledger)
+        self.assertEqual(len(ledger['attempts']), 4)
         self.assertFalse(ledger['stopped'])
-        completed_calls = decide.call_count
-        self.assertEqual(completed_calls, 2)  # one fake dry turn and one live turn
+        self.assertEqual(decide.call_count, 5)  # one dry validation and four mocked live turns
+        state = json.loads((self.root / 'baseline-own_stay.json').read_text())
+        self.assertEqual(len(state['turns']), 4)
+        events = [json.loads(line) for line in (self.root / 'ledger.jsonl').read_text().splitlines()]
+        self.assertEqual(len(events), 8)
+        self.assertEqual(sum(event['event'] == 'attempt_completed' for event in events), 4)
+        close = self.args[:]
+        close[close.index('--trial') + 1] = 'baseline'
+        close.remove('--customer')
+        close.remove(self.args[self.args.index('--customer') + 1])
+        close += ['--end-dialogue', '--close-reason', 'Customer clearly disengaged']
+        main(close)
+        state = json.loads((self.root / 'baseline-own_stay.json').read_text())
+        self.assertTrue(state['closed'])
+        self.assertEqual(state['close_reason'], 'Customer clearly disengaged')
 
-        second = self.args + ['--api-limit', '1', '--live']
-        second[second.index('dry')] = 'candidate'
-        with self.assertRaises(SystemExit): main(second)
-        self.assertEqual(decide.call_count, completed_calls)
-        self.assertEqual(len(json.loads((self.root / 'ledger.json').read_text())['attempts']), 1)
+    @patch.dict('os.environ', {'OPENAI_API_KEY': 'test-not-real'})
+    @patch('app.provider.urllib.request.urlopen')
+    def test_old_capped_ledger_remains_readable_and_enforces_recorded_budget(self, transport):
+        main(self.args)
+        (self.root / 'dry_run.json').write_text(json.dumps({'source_sha256': fingerprint()}))
+        old = {'limit': 1, 'attempts': [{'trial': 'old', 'status': 'completed', 'usage': {'total_tokens': 25}}], 'stopped': False}
+        (self.root / 'ledger.json').write_text(json.dumps(old))
+        live = self.args[:]
+        live[live.index('dry')] = 'baseline'
+        with self.assertRaises(SystemExit): main(live + ['--live'])
+        self.assertEqual(json.loads((self.root / 'ledger.json').read_text()), old)
+        transport.assert_not_called()

@@ -20,21 +20,21 @@ Use existing developer evidence and the separate dated sales-lab pricing snapsho
 2. Check Codex version and native subagent availability. Main Codex coordinates a Customer Simulator and independent Judge through native tools. Prefer Luna/Low for customer and Luna/Medium for Judge when available; report effective models only when verifiable.
 3. Customer subagent holds private motivation, budget, concerns and patience. Reset the same private persona per anonymous trial; reveal **only** its public customer messages to SalesAgent. Send only the real salesperson reply back to Customer. Never expose private persona, Judge scores or rubric to SalesAgent.
 4. Validate the real SalesAgent path with fake HTTP dry run before live calls for each code fingerprint. The actual SalesAgent uses GPT-6 Luna / High through OpenAI API. Do not substitute Codex-generated sales replies.
-5. Run short development dialogues (usually 2–3 customer turns). Evaluate whether the Agent creates new interest, handles realistic hesitation and confidently leads toward viewing. A customer proactively requesting a viewing before persuasion is not a valid success signal.
+5. Let each realistic customer journey continue until a natural endpoint: agreement to arrange a viewing, clear decline/disengagement, appropriate human handoff, or no meaningful remaining sales opportunity. Do not impose a fixed turn count or prolong dialogue without a sales reason.
 6. Send anonymized conversations and buyer reactions to the independent Judge using `rubric.md`. Judge does not see source diffs or version mapping.
 7. Diagnose the actual path before changes. Prefer simplifying conflicting Sales Brain instructions, providing more relevant evidence, or fixing a demonstrable behavioral cause rather than stacking rules or writing fixed scripts. Blind-retest comparable scenarios.
-8. Automatically continue evidence-based repair/retest rounds within the task's API budget. Hold out a fresh scenario until a candidate is frozen. Keep the best proven version; revert failed changes. Do not stop after each stage for approval.
+8. Continue evidence-based repair/retest rounds while useful hypotheses remain, without an arbitrary API-call or turn cap. Stop on exhausted credible hypotheses or consistent degradation. Hold out a fresh scenario until a candidate is frozen. Keep the best proven version; revert failed changes. Do not stop after each stage for approval. Technical failures stop the affected run; never retry them automatically.
 9. Deliver KEEP / NEEDS REVIEW / REVERT with direct dialogue evidence, buyer interest/appointment movement, full API ledger and Git status. Commit and push only acceptable changes and reports to the experiment branch.
 
 ```sh
 python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
-  --trial dry --scenario own_stay --customer 'Hi, I saw your property ad. How much?' --api-limit 18
+  --trial dry --scenario own_stay --customer 'Hi, I saw your property ad. How much?'
 python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
   --trial baseline --scenario own_stay --customer 'PUBLIC CUSTOMER MESSAGE' \
-  --api-limit 18 --live --env-file /absolute/path/to/existing/.env
+  --live --env-file /absolute/path/to/existing/.env
 ```
 
-Repeat live calls serially for each customer turn, using separate dry/live trial labels. The `--api-limit` value is immutable within a started experiment; no ledger reset to exceed budget. The ledger reserves calls before HTTP, locks concurrent turns, stops after errors and does not silently retry. A source fingerprint change requires a new trial and fresh dry run. Store private personas locally, not in Git.
+Repeat live calls serially for each customer turn, using separate dry/live trial labels. New runs have no fixed call quota or dialogue turn cap. `ledger.jsonl` is the append-only API event journal (reservation, completion or failure) with usage when available; `ledger.json` remains the readable summary and accepts older ledgers. Any cap recorded in a legacy ledger continues to apply. The harness reserves calls before HTTP, locks concurrent turns, stops after errors and does not silently retry. A source fingerprint change requires a new trial and fresh dry run. Use `--end-dialogue --close-reason '...'` to record a natural endpoint without another SalesAgent call. Store private personas locally, not in Git.
 
 Pending `SUPPORT_REQUEST` state is carried between turns. Do not invent human Support answers. Keep the sales conversation moving with what is known where possible; only a genuinely material, buyer-requested missing fact should block the next decision. Formal handoff stops AI turns; no booking is actually executed in Sales Lab. Invitation, interest, agreement to arrange, handoff and confirmed booking are distinct.
 
