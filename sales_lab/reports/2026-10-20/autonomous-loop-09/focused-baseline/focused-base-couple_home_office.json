@@ -1,0 +1,202 @@
+{
+  "trial": "focused-base",
+  "scenario": "couple_home_office",
+  "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a first home while currently renting a small place; has a young child.",
+    "size_or_layout_preference": "Three-bedroom layout; interested in a walk-through.",
+    "viewing_interest": "Interested in a walk-through if a show unit is available.",
+    "appointment_readiness": "EMERGING",
+    "intent_level": "MEDIUM",
+    "sales_stage": "INTENT",
+    "important_features": [
+      "Three bedrooms",
+      "Two bathrooms",
+      "Open-plan living and dining"
+    ],
+    "primary_motivations": [
+      "First home for the family",
+      "More space than their current rental"
+    ],
+    "decision_factors": [
+      "Three-bedroom layout"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit for a family seeking a first home with a three-bedroom layout; the buyer is interested in experiencing the layout in person.",
+    "next_objective": "Update the buyer when show-unit availability is confirmed and, if available, invite them to arrange a visit.",
+    "last_progress": "Buyer expressed interest in seeing the three-bedroom layout in person, conditional on show-unit availability.",
+    "next_action": "Follow up after the pending show-unit availability check is resolved.",
+    "conversation_summary": "First-home enquiry from a couple renting a small place with a young child. They are interested in the three-bedroom layout and would like to walk through a show unit if one is available."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we saw the Pearl Residences ad. We’re renting a small place and looking for our first home with our young child. The three-bedroom layout caught our eye—do you have a show unit we could walk through?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That sounds like a sensible first home to explore for your family. Type A is 900 sq ft with 3 bedrooms and 2 bathrooms; the open-plan living and dining area gives you a shared family space, while the bedrooms keep sleeping space separate. I’ll check whether a show unit is available to walk through."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds promising, especially having three bedrooms for our little one. If a show unit is available, we’d be interested in seeing how the rooms feel in person. Let us know what you find out?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Absolutely—I’m still waiting for confirmation about the show unit, so I can’t confirm a walk-through just yet. If it’s available, seeing the three bedrooms and open living and dining area in person should help you picture how the layout could work for your family. I’ll update you once I have confirmation."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "AVAILABILITY",
+      "requested_fact": "Whether a show unit is currently available for a walk-through.",
+      "subject": "Pearl Residences show unit",
+      "customer_need": "The buyer wants to experience the three-bedroom layout in person as they consider a first home for their family.",
+      "reason": "Show unit availability is not confirmed in the available project information.",
+      "resume_stage": "INTENT",
+      "resume_objective": "Confirm show unit availability and, if available, invite the buyer to arrange a visit.",
+      "signature": "AVAILABILITY|availability currently pearl residences show through walk",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we saw the Pearl Residences ad. We’re renting a small place and looking for our first home with our young child. The three-bedroom layout caught our eye—do you have a show unit we could walk through?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "That sounds like a sensible first home to explore for your family. Type A is 900 sq ft with 3 bedrooms and 2 bathrooms; the open-plan living and dining area gives you a shared family space, while the bedrooms keep sleeping space separate. I’ll check whether a show unit is available to walk through.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a first home while currently renting a small place; has a young child.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three-bedroom layout; interested in a walk-through.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Asked whether a show unit is available to walk through.",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "MEDIUM",
+          "sales_stage": "INTENT",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Open-plan living and dining"
+          ],
+          "primary_motivations": [
+            "First home for the family",
+            "More space than their current rental"
+          ],
+          "decision_factors": [
+            "Three-bedroom layout"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a family seeking a first home with a three-bedroom layout.",
+          "next_objective": "Confirm whether a show unit is available, then help arrange a walk-through if appropriate.",
+          "last_progress": "Buyer shared that they are renting a small place, have a young child, and are interested in the three-bedroom layout.",
+          "next_action": "Check show unit availability for a walk-through.",
+          "conversation_summary": "First-home enquiry from a couple renting a small place with a young child. They are interested in the three-bedroom layout and asked about walking through a show unit."
+        },
+        "support_request": {
+          "support_type": "AVAILABILITY",
+          "requested_fact": "Whether a show unit is currently available for a walk-through.",
+          "subject": "Pearl Residences show unit",
+          "customer_need": "The buyer wants to experience the three-bedroom layout in person as they consider a first home for their family.",
+          "reason": "Show unit availability is not confirmed in the available project information.",
+          "resume_stage": "INTENT",
+          "resume_objective": "Confirm show unit availability and, if available, invite the buyer to arrange a visit."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3306,
+        "input_tokens_details": {
+          "cache_write_tokens": 3303,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1603,
+        "output_tokens_details": {
+          "reasoning_tokens": 1104
+        },
+        "total_tokens": 4909
+      }
+    },
+    {
+      "customer": "That sounds promising, especially having three bedrooms for our little one. If a show unit is available, we’d be interested in seeing how the rooms feel in person. Let us know what you find out?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Absolutely—I’m still waiting for confirmation about the show unit, so I can’t confirm a walk-through just yet. If it’s available, seeing the three bedrooms and open living and dining area in person should help you picture how the layout could work for your family. I’ll update you once I have confirmation.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a first home while currently renting a small place; has a young child.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three-bedroom layout; interested in a walk-through.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Interested in a walk-through if a show unit is available.",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "MEDIUM",
+          "sales_stage": "INTENT",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Open-plan living and dining"
+          ],
+          "primary_motivations": [
+            "First home for the family",
+            "More space than their current rental"
+          ],
+          "decision_factors": [
+            "Three-bedroom layout"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a family seeking a first home with a three-bedroom layout; the buyer is interested in experiencing the layout in person.",
+          "next_objective": "Update the buyer when show-unit availability is confirmed and, if available, invite them to arrange a visit.",
+          "last_progress": "Buyer expressed interest in seeing the three-bedroom layout in person, conditional on show-unit availability.",
+          "next_action": "Follow up after the pending show-unit availability check is resolved.",
+          "conversation_summary": "First-home enquiry from a couple renting a small place with a young child. They are interested in the three-bedroom layout and would like to walk through a show unit if one is available."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3636,
+        "input_tokens_details": {
+          "cache_write_tokens": 3633,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1108,
+        "output_tokens_details": {
+          "reasoning_tokens": 587
+        },
+        "total_tokens": 4744
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer expressed conditional interest and is waiting for show-unit availability; no additional meaningful customer message before confirmation."
+}

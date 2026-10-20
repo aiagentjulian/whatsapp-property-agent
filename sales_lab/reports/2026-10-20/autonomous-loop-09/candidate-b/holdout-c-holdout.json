@@ -1,0 +1,188 @@
+{
+  "trial": "holdout-c",
+  "scenario": "holdout",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Considering buying somewhere nearer to their mother in Taman Desa; currently renting around OUG.",
+    "preferred_location": "Near Taman Desa",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "primary_motivations": [
+      "Be nearer to their mother in Taman Desa"
+    ],
+    "decision_factors": [
+      "Location relative to Taman Desa"
+    ],
+    "fit_assessment": "The buyer intends to live in the home, but the Seberang Jaya, Penang location appears inconsistent with their stated aim of being nearer to their mother in Taman Desa near OUG in KL.",
+    "next_objective": "Let the buyer decide whether Pearl Residences remains relevant despite the location mismatch.",
+    "last_progress": "Buyer confirmed they would live in the home and that location relative to their mother is the key consideration.",
+    "next_action": "Be transparent about the location mismatch; do not imply the project would bring the buyer closer to their mother.",
+    "conversation_summary": "Buyer rents around OUG and is considering buying to be nearer to their mother in Taman Desa. They confirmed the home would be for their own stay and are focused on location. Pearl Residences is in Seberang Jaya, Penang, which appears not to meet that location goal.",
+    "active_concerns": [
+      "Pearl Residences in Seberang Jaya, Penang, does not appear to fit the buyer's goal of being nearer to Taman Desa near OUG in KL."
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad. I’m renting around OUG and thinking about buying somewhere nearer to my mum in Taman Desa. Could you tell me a bit about the project?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "A quick overview: Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. If you’re buying for your own home, that gives you a three-bedroom layout to consider. Since being closer to your mum is the main reason, I’m checking Pearl Residences’ exact location and access to Taman Desa rather than guessing. Would you be planning to live there yourself?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, I’d be living there myself. Thanks for checking the location and access to Taman Desa—that’s the part I’m trying to understand."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Thanks, that’s helpful. Pearl Residences is in Seberang Jaya, Seberang Perai, Penang. If you mean the Taman Desa near OUG in KL, it wouldn’t bring you closer to your mum, so based on your main reason for buying, I don’t think this is a good location fit. I’d rather be upfront than suggest otherwise."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Pearl Residences' exact location and verified access or travel distance to Taman Desa.",
+      "subject": "Location and access to Taman Desa",
+      "customer_need": "Assess whether the project would place the buyer nearer to their mother than their current rental around OUG.",
+      "reason": "The buyer's main stated reason for considering a purchase is proximity to their mother, but the available information does not establish the project's location or travel distance.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share verified location information and clarify whether the buyer intends to live in the home.",
+      "signature": "OTHER|access and desa distance exact location or pearl residences taman travel verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. I’m renting around OUG and thinking about buying somewhere nearer to my mum in Taman Desa. Could you tell me a bit about the project?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "A quick overview: Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. If you’re buying for your own home, that gives you a three-bedroom layout to consider. Since being closer to your mum is the main reason, I’m checking Pearl Residences’ exact location and access to Taman Desa rather than guessing. Would you be planning to live there yourself?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": "Considering buying somewhere nearer to their mother in Taman Desa; currently renting around OUG.",
+          "preferred_location": "Near Taman Desa",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": [
+            "Be nearer to their mother in Taman Desa"
+          ],
+          "decision_factors": [
+            "Location relative to Taman Desa"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "The three-bedroom layout may be relevant, but whether the location suits their main reason for buying is not yet established.",
+          "next_objective": "Verify the project's exact location and access to Taman Desa, and establish whether the buyer plans to live there.",
+          "last_progress": "Buyer shared their current rental area and reason for considering a purchase.",
+          "next_action": "Check verified location/access information for Taman Desa and follow up on intended use.",
+          "conversation_summary": "Buyer enquired about Pearl Residences after seeing an ad. They rent around OUG and are considering buying nearer to their mother in Taman Desa."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Pearl Residences' exact location and verified access or travel distance to Taman Desa.",
+          "subject": "Location and access to Taman Desa",
+          "customer_need": "Assess whether the project would place the buyer nearer to their mother than their current rental around OUG.",
+          "reason": "The buyer's main stated reason for considering a purchase is proximity to their mother, but the available information does not establish the project's location or travel distance.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified location information and clarify whether the buyer intends to live in the home."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3150,
+        "input_tokens_details": {
+          "cache_write_tokens": 2090,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 2000,
+        "output_tokens_details": {
+          "reasoning_tokens": 1365
+        },
+        "total_tokens": 5150
+      }
+    },
+    {
+      "customer": "Yes, I’d be living there myself. Thanks for checking the location and access to Taman Desa—that’s the part I’m trying to understand.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Thanks, that’s helpful. Pearl Residences is in Seberang Jaya, Seberang Perai, Penang. If you mean the Taman Desa near OUG in KL, it wouldn’t bring you closer to your mum, so based on your main reason for buying, I don’t think this is a good location fit. I’d rather be upfront than suggest otherwise.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering buying somewhere nearer to their mother in Taman Desa; currently renting around OUG.",
+          "preferred_location": "Near Taman Desa",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": [
+            "Be nearer to their mother in Taman Desa"
+          ],
+          "decision_factors": [
+            "Location relative to Taman Desa"
+          ],
+          "active_concerns": [
+            "Pearl Residences in Seberang Jaya, Penang, does not appear to fit the buyer's goal of being nearer to Taman Desa near OUG in KL."
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "The buyer intends to live in the home, but the Seberang Jaya, Penang location appears inconsistent with their stated aim of being nearer to their mother in Taman Desa near OUG in KL.",
+          "next_objective": "Let the buyer decide whether Pearl Residences remains relevant despite the location mismatch.",
+          "last_progress": "Buyer confirmed they would live in the home and that location relative to their mother is the key consideration.",
+          "next_action": "Be transparent about the location mismatch; do not imply the project would bring the buyer closer to their mother.",
+          "conversation_summary": "Buyer rents around OUG and is considering buying to be nearer to their mother in Taman Desa. They confirmed the home would be for their own stay and are focused on location. Pearl Residences is in Seberang Jaya, Penang, which appears not to meet that location goal."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3650,
+        "input_tokens_details": {
+          "cache_write_tokens": 2590,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 2109,
+        "output_tokens_details": {
+          "reasoning_tokens": 1528
+        },
+        "total_tokens": 5759
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer learned the project is in Penang, far from her mother in Taman Desa near OUG, and said it does not fit."
+}

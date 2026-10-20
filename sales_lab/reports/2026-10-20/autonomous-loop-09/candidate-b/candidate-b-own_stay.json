@@ -1,0 +1,230 @@
+{
+  "trial": "candidate-b",
+  "scenario": "own_stay",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a first home for a couple with a young child; currently renting a small place.",
+    "size_or_layout_preference": "Three bedrooms; wants to assess whether the room sizes suit their family.",
+    "viewing_interest": "Buyer and partner agreed they are interested in arranging a viewing and asked what days are available.",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "READY_FOR_APPOINTMENT",
+    "sales_stage": "CLOSE",
+    "important_features": [
+      "Three bedrooms"
+    ],
+    "primary_motivations": [
+      "First home",
+      "Suitable space for a couple with a young child"
+    ],
+    "decision_factors": [
+      "Whether the layout and room sizes suit their family"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "Potentially suitable for their family; buyer likes the three-bedroom layout and wants to judge the room sizes in person.",
+    "next_objective": "Have a human salesperson confirm available viewing days and coordinate the visit.",
+    "last_progress": "Buyer and partner agreed they are interested in arranging a viewing after the price range was discussed.",
+    "next_action": "Human salesperson to contact the buyer to confirm available days and coordinate a viewing; no booking is confirmed yet.",
+    "conversation_summary": "A couple renting a small place is exploring a first home for themselves and their young child. They like the three-bedroom layout, say around RM302k may be manageable, and have agreed to arrange a viewing with their partner to assess the fit.",
+    "budget_range": "Around RM302k may be manageable (buyer-stated)."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re renting a small place now and looking for our first home. The 3 bedrooms caught my eye—would that suit a couple with a young child?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "It could be a practical fit. The Phase 1 homes have 3 bedrooms and 2 bathrooms across 900 sq. ft., so you could have your own room, a room for your child, and keep the third room flexible as your family’s needs change. Seeing the layout in person would help you judge whether the room sizes work for you—would you and your partner like to arrange a viewing?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That layout sounds like it could work for us, especially having a room for our child. Before we arrange a viewing, what’s the price range for the 3-bedroom homes? Around RM302k might be manageable for us."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For an eligible Block 1B podium-blocked unit on Levels 1–4, the listed RM328k base less the 8% package works out to about RM301,760 (roughly RM302k), before any unit-specific car-park or add-on items. That’s close to the budget you mentioned. A viewing would let you and your partner see whether the 900 sq. ft. three-bedroom layout feels comfortable for your family—would you like to arrange one?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s close to what we had in mind, and seeing the layout would help us judge the fit. Yes, my partner and I would be interested in arranging a viewing. What days are available?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Great—I'll pass this to a salesperson to confirm the available days and coordinate a viewing for you and your partner. Seeing the layout should help you judge the room sizes and overall fit for your family. The visit isn’t booked until they confirm the arrangements."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re renting a small place now and looking for our first home. The 3 bedrooms caught my eye—would that suit a couple with a young child?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "It could be a practical fit. The Phase 1 homes have 3 bedrooms and 2 bathrooms across 900 sq. ft., so you could have your own room, a room for your child, and keep the third room flexible as your family’s needs change. Seeing the layout in person would help you judge whether the room sizes work for you—would you and your partner like to arrange a viewing?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a first home for a couple with a young child; currently renting a small place.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms caught their interest.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Viewing invited; no agreement yet.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three bedrooms"
+          ],
+          "primary_motivations": [
+            "First home",
+            "Suitable space for a couple with a young child"
+          ],
+          "decision_factors": [
+            "Whether the layout and room sizes suit their family"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potentially suitable based on the three-bedroom layout; actual room-size fit is not yet assessed.",
+          "next_objective": "Help them judge the layout and room sizes in person.",
+          "last_progress": "Asked whether the three-bedroom home could suit their family.",
+          "next_action": "Await response to viewing invitation.",
+          "conversation_summary": "A couple currently renting a small place is looking for their first home and asked whether the three-bedroom layout would suit them and their young child."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3623,
+        "input_tokens_details": {
+          "cache_write_tokens": 3620,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1404,
+        "output_tokens_details": {
+          "reasoning_tokens": 932
+        },
+        "total_tokens": 5027
+      }
+    },
+    {
+      "customer": "That layout sounds like it could work for us, especially having a room for our child. Before we arrange a viewing, what’s the price range for the 3-bedroom homes? Around RM302k might be manageable for us.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "For an eligible Block 1B podium-blocked unit on Levels 1–4, the listed RM328k base less the 8% package works out to about RM301,760 (roughly RM302k), before any unit-specific car-park or add-on items. That’s close to the budget you mentioned. A viewing would let you and your partner see whether the 900 sq. ft. three-bedroom layout feels comfortable for your family—would you like to arrange one?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": "Around RM302k may be manageable (buyer-stated).",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Considering a viewing after checking the price; no agreement yet.",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potentially suitable for their family; the buyer likes the three-bedroom layout, but room-size fit is not yet assessed.",
+          "next_objective": "Find out whether they would like to arrange a viewing.",
+          "last_progress": "The buyer says the three-bedroom layout could work and around RM302k might be manageable.",
+          "next_action": "Invite the buyer to arrange a viewing.",
+          "conversation_summary": "A couple renting a small place is exploring a first home for themselves and their young child. They like the three-bedroom layout and say around RM302k may be manageable; no viewing has been agreed yet."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4722,
+        "input_tokens_details": {
+          "cache_write_tokens": 3662,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1873,
+        "output_tokens_details": {
+          "reasoning_tokens": 1467
+        },
+        "total_tokens": 6595
+      }
+    },
+    {
+      "customer": "That’s close to what we had in mind, and seeing the layout would help us judge the fit. Yes, my partner and I would be interested in arranging a viewing. What days are available?",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Great—I'll pass this to a salesperson to confirm the available days and coordinate a viewing for you and your partner. Seeing the layout should help you judge the room sizes and overall fit for your family. The visit isn’t booked until they confirm the arrangements.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a first home for a couple with a young child; currently renting a small place.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms; wants to assess whether the room sizes suit their family.",
+          "budget_range": "Around RM302k may be manageable (buyer-stated).",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Buyer and partner agreed they are interested in arranging a viewing and asked what days are available.",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": "READY_FOR_APPOINTMENT",
+          "sales_stage": "CLOSE",
+          "important_features": [
+            "Three bedrooms"
+          ],
+          "primary_motivations": [
+            "First home",
+            "Suitable space for a couple with a young child"
+          ],
+          "decision_factors": [
+            "Whether the layout and room sizes suit their family"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potentially suitable for their family; buyer likes the three-bedroom layout and wants to judge the room sizes in person.",
+          "next_objective": "Have a human salesperson confirm available viewing days and coordinate the visit.",
+          "last_progress": "Buyer and partner agreed they are interested in arranging a viewing after the price range was discussed.",
+          "next_action": "Human salesperson to contact the buyer to confirm available days and coordinate a viewing; no booking is confirmed yet.",
+          "conversation_summary": "A couple renting a small place is exploring a first home for themselves and their young child. They like the three-bedroom layout, say around RM302k may be manageable, and have agreed to arrange a viewing with their partner to assess the fit."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Buyer and partner have agreed to arrange a viewing and ask what days are available. Please confirm available days and coordinate with them; they want to assess whether the three-bedroom layout and room sizes fit their family. No appointment has been booked."
+      },
+      "usage": {
+        "input_tokens": 3812,
+        "input_tokens_details": {
+          "cache_write_tokens": 2752,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1034,
+        "output_tokens_details": {
+          "reasoning_tokens": 438
+        },
+        "total_tokens": 4846
+      }
+    }
+  ],
+  "closed": true
+}

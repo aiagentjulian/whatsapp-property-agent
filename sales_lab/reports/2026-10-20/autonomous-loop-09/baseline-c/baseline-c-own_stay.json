@@ -1,0 +1,186 @@
+{
+  "trial": "baseline-c",
+  "scenario": "own_stay",
+  "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a first home for their family; currently renting a small place.",
+    "size_or_layout_preference": "3 bedrooms",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "READY_FOR_APPOINTMENT",
+    "sales_stage": "CLOSE",
+    "important_features": [
+      "3 bedrooms",
+      "2 bathrooms",
+      "Balcony"
+    ],
+    "primary_motivations": [
+      "Find a first home for their family",
+      "Have more space than their current small rental"
+    ],
+    "decision_factors": [
+      "Whether the 3-bedroom layout suits a couple with a young child",
+      "Room proportions and usable space"
+    ],
+    "active_concerns": [
+      "Whether the home will suit their family"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potentially suitable; they want to assess the 900 sq. ft. layout in person.",
+    "next_objective": "Coordinate a viewing so they can assess the room proportions and family fit.",
+    "last_progress": "The buyer expressed interest in the layout for their child and visiting family, and asked for help arranging a visit.",
+    "next_action": "Human salesperson to coordinate the viewing and confirm timing.",
+    "conversation_summary": "First-home enquiry from a couple with a young child, currently renting a small place. They are interested in the 3-bedroom layout and asked for help arranging a visit to judge the fit.",
+    "viewing_interest": "Wants to arrange a visit to assess the room proportions and fit for their family."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re renting a small place now and looking for our first home. The 3 bedrooms caught my eye—would that suit a couple with a young child?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, it could suit a couple with a young child. The Type A is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony, so one room could be your child’s and the third could stay flexible for work or guests. The bedrooms are designed to fit a queen bed, though it’s worth seeing the layout in person to judge how it feels for your family. I’d recommend visiting the show unit together to check the room proportions and overall fit."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds like it could work for us, especially having a room for our little one and space for family to stay. Seeing the rooms in person would help us judge the fit. Could you help us arrange a visit?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Absolutely—I’ll pass this to our salesperson to coordinate a visit with you. They’ll confirm the available timing and details; the visit isn’t booked yet."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re renting a small place now and looking for our first home. The 3 bedrooms caught my eye—would that suit a couple with a young child?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes, it could suit a couple with a young child. The Type A is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony, so one room could be your child’s and the third could stay flexible for work or guests. The bedrooms are designed to fit a queen bed, though it’s worth seeing the layout in person to judge how it feels for your family. I’d recommend visiting the show unit together to check the room proportions and overall fit.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first home for a couple and young child, currently renting a small place.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "Balcony"
+          ],
+          "primary_motivations": [
+            "Find a first home for their family",
+            "Have more space than their current small rental"
+          ],
+          "decision_factors": [
+            "Whether the 3-bedroom layout suits a couple with a young child",
+            "Room proportions and usable space"
+          ],
+          "active_concerns": [
+            "Whether the home will suit their family"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potentially suitable; the 900 sq. ft. layout should be assessed in person for their family.",
+          "next_objective": "Help them judge the layout and room proportions for their family.",
+          "last_progress": "Shared that they are renting a small place, looking for their first home, and are a couple with a young child.",
+          "next_action": "Invite them to view the show unit; no viewing agreement yet.",
+          "conversation_summary": "First-home enquiry from a couple with a young child, currently renting a small place. They asked whether the 3-bedroom home would suit them."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3538,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 3535
+        },
+        "output_tokens": 1782,
+        "output_tokens_details": {
+          "reasoning_tokens": 1229
+        },
+        "total_tokens": 5320
+      }
+    },
+    {
+      "customer": "That sounds like it could work for us, especially having a room for our little one and space for family to stay. Seeing the rooms in person would help us judge the fit. Could you help us arrange a visit?",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Absolutely—I’ll pass this to our salesperson to coordinate a visit with you. They’ll confirm the available timing and details; the visit isn’t booked yet.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a first home for their family; currently renting a small place.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to arrange a visit to assess the room proportions and fit for their family.",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": "READY_FOR_APPOINTMENT",
+          "sales_stage": "CLOSE",
+          "important_features": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "Balcony"
+          ],
+          "primary_motivations": [
+            "Find a first home for their family",
+            "Have more space than their current small rental"
+          ],
+          "decision_factors": [
+            "Whether the 3-bedroom layout suits a couple with a young child",
+            "Room proportions and usable space"
+          ],
+          "active_concerns": [
+            "Whether the home will suit their family"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potentially suitable; they want to assess the 900 sq. ft. layout in person.",
+          "next_objective": "Coordinate a viewing so they can assess the room proportions and family fit.",
+          "last_progress": "The buyer expressed interest in the layout for their child and visiting family, and asked for help arranging a visit.",
+          "next_action": "Human salesperson to coordinate the viewing and confirm timing.",
+          "conversation_summary": "First-home enquiry from a couple with a young child, currently renting a small place. They are interested in the 3-bedroom layout and asked for help arranging a visit to judge the fit."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Buyer asked for help arranging a visit after expressing interest in assessing the 3-bedroom layout for their family. Human salesperson should coordinate and confirm the viewing details; no appointment has been confirmed."
+      },
+      "usage": {
+        "input_tokens": 3951,
+        "input_tokens_details": {
+          "cache_write_tokens": 3948,
+          "cached_tokens": 0
+        },
+        "output_tokens": 957,
+        "output_tokens_details": {
+          "reasoning_tokens": 402
+        },
+        "total_tokens": 4908
+      }
+    }
+  ],
+  "closed": true
+}

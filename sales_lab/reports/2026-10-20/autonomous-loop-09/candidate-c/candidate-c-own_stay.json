@@ -1,0 +1,180 @@
+{
+  "trial": "candidate-c",
+  "scenario": "own_stay",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for their first home; currently renting a small place",
+    "size_or_layout_preference": "Interested in a 3-bedroom layout for a couple with a young child",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "READY_FOR_APPOINTMENT",
+    "sales_stage": "CLOSE",
+    "important_features": [
+      "3 bedrooms",
+      "Separate room for their child"
+    ],
+    "primary_motivations": [
+      "First home",
+      "More space than current rental"
+    ],
+    "decision_factors": [
+      "Whether the 3-bedroom layout suits their family"
+    ],
+    "active_concerns": [
+      "Wants to assess the layout in person"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit based on the stated household and interest in three bedrooms; the buyer wants to see the layout in person.",
+    "next_objective": "Have a human salesperson contact the buyer to arrange the requested visit.",
+    "last_progress": "Buyer expressed interest in a separate room for their child and agreed to arrange a visit.",
+    "next_action": "Human salesperson to contact the buyer and coordinate viewing arrangements; no booking is confirmed yet.",
+    "conversation_summary": "First-home buyer currently renting a small place, with a young child. Interested in the three-bedroom layout and has agreed to arrange a visit. Asked for the starting price.",
+    "viewing_interest": "Wants to arrange a visit and assess how the layout suits their family"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re renting a small place now and looking for our first home. The 3 bedrooms caught my eye—would that suit a couple with a young child?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, it could suit a couple with a young child. Phase 1 homes are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so you’d have a separate room for your child and a third room that could offer flexibility as your needs change. I’d recommend viewing the layout in person to see how it feels for your family. Would you like help arranging a visit?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds promising, especially having a separate room for our child. I’d like to arrange a visit and see how the layout feels for us. Could you also share the starting price?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Great — I’ll pass your request to a salesperson to contact you and arrange a visit; it won’t be booked until they confirm. As a starting reference, an eligible podium-blocked category is about RM302,000 after the listed rebate. That’s before any unit-specific car-park or add-on costs, so it isn’t an all-in quote."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re renting a small place now and looking for our first home. The 3 bedrooms caught my eye—would that suit a couple with a young child?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes, it could suit a couple with a young child. Phase 1 homes are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony, so you’d have a separate room for your child and a third room that could offer flexibility as your needs change. I’d recommend viewing the layout in person to see how it feels for your family. Would you like help arranging a visit?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first home; currently renting a small place",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in a 3-bedroom layout for a couple with a young child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "UNDERSTAND",
+          "important_features": [
+            "3 bedrooms",
+            "Suitability for a couple with a young child"
+          ],
+          "primary_motivations": [
+            "First home",
+            "More space than current rental"
+          ],
+          "decision_factors": [
+            "Whether the 3-bedroom layout suits their family"
+          ],
+          "active_concerns": [
+            "Whether the home would suit a couple with a young child"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit based on the stated household and interest in three bedrooms; layout suitability is not yet confirmed.",
+          "next_objective": "Help them assess whether the layout works for their family and explore a viewing if interested.",
+          "last_progress": "Shared the Phase 1 unit layout and explained its potential fit for their family.",
+          "next_action": "Await their response to the viewing invitation.",
+          "conversation_summary": "Currently renting a small place and looking for a first home. Asked whether the three-bedroom layout could suit a couple with a young child."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3623,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 3620
+        },
+        "output_tokens": 1399,
+        "output_tokens_details": {
+          "reasoning_tokens": 880
+        },
+        "total_tokens": 5022
+      }
+    },
+    {
+      "customer": "That sounds promising, especially having a separate room for our child. I’d like to arrange a visit and see how the layout feels for us. Could you also share the starting price?",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Great — I’ll pass your request to a salesperson to contact you and arrange a visit; it won’t be booked until they confirm. As a starting reference, an eligible podium-blocked category is about RM302,000 after the listed rebate. That’s before any unit-specific car-park or add-on costs, so it isn’t an all-in quote.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for their first home; currently renting a small place",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in a 3-bedroom layout for a couple with a young child",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to arrange a visit and assess how the layout suits their family",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": "READY_FOR_APPOINTMENT",
+          "sales_stage": "CLOSE",
+          "important_features": [
+            "3 bedrooms",
+            "Separate room for their child"
+          ],
+          "primary_motivations": [
+            "First home",
+            "More space than current rental"
+          ],
+          "decision_factors": [
+            "Whether the 3-bedroom layout suits their family"
+          ],
+          "active_concerns": [
+            "Wants to assess the layout in person"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit based on the stated household and interest in three bedrooms; the buyer wants to see the layout in person.",
+          "next_objective": "Have a human salesperson contact the buyer to arrange the requested visit.",
+          "last_progress": "Buyer expressed interest in a separate room for their child and agreed to arrange a visit.",
+          "next_action": "Human salesperson to contact the buyer and coordinate viewing arrangements; no booking is confirmed yet.",
+          "conversation_summary": "First-home buyer currently renting a small place, with a young child. Interested in the three-bedroom layout and has agreed to arrange a visit. Asked for the starting price."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Buyer has agreed to arrange a visit to assess how the layout suits their family. Please contact them to coordinate the viewing; no booking has been confirmed."
+      },
+      "usage": {
+        "input_tokens": 4718,
+        "input_tokens_details": {
+          "cache_write_tokens": 3658,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1292,
+        "output_tokens_details": {
+          "reasoning_tokens": 821
+        },
+        "total_tokens": 6010
+      }
+    }
+  ],
+  "closed": true
+}

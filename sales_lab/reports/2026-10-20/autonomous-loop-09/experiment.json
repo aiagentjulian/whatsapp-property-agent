@@ -1,0 +1,186 @@
+{
+  "loop": "09",
+  "date": "2026-10-20",
+  "branch": "codex/sales-lab-v1",
+  "starting_commit": "7fff5f3",
+  "sales_agent": {
+    "model": "gpt-6-luna",
+    "reasoning": "high"
+  },
+  "simulations": {
+    "total": 8,
+    "realistic": 7,
+    "rejected": 1,
+    "rejected_reason": "baseline A Customer Simulator produced a generic FAQ sequence without a stated main decision factor; excluded from conversion evidence"
+  },
+  "judgments": {
+    "overall": "NEEDS REVIEW",
+    "conditional_viewing_handoff": "KEEP narrowly",
+    "focused_pair": {
+      "baseline_score": 66,
+      "candidate_score": 87,
+      "note": "One focused pair; opening already asked about a show unit, so it tests consent-to-handoff, not creation of initial viewing interest."
+    },
+    "matched_family_pair_1": "candidate progression stronger; natural customer paths diverged; one candidate handoff",
+    "matched_family_pair_2": "both baseline and candidate produced APPOINTMENT_HANDOFF; no candidate win established",
+    "fresh_holdout": "credible location mismatch; agent correctly disqualified the fit, with initial delayed location retrieval"
+  },
+  "api": {
+    "calls": 21,
+    "completed": 21,
+    "failed": 0,
+    "usage": {
+      "input_tokens": 77759,
+      "output_tokens": 31018,
+      "total_tokens": 108777
+    },
+    "cost": "not returned by API; not estimated"
+  },
+  "regression_tests": {
+    "command": "python3 -m unittest discover -s . -t .",
+    "passed": 45,
+    "failed": 0
+  },
+  "groups": {
+    "baseline": {
+      "calls": 12,
+      "failed": 0,
+      "usage": {
+        "input_tokens": 43173,
+        "output_tokens": 16459,
+        "total_tokens": 59632
+      },
+      "runs": [
+        {
+          "run_dir": "baseline",
+          "calls": 8,
+          "dialogues": [
+            {
+              "file": "baseline/baseline-a-genuine_interest.json",
+              "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+              "turns": 5,
+              "actions": [
+                "SUPPORT_REQUEST",
+                "REPLY",
+                "REPLY",
+                "REPLY",
+                "SUPPORT_REQUEST"
+              ]
+            },
+            {
+              "file": "baseline/baseline-b-own_stay.json",
+              "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+              "turns": 3,
+              "actions": [
+                "REPLY",
+                "SUPPORT_REQUEST",
+                "REPLY"
+              ]
+            }
+          ]
+        },
+        {
+          "run_dir": "baseline-c",
+          "calls": 2,
+          "dialogues": [
+            {
+              "file": "baseline-c/baseline-c-own_stay.json",
+              "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+              "turns": 2,
+              "actions": [
+                "REPLY",
+                "APPOINTMENT_HANDOFF"
+              ]
+            }
+          ]
+        },
+        {
+          "run_dir": "focused-baseline",
+          "calls": 2,
+          "dialogues": [
+            {
+              "file": "focused-baseline/focused-base-couple_home_office.json",
+              "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+              "turns": 2,
+              "actions": [
+                "SUPPORT_REQUEST",
+                "REPLY"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "candidate": {
+      "calls": 9,
+      "failed": 0,
+      "usage": {
+        "input_tokens": 34586,
+        "output_tokens": 14559,
+        "total_tokens": 49145
+      },
+      "runs": [
+        {
+          "run_dir": "candidate-b",
+          "calls": 5,
+          "dialogues": [
+            {
+              "file": "candidate-b/candidate-b-own_stay.json",
+              "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+              "turns": 3,
+              "actions": [
+                "REPLY",
+                "REPLY",
+                "APPOINTMENT_HANDOFF"
+              ]
+            },
+            {
+              "file": "candidate-b/holdout-c-holdout.json",
+              "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+              "turns": 2,
+              "actions": [
+                "SUPPORT_REQUEST",
+                "REPLY"
+              ]
+            }
+          ]
+        },
+        {
+          "run_dir": "candidate-c",
+          "calls": 2,
+          "dialogues": [
+            {
+              "file": "candidate-c/candidate-c-own_stay.json",
+              "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+              "turns": 2,
+              "actions": [
+                "REPLY",
+                "APPOINTMENT_HANDOFF"
+              ]
+            }
+          ]
+        },
+        {
+          "run_dir": "focused-candidate",
+          "calls": 2,
+          "dialogues": [
+            {
+              "file": "focused-candidate/focused-candidate-couple_home_office.json",
+              "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+              "turns": 2,
+              "actions": [
+                "SUPPORT_REQUEST",
+                "APPOINTMENT_HANDOFF"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "external_effects": "None. No WhatsApp/Meta, Sheets, production database, deployment, customer data, or external human handoff.",
+  "source_dates": {
+    "sales_lab_price_fixture": "2026-08-14",
+    "not_valid_as": "October 2026 production pricing"
+  }
+}

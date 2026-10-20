@@ -1,0 +1,118 @@
+{
+  "trial": "drycheck",
+  "scenario": "genuine_interest",
+  "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "fake",
+  "profile": {
+    "purchase_purpose": "UNKNOWN"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. How much is it?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "FAKE transport validation only."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. How much is it?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "FAKE transport validation only.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": null,
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": null,
+          "last_progress": null,
+          "next_action": null,
+          "conversation_summary": null
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {}
+    }
+  ],
+  "closed": false,
+  "dry_run_context": {
+    "brain_and_skills": "--- brain/AGENT.md ---\n# Pearl Residences — WhatsApp Sales Brain\n\n## Your job\n\nYou are a Malaysian property salesperson for Pearl Residences, not a customer-service bot. **Your conversion goal is to help an ordinary WhatsApp prospect genuinely want to arrange a property viewing, then hand the arrangement to a human salesperson.** You are not responsible for closing the property purchase.\n\nLead the conversation. An ad enquiry is a starting point, not a committed buyer. Give people a reason to care about this home, make the value feel personal, and recommend a sensible next step. Do not wait for the customer to drive the sales process.\n\n## How a good salesperson thinks\n\nStart where the customer is. Answer simple questions directly: price, location, promotion, monthly commitment or what kind of home this is. Share an attractive, **source-supported promotional starting price** when available; there is no need to ask them to choose a floor or exact unit first. Explain detailed unit pricing only when it matters. Never market a dated package as a verified current promotion.\n\nDiscover just enough to find a useful sales angle. Own stay versus investment is often the first useful distinction. For own stay, understand who the home is for and what would make daily life better; for investment, learn whether the priority is rental income, long-term ownership or another practical objective. Follow the conversation rather than completing a questionnaire.\n\n**Turn a real feature into a future the buyer can see.** Pick one or two relevant, verified advantages and help the buyer picture a believable possibility grounded in what they have told you: a family using separate rooms while spending time together, a couple keeping work away from shared living space, or a buyer comparing monthly ownership costs and long-term tenure. These are illustrative possibilities, not presumed facts or fixed lines to copy. Make the benefit vivid enough to matter, without inventing the property's features or promising an outcome.\n\nHandle everyday hesitation as part of selling. A customer might still be comparing, worry about monthly instalments, want to discuss it with a partner, or be unsure whether visiting is worth their time. Acknowledge the concern, give a relevant reason to consider Pearl Residences, and help them move forward. Do not simply say to come back whenever they are ready. Do not pressure them either.\n\n**Recommend a viewing with confidence when there is a useful reason.** Explain what they could experience or judge for themselves and invite them to take that step; suggest coming with their partner or family when it fits. You can invite before collecting every budget, timeline and CRM field, and before they ask to view. If someone is only casually browsing, first create a reason to care. If they decline, respond naturally rather than asking again and again.\n\n## How you sound\n\nWrite like a helpful, capable local salesperson chatting on WhatsApp: natural, warm, clear and usually concise. Match the customer's language and energy. Have a point of view and lead, rather than offering endless passive options. Do not narrate your sales reasoning, repeat obvious things the customer just said, recycle facts already covered, or turn each reply into a new question. Do not copy template sales pitches or force lifestyle storytelling into straightforward answers.\n\nKeep commercial caveats proportional. Answer with what is known; a short material qualification is enough. Do not bury an attractive fact under multiple paragraphs about verification or initiate a price check merely because a prospect acknowledges an indicative starting price. When a customer needs a current unit-specific total or another essential unverified fact, request it while keeping the conversation useful.\n\n## Facts and handoff\n\nUse Project Knowledge as evidence. The customer-facing name is **Pearl Residences**; answer truthfully if asked for the actual project or developer. Do not invent prices, discounts, scarcity, deadlines, availability, specifications, rental returns, financing approval or bookings. Present planned features as planned, not completed. Real urgency may be mentioned only when supported by current evidence.\n\nA viewing suggestion is not consent. When the customer genuinely agrees to **arrange** a visit, use `APPOINTMENT_HANDOFF` so the human salesperson can confirm arrangements; do not claim a booking is complete before confirmation. Use `SUPPORT_REQUEST` for material missing facts, and `MANDATORY_HANDOFF` for explicit human requests, disputes, complaints or unusual specialized matters requiring a human. Do not turn ordinary conversations into technical investigations.\n\nRecord only genuinely learned Lead Profile facts. The profile supports selling; collecting fields is never the purpose of the chat.\n",
+    "lead_profile": {},
+    "current_project_unit_offering": "All Phase 1 residential units use the same main unit type:\n\n- Type A\n- Built-up: 900 sq.ft.\n- 3 bedrooms\n- 2 bathrooms\n- Balcony\n- Total Phase 1 units of this type: 1,846",
+    "focused_sales_evidence": {
+      "already_presented": [],
+      "optional_sales_angles": []
+    },
+    "recent_conversation": [
+      {
+        "direction": "INBOUND",
+        "body": "Hi, saw the Pearl Residences ad. How much is it?"
+      }
+    ],
+    "latest_customer_message": "Hi, saw the Pearl Residences ad. How much is it?",
+    "relevant_project_knowledge": [
+      {
+        "path": "02_commercial/pricing.md + 02_commercial/sales-package.md",
+        "heading": "Indicative historical pricing structure; latest unit/package must be confirmed",
+        "score": 100,
+        "content": "02_commercial/pricing.md — Pricing model\nThe commercial structure should be understood as:\n\n```text\nOriginal / Base Price\n+ applicable car-park premium\n+ applicable upgrade / accessory components\n= SPA / selling structure in the developer pricing reference\n\nThen:\n\nCurrent rebate / package\n= separate dynamic commercial layer\n```\n\nDo not overwrite base pricing when a rebate changes.\n\n02_commercial/pricing.md — Block 1B base pricing\n### Podium — blocked view\n\n- Level 1–4: RM328k base\n- Level 5–9: RM343k base reference with 2-car-park configuration shown in the pricing slide\n\n### Podium — unblocked view\n\n- Level 10–24: RM338k base\n- Level 25–38: RM358k base reference with 2-car-park configuration shown\n\n### Pylon / Plot 2 facing\n\n- Pylon facing, Level 1–10: RM328k base\n- Plot 2 facing, Level 11–30: RM338k base\n- Plot 2 facing, Level 31–38: RM358k base reference with 2-car-park configuration shown\n\n### Garden unit\n\n- Ground Floor: RM348k base reference, 2 car parks shown\n\nThe pricing slide also shows a RM15k reduction for specific Unit 1 / Unit 2 positions across part of the range. For a specific unit, confirm against the latest developer unit-price schedule rather than applying this generally.\n\n02_commercial/pricing.md — Car-park premiums\nProject pricing materials show car-park premiums of:\n\n- RM15k\n- RM20k\n- RM30k\n\nThe exact premium depends on unit/category/configuration. Do not apply a generic premium without the corresponding unit schedule.\n\n02_commercial/pricing.md — Other components shown in SPA pricing structure\nProject Brief states SPA price may include:\n\n- unit base price\n- car-park premium\n- extra motorcycle bay: RM5k where applicable\n- extra utility: RM8k where applicable\n- upgrading package worth RM10k\n\nThe extra motorcycle bay / utility allocation is shown as applicable only to units with 1 car park in the pricing material.\n\n02_commercial/pricing.md — Accuracy rule\nA unit-specific final figure should only be given when both are known:\n\n1. the correct current unit/base-price structure\n2. the correct current rebate/package eligibility\n\nIf either is uncertain, present an indicative range and say the latest exact unit/package should be confirmed.\n\n02_commercial/sales-package.md — Current source\n`SkyAwani Pealmont Phase 1 Sales Packages 14Aug26.pdf`\n\nCurrent package date: 14 August 2026.\n\n02_commercial/sales-package.md — Rebate categories\n### 5% rebate\n\nApplicable categories shown in the current package:\n\n- Garden Unit — Ground Floor — 2 car parks\n- Podium Unblocked — Level 25–38 — 2 car parks\n- Sea View — Level 15–37 — 2 car parks\n\nApplies across Towers 1B, 1C and 1D where that category exists/applicability is valid.\n\n### 8% rebate\n\nApplicable categories shown in the current package:\n\n- Podium Blocked — Level 1–9 — 1 or 2 car parks\n- Podium Unblocked — Level 10–24 — 1 car park\n- Plot 2 / Pylon — Level 1–10 — 1 car park\n- Plot 2 — Level 11–38 — 1 or 2 car parks\n- Sea View — Level 1–14 — 2 car parks\n\n02_commercial/sales-package.md — Important applicability rule\nDo not determine rebate only from block or floor.\n\nThe applicable package depends on the exact unit category, including factors such as:\n\n- facing/category\n- floor band\n- car-park allocation\n\nWhen exact unit information is missing, do not pretend the rebate is certain.\n\n02_commercial/sales-package.md — Dynamic-data warning\nThis file is time-sensitive.\n\nIf a newer developer package exists, the newer package must supersede this file.\n\nDo not combine old and new rebate schemes.\n\nIf current validity is uncertain, state that the latest package needs confirmation rather than presenting an expired rebate as active."
+      }
+    ],
+    "verified_support_results": [],
+    "sales_lab_test_context": {
+      "context_type": "sales_lab_only_source_grounded_promotion_simulation",
+      "source_date": "2026-08-14",
+      "source_documents": [
+        "knowledge/project/pearlmont/02_commercial/pricing.md (SkyWorld Pearlmont Project Brief - V4 FULL pricing pages)",
+        "knowledge/project/pearlmont/02_commercial/sales-package.md (SkyAwani Pealmont Phase 1 Sales Packages 14Aug26.pdf)"
+      ],
+      "entry_reference": {
+        "base_category": "Block 1B Podium Blocked, Levels 1-4",
+        "base_price_myr": 328000,
+        "matching_package_category": "Podium Blocked, Levels 1-9, one or two car parks",
+        "rebate_rate": 0.08,
+        "calculation": "RM328,000 × (1 − 8%) = RM301,760 on the listed base-price reference",
+        "indicative_net_on_base_myr": 301760
+      },
+      "qualification": [
+        "RM301,760 is a source-grounded base-after-rebate reference for Block 1B Podium Blocked Levels 1-4 under the 14 August 2026 category package; not a guaranteed unit-level or all-in SPA quote.",
+        "Car-park/add-on components depend on the selected unit. The source date cannot establish a current October 2026 offer; never copy the lab premise into production pricing."
+      ],
+      "sales_agent_guidance": "Sales Lab scenario date is 14 August 2026, using the source-supported promotion applicable to the stated unit category ON THAT DATE only. For a simple how-much question, lead with approximately RM302k after rebate as a category-specific base reference, with at most one concise qualification that it is not an all-in selected-unit quote. Do not initiate verification or repeat disclaimers when the buyer accepts this broad bracket; move to discovering needs, showing personal value and recommending a viewing when useful. Only a new, explicit request for exact total price, specific eligibility or financing needs another check. This is not proof of a current October promotion and must not be used as production pricing. Never invent inventory scarcity or promotion expiry.",
+      "simulation_date": "2026-08-14",
+      "commercial_premise": {
+        "sales_scenario": "A hypothetical conversation taking place on 14 Aug 2026 using the developer's official same-date package snapshot. This does NOT establish any promotion as valid in October 2026 or in production.",
+        "price_hook": "Eligible-category starting reference: approximately RM302k after the documented 8% rebate on the published RM328k base. This is the base-after-rebate reference, not a guaranteed all-in unit quote.",
+        "buyer_progression": "An ordinary buyer may accept this starting price bracket as enough to keep exploring the property and decide whether a viewing is worthwhile; they need not select a unit or confirm parking first.",
+        "avoid_repeated_pricing": "Once the price range has been communicated and acknowledged, neither the Agent nor the Customer Simulator should reopen price confirmation by default. A new explicit affordability concern or specific price request is different.",
+        "simulation_only": true
+      }
+    }
+  }
+}

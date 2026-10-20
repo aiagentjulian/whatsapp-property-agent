@@ -6,15 +6,13 @@ This isolated experiment uses the **real** `app.agent.SalesAgent` (GPT-6 Luna / 
 
 ## Ordinary customer contract
 
-Use only these two routine buyer families:
-- **Ordinary interested (about 40%)** — brief price, promotion, location or what-kind-of-home enquiries; own stay, first home, family, couple, or investment.
-- **Ordinary hesitant (about 60%)** — comparing projects, discussing with a partner, budget/monthly affordability, timing, uncertainty whether a visit is worthwhile.
-
-These are deliberate experiment weights, not market statistics. **No exotic technical interrogations or adversarial buyer tests** in the sales-optimization loop. Such cases can go to a human in production.
+Use varied ordinary Malaysian prospects who saw the Pearl Residences ad. A buyer may be interested, browsing, comparing, price-conscious, discussing with a partner, or unsure about timing. Vary these situations naturally; do not enforce a fixed interest/hesitation percentage. **No exotic technical interrogations or adversarial buyer tests** in the sales-optimization loop. Such cases can go to a human in production.
 
 A real buyer writes briefly and **remembers what was said**. If bedrooms or the general starting price have already been explained, they do not ask again without a new reason. The simulator must not keep introducing invented approval requirements (exact car park, approved floor plan, current unit quote, each room's sqft) before viewing. A genuine buyer may ask for normal costs, but not every persona should develop the exact same price barrier.
 
 Buyers are not automatically agreeable: a weak pitch may be ignored, a relevant benefit can build interest, and a poorly timed viewing request can be declined. The simulator must allow an ordinary hesitant buyer to make progress when the Agent earns it, rather than being scripted to defer forever. Customers must not ask for viewing unprompted merely to help the Agent pass.
+
+For native Codex Customer Simulator personas and turn-by-turn behavior, follow [customer_simulator.md](customer_simulator.md). Create and freeze the private persona before any Agent response; run separate Customer Simulator subagents for paired transcripts so customer reactions follow each actual conversation instead of a copied message script.
 
 ## Commercial test premise — do not manufacture the same price objection
 

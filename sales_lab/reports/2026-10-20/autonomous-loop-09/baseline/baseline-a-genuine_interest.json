@@ -1,0 +1,377 @@
+{
+  "trial": "baseline-a",
+  "scenario": "genuine_interest",
+  "source_sha256": "0f0a1f5771276a9f5bc0c0d979d73ecdb654d96682f0f84ba875d3070bf1b4a3",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "sales_stage": "QUALIFY",
+    "next_objective": "Confirm kitchen fit-out inclusions, then continue the buyer’s exploration of the property.",
+    "last_progress": "Buyer said the 900 sq ft layout sounds like a good size and asked about kitchen fittings.",
+    "next_action": "Check whether kitchen cabinets or appliances are included.",
+    "conversation_summary": "Buyer is considering the 900 sq ft layout and awaits confirmation of available floors and facings. They have also asked which kitchen fittings are included; the verified details list a stainless-steel sink with tap and a washing-machine tap, but not cabinets or appliances.",
+    "preferred_language": "English",
+    "size_or_layout_preference": "Says the 900 sq ft, 3-bedroom, 2-bathroom layout sounds like a good size.",
+    "intent_level": "MEDIUM",
+    "decision_factors": [
+      "Price variation by floor and view",
+      "Available floors and facings",
+      "Kitchen fittings and inclusions"
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the ad for Pearl Residences. Can you share the price range and whether units are still available?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! A starting reference is around RM302k for an eligible Block 1B podium-blocked unit, after the 8% rebate on the listed base price. The exact unit’s total may differ with its car-park allocation and any applicable add-ons. I’ll check which units are currently available and confirm for you."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Okay, thanks—please let me know once you’ve checked. What are the unit sizes like?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Phase 1 units are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The availability check is still pending; I’ll update you once it’s confirmed."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds like a good size. Does the price vary much by floor or view?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, it varies by floor band and facing. The Block 1B base-price references run from about RM328k for some lower blocked or pylon categories to RM358k for some higher-floor categories—around a RM30k spread. Some higher-floor references include two car parks, and the applicable rebate also depends on the unit category and parking, so the selected-unit total can differ."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Got it, thanks. When you’ve checked, could you let me know which floors and facings are available?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The availability check is still pending. I’ll share the confirmed available floors and facings as soon as it comes back—I don’t want to guess at the current options."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Sure, thanks. Do the units come with any kitchen fittings, or are they mostly bare?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The confirmed spec lists a stainless-steel kitchen sink with tap, plus a washing-machine tap. I can’t confirm whether cabinets or appliances are included from the details I have, so I’ll check rather than describe it as fully fitted."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "AVAILABILITY",
+      "requested_fact": "Which Pearl Residences Phase 1 units are currently available?",
+      "subject": "Pearl Residences Phase 1 unit availability",
+      "customer_need": "The buyer wants to know whether units are still available.",
+      "reason": "Current availability is not established by the provided verified information.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share verified availability, then learn the buyer’s purchase purpose and guide toward a useful next step.",
+      "signature": "AVAILABILITY|1 are availability currently pearl phase residences units which",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "TECHNICAL",
+      "requested_fact": "Whether kitchen cabinets, a hob, hood or other appliances are included in the Pearl Residences Type A handover specification.",
+      "subject": "Pearl Residences Type A kitchen inclusions",
+      "customer_need": "The buyer wants to know whether the kitchen is fitted or mostly bare.",
+      "reason": "Verified information confirms a stainless-steel kitchen sink with tap and a washing-machine tap, but does not specify cabinets or appliances.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share confirmed kitchen inclusions and continue guiding the buyer toward a useful next step.",
+      "signature": "TECHNICAL|appliances are cabinets handover hob hood in included inclusions kitchen or other pearl residences specification type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw the ad for Pearl Residences. Can you share the price range and whether units are still available?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! A starting reference is around RM302k for an eligible Block 1B podium-blocked unit, after the 8% rebate on the listed base price. The exact unit’s total may differ with its car-park allocation and any applicable add-ons. I’ll check which units are currently available and confirm for you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm current unit availability, then learn whether the buyer is considering the home for own stay or investment.",
+          "last_progress": "Asked for the price range and whether units are still available.",
+          "next_action": "Confirm availability before giving an answer.",
+          "conversation_summary": "Initial enquiry about Pearl Residences; buyer asked about price range and current availability."
+        },
+        "support_request": {
+          "support_type": "AVAILABILITY",
+          "requested_fact": "Which Pearl Residences Phase 1 units are currently available?",
+          "subject": "Pearl Residences Phase 1 unit availability",
+          "customer_need": "The buyer wants to know whether units are still available.",
+          "reason": "Current availability is not established by the provided verified information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified availability, then learn the buyer’s purchase purpose and guide toward a useful next step."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3741,
+        "input_tokens_details": {
+          "cache_write_tokens": 3738,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1318,
+        "output_tokens_details": {
+          "reasoning_tokens": 827
+        },
+        "total_tokens": 5059
+      }
+    },
+    {
+      "customer": "Okay, thanks—please let me know once you’ve checked. What are the unit sizes like?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Phase 1 units are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The availability check is still pending; I’ll update you once it’s confirmed.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share verified availability when the pending check is resolved, then learn the buyer’s purchase purpose.",
+          "last_progress": "Shared an indicative starting price and answered the buyer’s question about unit size and layout.",
+          "next_action": "Follow up with verified availability once received.",
+          "conversation_summary": "Initial enquiry about Pearl Residences; buyer asked about price, availability and unit sizes. Phase 1 units are 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony; availability is pending confirmation."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3225,
+        "input_tokens_details": {
+          "cache_write_tokens": 3222,
+          "cached_tokens": 0
+        },
+        "output_tokens": 864,
+        "output_tokens_details": {
+          "reasoning_tokens": 559
+        },
+        "total_tokens": 4089
+      }
+    },
+    {
+      "customer": "That sounds like a good size. Does the price vary much by floor or view?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes, it varies by floor band and facing. The Block 1B base-price references run from about RM328k for some lower blocked or pylon categories to RM358k for some higher-floor categories—around a RM30k spread. Some higher-floor references include two car parks, and the applicable rebate also depends on the unit category and parking, so the selected-unit total can differ.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Says the 900 sq ft, 3-bedroom, 2-bathroom layout sounds like a good size.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price variation by floor and view"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Learn whether the purchase is for own stay or investment and tailor the property's value to that purpose.",
+          "last_progress": "Responded positively to the 900 sq ft size and asked how price varies by floor or view.",
+          "next_action": "After answering the pricing question, explore the buyer's purchase purpose when it would help tailor the discussion.",
+          "conversation_summary": "Enquired about price and availability, then asked about unit size and price variation by floor or view. Availability confirmation remains pending. Buyer says the 900 sq ft layout sounds like a good size."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4341,
+        "input_tokens_details": {
+          "cache_write_tokens": 4338,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2395,
+        "output_tokens_details": {
+          "reasoning_tokens": 1924
+        },
+        "total_tokens": 6736
+      }
+    },
+    {
+      "customer": "Got it, thanks. When you’ve checked, could you let me know which floors and facings are available?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The availability check is still pending. I’ll share the confirmed available floors and facings as soon as it comes back—I don’t want to guess at the current options.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": null,
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price variation by floor and view",
+            "Available floors and facings"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share confirmed available floors and facings when the availability check returns.",
+          "last_progress": "Buyer says the 900 sq ft layout sounds like a good size and wants to know which floors and facings are available.",
+          "next_action": "Update the buyer with confirmed floor and facing availability when received.",
+          "conversation_summary": "Buyer is considering the 900 sq ft layout and is awaiting confirmation of available floors and facings; the availability check remains pending."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3571,
+        "input_tokens_details": {
+          "cache_write_tokens": 3568,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1195,
+        "output_tokens_details": {
+          "reasoning_tokens": 893
+        },
+        "total_tokens": 4766
+      }
+    },
+    {
+      "customer": "Sure, thanks. Do the units come with any kitchen fittings, or are they mostly bare?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The confirmed spec lists a stainless-steel kitchen sink with tap, plus a washing-machine tap. I can’t confirm whether cabinets or appliances are included from the details I have, so I’ll check rather than describe it as fully fitted.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Says the 900 sq ft, 3-bedroom, 2-bathroom layout sounds like a good size.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price variation by floor and view",
+            "Available floors and facings",
+            "Kitchen fittings and inclusions"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm kitchen fit-out inclusions, then continue the buyer’s exploration of the property.",
+          "last_progress": "Buyer said the 900 sq ft layout sounds like a good size and asked about kitchen fittings.",
+          "next_action": "Check whether kitchen cabinets or appliances are included.",
+          "conversation_summary": "Buyer is considering the 900 sq ft layout and awaits confirmation of available floors and facings. They have also asked which kitchen fittings are included; the verified details list a stainless-steel sink with tap and a washing-machine tap, but not cabinets or appliances."
+        },
+        "support_request": {
+          "support_type": "TECHNICAL",
+          "requested_fact": "Whether kitchen cabinets, a hob, hood or other appliances are included in the Pearl Residences Type A handover specification.",
+          "subject": "Pearl Residences Type A kitchen inclusions",
+          "customer_need": "The buyer wants to know whether the kitchen is fitted or mostly bare.",
+          "reason": "Verified information confirms a stainless-steel kitchen sink with tap and a washing-machine tap, but does not specify cabinets or appliances.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share confirmed kitchen inclusions and continue guiding the buyer toward a useful next step."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3525,
+        "input_tokens_details": {
+          "cache_write_tokens": 3522,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1289,
+        "output_tokens_details": {
+          "reasoning_tokens": 807
+        },
+        "total_tokens": 4814
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer is waiting for the availability and kitchen-inclusion checks; no further meaningful response before those are available."
+}

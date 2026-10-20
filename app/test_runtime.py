@@ -243,6 +243,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Malaysian", SYSTEM_PROMPT)
         self.assertIn("answer truthfully", SYSTEM_PROMPT.lower())
         self.assertIn("does not itself indicate buyer agreement", SYSTEM_PROMPT.lower())
+        self.assertIn("ask whether they would like a human salesperson to check the condition", SYSTEM_PROMPT.lower())
         self.assertIn("do not turn ordinary conversations into technical investigations", context.lower())
 
     def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
