@@ -1,41 +1,51 @@
-# Sales Lab — realistic WhatsApp sales improvement
+# Sales Lab — normal buyers, appointment-first
 
-Codex coordinates short experiments with the **real** `app.agent.SalesAgent`, Sales Brain, Knowledge Retrieval, structured decisions and existing OpenAI Responses transport. There is no WhatsApp, database, Google Sheets or production Runtime involvement.
+This isolated experiment uses the **real** `app.agent.SalesAgent` (GPT-6 Luna / High). The Customer and Judge are native Codex subagents. No live WhatsApp, Meta, Sheets, database or production deployment.
 
-## What this lab is for
+**One sales objective:** turn an everyday property-ad enquiry into genuine willingness to **arrange a viewing**, then hand arrangements to a human salesperson. The Agent is not judged on completing an FAQ, qualifying every detail, or closing the purchase.
 
-Improve the Agent's ability to turn an ordinary property-ad enquiry into **willingness to arrange a viewing with a human salesperson**. It is not an FAQ-completeness, room-measurement, technical-audit or final property-closing benchmark.
+## Ordinary customer contract
 
-Use **only ordinary prospects and common hesitation** in routine simulations. Approximate scenario emphasis: 40% normal interest and 60% normal hesitation; this is an experiment design, not a market statistic. Examples: asking about general price/promotion/location, own stay vs investment, comparing properties, monthly affordability, needing to discuss with a spouse, being undecided or needing a convincing reason to visit. Mix motives and personalities. Never force every customer to demand a floor plan, room-by-room measurements or an exact unit-level all-in quote.
+Use only these two routine buyer families:
+- **Ordinary interested (about 40%)** — brief price, promotion, location or what-kind-of-home enquiries; own stay, first home, family, couple, or investment.
+- **Ordinary hesitant (about 60%)** — comparing projects, discussing with a partner, budget/monthly affordability, timing, uncertainty whether a visit is worthwhile.
 
-The Customer Simulator must remember information already shared. A customer told the home has three bedrooms should not irrationally ask again if it has three bedrooms. Customers should not volunteer viewing interest or comply with invites automatically. Responses should reflect the actual salesperson's persuasiveness and the private buyer's realistic motives. Use short, natural WhatsApp language.
+These are deliberate experiment weights, not market statistics. **No exotic technical interrogations or adversarial buyer tests** in the sales-optimization loop. Such cases can go to a human in production.
 
-**0% contrived rare-technical personas** in the ordinary sales loop (for example high-tension-cable interrogations, unusual structural/legal audits, detailed square-foot measurements for every bedroom). Exceptional real-life questions belong in a separate human-escalation/functional check, not repeated paid sales simulations.
+A real buyer writes briefly and **remembers what was said**. If bedrooms or the general starting price have already been explained, they do not ask again without a new reason. The simulator must not keep introducing invented approval requirements (exact car park, approved floor plan, current unit quote, each room's sqft) before viewing. A genuine buyer may ask for normal costs, but not every persona should develop the exact same price barrier.
 
-Use existing developer evidence and the separate dated sales-lab pricing snapshot as a **general reference**, never a purported live offer. A customer who understands and considers a general starting price plausible should not be forced by the simulator to demand a final specific-unit quote before viewing. Legitimate price hesitation remains possible.
+Buyers are not automatically agreeable: a weak pitch may be ignored, a relevant benefit can build interest, and a poorly timed viewing request can be declined. The simulator must allow an ordinary hesitant buyer to make progress when the Agent earns it, rather than being scripted to defer forever. Customers must not ask for viewing unprompted merely to help the Agent pass.
 
-## Operator procedure
+## Commercial test premise — do not manufacture the same price objection
 
-1. Use the current experimental branch and an isolated run directory with a fresh API ledger. Inspect actual commit and working tree; preserve local private files.
-2. Check Codex version and native subagent availability. Main Codex coordinates a Customer Simulator and independent Judge through native tools. Prefer Luna/Low for customer and Luna/Medium for Judge when available; report effective models only when verifiable.
-3. Customer subagent holds private motivation, budget, concerns and patience. Reset the same private persona per anonymous trial; reveal **only** its public customer messages to SalesAgent. Send only the real salesperson reply back to Customer. Never expose private persona, Judge scores or rubric to SalesAgent.
-4. Validate the real SalesAgent path with fake HTTP dry run before live calls for each code fingerprint. The actual SalesAgent uses GPT-6 Luna / High through OpenAI API. Do not substitute Codex-generated sales replies.
-5. Let each realistic customer journey continue until a natural endpoint: agreement to arrange a viewing, clear decline/disengagement, appropriate human handoff, or no meaningful remaining sales opportunity. Do not impose a fixed turn count or prolong dialogue without a sales reason.
-6. Send anonymized conversations and buyer reactions to the independent Judge using `rubric.md`. Judge does not see source diffs or version mapping.
-7. Diagnose the actual path before changes. Prefer simplifying conflicting Sales Brain instructions, providing more relevant evidence, or fixing a demonstrable behavioral cause rather than stacking rules or writing fixed scripts. Blind-retest comparable scenarios.
-8. Continue evidence-based repair/retest rounds while useful hypotheses remain, without an arbitrary API-call or turn cap. Stop on exhausted credible hypotheses or consistent degradation. Hold out a fresh scenario until a candidate is frozen. Keep the best proven version; revert failed changes. Do not stop after each stage for approval. Technical failures stop the affected run; never retry them automatically.
-9. Deliver KEEP / NEEDS REVIEW / REVERT with direct dialogue evidence, buyer interest/appointment movement, full API ledger and Git status. Commit and push only acceptable changes and reports to the experiment branch.
+The lab price fixture is `pricing_snapshot_2026-08-14.json`. For this **hypothetical as-of-14-Aug-2026** sales exercise only, treat that day's developer package as the known promotional context: an eligible-category **approximately RM302k after-rebate base reference**. It is **not** proof of a current October 2026 offer or an all-in unit quote.
+
+- The Agent may introduce that promotion succinctly as a sales hook; it need not recount base-price mathematics, quote carpark premiums, or repeat historical-pricing warnings in every reply.
+- Once a customer says the general bracket seems workable, the simulator should move to normal motivation and buying considerations instead of reopening whether the same price is current.
+- If a customer independently and specifically needs a final all-in quote, a financing illustration, or a different unit's price, handle the real uncertainty. Do not invent answers.
+- Never use this dated premise for a real customer or deploy it as an actual October offer. Never manufacture availability, urgency, countdowns or promotional deadlines.
+
+**Example normal journey (not a script):** ad enquiry → simple attractive price/project context → one useful need → buyer-specific reason to own → ordinary hesitation → Agent offers a compelling reason to see the property → buyer either accepts arrangements, asks one meaningful follow-up, or declines.
+
+The customer should not be made to repeat facts or wait for unavailable documents purely to prolong the experiment.
+
+## Testing and judging
+
+1. Establish source commit, keep an isolated run directory, preserve private local persona files and run fake-HTTP validation through the real SalesAgent.
+2. Customer subagent holds private needs and reacts to **actual Agent messages**. Only customer-facing messages go to SalesAgent; never leak persona instructions, targets or grading.
+3. Allow as many natural turns and actual API calls as the experiment needs; stop a dialogue on arrangement agreement, real disengagement, proper human handoff, or lack of a meaningful next sales step. Do not use a fixed turn or API cap, and do not produce endless follow-up loops.
+4. Have an independent blind Judge assess **change in buying/viewing willingness caused by the salesperson**, with `rubric.md`. A viewing invitation is not agreement. Verify `APPOINTMENT_HANDOFF` separately for explicit consent.
+5. Diagnose concrete weak selling behavior; modify only evidence-backed causes. Retest comparable normal personas and fresh holdouts. Revert unproven regressions and continue autonomously while credible ideas remain.
+6. Preserve the real API/token journal, test results and git commit; push the experimental branch only. Never merge/deploy or touch runtime customer data.
 
 ```sh
 python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
-  --trial dry --scenario own_stay --customer 'Hi, I saw your property ad. How much?'
+  --trial dry --scenario own_stay --customer 'Hi, saw the property ad. Can share the price?'
 python3 -m app.sales_lab --run-dir sales_lab/reports/NEW_RUN \
   --trial baseline --scenario own_stay --customer 'PUBLIC CUSTOMER MESSAGE' \
   --live --env-file /absolute/path/to/existing/.env
 ```
 
-Repeat live calls serially for each customer turn, using separate dry/live trial labels. New runs have no fixed call quota or dialogue turn cap. `ledger.jsonl` is the append-only API event journal (reservation, completion or failure) with usage when available; `ledger.json` remains the readable summary and accepts older ledgers. Any cap recorded in a legacy ledger continues to apply. The harness reserves calls before HTTP, locks concurrent turns, stops after errors and does not silently retry. A source fingerprint change requires a new trial and fresh dry run. Use `--end-dialogue --close-reason '...'` to record a natural endpoint without another SalesAgent call. Store private personas locally, not in Git.
+Calls are serial; each source fingerprint needs a fresh fake dry-run. New runs have no fixed quota; older ledger caps remain enforced. `ledger.jsonl` records attempts and usage, and `--end-dialogue` records natural completion without a paid call. Pending Support is not silently fabricated or resolved. Do not reset ledgers after failure; inspect errors.
 
-Pending `SUPPORT_REQUEST` state is carried between turns. Do not invent human Support answers. Keep the sales conversation moving with what is known where possible; only a genuinely material, buyer-requested missing fact should block the next decision. Formal handoff stops AI turns; no booking is actually executed in Sales Lab. Invitation, interest, agreement to arrange, handoff and confirmed booking are distinct.
-
-Simulated conversation variation makes results qualitative evidence, not proven conversion-rate uplift.
+**Judge success on legitimate appointment progression and realistic conversations, not canned compliance or score inflation.**
