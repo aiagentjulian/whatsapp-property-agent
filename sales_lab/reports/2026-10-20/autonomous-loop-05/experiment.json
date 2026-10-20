@@ -1,0 +1,91 @@
+{
+  "objective": "Improve buyer-specific persuasive selling while preserving factual pricing, support behavior, and appropriate viewing judgment.",
+  "starting_commit": "5db0f73b0836f85783db899a8879b617742928d4",
+  "branch": "codex/sales-lab-v1",
+  "run_directory": "sales_lab/reports/2026-10-20/autonomous-loop-05",
+  "sales_agent": "Actual app.agent.SalesAgent, GPT-6 Luna / High, real Sales Brain, Knowledge Retrieval, history and structured decisions.",
+  "multi_agent_roles": {
+    "customer_simulator": "Native Codex subagent launched with GPT-6 Luna / Low; it reported that effective model/reasoning were not introspectable. No paid API call.",
+    "judge": "Native Codex subagent launched with GPT-6 Luna / Medium; it reported that effective model/reasoning were not introspectable. No paid API call.",
+    "main_coordinator": "The current coordinator runtime model configuration was not exposed for independent verification."
+  },
+  "api_limit": 16,
+  "scenarios": [
+    "family_own_stay",
+    "couple_home_office",
+    "genuine_purchase_interest"
+  ],
+  "holdout": "A fresh early-investment exploration scenario, withheld by the customer simulator until Candidate 1 was frozen. Final-only evaluation; not used for repair.",
+  "rubric_weights": {
+    "effective_discovery": 20,
+    "product_connection_buying_desire": 35,
+    "sales_progression_appointment_opportunity": 35,
+    "natural_conversation": 10
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "hypothesis": "When a buyer already says a dated starting-price reference may be affordable, the agent can continue selling the stated property fit without converting that acknowledgement into an unrequested current-price Support Request. Verify current pricing when the buyer explicitly asks, needs a specific unit/total, or says price gates their next decision.",
+      "change": "Added one general sales-judgment principle to brain/AGENT.md. It does not add prices or alter runtime wiring.",
+      "retest_scenarios": [
+        "family_own_stay",
+        "couple_home_office",
+        "genuine_purchase_interest"
+      ],
+      "paired_judgment": {
+        "baseline_mean": 7.57,
+        "candidate_mean": 7.86,
+        "difference_points_out_of_10": 0.29,
+        "baseline_dimension_means": {
+          "discovery": 7.33,
+          "product_connection_buying_desire": 8.0,
+          "sales_progression": 7.0,
+          "natural_conversation": 8.5
+        },
+        "candidate_dimension_means": {
+          "discovery": 7.33,
+          "product_connection_buying_desire": 8.33,
+          "sales_progression": 7.5,
+          "natural_conversation": 8.5
+        },
+        "per_scenario_baseline": {
+          "family_own_stay": 7.78,
+          "couple_home_office": 7.6,
+          "genuine_purchase_interest": 7.33
+        },
+        "per_scenario_candidate": {
+          "family_own_stay": 7.6,
+          "couple_home_office": 7.95,
+          "genuine_purchase_interest": 8.03
+        },
+        "interpretation": "A small aggregate improvement, with a modest family-scene regression and clearer gains for work-from-home fit and active-buyer follow-through. Candidate avoided an unsolicited pricing Support Request in all three first turns; when the active buyer explicitly requested current price, Candidate 1 requested it together with the plan. Customer turns varied, so the reaction differences are not causal proof."
+      },
+      "holdout_used": false,
+      "status": "kept"
+    }
+  ],
+  "holdout_result": {
+    "score": 7.7,
+    "invitation": false,
+    "viewing_interest": false,
+    "appointment_agreement": false,
+    "formal_handoff": false,
+    "facts_and_support": "No rental yield or demand invented; missing rental comparables were explicitly identified and requested. No price or appointment promise.",
+    "status": "pass_no_material_issue_observed; single candidate-only holdout, not a paired baseline comparison"
+  },
+  "final_recommendation": "KEEP",
+  "api_usage": {
+    "calls": 14,
+    "limit": 16,
+    "input_tokens": 64505,
+    "output_tokens": 29095,
+    "total_tokens": 93600,
+    "reported_usd_cost": null
+  },
+  "validation": {
+    "local_tests": "27 passed: app.test_agent, app.test_sales_lab, app.test_sales_lab_retrieval, app.test_runtime",
+    "fake_transport_dry_run": "passed through python3 -m app.sales_lab and the real OpenAIProvider transport before live candidate calls",
+    "facts": "Dated pricing remains lab-only; layout, freehold, maintenance and expected completion statements are source-supported.",
+    "handoff": "No appointment agreement or formal handoff inferred from invitation or conditional viewing interest."
+  }
+}

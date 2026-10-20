@@ -1,0 +1,237 @@
+{
+  "trial": "baseline",
+  "scenario": "genuine_interest",
+  "source_sha256": "3c05dfe36c707cbbf1cda8a1032ac893683b0bd1fcb32635bca464b6cb6c0f59",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya",
+    "size_or_layout_preference": "Prefers a layout that feels less compact and avoids a long internal corridor; wants to compare floor plans side by side.",
+    "budget_range": "Dated ~RM302k reference may be within range; current price fit remains unconfirmed.",
+    "purchase_timeline": "Actively buying and shortlisting",
+    "viewing_interest": "Open to viewing after comparing the floor plan and confirming current price.",
+    "appointment_readiness": "EMERGING",
+    "intent_level": "HIGH",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Efficient layout",
+      "Avoids a long internal corridor",
+      "Open-plan living, dining and kitchen"
+    ],
+    "primary_motivations": [
+      "Find a home with a layout that feels less compact"
+    ],
+    "decision_factors": [
+      "Layout and use of space",
+      "Price within range"
+    ],
+    "active_concerns": [
+      "Compact-feeling layout",
+      "Whether the dated price reference is still applicable",
+      "Needs a floor plan and current price before making viewing plans"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential layout fit; buyer sees the no-long-corridor comparison as useful but wants the plan and current price before deciding about a viewing.",
+    "next_objective": "Provide the Type A floor plan and verified current pricing so the buyer can compare before deciding about a viewing.",
+    "last_progress": "Buyer said the corridor comparison was useful and is open to seeing Pearl’s layout, subject to receiving the floor plan and current price confirmation.",
+    "next_action": "Request the Type A floor plan; continue the existing current-price confirmation without creating a duplicate request.",
+    "conversation_summary": "Buyer is actively shortlisting around Seberang Jaya and wants a less compact-feeling layout. They are open to viewing Pearl Residences after comparing its floor plan and confirming current pricing; the current price confirmation is already pending."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m actively buying and shortlisting homes around Seberang Jaya. I’ve toured another project, but its layout felt compact. What would give me a concrete reason to see Pearl Residences instead? I also saw a dated starting-price reference of around RM302k, which may be within our range."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "A concrete point to compare is how the 900 sq ft Type A uses its space: the plan avoids a long internal corridor, with open-plan living, dining and kitchen areas plus a small storage area. That may leave less space taken up by circulation, though the best comparison is against the layout you toured. Since layout is your concern, you could judge it directly from Pearl’s plan or during a viewing—happy to help arrange one if useful. I wouldn’t treat the dated ~RM302k reference as a confirmed current price; the latest unit and package figures need checking."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s a useful comparison point—the long corridor in the other place did make it feel cramped. I’d be open to seeing Pearl’s layout in person, but could you send the floor plan first so I can compare them side by side? I’d also need the current unit price confirmed before making plans."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the layout avoids a long internal corridor, so it’s a useful point to compare with the home you toured. I’ll request the Type A floor plan for a side-by-side look. The current unit-price confirmation is still pending, so I can’t confirm whether the ~RM302k reference applies. Once you’ve compared the plan and have the confirmed price, you can decide whether an in-person viewing is worthwhile."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current indicative starting price and applicable current package information for Pearl Residences, including whether any units are near the buyer's mentioned ~RM302k reference.",
+      "subject": "Current Pearl Residences pricing",
+      "customer_need": "Assess whether Pearl Residences may fit their price range while comparing shortlisted homes.",
+      "reason": "The buyer's ~RM302k reference is dated and does not establish a current unit or package price.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share verified current pricing and continue helping the buyer compare the layout; a viewing remains optional.",
+      "signature": "PRICING|and any applicable are buyer current including indicative information mentioned near package pearl price reference residences rm302k s starting units",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "A shareable approved Type A floor plan for Pearl Residences, showing the layout for side-by-side comparison.",
+      "subject": "Pearl Residences Type A floor plan",
+      "customer_need": "Compare the layout with another project that felt compact because of its long internal corridor.",
+      "reason": "The buyer requested the floor plan before making viewing plans; no shareable plan is available in the provided information.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Provide the floor plan alongside the pending current-price confirmation so the buyer can compare and decide whether to arrange a viewing.",
+      "signature": "LAYOUT|approved by comparison floor layout pearl plan residences shareable showing side type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m actively buying and shortlisting homes around Seberang Jaya. I’ve toured another project, but its layout felt compact. What would give me a concrete reason to see Pearl Residences instead? I also saw a dated starting-price reference of around RM302k, which may be within our range.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "A concrete point to compare is how the 900 sq ft Type A uses its space: the plan avoids a long internal corridor, with open-plan living, dining and kitchen areas plus a small storage area. That may leave less space taken up by circulation, though the best comparison is against the layout you toured. Since layout is your concern, you could judge it directly from Pearl’s plan or during a viewing—happy to help arrange one if useful. I wouldn’t treat the dated ~RM302k reference as a confirmed current price; the latest unit and package figures need checking.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Concerned about compact-feeling layouts; looking for a more efficient use of space",
+          "budget_range": "Dated starting-price reference around RM302k may be within range; current price fit unconfirmed",
+          "financing_context": null,
+          "purchase_timeline": "Actively buying and shortlisting",
+          "viewing_interest": "Considering Pearl Residences; asked for a concrete reason to see it",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "HIGH",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Efficient layout",
+            "Avoids a long internal corridor",
+            "Open-plan living, dining and kitchen"
+          ],
+          "primary_motivations": [
+            "Find a home with a layout that feels less compact"
+          ],
+          "decision_factors": [
+            "Layout and use of space",
+            "Price within range"
+          ],
+          "active_concerns": [
+            "Compact-feeling layout",
+            "Whether the dated price reference is still applicable"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential layout fit based on the verified plan features; current price fit is unconfirmed.",
+          "next_objective": "Confirm current indicative pricing and help the buyer compare the layout.",
+          "last_progress": "Buyer is actively shortlisting homes around Seberang Jaya and raised layout and price as decision factors.",
+          "next_action": "Obtain current indicative pricing and package details; keep a viewing optional.",
+          "conversation_summary": "Buyer is actively buying and shortlisting around Seberang Jaya. They found another project's layout compact, asked what would make Pearl Residences worth seeing, and mentioned a dated ~RM302k reference that may be within range."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current indicative starting price and applicable current package information for Pearl Residences, including whether any units are near the buyer's mentioned ~RM302k reference.",
+          "subject": "Current Pearl Residences pricing",
+          "customer_need": "Assess whether Pearl Residences may fit their price range while comparing shortlisted homes.",
+          "reason": "The buyer's ~RM302k reference is dated and does not establish a current unit or package price.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share verified current pricing and continue helping the buyer compare the layout; a viewing remains optional."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4742,
+        "input_tokens_details": {
+          "cache_write_tokens": 4739,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2576,
+        "output_tokens_details": {
+          "reasoning_tokens": 1818
+        },
+        "total_tokens": 7318
+      }
+    },
+    {
+      "customer": "That’s a useful comparison point—the long corridor in the other place did make it feel cramped. I’d be open to seeing Pearl’s layout in person, but could you send the floor plan first so I can compare them side by side? I’d also need the current unit price confirmed before making plans.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "That makes sense—the layout avoids a long internal corridor, so it’s a useful point to compare with the home you toured. I’ll request the Type A floor plan for a side-by-side look. The current unit-price confirmation is still pending, so I can’t confirm whether the ~RM302k reference applies. Once you’ve compared the plan and have the confirmed price, you can decide whether an in-person viewing is worthwhile.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Prefers a layout that feels less compact and avoids a long internal corridor; wants to compare floor plans side by side.",
+          "budget_range": "Dated ~RM302k reference may be within range; current price fit remains unconfirmed.",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Open to viewing after comparing the floor plan and confirming current price.",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "HIGH",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Efficient layout",
+            "Avoids a long internal corridor",
+            "Open-plan living, dining and kitchen"
+          ],
+          "primary_motivations": [
+            "Find a home with a layout that feels less compact"
+          ],
+          "decision_factors": [
+            "Layout and use of space",
+            "Price within range"
+          ],
+          "active_concerns": [
+            "Compact-feeling layout",
+            "Whether the dated price reference is still applicable",
+            "Needs a floor plan and current price before making viewing plans"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential layout fit; buyer sees the no-long-corridor comparison as useful but wants the plan and current price before deciding about a viewing.",
+          "next_objective": "Provide the Type A floor plan and verified current pricing so the buyer can compare before deciding about a viewing.",
+          "last_progress": "Buyer said the corridor comparison was useful and is open to seeing Pearl’s layout, subject to receiving the floor plan and current price confirmation.",
+          "next_action": "Request the Type A floor plan; continue the existing current-price confirmation without creating a duplicate request.",
+          "conversation_summary": "Buyer is actively shortlisting around Seberang Jaya and wants a less compact-feeling layout. They are open to viewing Pearl Residences after comparing its floor plan and confirming current pricing; the current price confirmation is already pending."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "A shareable approved Type A floor plan for Pearl Residences, showing the layout for side-by-side comparison.",
+          "subject": "Pearl Residences Type A floor plan",
+          "customer_need": "Compare the layout with another project that felt compact because of its long internal corridor.",
+          "reason": "The buyer requested the floor plan before making viewing plans; no shareable plan is available in the provided information.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Provide the floor plan alongside the pending current-price confirmation so the buyer can compare and decide whether to arrange a viewing."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 5214,
+        "input_tokens_details": {
+          "cache_write_tokens": 5211,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1651,
+        "output_tokens_details": {
+          "reasoning_tokens": 1015
+        },
+        "total_tokens": 6865
+      }
+    }
+  ],
+  "closed": false
+}

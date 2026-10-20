@@ -1,0 +1,207 @@
+{
+  "trial": "candidate1",
+  "scenario": "own_stay",
+  "source_sha256": "0c911944cdd1721b2af5e34067c238f148fde44eaffe13403be6a5c6416f193c",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a family home for themselves and two school-age children",
+    "size_or_layout_preference": "Three bedrooms so each child can have a separate bedroom; wants to review bedroom sizes and arrangement.",
+    "budget_range": "Dated starting-price reference of around RM302k may be within range",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "Three bedrooms",
+      "Two bathrooms",
+      "Separate bedroom for each child",
+      "Planned school component accommodating SK and SMK"
+    ],
+    "primary_motivations": [
+      "Own-stay family home"
+    ],
+    "decision_factors": [
+      "Separate bedrooms for both children",
+      "Practicality of the layout for the family",
+      "Bedroom sizes and arrangement",
+      "Price within range"
+    ],
+    "active_concerns": [
+      "Needs to assess bedroom sizes and arrangement against the family’s needs"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit on bedroom count: the standard Type A has three bedrooms and two bathrooms. Bedroom dimensions and arrangement remain to be assessed from the approved floor plan.",
+    "next_objective": "Provide the approved Type A floor plan so the buyer can assess bedroom sizes and arrangement before deciding whether to view.",
+    "last_progress": "Buyer said the three-bedroom layout is a promising starting point and the planned school is relevant; they want the floor plan first and are not ready to arrange a viewing.",
+    "next_action": "Request the approved Type A floor plan with bedroom dimensions and arrangement for buyer review.",
+    "conversation_summary": "Buyer is seeking a family home for themselves and two school-age children, each needing a separate bedroom. The standard Type A’s three bedrooms are promising, and the planned school is relevant. Buyer wants to review the floor plan, especially bedroom sizes and arrangement, before considering a viewing; they are not ready to arrange a time.",
+    "viewing_interest": "May consider a viewing after reviewing the floor plan; not ready to arrange a time."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad. We’re looking for a home for ourselves, and we have two school-age children who each need a separate bedroom. Is Pearl practical for a family like ours? I also saw a dated starting-price reference of around RM302k, which may be within our range."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "On paper, yes: the standard Type A is 900 sq ft with 3 bedrooms and 2 bathrooms, so it could give each child a separate bedroom and leave one for you. The room sizes would affect how spacious it feels, so I’d suggest checking the floor plan or viewing the layout before deciding. The wider development also has a planned school described as accommodating SK and SMK, though admission and availability would need to be checked separately. The dated ~RM302k starting reference you saw may be within your range, but it isn’t a confirmed current unit price. Would you like to explore a viewing to assess the layout?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "The three bedrooms do sound like the right starting point for us, and the planned school is relevant. I’d like to look at the floor plan first, especially the bedroom sizes and arrangement. A viewing could help after that, but I’m not ready to arrange a time yet."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the three bedrooms and planned school sound relevant, and the bedroom sizes and arrangement are the key things to check for your family. The Type A concept is 900 sq ft with three bedrooms and two bathrooms; it shows the secondary bedrooms with two windows each and queen-sized beds, but exact dimensions should be checked against the approved floor plan. I’ll request the plan for you to review first, and we can leave a viewing until you’re ready."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "Approved Type A floor plan, including bedroom dimensions and the bedroom arrangement, suitable to share with the buyer.",
+      "subject": "Pearl Residences Type A floor plan",
+      "customer_need": "Buyer wants to assess whether the bedroom sizes and arrangement will work for their family before considering a viewing.",
+      "reason": "Available information gives conceptual layout details but not the exact approved plan or room dimensions.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share the verified plan and help the buyer assess layout fit before discussing a viewing.",
+      "signature": "LAYOUT|and approved arrangement bedroom buyer dimensions floor including pearl plan residences share suitable type with",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. We’re looking for a home for ourselves, and we have two school-age children who each need a separate bedroom. Is Pearl practical for a family like ours? I also saw a dated starting-price reference of around RM302k, which may be within our range.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "On paper, yes: the standard Type A is 900 sq ft with 3 bedrooms and 2 bathrooms, so it could give each child a separate bedroom and leave one for you. The room sizes would affect how spacious it feels, so I’d suggest checking the floor plan or viewing the layout before deciding. The wider development also has a planned school described as accommodating SK and SMK, though admission and availability would need to be checked separately. The dated ~RM302k starting reference you saw may be within your range, but it isn’t a confirmed current unit price. Would you like to explore a viewing to assess the layout?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a family home for themselves and two school-age children",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms so each child can have a separate bedroom",
+          "budget_range": "Dated starting-price reference of around RM302k may be within range",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Separate bedroom for each child",
+            "Planned school component accommodating SK and SMK"
+          ],
+          "primary_motivations": [
+            "Own-stay family home"
+          ],
+          "decision_factors": [
+            "Separate bedrooms for both children",
+            "Practicality of the layout for the family",
+            "Price within range"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit on the stated bedroom need: the standard Type A has three bedrooms and two bathrooms. Room sizes and overall spaciousness remain to be assessed.",
+          "next_objective": "Help the family assess the actual layout and room proportions, optionally through a viewing.",
+          "last_progress": "Buyer shared own-stay purpose, family bedroom need, and that a dated starting-price reference may be within range.",
+          "next_action": "Offer an optional viewing to assess the layout; do not treat as agreed or booked.",
+          "conversation_summary": "Buyer is seeking a home for themselves and two school-age children, each needing a separate bedroom. They asked whether Pearl Residences is practical and said a dated starting-price reference around RM302k may be within range."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4655,
+        "input_tokens_details": {
+          "cache_write_tokens": 4652,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1551,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 6206
+      }
+    },
+    {
+      "customer": "The three bedrooms do sound like the right starting point for us, and the planned school is relevant. I’d like to look at the floor plan first, especially the bedroom sizes and arrangement. A viewing could help after that, but I’m not ready to arrange a time yet.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "That makes sense—the three bedrooms and planned school sound relevant, and the bedroom sizes and arrangement are the key things to check for your family. The Type A concept is 900 sq ft with three bedrooms and two bathrooms; it shows the secondary bedrooms with two windows each and queen-sized beds, but exact dimensions should be checked against the approved floor plan. I’ll request the plan for you to review first, and we can leave a viewing until you’re ready.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms so each child can have a separate bedroom; wants to review bedroom sizes and arrangement.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "May consider a viewing after reviewing the floor plan; not ready to arrange a time.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Separate bedrooms for both children",
+            "Practicality of the layout for the family",
+            "Bedroom sizes and arrangement",
+            "Price within range"
+          ],
+          "active_concerns": [
+            "Needs to assess bedroom sizes and arrangement against the family’s needs"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential fit on bedroom count: the standard Type A has three bedrooms and two bathrooms. Bedroom dimensions and arrangement remain to be assessed from the approved floor plan.",
+          "next_objective": "Provide the approved Type A floor plan so the buyer can assess bedroom sizes and arrangement before deciding whether to view.",
+          "last_progress": "Buyer said the three-bedroom layout is a promising starting point and the planned school is relevant; they want the floor plan first and are not ready to arrange a viewing.",
+          "next_action": "Request the approved Type A floor plan with bedroom dimensions and arrangement for buyer review.",
+          "conversation_summary": "Buyer is seeking a family home for themselves and two school-age children, each needing a separate bedroom. The standard Type A’s three bedrooms are promising, and the planned school is relevant. Buyer wants to review the floor plan, especially bedroom sizes and arrangement, before considering a viewing; they are not ready to arrange a time."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "Approved Type A floor plan, including bedroom dimensions and the bedroom arrangement, suitable to share with the buyer.",
+          "subject": "Pearl Residences Type A floor plan",
+          "customer_need": "Buyer wants to assess whether the bedroom sizes and arrangement will work for their family before considering a viewing.",
+          "reason": "Available information gives conceptual layout details but not the exact approved plan or room dimensions.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share the verified plan and help the buyer assess layout fit before discussing a viewing."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4400,
+        "input_tokens_details": {
+          "cache_write_tokens": 4397,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1743,
+        "output_tokens_details": {
+          "reasoning_tokens": 1010
+        },
+        "total_tokens": 6143
+      }
+    }
+  ],
+  "closed": false
+}

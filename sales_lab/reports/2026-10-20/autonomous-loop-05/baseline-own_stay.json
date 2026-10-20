@@ -1,0 +1,232 @@
+{
+  "trial": "baseline",
+  "scenario": "own_stay",
+  "source_sha256": "3c05dfe36c707cbbf1cda8a1032ac893683b0bd1fcb32635bca464b6cb6c0f59",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a home for themselves and their two school-age children",
+    "preferred_property_type": "Pearl Residences Type A",
+    "size_or_layout_preference": "Three bedrooms so each of two school-age children can have a separate bedroom",
+    "budget_range": "Around RM302k may be within range, based on a dated price reference the buyer saw",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "Three bedrooms",
+      "Two bathrooms",
+      "900 sq. ft.",
+      "Separate bedrooms for both children"
+    ],
+    "primary_motivations": [
+      "Own-stay family home",
+      "A separate bedroom for each child"
+    ],
+    "decision_factors": [
+      "Whether the actual Type A room arrangement and sizes work for the family",
+      "Where the planned school is and how access fits their daily route",
+      "Whether current pricing is within their approximate range"
+    ],
+    "active_concerns": [
+      "Needs the actual floor plan and room dimensions before deciding whether to visit",
+      "Needs more information on school location and access in relation to their daily route"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Three bedrooms remain a promising fit for the family, but actual room arrangement and dimensions have not yet been checked against their needs.",
+    "next_objective": "Provide the approved Type A floor plan with room dimensions and verified site/access information for the planned school.",
+    "last_progress": "Buyer responded positively to the three-bedroom layout but wants to inspect the plan and sizes before deciding about a visit.",
+    "next_action": "Verify the approved Type A floor plan, room dimensions, and school location/access details.",
+    "conversation_summary": "Buyer is seeking an own-stay home for themselves and two school-age children. Three bedrooms sound promising, but they want the floor plan and room sizes before deciding whether to visit. The planned school is a plus; they also want to understand its location and relevance to their daily route.",
+    "viewing_interest": "Wants to review the floor plan and room sizes before deciding whether to visit"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad. We’re looking for a home for ourselves, and we have two school-age children who each need a separate bedroom. Is Pearl practical for a family like ours? I also saw a dated starting-price reference of around RM302k, which may be within our range."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, on paper it could suit your family. The Phase 1 Type A is 900 sq. ft. with 3 bedrooms and 2 bathrooms, so it could give each child a separate bedroom and leave a third for you; it would be worth checking the actual floor plan and room dimensions. There’s also a planned SK/SMK school building in the development, expected to complete with Phase 1, though that doesn’t guarantee admission. Your roughly RM302k reference aligns with a dated indicative calculation of RM301,760 for a specific unit category and package—not a confirmed current offer or an all-in price. I’ll check the latest applicable pricing. If helpful, a viewing could let you assess the layout in person; would you like me to help arrange one?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds more promising, especially having three bedrooms for the four of us. I’d like to understand the room arrangement and sizes before deciding whether to visit. Could you share the floor plan? The school building is a plus, though I’d want to check where it is and how it fits our daily route."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the actual room arrangement and sizes are worth checking before you decide whether to visit. The Type A concept shows an entrance foyer, open-plan living/dining/kitchen, three bedrooms and a small storage area. The two secondary bedrooms are shown with two windows each, but I don’t have the approved floor plan or exact room dimensions to share here, so I don’t want to guess. The planned SK/SMK building faces Plot 2 and is not directly in front of the residential towers. I don’t have verified access-route details to say how it would fit your daily routine, so I’ll check the official Type A plan and a site plan showing the school and access."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Confirm the latest applicable indicative starting price and package for Phase 1 Type A, including which unit category and car-park configuration the price assumes and any separately applicable components.",
+      "subject": "Pearl Residences Phase 1 Type A pricing",
+      "customer_need": "Assess whether the home is within the buyer’s approximate RM302k range.",
+      "reason": "The RM301,760 calculation comes from a dated package snapshot and is not confirmed as current or all-in.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share the verified current indicative pricing and clarify its scope so the buyer can assess budget fit.",
+      "signature": "PRICING|1 and any applicable assumes car category components configuration including indicative latest package park pearl phase price residences separately starting type which",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "The approved Phase 1 Type A floor plan with room-by-room dimensions, plus a verified site plan showing the planned SK/SMK building relative to the residential towers and available access routes.",
+      "subject": "Pearl Residences Type A floor plan and school location/access",
+      "customer_need": "Assess whether the room arrangement and sizes suit a family of four, and understand how the planned school fits their daily route.",
+      "reason": "The available information describes conceptual layout features and the school's general position but does not include the approved dimensioned plan or verified access-route details.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share verified plan and site details so the buyer can assess family fit and school access before deciding whether to visit.",
+      "signature": "LAYOUT|1 access and approved availability building by dimensions floor location pearl phase plan planned plus relative residences residential room routes school showing site sk smk towers type verified with",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. We’re looking for a home for ourselves, and we have two school-age children who each need a separate bedroom. Is Pearl practical for a family like ours? I also saw a dated starting-price reference of around RM302k, which may be within our range.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes, on paper it could suit your family. The Phase 1 Type A is 900 sq. ft. with 3 bedrooms and 2 bathrooms, so it could give each child a separate bedroom and leave a third for you; it would be worth checking the actual floor plan and room dimensions. There’s also a planned SK/SMK school building in the development, expected to complete with Phase 1, though that doesn’t guarantee admission. Your roughly RM302k reference aligns with a dated indicative calculation of RM301,760 for a specific unit category and package—not a confirmed current offer or an all-in price. I’ll check the latest applicable pricing. If helpful, a viewing could let you assess the layout in person; would you like me to help arrange one?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a home for themselves and their two school-age children",
+          "preferred_location": null,
+          "preferred_property_type": "Pearl Residences Type A",
+          "size_or_layout_preference": "Three bedrooms so each of two school-age children can have a separate bedroom",
+          "budget_range": "Around RM302k may be within range, based on a dated price reference the buyer saw",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "900 sq. ft.",
+            "Separate bedrooms for both children"
+          ],
+          "primary_motivations": [
+            "Own-stay family home",
+            "A separate bedroom for each child"
+          ],
+          "decision_factors": [
+            "Whether the layout works for their family",
+            "Whether current pricing is within their approximate range"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential layout fit: Type A has three bedrooms for a family seeking separate rooms for two children, subject to checking the actual floor plan and dimensions. Price fit remains unconfirmed pending current pricing.",
+          "next_objective": "Confirm the latest applicable indicative pricing and help the buyer assess the actual floor plan.",
+          "last_progress": "Shared verified Type A details, addressed the dated price reference with its limitations, and offered an optional viewing.",
+          "next_action": "Verify the latest applicable Phase 1 Type A pricing and package; follow up with the buyer.",
+          "conversation_summary": "Buyer is seeking an own-stay home for themselves and two school-age children who each need a separate bedroom. They ask whether Pearl Residences is practical and say a dated starting-price reference around RM302k may fit their range."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Confirm the latest applicable indicative starting price and package for Phase 1 Type A, including which unit category and car-park configuration the price assumes and any separately applicable components.",
+          "subject": "Pearl Residences Phase 1 Type A pricing",
+          "customer_need": "Assess whether the home is within the buyer’s approximate RM302k range.",
+          "reason": "The RM301,760 calculation comes from a dated package snapshot and is not confirmed as current or all-in.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share the verified current indicative pricing and clarify its scope so the buyer can assess budget fit."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4580,
+        "input_tokens_details": {
+          "cache_write_tokens": 4577,
+          "cached_tokens": 0
+        },
+        "output_tokens": 3309,
+        "output_tokens_details": {
+          "reasoning_tokens": 2486
+        },
+        "total_tokens": 7889
+      }
+    },
+    {
+      "customer": "That sounds more promising, especially having three bedrooms for the four of us. I’d like to understand the room arrangement and sizes before deciding whether to visit. Could you share the floor plan? The school building is a plus, though I’d want to check where it is and how it fits our daily route.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "POSITIVE",
+        "reply": "That makes sense—the actual room arrangement and sizes are worth checking before you decide whether to visit. The Type A concept shows an entrance foyer, open-plan living/dining/kitchen, three bedrooms and a small storage area. The two secondary bedrooms are shown with two windows each, but I don’t have the approved floor plan or exact room dimensions to share here, so I don’t want to guess. The planned SK/SMK building faces Plot 2 and is not directly in front of the residential towers. I don’t have verified access-route details to say how it would fit your daily routine, so I’ll check the official Type A plan and a site plan showing the school and access.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to review the floor plan and room sizes before deciding whether to visit",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Whether the actual Type A room arrangement and sizes work for the family",
+            "Where the planned school is and how access fits their daily route",
+            "Whether current pricing is within their approximate range"
+          ],
+          "active_concerns": [
+            "Needs the actual floor plan and room dimensions before deciding whether to visit",
+            "Needs more information on school location and access in relation to their daily route"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Three bedrooms remain a promising fit for the family, but actual room arrangement and dimensions have not yet been checked against their needs.",
+          "next_objective": "Provide the approved Type A floor plan with room dimensions and verified site/access information for the planned school.",
+          "last_progress": "Buyer responded positively to the three-bedroom layout but wants to inspect the plan and sizes before deciding about a visit.",
+          "next_action": "Verify the approved Type A floor plan, room dimensions, and school location/access details.",
+          "conversation_summary": "Buyer is seeking an own-stay home for themselves and two school-age children. Three bedrooms sound promising, but they want the floor plan and room sizes before deciding whether to visit. The planned school is a plus; they also want to understand its location and relevance to their daily route."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "The approved Phase 1 Type A floor plan with room-by-room dimensions, plus a verified site plan showing the planned SK/SMK building relative to the residential towers and available access routes.",
+          "subject": "Pearl Residences Type A floor plan and school location/access",
+          "customer_need": "Assess whether the room arrangement and sizes suit a family of four, and understand how the planned school fits their daily route.",
+          "reason": "The available information describes conceptual layout features and the school's general position but does not include the approved dimensioned plan or verified access-route details.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share verified plan and site details so the buyer can assess family fit and school access before deciding whether to visit."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4607,
+        "input_tokens_details": {
+          "cache_write_tokens": 4604,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1838,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 6445
+      }
+    }
+  ],
+  "closed": false
+}

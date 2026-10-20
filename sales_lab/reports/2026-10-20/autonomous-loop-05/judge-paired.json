@@ -1,0 +1,45 @@
+{
+  "report_type": "independent_blind_paired_sales_judgment",
+  "packet": "loop05-candidate1",
+  "judge": "Native Codex subagent; requested GPT-6 Luna / Medium; effective runtime settings not introspectable; no paid OpenAI API.",
+  "weights": {"discovery": 0.20, "product_connection_buying_desire": 0.35, "sales_progression": 0.35, "natural_conversation": 0.10},
+  "blind_labels_randomized_per_scenario": true,
+  "scores_as_judged": {
+    "family_own_stay": {
+      "U": {"discovery": 7.5, "product_connection_buying_desire": 8.0, "sales_progression": 7.0, "natural_conversation": 8.5, "weighted_total_corrected": 7.60},
+      "V": {"discovery": 7.5, "product_connection_buying_desire": 8.0, "sales_progression": 7.5, "natural_conversation": 8.5, "weighted_total_corrected": 7.78},
+      "comparison": "Both connect three bedrooms to the family need. U more clearly leaves timing to the customer; V responds to more customer-stated needs in turn 2. Difference small."
+    },
+    "couple_home_office": {
+      "U": {"discovery": 7.5, "product_connection_buying_desire": 8.0, "sales_progression": 7.0, "natural_conversation": 8.5, "weighted_total_corrected": 7.60},
+      "V": {"discovery": 7.5, "product_connection_buying_desire": 8.5, "sales_progression": 7.5, "natural_conversation": 8.5, "weighted_total_corrected": 7.95},
+      "comparison": "V ties the room to the shared-space trade-off and explicitly preserves customer agency after conditional viewing interest."
+    },
+    "genuine_purchase_interest": {
+      "U": {"discovery": 7.0, "product_connection_buying_desire": 8.5, "sales_progression": 8.0, "natural_conversation": 8.5, "weighted_total_corrected": 8.03},
+      "V": {"discovery": 7.0, "product_connection_buying_desire": 8.0, "sales_progression": 6.5, "natural_conversation": 8.5, "weighted_total_corrected": 7.33},
+      "comparison": "U follows the buyer's explicit plan and current-price prerequisites; V's second turn addresses the plan but not clearly the price request. Neither should book before the buyer is ready."
+    }
+  },
+  "unblinding_key": {
+    "family_own_stay": {"U": "candidate1", "V": "stable_baseline"},
+    "couple_home_office": {"U": "stable_baseline", "V": "candidate1"},
+    "genuine_purchase_interest": {"U": "candidate1", "V": "stable_baseline"}
+  },
+  "mapped_version_summary": {
+    "stable_baseline_mean": 7.57,
+    "candidate1_mean": 7.86,
+    "difference_points_out_of_10": 0.29,
+    "stable_baseline_dimension_means": {"discovery": 7.33, "product_connection_buying_desire": 8.0, "sales_progression": 7.0, "natural_conversation": 8.5},
+    "candidate1_dimension_means": {"discovery": 7.33, "product_connection_buying_desire": 8.33, "sales_progression": 7.5, "natural_conversation": 8.5},
+    "materiality": "Modest, specific improvement rather than a broad transformation. Candidate reduces unsolicited pricing support detours in the three opening turns, and better follows the active buyer's stated prerequisites. Per-scene scores vary; no claim that different customer reactions are causally attributable to the candidate."
+  },
+  "separate_checks": {
+    "buyer_visualization": "Useful, grounded applications in both versions; mostly practical rather than vivid lifestyle imagery. Work-from-home and corridor comparison are most concrete.",
+    "persuasive_selling": "Candidate average Product/Desire rises 8.00 to 8.33/10, but observed customer desire changes are modest and customer turns differ.",
+    "viewing": "Invitations occur as ordinary replies. Customer responses show conditional interest only. No appointment agreement or formal handoff.",
+    "facts": "No serious factual issue identified by Judge; all dated pricing is qualified. Exact room fit remains appropriately tied to the approved plan.",
+    "support": "Support requests for plans, site access, and explicitly requested current pricing are appropriate. Candidate does not create a pricing request merely because the buyer says the starting range may be affordable.",
+    "limitations": "Customer replies vary naturally across versions; only transcript behavior is compared, not causal customer response lift."
+  }
+}
