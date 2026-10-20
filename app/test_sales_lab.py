@@ -22,9 +22,13 @@ class SalesLabTests(unittest.TestCase):
         self.assertEqual(context['recent_conversation'][0]['body'], 'Own stay from your ad')
         snapshot = context['sales_lab_test_context']
         self.assertEqual(snapshot['source_date'], '2026-08-14')
+        self.assertEqual(snapshot['simulation_date'], '2026-08-14')
         self.assertEqual(snapshot['entry_reference']['base_price_myr'], 328000)
         self.assertEqual(snapshot['entry_reference']['indicative_net_on_base_myr'], 301760)
-        self.assertIn('not a confirmed unit-level or all-in', ' '.join(snapshot['qualification']))
+        self.assertTrue(snapshot['commercial_premise']['simulation_only'])
+        self.assertIn('not a guaranteed unit-level or all-in', ' '.join(snapshot['qualification']))
+        self.assertIn('Do not initiate verification', snapshot['sales_agent_guidance'])
+        self.assertIn('not proof of a current October promotion', snapshot['sales_agent_guidance'])
         self.assertNotIn('private_persona', context)
         self.assertFalse((self.root / 'ledger.json').exists())
 
