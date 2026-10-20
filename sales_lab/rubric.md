@@ -1,42 +1,19 @@
-# Independent sales judging — appointment conversion
+# Sales Lab Judge — did the buyer move toward an appointment?
 
-**Primary question:** Did the salesperson make an ordinary ad prospect more willing to arrange a property viewing through genuine, relevant persuasion?
+Evaluate normal WhatsApp property-selling conversations, not adversarial customer-service completeness.
 
-Judge the *change in buyer willingness* and the quality of the salesperson's contribution, not how many questions were answered, how many CRM fields were filled or how many invitations were sent. A buyer offering to visit unprompted is not automatic credit to the Agent.
+The Agent's destination is **buyer agreement to start arranging a viewing**, followed by a human scheduling handoff. It is not required to close a property sale.
 
-## Evidence of progression
+Assess the **customer's change** from enquiry → relevant personal interest → desire/visualization → viewing consideration → *explicit agreement to arrange*. Each stage requires customer evidence; a generic invitation, polite thanks, or a customer precommitted to visiting is not a conversion.
 
-Distinguish these outcomes in the transcript:
+Evaluate natural need discovery, buyer-specific benefits, realistic life visualization, normal objections (cost, partner, timing, comparing), initiative and timing of the proposed viewing, and WhatsApp naturalness. The Agent should **lead** rather than list features or administer a questionnaire. Penalize repeated questions about information already provided, redundant prices/disclaimers, unsupported pressure, or inviting before answering the customer's immediate ordinary question.
 
-1. **Enquiry:** The customer is curious, asks common questions, or browses.
-2. **Stronger personal fit:** The customer recognizes a concrete reason this home could suit their needs.
-3. **Viewing consideration:** The customer seriously entertains a visit because of a relevant benefit or recommendation.
-4. **Agreement to arrange:** The customer agrees to begin arranging a viewing. This is the AI's conversion objective and can trigger human handoff.
-5. **Human scheduling / confirmed booking:** A later operational step; do not infer this from an invitation or interest.
+**Do not reward artificial customer obstruction.** If the customer has already accepted the approximate promotional price in the hypothetical dated lab scenario, repeatedly demanding exact current price without a new reason is a **simulator flaw**, not selling success/failure. The same applies to habitual requests for every bedroom's dimensions or approved plans. Flag flawed trials and correct their simulator conditions rather than rewarding defensive FAQ behavior. A buyer can still have a genuinely new affordability concern.
 
-Each step needs customer evidence. Do not script the Customer Simulator to progress automatically. Not every reasonable conversation will reach Step 4 within a few turns.
+A hesitant customer can remain hesitant. But when the Agent earns a concrete reason to visit, allow the simulator to respond credibly rather than imposing a permanent "partner/plan/price first" veto. Equally, do not award easy consent.
 
-## Commercial evaluation
+Record explicitly: viewing invite; buyer viewing consideration; actual agreement to arrange; model's `APPOINTMENT_HANDOFF`; and confirmed booking (not performed in the lab). Test explicit-consent-to-handoff as a separate functional check, without scripting consent into the main persuasion benchmark.
 
-Score 0–10 with direct references to customer and agent turns:
+Preserve the old 20/35/35/10 discovery/desire/progression/naturalness score **for historical comparability only**. Report the substantive progression evidence and factual/handoff checks independently; KEEP only credible improvements, NEEDS REVIEW if promising but uncertain, REVERT clear regressions. Do not declare success from tiny score changes or more invitations.
 
-| Dimension | Evaluate |
-|---|---|
-| Relevant discovery | Uncovers a meaningful motive without a questionnaire |
-| Desire and visualization | Turns verified advantages into believable personal value, not just feature lists |
-| Everyday objection handling | Helps with normal uncertainty about price, instalment, timing, comparisons or a partner's opinion |
-| Sales leadership | Proactively guides next steps without robotic qualification, passivity or pressure |
-| Appointment progression | Produces credible additional willingness to view, not just an invitation |
-| Conversation realism | Sounds like a capable Malaysian salesperson, not a cautious FAQ assistant |
-
-For comparability, continue reporting the legacy weighted score separately: Discovery 20%, Product Connection / Desire 35%, Progression 35%, Naturalness 10%. Do not substitute it for the appointment-conversion assessment.
-
-Review whether the customer responds to the Agent's *specific persuasive reason* rather than simply being agreeable. Quote one concrete moment where desire or viewing readiness was created, strengthened, stalled or weakened. Treat simulated differences as limited evidence, not causal proof.
-
-## Guardrails (independent of selling score)
-
-Check facts, genuine promotion validity, non-fabricated urgency, Support integrity, appointment consent and appropriate handoff as PASS / FAIL / UNCERTAIN. Do not reward false prices, pressure or invented availability to reach a viewing. An exceptional technical/legal query belongs with human handling, not in the routine sales benchmark.
-
-## Comparison
-
-Use the same normal-buyer opening and hidden motivation for blind baseline/candidate comparisons, and reserve a fresh holdout. Report score changes and observable customer actions. A 5/100 aggregate gain is a useful strong-improvement threshold, **not an automatic reason to discard a consistent useful behavior change**. Classify as KEEP with sufficient evidence, NEEDS REVIEW for promising but uncertain results, and REVERT for regressions or no credible gain.
+Facts must be true to the supplied source and simulation date. No invented current-October promotion, all-in price, returns, urgency, discounts, inventory or confirmed booking.
