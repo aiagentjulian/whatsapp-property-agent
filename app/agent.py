@@ -23,9 +23,9 @@ class SalesAgent:
     def context_text():
         return "\n\n".join("--- %s ---\n%s" % (path, (ROOT / path).read_text(encoding="utf-8")) for path in CONTEXT_FILES)
 
-    def decide(self, latest_message, profile, history, support_results):
+    def decide(self, latest_message, profile, history, support_results, sales_lab_context=None):
         passages = retrieve(latest_message, profile)
-        user_prompt = json.dumps({
+        prompt_context = {
             "brain_and_skills": self.context_text(),
             "lead_profile": {key: value for key, value in profile.items()
                              if key not in ("lead_id", "phone", "owner", "ai_session_status",
@@ -37,7 +37,10 @@ class SalesAgent:
             "latest_customer_message": latest_message,
             "relevant_project_knowledge": passages,
             "verified_support_results": support_results,
-        }, ensure_ascii=False)
+        }
+        if sales_lab_context is not None:
+            prompt_context["sales_lab_test_context"] = sales_lab_context
+        user_prompt = json.dumps(prompt_context, ensure_ascii=False)
         decision, usage = self.provider.decide(SYSTEM_PROMPT, user_prompt)
         self.validate(decision)
         return decision, usage

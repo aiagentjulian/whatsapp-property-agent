@@ -1,0 +1,86 @@
+{
+  "trial": "price-reference-baseline",
+  "scenario": "early_exploration",
+  "source_sha256": "3c05dfe36c707cbbf1cda8a1032ac893683b0bd1fcb32635bca464b6cb6c0f59",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "purchase_reason": "Browsing homes around Seberang Jaya",
+    "preferred_location": "Seberang Jaya",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "QUALIFY",
+    "fit_assessment": "Asked for the starting price while browsing homes in Seberang Jaya; budget and purchase needs are not yet known.",
+    "next_objective": "Understand their rough budget if they want help assessing price fit.",
+    "last_progress": "Shared an indicative starting-price reference with its date and limitations.",
+    "next_action": "If they continue, ask about their rough budget and tailor the price discussion.",
+    "conversation_summary": "Browsing homes around Seberang Jaya and asked how much Pearl Residences starts from."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I am browsing homes around Seberang Jaya. How much does Pearl Residences start from?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "An indicative starting reference is RM301,760, calculated from a RM328,000 base for a Podium Blocked unit on levels 1–4 using the 8% rebate shown in the 14 August 2026 package snapshot. That’s a dated reference, not a currently confirmed offer or all-in price; the exact unit, applicable car-park or other components, and latest package need confirmation. Phase 1 units are 900 sq. ft. with 3 bedrooms and 2 bathrooms. If you have a rough budget in mind, I can help you assess whether it may be worth exploring further."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I am browsing homes around Seberang Jaya. How much does Pearl Residences start from?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "An indicative starting reference is RM301,760, calculated from a RM328,000 base for a Podium Blocked unit on levels 1–4 using the 8% rebate shown in the 14 August 2026 package snapshot. That’s a dated reference, not a currently confirmed offer or all-in price; the exact unit, applicable car-park or other components, and latest package need confirmation. Phase 1 units are 900 sq. ft. with 3 bedrooms and 2 bathrooms. If you have a rough budget in mind, I can help you assess whether it may be worth exploring further.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Browsing homes around Seberang Jaya",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Asked for the starting price while browsing homes in Seberang Jaya; budget and purchase needs are not yet known.",
+          "next_objective": "Understand their rough budget if they want help assessing price fit.",
+          "last_progress": "Shared an indicative starting-price reference with its date and limitations.",
+          "next_action": "If they continue, ask about their rough budget and tailor the price discussion.",
+          "conversation_summary": "Browsing homes around Seberang Jaya and asked how much Pearl Residences starts from."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4253,
+        "input_tokens_details": {
+          "cache_write_tokens": 4250,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1954,
+        "output_tokens_details": {
+          "reasoning_tokens": 1471
+        },
+        "total_tokens": 6207
+      }
+    }
+  ],
+  "closed": false
+}

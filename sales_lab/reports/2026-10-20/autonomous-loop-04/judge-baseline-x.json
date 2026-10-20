@@ -1,0 +1,210 @@
+{
+  "report_type": "independent_blind_sales_dialogue_judgment",
+  "packet": "X",
+  "status": "baseline diagnostic only",
+  "rubric": {
+    "legacy_weights": {
+      "discovery": 0.2,
+      "product_connection_buying_desire": 0.35,
+      "sales_progression_appointment_opportunity": 0.35,
+      "naturalness": 0.1
+    },
+    "scale": "Each dimension 0–10; weighted total is a 0–10 weighted average.",
+    "strict_calibration": "Feature mention alone does not score highly for visualization or desire. Practical benefit must connect to the stated buyer need; buyer-specific visualization needs concrete lived-use imagery; desire requires evidence of increased preference. Invitations are not progression unless customer response shows interest or agreement.",
+    "separate_scores": {
+      "buyer_visualization_and_desire_creation": "0–10, strict anchors.",
+      "persuasive_sales_guidance": "0–10.",
+      "conversation_realism": "0–10."
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "own_stay, two school-age children",
+      "scores": {
+        "discovery": 7.5,
+        "product_connection_buying_desire": 7.4,
+        "sales_progression_appointment_opportunity": 7.8,
+        "naturalness": 7.3,
+        "weighted_legacy_total": 7.55,
+        "buyer_visualization_and_desire_creation": 6.7,
+        "persuasive_sales_guidance": 7.5,
+        "conversation_realism": 7.3
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "“With three separate bedrooms, it could give each child their own room and leave a third for your household”; project plan shows queen-sized beds and two outward-facing windows per secondary bedroom, with approved-plan caveat; dated 8% price calculation is labeled not current/all-in; conditional viewing invitation.",
+          "customer": "“That does sound promising for us—having a separate room for each child and the extra windows would be useful.”",
+          "assessment": "Strong, explicit tie to the two-child bedroom need, and customer independently confirms the extra windows as useful. It is more than feature listing, but does not depict a specific family routine, so visualization is moderate rather than high."
+        },
+        {
+          "turn": 2,
+          "agent": "Commits to checking current package and applicable Type A parking costs, then says they can look at arranging a viewing once the buyer has a clearer total.",
+          "customer": "“We’d be open to seeing the room arrangement once we have a clearer idea of the total.”",
+          "assessment": "Appropriate conditional interest; correctly holds off on dates/times until the cost check."
+        }
+      ],
+      "customer_interest": "Positive layout-fit reaction; explicit conditional openness to seeing it after price clarity.",
+      "viewing_state": {
+        "invitation": "Yes, conditional in A1.",
+        "interest": "Yes, conditional on clearer total.",
+        "appointment_agreement": "No.",
+        "formal_handoff": "No; A2 is a fact-verification/support request, not a formal sales handoff."
+      },
+      "fact_and_support_check": "RM328,000 less 8% = RM301,760 exactly. The 14-Aug-2026 package applies 8% to podium-blocked Levels 1–9, but this remains a dated example, not current price or all-in quote; exact unit, parking and components need confirmation. Type A layout, queen-bed depiction, outward-facing windows, RM0.18/sq-ft fee and caveats are supported. Support request is appropriate because customer now asks current package and applicable parking cost; exact applicability is unit/configuration dependent.",
+      "opportunity_and_risks": "The invitation is timely and low pressure after a relevant layout and cost orientation; it earns conditional interest, not a booking. No material concern or handoff violation. Some factual detail makes A1 dense."
+    },
+    {
+      "scenario": "genuine purchase, own stay in next few months",
+      "scores": {
+        "discovery": 7.0,
+        "product_connection_buying_desire": 6.9,
+        "sales_progression_appointment_opportunity": 7.8,
+        "naturalness": 7.4,
+        "weighted_legacy_total": 7.29,
+        "buyer_visualization_and_desire_creation": 6.1,
+        "persuasive_sales_guidance": 7.3,
+        "conversation_realism": 7.4
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "Explains 900-sq-ft Type A layout, open plan/foyer/storage/no long corridor; gives RM328k–RM358k historical base references and a single RM301,760 dated calculation with current-price and component caveats; conditional offer to arrange a viewing.",
+          "customer": "“The layout sounds practical for us, especially the storage and open space. We’re hoping to buy in the next few months, so seeing it could help us judge the fit.”",
+          "assessment": "The response answers price coverage and layout questions, and the customer affirms practical relevance and a near-term purchase timeline. Storage/open space are useful but not a vivid personal use scene; the price example is properly caveated, though the exact low figure can still anchor."
+        },
+        {
+          "turn": 2,
+          "agent": "Acknowledges open space/storage as fit, commits to checking current Type A price with applicable parking/package and proposes viewing times only if it is reasonably close; explicitly says nothing is booked.",
+          "customer": "“If it’s reasonably close, I’d be happy to look at some viewing times.”",
+          "assessment": "Clear customer viewing interest conditioned on price. Agent respects that condition and accurately avoids implying agreement."
+        }
+      ],
+      "customer_interest": "Clear purchase intent and near-term timeline; expressed willingness to consider times if price is reasonable.",
+      "viewing_state": {
+        "invitation": "Yes, conditional in A1.",
+        "interest": "Yes, explicit but price-dependent in C2.",
+        "appointment_agreement": "No; customer says would be happy to look at times later.",
+        "formal_handoff": "No; pending current price check is support escalation, not a human handoff."
+      },
+      "fact_and_support_check": "Layout, storage and price structure are supported. RM301,760 is correct arithmetic on a dated category-specific base/rebate and is explicitly not current or final. Parking/components/package still need the relevant unit schedule. Support request for current total with parking/package is appropriate to the customer's specific request; no unsupported current quote is made.",
+      "opportunity_and_risks": "Viewing invitation is earned as a conditional option by genuine, near-term purchase interest and customer-reported layout fit. The actual cost check remains the gate; no time/date should be set yet. No serious factual or handoff regression."
+    },
+    {
+      "scenario": "early exploration, undecided own use or rental",
+      "scores": {
+        "discovery": 7.4,
+        "product_connection_buying_desire": 5.7,
+        "sales_progression_appointment_opportunity": 6.7,
+        "naturalness": 7.4,
+        "weighted_legacy_total": 6.56,
+        "buyer_visualization_and_desire_creation": 4.0,
+        "persuasive_sales_guidance": 6.8,
+        "conversation_realism": 7.4
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "Provides a dated RM328k Block 1B podium-blocked L1–4 base and accurately calculates RM301,760 after the snapshot 8% rebate; explicitly says not current/all-in and that exact unit/parking/components/package need confirmation. Adds standard 900-sq-ft 3-bedroom facts and asks own-stay vs investment.",
+          "customer": "“I’m still figuring that out—it could be for my own use or a rental… The dated figure is a useful starting point.”",
+          "assessment": "Directly answers general pricing and fit question; the buyer appreciates orientation but remains exploratory. The one precise example may anchor, but caveats make its dated/category-specific status clear. The follow-up question is pertinent."
+        },
+        {
+          "turn": 2,
+          "agent": "Gives verified RM162/month maintenance including sinking fund, distinguishes other costs and rental return, then asks whether manageable holding costs or rental numbers matter more.",
+          "customer": "Says undecided use/rental and is comparing.",
+          "assessment": "Provides a relevant comparison input without promising rental demand/returns. The second question narrows decision criteria; it is a reasonable follow-up, not unnecessary repetition."
+        }
+      ],
+      "customer_interest": "Low-commitment curiosity; appreciates dated price reference but has no settled purpose, budget, urgency, or viewing interest.",
+      "viewing_state": {
+        "invitation": "None.",
+        "interest": "None expressed.",
+        "appointment_agreement": "No.",
+        "formal_handoff": "No support/handoff claimed."
+      },
+      "fact_and_support_check": "Price math and dated category labels are correct; not a current quote. RM162 maintenance is correct. Rental returns are not promised. No support request is needed for a broad exploratory question; asking customer purpose/priority is proportionate.",
+      "opportunity_and_risks": "Correctly avoids a viewing push. Gives a useful but narrow historical example; current package and exact cost remain unverified. No serious factual or handoff regression."
+    },
+    {
+      "scenario": "couple considering home office / future household",
+      "scores": {
+        "discovery": 7.1,
+        "product_connection_buying_desire": 7.3,
+        "sales_progression_appointment_opportunity": 7.6,
+        "naturalness": 7.8,
+        "weighted_legacy_total": 7.42,
+        "buyer_visualization_and_desire_creation": 6.7,
+        "persuasive_sales_guidance": 7.2,
+        "conversation_realism": 7.8
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "Uses third bedroom as a possible workspace; says queen-sized-bed depiction is concept only and exact desk/furniture fit needs approved plan; conditional viewing invitation to assess the couple's setup.",
+          "customer": "“The extra room could work well as a quiet workspace… I’d be open to seeing the unit once we’ve had a chance to check the plan, but we don’t need to set anything up just yet.”",
+          "assessment": "The workspace link is concrete and buyer-specific. Customer confirms its relevance but makes approved-plan review the next gate. No strong future-household scenario is invented."
+        },
+        {
+          "turn": 2,
+          "agent": "Requests approved Type A plan for bedroom dimensions and desk fit; restates potential quiet workspace conditionally and says no need to arrange viewing yet.",
+          "customer": "Requests plan and reiterates no immediate arrangement.",
+          "assessment": "Excellent sequencing and restraint. The support request directly answers the fit question."
+        }
+      ],
+      "customer_interest": "Specific interest in workspace fit and conditional willingness to view after checking plan.",
+      "viewing_state": {
+        "invitation": "Yes, conditional, in A1.",
+        "interest": "Yes, after approved-plan review.",
+        "appointment_agreement": "No; customer explicitly declines setting anything up yet.",
+        "formal_handoff": "No; requesting the plan is a support action, not a formal human sales handoff."
+      },
+      "fact_and_support_check": "The three-bedroom layout and queen-bed concept are supported; exact desk fit correctly requires approved plan. No invented accessibility/fit guarantee. Support request is appropriate for plan/dimension verification.",
+      "opportunity_and_risks": "Invitation is relevant and not mechanical because layout is a stated priority. Agent responds correctly to the customer's timing boundary. No missed opportunity or pressure issue."
+    },
+    {
+      "scenario": "first rental purchase / investment exploration",
+      "scores": {
+        "discovery": 7.6,
+        "product_connection_buying_desire": 6.6,
+        "sales_progression_appointment_opportunity": 7.1,
+        "naturalness": 7.0,
+        "weighted_legacy_total": 7.02,
+        "buyer_visualization_and_desire_creation": 4.2,
+        "persuasive_sales_guidance": 7.5,
+        "conversation_realism": 7.1
+      },
+      "turn_evidence": [
+        {
+          "turn": 1,
+          "agent": "Answers options/price/costs with Type A facts, RM328k–RM358k historic base references, a dated RM301,760 example, RM162/month maintenance, freehold and Q4 2029 expected completion; clearly says these do not establish rental demand/returns and exact current costs need a specific unit. Asks rental income versus long-term hold.",
+          "customer": "“At the moment I’m mainly considering rental income… I appreciate the clear caveat on returns. Could you confirm what’s included in the current price package and whether there are any regular charges beyond the RM162 maintenance?”",
+          "assessment": "Good, commercially relevant guardrails and a useful question that elicits the primary investment motivation. The answer is dense and gives no rental evidence, correctly avoiding fabricated yield. The dated low example may anchor, but it is marked historical/non-all-in."
+        },
+        {
+          "turn": 2,
+          "agent": "Confirms maintenance includes sinking fund, says other regular charges and current package inclusions are not verified, and commits to checking rather than assuming listed components are included today.",
+          "customer": "Requests current package inclusions and other regular charges.",
+          "assessment": "Direct response to the customer's cost questions. No viewing invitation is made; investment viability is still unresolved."
+        }
+      ],
+      "customer_interest": "Some rental-investment interest, but undecided between rental income, longer hold or own use; seeks cost details. No viewing interest expressed.",
+      "viewing_state": {
+        "invitation": "None.",
+        "interest": "None.",
+        "appointment_agreement": "No.",
+        "formal_handoff": "No; price/charge checks are support requests, not a formal human handoff."
+      },
+      "fact_and_support_check": "Type A, maintenance, tenure and expected Q4 2029 completion are supported. Dated rebate arithmetic is exact and properly caveated. Rental returns are explicitly not guaranteed. Support request is appropriate for current package inclusions and whether other recurring charges apply; the broad opening was answered directly before escalation.",
+      "opportunity_and_risks": "No viewing opportunity is missed; the buyer's current priority is package and holding costs. A concise bridge to later rental feasibility could be useful after costs, but the current answer follows the customer’s specific request. Dense first answer is the main naturalness weakness; no serious factual/handoff issue."
+    }
+  ],
+  "overall": {
+    "weighted_score_average": 7.17,
+    "business_diagnosis": "Packet X is generally strong at answering each stated question, caveating the dated RM301,760 calculation, and matching next steps to readiness. Strongest commercial progression appears in the near-term genuine-purchase case, where layout fit leads to customer-initiated conditional interest in viewing times. The couple/home-office case also earns conditional visit interest but correctly waits for plan confirmation. Family own-stay earns conditional openness after relevant bedroom/window facts. The early explorer and investment prospect are not pushed toward a viewing, appropriately.",
+    "strict_calibration": "Visualization and desire scores stay moderate. Child bedrooms, workspace fit, storage and shared-space layout translate features into practical benefits and prompt customer validation, but no dialogue vividly depicts day-to-day life or creates strong purchase desire. Accurate factual detail and a viewing invitation are not themselves proof of desire.",
+    "support_and_handoff": "Support requests follow customer requests for specific current package/parking, plan fit, or extra charges. No clearly inappropriate escalation for a general price question: broad price is answered first with a dated reference and caveat. Support requests are not customer-facing promises of handoff. No formal human handoff, no appointment agreement, and no false claim of booking in any scenario.",
+    "missed_opportunities": "No clear missed viewing opportunity. Explicit interest in own-stay and home-office cases is conditional on price or plan; agents leave the next step conditional. Investment buyer asks about costs, so cost verification precedes any visit. Early exploration has no viewing signal.",
+    "concerns": "The historic category-specific RM301,760 figure appears across multiple contexts and can anchor despite explicit caveats; avoid treating it as a current starting price or as broadly applicable. Several first replies are information-dense, especially investment. No serious factual or handoff regression found."
+  }
+}

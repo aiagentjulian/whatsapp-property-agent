@@ -1,0 +1,231 @@
+{
+  "packet": "blind-pair-iteration-1",
+  "instructions": "Score both blind labels independently. Do not infer which is newer; do not reward invitation alone. Compare only evidence available in these conversations. Investment scene length may differ because one version entered a valid pending-support state; state this limitation.",
+  "scenes": {
+    "own_stay": {
+      "conversations": [
+        {
+          "label": "Q",
+          "scenario": "own_stay",
+          "turns": [
+            {
+              "customer": "Hi, we’re looking around Seberang Jaya for a home to buy and Pearl Residences came up. We have two school-age children and would like them to have separate bedrooms. Could you tell me about the 3-bedroom layout and the general costs?",
+              "action": "REPLY",
+              "sales_move": "POSITION",
+              "buyer_signal": "QUESTION",
+              "reply": "Type A is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony. With three separate bedrooms, it could give each child their own room and leave a third for your household. The project layout shows the bedrooms accommodating queen-sized beds, though exact furniture fit should be checked against the approved plan. The two secondary bedrooms are also shown with two outward-facing windows each.\n\nFor a general price reference, the 14 Aug 2026 package snapshot lists a RM328,000 base; after its 8% rebate, that calculates to an indicative RM301,760. Please treat this as a dated calculation, not a confirmed current offer or all-in price—parking, upgrades and the exact unit/package can affect the total and need confirmation. If the layout sounds promising, a viewing could help you assess the rooms in person; I’d be happy to help arrange one.",
+              "support_request": null,
+              "viewing_interest": null,
+              "appointment_readiness": null,
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 3858,
+                "input_tokens_details": {
+                  "cache_write_tokens": 3855,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 2633,
+                "output_tokens_details": {
+                  "reasoning_tokens": 2011
+                },
+                "total_tokens": 6491
+              }
+            },
+            {
+              "customer": "That does sound promising for us—having a separate room for each child and the extra windows would be useful. I understand that price is only a dated reference, so could you check the current package and parking cost? We’d be open to seeing the room arrangement once we have a clearer idea of the total.",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "HANDLE",
+              "buyer_signal": "POSITIVE",
+              "reply": "Glad the layout sounds promising for your family. I’ll verify the current package and the applicable parking costs for Type A rather than rely on the dated price reference. The parking amount can vary by unit configuration, so I’ll clarify what applies before we treat it as a total. Once you have a clearer figure, we can look at arranging a viewing to check the room arrangement in person.",
+              "support_request": {
+                "support_type": "PRICING",
+                "requested_fact": "Latest valid package/rebate and applicable parking costs for Type A, including how parking cost varies by unit configuration; clarify what unit details are needed for a reliable total.",
+                "subject": "Pearl Residences Type A current package and parking costs",
+                "customer_need": "The buyer wants a clearer total cost before deciding whether to view the room arrangement.",
+                "reason": "The available package and pricing information is dated, and parking premiums vary by unit/category/configuration.",
+                "resume_stage": "HANDLE",
+                "resume_objective": "Provide verified current package and parking information, clearly distinguish any applicable components from a confirmed unit-level total, and then help the buyer consider a viewing."
+              },
+              "viewing_interest": "Open to viewing the room arrangement once current package and parking costs are clearer.",
+              "appointment_readiness": "NOT_READY",
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 5034,
+                "input_tokens_details": {
+                  "cache_write_tokens": 5031,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 1779,
+                "output_tokens_details": {
+                  "reasoning_tokens": 1028
+                },
+                "total_tokens": 6813
+              }
+            }
+          ]
+        },
+        {
+          "label": "R",
+          "scenario": "own_stay",
+          "turns": [
+            {
+              "customer": "Hi, we’re looking around Seberang Jaya for a home to buy and Pearl Residences came up. We have two school-age children and would like them to have separate bedrooms. Could you tell me about the 3-bedroom layout and the general costs?",
+              "action": "REPLY",
+              "sales_move": "ANSWER",
+              "buyer_signal": "QUESTION",
+              "reply": "Pearl Residences’ Type A is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony. The layout concept shows three separate bedrooms, so it could suit your wish for each child to have their own room while you use the master bedroom. Queen-sized beds are shown in the concept, but exact furniture fit should be checked against the approved plan.\n\nFor general costs, I have a dated package reference from 14 Aug 2026: RM301,760, calculated from a RM328,000 listed base after an 8% rebate. That’s indicative only—not a confirmed current offer or an all-in, unit-specific total. Parking or other applicable components and the current package would need confirmation.\n\nIf helpful, a viewing could let you judge the room proportions in person; just let me know if you’d like to explore that.",
+              "support_request": null,
+              "viewing_interest": null,
+              "appointment_readiness": "NOT_READY",
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 3887,
+                "input_tokens_details": {
+                  "cache_write_tokens": 3884,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 2372,
+                "output_tokens_details": {
+                  "reasoning_tokens": 1734
+                },
+                "total_tokens": 6259
+              }
+            },
+            {
+              "customer": "That room arrangement sounds sensible for us, and the price reference gives us a starting point. Since the plan and amount are still subject to confirmation, could you check the current package and parking details? If the total still looks workable, we’d consider coming to see the rooms.",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "HANDLE",
+              "buyer_signal": "POSITIVE",
+              "reply": "Glad the three-bedroom arrangement sounds sensible for your family. I’ll get the current package and applicable parking details checked, as both can affect the total and the dated price reference may no longer be current. If the confirmed total looks workable, we can then arrange a visit so you can assess the room proportions in person.",
+              "support_request": {
+                "support_type": "PRICING",
+                "requested_fact": "The currently valid Pearl Residences package and the applicable car-park allocation and cost, including their effect on the relevant total.",
+                "subject": "Pearl Residences current package and parking details",
+                "customer_need": "Assess whether the total cost is workable before considering a visit to see the bedrooms.",
+                "reason": "The available price reference is dated and is not a confirmed current or unit-specific total; package eligibility and parking details depend on the unit configuration.",
+                "resume_stage": "HANDLE",
+                "resume_objective": "Share the verified current package and applicable parking details so the buyer can assess the total, then explore arranging a viewing if it is workable."
+              },
+              "viewing_interest": "Would consider visiting to see the rooms if the total cost is workable.",
+              "appointment_readiness": "NOT_READY",
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 5012,
+                "input_tokens_details": {
+                  "cache_write_tokens": 5009,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 1444,
+                "output_tokens_details": {
+                  "reasoning_tokens": 843
+                },
+                "total_tokens": 6456
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "investment": {
+      "conversations": [
+        {
+          "label": "Q",
+          "scenario": "investment",
+          "turns": [
+            {
+              "customer": "Hi, I’m looking at a few properties around Seberang Jaya and wondering whether Pearl Residences could suit a first rental purchase. Could you give me a general idea of the unit options, pricing and what costs I should factor in?",
+              "action": "REPLY",
+              "sales_move": "POSITION",
+              "buyer_signal": "QUESTION",
+              "reply": "Hi! Phase 1 has one main residential layout: Type A, 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony.\n\nThe listed base-price references vary by category and floor, roughly RM328k–RM358k. As one dated example, a 14 Aug 2026 snapshot calculates RM301,760 from a RM328k base with the package shown for that category. That’s a historical indicative calculation, not confirmation the package is still valid or an all-in unit price. Car-park premiums and some accessories may also apply, depending on the unit configuration.\n\nFor the 900 sq ft layout, maintenance is RM162/month (RM0.18 psf, inclusive of sinking fund)—a useful known recurring cost when you work through rental numbers. The project is freehold, with Phase 1 expected to complete in Q4 2029. These facts don’t establish rental demand or returns, and exact current pricing and other costs need to be checked against a specific unit.\n\nFor your first rental purchase, are you mainly looking for monthly rental income, or a longer-term hold?",
+              "support_request": null,
+              "viewing_interest": null,
+              "appointment_readiness": "NOT_READY",
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 4642,
+                "input_tokens_details": {
+                  "cache_write_tokens": 4639,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 3065,
+                "output_tokens_details": {
+                  "reasoning_tokens": 2435
+                },
+                "total_tokens": 7707
+              }
+            },
+            {
+              "customer": "At the moment I’m mainly considering rental income, though I’m also weighing whether it might make sense as a longer-term hold or for my own use later. I appreciate the clear caveat on returns. Could you confirm what’s included in the current price package and whether there are any regular charges beyond the RM162 maintenance?",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "HANDLE",
+              "buyer_signal": "QUESTION",
+              "reply": "The RM162/month maintenance includes the sinking fund. I can’t confirm from the information I have whether there are other regular charges. The pricing reference lists the base price, applicable car-park premiums and possible extras separately, so I wouldn’t assume they’re all included in today’s package. I’ll verify the current package inclusions and any other recurring charges before giving you a definite answer.",
+              "support_request": {
+                "support_type": "PACKAGE",
+                "requested_fact": "Current price package inclusions and whether any regular charges apply beyond RM162/month maintenance inclusive of sinking fund.",
+                "subject": "Pearl Residences current package and recurring charges",
+                "customer_need": "Assess costs relevant to a first rental purchase.",
+                "reason": "The available package information is dated and does not confirm current inclusions or whether there are other recurring charges.",
+                "resume_stage": "QUALIFY",
+                "resume_objective": "Give the buyer a verified breakdown of current package inclusions and regular charges."
+              },
+              "viewing_interest": null,
+              "appointment_readiness": null,
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 5028,
+                "input_tokens_details": {
+                  "cache_write_tokens": 5025,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 1833,
+                "output_tokens_details": {
+                  "reasoning_tokens": 1255
+                },
+                "total_tokens": 6861
+              }
+            }
+          ]
+        },
+        {
+          "label": "R",
+          "scenario": "investment",
+          "turns": [
+            {
+              "customer": "Hi, I’m looking at a few properties around Seberang Jaya and wondering whether Pearl Residences could suit a first rental purchase. Could you give me a general idea of the unit options, pricing and what costs I should factor in?",
+              "action": "SUPPORT_REQUEST",
+              "sales_move": "ANSWER",
+              "buyer_signal": "POSITIVE",
+              "reply": "For Pearl Residences Phase 1, the main unit type is Type A: 900 sq.ft., 3 bedrooms, 2 bathrooms and a balcony.\n\nFor a price reference, a package snapshot dated 14 Aug 2026 shows Block 1B podium blocked, Levels 1–4, at a RM328,000 base. Applying the snapshot’s 8% category rebate gives about RM301,760 on that base only. That isn’t a confirmed current offer or an all-in SPA price; the latest package and exact unit configuration need checking. Parking premiums shown in the pricing materials vary by configuration (RM15k, RM20k or RM30k).\n\nThe maintenance fee is RM0.18 psf inclusive of sinking fund, so for 900 sq.ft. that’s about RM162/month. I’ll confirm a verified breakdown of other purchase costs, such as legal, stamp duty and financing charges, rather than guess. For your first rental purchase, are you mainly weighing monthly cash flow or longer-term value?",
+              "support_request": {
+                "support_type": "OTHER",
+                "requested_fact": "A verified estimate or itemized breakdown of purchaser costs beyond the SPA price, including legal fees, stamp duty and loan or financing charges, if available.",
+                "subject": "Purchase cost breakdown",
+                "customer_need": "Budgeting for a first rental property purchase.",
+                "reason": "The buyer asked what costs to factor in, but the available information does not verify these transaction-cost amounts.",
+                "resume_stage": "QUALIFY",
+                "resume_objective": "Provide verified cost information and clarify whether the buyer prioritizes rental cash flow or longer-term value."
+              },
+              "viewing_interest": null,
+              "appointment_readiness": "NOT_READY",
+              "handoff_reason": null,
+              "usage": {
+                "input_tokens": 4671,
+                "input_tokens_details": {
+                  "cache_write_tokens": 4668,
+                  "cached_tokens": 0
+                },
+                "output_tokens": 4047,
+                "output_tokens_details": {
+                  "reasoning_tokens": 3249
+                },
+                "total_tokens": 8718
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

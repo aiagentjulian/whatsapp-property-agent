@@ -1,0 +1,207 @@
+{
+  "trial": "candidate1",
+  "scenario": "own_stay",
+  "source_sha256": "387f2289c3fb075178dea142bf865f8651e65fdc59cdb4de0b41853a1a791f9c",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking to buy a home in Seberang Jaya; wants separate bedrooms for two school-age children.",
+    "preferred_location": "Seberang Jaya",
+    "size_or_layout_preference": "Three bedrooms, with a separate bedroom for each child.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Three separate bedrooms",
+      "Room proportions suitable for the children’s bedrooms"
+    ],
+    "primary_motivations": [
+      "Give each child a separate bedroom"
+    ],
+    "decision_factors": [
+      "Three-bedroom layout",
+      "Current package",
+      "Applicable parking details",
+      "General costs"
+    ],
+    "active_concerns": [
+      "Whether the current package and parking details make the total workable"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The three-bedroom layout sounds sensible to the buyer and could suit the request for separate bedrooms; exact room and furniture fit should be checked against the approved plan.",
+    "next_objective": "Confirm the current package and applicable parking details so the buyer can assess the total cost.",
+    "last_progress": "Buyer responded positively to the room arrangement and price reference, and would consider a viewing if the total is workable.",
+    "next_action": "Obtain current package and applicable parking details; then follow up on whether the buyer would like to arrange a viewing.",
+    "conversation_summary": "Buyer is looking to buy in Seberang Jaya and wants separate bedrooms for two school-age children. They responded positively to the three-bedroom arrangement and asked to check the current package and parking details before deciding whether to visit.",
+    "viewing_interest": "Would consider visiting to see the rooms if the total cost is workable."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we’re looking around Seberang Jaya for a home to buy and Pearl Residences came up. We have two school-age children and would like them to have separate bedrooms. Could you tell me about the 3-bedroom layout and the general costs?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Type A is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony. The layout concept shows three separate bedrooms, so it could suit your wish for each child to have their own room while you use the master bedroom. Queen-sized beds are shown in the concept, but exact furniture fit should be checked against the approved plan.\n\nFor general costs, I have a dated package reference from 14 Aug 2026: RM301,760, calculated from a RM328,000 listed base after an 8% rebate. That’s indicative only—not a confirmed current offer or an all-in, unit-specific total. Parking or other applicable components and the current package would need confirmation.\n\nIf helpful, a viewing could let you judge the room proportions in person; just let me know if you’d like to explore that."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That room arrangement sounds sensible for us, and the price reference gives us a starting point. Since the plan and amount are still subject to confirmation, could you check the current package and parking details? If the total still looks workable, we’d consider coming to see the rooms."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Glad the three-bedroom arrangement sounds sensible for your family. I’ll get the current package and applicable parking details checked, as both can affect the total and the dated price reference may no longer be current. If the confirmed total looks workable, we can then arrange a visit so you can assess the room proportions in person."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "The currently valid Pearl Residences package and the applicable car-park allocation and cost, including their effect on the relevant total.",
+      "subject": "Pearl Residences current package and parking details",
+      "customer_need": "Assess whether the total cost is workable before considering a visit to see the bedrooms.",
+      "reason": "The available price reference is dated and is not a confirmed current or unit-specific total; package eligibility and parking details depend on the unit configuration.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the verified current package and applicable parking details so the buyer can assess the total, then explore arranging a viewing if it is workable.",
+      "signature": "PRICING|allocation and applicable car cost current currently details effect including on package park parking pearl relevant residences their total valid",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we’re looking around Seberang Jaya for a home to buy and Pearl Residences came up. We have two school-age children and would like them to have separate bedrooms. Could you tell me about the 3-bedroom layout and the general costs?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Type A is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony. The layout concept shows three separate bedrooms, so it could suit your wish for each child to have their own room while you use the master bedroom. Queen-sized beds are shown in the concept, but exact furniture fit should be checked against the approved plan.\n\nFor general costs, I have a dated package reference from 14 Aug 2026: RM301,760, calculated from a RM328,000 listed base after an 8% rebate. That’s indicative only—not a confirmed current offer or an all-in, unit-specific total. Parking or other applicable components and the current package would need confirmation.\n\nIf helpful, a viewing could let you judge the room proportions in person; just let me know if you’d like to explore that.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": "Looking to buy a home in Seberang Jaya; wants separate bedrooms for two school-age children.",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms, with a separate bedroom for each child.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three separate bedrooms",
+            "Room proportions suitable for the children’s bedrooms"
+          ],
+          "primary_motivations": [
+            "Give each child a separate bedroom"
+          ],
+          "decision_factors": [
+            "Three-bedroom layout",
+            "General costs"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom layout could align with the request for separate bedrooms for the children; exact room and furniture fit should be checked against the approved plan.",
+          "next_objective": "Help assess the bedroom layout and clarify current unit-specific costs if the buyer wants to proceed.",
+          "last_progress": "Buyer shared a Seberang Jaya home-buying search, the need for separate bedrooms for two children, and asked about layout and costs.",
+          "next_action": "Provide the approved floor plan or confirm current unit-specific pricing and applicable components if requested.",
+          "conversation_summary": "Buyer is looking to buy in Seberang Jaya and wants separate bedrooms for two school-age children. They asked about Pearl Residences’ three-bedroom layout and general costs."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3887,
+        "input_tokens_details": {
+          "cache_write_tokens": 3884,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2372,
+        "output_tokens_details": {
+          "reasoning_tokens": 1734
+        },
+        "total_tokens": 6259
+      }
+    },
+    {
+      "customer": "That room arrangement sounds sensible for us, and the price reference gives us a starting point. Since the plan and amount are still subject to confirmation, could you check the current package and parking details? If the total still looks workable, we’d consider coming to see the rooms.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Glad the three-bedroom arrangement sounds sensible for your family. I’ll get the current package and applicable parking details checked, as both can affect the total and the dated price reference may no longer be current. If the confirmed total looks workable, we can then arrange a visit so you can assess the room proportions in person.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking to buy a home in Seberang Jaya; wants separate bedrooms for two school-age children.",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Three bedrooms, with a separate bedroom for each child.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Would consider visiting to see the rooms if the total cost is workable.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Three separate bedrooms",
+            "Room proportions suitable for the children’s bedrooms"
+          ],
+          "primary_motivations": [
+            "Give each child a separate bedroom"
+          ],
+          "decision_factors": [
+            "Three-bedroom layout",
+            "Current package",
+            "Applicable parking details",
+            "General costs"
+          ],
+          "active_concerns": [
+            "Whether the current package and parking details make the total workable"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom layout sounds sensible to the buyer and could suit the request for separate bedrooms; exact room and furniture fit should be checked against the approved plan.",
+          "next_objective": "Confirm the current package and applicable parking details so the buyer can assess the total cost.",
+          "last_progress": "Buyer responded positively to the room arrangement and price reference, and would consider a viewing if the total is workable.",
+          "next_action": "Obtain current package and applicable parking details; then follow up on whether the buyer would like to arrange a viewing.",
+          "conversation_summary": "Buyer is looking to buy in Seberang Jaya and wants separate bedrooms for two school-age children. They responded positively to the three-bedroom arrangement and asked to check the current package and parking details before deciding whether to visit."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "The currently valid Pearl Residences package and the applicable car-park allocation and cost, including their effect on the relevant total.",
+          "subject": "Pearl Residences current package and parking details",
+          "customer_need": "Assess whether the total cost is workable before considering a visit to see the bedrooms.",
+          "reason": "The available price reference is dated and is not a confirmed current or unit-specific total; package eligibility and parking details depend on the unit configuration.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the verified current package and applicable parking details so the buyer can assess the total, then explore arranging a viewing if it is workable."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 5012,
+        "input_tokens_details": {
+          "cache_write_tokens": 5009,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1444,
+        "output_tokens_details": {
+          "reasoning_tokens": 843
+        },
+        "total_tokens": 6456
+      }
+    }
+  ],
+  "closed": false
+}

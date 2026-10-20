@@ -1,0 +1,56 @@
+{
+  "objective": "Improve substantive guided selling after removing repeated general-price stalls with a source-grounded, dated Sales Lab price snapshot.",
+  "starting_commit": "5b5c61f9546448351bfc52da67bbea07de64a551",
+  "starting_best": "Loop02 validated Sales Brain retained after Loop03; Loop03 did not qualify a replacement.",
+  "sales_agent": "Actual app.agent.SalesAgent, GPT-6 Luna / High, real Brain, Knowledge Retrieval and structured decisions.",
+  "roles": "Main Codex coordinates and implements; native Codex Customer Simulator and independent Sales Judge use no additional OpenAI API.",
+  "api_limit": 24,
+  "pricing_context": "Sales Lab only; pricing_snapshot_2026-08-14.json derives an indicative RM301,760 on the RM328,000 Block 1B Podium Blocked Levels 1-4 base less the documented 8% eligible category rebate. Not a unit-level or all-in quote and not a currently verified offer. Specific parking/components and post-14-Aug validity remain unconfirmed.",
+  "development_scenarios": [
+    "family_own_stay",
+    "couple_home_office_future_plans",
+    "genuine_purchase_interest",
+    "early_exploration_or_investment"
+  ],
+  "holdout": "Fresh price/value comparison; reserved for final-only paired baseline/best candidate validation.",
+  "original_rubric": {
+    "effective_discovery": 20,
+    "product_connection_buying_desire": 35,
+    "sales_progression_appointment": 35,
+    "natural_conversation": 10
+  },
+  "additional_dimensions": [
+    "buyer_visualization",
+    "persuasive_selling",
+    "conversation_realism",
+    "customer_interest_and_reaction",
+    "appropriate_viewing_judgment"
+  ],
+  "status": "completed",
+  "iterations": [
+    {
+      "iteration": 1,
+      "diagnosis": "Baseline was strong on factual fit and conditional viewing judgment, but independent judging found visualization and purchase-desire creation only moderate: agents often stated a practical benefit without a concrete buyer-specific use implication. No viewing was clearly missed.",
+      "hypothesis": "A single, concise buyer-specific example grounded in the buyer's stated routine/objective may improve product connection without adding facts, pressure or fixed scripts.",
+      "change": "Replaced one redundant Sales Brain sentence with a principle preferring one brief, conditional, buyer-specific practical example over a feature list.",
+      "retest_scenarios": ["own_stay", "investment"],
+      "status": "reverted",
+      "result": "Blind judge found no material superiority: the baseline had a slight own-stay edge; investment was inconclusive due to candidate's earlier valid support pause. Candidate turn dialogue and usage retained for audit.",
+      "holdout_used": false
+    }
+  ],
+  "final_recommendation": "REVERT candidate 1 and retain the pre-existing validated Sales Brain. Keep the isolated Sales Lab price snapshot and harness changes.",
+  "api_usage": {
+    "calls": 18,
+    "limit": 24,
+    "input_tokens": 80485,
+    "output_tokens": 38679,
+    "total_tokens": 119164,
+    "reported_usd_cost": null
+  },
+  "validation": {
+    "unit_tests": "27 passed: app.test_agent, app.test_sales_lab, app.test_sales_lab_retrieval, app.test_runtime",
+    "diff_check": "passed",
+    "holdout": "Independent final-only price concern; 6.71/10; no false viewing/appointment/handoff claims"
+  }
+}

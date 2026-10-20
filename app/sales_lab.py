@@ -17,6 +17,7 @@ from .provider import PROFILE_FIELDS
 MODEL = 'gpt-6-luna'
 LIMIT = 24
 SCENARIOS = ('own_stay', 'couple_home_office', 'investment', 'genuine_interest', 'early_exploration', 'holdout')
+SALES_LAB_CONTEXT_PATH = Path(__file__).resolve().parents[1] / 'sales_lab' / 'pricing_snapshot_2026-08-14.json'
 
 
 def save(path, value):
@@ -26,8 +27,25 @@ def save(path, value):
 def fingerprint():
     root = Path(__file__).resolve().parents[1]
     files = [root / p for p in ('app/agent.py', 'app/knowledge.py', 'app/provider.py', 'app/sales_lab.py', 'brain/AGENT.md')]
+    files.append(SALES_LAB_CONTEXT_PATH)
     files += sorted((root / 'knowledge').rglob('*.md'))
     return hashlib.sha256(b''.join(p.read_bytes() for p in files)).hexdigest()
+
+
+def pricing_test_context():
+    snapshot = json.loads(SALES_LAB_CONTEXT_PATH.read_text(encoding='utf-8'))
+    base = snapshot['entry_reference']['base_price_myr']
+    rebate = snapshot['entry_reference']['rebate_rate']
+    snapshot['entry_reference']['indicative_net_on_base_myr'] = round(base * (1 - rebate))
+    snapshot['sales_agent_guidance'] = (
+        'For a general price enquiry, answer directly with the dated indicative starting reference below; '
+        'do not request block, floor, facing or unit selection first. Identify it as a calculation from the '
+        '14 August 2026 package snapshot, not a currently verified offer or unit-level all-in quote. '
+        'State that separately applicable parking/accessory components and exact current unit/package require confirmation. '
+        'Do not raise a general-price SUPPORT_REQUEST when this reference answers the question. A specific unit-level '
+        'question may still need verification. This context is Sales Lab only and must never be treated as live production pricing.'
+    )
+    return snapshot
 
 
 def main(argv=None):
@@ -92,6 +110,7 @@ def run_turn(args, parser):
         save(ledger_path, ledger)
     history = state['history'] + [{'direction': 'INBOUND', 'body': args.customer}]
     agent = SalesAgent(config)
+    lab_context = pricing_test_context()
     captured = {}
 
     def fake_urlopen(request, timeout):
@@ -102,6 +121,8 @@ def run_turn(args, parser):
         assert context['brain_and_skills'] and context['current_project_unit_offering']
         assert 'focused_sales_evidence' in context and 'relevant_project_knowledge' in context
         assert context['latest_customer_message'] == args.customer
+        assert context['sales_lab_test_context']['source_date'] == '2026-08-14'
+        assert context['sales_lab_test_context']['entry_reference']['indicative_net_on_base_myr'] == 301760
         captured['context'] = context
         decision = {'action': 'REPLY', 'sales_move': 'POSITION', 'buyer_signal': 'QUESTION',
                     'reply': 'FAKE transport validation only.', 'lead_updates': {k: None for k in PROFILE_FIELDS},
@@ -115,10 +136,12 @@ def run_turn(args, parser):
     try:
         # Intercept the real OpenAIProvider HTTP transport, not SalesAgent.decide.
         if args.live:
-            decision, usage = agent.decide(args.customer, state['profile'], history, state.get('support_context', []))
+            decision, usage = agent.decide(args.customer, state['profile'], history,
+                                           state.get('support_context', []), sales_lab_context=lab_context)
         else:
             with patch('app.provider.urllib.request.urlopen', fake_urlopen):
-                decision, usage = agent.decide(args.customer, state['profile'], history, state.get('support_context', []))
+                decision, usage = agent.decide(args.customer, state['profile'], history,
+                                               state.get('support_context', []), sales_lab_context=lab_context)
     except Exception as exc:
         if args.live:
             attempt['status'] = 'failed'

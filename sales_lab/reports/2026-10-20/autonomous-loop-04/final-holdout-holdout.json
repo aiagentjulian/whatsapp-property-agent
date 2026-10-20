@@ -1,0 +1,193 @@
+{
+  "trial": "final-holdout",
+  "scenario": "holdout",
+  "source_sha256": "3c05dfe36c707cbbf1cda8a1032ac893683b0bd1fcb32635bca464b6cb6c0f59",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "preferred_location": "Seberang Jaya area (comparing condos)",
+    "preferred_property_type": "Condominium",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "decision_factors": [
+      "Price and value",
+      "Price inclusions",
+      "Like-for-like comparison with other condos",
+      "Current Type A price with a standard car park"
+    ],
+    "active_concerns": [
+      "Perceived high price",
+      "Wants clarity on inclusions and value",
+      "Needs confirmation of current price and applicable components"
+    ],
+    "next_objective": "Confirm the current Type A price with a standard car park and identify which components are included or applicable.",
+    "last_progress": "Buyer clarified that they have only online comparison prices and asked for the current Type A price and applicable components.",
+    "next_action": "Verify the current unit pricing, standard car-park configuration, and package inclusions.",
+    "conversation_summary": "Buyer is comparing condos around Seberang Jaya and is concerned Pearl Residences may be expensive. They want a current Type A price with a standard car park and clarity on which components apply; the available pricing reference is dated and does not confirm a current unit-level total."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’m comparing a few condos around Seberang Jaya and Pearl Residences looks a little expensive at first glance. Could you help me understand what the price includes and what might make it good value?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Fair question—the headline price can look different once the parking and package are separated. As one reference, the pricing schedule lists RM328,000 base for a podium-blocked unit on Levels 1–4. The package snapshot dated 14 August 2026 showed an 8% rebate for podium-blocked Levels 1–9, which calculates to RM301,760 against that base. That’s an indicative calculation from a dated snapshot, not confirmation that the package is still valid or an all-in unit price.\n\nThe SPA pricing structure can also include an applicable car-park premium, and, where relevant, an extra motorcycle bay (RM5,000), extra utility (RM8,000) and an upgrading package listed as worth RM10,000. The exact inclusions depend on the unit configuration and need to be confirmed. All Phase 1 units are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so it’s worth comparing on the same size, parking and included extras. If you share the other condo’s size, price and parking, I can help compare them like for like."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that helps explain how the advertised base and final amount can differ. I don’t have a formal competing quote yet, just a few online prices, so I can’t compare like for like. Could you confirm the current Type A price with a standard car park and which of those other components actually apply? That would help me judge the overall cost."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I can’t confirm a current all-in price from the dated schedule I have. Type A’s base price varies by floor and facing, and the car-park premium depends on the unit configuration. The pricing material also lists other components, but I shouldn’t assume which apply to a standard-car-park unit. I’ll verify the current price and package inclusions so I can give you a proper breakdown."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current Type A 900 sq ft price with a standard car park, including the current package and the exact components included or applicable.",
+      "subject": "Pearl Residences Type A pricing",
+      "customer_need": "Assess the overall cost and compare it with other condos.",
+      "reason": "The available pricing and package information is dated; base prices and car-park premiums vary by unit configuration, so the current price and applicable components cannot be confirmed from it.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Provide the verified current price breakdown, separating included items from additional or configuration-dependent components.",
+      "signature": "PRICING|900 and applicable car components current exact ft included including or package park pearl price residences sq standard type with",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’m comparing a few condos around Seberang Jaya and Pearl Residences looks a little expensive at first glance. Could you help me understand what the price includes and what might make it good value?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Fair question—the headline price can look different once the parking and package are separated. As one reference, the pricing schedule lists RM328,000 base for a podium-blocked unit on Levels 1–4. The package snapshot dated 14 August 2026 showed an 8% rebate for podium-blocked Levels 1–9, which calculates to RM301,760 against that base. That’s an indicative calculation from a dated snapshot, not confirmation that the package is still valid or an all-in unit price.\n\nThe SPA pricing structure can also include an applicable car-park premium, and, where relevant, an extra motorcycle bay (RM5,000), extra utility (RM8,000) and an upgrading package listed as worth RM10,000. The exact inclusions depend on the unit configuration and need to be confirmed. All Phase 1 units are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so it’s worth comparing on the same size, parking and included extras. If you share the other condo’s size, price and parking, I can help compare them like for like.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya area (comparing condos)",
+          "preferred_property_type": "Condominium",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price and value",
+            "Price inclusions",
+            "Like-for-like comparison with other condos"
+          ],
+          "active_concerns": [
+            "Perceived high price",
+            "Wants clarity on inclusions and value"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Clarify the competing condo's size, price and parking to support a like-for-like comparison.",
+          "last_progress": "Buyer is comparing condos around Seberang Jaya and asked about Pearl Residences pricing, inclusions and value.",
+          "next_action": "Offer a like-for-like comparison if the buyer shares the other condo's size, price and parking allocation.",
+          "conversation_summary": "Buyer is comparing condos around Seberang Jaya and is concerned Pearl Residences may be expensive. Shared an indicative calculation from a dated package snapshot, explained that parking and other components can affect the total, and offered a like-for-like comparison."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4295,
+        "input_tokens_details": {
+          "cache_write_tokens": 4292,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2604,
+        "output_tokens_details": {
+          "reasoning_tokens": 1946
+        },
+        "total_tokens": 6899
+      }
+    },
+    {
+      "customer": "Thanks, that helps explain how the advertised base and final amount can differ. I don’t have a formal competing quote yet, just a few online prices, so I can’t compare like for like. Could you confirm the current Type A price with a standard car park and which of those other components actually apply? That would help me judge the overall cost.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I can’t confirm a current all-in price from the dated schedule I have. Type A’s base price varies by floor and facing, and the car-park premium depends on the unit configuration. The pricing material also lists other components, but I shouldn’t assume which apply to a standard-car-park unit. I’ll verify the current price and package inclusions so I can give you a proper breakdown.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya area (comparing condos)",
+          "preferred_property_type": "Condominium",
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Price and value",
+            "Price inclusions",
+            "Like-for-like comparison with other condos",
+            "Current Type A price with a standard car park"
+          ],
+          "active_concerns": [
+            "Perceived high price",
+            "Wants clarity on inclusions and value",
+            "Needs confirmation of current price and applicable components"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm the current Type A price with a standard car park and identify which components are included or applicable.",
+          "last_progress": "Buyer clarified that they have only online comparison prices and asked for the current Type A price and applicable components.",
+          "next_action": "Verify the current unit pricing, standard car-park configuration, and package inclusions.",
+          "conversation_summary": "Buyer is comparing condos around Seberang Jaya and is concerned Pearl Residences may be expensive. They want a current Type A price with a standard car park and clarity on which components apply; the available pricing reference is dated and does not confirm a current unit-level total."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current Type A 900 sq ft price with a standard car park, including the current package and the exact components included or applicable.",
+          "subject": "Pearl Residences Type A pricing",
+          "customer_need": "Assess the overall cost and compare it with other condos.",
+          "reason": "The available pricing and package information is dated; base prices and car-park premiums vary by unit configuration, so the current price and applicable components cannot be confirmed from it.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Provide the verified current price breakdown, separating included items from additional or configuration-dependent components."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4909,
+        "input_tokens_details": {
+          "cache_write_tokens": 4906,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1370,
+        "output_tokens_details": {
+          "reasoning_tokens": 694
+        },
+        "total_tokens": 6279
+      }
+    }
+  ],
+  "closed": false
+}

@@ -1,0 +1,49 @@
+{
+  "report_type": "independent_final_only_holdout_judgment",
+  "scenario": "price-conscious condo comparison / holdout",
+  "scope": "One complete two-turn dialogue; scored on customer-visible transcript and verified price context.",
+  "scores": {
+    "discovery": 6.5,
+    "product_connection_buying_desire": 6.3,
+    "sales_progression_appointment_opportunity": 7.0,
+    "naturalness": 7.5,
+    "weighted_legacy_total": 6.71,
+    "buyer_visualization_and_desire_creation": 4.5,
+    "persuasive_sales_guidance": 7.0,
+    "conversation_realism": 7.5
+  },
+  "turn_evidence": [
+    {
+      "turn": 1,
+      "customer": "“Pearl Residences looks a little expensive at first glance. Could you help me understand what the price includes and what might make it good value?”",
+      "agent": "Explains a dated RM328,000 base for a Block 1B podium-blocked L1–4 unit and calculates RM301,760 after the 8% rebate; states this is not confirmed current or all-in. Lists applicable car-park premium, possible RM5k motorcycle bay, RM8k extra utility and RM10k upgrading component, all conditional on unit configuration. Notes 900-sq-ft 3/2/balcony and offers a like-for-like comparison if the buyer shares competing size/price/parking.",
+      "assessment": "Directly addresses price transparency and value comparison with specific cost components. It gives a practical comparison method, but does not link the property to a buyer-specific living need, because none has been provided. The price figure is precise and potentially anchoring, but is identified as one dated example and not a current/all-in quote."
+    },
+    {
+      "turn": 2,
+      "customer": "“I don’t have a formal competing quote yet, just a few online prices… Could you confirm the current Type A price with a standard car park and which of those other components actually apply? That would help me judge the overall cost.”",
+      "agent": "Says the current all-in price cannot be confirmed from the dated schedule; notes floor/facing and parking configuration affect totals; will verify current price and package inclusions rather than assume which components apply.",
+      "assessment": "Answers the exact question and sets a concrete verification step. It does not fabricate current pricing, nor repeat a request for competitor information after the customer clarified they have no formal quote."
+    }
+  ],
+  "customer_interest": "Customer acknowledges the explanation but remains focused on price. No product preference or viewing signal is expressed; the requested evidence is the current standard-car-park total and applicable components.",
+  "viewing_and_handoff": {
+    "agent_viewing_invitation": "None by turn 2.",
+    "customer_viewing_interest": "None expressed.",
+    "appointment_agreement": "None.",
+    "formal_handoff": "None. The internal pricing support request is not a formal human/customer handoff."
+  },
+  "appropriate_viewing_judgment": "No viewing invitation by turn 2 is appropriate, not a missed opportunity. The customer’s only expressed goal is to judge overall cost and inclusions; the current total is unresolved and the customer has not shown fit or interest in visiting. The earned next step is the verified breakdown, after which a visit can be discussed if the total is workable.",
+  "fact_and_support_check": {
+    "dated_price": "RM328,000 less 8% is RM301,760. The cited snapshot supports 8% for podium-blocked Levels 1–9; transcript accurately labels the example as dated and not current/all-in.",
+    "components": "Pricing source documents car-park premiums and conditional RM5k extra motorcycle bay, RM8k extra utility and RM10k upgrading package. Exact applicability depends on unit configuration, so the agent’s conditional wording and refusal to guess are sound.",
+    "unit_facts": "900 sq ft, 3 bedrooms, 2 bathrooms and balcony are consistent with verified Phase 1 facts.",
+    "support_request": "Appropriate: customer asks for a specific current Type A price with standard parking and wants exact applicable components, which require current unit/package information. No unnecessary escalation for a general range; the earlier general concern was answered with an explicitly caveated dated example and component explanation."
+  },
+  "overall_assessment": {
+    "business_value": "Useful trust-building and cost-comparison guidance, but no observed increase in buying motivation yet. The customer is still evaluating affordability and has supplied no evidence of product fit or viewing readiness.",
+    "missed_opportunity": "No missed viewing opportunity. An invitation here would be premature because current price/inclusions remain the buyer’s stated condition.",
+    "naturalness": "The first answer is information-dense but coherent and responsive; the second is concise and appropriately cautious. The like-for-like comparison offer is relevant, and the agent adjusts when the customer says they lack a formal quote.",
+    "regression_or_violation": "No serious factual, support-state, pressure or handoff violation identified. No invitation is issued or misrepresented as customer interest or appointment."
+  }
+}
