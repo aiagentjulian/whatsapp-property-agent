@@ -2,7 +2,7 @@
 
 ## 结论
 
-**KEEP Candidate 1。** 在三个相同开场场景的匿名配对盲评中，稳定基线为 **7.57/10**，Candidate 1 为 **7.86/10**，提升 **0.29 分/10（2.9 分/100）**。这是幅度有限但有具体行为证据的改善，不是强烈或普遍的销售能力跃迁：客户的实际兴趣总体相近，客户回合也有自然差异。Candidate 1 的主要可见收益是停止把客户已认可“可能负担得起”的一般价格参考，主动变成现价核实任务；客户明确询问现价、具体总价或缺失资料时仍正确核实。
+**REVERT Candidate 1，保留基线 Sales Brain。** 在三个相同开场场景的匿名配对盲评中，稳定基线为 **7.57/10**，Candidate 1 为 **7.86/10**，提升 **0.29 分/10（2.9 分/100）**。虽然观察到少发无请求的价格核实任务、Product Connection 与 Progression 分项略升，但整体提升低于预设的 **5 分/100** 验收门槛，而且只有三个主要场景。按验收标准撤回候选代码改动，不把温和信号当作通过。候选对话和评分仍完整保留，便于后续复查。
 
 ## 做了什么
 
@@ -46,8 +46,8 @@
 - 完成 **1 轮修复**；**14 / 16** 次真实 SalesAgent API 调用。
 - 使用 **64,505 input + 29,095 output = 93,600 tokens**；API 未返回美元成本，未估算费用。
 - 稳定代码与候选后的本地验证：`python3 -m unittest app.test_agent app.test_sales_lab app.test_sales_lab_retrieval app.test_runtime`，**27 项通过**；Candidate source 的 fake-transport dry run 也通过。
-- 推荐：**KEEP**。保留限定的 Sales Brain 判断改动；Buyer Visualization 本身仍有提升空间，但本轮没有新增证据支持更强的生活化或投资叙事。
+- 推荐：**REVERT**。候选均分提升 **2.9/100**，未达到至少 **5/100** 的验收条件；已撤回 Sales Brain 候选改动，分数、对话和诊断作为实验记录保留。Buyer Visualization 本身仍有提升空间，本轮没有新增证据支持更强的生活化或投资叙事。
 - 无部署、合并、Runtime/生产数据库/Google Sheets/Meta/Webhook 操作。
 - Customer 私有模拟资料未纳入 Git。价格测试快照仍只由 Sales Lab 注入。
 
-实验报告与合格的 Sales Brain 改动已提交并推送至实验分支 `codex/sales-lab-v1`；私有模拟画像未纳入提交。
+实验报告、对话和评分已提交并推送至实验分支 `codex/sales-lab-v1`；由于未达验收门槛，候选 Sales Brain 改动已撤回。私有模拟画像未纳入提交。
