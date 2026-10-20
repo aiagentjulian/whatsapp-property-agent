@@ -50,4 +50,4 @@
 - 无部署、合并、Runtime/生产数据库/Google Sheets/Meta/Webhook 操作。
 - Customer 私有模拟资料未纳入 Git。价格测试快照仍只由 Sales Lab 注入。
 
-实验报告与合格的 Sales Brain 改动将一并提交并推送至实验分支 `codex/sales-lab-v1`；私有模拟画像不纳入提交。
+实验报告与合格的 Sales Brain 改动已提交并推送至实验分支 `codex/sales-lab-v1`；私有模拟画像未纳入提交。
