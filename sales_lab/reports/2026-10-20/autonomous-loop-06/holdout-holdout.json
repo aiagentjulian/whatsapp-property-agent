@@ -1,0 +1,197 @@
+{
+  "trial": "holdout",
+  "scenario": "holdout",
+  "source_sha256": "14212d1af7457979d140b3e29fbbdbaf7d9ae0d9004393bb20a999039d6ed3f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_timeline": "Just starting to look around",
+    "sales_stage": "POSITION",
+    "next_objective": "Provide verified location/access details and confirmed monthly cost information.",
+    "last_progress": "Buyer confirmed the property would be for own stay and asked about the area and monthly costs.",
+    "next_action": "Confirm verified area/access information and the current monthly maintenance amount.",
+    "conversation_summary": "Currently renting and just starting to explore. Interested in Pearl Residences for own stay and wants to understand the area and monthly costs.",
+    "purchase_reason": "Looking for a home to live in; wants to understand the area and monthly costs.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "important_features": [
+      "900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony",
+      "RM0.18 per sq. ft. maintenance fee inclusive of sinking fund",
+      "Selected clubhouse facilities are pay-per-use"
+    ],
+    "primary_motivations": [
+      "Own stay",
+      "Understand the area and monthly costs"
+    ],
+    "decision_factors": [
+      "Area and access",
+      "Monthly ownership costs"
+    ],
+    "active_concerns": [
+      "Monthly ownership costs and area/access details are not yet clear"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The 900 sq. ft. three-bedroom home may be relevant for own stay; the buyer is still exploring and weighing area and monthly costs."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw your Pearl Residences ad. We’re renting at the moment and just starting to look around. Can share a bit more?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure — Pearl Residences Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. That gives you flexibility to use a room for work or guests as your needs change. Since you’re just starting to look, are you mainly considering a home to live in yourselves, or exploring an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "It’d be for us to live in. We’re only starting to look, so I’m trying to get a feel for the area and what the monthly costs might be like."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For ongoing costs, the stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund. The standard home is 900 sq. ft., but I don’t want to guess at the monthly total or the area and access details, so I’ll confirm those for you. Selected clubhouse facilities are pay-per-use rather than all being covered by the maintenance fee, which can help avoid a blanket charge for facilities you may not use."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified Pearl Residences location and access details, and the confirmed monthly maintenance amount for the standard 900 sq. ft. unit.",
+      "subject": "Pearl Residences area and monthly costs",
+      "customer_need": "Assess whether the location and recurring costs suit an own-stay purchase.",
+      "reason": "The available information provides the maintenance rate but not verified location/access details or a confirmed monthly total.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share verified area and monthly cost information, then relate it to the buyer's own-stay needs.",
+      "signature": "OTHER|900 access amount and area confirmed costs details ft location maintenance monthly pearl residences sq standard verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, saw your Pearl Residences ad. We’re renting at the moment and just starting to look around. Can share a bit more?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Sure — Pearl Residences Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. That gives you flexibility to use a room for work or guests as your needs change. Since you’re just starting to look, are you mainly considering a home to live in yourselves, or exploring an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Just starting to look around",
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Learn whether they are considering a home for their own stay or an investment, then tailor the relevant details.",
+          "last_progress": "Shared the Phase 1 unit layout.",
+          "next_action": "Clarify purchase purpose and connect the home's features to their needs.",
+          "conversation_summary": "Currently renting and just starting to explore; asked for more information about Pearl Residences."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2810,
+        "input_tokens_details": {
+          "cache_write_tokens": 2807,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1403,
+        "output_tokens_details": {
+          "reasoning_tokens": 1086
+        },
+        "total_tokens": 4213
+      }
+    },
+    {
+      "customer": "It’d be for us to live in. We’re only starting to look, so I’m trying to get a feel for the area and what the monthly costs might be like.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "For ongoing costs, the stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund. The standard home is 900 sq. ft., but I don’t want to guess at the monthly total or the area and access details, so I’ll confirm those for you. Selected clubhouse facilities are pay-per-use rather than all being covered by the maintenance fee, which can help avoid a blanket charge for facilities you may not use.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a home to live in; wants to understand the area and monthly costs.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Just starting to look around",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony",
+            "RM0.18 per sq. ft. maintenance fee inclusive of sinking fund",
+            "Selected clubhouse facilities are pay-per-use"
+          ],
+          "primary_motivations": [
+            "Own stay",
+            "Understand the area and monthly costs"
+          ],
+          "decision_factors": [
+            "Area and access",
+            "Monthly ownership costs"
+          ],
+          "active_concerns": [
+            "Monthly ownership costs and area/access details are not yet clear"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 900 sq. ft. three-bedroom home may be relevant for own stay; the buyer is still exploring and weighing area and monthly costs.",
+          "next_objective": "Provide verified location/access details and confirmed monthly cost information.",
+          "last_progress": "Buyer confirmed the property would be for own stay and asked about the area and monthly costs.",
+          "next_action": "Confirm verified area/access information and the current monthly maintenance amount.",
+          "conversation_summary": "Currently renting and just starting to explore. Interested in Pearl Residences for own stay and wants to understand the area and monthly costs."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified Pearl Residences location and access details, and the confirmed monthly maintenance amount for the standard 900 sq. ft. unit.",
+          "subject": "Pearl Residences area and monthly costs",
+          "customer_need": "Assess whether the location and recurring costs suit an own-stay purchase.",
+          "reason": "The available information provides the maintenance rate but not verified location/access details or a confirmed monthly total.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share verified area and monthly cost information, then relate it to the buyer's own-stay needs."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3076,
+        "input_tokens_details": {
+          "cache_write_tokens": 3073,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2154,
+        "output_tokens_details": {
+          "reasoning_tokens": 1460
+        },
+        "total_tokens": 5230
+      }
+    }
+  ],
+  "closed": false
+}

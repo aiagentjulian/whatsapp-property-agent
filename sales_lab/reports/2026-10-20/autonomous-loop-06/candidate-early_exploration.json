@@ -1,0 +1,162 @@
+{
+  "trial": "candidate",
+  "scenario": "early_exploration",
+  "source_sha256": "14212d1af7457979d140b3e29fbbdbaf7d9ae0d9004393bb20a999039d6ed3f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "sales_stage": "POSITION",
+    "next_objective": "Help assess location fit and clarify monthly ownership costs if the customer wants to explore further.",
+    "last_progress": "Customer is probably considering own stay, is browsing, and says location and monthly cost matter because they work nearby.",
+    "next_action": "Invite a viewing to assess the setting and layout; do not treat the invitation as an arranged appointment.",
+    "conversation_summary": "Customer saw a Pearl Residences ad and is browsing, probably for own stay. They work nearby and prioritise location and monthly cost.",
+    "purchase_reason": "Considering a home for own stay; works nearby.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "important_features": [
+      "Location relative to workplace",
+      "Monthly ownership cost"
+    ],
+    "primary_motivations": [
+      "Own stay"
+    ],
+    "decision_factors": [
+      "Location relative to workplace",
+      "Monthly cost"
+    ],
+    "fit_assessment": "Potential own-stay fit based on working nearby and prioritising location and monthly cost; exact commute suitability and full monthly ownership cost are not yet established."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad. Just checking what this project is about."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences is a residential development. The main Phase 1 home type is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony—giving you room to set up a guest room or home workspace if that suits your needs. The project also uses PPVC, a construction method designed to support more controlled production and quality checks. Are you looking at a home for your own stay or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Probably for my own stay, but I’m just looking around for now. I work nearby, so the location and monthly cost would matter."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense. Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland network. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund; that’s the maintenance component only, not the loan instalment or full monthly ownership cost. A visit could help you judge the setting and layout for yourself, alongside your usual route from work. If that would be useful, I can help arrange a viewing."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. Just checking what this project is about.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is a residential development. The main Phase 1 home type is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony—giving you room to set up a guest room or home workspace if that suits your needs. The project also uses PPVC, a construction method designed to support more controlled production and quality checks. Are you looking at a home for your own stay or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the customer is considering the property for own stay or investment.",
+          "last_progress": "Asked what Pearl Residences is about.",
+          "next_action": "Explain the most relevant benefits once the customer's intended use is known.",
+          "conversation_summary": "Customer saw a Pearl Residences ad and is checking what the project is about."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2675,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2672
+        },
+        "output_tokens": 914,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 3589
+      }
+    },
+    {
+      "customer": "Probably for my own stay, but I’m just looking around for now. I work nearby, so the location and monthly cost would matter.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense. Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland network. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund; that’s the maintenance component only, not the loan instalment or full monthly ownership cost. A visit could help you judge the setting and layout for yourself, alongside your usual route from work. If that would be useful, I can help arrange a viewing.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Considering a home for own stay; works nearby.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Location relative to workplace",
+            "Monthly ownership cost"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": [
+            "Location relative to workplace",
+            "Monthly cost"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay fit based on working nearby and prioritising location and monthly cost; exact commute suitability and full monthly ownership cost are not yet established.",
+          "next_objective": "Help assess location fit and clarify monthly ownership costs if the customer wants to explore further.",
+          "last_progress": "Customer is probably considering own stay, is browsing, and says location and monthly cost matter because they work nearby.",
+          "next_action": "Invite a viewing to assess the setting and layout; do not treat the invitation as an arranged appointment.",
+          "conversation_summary": "Customer saw a Pearl Residences ad and is browsing, probably for own stay. They work nearby and prioritise location and monthly cost."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3183,
+        "input_tokens_details": {
+          "cache_write_tokens": 3180,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2011,
+        "output_tokens_details": {
+          "reasoning_tokens": 1483
+        },
+        "total_tokens": 5194
+      }
+    }
+  ],
+  "closed": false
+}

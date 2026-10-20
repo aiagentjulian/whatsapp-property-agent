@@ -25,6 +25,7 @@ def tokenize(text):
     # match the singular terms used in Knowledge headings and facts.
     aliases = {
         "laid": "layout", "layouts": "layout", "rooms": "room",
+        "shops": "shop", "shopping": "shop",
         "bedrooms": "bedroom", "pools": "pool", "lengths": "length",
         "depths": "depth", "facilities": "facility", "children": "child",
         "costs": "cost",

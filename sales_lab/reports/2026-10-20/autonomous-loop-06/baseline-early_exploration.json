@@ -1,0 +1,157 @@
+{
+  "trial": "baseline",
+  "scenario": "early_exploration",
+  "source_sha256": "913f7d25692195594664d24656fe0018a8e40a1dc0054579e79cc08c3f22d0f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "intent_level": "LOW",
+    "sales_stage": "POSITION",
+    "next_objective": "Keep the conversation relevant to location and recurring costs; revisit a viewing when the customer is ready.",
+    "last_progress": "Customer said they are browsing, work nearby, and care about location and monthly costs; they are not ready to decide.",
+    "next_action": "Share relevant verified information if asked and leave viewing as a low-pressure next step.",
+    "conversation_summary": "Customer is mostly browsing, works nearby, and says location and monthly costs matter. Purchase purpose and specific budget are not known; customer is not ready to decide.",
+    "purchase_timeline": "Just looking for now; not ready to decide",
+    "appointment_readiness": "NOT_READY",
+    "important_features": [
+      "Location near workplace",
+      "Monthly ownership costs"
+    ],
+    "decision_factors": [
+      "Location",
+      "Monthly costs"
+    ],
+    "fit_assessment": "Potential fit given the customer's interest in location and monthly costs and their work nearby; exact workplace location and budget are not known."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad. Just checking what this project is about."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Hi! Pearl Residences is a residential project. Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. The project uses PPVC, with factory-produced, prefinished modules and quality checks; the project materials state a minimum QLASSIC assurance target of 85%. Are you exploring a home to live in or mainly considering it as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Mostly just looking for now. I work nearby, so location and the monthly costs would matter to me. I’m not ready to decide anything yet."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense. Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth. For recurring costs, the stated maintenance rate is RM0.18 per sq. ft., inclusive of sinking fund; selected clubhouse facilities are pay-per-use, so that rate isn’t a full monthly ownership-cost estimate. When it feels useful, a relaxed viewing could help you judge the location and home for yourself—there’s no need to decide anything now."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. Just checking what this project is about.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Hi! Pearl Residences is a residential project. Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. The project uses PPVC, with factory-produced, prefinished modules and quality checks; the project materials state a minimum QLASSIC assurance target of 85%. Are you exploring a home to live in or mainly considering it as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the customer is exploring for own stay or investment.",
+          "last_progress": "Asked what Pearl Residences is about.",
+          "next_action": "Learn the customer's purchase purpose and tailor the next details accordingly.",
+          "conversation_summary": "Customer saw the Pearl Residences ad and is checking what the project is about. Purchase purpose is not yet known."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2675,
+        "input_tokens_details": {
+          "cache_write_tokens": 2672,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1329,
+        "output_tokens_details": {
+          "reasoning_tokens": 932
+        },
+        "total_tokens": 4004
+      }
+    },
+    {
+      "customer": "Mostly just looking for now. I work nearby, so location and the monthly costs would matter to me. I’m not ready to decide anything yet.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense. Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth. For recurring costs, the stated maintenance rate is RM0.18 per sq. ft., inclusive of sinking fund; selected clubhouse facilities are pay-per-use, so that rate isn’t a full monthly ownership-cost estimate. When it feels useful, a relaxed viewing could help you judge the location and home for yourself—there’s no need to decide anything now.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Just looking for now; not ready to decide",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Location near workplace",
+            "Monthly ownership costs"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Location",
+            "Monthly costs"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potential fit given the customer's interest in location and monthly costs and their work nearby; exact workplace location and budget are not known.",
+          "next_objective": "Keep the conversation relevant to location and recurring costs; revisit a viewing when the customer is ready.",
+          "last_progress": "Customer said they are browsing, work nearby, and care about location and monthly costs; they are not ready to decide.",
+          "next_action": "Share relevant verified information if asked and leave viewing as a low-pressure next step.",
+          "conversation_summary": "Customer is mostly browsing, works nearby, and says location and monthly costs matter. Purchase purpose and specific budget are not known; customer is not ready to decide."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3196,
+        "input_tokens_details": {
+          "cache_write_tokens": 3193,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1884,
+        "output_tokens_details": {
+          "reasoning_tokens": 1465
+        },
+        "total_tokens": 5080
+      }
+    }
+  ],
+  "closed": false
+}

@@ -1,0 +1,177 @@
+{
+  "trial": "candidate",
+  "scenario": "own_stay",
+  "source_sha256": "14212d1af7457979d140b3e29fbbdbaf7d9ae0d9004393bb20a999039d6ed3f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "appointment_readiness": "NOT_READY",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "3 bedrooms",
+      "2 bathrooms",
+      "balcony"
+    ],
+    "primary_motivations": [
+      "Own stay",
+      "Buy a home instead of renting"
+    ],
+    "next_objective": "Understand what is making them uncertain about buying.",
+    "last_progress": "Shared that they are currently renting with their partner and are considering buying; the balcony appealed to them.",
+    "next_action": "Address the main concern once identified and continue to recommend a viewing if useful.",
+    "conversation_summary": "Own-stay prospect currently renting with their partner. They like the balcony but are unsure whether buying is the right move.",
+    "purchase_reason": "Currently renting and considering buying a home for themselves and their partner.",
+    "size_or_layout_preference": "3 bedrooms, 2 bathrooms and a balcony",
+    "intent_level": "MEDIUM",
+    "decision_factors": [
+      "Whether buying is the right move"
+    ],
+    "active_concerns": [
+      "Unsure whether buying is the right move; specific concern not yet identified"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The 3-bedroom, 2-bathroom home with a balcony may suit the buyer and their partner, but they are still weighing whether to buy."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw your Pearl Residences ad. We’re looking for a place to stay ourselves. Can share a bit more?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure! The Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. For your own stay, the three bedrooms give you flexibility—perhaps a room for family or guests, or a separate space for work, depending on your needs. Is it mainly for you as a couple, or will family be living with you too?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Just me and my partner for now. We’re renting at the moment and thinking about buying our own place. The balcony sounds nice, but we’re still working out if buying is the right move."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a fair thing to weigh when you’re renting. Since the balcony stood out, I’d suggest seeing the home in person so you can judge whether the layout and balcony feel right for the two of you—viewing doesn’t commit you to buy. What’s weighing on you most: the monthly affordability, or whether you’re ready to own rather than rent?"
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw your Pearl Residences ad. We’re looking for a place to stay ourselves. Can share a bit more?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "POSITIVE",
+        "reply": "Sure! The Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. For your own stay, the three bedrooms give you flexibility—perhaps a room for family or guests, or a separate space for work, depending on your needs. Is it mainly for you as a couple, or will family be living with you too?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "balcony"
+          ],
+          "primary_motivations": [
+            "Own stay"
+          ],
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand who will live in the home and how they would use the bedrooms.",
+          "last_progress": "Buyer is looking for a home to live in themselves.",
+          "next_action": "Relate the home’s layout to their household needs.",
+          "conversation_summary": "Enquired after seeing the Pearl Residences ad and said they are looking for a place to stay themselves."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2545,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2542
+        },
+        "output_tokens": 1133,
+        "output_tokens_details": {
+          "reasoning_tokens": 714
+        },
+        "total_tokens": 3678
+      }
+    },
+    {
+      "customer": "Just me and my partner for now. We’re renting at the moment and thinking about buying our own place. The balcony sounds nice, but we’re still working out if buying is the right move.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "That’s a fair thing to weigh when you’re renting. Since the balcony stood out, I’d suggest seeing the home in person so you can judge whether the layout and balcony feel right for the two of you—viewing doesn’t commit you to buy. What’s weighing on you most: the monthly affordability, or whether you’re ready to own rather than rent?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Currently renting and considering buying a home for themselves and their partner.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "3 bedrooms, 2 bathrooms and a balcony",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "balcony"
+          ],
+          "primary_motivations": [
+            "Own stay",
+            "Buy a home instead of renting"
+          ],
+          "decision_factors": [
+            "Whether buying is the right move"
+          ],
+          "active_concerns": [
+            "Unsure whether buying is the right move; specific concern not yet identified"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom, 2-bathroom home with a balcony may suit the buyer and their partner, but they are still weighing whether to buy.",
+          "next_objective": "Understand what is making them uncertain about buying.",
+          "last_progress": "Shared that they are currently renting with their partner and are considering buying; the balcony appealed to them.",
+          "next_action": "Address the main concern once identified and continue to recommend a viewing if useful.",
+          "conversation_summary": "Own-stay prospect currently renting with their partner. They like the balcony but are unsure whether buying is the right move."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2848,
+        "input_tokens_details": {
+          "cache_write_tokens": 2845,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1772,
+        "output_tokens_details": {
+          "reasoning_tokens": 1275
+        },
+        "total_tokens": 4620
+      }
+    }
+  ],
+  "closed": false
+}

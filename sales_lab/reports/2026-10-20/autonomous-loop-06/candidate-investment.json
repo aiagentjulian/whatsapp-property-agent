@@ -1,0 +1,159 @@
+{
+  "trial": "candidate",
+  "scenario": "investment",
+  "source_sha256": "14212d1af7457979d140b3e29fbbdbaf7d9ae0d9004393bb20a999039d6ed3f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "purchase_reason": "Comparing renting and buying",
+    "appointment_readiness": "NOT_READY",
+    "sales_stage": "HANDLE",
+    "decision_factors": [
+      "Monthly affordability",
+      "Longer-term benefits of owning"
+    ],
+    "next_objective": "Help the buyer compare ownership costs with renting using verified, relevant figures.",
+    "last_progress": "Buyer identified monthly affordability as the main comparison and said they are still exploring.",
+    "next_action": "Continue the affordability comparison if the buyer wants specific unit or financing figures.",
+    "conversation_summary": "Enquired after seeing an ad and is comparing renting with buying, mainly on monthly affordability. Has not established a comfortable budget and is just comparing for now.",
+    "purchase_timeline": "Just comparing for now; no purchase timeframe stated",
+    "active_concerns": [
+      "Monthly affordability",
+      "Has not established a comfortable budget"
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across your property ad. I’m comparing renting and buying at the moment."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a sensible comparison. Pearl Residences’ Type A is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony—worth considering if having your own space and flexibility matters to you. Are you mainly comparing monthly affordability, or the longer-term benefits of owning?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Mostly the monthly affordability. I haven’t worked out what I’d be comfortable with yet, so I’m just comparing for now."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s fair—you don’t need to have a budget figured out yet. One concrete monthly cost to compare: Type A is 900 sq. ft., so maintenance at RM0.18 psf works out to about RM162/month, inclusive of sinking fund. Selected clubhouse facilities are pay-per-use, rather than being charged as the same fixed clubhouse cost regardless of use. It’s just one part of the picture; loan repayments and other costs depend on the unit and financing, but this gives you a useful starting point against rent."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I came across your property ad. I’m comparing renting and buying at the moment.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That’s a sensible comparison. Pearl Residences’ Type A is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony—worth considering if having your own space and flexibility matters to you. Are you mainly comparing monthly affordability, or the longer-term benefits of owning?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Comparing renting and buying",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly affordability",
+            "Longer-term benefits of owning"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand what matters most in the rent-versus-buy comparison.",
+          "last_progress": "Shared that they are comparing renting and buying.",
+          "next_action": "Explore whether monthly affordability or ownership benefits are their main consideration.",
+          "conversation_summary": "Enquired after seeing an ad and is comparing renting with buying."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2701,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 2698
+        },
+        "output_tokens": 1125,
+        "output_tokens_details": {
+          "reasoning_tokens": 731
+        },
+        "total_tokens": 3826
+      }
+    },
+    {
+      "customer": "Mostly the monthly affordability. I haven’t worked out what I’d be comfortable with yet, so I’m just comparing for now.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "That’s fair—you don’t need to have a budget figured out yet. One concrete monthly cost to compare: Type A is 900 sq. ft., so maintenance at RM0.18 psf works out to about RM162/month, inclusive of sinking fund. Selected clubhouse facilities are pay-per-use, rather than being charged as the same fixed clubhouse cost regardless of use. It’s just one part of the picture; loan repayments and other costs depend on the unit and financing, but this gives you a useful starting point against rent.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Comparing renting and buying",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Just comparing for now; no purchase timeframe stated",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly affordability",
+            "Longer-term benefits of owning"
+          ],
+          "active_concerns": [
+            "Monthly affordability",
+            "Has not established a comfortable budget"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Help the buyer compare ownership costs with renting using verified, relevant figures.",
+          "last_progress": "Buyer identified monthly affordability as the main comparison and said they are still exploring.",
+          "next_action": "Continue the affordability comparison if the buyer wants specific unit or financing figures.",
+          "conversation_summary": "Enquired after seeing an ad and is comparing renting with buying, mainly on monthly affordability. Has not established a comfortable budget and is just comparing for now."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2987,
+        "input_tokens_details": {
+          "cache_write_tokens": 2984,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1938,
+        "output_tokens_details": {
+          "reasoning_tokens": 1449
+        },
+        "total_tokens": 4925
+      }
+    }
+  ],
+  "closed": false
+}

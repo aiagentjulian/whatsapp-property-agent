@@ -1,0 +1,176 @@
+{
+  "trial": "baseline",
+  "scenario": "genuine_interest",
+  "source_sha256": "913f7d25692195594664d24656fe0018a8e40a1dc0054579e79cc08c3f22d0f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Buying a first home",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "QUALIFY",
+    "important_features": [],
+    "primary_motivations": [],
+    "decision_factors": [
+      "Access to shops and everyday amenities"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit based on the 3-bedroom, 2-bathroom, 900 sq. ft. layout; affordability and personal priorities are not yet known.",
+    "next_objective": "Provide verified nearby shops and distances relevant to their own-stay comparison.",
+    "last_progress": "Confirmed they are buying for themselves and are comparing several places.",
+    "next_action": "Check verified nearby shops and everyday amenities around Pearl Residences.",
+    "conversation_summary": "Young couple is considering a first home for own stay and comparing properties. They asked about nearby shops and everyday conveniences; verified location details are not available in the current information."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hello, I’m interested in the project from your ad. Is it suitable for a young couple buying our first home?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "It could be a good fit to consider. The Phase 1 home is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. For a young couple, the extra bedrooms can give you flexibility for a work-from-home space, guests or changing needs later on. A viewing would help you see whether the layout feels right for both of you. Are you planning to live there yourselves?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, for ourselves. We’re still comparing a few places, though. What’s the area around the project like for getting to shops and things?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a sensible thing to compare for a first home. I don’t have verified details on nearby shops or distances in front of me, so I don’t want to guess. I’ll check the nearby everyday amenities for you."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified nearby shops and everyday amenities, including locations and distances from Pearl Residences.",
+      "subject": "Pearl Residences surrounding area",
+      "customer_need": "Assess everyday convenience while comparing homes for own stay.",
+      "reason": "The available project information does not verify nearby shops or distances.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share verified nearby amenity information and relate it to their own-stay comparison.",
+      "signature": "OTHER|amenities and area distances everyday from including locations nearby pearl residences shops surrounding verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hello, I’m interested in the project from your ad. Is it suitable for a young couple buying our first home?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "It could be a good fit to consider. The Phase 1 home is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. For a young couple, the extra bedrooms can give you flexibility for a work-from-home space, guests or changing needs later on. A viewing would help you see whether the layout feels right for both of you. Are you planning to live there yourselves?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": "Buying a first home",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [],
+          "primary_motivations": [],
+          "decision_factors": [],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit based on the 3-bedroom, 2-bathroom, 900 sq. ft. layout; affordability and personal priorities are not yet known.",
+          "next_objective": "Clarify whether they plan to live there themselves and what matters most in a first home.",
+          "last_progress": "Asked whether the home suits a young couple buying their first home.",
+          "next_action": "Respond to their intended use and, if relevant, encourage a viewing so they can assess the layout.",
+          "conversation_summary": "Prospect is interested in the project ad and asks whether it may suit a young couple buying their first home."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2830,
+        "input_tokens_details": {
+          "cache_write_tokens": 2827,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1721,
+        "output_tokens_details": {
+          "reasoning_tokens": 1273
+        },
+        "total_tokens": 4551
+      }
+    },
+    {
+      "customer": "Yes, for ourselves. We’re still comparing a few places, though. What’s the area around the project like for getting to shops and things?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "That’s a sensible thing to compare for a first home. I don’t have verified details on nearby shops or distances in front of me, so I don’t want to guess. I’ll check the nearby everyday amenities for you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Access to shops and everyday amenities"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Provide verified nearby shops and distances relevant to their own-stay comparison.",
+          "last_progress": "Confirmed they are buying for themselves and are comparing several places.",
+          "next_action": "Check verified nearby shops and everyday amenities around Pearl Residences.",
+          "conversation_summary": "Young couple is considering a first home for own stay and comparing properties. They asked about nearby shops and everyday conveniences; verified location details are not available in the current information."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified nearby shops and everyday amenities, including locations and distances from Pearl Residences.",
+          "subject": "Pearl Residences surrounding area",
+          "customer_need": "Assess everyday convenience while comparing homes for own stay.",
+          "reason": "The available project information does not verify nearby shops or distances.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified nearby amenity information and relate it to their own-stay comparison."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2997,
+        "input_tokens_details": {
+          "cache_write_tokens": 2994,
+          "cached_tokens": 0
+        },
+        "output_tokens": 940,
+        "output_tokens_details": {
+          "reasoning_tokens": 547
+        },
+        "total_tokens": 3937
+      }
+    }
+  ],
+  "closed": false
+}

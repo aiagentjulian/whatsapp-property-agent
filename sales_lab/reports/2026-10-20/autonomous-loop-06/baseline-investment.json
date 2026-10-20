@@ -1,0 +1,152 @@
+{
+  "trial": "baseline",
+  "scenario": "investment",
+  "source_sha256": "913f7d25692195594664d24656fe0018a8e40a1dc0054579e79cc08c3f22d0f6",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "purchase_reason": "Comparing renting and buying; would probably buy for own stay if the monthly cost makes sense.",
+    "sales_stage": "HANDLE",
+    "next_objective": "Understand the buyer's comfortable monthly housing spend.",
+    "last_progress": "Buyer would probably consider buying for own stay but is still comparing renting and buying.",
+    "next_action": "Ask about a comfortable monthly housing spend, then respond to the affordability comparison.",
+    "conversation_summary": "Buyer is exploring renting versus buying and would probably buy for own stay if the monthly cost makes sense.",
+    "appointment_readiness": "NOT_READY",
+    "decision_factors": [
+      "Monthly cost compared with renting"
+    ],
+    "active_concerns": [
+      "Whether the monthly cost of buying is affordable"
+    ],
+    "fit_assessment": "Potential own-stay interest; affordability comparison is not yet established."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across your property ad. I’m comparing renting and buying at the moment."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a sensible comparison. Pearl’s Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony; the extra room could be useful for work or guests, depending on what you need. Would you be considering buying mainly for your own stay, or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Probably for myself if I buy, but I’m only comparing for now. I’d need to see whether the monthly cost makes sense."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the monthly outlay is the key comparison. Pearl’s stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund; the mortgage would be separate and depends on your financing terms, so I wouldn’t want to guess the full monthly cost. What monthly housing spend would feel comfortable for you?"
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I came across your property ad. I’m comparing renting and buying at the moment.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That’s a sensible comparison. Pearl’s Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony; the extra room could be useful for work or guests, depending on what you need. Would you be considering buying mainly for your own stay, or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Comparing renting and buying",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether a potential purchase is for own stay or investment",
+          "last_progress": "Buyer is comparing renting and buying",
+          "next_action": "Ask whether they are considering buying for own stay or investment",
+          "conversation_summary": "Buyer enquired after seeing a property ad and is comparing renting with buying."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2701,
+        "input_tokens_details": {
+          "cache_write_tokens": 2698,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1064,
+        "output_tokens_details": {
+          "reasoning_tokens": 760
+        },
+        "total_tokens": 3765
+      }
+    },
+    {
+      "customer": "Probably for myself if I buy, but I’m only comparing for now. I’d need to see whether the monthly cost makes sense.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "That makes sense—the monthly outlay is the key comparison. Pearl’s stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund; the mortgage would be separate and depends on your financing terms, so I wouldn’t want to guess the full monthly cost. What monthly housing spend would feel comfortable for you?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Comparing renting and buying; would probably buy for own stay if the monthly cost makes sense.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly cost compared with renting"
+          ],
+          "active_concerns": [
+            "Whether the monthly cost of buying is affordable"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay interest; affordability comparison is not yet established.",
+          "next_objective": "Understand the buyer's comfortable monthly housing spend.",
+          "last_progress": "Buyer would probably consider buying for own stay but is still comparing renting and buying.",
+          "next_action": "Ask about a comfortable monthly housing spend, then respond to the affordability comparison.",
+          "conversation_summary": "Buyer is exploring renting versus buying and would probably buy for own stay if the monthly cost makes sense."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2943,
+        "input_tokens_details": {
+          "cache_write_tokens": 2940,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1525,
+        "output_tokens_details": {
+          "reasoning_tokens": 1084
+        },
+        "total_tokens": 4468
+      }
+    }
+  ],
+  "closed": false
+}

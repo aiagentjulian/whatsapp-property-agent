@@ -25,3 +25,10 @@ class SalesEvidenceTests(unittest.TestCase):
         for fact in ('RM0.18', 'Q4 2029', 'Freehold'):
             self.assertIn(fact, text)
         self.assertNotIn('Project name: SkyWorld', text)
+
+    def test_everyday_shops_wording_retrieves_location_sales_angle(self):
+        q = 'What is the area like for getting to shops and things?'
+        evidence = focused_sales_context(q, {}, [])
+        location = next((p for p in evidence['optional_sales_angles'] if 'Location' in p['angle']), None)
+        self.assertIsNotNone(location)
+        self.assertIn('Sunway Carnival Mall', location['verified_evidence'])

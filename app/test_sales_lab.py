@@ -18,7 +18,7 @@ class SalesLabTests(unittest.TestCase):
         main(self.args)
         state = json.loads((self.root / 'dry-own_stay.json').read_text())
         context = state['dry_run_context']
-        self.assertIn('Guided selling judgment', context['brain_and_skills'])
+        self.assertIn('help an ordinary WhatsApp prospect genuinely want to arrange a property viewing', context['brain_and_skills'])
         self.assertEqual(context['recent_conversation'][0]['body'], 'Own stay from your ad')
         snapshot = context['sales_lab_test_context']
         self.assertEqual(snapshot['source_date'], '2026-08-14')

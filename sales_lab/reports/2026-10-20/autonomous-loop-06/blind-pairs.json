@@ -1,0 +1,200 @@
+{
+  "instructions": "Paired transcripts use only the shared first two customer turns for the primary comparison. Labels P/Q are independently randomized for each pair. Evaluate without inferring code/version; do not assume customer-turn language differences are causal.",
+  "pairs": [
+    {
+      "pair_id": "pair_01",
+      "P": [
+        {
+          "customer": "Hi, saw your Pearl Residences ad. We’re looking for a place to stay ourselves. Can share a bit more?",
+          "agent_reply": "Sure 🙂 For own stay, the main Phase 1 home is 900 sq ft with 3 bedrooms, 2 bathrooms and a balcony. That gives you separate bedrooms and a bit of outdoor space. What would make the biggest difference for you day to day—space for family, a work-from-home setup, or something else?",
+          "action": "REPLY",
+          "sales_move": "EXPLORE",
+          "buyer_signal": "POSITIVE",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Actually, it’s for me and my partner, no kids. We’re renting now and thinking about getting our own place. The balcony sounds nice, but I’m still figuring out whether buying makes sense for us.",
+          "agent_reply": "That’s fair—moving from renting to owning is a big decision. For the two of you, the extra bedroom could work as a home office or guest room, and the balcony gives you some outdoor space. A viewing with your partner could help you judge whether the layout feels right in person. What are you weighing most: whether the monthly cost works, or whether you’re ready to own rather than rent?",
+          "action": "REPLY",
+          "sales_move": "HANDLE",
+          "buyer_signal": "OBJECTION",
+          "handoff_reason": null
+        }
+      ],
+      "Q": [
+        {
+          "customer": "Hi, saw your Pearl Residences ad. We’re looking for a place to stay ourselves. Can share a bit more?",
+          "agent_reply": "Sure! The Phase 1 homes are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. For your own stay, the three bedrooms give you flexibility—perhaps a room for family or guests, or a separate space for work, depending on your needs. Is it mainly for you as a couple, or will family be living with you too?",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "POSITIVE",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Just me and my partner for now. We’re renting at the moment and thinking about buying our own place. The balcony sounds nice, but we’re still working out if buying is the right move.",
+          "agent_reply": "That’s a fair thing to weigh when you’re renting. Since the balcony stood out, I’d suggest seeing the home in person so you can judge whether the layout and balcony feel right for the two of you—viewing doesn’t commit you to buy. What’s weighing on you most: the monthly affordability, or whether you’re ready to own rather than rent?",
+          "action": "REPLY",
+          "sales_move": "HANDLE",
+          "buyer_signal": "OBJECTION",
+          "handoff_reason": null
+        }
+      ]
+    },
+    {
+      "pair_id": "pair_02",
+      "P": [
+        {
+          "customer": "Hello, I’m interested in the project from your ad. Is it suitable for a young couple buying our first home?",
+          "agent_reply": "It could be a good one to consider. The Phase 1 homes are 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony, giving you room to keep a bedroom for yourselves and use the other rooms as your needs evolve. I’d recommend viewing together so you can see whether the layout feels right for your first home.",
+          "action": "REPLY",
+          "sales_move": "VIEWING",
+          "buyer_signal": "QUESTION",
+          "handoff_reason": null
+        },
+        {
+          "customer": "That makes sense, especially having the space for later. We’re still comparing places though. Is it convenient for shops and daily errands around there?",
+          "agent_reply": "Yes—Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the wider Butterworth/mainland network. That gives you established destinations to consider for shopping and everyday errands, rather than relying entirely on future township development. I wouldn’t guess exact walking or driving times, but when you visit you can judge the routes against your usual routine as well as see how the layout feels for you both.",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "QUESTION",
+          "handoff_reason": null
+        }
+      ],
+      "Q": [
+        {
+          "customer": "Hello, I’m interested in the project from your ad. Is it suitable for a young couple buying our first home?",
+          "agent_reply": "It could be a good fit to consider. The Phase 1 home is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. For a young couple, the extra bedrooms can give you flexibility for a work-from-home space, guests or changing needs later on. A viewing would help you see whether the layout feels right for both of you. Are you planning to live there yourselves?",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "QUESTION",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Yes, for ourselves. We’re still comparing a few places, though. What’s the area around the project like for getting to shops and things?",
+          "agent_reply": "That’s a sensible thing to compare for a first home. I don’t have verified details on nearby shops or distances in front of me, so I don’t want to guess. I’ll check the nearby everyday amenities for you.",
+          "action": "SUPPORT_REQUEST",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "handoff_reason": null
+        }
+      ]
+    },
+    {
+      "pair_id": "pair_03",
+      "P": [
+        {
+          "customer": "Hi, I saw the Pearl Residences ad. Just checking what this project is about.",
+          "agent_reply": "Pearl Residences is a residential development. The main Phase 1 home type is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony—giving you room to set up a guest room or home workspace if that suits your needs. The project also uses PPVC, a construction method designed to support more controlled production and quality checks. Are you looking at a home for your own stay or as an investment?",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Probably for my own stay, but I’m just looking around for now. I work nearby, so the location and monthly cost would matter.",
+          "agent_reply": "That makes sense. Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland network. The stated maintenance is RM0.18 per sq. ft., inclusive of sinking fund; that’s the maintenance component only, not the loan instalment or full monthly ownership cost. A visit could help you judge the setting and layout for yourself, alongside your usual route from work. If that would be useful, I can help arrange a viewing.",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        }
+      ],
+      "Q": [
+        {
+          "customer": "Hi, I saw the Pearl Residences ad. Just checking what this project is about.",
+          "agent_reply": "Hi! Pearl Residences is a residential project. Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony. The project uses PPVC, with factory-produced, prefinished modules and quality checks; the project materials state a minimum QLASSIC assurance target of 85%. Are you exploring a home to live in or mainly considering it as an investment?",
+          "action": "REPLY",
+          "sales_move": "ANSWER",
+          "buyer_signal": "QUESTION",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Mostly just looking for now. I work nearby, so location and the monthly costs would matter to me. I’m not ready to decide anything yet.",
+          "agent_reply": "That makes sense. Pearl Residences is in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth. For recurring costs, the stated maintenance rate is RM0.18 per sq. ft., inclusive of sinking fund; selected clubhouse facilities are pay-per-use, so that rate isn’t a full monthly ownership-cost estimate. When it feels useful, a relaxed viewing could help you judge the location and home for yourself—there’s no need to decide anything now.",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        }
+      ]
+    },
+    {
+      "pair_id": "pair_04",
+      "P": [
+        {
+          "customer": "Hi, saw your ad. We may need a bit more space for the family, but still not sure yet.",
+          "agent_reply": "I understand—needing more room for the family is a good reason to explore, even if you’re not sure yet. This home has 3 bedrooms and 2 bathrooms across 900 sq. ft., which could give everyone more room to spread out. Is the main need an extra bedroom, or more breathing room in the shared areas?",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Mostly just more breathing room. Our rental feels a bit cramped, but we’re still thinking it through.",
+          "agent_reply": "That makes sense—if the shared areas feel cramped, the 900 sq. ft. layout’s open-plan living, dining and kitchen, with no long internal corridor, may make the space feel more usable for family time. A viewing would let you judge the scale against your rental for yourselves. If a look would help, I can have our team arrange one; no pressure while you’re weighing up the move.",
+          "action": "REPLY",
+          "sales_move": "VIEWING",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        }
+      ],
+      "Q": [
+        {
+          "customer": "Hi, saw your ad. We may need a bit more space for the family, but still not sure yet.",
+          "agent_reply": "Understand—no need to decide yet. Pearl’s Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony, so you can compare the three-bedroom layout with what your family needs. Is this mainly for your family to live in?",
+          "action": "REPLY",
+          "sales_move": "POSITION",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Yes, it would be for us to live in. We’re renting now and it’s starting to feel a bit cramped, but we’re still figuring out whether buying is manageable.",
+          "agent_reply": "That’s understandable—a three-bedroom layout could help with the cramped feeling, but buying only makes sense if the costs are manageable too. Is your bigger concern the monthly instalment or the upfront costs?",
+          "action": "REPLY",
+          "sales_move": "HANDLE",
+          "buyer_signal": "OBJECTION",
+          "handoff_reason": null
+        }
+      ]
+    },
+    {
+      "pair_id": "pair_05",
+      "P": [
+        {
+          "customer": "Hi, I came across your property ad. I’m comparing renting and buying at the moment.",
+          "agent_reply": "That’s a sensible comparison. Pearl’s Phase 1 homes are 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony; the extra room could be useful for work or guests, depending on what you need. Would you be considering buying mainly for your own stay, or as an investment?",
+          "action": "REPLY",
+          "sales_move": "EXPLORE",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Probably for myself if I buy, but I’m only comparing for now. I’d need to see whether the monthly cost makes sense.",
+          "agent_reply": "That makes sense—the monthly outlay is the key comparison. Pearl’s stated maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund; the mortgage would be separate and depends on your financing terms, so I wouldn’t want to guess the full monthly cost. What monthly housing spend would feel comfortable for you?",
+          "action": "REPLY",
+          "sales_move": "HANDLE",
+          "buyer_signal": "OBJECTION",
+          "handoff_reason": null
+        }
+      ],
+      "Q": [
+        {
+          "customer": "Hi, I came across your property ad. I’m comparing renting and buying at the moment.",
+          "agent_reply": "That’s a sensible comparison. Pearl Residences’ Type A is 900 sq. ft. with 3 bedrooms, 2 bathrooms and a balcony—worth considering if having your own space and flexibility matters to you. Are you mainly comparing monthly affordability, or the longer-term benefits of owning?",
+          "action": "REPLY",
+          "sales_move": "EXPLORE",
+          "buyer_signal": "NEUTRAL",
+          "handoff_reason": null
+        },
+        {
+          "customer": "Mostly the monthly affordability. I haven’t worked out what I’d be comfortable with yet, so I’m just comparing for now.",
+          "agent_reply": "That’s fair—you don’t need to have a budget figured out yet. One concrete monthly cost to compare: Type A is 900 sq. ft., so maintenance at RM0.18 psf works out to about RM162/month, inclusive of sinking fund. Selected clubhouse facilities are pay-per-use, rather than being charged as the same fixed clubhouse cost regardless of use. It’s just one part of the picture; loan repayments and other costs depend on the unit and financing, but this gives you a useful starting point against rent.",
+          "action": "REPLY",
+          "sales_move": "HANDLE",
+          "buyer_signal": "OBJECTION",
+          "handoff_reason": null
+        }
+      ]
+    }
+  ]
+}

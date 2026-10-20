@@ -1,0 +1,68 @@
+{
+  "experiment": "Sales Lab Loop 06",
+  "date": "2026-10-20",
+  "branch": "codex/sales-lab-v1",
+  "starting_commit": "3516c929ffdcbd66f87fd5a1576c612a361f8c73",
+  "run_dir": "sales_lab/reports/2026-10-20/autonomous-loop-06",
+  "agent": {
+    "entrypoint": "app.agent.SalesAgent via app.sales_lab",
+    "model": "gpt-6-luna",
+    "reasoning": "high",
+    "transport": "live OpenAI API"
+  },
+  "multi_agent": {
+    "customer": "Codex native subagent; no provider API",
+    "judge": "Codex native independent subagent; blind P/Q; no provider API",
+    "requested_profiles": "GPT-6 Luna low for Customer; GPT-6 Luna medium for Judge. Runtime effective model/effort was not independently exposed."
+  },
+  "sample": {
+    "primary_scenarios": 5,
+    "normal_interest": 2,
+    "normal_hesitation": 3,
+    "fresh_holdout": 1,
+    "primary_turns_compared_per_pair": 2
+  },
+  "api": {
+    "limit": 24,
+    "completed_calls": 24,
+    "errors": 0,
+    "baseline": 11,
+    "candidate": 11,
+    "holdout": 2,
+    "input_tokens": 70037,
+    "output_tokens": 36401,
+    "total_tokens": 106438,
+    "usd_cost": "not exposed by runtime"
+  },
+  "result": {
+    "baseline_legacy_score_10": 7.146,
+    "candidate_legacy_score_10": 7.214,
+    "delta_10": 0.068,
+    "delta_100": 0.68,
+    "candidate_holdout_score_10": 6.33,
+    "candidate_agreement_to_arrange": 0,
+    "candidate_formal_handoff": 0,
+    "recommendation": "NEEDS REVIEW"
+  },
+  "diagnosis": "A common lexical normalization path recognized shop/shopping but not shops. In the genuine-interest scene, the baseline treated a general amenities question as an unsupported fact request although verified general connectivity was present. Broader SYSTEM_PROMPT/Sales Brain overlap was inspected but was not isolated as causal in this bounded run.",
+  "change": {
+    "files": [
+      "app/knowledge.py",
+      "app/test_sales_lab_retrieval.py"
+    ],
+    "summary": "Normalize shops and shopping to shop; add focused retrieval-context regression test for everyday shops wording."
+  },
+  "validation": {
+    "baseline_fake_transport_dry_run": "PASS via python3 -m app.sales_lab / real OpenAIProvider transport seam",
+    "candidate_fake_transport_dry_run": "PASS via python3 -m app.sales_lab / real OpenAIProvider transport seam",
+    "focused_tests": "5 passed",
+    "full_tests": "PASS: python3 -m unittest discover -s . -t . (42 tests)",
+    "diff_check": "PASS: git diff --check"
+  },
+  "limitations": [
+    "Only one candidate revision; no remaining API budget for further candidates.",
+    "One paired scenario materially favored baseline; no arrangement agreement or handoff occurred.",
+    "Holdout exposed an unresolved 'area' phrasing retrieval/support-routing miss.",
+    "One scenario used mathematically derived RM162/month maintenance with explicit caveat; project facts guidance leaves calculation-policy scope worth reviewing."
+  ]
+}
