@@ -41,20 +41,29 @@ def fingerprint():
 
 
 def pricing_test_context():
+    """Source-grounded promotion premise for normal sales conversations, lab only."""
     snapshot = json.loads(SALES_LAB_CONTEXT_PATH.read_text(encoding='utf-8'))
     base = snapshot['entry_reference']['base_price_myr']
     rebate = snapshot['entry_reference']['rebate_rate']
     snapshot['entry_reference']['indicative_net_on_base_myr'] = round(base * (1 - rebate))
+    # No dynamic 'today' claim: the exercise takes place on the source date.
+    # Keep commercial qualifications accessible without turning a routine
+    # promotional opener into a repeated unit-pricing investigation.
     snapshot['sales_agent_guidance'] = (
-        'For a general price enquiry, answer directly with the dated indicative starting reference below; '
-        'do not request block, floor, facing or unit selection first. Identify it as a calculation from the '
-        '14 August 2026 package snapshot, not a currently verified offer or unit-level all-in quote. '
-        'State that separately applicable parking/accessory components and exact current unit/package require confirmation. '
-        'Do not raise a general-price SUPPORT_REQUEST when this reference answers the question. A specific unit-level '
-        'question may still need verification. This context is Sales Lab only and must never be treated as live production pricing.'
+        'Sales Lab scenario date is 14 August 2026, using the source-supported '
+        'promotion applicable to the stated unit category ON THAT DATE only. '
+        'For a simple how-much question, lead with approximately RM302k after '
+        'rebate as a category-specific base reference, with at most one concise '
+        'qualification that it is not an all-in selected-unit quote. '
+        'Do not initiate verification or repeat disclaimers when the buyer '
+        'accepts this broad bracket; move to discovering needs, showing personal '
+        'value and recommending a viewing when useful. Only a new, explicit '
+        'request for exact total price, specific eligibility or financing '
+        'needs another check. This is not proof of a current October promotion '
+        'and must not be used as production pricing. '
+        'Never invent inventory scarcity or promotion expiry.'
     )
     return snapshot
-
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
