@@ -54,4 +54,4 @@ Independent Judge 对 5 个基线场景盲于版本来源评分，四项加权�
 
 ## Git
 
-已验证的 Sales Lab 基础设施和实验结果将提交并推送到 `codex/sales-lab-v1`。不会提交 Sales Brain 候选修改或 Customer 私有画像。
+已验证的 Sales Lab 基础设施和实验结果已提交并推送到 `codex/sales-lab-v1`，主实现提交为 `82cb936`。没有提交 Sales Brain 候选修改或 Customer 私有画像。
