@@ -1,0 +1,174 @@
+{
+  "trial": "candidate2",
+  "scenario": "early_exploration",
+  "source_sha256": "0330656d778867077e3cf50600d6fe3a7d8b01f68592509d2e0781f799bc6e0a",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_location": "Seberang Jaya (comparing options)",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "fit_assessment": "Comparing options around Seberang Jaya; undecided between own stay and rental, and seeking clarity on current package eligibility and parking costs.",
+    "next_objective": "Confirm the current package eligibility and parking breakdown.",
+    "last_progress": "Clarified the unit category and dated package basis behind the RM301,760 reference.",
+    "next_action": "Verify current package validity, qualifying units and parking costs.",
+    "conversation_summary": "Browsing Pearl Residences while comparing options around Seberang Jaya; undecided between own stay and rental. Asked which units qualify for the dated price reference, whether the package remains current, and what parking adds.",
+    "active_concerns": [
+      "Which units qualify for the dated price reference",
+      "Whether the package is still current",
+      "Parking cost"
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I’ve been browsing Pearl Residences while comparing options around Seberang Jaya. Could you give me a general idea of the pricing and what kind of buyer it tends to suit?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "A dated price reference is about RM301,760: that’s the RM328,000 base less the 8% rebate shown for qualifying units in the 14 August 2026 package snapshot. That package may no longer be current, and this isn’t a confirmed unit-level or all-in price; parking and any upgrades or other components can affect the total, so the latest unit and package would need confirmation.\n\nPearl Residences’ Phase 1 units are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. It may be worth considering if you’re looking for a three-bedroom home in that size, for own stay or to assess as an investment; the right fit depends on what matters to you. Are you mainly comparing for own stay or investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That gives me a useful starting point, though I’m still not sure which units qualify for that figure or what parking adds. I’m undecided between own stay and rental, so I’m just comparing at this stage. Could you clarify the unit basis and whether the current package still applies?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Just to clarify the basis: the RM328,000 base was for Block 1B podium-blocked units on Levels 1–4. The dated package snapshot listed an 8% rebate for podium-blocked units on Levels 1–9 with one or two car parks. So RM301,760 was a calculation using that snapshot, not a confirmed price for every unit or an all-in figure including parking. I can’t confirm from that snapshot whether the package is still current or what parking adds, so I’ll get the latest package and parking breakdown checked before giving you a current figure."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "PRICING",
+      "requested_fact": "Current package validity and qualifying unit categories, plus the applicable parking cost or add-on for the relevant unit configuration.",
+      "subject": "Current Pearl Residences pricing, package eligibility and parking",
+      "customer_need": "The buyer is comparing options and needs to understand whether the cited price reference applies to a current qualifying unit and what parking would add.",
+      "reason": "The available commercial snapshot is dated and does not confirm current package validity, unit-level eligibility or parking charges.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Provide the confirmed current package and parking breakdown, distinguishing any base price from the all-in amount.",
+      "signature": "PRICING|add and applicable categories configuration cost current eligibility on or package parking pearl plus price qualifying relevant residences validity",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I’ve been browsing Pearl Residences while comparing options around Seberang Jaya. Could you give me a general idea of the pricing and what kind of buyer it tends to suit?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "A dated price reference is about RM301,760: that’s the RM328,000 base less the 8% rebate shown for qualifying units in the 14 August 2026 package snapshot. That package may no longer be current, and this isn’t a confirmed unit-level or all-in price; parking and any upgrades or other components can affect the total, so the latest unit and package would need confirmation.\n\nPearl Residences’ Phase 1 units are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. It may be worth considering if you’re looking for a three-bedroom home in that size, for own stay or to assess as an investment; the right fit depends on what matters to you. Are you mainly comparing for own stay or investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (comparing options)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Comparing options around Seberang Jaya; purpose and specific fit criteria not yet known.",
+          "next_objective": "Understand whether the comparison is mainly for own stay or investment.",
+          "last_progress": "Asked for a general price indication and the type of buyer the home may suit.",
+          "next_action": "Clarify purchase purpose after answering the general enquiry.",
+          "conversation_summary": "Browsing Pearl Residences while comparing options around Seberang Jaya; asked about general pricing and buyer fit."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4131,
+        "input_tokens_details": {
+          "cache_write_tokens": 4128,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1896,
+        "output_tokens_details": {
+          "reasoning_tokens": 1462
+        },
+        "total_tokens": 6027
+      }
+    },
+    {
+      "customer": "That gives me a useful starting point, though I’m still not sure which units qualify for that figure or what parking adds. I’m undecided between own stay and rental, so I’m just comparing at this stage. Could you clarify the unit basis and whether the current package still applies?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "Just to clarify the basis: the RM328,000 base was for Block 1B podium-blocked units on Levels 1–4. The dated package snapshot listed an 8% rebate for podium-blocked units on Levels 1–9 with one or two car parks. So RM301,760 was a calculation using that snapshot, not a confirmed price for every unit or an all-in figure including parking. I can’t confirm from that snapshot whether the package is still current or what parking adds, so I’ll get the latest package and parking breakdown checked before giving you a current figure.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya (comparing options)",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Which units qualify for the dated price reference",
+            "Whether the package is still current",
+            "Parking cost"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Comparing options around Seberang Jaya; undecided between own stay and rental, and seeking clarity on current package eligibility and parking costs.",
+          "next_objective": "Confirm the current package eligibility and parking breakdown.",
+          "last_progress": "Clarified the unit category and dated package basis behind the RM301,760 reference.",
+          "next_action": "Verify current package validity, qualifying units and parking costs.",
+          "conversation_summary": "Browsing Pearl Residences while comparing options around Seberang Jaya; undecided between own stay and rental. Asked which units qualify for the dated price reference, whether the package remains current, and what parking adds."
+        },
+        "support_request": {
+          "support_type": "PRICING",
+          "requested_fact": "Current package validity and qualifying unit categories, plus the applicable parking cost or add-on for the relevant unit configuration.",
+          "subject": "Current Pearl Residences pricing, package eligibility and parking",
+          "customer_need": "The buyer is comparing options and needs to understand whether the cited price reference applies to a current qualifying unit and what parking would add.",
+          "reason": "The available commercial snapshot is dated and does not confirm current package validity, unit-level eligibility or parking charges.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Provide the confirmed current package and parking breakdown, distinguishing any base price from the all-in amount."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3854,
+        "input_tokens_details": {
+          "cache_write_tokens": 3851,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1592,
+        "output_tokens_details": {
+          "reasoning_tokens": 919
+        },
+        "total_tokens": 5446
+      }
+    }
+  ],
+  "closed": false
+}

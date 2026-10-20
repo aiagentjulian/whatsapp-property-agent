@@ -195,3 +195,18 @@ I can’t confirm a current all-in price from the dated schedule I have. Type A�
 
 Viewing interest: none recorded. Appointment readiness: not set.
 Support request: PRICING — Current Type A 900 sq ft price with a standard car park, including the current package and the exact components included or applicable.
+# Autonomous continuation — iteration 2 (reverted)
+
+## Candidate 2 — Early exploration / general pricing
+
+**Customer:** Hi, I’ve been browsing Pearl Residences while comparing options around Seberang Jaya. Could you give me a general idea of the pricing and what kind of buyer it tends to suit?
+
+**Sales Agent:** A dated price reference is about RM301,760: that’s the RM328,000 base less the 8% rebate shown for qualifying units in the 14 August 2026 package snapshot. That package may no longer be current, and this isn’t a confirmed unit-level or all-in price; parking and any upgrades or other components can affect the total, so the latest unit and package would need confirmation.
+
+Pearl Residences’ Phase 1 units are 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. It may be worth considering if you’re looking for a three-bedroom home in that size, for own stay or to assess as an investment; the right fit depends on what matters to you. Are you mainly comparing for own stay or investment?
+
+**Customer:** That gives me a useful starting point, though I’m still not sure which units qualify for that figure or what parking adds. I’m undecided between own stay and rental, so I’m just comparing at this stage. Could you clarify the unit basis and whether the current package still applies?
+
+**Sales Agent:** Just to clarify the basis: the RM328,000 base was for Block 1B podium-blocked units on Levels 1–4. The dated package snapshot listed an 8% rebate for podium-blocked units on Levels 1–9 with one or two car parks. So RM301,760 was a calculation using that snapshot, not a confirmed price for every unit or an all-in figure including parking. I can’t confirm from that snapshot whether the package is still current or what parking adds, so I’ll get the latest package and parking breakdown checked before giving you a current figure.
+
+**Outcome:** Accurate clarification and appropriately scoped pricing support request. No viewing invitation was appropriate for this exploratory exchange. Independent blind score: candidate 6.62/10; stable baseline 6.87/10. The retrieval change was reverted.

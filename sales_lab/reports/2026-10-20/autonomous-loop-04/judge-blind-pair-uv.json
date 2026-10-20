@@ -1,0 +1,89 @@
+{
+  "report_type": "independent_blind_paired_sales_judgment",
+  "scenario": "early exploration / general pricing and buyer fit",
+  "labels": "U and V are reported as supplied; no version order inferred.",
+  "rubric": {
+    "legacy_weights": {
+      "discovery": 0.2,
+      "product_connection_buying_desire": 0.35,
+      "sales_progression_appointment_opportunity": 0.35,
+      "naturalness": 0.1
+    },
+    "score_scale": "Each dimension 0–10; weighted score is a 0–10 weighted average.",
+    "strict_calibration": "Feature recital alone is not buyer visualization or desire. Require a buyer-relevant practical benefit, concrete use imagery, or customer evidence of increased preference. Invitations alone do not constitute progression."
+  },
+  "scores": {
+    "U": {
+      "discovery": 7.2,
+      "product_connection_buying_desire": 5.9,
+      "sales_progression_appointment_opportunity": 6.8,
+      "naturalness": 7.3,
+      "weighted_total": 6.62,
+      "buyer_visualization_and_desire_creation": 3.8,
+      "persuasive_sales_guidance": 6.9,
+      "conversation_realism": 7.4
+    },
+    "V": {
+      "discovery": 7.4,
+      "product_connection_buying_desire": 6.2,
+      "sales_progression_appointment_opportunity": 7.0,
+      "naturalness": 7.7,
+      "weighted_total": 6.87,
+      "buyer_visualization_and_desire_creation": 4.3,
+      "persuasive_sales_guidance": 7.2,
+      "conversation_realism": 7.6
+    }
+  },
+  "evidence": {
+    "U": {
+      "turn_1": {
+        "agent": "Opens with RM301,760 from RM328,000 less the dated 8% rebate, explicitly limits it to qualifying units and says it is not current or all-in; gives Type A facts and asks own stay vs investment.",
+        "customer": "Says the figure is useful but asks which units qualify, what parking adds, and whether the current package applies.",
+        "assessment": "The figure is caveated but its unit basis is not identified up front, so the customer has to ask. The purpose question is relevant and the customer clarifies they are undecided; product fit remains generic."
+      },
+      "turn_2": {
+        "agent": "Identifies Block 1B podium-blocked L1–4 as the RM328k base; says the 8% dated snapshot category covers podium-blocked L1–9 with one or two parks; clarifies the $301,760 is not every unit or an all-in price; requests verification of latest package/parking breakdown.",
+        "customer": "No further customer turn; the buyer has asked for current applicability and parking costs.",
+        "assessment": "Good correction and accurate boundary-setting; the specific pricing support request directly follows the customer's question."
+      },
+      "viewing": {
+        "invitation": "None.",
+        "customer_interest": "No viewing interest; only early-stage price/fit inquiry.",
+        "appointment_agreement": "None.",
+        "formal_handoff": "None; pending pricing support request is not a formal handoff."
+      },
+      "facts": "The arithmetic and rebate bands are correct, with the stated base now mapped to the documented category. Parking cost and package validity are appropriately left unconfirmed. No fact error, though the first-turn basis was under-specified."
+    },
+    "V": {
+      "turn_1": {
+        "agent": "Identifies the exact Block 1B podium-blocked L1–4 RM328k base, calculates $301,760 under the dated 8% snapshot, says not current/all-in, lists required confirmation factors, gives standard Type A facts and asks own-stay vs investment.",
+        "customer": "Says they are undecided between own use and rental; the dated figure is useful, and they are just comparing.",
+        "assessment": "More informative scope for the example at the outset; the customer accepts it as a starting point. The fit link to a three-bedroom buyer is true but generic."
+      },
+      "turn_2": {
+        "agent": "Provides RM162/month maintenance inclusive of sinking fund, distinguishes other costs and rental return, then asks whether keeping monthly ownership costs manageable or testing rental numbers matters more.",
+        "customer": "Undecided on purpose and still comparing.",
+        "assessment": "Adds a verified recurring-cost input and a useful prioritization question without suggesting returns or pressing for a visit."
+      },
+      "viewing": {
+        "invitation": "None.",
+        "customer_interest": "No viewing interest; low-commitment comparison only.",
+        "appointment_agreement": "None.",
+        "formal_handoff": "None."
+      },
+      "facts": "Price basis and $301,760 arithmetic are correct and category-specific; package is dated, not confirmed current or all-in. Maintenance $0.18 × 900 = $162 is correct. No return claim is made."
+    }
+  },
+  "paired_assessment": {
+    "actual_commercial_value": "V has a modest dialogue-quality advantage: it names the exact category behind the discounted example from the outset, adds the known maintenance figure, and uses it to clarify the buyer’s comparison priority. U corrects its initially broad price reference when asked and makes a useful explicit request to verify current package and parking. Neither dialogue materially increases buying motivation or advances to a visit; both appropriately stay exploratory.",
+    "customer_reaction_caution": "The customer turns differ. U's customer asks for price applicability and current-package clarification, while V's accepts the dated figure as useful and continues exploring. This shows different observed reactions, not proof that one agent response caused a stronger reaction. U handles its customer's explicit follow-up well; V's clearer initial category framing is observable independently of the reply.",
+    "viewing_opportunity": "No agent viewing invitation, customer viewing interest, appointment agreement, or formal handoff occurs in either dialogue. This is appropriate: the customer is browsing and undecided, with current package/parking not confirmed. No missed viewing opportunity or mechanical invitation.",
+    "support_requests": "U's pricing support request is appropriate after the customer specifically asks whether the current package applies and what parking adds. V does not raise support after a general exploration exchange; it gives known cost context and asks a relevant comparison question. Neither shows an inappropriate support request for a general price query.",
+    "materiality": "V is somewhat more useful as a standalone exploratory exchange, but the advantage is modest rather than a material change in buyer motivation. The main gap in both is that buyer-fit and desire remain generic; neither creates a concrete own-stay or rental scenario."
+  },
+  "overall": {
+    "facts": "No serious factual regression. The dated $301,760 reference is correct only for the stated $328,000 Block 1B podium-blocked L1–4 base under the 8% snapshot; neither version represents it as current or all-in. Parking and package remain unverified. V's maintenance calculation is correct.",
+    "naturalness": "Both are readable and measured. U’s first price statement is less precise than its second-turn clarification; V is more complete in turn 1 and its turn-2 maintenance/priority question is proportionate.",
+    "limitations": "Customer replies differ, so do not attribute their different reactions solely to the agent. Scores reflect observed full conversations and do not reward a viewing invitation, which neither agent makes."
+  }
+}

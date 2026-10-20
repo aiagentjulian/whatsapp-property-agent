@@ -55,3 +55,13 @@ Independent Judge 对 5 个基线场景盲于版本来源评分，四项加权�
 ## Git
 
 已验证的 Sales Lab 基础设施和实验结果已提交并推送到 `codex/sales-lab-v1`，主实现提交为 `82cb936`。没有提交 Sales Brain 候选修改或 Customer 私有画像。
+
+## 自主续跑：修复尝试 2
+
+按后续执行要求，在同一 24 次预算内继续测试了另一项方向：宽泛价格咨询只检索 base/package 概要；只有停车位、总价、包含项目等具体问题才加载组件明细。Sales Brain 没有改动。本次真实 SalesAgent 在相同早期探索开场下跑了两轮，Customer 与 Judge 使用 Codex Subagents。
+
+盲评将候选标为 U、稳定基线标为 V：候选 **6.62/10**，基线 **6.87/10**。基线首轮准确说明 RM328,000 对应 Block 1B Podium Blocked Levels 1–4，再给出日期限定的 RM301,760 计算，并用已验证的 RM162 月维护费帮助客户比较。候选首轮没有说出该金额所依据的单位类别；客户追问后，Agent 正确澄清类别及 rebate 适用范围，并为现行套餐/停车费用建立了合适的价格核实请求。该请求不是正式人工 Handoff。两段对话都没有 Viewing Invitation、Viewing Interest、Appointment Agreement 或 Formal Handoff；客户仍在早期比较，盲评认为不邀约是正确判断。客户第二轮反应不同，不能据此推断单一回复造成了兴趣差异。
+
+候选没有创造更多购买动机，也没有改善销售推进；稳定基线在完整对话质量上略好。因此已撤回 `app/knowledge.py` 与对应测试的候选修改，并在原始稳定代码上重新运行 27 项本地测试，全部通过。逐轮候选记录见 [`candidate2-early_exploration.json`](candidate2-early_exploration.json)，独立评分见 [`judge-blind-pair-uv.json`](judge-blind-pair-uv.json)。第二次修复尝试未通过，没有提交销售行为或检索变更。
+
+续跑后累计真实 SalesAgent **20 / 24 次**，**88,470 input + 42,167 output = 130,637 tokens**；API 未提供美元费用。保持原稳定版本的总体基线 **7.17/10**，没有证据证明候选达到要求的 5 分提升，最终建议仍为 **REVERT 候选，保留稳定版本**。剩余 4 次预算未消耗：当前证据没有显示一个不同、具体且有依据的改动方向能在这有限样本中提高销售判断；继续盲目改提示只会增大过拟合风险。

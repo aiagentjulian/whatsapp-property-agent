@@ -37,15 +37,25 @@
       "status": "reverted",
       "result": "Blind judge found no material superiority: the baseline had a slight own-stay edge; investment was inconclusive due to candidate's earlier valid support pause. Candidate turn dialogue and usage retained for audit.",
       "holdout_used": false
+    },
+    {
+      "iteration": 2,
+      "diagnosis": "Generic price retrieval included detailed pricing components when a broad starting-price question did not need them, but narrowing the context also led the actual Agent to state RM301,760 before naming the exact base category. The subsequent clarification was accurate and the support request followed a specific user question.",
+      "hypothesis": "Reduce parking/component detail on broad price questions while preserving enough signal to keep the response concise.",
+      "change": "Candidate 2 narrowed retrieved pricing sections for broad price enquiries and retained detailed components for all-in, parking, inclusion, and component questions. The Sales Brain was unchanged.",
+      "retest_scenarios": ["early_exploration"],
+      "status": "reverted",
+      "result": "Independent blind evaluation scored candidate U 6.62/10 and stable baseline V 6.87/10. The baseline named the price category upfront and gave the verified RM162 monthly maintenance figure; candidate corrected category scope after the customer asked. Neither missed a viewing opportunity; the customer was undecided and exploratory. No material buying-desire or progression improvement. Retrieval change reverted.",
+      "holdout_used": false
     }
   ],
   "final_recommendation": "REVERT candidate 1 and retain the pre-existing validated Sales Brain. Keep the isolated Sales Lab price snapshot and harness changes.",
   "api_usage": {
-    "calls": 18,
+    "calls": 20,
     "limit": 24,
-    "input_tokens": 80485,
-    "output_tokens": 38679,
-    "total_tokens": 119164,
+    "input_tokens": 88470,
+    "output_tokens": 42167,
+    "total_tokens": 130637,
     "reported_usd_cost": null
   },
   "validation": {
