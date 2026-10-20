@@ -1,0 +1,272 @@
+{
+  "trial": "real-family",
+  "scenario": "couple_home_office",
+  "source_sha256": "705e049336e365a48a42fa441a870fe2117f72128c6c9b798443a520a8ad5df9",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for more room for the family",
+    "size_or_layout_preference": "Wants to assess dining-table fit in the living area for family use with the kids; partner wants to see the layout before arranging a viewing",
+    "appointment_readiness": "NOT_READY",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "Open-plan living, dining and kitchen",
+      "Layout without a long internal corridor",
+      "Dining-table fit for family use"
+    ],
+    "primary_motivations": [
+      "More room for the family"
+    ],
+    "decision_factors": [
+      "Comfort for everyday family use",
+      "Ability to picture a dining table fitting in the living area"
+    ],
+    "active_concerns": [
+      "Needs to review the floor plan with their partner before deciding about a viewing",
+      "Dining-table fit in the living area"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "The open-plan layout may suit the expressed need for family living; the buyer and partner want to assess dining-table fit against the approved floor plan before arranging a viewing.",
+    "next_objective": "Share the approved Type A floor plan if confirmed as available, then help the buyer assess fit and consider a viewing.",
+    "last_progress": "Buyer says the open layout sounds useful, but their partner wants to see the layout before they arrange a viewing.",
+    "next_action": "Follow up with the approved Type A floor plan when its shareability is confirmed; do not press for a viewing before they review it.",
+    "conversation_summary": "Buyer is looking for more room for the family and wants to assess everyday comfort and dining-table fit with the kids. The approved floor plan sharing check is still pending. Buyer will discuss the layout with their partner before deciding about a viewing.",
+    "intent_level": "MEDIUM",
+    "viewing_interest": "May consider arranging a viewing after reviewing the layout with their partner"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the listing. We’re looking for a bit more room for the family. Is the living area comfortable for everyday family use?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The living, dining and kitchen are arranged open-plan, so your family can share one connected everyday space. The 900 sq. ft. layout also avoids a long internal corridor, helping make more of the space usable, and there’s an entrance foyer before the living area for a little privacy. A viewing would let you judge how the layout feels for your family."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds promising, but I’m trying to picture it with the kids and a dining table. Do you have a floor plan you can share?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I’ll check for the approved floor plan and share it if available. That should help you picture how a dining table could fit in the living area with the kids; I don’t want to guess at furniture fit without seeing the plan."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks for checking instead of guessing. The open layout sounds useful with the kids, but my partner would prefer to see the layout first before we arrange a viewing. I’ll check with them and get back to you."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Of course—it makes sense to look at the plan together first. I don’t want to guess about dining-table fit; once the approved Type A plan is confirmed as shareable, I’ll send it over so you and your partner can see whether the open living and dining space works for family meals before deciding about a visit."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "Whether the approved Type A floor plan can be shared",
+      "subject": "Pearl Residences Type A, 900 sq. ft. floor plan",
+      "customer_need": "Picture the living and dining arrangement for family use with the kids and assess dining-table fit",
+      "reason": "The available layout details do not confirm exact furniture fit; the approved plan is needed to answer accurately.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share the approved plan if available and help the buyer assess whether the layout suits their family, then recommend a viewing if useful.",
+      "signature": "LAYOUT|900 approved be floor ft pearl plan residences shared sq type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw the listing. We’re looking for a bit more room for the family. Is the living area comfortable for everyday family use?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "The living, dining and kitchen are arranged open-plan, so your family can share one connected everyday space. The 900 sq. ft. layout also avoids a long internal corridor, helping make more of the space usable, and there’s an entrance foyer before the living area for a little privacy. A viewing would let you judge how the layout feels for your family.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for more room for the family",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Wants more room for family living; asked about everyday comfort of the living area",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Open-plan living, dining and kitchen",
+            "Layout without a long internal corridor"
+          ],
+          "primary_motivations": [
+            "More room for the family"
+          ],
+          "decision_factors": [
+            "Comfort for everyday family use"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The open-plan layout may suit the expressed need for family living; the buyer should assess the feel and fit in person.",
+          "next_objective": "Help the buyer assess whether the layout suits their family and encourage a viewing if useful.",
+          "last_progress": "Asked whether the living area is comfortable for everyday family use.",
+          "next_action": "Invite the buyer to view and assess the layout; do not treat the invitation as agreement.",
+          "conversation_summary": "Buyer is looking for more room for the family and asked about living-area comfort. Shared verified open-plan layout details and suggested a viewing to assess the fit."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3235,
+        "input_tokens_details": {
+          "cache_write_tokens": 3232,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1064,
+        "output_tokens_details": {
+          "reasoning_tokens": 665
+        },
+        "total_tokens": 4299
+      }
+    },
+    {
+      "customer": "That sounds promising, but I’m trying to picture it with the kids and a dining table. Do you have a floor plan you can share?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I’ll check for the approved floor plan and share it if available. That should help you picture how a dining table could fit in the living area with the kids; I don’t want to guess at furniture fit without seeing the plan.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Wants to assess dining-table fit in the living area for family use with the kids",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Open-plan living, dining and kitchen",
+            "Layout without a long internal corridor",
+            "Dining-table fit for family use"
+          ],
+          "primary_motivations": [
+            "More room for the family"
+          ],
+          "decision_factors": [
+            "Comfort for everyday family use",
+            "Ability to picture a dining table fitting in the living area"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The open-plan layout may suit the expressed need for family living; the buyer wants to assess dining-table fit against the floor plan.",
+          "next_objective": "Provide the approved floor plan if available, then help the buyer judge the layout and consider a viewing.",
+          "last_progress": "Buyer said the layout sounds promising and asked for a floor plan to picture it with the kids and a dining table.",
+          "next_action": "Check whether the approved Type A floor plan can be shared.",
+          "conversation_summary": "Buyer is looking for more room for the family and wants to assess everyday comfort and dining-table fit with the kids. They asked for a floor plan; availability of a shareable approved plan needs checking."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "Whether the approved Type A floor plan can be shared",
+          "subject": "Pearl Residences Type A, 900 sq. ft. floor plan",
+          "customer_need": "Picture the living and dining arrangement for family use with the kids and assess dining-table fit",
+          "reason": "The available layout details do not confirm exact furniture fit; the approved plan is needed to answer accurately.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share the approved plan if available and help the buyer assess whether the layout suits their family, then recommend a viewing if useful."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3506,
+        "input_tokens_details": {
+          "cache_write_tokens": 3503,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1256,
+        "output_tokens_details": {
+          "reasoning_tokens": 737
+        },
+        "total_tokens": 4762
+      }
+    },
+    {
+      "customer": "Thanks for checking instead of guessing. The open layout sounds useful with the kids, but my partner would prefer to see the layout first before we arrange a viewing. I’ll check with them and get back to you.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "GIVE_SPACE",
+        "buyer_signal": "POSITIVE",
+        "reply": "Of course—it makes sense to look at the plan together first. I don’t want to guess about dining-table fit; once the approved Type A plan is confirmed as shareable, I’ll send it over so you and your partner can see whether the open living and dining space works for family meals before deciding about a visit.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for more room for the family",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Wants to assess dining-table fit in the living area for family use with the kids; partner wants to see the layout before arranging a viewing",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "May consider arranging a viewing after reviewing the layout with their partner",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Open-plan living, dining and kitchen",
+            "Layout without a long internal corridor",
+            "Dining-table fit for family use"
+          ],
+          "primary_motivations": [
+            "More room for the family"
+          ],
+          "decision_factors": [
+            "Comfort for everyday family use",
+            "Ability to picture a dining table fitting in the living area"
+          ],
+          "active_concerns": [
+            "Needs to review the floor plan with their partner before deciding about a viewing",
+            "Dining-table fit in the living area"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "The open-plan layout may suit the expressed need for family living; the buyer and partner want to assess dining-table fit against the approved floor plan before arranging a viewing.",
+          "next_objective": "Share the approved Type A floor plan if confirmed as available, then help the buyer assess fit and consider a viewing.",
+          "last_progress": "Buyer says the open layout sounds useful, but their partner wants to see the layout before they arrange a viewing.",
+          "next_action": "Follow up with the approved Type A floor plan when its shareability is confirmed; do not press for a viewing before they review it.",
+          "conversation_summary": "Buyer is looking for more room for the family and wants to assess everyday comfort and dining-table fit with the kids. The approved floor plan sharing check is still pending. Buyer will discuss the layout with their partner before deciding about a viewing."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3861,
+        "input_tokens_details": {
+          "cache_write_tokens": 3858,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1464,
+        "output_tokens_details": {
+          "reasoning_tokens": 954
+        },
+        "total_tokens": 5325
+      }
+    }
+  ],
+  "closed": false
+}

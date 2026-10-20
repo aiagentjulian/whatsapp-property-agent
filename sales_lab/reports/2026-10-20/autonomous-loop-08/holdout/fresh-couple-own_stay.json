@@ -1,0 +1,235 @@
+{
+  "trial": "fresh-couple",
+  "scenario": "own_stay",
+  "source_sha256": "853cf3b1a8a09274dd6bf77f2dbc90ac7cc9fc064966eb95fcc848e1326bcab2",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "decision_factors": [
+      "Location",
+      "Budget",
+      "Monthly loan payment"
+    ],
+    "fit_assessment": "Potential own-stay fit; Seberang Jaya could work and the starting price is within the exploratory range, but loan affordability is still being assessed with their partner.",
+    "next_objective": "Let the buyer and partner assess financing; if the figures work, encourage a joint viewing.",
+    "last_progress": "Buyer confirmed the loan payment is the main monthly cost and plans to check figures with their partner.",
+    "next_action": "Await the buyer's financing assessment; if workable, offer to arrange a viewing with their partner.",
+    "conversation_summary": "Considering Pearl Residences for own stay and comparing locations and budgets. Seberang Jaya could work, and the starting reference is within their exploratory range. They are checking loan figures with their partner before judging affordability; maintenance is estimated at RM162 monthly for the 900 sq ft Type A.",
+    "preferred_location": "Seberang Jaya could work",
+    "budget_range": "RM302k starting reference is within the range being explored; affordability not yet established",
+    "important_features": [
+      "RM0.18 per sq ft monthly maintenance, inclusive of sinking fund"
+    ],
+    "active_concerns": [
+      "Needs to assess loan instalment affordability with partner before judging overall monthly cost"
+    ],
+    "financing_context": "Loan payment is the main monthly cost to assess; checking the numbers with partner.",
+    "appointment_readiness": "NOT_READY",
+    "primary_motivations": [],
+    "resolved_concerns": []
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I came across Pearl Residences. We’re considering a place for our own stay, but still comparing locations and budget. What area is it in, and roughly where do prices start?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences is in Seberang Jaya on Penang Mainland, with connectivity toward Sunway Carnival Mall and Chai Leng Park. The starting reference is about RM302k after the 8% rebate for an eligible podium-block category, based on the 14 Aug 2026 package; it’s a base-price reference, not a guaranteed all-in quote for a selected unit. For own stay, the standard Type A offers 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that gives us a useful starting point. Seberang Jaya could work for us, and that price is in the range we’re exploring, though we’d need to understand the monthly costs before judging affordability. Is there an estimated maintenance fee?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The maintenance fee is RM0.18 per sq ft per month, inclusive of the sinking fund. For the 900 sq ft Type A, that works out to about RM162 a month—a useful baseline for your own-stay budget before factoring in financing. Selected clubhouse facilities are pay-per-use."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s helpful, thanks. We’re comparing a few places, and the loan payment will be the main monthly cost for us. I’ll check the numbers with my partner and get back to you if it looks workable."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the loan instalment is the key figure to check. The estimated RM162 maintenance fee gives you one part of the monthly cost, but not the full financing picture. If the numbers work for you both, I’d recommend viewing together so you can see whether the home feels right for your own stay before comparing further. There’s no need to decide on the spot."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I came across Pearl Residences. We’re considering a place for our own stay, but still comparing locations and budget. What area is it in, and roughly where do prices start?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in Seberang Jaya on Penang Mainland, with connectivity toward Sunway Carnival Mall and Chai Leng Park. The starting reference is about RM302k after the 8% rebate for an eligible podium-block category, based on the 14 Aug 2026 package; it’s a base-price reference, not a guaranteed all-in quote for a selected unit. For own stay, the standard Type A offers 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Location",
+            "Budget"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay fit; still comparing locations and budget.",
+          "next_objective": "Understand which locations and budget range they are comparing.",
+          "last_progress": "Shared the Seberang Jaya location and an indicative starting-price reference.",
+          "next_action": "Explore their location and budget priorities if they continue the conversation.",
+          "conversation_summary": "Considering a home for own stay and comparing locations and budget; asked about the area and approximate starting price."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3103,
+        "input_tokens_details": {
+          "cache_write_tokens": 3100,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1620,
+        "output_tokens_details": {
+          "reasoning_tokens": 1175
+        },
+        "total_tokens": 4723
+      }
+    },
+    {
+      "customer": "Thanks, that gives us a useful starting point. Seberang Jaya could work for us, and that price is in the range we’re exploring, though we’d need to understand the monthly costs before judging affordability. Is there an estimated maintenance fee?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "The maintenance fee is RM0.18 per sq ft per month, inclusive of the sinking fund. For the 900 sq ft Type A, that works out to about RM162 a month—a useful baseline for your own-stay budget before factoring in financing. Selected clubhouse facilities are pay-per-use.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya could work",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": "RM302k starting reference is within the range being explored; affordability not yet established",
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "RM0.18 per sq ft monthly maintenance, inclusive of sinking fund"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Location",
+            "Budget"
+          ],
+          "active_concerns": [
+            "Needs to understand monthly costs before judging affordability"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Potential own-stay fit; Seberang Jaya and the starting price range could work, but monthly affordability is still being assessed.",
+          "next_objective": "Help assess the full monthly commitment if the buyer wants to explore it.",
+          "last_progress": "Answered the estimated maintenance fee; about RM162 monthly for the 900 sq ft Type A.",
+          "next_action": "Continue on monthly affordability if the buyer raises it.",
+          "conversation_summary": "Considering a home for own stay and comparing location and budget. Seberang Jaya could work and the starting price is within their exploratory range; they are checking monthly costs before judging affordability."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4172,
+        "input_tokens_details": {
+          "cache_write_tokens": 4169,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1884,
+        "output_tokens_details": {
+          "reasoning_tokens": 1393
+        },
+        "total_tokens": 6056
+      }
+    },
+    {
+      "customer": "That’s helpful, thanks. We’re comparing a few places, and the loan payment will be the main monthly cost for us. I’ll check the numbers with my partner and get back to you if it looks workable.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "NEUTRAL",
+        "reply": "That makes sense—the loan instalment is the key figure to check. The estimated RM162 maintenance fee gives you one part of the monthly cost, but not the full financing picture. If the numbers work for you both, I’d recommend viewing together so you can see whether the home feels right for your own stay before comparing further. There’s no need to decide on the spot.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya could work",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": "RM302k starting reference is within the range being explored; affordability not yet established",
+          "financing_context": "Loan payment is the main monthly cost to assess; checking the numbers with partner.",
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "RM0.18 per sq ft monthly maintenance, inclusive of sinking fund"
+          ],
+          "primary_motivations": [],
+          "decision_factors": [
+            "Location",
+            "Budget",
+            "Monthly loan payment"
+          ],
+          "active_concerns": [
+            "Needs to assess loan instalment affordability with partner before judging overall monthly cost"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential own-stay fit; Seberang Jaya could work and the starting price is within the exploratory range, but loan affordability is still being assessed with their partner.",
+          "next_objective": "Let the buyer and partner assess financing; if the figures work, encourage a joint viewing.",
+          "last_progress": "Buyer confirmed the loan payment is the main monthly cost and plans to check figures with their partner.",
+          "next_action": "Await the buyer's financing assessment; if workable, offer to arrange a viewing with their partner.",
+          "conversation_summary": "Considering Pearl Residences for own stay and comparing locations and budgets. Seberang Jaya could work, and the starting reference is within their exploratory range. They are checking loan figures with their partner before judging affordability; maintenance is estimated at RM162 monthly for the 900 sq ft Type A."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3418,
+        "input_tokens_details": {
+          "cache_write_tokens": 3415,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1513,
+        "output_tokens_details": {
+          "reasoning_tokens": 936
+        },
+        "total_tokens": 4931
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer plans to review affordability with partner and recontact only if the financing is workable."
+}

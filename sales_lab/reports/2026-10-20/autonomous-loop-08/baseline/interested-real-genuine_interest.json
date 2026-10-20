@@ -1,0 +1,251 @@
+{
+  "trial": "interested-real",
+  "scenario": "genuine_interest",
+  "source_sha256": "e4bef3e4822a1c8a874f9ad6ddf578ee871b573daa6721059a1a323617075688",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "sales_stage": "UNDERSTAND",
+    "next_objective": "Share a verified brochure or map if available, then help the buyer assess commute suitability.",
+    "last_progress": "Buyer is checking whether Seberang Jaya suits their daily commute and asked for a project brochure or map.",
+    "next_action": "Check whether a verified, shareable project brochure or map is available.",
+    "conversation_summary": "Buyer is considering Pearl Residences for own stay, assessing the commute to Seberang Jaya, and requested a brochure or map.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "decision_factors": [
+      "Commute suitability"
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw Pearl Residences advertised. We’re looking for a place to stay ourselves—could you share roughly where it is and the starting price?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For an eligible category, the starting reference is about RM302k after rebate. That’s based on the base price, not an all-in unit quote. I’ll confirm the exact location for you too."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that gives us a rough idea. Could you share the area or nearest landmark once you’ve confirmed it? We’re trying to work out the commute."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The area is Seberang Jaya. Project materials reference connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth, which may help you orient your commute. I don’t yet have a verified exact address or travel times, so I don’t want to guess."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That helps, thanks. Seberang Jaya might work for us; we’ll check it against our daily commute. Do you have a project brochure or map we can look at?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I can confirm it’s in Mukim 1, Seberang Jaya, 13700. I don’t have a verified brochure or map link to share right now, so I’ll check whether there’s a shareable one. That should help you compare the location with your commute."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verified project location or address",
+      "subject": "Pearl Residences location",
+      "customer_need": "The buyer wants to know roughly where the project is.",
+      "reason": "The available project information does not include a verified location.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share the verified location and continue understanding what matters for their own-stay home.",
+      "signature": "OTHER|address location or pearl project residences verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    },
+    {
+      "request_id": "sales-lab-support-2",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Whether a verified, shareable Pearl Residences project brochure or map is available, and its link or file if so.",
+      "subject": "Pearl Residences brochure or map",
+      "customer_need": "The buyer wants a project brochure or map to assess the location against their daily commute.",
+      "reason": "No verified brochure, map, or shareable link is available in the information at hand.",
+      "resume_stage": "UNDERSTAND",
+      "resume_objective": "Share any verified brochure or map available and continue helping the buyer assess commute suitability.",
+      "signature": "OTHER|and availability brochure file its link map or pearl project residences shareable so verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw Pearl Residences advertised. We’re looking for a place to stay ourselves—could you share roughly where it is and the starting price?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For an eligible category, the starting reference is about RM302k after rebate. That’s based on the base price, not an all-in unit quote. I’ll confirm the exact location for you too.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share the verified location and continue the conversation around their own-stay needs.",
+          "last_progress": "Buyer is looking for a home to stay in themselves and asked for the location and starting price.",
+          "next_action": "Confirm the project location, then respond with the verified details.",
+          "conversation_summary": "Asked where Pearl Residences is and its starting price for an own-stay purchase. Shared the eligible-category starting price reference; exact location needs confirmation."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verified project location or address",
+          "subject": "Pearl Residences location",
+          "customer_need": "The buyer wants to know roughly where the project is.",
+          "reason": "The available project information does not include a verified location.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share the verified location and continue understanding what matters for their own-stay home."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3755,
+        "input_tokens_details": {
+          "cache_write_tokens": 3752,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1294,
+        "output_tokens_details": {
+          "reasoning_tokens": 816
+        },
+        "total_tokens": 5049
+      }
+    },
+    {
+      "customer": "Thanks, that gives us a rough idea. Could you share the area or nearest landmark once you’ve confirmed it? We’re trying to work out the commute.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The area is Seberang Jaya. Project materials reference connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth, which may help you orient your commute. I don’t yet have a verified exact address or travel times, so I don’t want to guess.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": [
+            "Commute suitability"
+          ],
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share the verified exact address when available and help assess commute suitability.",
+          "last_progress": "Shared the Seberang Jaya area and nearby reference points; exact address and travel times are not verified.",
+          "next_action": "Provide the verified exact address when available.",
+          "conversation_summary": "Asked where Pearl Residences is and its starting price for an own-stay purchase. The eligible-category starting reference was shared. Buyer is assessing commute; Seberang Jaya and nearby reference points were shared, while the exact address remains unverified."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3311,
+        "input_tokens_details": {
+          "cache_write_tokens": 3308,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2088,
+        "output_tokens_details": {
+          "reasoning_tokens": 1666
+        },
+        "total_tokens": 5399
+      }
+    },
+    {
+      "customer": "That helps, thanks. Seberang Jaya might work for us; we’ll check it against our daily commute. Do you have a project brochure or map we can look at?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "I can confirm it’s in Mukim 1, Seberang Jaya, 13700. I don’t have a verified brochure or map link to share right now, so I’ll check whether there’s a shareable one. That should help you compare the location with your commute.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": null,
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share a verified brochure or map if available, then help the buyer assess commute suitability.",
+          "last_progress": "Buyer is checking whether Seberang Jaya suits their daily commute and asked for a project brochure or map.",
+          "next_action": "Check whether a verified, shareable project brochure or map is available.",
+          "conversation_summary": "Buyer is considering Pearl Residences for own stay, assessing the commute to Seberang Jaya, and requested a brochure or map."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Whether a verified, shareable Pearl Residences project brochure or map is available, and its link or file if so.",
+          "subject": "Pearl Residences brochure or map",
+          "customer_need": "The buyer wants a project brochure or map to assess the location against their daily commute.",
+          "reason": "No verified brochure, map, or shareable link is available in the information at hand.",
+          "resume_stage": "UNDERSTAND",
+          "resume_objective": "Share any verified brochure or map available and continue helping the buyer assess commute suitability."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3420,
+        "input_tokens_details": {
+          "cache_write_tokens": 3417,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1462,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 4882
+      }
+    }
+  ],
+  "closed": false
+}

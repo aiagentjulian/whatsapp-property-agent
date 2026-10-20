@@ -232,6 +232,17 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
         targeted.append({"path": "02_commercial/pricing.md + 02_commercial/sales-package.md",
                          "heading": "Indicative historical pricing structure; latest unit/package must be confirmed",
                          "score": 100, "content": "\n\n".join(parts)})
+    location_request = (
+        bool(raw_terms & {"where"})
+        or bool(terms & {"location", "area", "address", "nearest", "landmark", "commute", "nearby"})
+        or any(phrase in lower_query for phrase in ("where is", "where it is", "where are", "whereabouts", "around where"))
+    )
+    if not sales_only and location_request:
+        path = KNOWLEDGE / "01_facts/location-and-connectivity.md"
+        for heading, content in _passages(path.read_text(encoding="utf-8")):
+            if heading in ("Exact location", "External connectivity"):
+                targeted.append({"path": "01_facts/location-and-connectivity.md",
+                                 "heading": heading, "score": 100, "content": content})
     if not sales_only:
         for trigger, relative, heading in (
             ({"office", "workspace", "floorplan", "layout"}, "01_facts/unit-and-layout.md", "Layout and room arrangement"),

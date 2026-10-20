@@ -32,3 +32,16 @@ class SalesEvidenceTests(unittest.TestCase):
         location = next((p for p in evidence['optional_sales_angles'] if 'Location' in p['angle']), None)
         self.assertIsNotNone(location)
         self.assertIn('Sunway Carnival Mall', location['verified_evidence'])
+
+    def test_combined_price_and_location_question_keeps_both_fact_groups(self):
+        data = retrieve('Could you share roughly where Pearl Residences is and the starting price?')
+        text = '\n'.join(p['content'] for p in data)
+        self.assertIn('RM328k', text)
+        self.assertIn('Seberang Jaya', text)
+        self.assertIn('Sunway Carnival Mall', text)
+
+    def test_area_or_nearest_landmark_question_retrieves_location_facts(self):
+        data = retrieve('Could you share the area or nearest landmark so we can check the commute?')
+        text = '\n'.join(p['content'] for p in data)
+        self.assertIn('Seberang Jaya', text)
+        self.assertIn('Butterworth', text)

@@ -1,0 +1,275 @@
+{
+  "trial": "interested-couple",
+  "scenario": "genuine_interest",
+  "source_sha256": "853cf3b1a8a09274dd6bf77f2dbc90ac7cc9fc064966eb95fcc848e1326bcab2",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "purchase_reason": "Looking for a place to live in themselves.",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "primary_motivations": [
+      "Find a home for own stay"
+    ],
+    "fit_assessment": "Potential fit: the buyer finds the 900 sq. ft. three-bedroom layout reasonable in concept but wants the approved plan and to assess their George Town commute before deciding.",
+    "next_objective": "Help the buyer assess the approved layout and commute fit, then consider whether a viewing would be useful.",
+    "last_progress": "Buyer shared they commute toward George Town a few days a week and found the layout concept reasonable, but wants the approved plan before judging the space.",
+    "next_action": "Share the approved floor plan when available; then follow up on layout and commute fit.",
+    "conversation_summary": "Own-stay buyer is comparing commute and overall costs. They find the 900 sq. ft. three-bedroom layout reasonable in concept, but want to review the approved floor plan and assess their George Town commute before deciding whether to visit.",
+    "size_or_layout_preference": "900 sq. ft. with 3 bedrooms sounds potentially suitable; wants to review the approved floor plan.",
+    "viewing_interest": "Wants to review the approved floor plan and assess the George Town commute before deciding on a visit.",
+    "appointment_readiness": "NOT_READY",
+    "important_features": [
+      "Three bedrooms",
+      "900 sq. ft.",
+      "Floor plan"
+    ],
+    "decision_factors": [
+      "Commute toward George Town a few days a week",
+      "Overall costs",
+      "Layout suitability"
+    ],
+    "active_concerns": [
+      "Commute fit toward George Town",
+      "Overall costs",
+      "Needs to assess the approved floor plan"
+    ],
+    "resolved_concerns": []
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw Pearl Residences advertised. We’re looking for a place to stay ourselves—could you share roughly where it is and the starting price?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences is in Seberang Jaya on Penang mainland, with connectivity toward Sunway Carnival Mall. The starting reference is around RM302k after the 14 August package rebate for eligible categories; that’s based on the listed base price, not a guaranteed all-in quote, as parking and add-ons vary. The units are 900 sq. ft. with 3 bedrooms and 2 bathrooms. Does that layout suit what you have in mind for your own stay?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Three bedrooms sounds useful, and 900 sq. ft. could work for us. We’re still comparing the commute and overall costs, though, so I’d want to see the floor plan before deciding if the layout suits us."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense—the floor plan should help you judge whether 900 sq. ft. works for you. The concept shows an open-plan living, dining and kitchen area, three bedrooms, two bathrooms, a balcony and a small storage area. For ongoing costs, the stated maintenance is RM0.18 per sq. ft. including sinking fund, or about RM162/month for 900 sq. ft. (excluding utilities and other costs). I’ll get the approved floor plan for you. Where do you usually commute to? That’ll help us assess whether Seberang Jaya suits your route."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that’s useful, especially the maintenance estimate. We commute toward George Town a few days a week, so we’ll need to check how the location works for us. The layout concept sounds reasonable, but we’ll wait to see the approved plan before judging the space."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a sensible commute to check. Seberang Jaya has connectivity toward Butterworth and the wider mainland road network, but I don’t have a verified George Town drive time, so I wouldn’t want to guess. Once you’ve had a chance to review the approved plan, you can judge whether the layout works and test your usual weekday route before deciding on a visit."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "The approved floor plan for the 900 sq. ft. Type A unit, including the room arrangement.",
+      "subject": "Pearl Residences Type A floor plan",
+      "customer_need": "Wants to assess whether the layout suits their own stay before deciding if the home is a fit.",
+      "reason": "The available information describes concept layout features but does not include the approved floor plan.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share the approved floor plan and continue assessing layout suitability and commute fit.",
+      "signature": "LAYOUT|900 approved arrangement floor ft including pearl plan residences room sq type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw Pearl Residences advertised. We’re looking for a place to stay ourselves—could you share roughly where it is and the starting price?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences is in Seberang Jaya on Penang mainland, with connectivity toward Sunway Carnival Mall. The starting reference is around RM302k after the 14 August package rebate for eligible categories; that’s based on the listed base price, not a guaranteed all-in quote, as parking and add-ons vary. The units are 900 sq. ft. with 3 bedrooms and 2 bathrooms. Does that layout suit what you have in mind for your own stay?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a place to live in themselves.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": [
+            "Find a home for own stay"
+          ],
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "Potential fit: the units offer 900 sq. ft. with 3 bedrooms and 2 bathrooms; their household needs are not yet known.",
+          "next_objective": "Understand whether the 3-bedroom layout suits their own-stay needs.",
+          "last_progress": "Shared the location and an indicative starting-price reference.",
+          "next_action": "Check whether the layout fits what they need for their own stay.",
+          "conversation_summary": "Enquired about Pearl Residences' location and rough starting price; looking for a home for own stay."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3963,
+        "input_tokens_details": {
+          "cache_write_tokens": 3960,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1732,
+        "output_tokens_details": {
+          "reasoning_tokens": 1351
+        },
+        "total_tokens": 5695
+      }
+    },
+    {
+      "customer": "Three bedrooms sounds useful, and 900 sq. ft. could work for us. We’re still comparing the commute and overall costs, though, so I’d want to see the floor plan before deciding if the layout suits us.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "That makes sense—the floor plan should help you judge whether 900 sq. ft. works for you. The concept shows an open-plan living, dining and kitchen area, three bedrooms, two bathrooms, a balcony and a small storage area. For ongoing costs, the stated maintenance is RM0.18 per sq. ft. including sinking fund, or about RM162/month for 900 sq. ft. (excluding utilities and other costs). I’ll get the approved floor plan for you. Where do you usually commute to? That’ll help us assess whether Seberang Jaya suits your route.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a place to live in themselves.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "900 sq. ft. with 3 bedrooms sounds potentially suitable; wants to review the floor plan.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to see the floor plan before deciding whether the layout suits them.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Three bedrooms",
+            "900 sq. ft.",
+            "Floor plan"
+          ],
+          "primary_motivations": [
+            "Find a home for own stay"
+          ],
+          "decision_factors": [
+            "Commute",
+            "Overall costs",
+            "Layout suitability"
+          ],
+          "active_concerns": [
+            "Commute fit",
+            "Overall costs",
+            "Needs to assess the floor plan"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit: the buyer finds the three-bedroom, 900 sq. ft. offering potentially suitable but wants the floor plan and is comparing commute and costs.",
+          "next_objective": "Provide the approved floor plan and understand the buyer's commute destination.",
+          "last_progress": "Buyer said three bedrooms sound useful and 900 sq. ft. could work.",
+          "next_action": "Obtain the approved floor plan; use the buyer's commute destination to discuss location relevance.",
+          "conversation_summary": "Own-stay buyer is comparing commute and overall costs. They see potential in the 900 sq. ft. three-bedroom layout and want to review the floor plan before deciding if it suits them."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "The approved floor plan for the 900 sq. ft. Type A unit, including the room arrangement.",
+          "subject": "Pearl Residences Type A floor plan",
+          "customer_need": "Wants to assess whether the layout suits their own stay before deciding if the home is a fit.",
+          "reason": "The available information describes concept layout features but does not include the approved floor plan.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share the approved floor plan and continue assessing layout suitability and commute fit."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3793,
+        "input_tokens_details": {
+          "cache_write_tokens": 3790,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2213,
+        "output_tokens_details": {
+          "reasoning_tokens": 1480
+        },
+        "total_tokens": 6006
+      }
+    },
+    {
+      "customer": "Thanks, that’s useful, especially the maintenance estimate. We commute toward George Town a few days a week, so we’ll need to check how the location works for us. The layout concept sounds reasonable, but we’ll wait to see the approved plan before judging the space.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "POSITIVE",
+        "reply": "That’s a sensible commute to check. Seberang Jaya has connectivity toward Butterworth and the wider mainland road network, but I don’t have a verified George Town drive time, so I wouldn’t want to guess. Once you’ve had a chance to review the approved plan, you can judge whether the layout works and test your usual weekday route before deciding on a visit.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a place to live in themselves.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "900 sq. ft. with 3 bedrooms sounds potentially suitable; wants to review the approved floor plan.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to review the approved floor plan and assess the George Town commute before deciding on a visit.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Three bedrooms",
+            "900 sq. ft.",
+            "Floor plan"
+          ],
+          "primary_motivations": [
+            "Find a home for own stay"
+          ],
+          "decision_factors": [
+            "Commute toward George Town a few days a week",
+            "Overall costs",
+            "Layout suitability"
+          ],
+          "active_concerns": [
+            "Commute fit toward George Town",
+            "Overall costs",
+            "Needs to assess the approved floor plan"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit: the buyer finds the 900 sq. ft. three-bedroom layout reasonable in concept but wants the approved plan and to assess their George Town commute before deciding.",
+          "next_objective": "Help the buyer assess the approved layout and commute fit, then consider whether a viewing would be useful.",
+          "last_progress": "Buyer shared they commute toward George Town a few days a week and found the layout concept reasonable, but wants the approved plan before judging the space.",
+          "next_action": "Share the approved floor plan when available; then follow up on layout and commute fit.",
+          "conversation_summary": "Own-stay buyer is comparing commute and overall costs. They find the 900 sq. ft. three-bedroom layout reasonable in concept, but want to review the approved floor plan and assess their George Town commute before deciding whether to visit."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4013,
+        "input_tokens_details": {
+          "cache_write_tokens": 4010,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1595,
+        "output_tokens_details": {
+          "reasoning_tokens": 1097
+        },
+        "total_tokens": 5608
+      }
+    }
+  ],
+  "closed": false
+}

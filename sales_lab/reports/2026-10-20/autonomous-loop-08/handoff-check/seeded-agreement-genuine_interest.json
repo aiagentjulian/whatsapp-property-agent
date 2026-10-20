@@ -1,0 +1,84 @@
+{
+  "trial": "seeded-agreement",
+  "scenario": "genuine_interest",
+  "source_sha256": "853cf3b1a8a09274dd6bf77f2dbc90ac7cc9fc064966eb95fcc848e1326bcab2",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "UNKNOWN",
+    "preferred_language": "English",
+    "viewing_interest": "Wants to arrange a viewing this Saturday afternoon with their partner.",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "READY_FOR_APPOINTMENT",
+    "sales_stage": "CLOSE",
+    "next_objective": "Have a salesperson confirm a suitable viewing time for Saturday afternoon.",
+    "last_progress": "Buyer and partner have reviewed the project details and requested that a viewing be arranged.",
+    "next_action": "Salesperson to follow up and confirm the viewing time.",
+    "conversation_summary": "Buyer and partner want to arrange a Pearl Residences viewing this Saturday afternoon and asked for a salesperson to confirm the time."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "My partner and I have reviewed the project details together. We would like to start arranging a viewing this Saturday afternoon. Please pass our request to your salesperson to confirm a time."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Absolutely — I’ll pass your request for a viewing this Saturday afternoon to our salesperson, who’ll confirm a time with you."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "My partner and I have reviewed the project details together. We would like to start arranging a viewing this Saturday afternoon. Please pass our request to your salesperson to confirm a time.",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Absolutely — I’ll pass your request for a viewing this Saturday afternoon to our salesperson, who’ll confirm a time with you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to arrange a viewing this Saturday afternoon with their partner.",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": "READY_FOR_APPOINTMENT",
+          "sales_stage": "CLOSE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Have a salesperson confirm a suitable viewing time for Saturday afternoon.",
+          "last_progress": "Buyer and partner have reviewed the project details and requested that a viewing be arranged.",
+          "next_action": "Salesperson to follow up and confirm the viewing time.",
+          "conversation_summary": "Buyer and partner want to arrange a Pearl Residences viewing this Saturday afternoon and asked for a salesperson to confirm the time."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Buyer and partner requested a viewing this Saturday afternoon. Please contact them to confirm a suitable time; no time has been confirmed yet."
+      },
+      "usage": {
+        "input_tokens": 3137,
+        "input_tokens_details": {
+          "cache_write_tokens": 3134,
+          "cached_tokens": 0
+        },
+        "output_tokens": 737,
+        "output_tokens_details": {
+          "reasoning_tokens": 334
+        },
+        "total_tokens": 3874
+      }
+    }
+  ],
+  "closed": true
+}
