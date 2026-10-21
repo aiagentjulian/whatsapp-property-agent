@@ -40,7 +40,7 @@ The access token is stored in ignored, permission-restricted `data/lead/google-t
 
 Prospects can be reviewed and created locally. `create-prospect` only creates a `NOT_SENT` Prospect after checking the exact `WHATSAPP_OUTBOUND_ALLOWLIST`; it does not send a message.
 
-The core sales journey is `UNDERSTAND → QUALIFY → POSITION → HANDLE → INTENT → CLOSE`.
+The sales journey is intentionally simple: answer the customer's immediate question, ask **own stay or investment** if they have not said, follow that buyer's main motivation, and offer a relevant viewing. Once the buyer agrees to start arranging, hand scheduling to a human salesperson. Detailed requests beyond the available chat materials go to a human rather than becoming a long AI verification process.
 
 ## Sales Core V2: local model evaluation and clean test sessions
 
