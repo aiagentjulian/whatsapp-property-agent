@@ -169,8 +169,24 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
         # ownership costs, without implying it is the buyer's full monthly cost.
         terms.update({"maintenance", "fee"})
     lower_query = (query or "").lower()
-    general_intro = "project" in raw_terms and any(
-        phrase in lower_query for phrase in ("more about", "tell me about", "know more", "about this project")
+    # Generic enquiries commonly refer to the property advertisement rather
+    # than using the word "project". Start with basic project facts instead
+    # of keyword-matching arbitrary layout or facility documents.
+    specific_request = bool(raw_terms & {
+        "price", "pricing", "budget", "loan", "mortgage", "location", "address",
+        "layout", "bedroom", "room", "pool", "facility", "facilities",
+        "maintenance", "booking", "developer", "completion", "rental", "investment",
+    })
+    general_intro = not specific_request and (
+        ("project" in raw_terms and any(
+            phrase in lower_query for phrase in
+            ("more about", "tell me about", "know more", "about this project")
+        ))
+        or (bool(raw_terms & {"property", "ad", "advertisement", "listing", "home"})
+            and any(phrase in lower_query for phrase in (
+                "share more details", "share details", "more details",
+                "tell me more", "more information", "more info",
+            )))
     )
     profile_text = " ".join(
         str(profile.get(key, "")) for key in ("active_concerns", "conversation_summary", "next_objective")
