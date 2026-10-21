@@ -72,6 +72,24 @@ def current_unit_offering():
     raise ValueError("Project Knowledge is missing the standard unit offering")
 
 
+def broad_project_reference():
+    """Balanced, verified project context when a short buyer reply has no retrieval keywords.
+
+    This is evidence for the salesperson to select from, never a checklist to recite.
+    Do not expose the actual developer/project identity unless the buyer asks.
+    """
+    path = KNOWLEDGE / "01_facts/overview.md"
+    included = {"Project identity", "Major development components", "Maintenance", "Completion"}
+    reference = []
+    for heading, content in _passages(path.read_text(encoding="utf-8")):
+        if heading not in included:
+            continue
+        if heading == "Project identity":
+            content = _non_identifying_facts(content)
+        reference.append({"topic": heading, "verified_evidence": content})
+    return reference
+
+
 def project_sales_context():
     """Offer general project evidence and selling possibilities without choosing for the LLM."""
     sections = (
