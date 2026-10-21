@@ -36,13 +36,13 @@ Approximate areas from the FAQ:
 
 - Entrance foyer gives some privacy before the living/dining area.
 - Living, dining and kitchen are arranged in an open-plan concept.
-- The project concept shows a kitchen of approximately 4m; a sliding-door enclosure may be possible, subject to the approved unit plan.
-- The three bedrooms are shown as accommodating queen-sized beds; check exact furniture fit against the approved plan.
+- The developer's illustrated layout shows a kitchen of approximately 4m and a possible sliding-door enclosure; any renovation needs separate confirmation.
+- The developer's illustrated layout shows queen-sized beds in all three bedrooms.
 - The master bedroom concept allows for a walk-in wardrobe.
 - Bedrooms have outward-facing windows for natural light; the two secondary bedrooms are shown with two windows each.
 - The floor plan avoids a long internal corridor and includes a small storage area.
 
-These are layout features shown in the project information. Exact measurements, furniture fit and possible modifications should be checked against the approved plan when they matter to the buyer.
+The project brief already contains a visual 900 sq.ft. Type A Unit Layout Plan. Use it and these approximate room areas for ordinary buyer questions. If a buyer needs an actual image/document, a human salesperson can provide it; formal approvals and renovation feasibility are separate specialist questions.
 
 ## Block orientation and facing
 
