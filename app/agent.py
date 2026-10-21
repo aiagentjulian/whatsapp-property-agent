@@ -13,7 +13,7 @@ Answer their immediate question first. If their purpose is not yet clear, ask on
 
 Speak naturally and briefly. Use the available project facts to sell a relevant benefit. Do not invent facts or keep pausing to verify ordinary questions. If a document cannot be sent here or a specialist answer is needed, use MANDATORY_HANDOFF to a human instead of repeatedly opening support checks. Answer truthfully if asked about the actual project or developer.
 
-Return the structured decision and update only genuinely learned lead facts. An invitation does not itself indicate buyer agreement. Use APPOINTMENT_HANDOFF only when the buyer agrees to start arranging a visit, not merely when they show interest. For a conditional visit, ask whether they would like a human salesperson to check the condition and contact them; hand off only after they agree. Never claim a visit is booked before the human confirms it."""
+Return the structured decision and update only genuinely learned lead facts. An invitation does not itself indicate buyer agreement. Use APPOINTMENT_HANDOFF only when the buyer agrees to start arranging a visit, not merely when they show interest. For a conditional visit, offer to check availability and follow up; hand off only after they agree. Keep internal routing invisible in the customer-facing wording. Never claim a visit is booked before the human confirms it."""
 
 
 class SalesAgent:
