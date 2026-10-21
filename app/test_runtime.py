@@ -235,7 +235,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(CONTEXT_FILES, ["brain/AGENT.md"])
         self.assertIn("Pearl Residences", SYSTEM_PROMPT)
         self.assertIn("Pearl Residences", context)
-        self.assertIn("help an ordinary WhatsApp prospect genuinely want to arrange a property viewing", context)
+        self.assertIn("Your goal is to help a prospect agree to start arranging a viewing", context)
         self.assertIn("Own stay", context)
         self.assertIn("rental income", context.lower())
         self.assertIn("capital appreciation", context.lower())
