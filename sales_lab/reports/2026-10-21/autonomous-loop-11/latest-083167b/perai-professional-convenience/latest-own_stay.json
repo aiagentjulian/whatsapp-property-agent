@@ -1,0 +1,210 @@
+{
+  "trial": "latest",
+  "scenario": "own_stay",
+  "source_sha256": "977acd7c340633f350a895fe1b1488606aa0ce2389a92182d9cba1512b481e89",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_location": "Seberang Jaya",
+    "sales_stage": "HANDLE",
+    "next_objective": "Address affordability questions and invite a viewing",
+    "last_progress": "Asked for price and monthly costs before deciding whether a viewing makes sense",
+    "next_action": "Wait for response to price and maintenance information, then continue toward arranging a viewing if interested",
+    "conversation_summary": "Works around Perai and is exploring a first home in Seberang Jaya for own stay. Wants price and monthly costs before deciding whether to view.",
+    "purchase_reason": "First home",
+    "active_concerns": [
+      "Still figuring out what is manageable for a first home",
+      "Wants to understand price and monthly costs before deciding whether to view"
+    ],
+    "viewing_interest": "Considering a viewing after understanding price and monthly costs",
+    "appointment_readiness": "NOT_READY"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Seberang Jaya is on the Penang Mainland, with connections toward Butterworth and the wider mainland urban network, so it could be convenient for getting around Perai. Exact travel time depends on your route and traffic. Are you looking for your own stay or investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Own stay, first place. I’m still figuring out what’s manageable."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For a first home, the Type A offers 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony—seeing the layout may help you judge what feels manageable. Would weekdays or weekends suit you for a viewing?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Maybe later. I’d like to know the price and monthly costs first, then I can see if a viewing makes sense."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "An indicative starting reference is about RM302k after the package for an eligible Block 1B podium-blocked category, before unit-specific parking or add-ons. For the 900 sq. ft. Type A, maintenance at RM0.18 per sq. ft. works out to about RM162/month, inclusive of the sinking fund; utilities and other costs are separate. Would a viewing help you judge the layout and overall fit—weekdays or weekends?"
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Seberang Jaya is on the Penang Mainland, with connections toward Butterworth and the wider mainland urban network, so it could be convenient for getting around Perai. Exact travel time depends on your route and traffic. Are you looking for your own stay or investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": "Seberang Jaya, with daily travel around Perai",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the property is for own stay or investment",
+          "last_progress": "Asked whether Seberang Jaya is convenient for daily travel to Perai",
+          "next_action": "Clarify purchase purpose",
+          "conversation_summary": "Works around Perai and is exploring the Seberang Jaya location for daily travel."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2770,
+        "input_tokens_details": {
+          "cache_write_tokens": 2767,
+          "cached_tokens": 0
+        },
+        "output_tokens": 874,
+        "output_tokens_details": {
+          "reasoning_tokens": 497
+        },
+        "total_tokens": 3644
+      }
+    },
+    {
+      "customer": "Own stay, first place. I’m still figuring out what’s manageable.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "NEUTRAL",
+        "reply": "For a first home, the Type A offers 900 sq. ft., 3 bedrooms, 2 bathrooms and a balcony—seeing the layout may help you judge what feels manageable. Would weekdays or weekends suit you for a viewing?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "First home",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Still figuring out what is manageable for a first home"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Invite the prospect to view the layout and assess whether it suits their needs.",
+          "last_progress": "Confirmed own-stay purpose and that this would be their first home.",
+          "next_action": "Await their response to the weekday or weekend viewing invitation.",
+          "conversation_summary": "Works around Perai, is considering Seberang Jaya for daily travel, and is exploring a first home."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2665,
+        "input_tokens_details": {
+          "cache_write_tokens": 2662,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1061,
+        "output_tokens_details": {
+          "reasoning_tokens": 668
+        },
+        "total_tokens": 3726
+      }
+    },
+    {
+      "customer": "Maybe later. I’d like to know the price and monthly costs first, then I can see if a viewing makes sense.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "An indicative starting reference is about RM302k after the package for an eligible Block 1B podium-blocked category, before unit-specific parking or add-ons. For the 900 sq. ft. Type A, maintenance at RM0.18 per sq. ft. works out to about RM162/month, inclusive of the sinking fund; utilities and other costs are separate. Would a viewing help you judge the layout and overall fit—weekdays or weekends?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "First home",
+          "preferred_location": "Seberang Jaya",
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Considering a viewing after understanding price and monthly costs",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Still figuring out what is manageable for a first home",
+            "Wants to understand price and monthly costs before deciding whether to view"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Address affordability questions and invite a viewing",
+          "last_progress": "Asked for price and monthly costs before deciding whether a viewing makes sense",
+          "next_action": "Wait for response to price and maintenance information, then continue toward arranging a viewing if interested",
+          "conversation_summary": "Works around Perai and is exploring a first home in Seberang Jaya for own stay. Wants price and monthly costs before deciding whether to view."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3831,
+        "input_tokens_details": {
+          "cache_write_tokens": 3828,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1651,
+        "output_tokens_details": {
+          "reasoning_tokens": 1266
+        },
+        "total_tokens": 5482
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Loop stopped after the family trial recorded a failed live attempt; Perai buyer asked for a selected-unit total before considering a visit"
+}

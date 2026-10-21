@@ -1,0 +1,168 @@
+{
+  "trial": "latest",
+  "scenario": "own_stay",
+  "source_sha256": "977acd7c340633f350a895fe1b1488606aa0ce2389a92182d9cba1512b481e89",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Current rental is getting tight; has a young child",
+    "preferred_property_type": "Condominium",
+    "size_or_layout_preference": "3-bedroom layout suitable for a small family",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "3 bedrooms",
+      "2 bathrooms",
+      "Open-plan living and dining area",
+      "Efficient use of space"
+    ],
+    "primary_motivations": [
+      "More space for a family with a young child"
+    ],
+    "decision_factors": [
+      "Practicality of the 3-bedroom layout for a small family"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "The 900 sq. ft. Type A layout may suit the prospect's need for more space with a young child.",
+    "next_objective": "Invite the prospect to view the 3-bedroom layout and facilities.",
+    "last_progress": "Confirmed the property is for own stay and asked about outdoor space for their child.",
+    "next_action": "Ask whether weekdays or weekends suit them for a viewing.",
+    "conversation_summary": "Prospect has a young child and says their rental is getting tight. Asked if the 3-bedroom layout is practical for a small family."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes—the 900 sq. ft. Type A has 3 bedrooms and 2 bathrooms, with an open-plan living and dining area and no long internal corridor, making good use of the space for a small family. Are you looking for your own stay or investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For our own stay. The open-plan living and dining sounds useful. Is there an outdoor area where our child can play?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "There’s an approximately 10-acre landscaped facilities deck on Level 9, offering outdoor green space for residents. I can’t confirm whether there’s dedicated play equipment. Would you like to come see the layout and facilities? Would weekdays or weekends suit you better?"
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "EXPLORE",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes—the 900 sq. ft. Type A has 3 bedrooms and 2 bathrooms, with an open-plan living and dining area and no long internal corridor, making good use of the space for a small family. Are you looking for your own stay or investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": "Current rental is getting tight; has a young child",
+          "preferred_location": null,
+          "preferred_property_type": "Condominium",
+          "size_or_layout_preference": "3-bedroom layout suitable for a small family",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "QUALIFY",
+          "important_features": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "Open-plan living and dining area",
+            "Efficient use of space"
+          ],
+          "primary_motivations": [
+            "More space for a family with a young child"
+          ],
+          "decision_factors": [
+            "Practicality of the 3-bedroom layout for a small family"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The 900 sq. ft. Type A layout may suit the prospect's need for more space with a young child.",
+          "next_objective": "Clarify whether the purchase is for own stay or investment.",
+          "last_progress": "Shared that rental is getting tight and asked whether the 3-bedroom layout is practical for a small family.",
+          "next_action": "Clarify purchase purpose, then invite them to view the layout.",
+          "conversation_summary": "Prospect has a young child and says their rental is getting tight. Asked if the 3-bedroom layout is practical for a small family."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3218,
+        "input_tokens_details": {
+          "cache_write_tokens": 3215,
+          "cached_tokens": 0
+        },
+        "output_tokens": 908,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 4126
+      }
+    },
+    {
+      "customer": "For our own stay. The open-plan living and dining sounds useful. Is there an outdoor area where our child can play?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "There’s an approximately 10-acre landscaped facilities deck on Level 9, offering outdoor green space for residents. I can’t confirm whether there’s dedicated play equipment. Would you like to come see the layout and facilities? Would weekdays or weekends suit you better?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Invite the prospect to view the 3-bedroom layout and facilities.",
+          "last_progress": "Confirmed the property is for own stay and asked about outdoor space for their child.",
+          "next_action": "Ask whether weekdays or weekends suit them for a viewing.",
+          "conversation_summary": null
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3211,
+        "input_tokens_details": {
+          "cache_write_tokens": 3208,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1004,
+        "output_tokens_details": {
+          "reasoning_tokens": 649
+        },
+        "total_tokens": 4215
+      }
+    }
+  ],
+  "closed": false
+}

@@ -1,0 +1,222 @@
+{
+  "trial": "latest",
+  "scenario": "own_stay",
+  "source_sha256": "977acd7c340633f350a895fe1b1488606aa0ce2389a92182d9cba1512b481e89",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "sales_stage": "CLOSE",
+    "next_objective": "Help arrange a weekend viewing and confirm a suitable time.",
+    "last_progress": "Prospect said the property could be worth a look and that weekends are usually easier.",
+    "next_action": "Have a human salesperson follow up to arrange and confirm a weekend viewing.",
+    "conversation_summary": "Prospect is renting and looking for a first home for own stay. They are interested in whether the three-bedroom layout is practical long term and indicated weekends are usually easier for a viewing.",
+    "purchase_reason": "Looking for a first home while currently renting.",
+    "size_or_layout_preference": "Interested in the practicality of the three-bedroom layout for long-term own stay.",
+    "viewing_interest": "Interested in viewing; weekends are usually easier.",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "READY_FOR_APPOINTMENT",
+    "important_features": [
+      "Three-bedroom layout",
+      "Practicality for long-term own stay"
+    ],
+    "primary_motivations": [
+      "First home for own stay"
+    ],
+    "decision_factors": [
+      "Practicality of the extra bedrooms"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "The three-bedroom layout is relevant to the prospect's interest in a practical first home for own stay."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Type A is 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, with an entrance foyer for a little extra privacy. Are you looking for your own stay or investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "For our own stay. How are the three bedrooms arranged?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The illustrated layout shows space for a queen-sized bed in each of the three bedrooms, and the master bedroom concept also allows for a walk-in wardrobe. Would you like to come and see the layout? Would weekdays or weekends suit you better?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "It could be worth a look, especially if the extra rooms feel practical for us long term. Weekends are usually easier."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Great, weekends sound good. I’ll have our team help arrange a viewing and confirm a suitable time with you. It’ll be a good chance to see how practical the three-bedroom layout feels in person."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Type A is 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, with an entrance foyer for a little extra privacy. Are you looking for your own stay or investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Understand whether the purchase is for own stay or investment.",
+          "last_progress": "They are renting and starting to look for their first place; asked about the layout.",
+          "next_action": "Answer their purpose response, then highlight a relevant feature and invite them to view.",
+          "conversation_summary": "Prospect saw the Pearl Residences ad, is renting and starting to look for a first place. Asked about the layout."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2891,
+        "input_tokens_details": {
+          "cache_write_tokens": 2888,
+          "cached_tokens": 0
+        },
+        "output_tokens": 772,
+        "output_tokens_details": {
+          "reasoning_tokens": 387
+        },
+        "total_tokens": 3663
+      }
+    },
+    {
+      "customer": "For our own stay. How are the three bedrooms arranged?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "The illustrated layout shows space for a queen-sized bed in each of the three bedrooms, and the master bedroom concept also allows for a walk-in wardrobe. Would you like to come and see the layout? Would weekdays or weekends suit you better?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Encourage the prospect to start arranging a viewing.",
+          "last_progress": "Confirmed they are looking for their own stay and asked about the bedroom arrangement.",
+          "next_action": "Invite them to view the layout and ask whether weekdays or weekends suit them.",
+          "conversation_summary": "Prospect is renting and starting to look for a first home for their own stay. They asked about the three-bedroom arrangement."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2791,
+        "input_tokens_details": {
+          "cache_write_tokens": 2788,
+          "cached_tokens": 0
+        },
+        "output_tokens": 668,
+        "output_tokens_details": {
+          "reasoning_tokens": 295
+        },
+        "total_tokens": 3459
+      }
+    },
+    {
+      "customer": "It could be worth a look, especially if the extra rooms feel practical for us long term. Weekends are usually easier.",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Great, weekends sound good. I’ll have our team help arrange a viewing and confirm a suitable time with you. It’ll be a good chance to see how practical the three-bedroom layout feels in person.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for a first home while currently renting.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in the practicality of the three-bedroom layout for long-term own stay.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Interested in viewing; weekends are usually easier.",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": "READY_FOR_APPOINTMENT",
+          "sales_stage": "CLOSE",
+          "important_features": [
+            "Three-bedroom layout",
+            "Practicality for long-term own stay"
+          ],
+          "primary_motivations": [
+            "First home for own stay"
+          ],
+          "decision_factors": [
+            "Practicality of the extra bedrooms"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom layout is relevant to the prospect's interest in a practical first home for own stay.",
+          "next_objective": "Help arrange a weekend viewing and confirm a suitable time.",
+          "last_progress": "Prospect said the property could be worth a look and that weekends are usually easier.",
+          "next_action": "Have a human salesperson follow up to arrange and confirm a weekend viewing.",
+          "conversation_summary": "Prospect is renting and looking for a first home for own stay. They are interested in whether the three-bedroom layout is practical long term and indicated weekends are usually easier for a viewing."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Prospect agreed to start arranging a viewing by saying weekends are usually easier. Follow up to arrange a weekend time; no visit has been booked or confirmed."
+      },
+      "usage": {
+        "input_tokens": 3065,
+        "input_tokens_details": {
+          "cache_write_tokens": 3062,
+          "cached_tokens": 0
+        },
+        "output_tokens": 910,
+        "output_tokens_details": {
+          "reasoning_tokens": 394
+        },
+        "total_tokens": 3975
+      }
+    }
+  ],
+  "closed": true
+}
