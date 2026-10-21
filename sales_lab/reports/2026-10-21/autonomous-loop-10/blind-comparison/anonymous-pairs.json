@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "experiment": "Loop 10 anonymous paired transcripts",
+  "buyers": [
+    {
+      "buyer_alias": "buyer_1",
+      "private_persona": {
+        "scenario": "own_stay",
+        "fictional_budget_myr": 350000,
+        "background": "A Malaysian couple in their late 20s have rented together for about two years. They are casually comparing first homes and would likely decide together.",
+        "why_this_ad_caught_attention": "The ad showed a three-bedroom home in an area they already know, and they are wondering whether buying could give them more control than renting.",
+        "primary_motivation": "A practical first home that gives them personal space now and can still work if they have a child later.",
+        "secondary_concern": "They do not want a layout that feels cramped or wastes space.",
+        "initial_interest": "medium-low; they are open to learning but have not decided to buy soon.",
+        "whatsapp_voice": "Short, friendly messages, usually one question at a time; sometimes speaks as 'we'.",
+        "opening_message": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+        "viewing_could_be_worthwhile_if": "A clear, relevant explanation helps them picture how the rooms and shared living space could support life as a couple and later a small family; seeing the actual layout could resolve whether it feels right.",
+        "behavior_guidance": "Let interest rise or fall based on whether the agent connects a verified feature to their home life. Do not assume a future child, demand exact furniture measurements, or agree to visit automatically."
+      },
+      "A": {
+        "opening": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+        "turns": [
+          {
+            "customer": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+            "agent": "Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. There’s a foyer before the open-plan living, dining and kitchen area, plus a small storage area and no long internal corridor. For a first home, the three bedrooms give you flexibility while keeping the shared living space open. It could be useful to see how the layout feels in person—would you like to arrange a viewing?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Thanks, that helps. Do you know roughly how big the bedrooms are? We’re trying to picture whether one could work as a small study later.",
+            "agent": "I don’t have the exact bedroom dimensions to give you a reliable estimate. The project material says all the bedrooms are designed to fit a queen-size bed, so one could be a usable extra room, but whether it works well as a study depends on the desk and storage you’d want. The show unit would help you judge the proportions in person, too.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "LAYOUT",
+              "requested_fact": "Exact dimensions of each bedroom, especially the smallest bedroom",
+              "subject": "Pearl Residences Type A bedroom dimensions",
+              "customer_need": "Assess whether one bedroom could work as a small study",
+              "reason": "Exact measurements are needed to give a reliable estimate of desk and storage fit",
+              "resume_stage": "VIEWING",
+              "resume_objective": "Share verified bedroom dimensions and help the prospect judge study suitability"
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "That’s fair. Is the show unit open on weekends? We might be able to have a look together.",
+            "agent": "I don’t have confirmed weekend opening hours for the show unit. Since you might come together, would you like me to ask a salesperson to check whether it’s open on a weekend and contact you to arrange a visit if possible?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Yes, please ask them to check and get back to us if weekend visits are available. We’ll work out a time together.",
+            "agent": "Thanks — I’ll have a salesperson check whether weekend visits are available and get back to you. If they are, they can coordinate a suitable time with you.",
+            "agent_action": "APPOINTMENT_HANDOFF",
+            "support_request": null,
+            "handoff_details": "Please check whether the Pearl Residences show unit is open for weekend visits. If weekend visits are available, contact the prospect to coordinate a suitable time. They will work out a time together; no visit is booked or confirmed."
+          }
+        ],
+        "closed": true,
+        "close_reason": null
+      },
+      "B": {
+        "opening": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+        "turns": [
+          {
+            "customer": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+            "agent": "Pearl Residences’ Type A is 900 sq.ft., with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, and the entrance foyer gives a little privacy before you reach the main living space. For a first home, the separate bedrooms could give you flexibility as your needs change, without a long internal corridor taking up space. Are you mainly looking for a home to live in yourselves?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Yes, it’d be for us to live in. We’re hoping the third bedroom could work as a study or guest room, but we’re not sure how roomy 900 sq.ft. feels in practice.",
+            "agent": "That’s fair—900 sq.ft. is easier to judge in person than from a number. Type A has an open-plan living, dining and kitchen area alongside three separate bedrooms, so the third room could stay flexible for a study and occasional guests. The best way to see whether it feels roomy enough for your setup is to view it. Would you like to arrange a viewing?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "I think it could help us picture whether the rooms work for us. We’d want to come together—what viewing times are available?",
+            "agent": "Absolutely—seeing the layout together should help you judge whether the third bedroom works for your study/guest setup. I’ll pass this to a salesperson to check available viewing times for both of you. Nothing is booked until they confirm.",
+            "agent_action": "APPOINTMENT_HANDOFF",
+            "support_request": null,
+            "handoff_details": "They want to attend a viewing together and asked what times are available. Please check available viewing times and coordinate with them; no date or booking has been confirmed."
+          }
+        ],
+        "closed": true,
+        "close_reason": null
+      }
+    },
+    {
+      "buyer_alias": "buyer_2",
+      "private_persona": {
+        "scenario": "own_stay",
+        "fictional_budget_myr": 380000,
+        "background": "A couple with one preschool-age child rent a smaller apartment. Their current living area feels tight when all three are home.",
+        "why_this_ad_caught_attention": "They noticed the three-bedroom layout and family facilities in the ad while looking for a more comfortable home, not a luxury upgrade.",
+        "primary_motivation": "More usable room for family routines and a less cramped shared living space.",
+        "secondary_concern": "They care whether there is somewhere suitable for their child to play outside the unit.",
+        "initial_interest": "medium; the need is real, but they are still comparing practical options.",
+        "whatsapp_voice": "Warm and direct; mentions the child naturally but does not narrate every family detail.",
+        "opening_message": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+        "viewing_could_be_worthwhile_if": "The agent makes the 900 sqft 3R2B arrangement and relevant family spaces understandable without overpromising; a visit could help them judge the shared space and family environment.",
+        "behavior_guidance": "Respond to relevant layout or family-space information. Do not require school admission, a floor plan, or exact room fit as a routine gate. Agreement remains dependent on the actual conversation."
+      },
+      "A": {
+        "opening": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+        "turns": [
+          {
+            "customer": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+            "agent": "It could be a practical fit for a small family. Type A is 900 sq ft with 3 bedrooms and 2 bathrooms; the living, dining and kitchen are open-plan, and the layout avoids a long internal corridor and includes a small storage area. The third bedroom also gives you flexibility as your child grows. A viewing would help you judge whether the space feels comfortable for your family—would you like to arrange one?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "That sounds more practical than where we are now. I’m still wondering if there’d be enough room for our child to play once we’ve got the usual furniture in. Do you have a floor plan I could look at first?",
+            "agent": "The approved Type A floor plan would be the best way to judge how much play space remains with your usual furniture. I don’t have the drawing to share in this chat, but I can check with the team for it. Exact furniture fit will depend on how you arrange the space.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "LAYOUT",
+              "requested_fact": "The approved Type A floor plan, preferably showing room dimensions and the living/dining area layout.",
+              "subject": "Pearl Residences Type A floor plan",
+              "customer_need": "Assess whether there would be enough space for their child to play once usual furniture is in place.",
+              "reason": "The available information describes the layout but does not include the floor plan drawing needed for the buyer to judge furniture fit.",
+              "resume_stage": "POSITION",
+              "resume_objective": "Share the approved plan and help the buyer assess whether the layout works for their family."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "Yes, please check and send it over if you can. Seeing the layout would help us picture where the play space might be. Thanks.",
+            "agent": "Thanks — I’ll share the approved Type A plan when it comes through. It should help you compare the living/dining area with your usual furniture and judge the potential play space more realistically.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Buyer asked for the approved layout and will review it when sent; no visit was agreed"
+      },
+      "B": {
+        "opening": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+        "turns": [
+          {
+            "customer": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+            "agent": "It could be practical for a small family. The Type A is 900 sq ft with 3 bedrooms and 2 bathrooms, so you could have a separate room for your child while still having space to spend time together in the open-plan living and dining area. The layout also avoids a long corridor and includes a small storage area. I’d recommend viewing it to judge the room sizes and layout for yourselves; exact furniture fit should be checked against the approved plan.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "That sounds more workable than what we have now. Is there a place for kids to play in the development?",
+            "agent": "There’s an approximately 10-acre landscaped facilities deck on Level 9, giving residents a substantial shared outdoor green space. I don’t have verified details on whether there’s a dedicated children’s playground or play equipment, so I’ll check that specifically for you.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Whether the Level 9 facilities deck includes a designated children's playground or play equipment.",
+              "subject": "Pearl Residences children's play facilities",
+              "customer_need": "The buyer has a young child and wants to know whether there is a place for the child to play in the development.",
+              "reason": "The approximate size and landscaped nature of the facilities deck are known, but specific children's play facilities are not verified.",
+              "resume_stage": "POSITION",
+              "resume_objective": "Share the verified details of children's play facilities and connect them to the family's needs."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "A green space could still be useful. Do you know if kids can use it to play, or would that depend on the facilities rules?",
+            "agent": "The development’s facilities list does include a playground, alongside the roughly 10-acre landscaped Level 9 facilities deck. I can’t confirm whether the playground is on that deck or the specific access and supervision rules; use of the facilities would be subject to the management rules. The green space could still give your family an outdoor area to enjoy together.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "That sounds worth seeing for ourselves. Could we visit this weekend?",
+            "agent": "Yes, I’ll pass your request to our salesperson to coordinate a visit this weekend and confirm an available time with you. It isn’t booked until they confirm. You’ll be able to assess the three-bedroom layout and room sizes in person.",
+            "agent_action": "APPOINTMENT_HANDOFF",
+            "support_request": null,
+            "handoff_details": "Buyer requested a visit this weekend. Please coordinate a suitable time and confirm the arrangements directly; no appointment has been booked."
+          }
+        ],
+        "closed": true,
+        "close_reason": null
+      }
+    },
+    {
+      "buyer_alias": "buyer_3",
+      "private_persona": {
+        "scenario": "own_stay",
+        "fictional_budget_myr": 330000,
+        "background": "A working professional in their early 30s commutes around Perai and is considering buying a first own-stay home rather than continuing to rent.",
+        "why_this_ad_caught_attention": "The ad's Seberang Jaya location is relevant to their mainland routine, and they want to see if the commute and daily errands would be manageable.",
+        "primary_motivation": "A home location that fits their actual commute and everyday convenience.",
+        "secondary_concern": "They want ownership costs to feel manageable alongside normal monthly expenses.",
+        "initial_interest": "medium-low; location has caught their attention, but they have not compared travel routines in detail.",
+        "whatsapp_voice": "Practical, concise, informal Malaysian English; prefers straightforward answers over a long pitch.",
+        "opening_message": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?",
+        "viewing_could_be_worthwhile_if": "The agent relates verified surrounding amenities and connectivity to the buyer's daily routine, without inventing commute times; visiting may let them assess the area and project for themselves.",
+        "behavior_guidance": "If asked where they commute, give a simple plausible answer within the Perai area. Do not provide a precise address, ask for a route audit, or treat commute time as guaranteed."
+      },
+      "A": {
+        "opening": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?",
+        "turns": [
+          {
+            "customer": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?",
+            "agent": "Seberang Jaya may be a practical location for work around Perai, with connections toward Butterworth and the wider mainland urban network. The actual commute depends on which part of Perai you work in, so I wouldn’t want to guess a travel time. Which area is your workplace in?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "It’s around central Perai, near the main commercial area. I’m mostly trying to get a feel for the commute and monthly costs.",
+            "agent": "For central Perai, Seberang Jaya has connections toward Butterworth and the wider mainland network, though I wouldn’t guess an exact commute time without a route-specific check. The Type A is 900 sq ft, and maintenance is RM0.18 per sq ft including sinking fund—about RM162 a month. That’s separate from the loan instalment, which depends on the current unit price and financing terms. Are you looking to include the loan instalment in your monthly-cost estimate too?",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "PRICING",
+              "requested_fact": "Latest verified current Phase 1 Type A price or approved price reference and any applicable current package; do not use the dated sales-lab pricing simulation.",
+              "subject": "Pearl Residences Phase 1 Type A pricing",
+              "customer_need": "Assess monthly ownership costs, potentially including the loan instalment.",
+              "reason": "A current price reference is needed before an instalment estimate can be useful, and financing assumptions have not yet been provided.",
+              "resume_stage": "QUALIFY",
+              "resume_objective": "Clarify whether the buyer wants a loan-instalment estimate and, if so, obtain financing assumptions and discuss monthly costs using verified current pricing."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "That location sounds convenient. Before arranging a viewing, could you give me a rough idea of the monthly costs on top of the instalment?",
+            "agent": "The verified monthly charge I can give you is RM162 for maintenance, including the sinking fund (900 sq ft × RM0.18). The clubhouse is pay-per-use rather than a fixed monthly fee. Utilities depend on usage, and I don’t have a verified figure for any other mandatory recurring charges, so I wouldn’t want to guess at a total. I’ll check whether there are any additional fixed charges so you can assess the monthly picture before deciding about a viewing.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Confirm whether Pearl Residences has any mandatory fixed recurring charges beyond the RM162 monthly maintenance charge including sinking fund, and provide verified amounts if applicable.",
+              "subject": "Additional recurring ownership charges",
+              "customer_need": "Understand monthly costs beyond the loan instalment before deciding about a viewing.",
+              "reason": "The maintenance charge is verified, but no verified information is available about other mandatory fixed recurring charges.",
+              "resume_stage": "QUALIFY",
+              "resume_objective": "Share the verified recurring-charge information and help the buyer assess monthly ownership costs before discussing a viewing."
+            },
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Customer wants verified recurring charges before deciding whether viewing is worthwhile; support information is pending"
+      },
+      "B": {
+        "opening": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?",
+        "turns": [
+          {
+            "customer": "Hi, I work around Perai and saw your Seberang Jaya ad. Is this location convenient for daily travel?",
+            "agent": "Pearl Residences is in Seberang Jaya, with connectivity across the mainland urban network, including toward Chai Leng Park and Butterworth. It could be a practical base for work around Perai, though your exact daily journey depends on where you’re heading and the route—so I wouldn’t want to guess a travel time. Which part of Perai do you usually travel to?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Mostly around central Perai, though I move around a bit for work. Are there groceries or food options nearby for after work?",
+            "agent": "The project materials describe connectivity toward Chai Leng Park and Sunway Carnival Mall, but I don’t have a verified list of nearby grocery or food options or their distances, so I don’t want to guess. I can check which options are closest for after-work errands.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Verified nearby grocery stores and food options, with approximate distances if documented.",
+              "subject": "Pearl Residences in Seberang Jaya",
+              "customer_need": "Find convenient grocery and food options for after work.",
+              "reason": "The available project information confirms connectivity toward Chai Leng Park and Sunway Carnival Mall but does not verify nearby grocery or food listings or distances.",
+              "resume_stage": "QUALIFY",
+              "resume_objective": "Share verified nearby options and connect them to the buyer’s daily routine."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "Okay, that helps. What are the monthly maintenance and other ongoing costs like? I’m trying to keep the total manageable.",
+            "agent": "Maintenance is RM0.18 per sq.ft., inclusive of the sinking fund. I don’t have verified figures for the other ongoing charges, so I’ll check rather than guess and get you a clearer picture of what to budget beyond maintenance.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Verified ongoing ownership charges beyond the RM0.18 per sq.ft. maintenance fee, including whether standard amounts are documented for a Type A 900 sq.ft. unit.",
+              "subject": "Pearl Residences ongoing costs",
+              "customer_need": "Understand the total ongoing costs and keep them manageable.",
+              "reason": "The buyer asked about maintenance and other ongoing costs, but only the maintenance rate inclusive of sinking fund is verified.",
+              "resume_stage": "HANDLE",
+              "resume_objective": "Share verified recurring charges beyond maintenance so the buyer can assess the ongoing cost."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "At 900 sq ft, that works out to about RM162 a month for maintenance. Okay, please check the other ongoing charges too so I can get a clearer idea of the total.",
+            "agent": "Yes, that’s right: the maintenance is estimated at RM162 per month for 900 sq.ft., based on RM0.18 per sq.ft. and subject to confirmation. The other ongoing charges are still being checked; I’ll share the verified figures when available.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Buyer asked for the full monthly estimate after the recurring charge check; no viewing agreement"
+      }
+    },
+    {
+      "buyer_alias": "buyer_4",
+      "private_persona": {
+        "scenario": "early_exploration",
+        "fictional_budget_myr": 350000,
+        "background": "A single working adult in their late 20s saw a social media property ad while casually browsing. They are not actively house-hunting and have no immediate move date.",
+        "why_this_ad_caught_attention": "The advertised price and the combination of three bedrooms with a Seberang Jaya address seemed more interesting than the smaller units they expected at that bracket.",
+        "primary_motivation": "Discover whether there is a compelling reason to consider this home at all, rather than simply collecting property facts.",
+        "secondary_concern": "They are wary of a monthly commitment that would feel too heavy on one income.",
+        "initial_interest": "low; curiosity only, with no active purchase plan.",
+        "whatsapp_voice": "Casual, brief, mildly skeptical but not rude; may use 'just browsing'.",
+        "opening_message": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+        "viewing_could_be_worthwhile_if": "A concise answer reveals a credible combination that matches something they value personally, making a low-pressure look feel worthwhile despite their casual starting point.",
+        "behavior_guidance": "Do not manufacture urgency or act ready to buy. Give the agent a real chance to build interest through relevant verified value; remain unconvinced if the answer is generic or pushy."
+      },
+      "A": {
+        "opening": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+        "turns": [
+          {
+            "customer": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+            "agent": "As a starting reference, it’s about RM302k after the documented rebate on an eligible category’s base price; the selected unit’s car-park and other costs can change the total. The main appeal is a practical 900 sq ft layout with 3 bedrooms, 2 bathrooms and a balcony—one room could be useful as a guest or work space, if that suits you. Are you browsing for your own stay or mainly as an investment?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "More own stay, if anything — I’m not planning a move right now. Three bedrooms at that price is more space than I expected, but I’d be careful about the monthly commitment on one income. I’ll have a think about it.",
+            "agent": "That’s a sensible thing to weigh on one income. For the 900 sq ft unit, maintenance is RM0.18 per sq ft inclusive of sinking fund—about RM162 a month. The loan instalment is separate and depends on your financing, so I wouldn’t guess at it. The three bedrooms give you flexibility if your needs change, and there’s no need to rush while you’re not planning a move. If you later want to explore affordability, I can work through an indicative instalment using your preferred down payment and tenure.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Buyer is not planning a move and will keep the ad in mind"
+      },
+      "B": {
+        "opening": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+        "turns": [
+          {
+            "customer": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+            "agent": "For an eligible Block 1B podium-blocked unit, the starting base-after-rebate reference is about RM302k; that isn’t an all-in unit quote, as parking and add-ons can vary. The clearest practical appeal is the 900 sq ft layout with 3 bedrooms, 2 bathrooms and a balcony—there’s flexibility for family, guests or a work-from-home space. Are you browsing mainly for your own stay or as an investment?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Probably own stay, but I’m only browsing. The layout sounds practical—does that RM302k apply to many units, or just a specific one? I’d need to understand the monthly commitment too.",
+            "agent": "The ~RM302k is a category-level base-after-rebate reference for eligible Block 1B podium-blocked units on levels 1–4, not just one specific unit. I can’t confirm how many qualifying units are available. Monthly instalments depend on the loan amount, tenure and bank rate—roughly how much would you put down, and what loan tenure would you consider?",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Confirm the current number of eligible Block 1B podium-blocked units on levels 1–4, and provide an illustrative monthly instalment estimate once the buyer's down payment and preferred loan tenure are known.",
+              "subject": "Qualifying unit availability and monthly commitment",
+              "customer_need": "Assess whether the starting price may apply to more than one unit and understand potential monthly payments for an own-stay purchase.",
+              "reason": "The available information gives a category-level price reference but does not confirm current qualifying unit count or provide financing assumptions for an instalment estimate.",
+              "resume_stage": "QUALIFY",
+              "resume_objective": "Use the buyer's financing assumptions and verified availability information to clarify affordability and fit."
+            },
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Customer ended the conversation as a casual browser; no meaningful next reply"
+      }
+    },
+    {
+      "buyer_alias": "buyer_5",
+      "private_persona": {
+        "scenario": "investment",
+        "fictional_budget_myr": 400000,
+        "background": "A Malaysian professional in their late 30s is considering one residential investment property and has previously owned a small apartment. They can wait for a sensible fit.",
+        "why_this_ad_caught_attention": "The location and three-bedroom unit may appeal to a broader household tenant segment, while the ad's price point prompted them to ask whether the fundamentals make sense.",
+        "primary_motivation": "Assess whether the location, unit type, and recurring costs could make the property practically attractive to renters.",
+        "secondary_concern": "They want to avoid carrying costs that erode the economics if the unit is between tenants.",
+        "initial_interest": "medium; they are exploring seriously but need a credible rationale before spending time on a visit.",
+        "whatsapp_voice": "Measured and commercially minded, but conversational; asks one relevant investment question at a time.",
+        "opening_message": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?",
+        "viewing_could_be_worthwhile_if": "The agent connects verified location context, unit usability, and stated holding-cost facts to rental practicality while being candid about unknown rent and occupancy; a visit could help them judge the product and area.",
+        "behavior_guidance": "Ask a normal follow-up if the agent's answer leaves a decision-relevant gap. Do not demand fabricated yield, rent comps, or occupancy. Never let the agent's no-guarantee language count against it if it still makes a useful grounded case."
+      },
+      "A": {
+        "opening": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?",
+        "turns": [
+          {
+            "customer": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?",
+            "agent": "For tenants, the Type A’s 900 sq. ft., 3 bedrooms, 2 bathrooms and balcony could suit a family or offer flexibility for sharers. Seberang Jaya is an established urban area, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland network. For your holding costs, the RM0.18 psf maintenance fee works out to about RM162 a month, including sinking fund. Phase 1 is expected to complete in Q4 2029, so it wouldn’t be an immediate rental option; actual rental demand and rates would still need checking. Are you mainly considering family tenants or shared occupancy?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Probably families, given the three bedrooms. The RM162 monthly maintenance figure is useful, and the 2029 completion timing helps set expectations. What other recurring costs should I factor in while it’s rented—or between tenants?",
+            "agent": "Aside from the RM162/month maintenance fee, which includes the sinking fund, owners commonly budget for assessment tax and parcel rent/quit rent where applicable, insurance, utilities and upkeep during vacancy, plus letting or management fees if using an agent. The applicable Pearl-specific charges and amounts aren’t verified here, so I’ll check rather than guess.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Which recurring owner charges apply at Pearl Residences beyond the RM0.18 psf maintenance fee, including assessment tax, parcel rent or quit rent, insurance, and any other applicable fixed charges; provide verified amounts or calculation basis if available.",
+              "subject": "Recurring owner costs for Pearl Residences",
+              "customer_need": "Estimate holding costs while rented and during vacancy for an investment purchase intended for family tenants.",
+              "reason": "The buyer is assessing rental-property practicality and ongoing costs; guessing property-specific charges could mislead them.",
+              "resume_stage": "QUALIFY",
+              "resume_objective": "Give the buyer verified recurring-cost information and help them assess the property's holding costs."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "That’s a useful list. I’d want the verified Pearl-specific charges before I compare the numbers, but I don’t need them to decide whether it’s worth a closer look. Since completion is some way off, is there a show unit or a way to visit the area and assess the layout and surroundings?",
+            "agent": "The Type A layout is 900 sq. ft. with three bedrooms, two bathrooms and an open-plan living, dining and kitchen area, so you could judge how it might work for a family. You can also get a feel for Seberang Jaya and its nearby hubs. I’ll check the show-unit and visit options. Would you like a salesperson to contact you to arrange a visit if one is available?",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "AVAILABILITY",
+              "requested_fact": "Whether a show unit is currently available for viewing and what visit options or access arrangements are available to assess the layout and surroundings.",
+              "subject": "Pearl Residences show-unit and visit availability",
+              "customer_need": "Assess whether the layout and surroundings suit a potential family-rental investment.",
+              "reason": "The buyer is considering a closer look but availability and visit arrangements are not verified.",
+              "resume_stage": "INTENT",
+              "resume_objective": "Share confirmed show-unit or visit options and, if the buyer agrees, have a salesperson contact them to arrange a visit if possible."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "Yes, please have a salesperson contact me if a show-unit or area visit can be arranged. I’d like to hear what’s available before settling on a date.",
+            "agent": "Thanks — I’ll have a salesperson check whether a show-unit or area visit can be arranged and contact you with the available options. No date is booked yet, so you can decide after hearing what’s possible.",
+            "agent_action": "APPOINTMENT_HANDOFF",
+            "support_request": null,
+            "handoff_details": "Buyer agreed to salesperson follow-up, conditional on a show-unit or area visit being available. Check availability and explain the options; buyer wants to hear what is possible before choosing a date. No visit is booked."
+          }
+        ],
+        "closed": true,
+        "close_reason": null
+      },
+      "B": {
+        "opening": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?",
+        "turns": [
+          {
+            "customer": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?",
+            "agent": "For a rental property, the practical points are the established Seberang Jaya setting, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the wider Butterworth/mainland network. The 900 sq.ft. layout has 3 bedrooms, 2 bathrooms and a balcony, giving flexibility for a family or shared household without assuming a particular tenant demand. The maintenance fee is RM162 a month, inclusive of sinking fund. One timing point: Phase 1 is expected to complete in Q4 2029, so this is a future rental play rather than immediate income. Are you mainly considering family tenants or a shared household?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Probably families, though I’d want to keep the unit flexible. Q4 2029 is quite a wait, so I’m weighing the carrying costs before completion too. Besides the RM162 maintenance fee, are there any other regular costs I should factor in?",
+            "agent": "The RM162/month maintenance fee is the only recurring property charge I can verify here, and it includes the sinking fund. I don’t have verified details on any other charges, especially during construction, so I’ll check rather than guess. That should help you assess the carrying costs for a future family-rental plan.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Whether any other regular charges apply to Pearl Residences besides the RM162 monthly maintenance fee inclusive of sinking fund, especially during the pre-completion period; specify the charge, amount or calculation basis, and when it applies if verified.",
+              "subject": "Pearl Residences recurring charges and pre-completion costs",
+              "customer_need": "Assessing carrying costs for a potential family-rental investment.",
+              "reason": "The buyer asked what other regular costs to factor in, and the available verified information only confirms the maintenance fee.",
+              "resume_stage": "HANDLE",
+              "resume_objective": "Share confirmed recurring costs and address the buyer’s pre-completion carrying-cost concern."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "Yes, please check the other charges when you can. For a family tenant, I’d also be interested in what facilities residents can use.",
+            "agent": "For a family household, the listed facilities include a playground, jogging track, outdoor fitness area, open lawn, surau and kindergarten space, plus a BBQ pit, terrace garden and viewing deck. The clubhouse is pay-per-use. The final facilities schedule is the best reference for exact access and inclusions. I don’t have a confirmed update on other recurring or pre-completion charges yet, so I won’t guess.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "The playground and kindergarten space could matter to families. I’d be open to seeing the show unit and getting a feel for the area. What viewing times are available?",
+            "agent": "That makes sense—the show unit would let you judge how the layout could work for a family tenant, and get a feel for the area yourself. I can’t confirm the current show-unit availability or viewing times. Would you like a salesperson to check and contact you to arrange a visit if possible?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Yes, please have a salesperson check the available viewing times and contact me. I’m flexible, but nothing is booked yet.",
+            "agent": "Sure—I’ll pass this to a salesperson to check the available viewing times and contact you to arrange a visit if possible. Nothing is booked yet.",
+            "agent_action": "APPOINTMENT_HANDOFF",
+            "support_request": null,
+            "handoff_details": "Buyer agreed to have a salesperson check available show-unit viewing times and contact them to arrange a visit if possible. Buyer is flexible. Confirm availability and timing with the buyer; no appointment has been booked."
+          }
+        ],
+        "closed": true,
+        "close_reason": null
+      }
+    },
+    {
+      "buyer_alias": "buyer_6",
+      "private_persona": {
+        "scenario": "investment",
+        "fictional_budget_myr": 400000,
+        "background": "A Malaysian business owner in their early 40s is considering a long-hold residential purchase as part of a diversified property portfolio. Rental yield is not their main objective.",
+        "why_this_ad_caught_attention": "The ad highlighted a mature Seberang Jaya setting and connectivity; they are interested in whether established access and current surroundings support long-term relevance.",
+        "primary_motivation": "Judge the long-term ownership case from location quality, accessibility, existing amenities, and verified development context.",
+        "secondary_concern": "They are cautious about paying for speculative future growth stories.",
+        "initial_interest": "medium; they are open to a long-term thesis but have not formed a view on this project.",
+        "whatsapp_voice": "Thoughtful and succinct; asks about the reasoning behind claims rather than requesting a forecast.",
+        "opening_message": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?",
+        "viewing_could_be_worthwhile_if": "The agent builds a grounded thesis from verified existing connectivity, amenities, freehold tenure, or documented project context and offers a visit to assess the location and product; no price-growth promise is needed.",
+        "behavior_guidance": "Keep this distinct from a rental-investment buyer: prioritize durable location relevance and current documented context, not tenant demand or yield. Challenge unsupported future projects or appreciation claims naturally, without becoming an adversarial auditor."
+      },
+      "A": {
+        "opening": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?",
+        "turns": [
+          {
+            "customer": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?",
+            "agent": "The location appeal is its setting in established Seberang Jaya, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland urban network. For a longer-term hold, that means you can assess it within an existing urban area rather than relying only on future township development. Location alone can’t guarantee rental demand or price growth, though. Is your main focus rental income, or holding for longer-term value?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "Longer-term value, not rental income. The established surroundings are a plus. What can I verify about the development itself and the amenities that are already there?",
+            "agent": "What I can verify is that Phase 1 is a freehold condominium on residential title, with expected completion in Q4 2029. The listed Type A is 900 sq. ft., with 3 bedrooms, 2 bathrooms and a balcony; maintenance is RM0.18 per sq. ft., including the sinking fund. The nearby established destinations I mentioned are outside the development, not on-site facilities. I don’t have a verified list of which project amenities are already in place, so I’ll check that rather than guess.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Verified on-site amenity list for Pearl Residences Phase 1, including which amenities are already completed or operational, if any.",
+              "subject": "Pearl Residences on-site amenities",
+              "customer_need": "Assess the development itself and what amenities are already available as part of a longer-term property hold.",
+              "reason": "Available information confirms the expected Q4 2029 completion but does not specify the on-site amenities or their current status.",
+              "resume_stage": "QUALIFY",
+              "resume_objective": "Share the verified amenity details and relate them to the buyer's longer-term value considerations."
+            },
+            "handoff_details": null
+          },
+          {
+            "customer": "Thanks, that helps. Freehold is useful context, and I’d rather understand what’s actually included than hear a growth forecast. If you can confirm the on-site amenities and what’s planned versus committed, send that over; I’ll see whether it gives me enough reason to visit.",
+            "agent": "That’s fair—I’ll keep what’s operational, committed and only planned clearly separate. The amenity-status check is already pending; I don’t have a verified breakdown yet, so I can’t say what’s on-site or committed without guessing. I’ll share the confirmed details when they come back so you can decide whether it’s worth a visit.",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Buyer will review the verified amenity breakdown when available before deciding about a visit"
+      },
+      "B": {
+        "opening": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?",
+        "turns": [
+          {
+            "customer": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?",
+            "agent": "For a longer-term hold, Pearl Residences’ Seberang Jaya setting is a point to consider: it’s in an established mainland urban area, rather than relying entirely on a future township taking shape. Project materials also describe connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth/mainland urban areas. That gives the location practical relevance, though it doesn’t guarantee price growth or rental returns. Are you weighing it mainly for long-term ownership value or potential rental demand?",
+            "agent_action": "REPLY",
+            "support_request": null,
+            "handoff_details": null
+          },
+          {
+            "customer": "I’m looking more at long-term ownership value than rental demand. Are those places straightforward to reach from the project, and what confirmed details would help me assess the location beyond the general description?",
+            "agent": "The confirmed information places Pearl Residences in Mukim 1, Seberang Jaya, and describes connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth/mainland urban areas. Project materials also show Butterworth Jetty and surrounding roads on location maps. I don’t have verified distances or drive times, so I can’t say how many minutes the trips take or whether each route is straightforward. For your longer-term ownership assessment, the project is confirmed as freehold too, though that alone doesn’t predict future value. I’ll get the route and distance details checked rather than guess.",
+            "agent_action": "SUPPORT_REQUEST",
+            "support_request": {
+              "support_type": "OTHER",
+              "requested_fact": "Verified route information, distances and typical travel times from Pearl Residences to Sunway Carnival Mall, Chai Leng Park and Butterworth/mainland urban areas.",
+              "subject": "Pearl Residences location and connectivity",
+              "customer_need": "Assess how practical the location is for a longer-term property hold.",
+              "reason": "Available project information describes connectivity toward these destinations but does not provide verified distances or drive times.",
+              "resume_stage": "POSITION",
+              "resume_objective": "Share verified access details and connect them to the buyer's long-term ownership assessment."
+            },
+            "handoff_details": null
+          }
+        ],
+        "closed": true,
+        "close_reason": "Customer is waiting for the promised route and distance check; no further supported information is available in the lab"
+      }
+    }
+  ]
+}

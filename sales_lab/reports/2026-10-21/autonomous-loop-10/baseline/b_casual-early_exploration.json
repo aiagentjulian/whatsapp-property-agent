@@ -1,0 +1,170 @@
+{
+  "trial": "b_casual",
+  "scenario": "early_exploration",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "QUALIFY",
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "The 900 sq ft layout sounds practical to the buyer; financial fit and qualifying unit availability are not yet known.",
+    "next_objective": "Clarify financing assumptions and verify the number of qualifying units.",
+    "last_progress": "Buyer is probably considering own stay and asked whether the starting-price reference applies to multiple units and what monthly commitment might look like.",
+    "next_action": "Check qualifying unit availability and provide an illustrative monthly estimate once the buyer shares down payment and loan tenure.",
+    "conversation_summary": "Browsing for own stay; likes the practical layout and wants to understand price applicability and monthly commitment.",
+    "financing_context": "Wants to understand monthly commitment; down payment and loan tenure not yet shared."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For an eligible Block 1B podium-blocked unit, the starting base-after-rebate reference is about RM302k; that isn’t an all-in unit quote, as parking and add-ons can vary. The clearest practical appeal is the 900 sq ft layout with 3 bedrooms, 2 bathrooms and a balcony—there’s flexibility for family, guests or a work-from-home space. Are you browsing mainly for your own stay or as an investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Probably own stay, but I’m only browsing. The layout sounds practical—does that RM302k apply to many units, or just a specific one? I’d need to understand the monthly commitment too."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The ~RM302k is a category-level base-after-rebate reference for eligible Block 1B podium-blocked units on levels 1–4, not just one specific unit. I can’t confirm how many qualifying units are available. Monthly instalments depend on the loan amount, tenure and bank rate—roughly how much would you put down, and what loan tenure would you consider?"
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Confirm the current number of eligible Block 1B podium-blocked units on levels 1–4, and provide an illustrative monthly instalment estimate once the buyer's down payment and preferred loan tenure are known.",
+      "subject": "Qualifying unit availability and monthly commitment",
+      "customer_need": "Assess whether the starting price may apply to more than one unit and understand potential monthly payments for an own-stay purchase.",
+      "reason": "The available information gives a category-level price reference but does not confirm current qualifying unit count or provide financing assumptions for an instalment estimate.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Use the buyer's financing assumptions and verified availability information to clarify affordability and fit.",
+      "signature": "OTHER|1 1b 4 and are availability block blocked buyer commitment current down eligible estimate illustrative instalment known levels loan monthly number on once payment podium preferred provide qualifying s tenure units",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For an eligible Block 1B podium-blocked unit, the starting base-after-rebate reference is about RM302k; that isn’t an all-in unit quote, as parking and add-ons can vary. The clearest practical appeal is the 900 sq ft layout with 3 bedrooms, 2 bathrooms and a balcony—there’s flexibility for family, guests or a work-from-home space. Are you browsing mainly for your own stay or as an investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Fit is not yet known; buyer is browsing and asked about starting price and main appeal.",
+          "next_objective": "Understand whether the buyer is exploring for own stay or investment.",
+          "last_progress": "Asked about the starting price and main appeal; stated they are just browsing.",
+          "next_action": "Use their response about purchase purpose to highlight the most relevant property benefits.",
+          "conversation_summary": "Buyer is casually browsing and wants the starting price and main appeal."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3832,
+        "input_tokens_details": {
+          "cache_write_tokens": 2772,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1311,
+        "output_tokens_details": {
+          "reasoning_tokens": 883
+        },
+        "total_tokens": 5143
+      }
+    },
+    {
+      "customer": "Probably own stay, but I’m only browsing. The layout sounds practical—does that RM302k apply to many units, or just a specific one? I’d need to understand the monthly commitment too.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The ~RM302k is a category-level base-after-rebate reference for eligible Block 1B podium-blocked units on levels 1–4, not just one specific unit. I can’t confirm how many qualifying units are available. Monthly instalments depend on the loan amount, tenure and bank rate—roughly how much would you put down, and what loan tenure would you consider?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": "Wants to understand monthly commitment; down payment and loan tenure not yet shared.",
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "The 900 sq ft layout sounds practical to the buyer; financial fit and qualifying unit availability are not yet known.",
+          "next_objective": "Clarify financing assumptions and verify the number of qualifying units.",
+          "last_progress": "Buyer is probably considering own stay and asked whether the starting-price reference applies to multiple units and what monthly commitment might look like.",
+          "next_action": "Check qualifying unit availability and provide an illustrative monthly estimate once the buyer shares down payment and loan tenure.",
+          "conversation_summary": "Browsing for own stay; likes the practical layout and wants to understand price applicability and monthly commitment."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Confirm the current number of eligible Block 1B podium-blocked units on levels 1–4, and provide an illustrative monthly instalment estimate once the buyer's down payment and preferred loan tenure are known.",
+          "subject": "Qualifying unit availability and monthly commitment",
+          "customer_need": "Assess whether the starting price may apply to more than one unit and understand potential monthly payments for an own-stay purchase.",
+          "reason": "The available information gives a category-level price reference but does not confirm current qualifying unit count or provide financing assumptions for an instalment estimate.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Use the buyer's financing assumptions and verified availability information to clarify affordability and fit."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3610,
+        "input_tokens_details": {
+          "cache_write_tokens": 2550,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 2911,
+        "output_tokens_details": {
+          "reasoning_tokens": 2290
+        },
+        "total_tokens": 6521
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer ended the conversation as a casual browser; no meaningful next reply"
+}

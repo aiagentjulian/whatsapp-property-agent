@@ -1,0 +1,317 @@
+{
+  "trial": "b_young",
+  "scenario": "own_stay",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "purchase_reason": "Starting to look for a first home while currently renting",
+    "purchase_timeline": "Starting to look",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "MEDIUM",
+    "sales_stage": "CLOSE",
+    "next_objective": "Check weekend show-unit availability and coordinate a suitable viewing time if visits are available.",
+    "last_progress": "Agreed to have a salesperson check weekend viewing availability and follow up.",
+    "next_action": "Have a salesperson check weekend show-unit availability and contact the prospect if a weekend visit can be arranged.",
+    "conversation_summary": "Prospect is renting and starting to look for a first home. They are interested in whether a bedroom could work as a small study and agreed to a salesperson checking weekend show-unit availability and contacting them if a visit is possible; no time has been agreed.",
+    "size_or_layout_preference": "Interested in whether one bedroom can work as a small study",
+    "active_concerns": [
+      "Whether a bedroom can accommodate a small study",
+      "Whether the show unit is open on weekends"
+    ],
+    "viewing_interest": "Interested in viewing together on a weekend if the show unit is open; agreed to salesperson checking and contacting them.",
+    "important_features": [
+      "Three-bedroom layout",
+      "Interested in using one bedroom as a small study"
+    ],
+    "primary_motivations": [
+      "First home",
+      "Currently renting"
+    ],
+    "decision_factors": [
+      "Whether a bedroom can accommodate a small study",
+      "Weekend show-unit availability"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit for a first-home search; study suitability and weekend viewing availability remain unconfirmed."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. There’s a foyer before the open-plan living, dining and kitchen area, plus a small storage area and no long internal corridor. For a first home, the three bedrooms give you flexibility while keeping the shared living space open. It could be useful to see how the layout feels in person—would you like to arrange a viewing?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Thanks, that helps. Do you know roughly how big the bedrooms are? We’re trying to picture whether one could work as a small study later."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I don’t have the exact bedroom dimensions to give you a reliable estimate. The project material says all the bedrooms are designed to fit a queen-size bed, so one could be a usable extra room, but whether it works well as a study depends on the desk and storage you’d want. The show unit would help you judge the proportions in person, too."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s fair. Is the show unit open on weekends? We might be able to have a look together."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I don’t have confirmed weekend opening hours for the show unit. Since you might come together, would you like me to ask a salesperson to check whether it’s open on a weekend and contact you to arrange a visit if possible?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, please ask them to check and get back to us if weekend visits are available. We’ll work out a time together."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Thanks — I’ll have a salesperson check whether weekend visits are available and get back to you. If they are, they can coordinate a suitable time with you."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "Exact dimensions of each bedroom, especially the smallest bedroom",
+      "subject": "Pearl Residences Type A bedroom dimensions",
+      "customer_need": "Assess whether one bedroom could work as a small study",
+      "reason": "Exact measurements are needed to give a reliable estimate of desk and storage fit",
+      "resume_stage": "VIEWING",
+      "resume_objective": "Share verified bedroom dimensions and help the prospect judge study suitability",
+      "signature": "LAYOUT|bedroom dimensions each especially exact pearl residences smallest type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Type A is 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. There’s a foyer before the open-plan living, dining and kitchen area, plus a small storage area and no long internal corridor. For a first home, the three bedrooms give you flexibility while keeping the shared living space open. It could be useful to see how the layout feels in person—would you like to arrange a viewing?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Starting to look for a first home while currently renting",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Starting to look",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "See whether the layout suits their first-home needs and encourage a viewing if they are interested.",
+          "last_progress": "Asked about the layout and shared that they are renting and starting to look for their first home.",
+          "next_action": "Invite them to arrange a viewing; do not treat the invitation as agreement.",
+          "conversation_summary": "Prospect is renting and starting to look for a first home. They asked about the layout; no budget, preferred location or viewing interest has been established."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3243,
+        "input_tokens_details": {
+          "cache_write_tokens": 3240,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1680,
+        "output_tokens_details": {
+          "reasoning_tokens": 1225
+        },
+        "total_tokens": 4923
+      }
+    },
+    {
+      "customer": "Thanks, that helps. Do you know roughly how big the bedrooms are? We’re trying to picture whether one could work as a small study later.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have the exact bedroom dimensions to give you a reliable estimate. The project material says all the bedrooms are designed to fit a queen-size bed, so one could be a usable extra room, but whether it works well as a study depends on the desk and storage you’d want. The show unit would help you judge the proportions in person, too.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in whether one bedroom can work as a small study",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Whether a bedroom can accommodate a small study"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Get the bedroom dimensions and help the prospect assess study suitability, including through a viewing if useful",
+          "last_progress": "Prospect asked about bedroom sizes to assess whether one could become a small study",
+          "next_action": "Check exact bedroom dimensions; continue toward a viewing without assuming agreement",
+          "conversation_summary": "Prospect is renting and starting to look for a first home. They are interested in whether one bedroom could work as a small study; exact bedroom dimensions are not yet known."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "Exact dimensions of each bedroom, especially the smallest bedroom",
+          "subject": "Pearl Residences Type A bedroom dimensions",
+          "customer_need": "Assess whether one bedroom could work as a small study",
+          "reason": "Exact measurements are needed to give a reliable estimate of desk and storage fit",
+          "resume_stage": "VIEWING",
+          "resume_objective": "Share verified bedroom dimensions and help the prospect judge study suitability"
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3691,
+        "input_tokens_details": {
+          "cache_write_tokens": 2631,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1380,
+        "output_tokens_details": {
+          "reasoning_tokens": 838
+        },
+        "total_tokens": 5071
+      }
+    },
+    {
+      "customer": "That’s fair. Is the show unit open on weekends? We might be able to have a look together.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have confirmed weekend opening hours for the show unit. Since you might come together, would you like me to ask a salesperson to check whether it’s open on a weekend and contact you to arrange a visit if possible?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Starting to look for a first home while currently renting",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in whether one bedroom can work as a small study",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "Starting to look",
+          "viewing_interest": "Might be able to view together; asked whether the show unit is open on weekends",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "MEDIUM",
+          "sales_stage": "INTENT",
+          "important_features": [
+            "Three-bedroom layout",
+            "Interested in using one bedroom as a small study"
+          ],
+          "primary_motivations": [
+            "First home",
+            "Currently renting"
+          ],
+          "decision_factors": [
+            "Whether a bedroom can accommodate a small study",
+            "Weekend show-unit availability"
+          ],
+          "active_concerns": [
+            "Whether a bedroom can accommodate a small study",
+            "Whether the show unit is open on weekends"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a first-home search; study suitability and weekend viewing availability remain unconfirmed.",
+          "next_objective": "Get permission for a salesperson to check weekend availability and contact them to arrange a visit if possible.",
+          "last_progress": "The prospect said they might be able to view together and asked about weekend show-unit hours.",
+          "next_action": "Ask whether they would like a salesperson to check weekend availability and contact them about arranging a visit.",
+          "conversation_summary": "Prospect is renting and starting to look for a first home. They are considering whether a bedroom could work as a small study and might be able to view together, depending on weekend show-unit availability."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3616,
+        "input_tokens_details": {
+          "cache_write_tokens": 2556,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1655,
+        "output_tokens_details": {
+          "reasoning_tokens": 1116
+        },
+        "total_tokens": 5271
+      }
+    },
+    {
+      "customer": "Yes, please ask them to check and get back to us if weekend visits are available. We’ll work out a time together.",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Thanks — I’ll have a salesperson check whether weekend visits are available and get back to you. If they are, they can coordinate a suitable time with you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Interested in viewing together on a weekend if the show unit is open; agreed to salesperson checking and contacting them.",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": null,
+          "sales_stage": "CLOSE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Check weekend show-unit availability and coordinate a suitable viewing time if visits are available.",
+          "last_progress": "Agreed to have a salesperson check weekend viewing availability and follow up.",
+          "next_action": "Have a salesperson check weekend show-unit availability and contact the prospect if a weekend visit can be arranged.",
+          "conversation_summary": "Prospect is renting and starting to look for a first home. They are interested in whether a bedroom could work as a small study and agreed to a salesperson checking weekend show-unit availability and contacting them if a visit is possible; no time has been agreed."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Please check whether the Pearl Residences show unit is open for weekend visits. If weekend visits are available, contact the prospect to coordinate a suitable time. They will work out a time together; no visit is booked or confirmed."
+      },
+      "usage": {
+        "input_tokens": 3867,
+        "input_tokens_details": {
+          "cache_write_tokens": 2807,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1230,
+        "output_tokens_details": {
+          "reasoning_tokens": 760
+        },
+        "total_tokens": 5097
+      }
+    }
+  ],
+  "closed": true
+}

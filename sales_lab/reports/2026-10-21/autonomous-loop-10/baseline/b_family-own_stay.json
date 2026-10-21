@@ -1,0 +1,329 @@
+{
+  "trial": "b_family",
+  "scenario": "own_stay",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for more space for a young child because the current rental is getting tight",
+    "size_or_layout_preference": "Practical three-bedroom layout for a small family",
+    "sales_stage": "CLOSE",
+    "important_features": [
+      "Three bedrooms",
+      "Two bathrooms",
+      "Open-plan living and dining area",
+      "Storage",
+      "A place for their child to play"
+    ],
+    "primary_motivations": [
+      "More space for a young child and family"
+    ],
+    "decision_factors": [
+      "Whether the three-bedroom layout is practical for a small family"
+    ],
+    "active_concerns": [
+      "Whether children can use the facilities deck to play; specific location and access rules are unconfirmed"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit for a small-family own stay based on the stated space need; exact room and furniture fit should be assessed against the approved plan.",
+    "next_objective": "Coordinate and confirm a weekend viewing with the buyer.",
+    "last_progress": "Buyer asked to visit this weekend.",
+    "next_action": "Human salesperson to coordinate and confirm an available weekend viewing time; no booking has been confirmed.",
+    "conversation_summary": "Buyer is considering the three-bedroom layout for a young child and requested a weekend visit. A question about children's play facilities remains pending verification.",
+    "viewing_interest": "Requested a visit this weekend",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "READY_FOR_APPOINTMENT"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "It could be practical for a small family. The Type A is 900 sq ft with 3 bedrooms and 2 bathrooms, so you could have a separate room for your child while still having space to spend time together in the open-plan living and dining area. The layout also avoids a long corridor and includes a small storage area. I’d recommend viewing it to judge the room sizes and layout for yourselves; exact furniture fit should be checked against the approved plan."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds more workable than what we have now. Is there a place for kids to play in the development?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "There’s an approximately 10-acre landscaped facilities deck on Level 9, giving residents a substantial shared outdoor green space. I don’t have verified details on whether there’s a dedicated children’s playground or play equipment, so I’ll check that specifically for you."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "A green space could still be useful. Do you know if kids can use it to play, or would that depend on the facilities rules?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The development’s facilities list does include a playground, alongside the roughly 10-acre landscaped Level 9 facilities deck. I can’t confirm whether the playground is on that deck or the specific access and supervision rules; use of the facilities would be subject to the management rules. The green space could still give your family an outdoor area to enjoy together."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds worth seeing for ourselves. Could we visit this weekend?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, I’ll pass your request to our salesperson to coordinate a visit this weekend and confirm an available time with you. It isn’t booked until they confirm. You’ll be able to assess the three-bedroom layout and room sizes in person."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Whether the Level 9 facilities deck includes a designated children's playground or play equipment.",
+      "subject": "Pearl Residences children's play facilities",
+      "customer_need": "The buyer has a young child and wants to know whether there is a place for the child to play in the development.",
+      "reason": "The approximate size and landscaped nature of the facilities deck are known, but specific children's play facilities are not verified.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share the verified details of children's play facilities and connect them to the family's needs.",
+      "signature": "OTHER|9 children deck designated equipment facilities includes level or pearl play playground residences s",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "It could be practical for a small family. The Type A is 900 sq ft with 3 bedrooms and 2 bathrooms, so you could have a separate room for your child while still having space to spend time together in the open-plan living and dining area. The layout also avoids a long corridor and includes a small storage area. I’d recommend viewing it to judge the room sizes and layout for yourselves; exact furniture fit should be checked against the approved plan.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for more space for a young child because the current rental is getting tight",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Practical three-bedroom layout for a small family",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Open-plan living and dining area",
+            "Storage"
+          ],
+          "primary_motivations": [
+            "More space for a young child and family"
+          ],
+          "decision_factors": [
+            "Whether the three-bedroom layout is practical for a small family"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a small-family own stay based on the stated space need; exact room and furniture fit should be assessed against the approved plan.",
+          "next_objective": "Help the buyer assess the layout in person",
+          "last_progress": "Buyer shared that their rental is getting tight and asked whether the three-bedroom layout suits a small family.",
+          "next_action": "Await response to the viewing suggestion",
+          "conversation_summary": "Buyer has a young child and is looking for more space than their current rental provides. They asked about the practicality of the three-bedroom layout."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3570,
+        "input_tokens_details": {
+          "cache_write_tokens": 2510,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1423,
+        "output_tokens_details": {
+          "reasoning_tokens": 906
+        },
+        "total_tokens": 4993
+      }
+    },
+    {
+      "customer": "That sounds more workable than what we have now. Is there a place for kids to play in the development?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "POSITIVE",
+        "reply": "There’s an approximately 10-acre landscaped facilities deck on Level 9, giving residents a substantial shared outdoor green space. I don’t have verified details on whether there’s a dedicated children’s playground or play equipment, so I’ll check that specifically for you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Open-plan living and dining area",
+            "Storage",
+            "A place for their child to play"
+          ],
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm whether there is a dedicated children's play area or play equipment, then relate the verified facilities to the family's needs.",
+          "last_progress": "Buyer said the three-bedroom layout sounds more workable than their current rental and asked about places for their child to play.",
+          "next_action": "Check verified details of dedicated children's play facilities.",
+          "conversation_summary": "Buyer has a young child and needs more space than their current rental provides. They responded positively to the three-bedroom layout and asked about places for their child to play. A dedicated playground or play equipment has not been verified."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Whether the Level 9 facilities deck includes a designated children's playground or play equipment.",
+          "subject": "Pearl Residences children's play facilities",
+          "customer_need": "The buyer has a young child and wants to know whether there is a place for the child to play in the development.",
+          "reason": "The approximate size and landscaped nature of the facilities deck are known, but specific children's play facilities are not verified.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share the verified details of children's play facilities and connect them to the family's needs."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3689,
+        "input_tokens_details": {
+          "cache_write_tokens": 2629,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1570,
+        "output_tokens_details": {
+          "reasoning_tokens": 1106
+        },
+        "total_tokens": 5259
+      }
+    },
+    {
+      "customer": "A green space could still be useful. Do you know if kids can use it to play, or would that depend on the facilities rules?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The development’s facilities list does include a playground, alongside the roughly 10-acre landscaped Level 9 facilities deck. I can’t confirm whether the playground is on that deck or the specific access and supervision rules; use of the facilities would be subject to the management rules. The green space could still give your family an outdoor area to enjoy together.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Help the buyer assess whether the family facilities and home layout suit their needs.",
+          "last_progress": "Buyer asked whether children can play in the green space; the facilities list includes a playground, but its location and specific access rules are unconfirmed.",
+          "next_action": "Continue the conversation around the family’s practical needs; follow up on the already-pending clarification if available.",
+          "conversation_summary": "Buyer is considering the 3-bedroom layout for a young child and asked about play space. The development facilities list includes a playground, but its location relative to the Level 9 landscaped deck and detailed usage rules are not confirmed."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3987,
+        "input_tokens_details": {
+          "cache_write_tokens": 2927,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1844,
+        "output_tokens_details": {
+          "reasoning_tokens": 1409
+        },
+        "total_tokens": 5831
+      }
+    },
+    {
+      "customer": "That sounds worth seeing for ourselves. Could we visit this weekend?",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Yes, I’ll pass your request to our salesperson to coordinate a visit this weekend and confirm an available time with you. It isn’t booked until they confirm. You’ll be able to assess the three-bedroom layout and room sizes in person.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Looking for more space for a young child because the current rental is getting tight",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Practical three-bedroom layout for a small family",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Requested a visit this weekend",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": "READY_FOR_APPOINTMENT",
+          "sales_stage": "CLOSE",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Open-plan living and dining area",
+            "Storage",
+            "A place for their child to play"
+          ],
+          "primary_motivations": [
+            "More space for a young child and family"
+          ],
+          "decision_factors": [
+            "Whether the three-bedroom layout is practical for a small family"
+          ],
+          "active_concerns": [
+            "Whether children can use the facilities deck to play; specific location and access rules are unconfirmed"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a small-family own stay based on the stated space need; exact room and furniture fit should be assessed against the approved plan.",
+          "next_objective": "Coordinate and confirm a weekend viewing with the buyer.",
+          "last_progress": "Buyer asked to visit this weekend.",
+          "next_action": "Human salesperson to coordinate and confirm an available weekend viewing time; no booking has been confirmed.",
+          "conversation_summary": "Buyer is considering the three-bedroom layout for a young child and requested a weekend visit. A question about children's play facilities remains pending verification."
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Buyer requested a visit this weekend. Please coordinate a suitable time and confirm the arrangements directly; no appointment has been booked."
+      },
+      "usage": {
+        "input_tokens": 3674,
+        "input_tokens_details": {
+          "cache_write_tokens": 2614,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1357,
+        "output_tokens_details": {
+          "reasoning_tokens": 914
+        },
+        "total_tokens": 5031
+      }
+    }
+  ],
+  "closed": true
+}

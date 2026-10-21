@@ -1,0 +1,265 @@
+{
+  "trial": "c_family",
+  "scenario": "own_stay",
+  "source_sha256": "b76fadfb2f9b45c0a9e92ffc3e78e8d17b87e030f324b5ea6663ecf2d1925a48",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Their current rental is getting tight with a young child.",
+    "size_or_layout_preference": "Assessing the 900 sq ft, 3-bedroom Type A layout for a small family.",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "POSITION",
+    "important_features": [
+      "Practical space for a small family",
+      "Three-bedroom layout",
+      "Room for their child to play after furniture is in place"
+    ],
+    "primary_motivations": [
+      "More room for their family than their current rental provides"
+    ],
+    "decision_factors": [
+      "Whether the 3-bedroom layout feels practical for their family",
+      "Whether there is enough play space after usual furniture is in place"
+    ],
+    "active_concerns": [
+      "Whether the space will feel sufficient for a small family",
+      "Whether there will be room for their child to play once usual furniture is in place"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit based on the 900 sq ft, 3-bedroom, 2-bathroom layout; the buyer wants to assess usable play space with furniture in place, and an approved floor plan would help.",
+    "next_objective": "Share the approved Type A floor plan when it becomes available so the buyer can assess furniture fit and play space.",
+    "last_progress": "Buyer asked to see the approved layout before judging whether there will be enough play space with usual furniture.",
+    "next_action": "Share the approved Type A floor plan when the pending request is resolved.",
+    "conversation_summary": "Buyer is considering whether Pearl Residences' 900 sq ft, 3-bedroom layout suits their small family. Their rental feels tight, and they want to assess play space after furnishing the home."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "It could be a practical fit for a small family. Type A is 900 sq ft with 3 bedrooms and 2 bathrooms; the living, dining and kitchen are open-plan, and the layout avoids a long internal corridor and includes a small storage area. The third bedroom also gives you flexibility as your child grows. A viewing would help you judge whether the space feels comfortable for your family—would you like to arrange one?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That sounds more practical than where we are now. I’m still wondering if there’d be enough room for our child to play once we’ve got the usual furniture in. Do you have a floor plan I could look at first?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The approved Type A floor plan would be the best way to judge how much play space remains with your usual furniture. I don’t have the drawing to share in this chat, but I can check with the team for it. Exact furniture fit will depend on how you arrange the space."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, please check and send it over if you can. Seeing the layout would help us picture where the play space might be. Thanks."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Thanks — I’ll share the approved Type A plan when it comes through. It should help you compare the living/dining area with your usual furniture and judge the potential play space more realistically."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "The approved Type A floor plan, preferably showing room dimensions and the living/dining area layout.",
+      "subject": "Pearl Residences Type A floor plan",
+      "customer_need": "Assess whether there would be enough space for their child to play once usual furniture is in place.",
+      "reason": "The available information describes the layout but does not include the floor plan drawing needed for the buyer to judge furniture fit.",
+      "resume_stage": "POSITION",
+      "resume_objective": "Share the approved plan and help the buyer assess whether the layout works for their family.",
+      "signature": "LAYOUT|and approved area dimensions dining floor layout living pearl plan preferably residences room showing type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "It could be a practical fit for a small family. Type A is 900 sq ft with 3 bedrooms and 2 bathrooms; the living, dining and kitchen are open-plan, and the layout avoids a long internal corridor and includes a small storage area. The third bedroom also gives you flexibility as your child grows. A viewing would help you judge whether the space feels comfortable for your family—would you like to arrange one?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Their current rental is getting tight with a young child.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Assessing a 3-bedroom layout for a small family.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Practical space for a small family",
+            "Three-bedroom layout"
+          ],
+          "primary_motivations": [
+            "More room for their family than their current rental provides"
+          ],
+          "decision_factors": [
+            "Whether the 3-bedroom layout feels practical for their family"
+          ],
+          "active_concerns": [
+            "Whether the space will feel sufficient for a small family"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit based on the 3-bedroom, 2-bathroom layout; the buyer would need to judge the space in person.",
+          "next_objective": "Help the buyer assess whether the layout feels comfortable for their family.",
+          "last_progress": "Buyer shared that they have a young child and their rental is getting tight, and asked whether the 3-bedroom layout is practical.",
+          "next_action": "Await their response to the viewing invitation; no visit has been agreed.",
+          "conversation_summary": "Buyer is considering whether Pearl Residences' 3-bedroom layout could suit their small family as their current rental feels tight."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3633,
+        "input_tokens_details": {
+          "cache_write_tokens": 2573,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1837,
+        "output_tokens_details": {
+          "reasoning_tokens": 1304
+        },
+        "total_tokens": 5470
+      }
+    },
+    {
+      "customer": "That sounds more practical than where we are now. I’m still wondering if there’d be enough room for our child to play once we’ve got the usual furniture in. Do you have a floor plan I could look at first?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "The approved Type A floor plan would be the best way to judge how much play space remains with your usual furniture. I don’t have the drawing to share in this chat, but I can check with the team for it. Exact furniture fit will depend on how you arrange the space.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Their current rental is getting tight with a young child.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Assessing the 900 sq ft, 3-bedroom Type A layout for a small family.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Practical space for a small family",
+            "Three-bedroom layout",
+            "Room for their child to play after furniture is in place"
+          ],
+          "primary_motivations": [
+            "More room for their family than their current rental provides"
+          ],
+          "decision_factors": [
+            "Whether the 3-bedroom layout feels practical for their family",
+            "Whether there is enough play space after usual furniture is in place"
+          ],
+          "active_concerns": [
+            "Whether the space will feel sufficient for a small family",
+            "Whether there will be room for their child to play once usual furniture is in place"
+          ],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit based on the 900 sq ft, 3-bedroom, 2-bathroom layout; the buyer wants to assess usable play space with furniture in place, and an approved floor plan would help.",
+          "next_objective": "Provide the approved Type A floor plan so the buyer can assess furniture placement and potential play space.",
+          "last_progress": "Buyer said the layout sounds more practical than their current rental and asked to see a floor plan before judging play space.",
+          "next_action": "Request the approved Type A floor plan from the team.",
+          "conversation_summary": "Buyer is considering whether Pearl Residences' 900 sq ft, 3-bedroom layout suits their small family. Their rental feels tight, and they want to assess play space after furnishing the home."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "The approved Type A floor plan, preferably showing room dimensions and the living/dining area layout.",
+          "subject": "Pearl Residences Type A floor plan",
+          "customer_need": "Assess whether there would be enough space for their child to play once usual furniture is in place.",
+          "reason": "The available information describes the layout but does not include the floor plan drawing needed for the buyer to judge furniture fit.",
+          "resume_stage": "POSITION",
+          "resume_objective": "Share the approved plan and help the buyer assess whether the layout works for their family."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3936,
+        "input_tokens_details": {
+          "cache_write_tokens": 2876,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1655,
+        "output_tokens_details": {
+          "reasoning_tokens": 931
+        },
+        "total_tokens": 5591
+      }
+    },
+    {
+      "customer": "Yes, please check and send it over if you can. Seeing the layout would help us picture where the play space might be. Thanks.",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "POSITIVE",
+        "reply": "Thanks — I’ll share the approved Type A plan when it comes through. It should help you compare the living/dining area with your usual furniture and judge the potential play space more realistically.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "POSITION",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Share the approved Type A floor plan when it becomes available so the buyer can assess furniture fit and play space.",
+          "last_progress": "Buyer asked to see the approved layout before judging whether there will be enough play space with usual furniture.",
+          "next_action": "Share the approved Type A floor plan when the pending request is resolved.",
+          "conversation_summary": null
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 4163,
+        "input_tokens_details": {
+          "cache_write_tokens": 3103,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1076,
+        "output_tokens_details": {
+          "reasoning_tokens": 800
+        },
+        "total_tokens": 5239
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer asked for the approved layout and will review it when sent; no visit was agreed"
+}
