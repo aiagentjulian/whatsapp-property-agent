@@ -98,8 +98,10 @@ class RuntimeTests(unittest.TestCase):
         result = runtime.process_inbound("Alice Example", "h1", "I want to view this Saturday.", True,
                                          lambda contact, text: sends.append((contact, text)) or {"message_id": "out-h1"})
         self.assertEqual(result["status"], "handed_off")
-        self.assertIn("follow up to confirm availability", result["reply"])
+        self.assertIn("follow up to confirm your viewing details", result["reply"])
         self.assertNotIn("confirmed", result["reply"].lower())
+        self.assertNotIn("salesperson", result["reply"].lower())
+        self.assertNotIn("team", result["reply"].lower())
         self.assertEqual(result["send_status"], "sent")
         self.assertEqual(sends, [("Alice Example", result["reply"])])
         self.assertEqual(runtime.process_inbound("Alice Example", "h1", "I want to view this Saturday.", True,
@@ -246,7 +248,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("answer truthfully", SYSTEM_PROMPT.lower())
         self.assertIn("own stay or investment", SYSTEM_PROMPT.lower())
         self.assertIn("does not itself indicate buyer agreement", SYSTEM_PROMPT.lower())
-        self.assertIn("ask whether they would like a human salesperson to check the condition", SYSTEM_PROMPT.lower())
+        self.assertIn("offer to check availability and follow up", SYSTEM_PROMPT.lower())
 
     def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
         from .knowledge import focused_sales_context
