@@ -62,6 +62,27 @@ class SalesLabTests(unittest.TestCase):
         self.assertEqual(transport.call_count, 1)
 
     @patch.dict('os.environ', {'OPENAI_API_KEY': 'test-not-real'})
+    def test_failed_validation_records_reason_without_retry(self):
+        main(self.args)
+        live = self.args[:]
+        live[live.index('dry')] = 'baseline'
+        live.append('--live')
+        with patch('app.sales_lab.SalesAgent.decide', side_effect=ValueError('Formal handoff requires a reason')):
+            with self.assertRaisesRegex(SystemExit, 'ValueError'):
+                main(live)
+        ledger = json.loads((self.root / 'ledger.json').read_text())
+        self.assertTrue(ledger['stopped'])
+        self.assertEqual(len(ledger['attempts']), 1)
+        self.assertEqual(ledger['attempts'][0]['error_type'], 'ValueError')
+        self.assertEqual(ledger['attempts'][0]['error_detail'], 'Formal handoff requires a reason')
+        events = [json.loads(line) for line in (self.root / 'ledger.jsonl').read_text().splitlines()]
+        self.assertEqual(events[-1]['error_detail'], 'Formal handoff requires a reason')
+        with patch('app.sales_lab.SalesAgent.decide') as decide:
+            with self.assertRaises(SystemExit):
+                main(live)
+            decide.assert_not_called()
+
+    @patch.dict('os.environ', {'OPENAI_API_KEY': 'test-not-real'})
     @patch('app.provider.urllib.request.urlopen')
     def test_budget_and_dry_gate_block_before_transport(self, transport):
         with self.assertRaises(SystemExit): main(self.args + ['--live'])
