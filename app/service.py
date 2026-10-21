@@ -104,7 +104,7 @@ class Runtime:
                 return {"status": "handoff_suppressed", "lead_id": lead["lead_id"], "reply": None}
             handoff_reply = True
             reply = (
-                "I’ve shared your viewing request with our team. They’ll follow up to confirm availability."
+                "Great! We’ll follow up to confirm your viewing details."
                 if action == "APPOINTMENT_HANDOFF"
                 else "I’ve passed this to our team, and someone will follow up with you."
             )
