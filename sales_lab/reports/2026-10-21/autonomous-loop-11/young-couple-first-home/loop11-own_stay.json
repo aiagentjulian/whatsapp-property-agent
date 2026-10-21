@@ -1,0 +1,188 @@
+{
+  "trial": "loop11",
+  "scenario": "own_stay",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "EXPLORING",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for their first place; currently renting.",
+    "size_or_layout_preference": "900 sq ft, 3 bedrooms and 2 bathrooms; would use the third bedroom as a study for now and possibly a bedroom later.",
+    "sales_stage": "QUALIFY",
+    "important_features": [
+      "3 bedrooms",
+      "Open-plan living, dining and kitchen",
+      "Entrance foyer"
+    ],
+    "primary_motivations": [
+      "Looking for a first place"
+    ],
+    "decision_factors": [
+      "Layout"
+    ],
+    "active_concerns": [],
+    "resolved_concerns": [],
+    "fit_assessment": "The third room may suit their current study needs and later bedroom use; bedroom dimensions are needed to assess room size.",
+    "next_objective": "Confirm the individual bedroom dimensions so the buyer can judge whether the layout suits their needs.",
+    "last_progress": "Buyer plans to use the third bedroom as a study initially, possibly as a bedroom later.",
+    "next_action": "Check the verified dimensions of each bedroom.",
+    "conversation_summary": "Early first-home enquiry from a renter. Buyer is considering the third bedroom as a study now and possibly a bedroom later, and asked whether the bedrooms are a decent size."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Pearl Residences’ Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, with an entrance foyer for a bit of privacy and no long internal corridor. For a first place, the third bedroom gives you flexibility for a study, guests or future needs. Would you mainly use it as a bedroom or a study?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Probably a study for now, then maybe a bedroom later. Are the bedrooms all a decent size?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That makes sense for a first home—the third room could work as a study now and a bedroom later. I don’t have verified dimensions for each bedroom, so I don’t want to guess whether they’ll feel spacious. I’ll check the room-by-room measurements for you."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "Verified dimensions of each bedroom in the 900 sq ft Type A layout.",
+      "subject": "Pearl Residences Type A bedroom dimensions",
+      "customer_need": "Assess whether the bedrooms are a suitable size, especially for using the third bedroom as a study now and possibly a bedroom later.",
+      "reason": "Bedroom-by-bedroom dimensions are not available in the provided verified information.",
+      "resume_stage": "QUALIFY",
+      "resume_objective": "Share verified bedroom dimensions and relate them to the buyer’s intended use of the third room.",
+      "signature": "LAYOUT|900 bedroom dimensions each ft in layout pearl residences sq type verified",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, saw the Pearl Residences ad. We’re renting now and starting to look at our first place. What’s the layout like?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "Pearl Residences’ Phase 1 homes are 900 sq ft, with 3 bedrooms, 2 bathrooms and a balcony. The living, dining and kitchen areas are open-plan, with an entrance foyer for a bit of privacy and no long internal corridor. For a first place, the third bedroom gives you flexibility for a study, guests or future needs. Would you mainly use it as a bedroom or a study?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "EXPLORING",
+          "purchase_reason": "Looking for their first place; currently renting.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Asked about the layout; 900 sq ft, 3 bedrooms, 2 bathrooms and a balcony.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "UNDERSTAND",
+          "important_features": [
+            "3 bedrooms",
+            "Open-plan living, dining and kitchen",
+            "Entrance foyer"
+          ],
+          "primary_motivations": [
+            "Looking for a first place"
+          ],
+          "decision_factors": [
+            "Layout"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The 3-bedroom layout may offer flexibility for a first home; their preferred use of the extra room is not yet known.",
+          "next_objective": "Understand how they would use the third bedroom.",
+          "last_progress": "Asked what the layout is like and shared that they are renting and starting to look for their first place.",
+          "next_action": "Clarify whether they would use the third bedroom mainly as a bedroom or study.",
+          "conversation_summary": "Early enquiry about Pearl Residences’ layout. Buyer is currently renting and beginning to look for a first place."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3243,
+        "input_tokens_details": {
+          "cache_write_tokens": 3240,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1310,
+        "output_tokens_details": {
+          "reasoning_tokens": 905
+        },
+        "total_tokens": 4553
+      }
+    },
+    {
+      "customer": "Probably a study for now, then maybe a bedroom later. Are the bedrooms all a decent size?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "That makes sense for a first home—the third room could work as a study now and a bedroom later. I don’t have verified dimensions for each bedroom, so I don’t want to guess whether they’ll feel spacious. I’ll check the room-by-room measurements for you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "900 sq ft, 3 bedrooms and 2 bathrooms; would use the third bedroom as a study for now and possibly a bedroom later.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "QUALIFY",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": "The third room may suit their current study needs and later bedroom use; bedroom dimensions are needed to assess room size.",
+          "next_objective": "Confirm the individual bedroom dimensions so the buyer can judge whether the layout suits their needs.",
+          "last_progress": "Buyer plans to use the third bedroom as a study initially, possibly as a bedroom later.",
+          "next_action": "Check the verified dimensions of each bedroom.",
+          "conversation_summary": "Early first-home enquiry from a renter. Buyer is considering the third bedroom as a study now and possibly a bedroom later, and asked whether the bedrooms are a decent size."
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "Verified dimensions of each bedroom in the 900 sq ft Type A layout.",
+          "subject": "Pearl Residences Type A bedroom dimensions",
+          "customer_need": "Assess whether the bedrooms are a suitable size, especially for using the third bedroom as a study now and possibly a bedroom later.",
+          "reason": "Bedroom-by-bedroom dimensions are not available in the provided verified information.",
+          "resume_stage": "QUALIFY",
+          "resume_objective": "Share verified bedroom dimensions and relate them to the buyer’s intended use of the third room."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3447,
+        "input_tokens_details": {
+          "cache_write_tokens": 2387,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1031,
+        "output_tokens_details": {
+          "reasoning_tokens": 464
+        },
+        "total_tokens": 4478
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer is waiting for the requested bedroom-dimension check; no viewing agreement"
+}

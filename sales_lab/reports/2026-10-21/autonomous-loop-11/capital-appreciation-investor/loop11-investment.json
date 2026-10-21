@@ -1,0 +1,205 @@
+{
+  "trial": "loop11",
+  "scenario": "investment",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "INVESTMENT",
+    "preferred_language": "English",
+    "purchase_reason": "Considering a longer-term property hold",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Established urban location",
+      "Connectivity to nearby urban destinations",
+      "Tenure"
+    ],
+    "primary_motivations": [
+      "Longer-term property hold"
+    ],
+    "decision_factors": [
+      "Location's long-term appeal",
+      "Freehold status",
+      "Actual access to Sunway Carnival Mall and main routes"
+    ],
+    "active_concerns": [
+      "Unverified tenure and distances to nearby destinations and main routes"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Location context may be relevant to the buyer's longer-term holding interest; tenure and actual access details remain unverified, and no return outcome is established.",
+    "next_objective": "Provide verified tenure and distance/access information so the buyer can assess whether a viewing is worthwhile.",
+    "last_progress": "Buyer said the established urban context is useful and asked about tenure and actual access before deciding on a viewing.",
+    "next_action": "Check verified tenure and distances to Sunway Carnival Mall and the main routes.",
+    "conversation_summary": "Buyer is considering a longer-term property hold and wants to verify freehold status and actual access to Sunway Carnival Mall and main routes before deciding whether to view.",
+    "viewing_interest": "Wants to understand tenure and actual access before deciding whether a viewing is worthwhile"
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For a longer-term hold, the location’s main strength is its established Seberang Jaya setting, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland urban network. That gives you an existing urban context to assess, rather than relying only on future development. It supports the location case, though it isn’t a guarantee of future returns. A viewing would let you judge the setting and access for yourself—would you like to arrange one?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That established context is useful. Is Pearl Residences freehold, and how close is it to Sunway Carnival Mall and the main routes? I’d want to understand the actual access before deciding whether a viewing is worthwhile."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a fair check before deciding whether a viewing is worthwhile. I can confirm the established Seberang Jaya setting and connectivity toward Sunway Carnival Mall and the main routes, but I don’t have verified freehold status or reliable distances to quote. I’ll get those specific details checked so you can assess the tenure and actual access properly."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "OTHER",
+      "requested_fact": "Verify whether Pearl Residences is freehold and provide reliable distances or access details to Sunway Carnival Mall and the main routes.",
+      "subject": "Pearl Residences tenure and location access",
+      "customer_need": "Assess the location's actual access and tenure before deciding whether a viewing is worthwhile.",
+      "reason": "These material facts are not available in the verified information provided.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Share verified tenure and access information, then help the buyer decide whether a viewing is worthwhile.",
+      "signature": "OTHER|access and carnival details distances freehold location main mall or pearl provide reliable residences routes sunway tenure verify",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, I saw your Pearl Residences ad. I’m considering a longer-term property hold — what supports the location’s long-term appeal?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "For a longer-term hold, the location’s main strength is its established Seberang Jaya setting, with connectivity toward Sunway Carnival Mall, Chai Leng Park and the Butterworth/mainland urban network. That gives you an existing urban context to assess, rather than relying only on future development. It supports the location case, though it isn’t a guarantee of future returns. A viewing would let you judge the setting and access for yourself—would you like to arrange one?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "INVESTMENT",
+          "purchase_reason": "Considering a longer-term property hold",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Established urban location",
+            "Connectivity to nearby urban destinations"
+          ],
+          "primary_motivations": [
+            "Longer-term property hold"
+          ],
+          "decision_factors": [
+            "Location's long-term appeal"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Location context may be relevant to the buyer's longer-term holding interest; no return outcome is established.",
+          "next_objective": "Invite the buyer to assess the location in person.",
+          "last_progress": "Buyer asked what supports the location's long-term appeal and stated they are considering a longer-term property hold.",
+          "next_action": "Await response to viewing invitation.",
+          "conversation_summary": "Buyer is considering a longer-term property hold and asked about the location's long-term appeal."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3158,
+        "input_tokens_details": {
+          "cache_write_tokens": 2098,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1373,
+        "output_tokens_details": {
+          "reasoning_tokens": 902
+        },
+        "total_tokens": 4531
+      }
+    },
+    {
+      "customer": "That established context is useful. Is Pearl Residences freehold, and how close is it to Sunway Carnival Mall and the main routes? I’d want to understand the actual access before deciding whether a viewing is worthwhile.",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "That’s a fair check before deciding whether a viewing is worthwhile. I can confirm the established Seberang Jaya setting and connectivity toward Sunway Carnival Mall and the main routes, but I don’t have verified freehold status or reliable distances to quote. I’ll get those specific details checked so you can assess the tenure and actual access properly.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "INVESTMENT",
+          "purchase_reason": "Considering a longer-term property hold",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Wants to understand tenure and actual access before deciding whether a viewing is worthwhile",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "Established urban location",
+            "Connectivity to nearby urban destinations",
+            "Tenure"
+          ],
+          "primary_motivations": [
+            "Longer-term property hold"
+          ],
+          "decision_factors": [
+            "Location's long-term appeal",
+            "Freehold status",
+            "Actual access to Sunway Carnival Mall and main routes"
+          ],
+          "active_concerns": [
+            "Unverified tenure and distances to nearby destinations and main routes"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": "Location context may be relevant to the buyer's longer-term holding interest; tenure and actual access details remain unverified, and no return outcome is established.",
+          "next_objective": "Provide verified tenure and distance/access information so the buyer can assess whether a viewing is worthwhile.",
+          "last_progress": "Buyer said the established urban context is useful and asked about tenure and actual access before deciding on a viewing.",
+          "next_action": "Check verified tenure and distances to Sunway Carnival Mall and the main routes.",
+          "conversation_summary": "Buyer is considering a longer-term property hold and wants to verify freehold status and actual access to Sunway Carnival Mall and main routes before deciding whether to view."
+        },
+        "support_request": {
+          "support_type": "OTHER",
+          "requested_fact": "Verify whether Pearl Residences is freehold and provide reliable distances or access details to Sunway Carnival Mall and the main routes.",
+          "subject": "Pearl Residences tenure and location access",
+          "customer_need": "Assess the location's actual access and tenure before deciding whether a viewing is worthwhile.",
+          "reason": "These material facts are not available in the verified information provided.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Share verified tenure and access information, then help the buyer decide whether a viewing is worthwhile."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3499,
+        "input_tokens_details": {
+          "cache_write_tokens": 2439,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1363,
+        "output_tokens_details": {
+          "reasoning_tokens": 695
+        },
+        "total_tokens": 4862
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer awaits verified tenure and access details before deciding whether viewing is worthwhile"
+}

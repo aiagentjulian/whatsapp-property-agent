@@ -1,0 +1,195 @@
+{
+  "trial": "loop11",
+  "scenario": "own_stay",
+  "source_sha256": "5e467cb008f892ec7f9fe1b772c379bf71ed4fede54b5c0e5f8a86dbf901d60d",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "preferred_language": "English",
+    "purchase_reason": "Current rental is getting tight for their family, which includes a young child.",
+    "size_or_layout_preference": "Interested in whether a 3-bedroom layout is practical for a small family.",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "Three bedrooms",
+      "Two bathrooms",
+      "Open-plan living, dining and kitchen",
+      "Small storage area"
+    ],
+    "primary_motivations": [
+      "More suitable space for a family with a young child"
+    ],
+    "decision_factors": [
+      "Whether the room sizes and layout work for the family’s routine"
+    ],
+    "active_concerns": [
+      "Whether the open-plan living/dining area can comfortably fit both a sofa area and dining table"
+    ],
+    "resolved_concerns": [],
+    "fit_assessment": "Potential fit for a family needing more space; exact room fit should be judged against the approved plan and in person.",
+    "next_objective": "Verify approved Type A living/dining dimensions and assess practical space for a sofa and dining table",
+    "last_progress": "Buyer identified the shared living/dining area as their main concern and asked whether it can fit both a sofa area and dining table.",
+    "next_action": "Check the approved Type A plan for living/dining dimensions and furniture fit",
+    "conversation_summary": "Buyer has a young child and says their rental is getting tight. They asked whether the 3-bedroom layout is practical for a small family."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, it looks worth considering for a small family: the Phase 1 layout is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony. With a young child, the extra room could give you space for a nursery or a flexible family room, while the open-plan living, dining and kitchen area keeps shared time together. The layout also avoids a long internal corridor and includes a small storage area. A viewing would let you judge whether the room sizes feel right for your family’s routine."
+    },
+    {
+      "direction": "INBOUND",
+      "body": "That’s our main concern since we spend most of our time together there. 900 sq. ft. can feel quite different depending on the layout—do you know if there’s enough space for both a sofa area and dining table?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "That’s a fair concern. The living and dining areas are open-plan, but I can’t confirm from the 900 sq. ft. figure alone whether your sofa and dining table will both fit comfortably. I’ll get the approved Type A plan checked for the living/dining dimensions so you can judge the layout more confidently."
+    }
+  ],
+  "support_context": [
+    {
+      "request_id": "sales-lab-support-1",
+      "status": "OPEN",
+      "support_type": "LAYOUT",
+      "requested_fact": "Approved Type A living/dining dimensions and whether the layout can practically accommodate both a sofa area and dining table",
+      "subject": "Pearl Residences Type A 900 sq. ft. layout",
+      "customer_need": "Buyer wants to know if there is enough shared living/dining space for a sofa area and dining table for their family.",
+      "reason": "The available information confirms an open-plan layout but does not provide dimensions or verified furniture-fit details.",
+      "resume_stage": "HANDLE",
+      "resume_objective": "Give the buyer an evidence-based answer about the living/dining space and help them assess whether the layout suits their family.",
+      "signature": "LAYOUT|900 accommodate and approved area both dimensions dining ft layout living pearl practically residences sofa sq table type",
+      "support_result": null,
+      "created_at": "SALES_LAB",
+      "resolved_at": null
+    }
+  ],
+  "turns": [
+    {
+      "customer": "Hi, we have a young child and our rental is getting a bit tight. Is the 3-bedroom layout practical for a small family?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "POSITION",
+        "buyer_signal": "QUESTION",
+        "reply": "Yes, it looks worth considering for a small family: the Phase 1 layout is 900 sq.ft. with 3 bedrooms, 2 bathrooms and a balcony. With a young child, the extra room could give you space for a nursery or a flexible family room, while the open-plan living, dining and kitchen area keeps shared time together. The layout also avoids a long internal corridor and includes a small storage area. A viewing would let you judge whether the room sizes feel right for your family’s routine.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": "Current rental is getting tight for their family, which includes a young child.",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in whether a 3-bedroom layout is practical for a small family.",
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "Three bedrooms",
+            "Two bathrooms",
+            "Open-plan living, dining and kitchen",
+            "Small storage area"
+          ],
+          "primary_motivations": [
+            "More suitable space for a family with a young child"
+          ],
+          "decision_factors": [
+            "Whether the room sizes and layout work for the family’s routine"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "Potential fit for a family needing more space; exact room fit should be judged against the approved plan and in person.",
+          "next_objective": "Help them assess whether the layout feels practical for their family.",
+          "last_progress": "Asked whether the 3-bedroom layout is practical for a small family.",
+          "next_action": "See whether they would like to view the layout.",
+          "conversation_summary": "Buyer has a young child and says their rental is getting tight. They asked whether the 3-bedroom layout is practical for a small family."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3570,
+        "input_tokens_details": {
+          "cache_write_tokens": 2510,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 1400,
+        "output_tokens_details": {
+          "reasoning_tokens": 866
+        },
+        "total_tokens": 4970
+      }
+    },
+    {
+      "customer": "That’s our main concern since we spend most of our time together there. 900 sq. ft. can feel quite different depending on the layout—do you know if there’s enough space for both a sofa area and dining table?",
+      "decision": {
+        "action": "SUPPORT_REQUEST",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "That’s a fair concern. The living and dining areas are open-plan, but I can’t confirm from the 900 sq. ft. figure alone whether your sofa and dining table will both fit comfortably. I’ll get the approved Type A plan checked for the living/dining dimensions so you can judge the layout more confidently.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": null,
+          "intent_level": null,
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Whether the open-plan living/dining area can comfortably fit both a sofa area and dining table"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Verify approved Type A living/dining dimensions and assess practical space for a sofa and dining table",
+          "last_progress": "Buyer identified the shared living/dining area as their main concern and asked whether it can fit both a sofa area and dining table.",
+          "next_action": "Check the approved Type A plan for living/dining dimensions and furniture fit",
+          "conversation_summary": null
+        },
+        "support_request": {
+          "support_type": "LAYOUT",
+          "requested_fact": "Approved Type A living/dining dimensions and whether the layout can practically accommodate both a sofa area and dining table",
+          "subject": "Pearl Residences Type A 900 sq. ft. layout",
+          "customer_need": "Buyer wants to know if there is enough shared living/dining space for a sofa area and dining table for their family.",
+          "reason": "The available information confirms an open-plan layout but does not provide dimensions or verified furniture-fit details.",
+          "resume_stage": "HANDLE",
+          "resume_objective": "Give the buyer an evidence-based answer about the living/dining space and help them assess whether the layout suits their family."
+        },
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3636,
+        "input_tokens_details": {
+          "cache_write_tokens": 2576,
+          "cached_tokens": 1057
+        },
+        "output_tokens": 968,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 4604
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Customer prefers to review the requested living-dining dimensions before considering a visit"
+}
