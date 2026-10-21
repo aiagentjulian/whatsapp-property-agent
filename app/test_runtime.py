@@ -242,6 +242,8 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("rental income", context.lower())
         self.assertIn("capital appreciation", context.lower())
         self.assertIn("A viewing suggestion is not consent", context)
+        self.assertIn("weekdays or weekends", context.lower())
+        self.assertIn("choosing weekdays or weekends", SYSTEM_PROMPT.lower())
         self.assertIn("MANDATORY_HANDOFF", context)
         self.assertNotIn("Project name: SkyWorld Pearlmont", context)
         self.assertIn("Malaysian", SYSTEM_PROMPT)
