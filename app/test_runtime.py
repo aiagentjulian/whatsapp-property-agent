@@ -236,15 +236,17 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Pearl Residences", SYSTEM_PROMPT)
         self.assertIn("Pearl Residences", context)
         self.assertIn("help an ordinary WhatsApp prospect genuinely want to arrange a property viewing", context)
-        self.assertIn("Turn a real feature into a future the buyer can see", context)
-        self.assertIn("Do not copy template sales pitches", context)
+        self.assertIn("Own stay", context)
+        self.assertIn("rental income", context.lower())
+        self.assertIn("capital appreciation", context.lower())
         self.assertIn("A viewing suggestion is not consent", context)
+        self.assertIn("MANDATORY_HANDOFF", context)
         self.assertNotIn("Project name: SkyWorld Pearlmont", context)
         self.assertIn("Malaysian", SYSTEM_PROMPT)
         self.assertIn("answer truthfully", SYSTEM_PROMPT.lower())
+        self.assertIn("own stay or investment", SYSTEM_PROMPT.lower())
         self.assertIn("does not itself indicate buyer agreement", SYSTEM_PROMPT.lower())
         self.assertIn("ask whether they would like a human salesperson to check the condition", SYSTEM_PROMPT.lower())
-        self.assertIn("do not turn ordinary conversations into technical investigations", context.lower())
 
     def test_focused_sales_context_provides_evidence_without_brochure_dump(self):
         from .knowledge import focused_sales_context
