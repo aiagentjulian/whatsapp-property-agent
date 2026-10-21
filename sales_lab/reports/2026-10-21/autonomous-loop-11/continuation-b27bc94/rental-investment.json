@@ -1,0 +1,295 @@
+{
+  "trial": "rental",
+  "scenario": "investment",
+  "source_sha256": "d8ca89f9c52a32c7f293c4422ccfb961269b58d09e3a33a2937bf8d123cfa88e",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "INVESTMENT",
+    "preferred_language": "English",
+    "purchase_reason": "Looking for a rental property",
+    "viewing_interest": "Agreed to check whether the viewing is of a show unit and whether weekend slots are available.",
+    "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+    "intent_level": "MEDIUM",
+    "sales_stage": "HANDLE",
+    "important_features": [
+      "3 bedrooms",
+      "2 bathrooms",
+      "900 sq. ft.",
+      "Seberang Jaya connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth"
+    ],
+    "primary_motivations": [
+      "Rental property"
+    ],
+    "decision_factors": [
+      "Practicality for tenants",
+      "Location connectivity"
+    ],
+    "active_concerns": [
+      "Phase 1 completion in Q4 2029 feels far off",
+      "Needs to know whether the viewing is of a show unit"
+    ],
+    "resolved_concerns": [
+      "Monthly maintenance fee and expected Phase 1 completion timing"
+    ],
+    "fit_assessment": "The three-bedroom, two-bathroom layout and established Seberang Jaya location may be practical for tenants; rental demand or returns are not established.",
+    "next_objective": "Confirm whether a show unit can be viewed and whether weekend slots are available.",
+    "last_progress": "Agreed to have show-unit details and weekend availability checked.",
+    "next_action": "Have the team confirm show-unit status and weekend availability, then follow up.",
+    "conversation_summary": "Prospect is considering a rental property. Asked about monthly maintenance fees and expected completion timing before considering a viewing; both details were provided."
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For tenants, the 900 sq. ft. layout has 3 bedrooms and 2 bathrooms, which can work well for families or sharers. Seberang Jaya also connects toward Sunway Carnival Mall, Chai Leng Park and the Butterworth urban network. Would you like to come see the layout? Would weekdays or weekends suit you better?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "I’m open to considering a viewing, but I’d like to understand the monthly maintenance fees and expected completion timing first. Could you share those details?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "The maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund—about RM162/month for the 900 sq. ft. unit. Phase 1 is expected to be completed in Q4 2029. With those details, would you like to start arranging a viewing? Would weekdays or weekends suit you better?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "RM162 a month including the sinking fund sounds manageable. Q4 2029 is quite a way off, though. If the viewing is of a show unit, weekends would suit me better. Is that what I’d be seeing?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "I don’t have confirmation yet whether the viewing would be of a show unit. I can check that and whether weekend slots are available—shall I confirm both for you?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Yes, please check whether it’s a show unit and if weekend slots are available. Thanks."
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Sure—I’ll have the team confirm whether the viewing is of a show unit and what weekend slots are available, then follow up with you."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hi, I saw the Pearl Residences ad. I’m looking at a rental property — what makes this location and unit type practical for tenants?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "For tenants, the 900 sq. ft. layout has 3 bedrooms and 2 bathrooms, which can work well for families or sharers. Seberang Jaya also connects toward Sunway Carnival Mall, Chai Leng Park and the Butterworth urban network. Would you like to come see the layout? Would weekdays or weekends suit you better?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": "English",
+          "purchase_purpose": "INVESTMENT",
+          "purchase_reason": "Looking for a rental property",
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Invited to view",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "POSITION",
+          "important_features": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "900 sq. ft.",
+            "Seberang Jaya connectivity toward Sunway Carnival Mall, Chai Leng Park and Butterworth"
+          ],
+          "primary_motivations": [
+            "Rental property"
+          ],
+          "decision_factors": [
+            "Practicality for tenants",
+            "Location connectivity"
+          ],
+          "active_concerns": [],
+          "resolved_concerns": [],
+          "fit_assessment": "The three-bedroom, two-bathroom layout and established Seberang Jaya location may be practical for tenants; rental demand or returns are not established.",
+          "next_objective": "See whether the prospect would like to start arranging a viewing.",
+          "last_progress": "Asked what makes the location and unit type practical for tenants; rental-property purpose is known.",
+          "next_action": "Await response to weekday or weekend viewing invitation.",
+          "conversation_summary": "Prospect is considering a rental property and asked about tenant practicality. Shared the unit layout and verified connectivity, then invited them to view."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2993,
+        "input_tokens_details": {
+          "cache_write_tokens": 2990,
+          "cached_tokens": 0
+        },
+        "output_tokens": 805,
+        "output_tokens_details": {
+          "reasoning_tokens": 408
+        },
+        "total_tokens": 3798
+      }
+    },
+    {
+      "customer": "I’m open to considering a viewing, but I’d like to understand the monthly maintenance fees and expected completion timing first. Could you share those details?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "VIEWING",
+        "buyer_signal": "QUESTION",
+        "reply": "The maintenance fee is RM0.18 per sq. ft., inclusive of sinking fund—about RM162/month for the 900 sq. ft. unit. Phase 1 is expected to be completed in Q4 2029. With those details, would you like to start arranging a viewing? Would weekdays or weekends suit you better?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Open to considering a viewing; asked about maintenance fees and completion timing first.",
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": [
+            "Monthly maintenance fee and expected Phase 1 completion timing"
+          ],
+          "fit_assessment": null,
+          "next_objective": "See whether the prospect agrees to start arranging a viewing.",
+          "last_progress": "Answered the maintenance fee and expected completion timing questions.",
+          "next_action": "Invite the prospect to choose weekdays or weekends for a viewing.",
+          "conversation_summary": "Prospect is considering a rental property. Asked about monthly maintenance fees and expected completion timing before considering a viewing; both details were provided."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2986,
+        "input_tokens_details": {
+          "cache_write_tokens": 2983,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1208,
+        "output_tokens_details": {
+          "reasoning_tokens": 873
+        },
+        "total_tokens": 4194
+      }
+    },
+    {
+      "customer": "RM162 a month including the sinking fund sounds manageable. Q4 2029 is quite a way off, though. If the viewing is of a show unit, weekends would suit me better. Is that what I’d be seeing?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "I don’t have confirmation yet whether the viewing would be of a show unit. I can check that and whether weekend slots are available—shall I confirm both for you?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Interested in a viewing if it is of a show unit; weekends would suit, and asks whether that is what they would see.",
+          "appointment_readiness": "EMERGING",
+          "intent_level": "MEDIUM",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "Phase 1 completion in Q4 2029 feels far off",
+            "Needs to know whether the viewing is of a show unit"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm whether the viewing would be of a show unit and whether weekend slots are available, if the prospect agrees to check.",
+          "last_progress": "Acknowledged the maintenance fee as manageable; expressed a conditional weekend preference for viewing a show unit.",
+          "next_action": "Ask permission to check show-unit viewing details and weekend availability.",
+          "conversation_summary": null
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3069,
+        "input_tokens_details": {
+          "cache_write_tokens": 3066,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1357,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034
+        },
+        "total_tokens": 4426
+      }
+    },
+    {
+      "customer": "Yes, please check whether it’s a show unit and if weekend slots are available. Thanks.",
+      "decision": {
+        "action": "APPOINTMENT_HANDOFF",
+        "sales_move": "VIEWING",
+        "buyer_signal": "POSITIVE",
+        "reply": "Sure—I’ll have the team confirm whether the viewing is of a show unit and what weekend slots are available, then follow up with you.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": null,
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": "Agreed to check whether the viewing is of a show unit and whether weekend slots are available.",
+          "appointment_readiness": "APPOINTMENT_IN_PROGRESS",
+          "intent_level": null,
+          "sales_stage": null,
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Confirm whether a show unit can be viewed and whether weekend slots are available.",
+          "last_progress": "Agreed to have show-unit details and weekend availability checked.",
+          "next_action": "Have the team confirm show-unit status and weekend availability, then follow up.",
+          "conversation_summary": null
+        },
+        "support_request": null,
+        "handoff_reason": "OPERATIONAL_BOOKING",
+        "handoff_details": "Please confirm whether the viewing would be of a show unit and whether weekend slots are available. The prospect is interested in viewing if it is a show unit and has agreed to check weekend availability."
+      },
+      "usage": {
+        "input_tokens": 3303,
+        "input_tokens_details": {
+          "cache_write_tokens": 3300,
+          "cached_tokens": 0
+        },
+        "output_tokens": 733,
+        "output_tokens_details": {
+          "reasoning_tokens": 337
+        },
+        "total_tokens": 4036
+      }
+    }
+  ],
+  "closed": true
+}

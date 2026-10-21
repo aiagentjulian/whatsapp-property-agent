@@ -1,0 +1,221 @@
+{
+  "trial": "casual",
+  "scenario": "early_exploration",
+  "source_sha256": "d8ca89f9c52a32c7f293c4422ccfb961269b58d09e3a33a2937bf8d123cfa88e",
+  "model": "gpt-6-luna",
+  "reasoning": "high",
+  "transport": "live",
+  "profile": {
+    "purchase_purpose": "OWN_STAY",
+    "appointment_readiness": "NOT_READY",
+    "intent_level": "LOW",
+    "sales_stage": "HANDLE",
+    "next_objective": "Clarify financing cost if the prospect asks for a specific loan estimate.",
+    "last_progress": "Prospect is browsing for own stay, likes the 3-bedroom layout, and is concerned about monthly costs on one income.",
+    "next_action": "Continue answering questions at the prospect's pace.",
+    "conversation_summary": "Browsing for own stay with no rush. Interested in the 3-bedroom layout, but RM302k is higher than expected and monthly costs matter on one income. Asked about a rough monthly payment.",
+    "purchase_timeline": "No rush; browsing",
+    "active_concerns": [
+      "RM302k is more than expected; asks whether price varies by unit",
+      "Monthly cost on one income"
+    ],
+    "size_or_layout_preference": "Interested in the 3-bedroom layout",
+    "financing_context": "Monthly costs matter on one income; asked for a rough monthly payment.",
+    "important_features": [
+      "3 bedrooms"
+    ],
+    "decision_factors": [
+      "Monthly cost on one income"
+    ]
+  },
+  "history": [
+    {
+      "direction": "INBOUND",
+      "body": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For eligible categories, the base-after-rebate reference is about RM302,000; the final price depends on the selected unit and parking. The main appeal is a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Are you looking for your own stay or investment?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Mostly for myself, but there’s no rush—I’m just browsing. RM302k is a bit more than I expected; does that vary much depending on the unit?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "Yes, it can vary by unit category and parking allocation. RM302k is a base-after-rebate reference; the selected unit’s price can differ. Since it’s for your own stay, the 900 sq. ft. 3-bedroom layout may be worth seeing in person. No rush—would weekdays or weekends suit you better for a visit?"
+    },
+    {
+      "direction": "INBOUND",
+      "body": "Neither yet, honestly—I’m still just browsing, so not ready to arrange a visit. The 3 bedrooms caught my eye, but I’d need a good reason to move, and the monthly cost matters on one income. Any rough idea what the monthly payment might be?"
+    },
+    {
+      "direction": "OUTBOUND",
+      "body": "For the 900 sq. ft. layout, maintenance works out to about RM162 a month (RM0.18 per sq. ft., including sinking fund; an estimate subject to latest confirmation). That’s separate from the mortgage. Loan instalments depend on the amount financed, tenure and bank rate, so I can’t give a reliable figure without those details."
+    }
+  ],
+  "support_context": [],
+  "turns": [
+    {
+      "customer": "Hey, your Pearl Residences ad came up. Just browsing for now — what’s the starting price and what’s the main appeal?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "ANSWER",
+        "buyer_signal": "QUESTION",
+        "reply": "For eligible categories, the base-after-rebate reference is about RM302,000; the final price depends on the selected unit and parking. The main appeal is a 900 sq. ft. layout with 3 bedrooms, 2 bathrooms and a balcony. Are you looking for your own stay or investment?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "UNKNOWN",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": null,
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "UNDERSTAND",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": null,
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Learn whether they are looking for own stay or investment.",
+          "last_progress": "Asked for the starting price and main appeal; said they are just browsing.",
+          "next_action": "Ask whether they are looking for own stay or investment.",
+          "conversation_summary": "Prospect is browsing and asked about starting price and the property's main appeal."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3450,
+        "input_tokens_details": {
+          "cache_write_tokens": 3447,
+          "cached_tokens": 0
+        },
+        "output_tokens": 946,
+        "output_tokens_details": {
+          "reasoning_tokens": 648
+        },
+        "total_tokens": 4396
+      }
+    },
+    {
+      "customer": "Mostly for myself, but there’s no rush—I’m just browsing. RM302k is a bit more than I expected; does that vary much depending on the unit?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "OBJECTION",
+        "reply": "Yes, it can vary by unit category and parking allocation. RM302k is a base-after-rebate reference; the selected unit’s price can differ. Since it’s for your own stay, the 900 sq. ft. 3-bedroom layout may be worth seeing in person. No rush—would weekdays or weekends suit you better for a visit?",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": null,
+          "budget_range": null,
+          "financing_context": null,
+          "purchase_timeline": "No rush; browsing",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "HANDLE",
+          "important_features": null,
+          "primary_motivations": null,
+          "decision_factors": null,
+          "active_concerns": [
+            "RM302k is more than expected; asks whether price varies by unit"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Address the price concern and invite a viewing",
+          "last_progress": "Prospect said the home is mostly for own stay and asked whether price varies by unit",
+          "next_action": "Wait for response to weekday/weekend viewing invitation",
+          "conversation_summary": "Prospect is browsing without urgency, mainly for own stay, and feels the RM302k reference is higher than expected. They asked whether price varies by unit."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 2838,
+        "input_tokens_details": {
+          "cache_write_tokens": 2835,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1160,
+        "output_tokens_details": {
+          "reasoning_tokens": 818
+        },
+        "total_tokens": 3998
+      }
+    },
+    {
+      "customer": "Neither yet, honestly—I’m still just browsing, so not ready to arrange a visit. The 3 bedrooms caught my eye, but I’d need a good reason to move, and the monthly cost matters on one income. Any rough idea what the monthly payment might be?",
+      "decision": {
+        "action": "REPLY",
+        "sales_move": "HANDLE",
+        "buyer_signal": "QUESTION",
+        "reply": "For the 900 sq. ft. layout, maintenance works out to about RM162 a month (RM0.18 per sq. ft., including sinking fund; an estimate subject to latest confirmation). That’s separate from the mortgage. Loan instalments depend on the amount financed, tenure and bank rate, so I can’t give a reliable figure without those details.",
+        "lead_updates": {
+          "name": null,
+          "preferred_language": null,
+          "purchase_purpose": "OWN_STAY",
+          "purchase_reason": null,
+          "preferred_location": null,
+          "preferred_property_type": null,
+          "size_or_layout_preference": "Interested in the 3-bedroom layout",
+          "budget_range": null,
+          "financing_context": "Monthly costs matter on one income; asked for a rough monthly payment.",
+          "purchase_timeline": "No rush; browsing",
+          "viewing_interest": null,
+          "appointment_readiness": "NOT_READY",
+          "intent_level": "LOW",
+          "sales_stage": "HANDLE",
+          "important_features": [
+            "3 bedrooms"
+          ],
+          "primary_motivations": null,
+          "decision_factors": [
+            "Monthly cost on one income"
+          ],
+          "active_concerns": [
+            "RM302k is more than expected; asks whether price varies by unit",
+            "Monthly cost on one income"
+          ],
+          "resolved_concerns": null,
+          "fit_assessment": null,
+          "next_objective": "Clarify financing cost if the prospect asks for a specific loan estimate.",
+          "last_progress": "Prospect is browsing for own stay, likes the 3-bedroom layout, and is concerned about monthly costs on one income.",
+          "next_action": "Continue answering questions at the prospect's pace.",
+          "conversation_summary": "Browsing for own stay with no rush. Interested in the 3-bedroom layout, but RM302k is higher than expected and monthly costs matter on one income. Asked about a rough monthly payment."
+        },
+        "support_request": null,
+        "handoff_reason": null,
+        "handoff_details": null
+      },
+      "usage": {
+        "input_tokens": 3419,
+        "input_tokens_details": {
+          "cache_write_tokens": 3416,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1689,
+        "output_tokens_details": {
+          "reasoning_tokens": 1202
+        },
+        "total_tokens": 5108
+      }
+    }
+  ],
+  "closed": true,
+  "close_reason": "Buyer remains browsing, has no loan estimate, and declines to arrange a visit now"
+}
