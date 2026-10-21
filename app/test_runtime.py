@@ -223,6 +223,21 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("Q4 2029", by_topic["Completion"])
         self.assertNotIn("SkyWorld", str(reference))
         self.assertNotIn("Pearlmont", str(reference))
+        # The exact failed customer journey supplies no layout keywords, but
+        # must still give Luna alternative verified project benefits.
+        conversation = [
+            {"direction": "INBOUND", "body": "Hi, I saw your property ad. Can share more details?"},
+            {"direction": "OUTBOUND", "body": "Would this be for own stay or investment?"},
+            {"direction": "INBOUND", "body": "own stay"},
+            {"direction": "OUTBOUND", "body": "First home or an upgrade?"},
+            {"direction": "INBOUND", "body": "upgrade"},
+        ]
+        SalesAgent(self.config, provider).decide("upgrade", {
+            "purchase_purpose": "OWN_STAY", "purchase_reason": "upgrade",
+        }, conversation, [])
+        self.assertEqual(provider.payload["focused_sales_evidence"]["optional_sales_angles"], [])
+        self.assertIn("Freehold", str(provider.payload["verified_project_reference"]))
+        self.assertIn("10-acre", str(provider.payload["verified_project_reference"]))
         self.assertEqual(len(recent), 28)
         self.assertEqual(recent[0]["body"], "message 22")
         self.assertEqual(recent[-1]["body"], "message 49")
