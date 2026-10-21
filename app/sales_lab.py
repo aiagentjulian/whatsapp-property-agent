@@ -181,6 +181,10 @@ def run_turn(args, parser):
         if args.live:
             attempt['status'] = 'failed'
             attempt['error_type'] = type(exc).__name__
+            # Preserve the specific local validation failure without storing
+            # raw model output, credentials, or HTTP response contents.
+            if isinstance(exc, ValueError):
+                attempt['error_detail'] = str(exc)[:240]
             save(ledger_path, ledger)
             append_event(args.run_dir / 'ledger.jsonl', {'event': 'attempt_failed', **attempt})
         raise SystemExit('Sales Lab stopped: ' + type(exc).__name__ + '; inspect provider failure locally, no retry') from None
