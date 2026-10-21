@@ -249,8 +249,17 @@ def retrieve(query, lead_profile=None, limit=3, sales_only=False):
             ({"completion", "2029", "handover"}, "01_facts/overview.md", "Completion"),
         ):
             if terms & trigger or ("floor plan" in lower_query and "floorplan" in trigger):
-                for section, content in _passages((KNOWLEDGE / relative).read_text(encoding="utf-8")):
+                passages = _passages((KNOWLEDGE / relative).read_text(encoding="utf-8"))
+                for section, content in passages:
                     if section == heading:
+                        # The buyer asking for a floor plan needs the existing room
+                        # areas too, not a referral to an unknown "approved" plan.
+                        if heading == "Layout and room arrangement" and (
+                                "floorplan" in terms or "floor plan" in lower_query):
+                            for area_heading, area in passages:
+                                if area_heading == "Internal area breakdown":
+                                    content += "\n\nInternal area breakdown (approximate):\n" + area
+                                    break
                         targeted.append({"path": relative, "heading": heading, "score": 100, "content": content})
     if not sales_only and terms & {"investment", "invest", "rental", "yield"}:
         path = KNOWLEDGE / "01_facts/overview.md"
