@@ -20,6 +20,15 @@ class SalesEvidenceTests(unittest.TestCase):
         for fact in ('RM328k', 'car-park premium', '14 August 2026', 'Do not determine rebate only', 'current unit/base-price structure', 'Q4 2029', 'outward-facing windows'):
             self.assertIn(fact, text)
 
+    def test_floor_plan_request_gets_existing_layout_and_room_areas(self):
+        data = retrieve('Could you show me the floor plan for the 3-bedroom unit?')
+        self.assertEqual(len(data), 1)
+        text = data[0]['content']
+        self.assertIn('open-plan', text)
+        self.assertIn('Internal area breakdown', text)
+        self.assertIn('404.7 sq.ft.', text)
+        self.assertIn('143.4 sq.ft.', text)
+
     def test_investment_gets_holding_costs_without_returns_or_identity(self):
         text = '\n'.join(p['content'] for p in retrieve('I am considering it as an investment'))
         for fact in ('RM0.18', 'Q4 2029', 'Freehold'):
