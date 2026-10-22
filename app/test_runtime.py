@@ -219,7 +219,7 @@ class RuntimeTests(unittest.TestCase):
         # Disclosure of household or upgrade is not yet an appointment signal.
         self.assertNotIn("VIEWING", with_spouse["allowed_moves"])
         self.assertNotIn("VIEWING", upgrade["allowed_moves"])
-        warmed = plan("I like this location", "OWN_STAY", ("own stay", "just me and my wife"))
+        warmed = plan("I like what you're describing", "OWN_STAY", ("own stay", "just me and my wife"))
         self.assertEqual(warmed["stage"], "WARM_INTEREST")
         self.assertIn("VIEWING", warmed["allowed_moves"])
         self.assertIn("not an assumed booking", warmed["objective"])
