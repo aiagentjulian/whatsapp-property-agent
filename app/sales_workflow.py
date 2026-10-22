@@ -128,6 +128,19 @@ def _warm_interest(customer_turns):
     )) for text in customer_turns)
 
 
+def _purchase_topics(customer_turns):
+    """Qualitative signs of serious consideration, not a conversion score."""
+    patterns = {
+        "price_package": r"\b(?:price|pricing|how\s+much|rebate|package|discount)\b",
+        "monthly_financing": r"\b(?:monthly|loan|mortgage|instal?ments?|installments?|financing|maintenance)\b",
+        "unit_details": r"\b(?:floor\s*plan|layout|floor|facing|car\s*park|parking|bedrooms?)\b",
+        "location_commute": r"\b(?:location|commute|workplace|nearby|seberang\s+jaya|perai)\b",
+    }
+    return [name for name, pattern in patterns.items()
+            if any(re.search(pattern, message, flags=re.IGNORECASE)
+                   for message in customer_turns)]
+
+
 def plan_sales_turn(latest_message, profile, history):
     """Direct the next sales turn without deciding the customer's exact words.
 
@@ -139,6 +152,7 @@ def plan_sales_turn(latest_message, profile, history):
     customer_turns = _inbound_texts(latest_message, history)
     route = _route(profile, customer_turns)
     latest = str(latest_message or "")
+    purchase_topics = _purchase_topics(customer_turns)
     if _viewing_request(latest, history):
         return {
             "route": route, "stage": "VIEWING",
@@ -162,12 +176,25 @@ def plan_sales_turn(latest_message, profile, history):
             "allowed_moves": ["ANSWER", "HANDLE", "POSITION", "GIVE_SPACE"],
         }
     if _buying_question(latest):
+        serious = len(purchase_topics) >= 2 and route != "UNKNOWN"
         return {
             "route": route, "stage": "BUYING_CONSIDERATION",
-            "objective": ("Answer the actual purchasing question first using verified facts; "
-                          "do not restart discovery. Discuss financing or first-time buyer "
-                          "status only where relevant; never promise loan eligibility, "
-                          "prices, returns or promotions without confirmation."),
+            "purchase_topics": purchase_topics,
+            "objective": ("Answer the buyer's specific purchasing question FIRST using verified "
+                          "facts and dated commercial context. Never present an older price, "
+                          "rebate or promotion as a current confirmed package. If their exact "
+                          "current quote is unavailable, clearly separate useful documented "
+                          "base-price context from the still-required current package check, "
+                          "and make the verification step concrete. Do not restart discovery, "
+                          "or promise loan eligibility or returns. "
+                          + ("This buyer has engaged with multiple practical purchase topics. "
+                             "AFTER providing a useful answer or concrete quote-resolution "
+                             "step, consider a brief low-pressure viewing invitation as an "
+                             "OPTION, rather than endlessly waiting for the buyer to ask. "
+                             "Do NOT claim a booking or use viewing to evade unanswered "
+                             "cost questions." if serious else
+                             "A single buying question does not prove viewing readiness; "
+                             "keep the focus on answering it.")),
             "allowed_moves": ["ANSWER", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"],
         }
     if route == "UNKNOWN":
@@ -198,8 +225,10 @@ def plan_sales_turn(latest_message, profile, history):
             "allowed_moves": ["ANSWER", "EXPLORE", "HANDLE", "GIVE_SPACE"],
         }
     warm = _warm_interest(customer_turns)
+    serious = warm and len(purchase_topics) >= 2
     return {
         "route": route, "stage": "WARM_INTEREST" if warm else "PRESENT_VALUE",
+        "purchase_topics": purchase_topics,
         "objective": ("The buyer has supplied a usable motivation or household "
                       "detail. Advance the sale: choose a truthful, specific property "
                       "benefit relevant to it, explain a realistic personal benefit, "
@@ -209,7 +238,12 @@ def plan_sales_turn(latest_message, profile, history):
                       "A first-time buyer question is appropriate only when "
                       "financing is being considered. Respond to objections "
                       "and customer questions directly. "
-                      + ("Their engagement permits a low-pressure viewing invitation, "
+                      + ("They have considered several concrete purchase factors. "
+                         "If their essential questions are answered or a specific "
+                         "commercial verification step is underway, naturally OFFER a "
+                         "low-pressure viewing as one possible next step now. Do not "
+                         "automatically arrange it or claim any slot confirmed." if serious
+                         else "Their engagement permits a low-pressure viewing invitation, "
                          "not an assumed booking." if warm else
                          "Their buying interest is not yet established; do not push "
                          "a viewing simply because they disclosed a household or purpose.")),
