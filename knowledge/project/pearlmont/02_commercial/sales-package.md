@@ -1,4 +1,4 @@
-# Pearlmont — Current Sales Package
+# Pearlmont — Last Documented Sales Package (Not Live-Verified)
 
 ## Purpose
 
@@ -13,6 +13,18 @@ When a newer official sales-package document is provided, update this file rathe
 `SkyAwani Pealmont Phase 1 Sales Packages 14Aug26.pdf`
 
 Current package date: 14 August 2026.
+
+## Validity / freshness gate
+
+This is the **latest package document currently held in project Knowledge**,
+not a verified active sales promotion on the day of a buyer enquiry.
+The source is dated 14 August 2026. Its listed 5% and 8% rebates must not
+be presented as currently available without a newer developer confirmation.
+
+When the customer asks for today's price, give useful clearly labelled
+historical/base context if relevant, then request an up-to-date effective
+unit/package quote. Do not silently apply these older rebates to a base price
+or quote an exact current post-rebate figure from this file alone.
 
 ## Core commercial rule
 
