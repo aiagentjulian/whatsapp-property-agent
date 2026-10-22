@@ -131,7 +131,7 @@ def _warm_interest(customer_turns):
 def _purchase_topics(customer_turns):
     """Qualitative signs of serious consideration, not a conversion score."""
     patterns = {
-        "price_package": r"\b(?:price|pricing|how\s+much|rebate|package|discount)\b",
+        "price_package": r"\b(?:price|pricing|rebate|package|discount|starting\s+from)\b",
         "monthly_financing": r"\b(?:monthly|loan|mortgage|instal?ments?|installments?|financing|maintenance)\b",
         "unit_details": r"\b(?:floor\s*plan|layout|floor|facing|car\s*park|parking|bedrooms?)\b",
         "location_commute": r"\b(?:location|commute|workplace|nearby|seberang\s+jaya|perai)\b",
