@@ -12,7 +12,7 @@ PROFILE_FIELDS = [
 ]
 ARRAY_FIELDS = {"important_features", "primary_motivations", "decision_factors", "active_concerns", "resolved_concerns"}
 ENUM_FIELDS = {
-    "purchase_purpose": ["OWN_STAY", "INVESTMENT", "BOTH", "EXPLORING", "UNKNOWN"],
+    "purchase_purpose": ["OWN_STAY", "INVESTMENT", "EXPLORING", "UNKNOWN"],
     "appointment_readiness": ["NOT_READY", "EMERGING", "READY_FOR_APPOINTMENT", "APPOINTMENT_IN_PROGRESS", "APPOINTMENT_CONFIRMED"],
     "intent_level": ["LOW", "MEDIUM", "HIGH", "READY_FOR_APPOINTMENT"],
     "sales_stage": ["UNDERSTAND", "QUALIFY", "POSITION", "HANDLE", "INTENT", "CLOSE"],
@@ -20,7 +20,14 @@ ENUM_FIELDS = {
 STRING = {"type": ["string", "null"]}
 
 
-def agent_schema():
+def agent_schema(allowed_moves=None):
+    valid_moves = ["ANSWER", "EXPLORE", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"]
+    if allowed_moves is None:
+        allowed_moves = valid_moves
+    if not isinstance(allowed_moves, list) or not allowed_moves or any(
+        move not in valid_moves for move in allowed_moves
+    ):
+        raise ValueError("Invalid sales workflow move constraints")
     updates = {}
     for key in PROFILE_FIELDS:
         if key in ARRAY_FIELDS:
@@ -36,7 +43,7 @@ def agent_schema():
         "type": "object", "additionalProperties": False,
         "properties": {
             "action": {"type": "string", "enum": ["REPLY", "SUPPORT_REQUEST", "APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"]},
-            "sales_move": {"type": "string", "enum": ["ANSWER", "EXPLORE", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"]},
+            "sales_move": {"type": "string", "enum": allowed_moves},
             "buyer_signal": {"type": "string", "enum": ["QUESTION", "POSITIVE", "NEUTRAL", "OBJECTION", "DISENGAGED", "UNKNOWN"]},
             "reply": {"type": "string"},
             "lead_updates": {"type": "object", "properties": updates, "required": PROFILE_FIELDS, "additionalProperties": False},
@@ -55,6 +62,9 @@ class OpenAIProvider:
             raise RuntimeError("OPENAI_API_KEY is required for the OpenAI API provider.")
 
     def decide(self, system_prompt, user_prompt):
+        # Restrict action categories at generation time, not merely in prose.
+        workflow = json.loads(user_prompt).get("sales_workflow") or {}
+        schema = agent_schema(workflow.get("allowed_moves"))
         payload = {
             "model": self.config["model"],
             "reasoning": {"effort": self.config["reasoning"]},
@@ -62,7 +72,7 @@ class OpenAIProvider:
                 {"role": "system", "content": [{"type": "input_text", "text": system_prompt}]},
                 {"role": "user", "content": [{"type": "input_text", "text": user_prompt}]},
             ],
-            "text": {"format": {"type": "json_schema", "name": "property_agent_decision", "strict": True, "schema": agent_schema()}},
+            "text": {"format": {"type": "json_schema", "name": "property_agent_decision", "strict": True, "schema": schema}},
             "max_output_tokens": 4500,
             "store": False,
         }
