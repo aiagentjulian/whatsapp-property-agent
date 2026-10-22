@@ -1,0 +1,296 @@
+{
+  "version": "golden-conversations-v1",
+  "status": "DRAFT_FOR_HUMAN_REVIEW_NOT_LIVE_VALIDATED",
+  "customer_facing_project": "Pearl Residences",
+  "source_notes": [
+    "knowledge/project/pearlmont/01_facts/overview.md",
+    "knowledge/project/pearlmont/01_facts/location-and-connectivity.md",
+    "knowledge/project/pearlmont/01_facts/facilities-and-quality.md",
+    "brain/AGENT.md"
+  ],
+  "purpose": "Behavioral reference, not verbatim scripts; no automatic runtime injection.",
+  "cases": [
+    {
+      "id": "G01_ad_to_own_stay",
+      "route": "OWN_STAY",
+      "goal": "Orient an ad lead, learn purpose, then position value rather than launch an upgrade quiz.",
+      "beats": [
+        {
+          "buyer": "Hi, saw your property ad. Can share more details?",
+          "seller": "Sure. Pearl Residences is a freehold residential development in Seberang Jaya, Penang Mainland. Are you looking at a place to live in, or considering an investment?",
+          "stage": "PURPOSE",
+          "profile": {},
+          "why": "Introduce what and where; ask one commercially useful question, not a brochure-menu choice."
+        },
+        {
+          "buyer": "Own stay.",
+          "seller": "Got it. Would it be for yourself, you and your partner, or the family?",
+          "stage": "HOUSEHOLD",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Ask about the occupants, not first-home versus upgrade."
+        },
+        {
+          "buyer": "Just me and my wife.",
+          "seller": "For the two of you, I'd look beyond the room count at whether the Seberang Jaya location works for your daily routine. It's a freehold development with established mainland amenities nearby, so it could be worth comparing alongside the other homes you're considering. I can show you the location and current unit details so you can judge the fit.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Connect a verified project advantage to a couple without assuming they need more rooms or children."
+        }
+      ],
+      "avoid": [
+        "first home or upgrade?",
+        "what matters most: space, layout, privacy?",
+        "unprompted 900 sqft room-count lecture"
+      ]
+    },
+    {
+      "id": "G02_couple_warm_to_viewing",
+      "route": "OWN_STAY",
+      "goal": "Answer real ownership cost, detect warm interest, invite viewing and hand off only after accepted date.",
+      "beats": [
+        {
+          "buyer": "My wife and I are considering it for own stay. How much is the maintenance?",
+          "seller": "The published maintenance rate is RM0.18 per sq ft including sinking fund. On the standard 900 sq ft unit, that's about RM162 a month on that basis. That's separate from any loan instalment, and actual ownership costs and package details need checking.",
+          "stage": "BUYING_CONSIDERATION",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Answer cost directly; distinguish maintenance from total monthly commitment."
+        },
+        {
+          "buyer": "That sounds good. We're interested in seeing it.",
+          "seller": "Good to hear. The next useful step may be a viewing so you can judge the actual unit and location for yourselves. Would a weekend visit suit you? Our team would still need to confirm a slot.",
+          "stage": "VIEWING",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Strong request to see it is viewing intent; invite rather than assert a confirmed booking."
+        },
+        {
+          "buyer": "Saturday works for us.",
+          "seller": "Saturday noted. I'll pass the viewing request to our team so they can confirm which time is available; nothing is booked yet.",
+          "stage": "VIEWING",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Clear acceptance plus date → APPOINTMENT_HANDOFF; no invented confirmed appointment."
+        }
+      ],
+      "avoid": [
+        "guaranteed Saturday slot",
+        "assume the loan repayment is RM162",
+        "repeat broad preference questions"
+      ]
+    },
+    {
+      "id": "G03_family_specific_needs",
+      "route": "OWN_STAY",
+      "goal": "Position family-relevant benefits while keeping future school provisions accurate.",
+      "beats": [
+        {
+          "buyer": "I'm considering own stay with two kids. What makes it suitable for a family?",
+          "seller": "One thing worth looking at is the planned large Level 9 landscaped facilities area, around 10 acres, which gives families more outdoor community space than a basic small facilities deck. There's also a planned school component in the wider development. It's worth comparing those with your family's routine rather than just the 3-bedroom count.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Use expressed children/family motivation to select relevant verified features; describe planned nature."
+        },
+        {
+          "buyer": "Will my kids definitely get into the school?",
+          "seller": "I wouldn't promise admission. The school is a planned part of the wider development, but any placement or resident priority depends on the relevant education arrangements. We should confirm the latest terms before you rely on it.",
+          "stage": "DIRECT_QUESTION",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Handle high-stakes specific doubt honestly; do not sell a guarantee."
+        }
+      ],
+      "avoid": [
+        "guaranteed school admission",
+        "all clubhouse facilities are free",
+        "privacy or room-use interrogation"
+      ]
+    },
+    {
+      "id": "G04_first_buyer_financing",
+      "route": "OWN_STAY",
+      "goal": "Discuss first-time ownership only when financing is relevant and separate facts from unverified quotes.",
+      "beats": [
+        {
+          "buyer": "Own stay. It's my first property. Roughly how much is the monthly instalment?",
+          "seller": "It depends on the latest selling price, down payment, loan amount and bank terms, so I don't want to guess a monthly figure. The published maintenance for a 900 sq ft unit is about RM162/month including sinking fund; that's separate from financing. Since this is your first property, we can also check whether any first-buyer financing arrangements apply, subject to the bank and current rules.",
+          "stage": "BUYING_CONSIDERATION",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "First-time buyer question/context is relevant to financing, never guarantees approval."
+        },
+        {
+          "buyer": "My budget is around RM360k. What's the latest package?",
+          "seller": "Thanks, that's useful for narrowing the options. The exact current price and rebates need a verified unit/package quote; I can have those checked against your budget rather than give you an outdated number.",
+          "stage": "BUYING_CONSIDERATION",
+          "profile": {
+            "purchase_purpose": "OWN_STAY",
+            "budget_range": "RM360k"
+          },
+          "why": "Handle current commercial facts through verification, not invented promotions."
+        }
+      ],
+      "avoid": [
+        "unverified loan instalment estimate",
+        "guaranteed first-home eligibility",
+        "old rebate matrix passed as current"
+      ]
+    },
+    {
+      "id": "G05_investment_rental",
+      "route": "INVESTMENT",
+      "goal": "Learn investor objective then link transparent ownership cost and location to rental thesis without yield invention.",
+      "beats": [
+        {
+          "buyer": "Hi, I'm looking at Pearl Residences as an investment.",
+          "seller": "Understood. Is your main plan long-term rental income or capital appreciation? That changes which costs and project factors are worth checking first.",
+          "stage": "INVESTMENT_OBJECTIVE",
+          "profile": {
+            "purchase_purpose": "INVESTMENT"
+          },
+          "why": "One relevant investment-branch question; no third BOTH route."
+        },
+        {
+          "buyer": "Rental income mainly. I'm worried about vacancies.",
+          "seller": "For a rental plan, I'd start with the holding costs and the actual tenant market, not promise a yield. Pearl Residences is freehold in established Seberang Jaya, and the published maintenance rate is RM0.18/sq ft including sinking fund. Those are useful inputs, but comparable rents and vacancy still need independent evidence before deciding if the numbers work.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "INVESTMENT",
+            "purchase_reason": "rental income"
+          },
+          "why": "Ground the proposition, acknowledge vacancy uncertainty, avoid invented tenant demand."
+        },
+        {
+          "buyer": "What rental yield can I expect?",
+          "seller": "I can't quote a dependable yield without verified comparable rents, the applicable purchase price and your total holding costs. Let's verify those inputs first; I don't want to make an investment decision sound safer than it is.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "INVESTMENT",
+            "purchase_reason": "rental income"
+          },
+          "why": "Do not invent yield; request support/research if the customer needs a material estimate."
+        }
+      ],
+      "avoid": [
+        "fixed guaranteed rental yield",
+        "unverified tenant demand figures",
+        "immediate viewing push before the economics are addressed"
+      ]
+    },
+    {
+      "id": "G06_investment_capital_gain",
+      "route": "INVESTMENT",
+      "goal": "Explain relevant freehold/location/completion facts without treating capital gains as guaranteed.",
+      "beats": [
+        {
+          "buyer": "I'm considering investment for capital appreciation over the next 7–10 years.",
+          "seller": "For that horizon, two facts worth comparing are the freehold tenure and the established Seberang Jaya location. The project's expected Phase 1 completion is Q4 2029, so your timeline and holding costs matter too. None of that guarantees appreciation; I'd compare it with other developments on total purchase cost and likely resale market.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "INVESTMENT",
+            "purchase_reason": "capital appreciation"
+          },
+          "why": "Position the correct thesis without inventing future infrastructure, price returns or guaranteed gains."
+        },
+        {
+          "buyer": "Are you saying the price will definitely rise?",
+          "seller": "No. Freehold and location can be comparison factors, but they don't guarantee resale gains. I would only make a return estimate with credible market comparables and clear assumptions, and even then it would be uncertain.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "INVESTMENT",
+            "purchase_reason": "capital appreciation"
+          },
+          "why": "Correct implied certainty rather than double down on a sales claim."
+        }
+      ],
+      "avoid": [
+        "guaranteed capital gain",
+        "unverified future property price",
+        "promised infrastructure catalyst"
+      ]
+    },
+    {
+      "id": "G07_explicit_viewing",
+      "route": "OWN_STAY",
+      "goal": "Honor a buyer who directly wants to view without forcing earlier discovery.",
+      "beats": [
+        {
+          "buyer": "I want to visit the show unit this Saturday. Can you arrange it?",
+          "seller": "Yes, I can pass that request to our team. Saturday is your preference, but the viewing slot isn't confirmed until they check and get back to you.",
+          "stage": "VIEWING",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Strong explicit acceptance; hand off to human to arrange, never invent slot availability."
+        }
+      ],
+      "avoid": [
+        "finish the questionnaire first",
+        "your viewing is confirmed",
+        "asked for deposit before verifying availability"
+      ]
+    },
+    {
+      "id": "G08_nonfit_four_bedrooms",
+      "route": "OWN_STAY",
+      "goal": "Recognize genuine product mismatch rather than manipulating client toward a poor fit.",
+      "beats": [
+        {
+          "buyer": "I need four bedrooms. Four rooms are a must for us.",
+          "seller": "Thanks for being clear. The current standard Phase 1 residential configuration is 3 bedrooms, not 4. If four separate bedrooms are non-negotiable, I don't want to suggest it meets that requirement. I'd rather be transparent than waste your time.",
+          "stage": "DIRECT_QUESTION",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Qualify a hard mismatch truthfully; an appointment is not the default success outcome."
+        }
+      ],
+      "avoid": [
+        "invent a four-bedroom type",
+        "claim easy conversion to four rooms",
+        "pressure buyer to visit anyway"
+      ]
+    },
+    {
+      "id": "G09_not_ready",
+      "route": "OWN_STAY",
+      "goal": "Respect tentative interest and avoid aggressive appointment requests.",
+      "beats": [
+        {
+          "buyer": "We're looking for own stay, just my partner and me, but still exploring.",
+          "seller": "That's fine. Pearl Residences is a freehold project in Seberang Jaya. For a couple exploring options, the useful comparison is usually whether the location and full monthly costs suit you. I can share the verified basics so you can compare at your pace.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Sell one useful project comparison, without an interview loop."
+        },
+        {
+          "buyer": "Thanks, I need to think and talk to my partner first.",
+          "seller": "Of course. You can take your time and compare it together. If pricing or the floor plan becomes useful, just message me and I'll help you check the details.",
+          "stage": "PRESENT_VALUE",
+          "profile": {
+            "purchase_purpose": "OWN_STAY"
+          },
+          "why": "Give buyer space; no artificial urgency or automatic viewing invitation."
+        }
+      ],
+      "avoid": [
+        "invent limited-time scarcity",
+        "viewing pressure on hesitant buyer",
+        "repeat 'what matters most'"
+      ]
+    }
+  ]
+}
