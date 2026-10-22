@@ -28,10 +28,14 @@ def get_config():
         raise ValueError("This MVP is pinned to gpt-6-luna; model substitution is disabled.")
     if reasoning not in ("low", "medium", "high"):
         raise ValueError("RUNTIME_REASONING must be low, medium, or high.")
+    golden_guidance_mode = os.getenv("GOLDEN_GUIDANCE_MODE", "on").lower()
+    if golden_guidance_mode not in ("on", "off"):
+        raise ValueError("GOLDEN_GUIDANCE_MODE must be on or off.")
     return {
         "provider": provider,
         "model": model,
         "reasoning": reasoning,
+        "golden_guidance_mode": golden_guidance_mode,
         "api_key": os.getenv("OPENAI_API_KEY", ""),
         "database": Path(os.getenv("DATABASE_PATH", "data/lead/agent.sqlite3")),
         "allowlist": [x.strip() for x in os.getenv("WHATSAPP_ALLOWLIST", "").split(",") if x.strip()],
