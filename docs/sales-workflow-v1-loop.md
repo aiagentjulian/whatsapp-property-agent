@@ -46,8 +46,9 @@ python -m app.sales_simulation --phase golden_initial
 
 The last command makes real GPT-6 Luna / High seller calls and responsive
 fictional buyer calls. It stores data under ignored
-`sales_lab/reports/golden-loop-v1/` by default, **separate** from the exhausted
-earlier `closed-loop-v1` budget ledger. A new run can never reset or reuse
+`sales_lab/reports/golden-loop-v2-price-viewing/` by default, **separate**
+from the previous `golden-loop-v1` 21-call ledger and `closed-loop-v1`
+40-call ledger. A new run can never reset or reuse
 the old ledger. Check the ledger before every further phase; never delete it
 to bypass the 40-request cap.
 
