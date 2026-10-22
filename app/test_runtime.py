@@ -258,6 +258,12 @@ class RuntimeTests(unittest.TestCase):
         ])
         self.assertEqual(just_price["purchase_topics"], ["price_package"])
         self.assertIn("single buying question", just_price["objective"])
+        maintenance_only = plan_sales_turn(
+            "How much is the maintenance fee?", profile,
+            [{"direction": "INBOUND", "body": "How much is the maintenance fee?"}],
+        )
+        self.assertEqual(maintenance_only["purchase_topics"], ["monthly_financing"])
+        self.assertIn("single buying question", maintenance_only["objective"])
         not_ready = plan_sales_turn("own stay", {"purchase_purpose": "UNKNOWN"},
                                    [{"direction": "INBOUND", "body": "own stay"}])
         self.assertEqual(not_ready["stage"], "HOUSEHOLD")
@@ -331,7 +337,7 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(report["api_calls"], 0)
         self.assertEqual(report["phase_call_upper_bound"]["golden_initial"], 12)
         self.assertEqual(report["phase_call_upper_bound"]["golden_retest"], 12)
-        self.assertEqual(report["phase_call_upper_bound"]["golden_holdout"], 8)
+        self.assertEqual(report["phase_call_upper_bound"]["golden_holdout"], 15)
         self.assertEqual(report["hard_call_cap"], 40)
 
     def test_golden_conversation_bank_matches_workflow_without_model_calls(self):
