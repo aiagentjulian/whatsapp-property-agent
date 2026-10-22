@@ -20,7 +20,7 @@ from .sales_workflow import plan_sales_turn
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RUN = ROOT / "sales_lab" / "reports" / "2026-10-22" / "closed-loop-v1"
-GOLDEN_RUN = ROOT / "sales_lab" / "reports" / "golden-loop-v1"
+GOLDEN_RUN = ROOT / "sales_lab" / "reports" / "golden-loop-v2-price-viewing"
 MAX_CALLS = 40
 BUYER_MODEL = "gpt-6-luna"
 
