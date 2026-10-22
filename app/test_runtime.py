@@ -262,6 +262,21 @@ class RuntimeTests(unittest.TestCase):
             {"direction": "INBOUND", "body": "Yes, sounds good"},
         ])
         self.assertEqual(accepted["stage"], "VIEWING")
+        date_choice = plan_sales_turn(
+            "Saturday would suit us if a slot is confirmed. Could you also share the price?",
+            {"purchase_purpose": "OWN_STAY"}, [
+                {"direction": "OUTBOUND", "body": "I'll check whether there's a viewing slot this weekend. Would Saturday or Sunday suit you?"},
+                {"direction": "INBOUND", "body": "Saturday would suit us if a slot is confirmed. Could you also share the price?"},
+            ])
+        self.assertEqual(date_choice["stage"], "VIEWING")
+        self.assertIn("ANSWER", date_choice["allowed_moves"])
+        declined_date = plan_sales_turn(
+            "Saturday doesn't work for us, unfortunately.",
+            {"purchase_purpose": "OWN_STAY"}, [
+                {"direction": "OUTBOUND", "body": "Would you like to arrange a viewing? Would Saturday suit you?"},
+                {"direction": "INBOUND", "body": "Saturday doesn't work for us, unfortunately."},
+            ])
+        self.assertNotEqual(declined_date["stage"], "VIEWING")
 
     def test_workflow_restricts_structured_move_options(self):
         from .provider import agent_schema

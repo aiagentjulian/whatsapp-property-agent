@@ -92,9 +92,17 @@ def _viewing_request(message, history):
                   if row.get("direction") == "OUTBOUND"), "")
     return bool(_contains(prior, (
         r"\b(?:viewing|showroom|come\s+see|arrange\s+a\s+visit)\b",
-    )) and _contains(message, (
+    )) and (_contains(message, (
         r"^(?:yes|yeah|sure|okay|ok|can|sounds\s+good)(?:\b|[.!])",
-    )))
+    )) or _contains(message, (
+        # Buyers often answer a salesperson's date-choice question directly
+        # ("Saturday would suit us") instead of repeating "yes" or "viewing".
+        # Only treat a positive preference as acceptance when the prior
+        # salesperson turn was itself about arranging a visit.
+        r"\b(?:saturday|sunday|weekdays?|weekends?)\s+(?:works?|suits?|would\s+(?:work|suit)|"
+        r"is\s+(?:good|fine|better|best))\b",
+        r"\b(?:prefer|free|available)\s+(?:on\s+)?(?:saturday|sunday|weekdays?|weekends?)\b",
+    ))))
 
 
 def _specific_property_question(message):
