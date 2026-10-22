@@ -20,6 +20,7 @@ from .sales_workflow import plan_sales_turn
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RUN = ROOT / "sales_lab" / "reports" / "2026-10-22" / "closed-loop-v1"
+GOLDEN_RUN = ROOT / "sales_lab" / "reports" / "golden-loop-v1"
 MAX_CALLS = 40
 BUYER_MODEL = "gpt-6-luna"
 
@@ -153,6 +154,7 @@ def _buyer_reply(ledger_path, ledger, name, transcript, interest):
 
 
 def _seller_turn(agent, latest, profile, history, ledger_path, ledger, label):
+    workflow_before = plan_sales_turn(latest, profile, history)
     def call():
         return agent.decide(latest, profile, history, [] )
     decision, usage = _live_call(ledger_path, ledger, label, call)
@@ -160,7 +162,7 @@ def _seller_turn(agent, latest, profile, history, ledger_path, ledger, label):
                     if key in PROFILE_FIELDS and value is not None})
     history.extend(({"direction": "INBOUND", "body": latest},
                     {"direction": "OUTBOUND", "body": decision["reply"]}))
-    return {"customer": latest, "workflow": plan_sales_turn(latest, profile, history[:-2]),
+    return {"customer": latest, "workflow": workflow_before,
             "decision": decision, "usage": usage}
 
 
@@ -169,6 +171,8 @@ def run_case(name, phase, run_dir, ledger_path, ledger):
     config = get_config()
     if config["model"] != "gpt-6-luna" or config["reasoning"] != "high":
         raise RuntimeError("Seller must use GPT-6 Luna / High")
+    if phase.startswith("golden_") and config.get("golden_guidance_mode") != "on":
+        raise RuntimeError("Golden Loop requires GOLDEN_GUIDANCE_MODE=on")
     agent = SalesAgent(config)
     profile = {"purchase_purpose": "UNKNOWN"}
     history = []
@@ -293,6 +297,8 @@ def main(argv=None):
         parser.error("choose --dry-run or one explicit --phase")
     if args.env_file:
         load_env_file(args.env_file)
+    if args.phase.startswith("golden_") and args.run_dir == DEFAULT_RUN:
+        args.run_dir = GOLDEN_RUN
     ledger_path = args.run_dir / "api-ledger.json"
     ledger = _load_ledger(ledger_path, args.continue_after_judge_failure)
     selected = {
