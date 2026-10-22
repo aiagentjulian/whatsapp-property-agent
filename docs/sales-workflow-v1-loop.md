@@ -35,7 +35,7 @@ real-life conversion results or repeat example wording mechanically.
 
 The previous `d4eddeb` simulation report is the historical dissatisfied
 baseline; do **not** spend additional API calls reproducing it by default.
-Use the current Golden-guided candidate as the starting point:
+Use the new price-evidence and viewing-progression candidate as the starting point. The dated package is evidence, not a verified current offer:
 
 ```sh
 python -m app.golden_cases --check
@@ -63,17 +63,19 @@ to bypass the 40-request cap.
    Compare **the same personas** against `golden_initial`.
    If no fix is warranted, skip `golden_retest` and record the decision.
 4. Run `python -m app.sales_simulation --phase golden_holdout`, including
-   both `holdout-weekend-couple` and `holdout-commuter-couple` (these
-   are not Golden examples). Report any weak buying signal, lack of invitation,
+   `holdout-weekend-couple`, `holdout-commuter-couple`, and a **new**
+   four-turn `holdout-price-comparison-family` persona that has not been
+   used in previous optimization. Report any weak buying signal, lack of invitation,
    unwanted hard-sell or unsupported claim.
 5. Stop after one targeted retest cycle plus holdout, or when the **40 API
    attempts** hard cap is reached, whichever comes first. No endless loops
    and no silent retries. Report exact calls, known tokens, scenario outcomes,
    remaining gaps and a KEEP/REVERT judgment. Retain known weaknesses honestly.
 
-The three phases require at most 12 + 12 + 8 = 32 seller/buyer requests when
-all scenarios use their declared turn counts; reserve any remaining calls
-for carefully justified independent reviews. That number is an upper-bound
+The three phases require at most 12 + 12 + 15 = 39 seller/buyer requests
+when all scenarios use their declared turn counts. Skip retest if there is
+no candidate change, leaving unused calls available. No extra judge run is
+allowed if it would exceed the same 40-attempt cap. That number is an upper-bound
 calculation, not a claim of completed runs. Use the separate ledger to confirm
 actual usage. Keep the old `main` branch, WhatsApp Runtime, contacts and CRM
 untouched. A new real WhatsApp acceptance test happens only after passing the
