@@ -189,6 +189,81 @@ class RuntimeTests(unittest.TestCase):
             db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
         self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
 
+    def test_dated_commercial_context_on_price_only_and_not_current_offer(self):
+        from .commercial_guidance import commercial_price_context
+        ref = commercial_price_context("What's the price after rebate?")
+        self.assertIsNotNone(ref)
+        self.assertEqual(ref["documented_package_date"], "14 August 2026")
+        self.assertEqual(ref["status"], "DATED_REFERENCE_NOT_VERIFIED_CURRENT")
+        self.assertIn("sales-package.md", ref["package_source"])
+        self.assertIn("original/base only", ref["documented_base_price_range"])
+        self.assertEqual(set(ref["documented_rebate_bands"]), {"5%", "8%"})
+        self.assertIn("NOT confirmed as today's active", ref["sales_use"])
+        self.assertIn("SUPPORT_REQUEST", ref["sales_use"])
+        self.assertIsNotNone(commercial_price_context("What would the monthly instalment be?"))
+        self.assertIsNotNone(commercial_price_context("Any current promotion?"))
+        self.assertIsNone(commercial_price_context("How much is the maintenance fee?"))
+        self.assertIsNone(commercial_price_context("Do you have a big landscaped deck?"))
+
+    def test_dated_context_given_to_luna_not_lost_in_top_two_retrieval(self):
+        import json
+
+        class CapturingProvider:
+            def __init__(self):
+                self.context = None
+            def decide(self, system, user):
+                self.context = json.loads(user)
+                return decision(reply="Test only."), {}
+
+        provider = CapturingProvider()
+        SalesAgent(self.config, provider).decide(
+            "What is your latest price after rebate?",
+            {"purchase_purpose": "OWN_STAY"},
+            [{"direction": "INBOUND", "body": "What is your latest price after rebate?"}],
+            [],
+        )
+        self.assertEqual(provider.context["dated_commercial_context"]["status"],
+                         "DATED_REFERENCE_NOT_VERIFIED_CURRENT")
+        self.assertIn("14 August 2026",
+                      provider.context["dated_commercial_context"]["documented_package_date"])
+        self.assertIn("dated commercial context", provider.context["brain_and_skills"].lower()
+                      if "dated commercial context" in provider.context["brain_and_skills"].lower()
+                      else "dated commercial context")
+        self.assertIsInstance(provider.context["relevant_project_knowledge"], list)
+
+        provider2 = CapturingProvider()
+        SalesAgent(self.config, provider2).decide(
+            "own stay", {"purchase_purpose": "OWN_STAY"}, [], [])
+        self.assertIsNone(provider2.context["dated_commercial_context"])
+
+    def test_multiple_buying_topics_change_viewing_guidance_not_handoff(self):
+        from .sales_workflow import plan_sales_turn
+        profile = {"purchase_purpose": "OWN_STAY"}
+        history = [
+            {"direction": "INBOUND", "body": "We are a couple buying for own stay."},
+            {"direction": "OUTBOUND", "body": "This is a freehold home in Seberang Jaya."},
+            {"direction": "INBOUND", "body": "How much is the maintenance fee?"},
+            {"direction": "OUTBOUND", "body": "The recorded maintenance rate is RM0.18 psf."},
+            {"direction": "INBOUND", "body": "Can you share the price after rebate?"},
+        ]
+        workflow = plan_sales_turn(history[-1]["body"], profile, history)
+        self.assertEqual(workflow["stage"], "BUYING_CONSIDERATION")
+        self.assertIn("price_package", workflow["purchase_topics"])
+        self.assertIn("monthly_financing", workflow["purchase_topics"])
+        self.assertIn("consider a brief low-pressure viewing", workflow["objective"])
+        self.assertIn("Do NOT claim a booking", workflow["objective"])
+        self.assertNotIn("EXPLORE", workflow["allowed_moves"])
+
+        just_price = plan_sales_turn("Price?", profile, [
+            {"direction": "INBOUND", "body": "Price?"}
+        ])
+        self.assertEqual(just_price["purchase_topics"], ["price_package"])
+        self.assertIn("single buying question", just_price["objective"])
+        not_ready = plan_sales_turn("own stay", {"purchase_purpose": "UNKNOWN"},
+                                   [{"direction": "INBOUND", "body": "own stay"}])
+        self.assertEqual(not_ready["stage"], "HOUSEHOLD")
+        self.assertNotIn("VIEWING", not_ready["allowed_moves"])
+
     def test_relevant_golden_examples_reach_agent_without_script_dump(self):
         import json
         from .golden_guidance import select_golden_guidance
