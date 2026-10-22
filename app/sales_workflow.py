@@ -26,10 +26,10 @@ def _route(profile, customer_turns):
     # that value, ask about the current primary purpose instead.
     purpose = profile.get("purchase_purpose")
     latest = customer_turns[-1] if customer_turns else ""
-    if _contains(latest, (r"\\b(?:actually|instead|mainly|primarily|rather)\\b",)):
-        if _contains(latest, (r"\\bown\\s*stay\\b", r"\\blive\\s+(?:there|in\\s+it)\\b")):
+    if _contains(latest, (r"\b(?:actually|instead|mainly|primarily|rather)\b",)):
+        if _contains(latest, (r"\bown\s*stay\b", r"\blive\s+(?:there|in\s+it)\b")):
             return "OWN_STAY"
-        if _contains(latest, (r"\\binvest(?:ment|ing)?\\b",)):
+        if _contains(latest, (r"\binvest(?:ment|ing)?\b",)):
             return "INVESTMENT"
     if purpose in ("OWN_STAY", "INVESTMENT"):
         return purpose
@@ -94,16 +94,16 @@ def _viewing_request(message, history):
 
 def _specific_property_question(message):
     return _contains(message, (
-        r"\\b(?:where\\s+is|location|address|how\\s+far|how\\s+near|which\\s+area)\\b",
-        r"\\b(?:freehold|leasehold|tenure|facilities|facility|pool|gym|school|floor\\s*plan|layout|balcony)\\b",
-        r"\\b(?:how\\s+big|sq\\s*ft|sqft|rooms|bedrooms|car\\s*park|parking|quality|developer)\\b",
+        r"\b(?:where\s+is|location|address|how\s+far|how\s+near|which\s+area)\b",
+        r"\b(?:freehold|leasehold|tenure|facilities|facility|pool|gym|school|floor\s*plan|layout|balcony)\b",
+        r"\b(?:how\s+big|sq\s*ft|sqft|rooms|bedrooms|car\s*park|parking|quality|developer)\b",
     ))
 
 
 def _objection(message):
     return _contains(message, (
-        r"\\b(?:too\\s+(?:small|expensive|far)|don't\\s+like|not\\s+interested|worried|concerned)\\b",
-        r"\\b(?:seems\\s+(?:small|expensive)|can't\\s+afford)\\b",
+        r"\b(?:too\s+(?:small|expensive|far)|don't\s+like|not\s+interested|worried|concerned)\b",
+        r"\b(?:seems\s+(?:small|expensive)|can't\s+afford)\b",
     ))
 
 
