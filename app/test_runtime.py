@@ -189,6 +189,66 @@ class RuntimeTests(unittest.TestCase):
             db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
         self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
 
+    def test_relevant_golden_examples_reach_agent_without_script_dump(self):
+        import json
+        from .golden_guidance import select_golden_guidance
+        from .sales_workflow import plan_sales_turn
+
+        def select(message, purpose, history=None):
+            history = history or [{"direction": "INBOUND", "body": message}]
+            profile = {"purchase_purpose": purpose}
+            workflow = plan_sales_turn(message, profile, history)
+            return workflow, select_golden_guidance(message, profile, history, workflow)
+
+        workflow, guides = select("own stay", "OWN_STAY")
+        self.assertEqual(workflow["stage"], "HOUSEHOLD")
+        self.assertEqual(guides["examples"][0]["case_id"], "G01_ad_to_own_stay")
+        self.assertLessEqual(len(guides["examples"]), 2)
+
+        workflow, guides = select("just me and my wife", "OWN_STAY")
+        self.assertEqual(workflow["stage"], "PRESENT_VALUE")
+        self.assertEqual(guides["examples"][0]["case_id"], "G01_ad_to_own_stay")
+
+        workflow, guides = select("Rental income, worried about vacancy", "INVESTMENT")
+        self.assertEqual(workflow["stage"], "OBJECTION")
+        self.assertEqual(guides["examples"][0]["case_id"], "G05_investment_rental")
+
+        workflow, guides = select("What is the maintenance fee?", "OWN_STAY")
+        self.assertEqual(workflow["stage"], "BUYING_CONSIDERATION")
+        self.assertEqual(guides["examples"][0]["case_id"], "G02_couple_warm_to_viewing")
+
+        history = [
+            {"direction": "INBOUND", "body": "Own stay with my wife"},
+            {"direction": "OUTBOUND", "body": "Would a weekend viewing suit you?"},
+            {"direction": "INBOUND", "body": "Saturday works for us"},
+        ]
+        workflow, guides = select("Saturday works for us", "OWN_STAY", history)
+        self.assertEqual(workflow["stage"], "VIEWING")
+        self.assertEqual(guides["examples"][0]["case_id"], "G02_couple_warm_to_viewing")
+        self.assertIn("not fixed scripts", guides["policy"])
+
+        class CaptureProvider:
+            def __init__(self):
+                self.payload = None
+                self.system = None
+            def decide(self, system, user):
+                self.system = system
+                self.payload = json.loads(user)
+                return decision(reply="Testing only."), {}
+
+        capture = CaptureProvider()
+        config = dict(self.config, golden_guidance_mode="on")
+        SalesAgent(config, capture).decide("own stay", {"purchase_purpose": "OWN_STAY"}, [], [])
+        self.assertIn("golden_sales_examples", capture.payload)
+        self.assertEqual(capture.payload["golden_sales_examples"]["examples"][0]["stage"], "HOUSEHOLD")
+        self.assertIn("not its literal language", capture.system)
+        self.assertNotIn("golden_conversations_v1.json", capture.system)
+
+        capture_off = CaptureProvider()
+        SalesAgent(dict(self.config, golden_guidance_mode="off"), capture_off).decide(
+            "own stay", {"purchase_purpose": "OWN_STAY"}, [], [])
+        self.assertIsNone(capture_off.payload["golden_sales_examples"])
+
     def test_golden_conversation_bank_matches_workflow_without_model_calls(self):
         from .golden_cases import load_goldens, check_goldens
         corpus = load_goldens()
