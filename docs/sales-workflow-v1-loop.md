@@ -8,6 +8,29 @@ Use synthetic, realistic multi-turn buyers to find where the actual GPT-6 Luna /
 
 The runtime's two sales branches remain **OWN_STAY** and **INVESTMENT**. There is no third BOTH branch. Do not proactively ask first-home-vs-upgrade. First-time buyer status belongs in financing context, not early sales qualification.
 
+## Golden Conversations V1 — reference bank
+
+The human-readable selling principles are in `brain/SALES_PLAYBOOK_V1.md`.
+The nine annotated draft Golden Conversations are in
+`brain/golden_conversations_v1.json`. They are **candidate exemplars**, not
+validated customer outcomes, and should not be pasted wholesale into Luna's
+runtime prompt. Each beat specifies customer input, one possible competent
+reply, its sales rationale and a deterministic workflow-stage checkpoint.
+
+Start with a free, deterministic corpus audit:
+
+```sh
+python -m app.golden_cases --check
+python -m unittest app.test_runtime
+```
+
+During the next authorized simulation, use the Golden bank to review whether
+Luna selected a commercially useful move, not whether it repeated sample text.
+Preserve an **unseen holdout** distinct from the Golden cases and compare the
+baseline and candidate at whole-conversation level. Do not claim the bank
+trained Luna. Only consider selective few-shot injection after observed
+holdout improvement and token-cost comparison.
+
 ## One bounded optimization loop
 
 1. **Baseline.** Inspect the current workflow and existing `app/eval_sales.py`. Run the deterministic unit suite. Simulate conversations with the real Luna seller and a simulated customer actor that responds **to the actual seller reply**, not an unrelated prewritten list. Use fictional personas only. Capture the workflow stage and sales move every turn.
