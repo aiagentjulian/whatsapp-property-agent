@@ -6,9 +6,7 @@ Do not replace the usual project Knowledge retrieval or Support Request.
 """
 
 import re
-from pathlib import Path
-
-from .knowledge import KNOWLEDGE, _passages
+from .knowledge import KNOWLEDGE
 
 PRICE_INTENT = re.compile(
     r"\b(?:price|prices|pricing|how\s+much|starting\s+from|starts?\s+from|"
@@ -24,7 +22,16 @@ def commercial_price_context(latest_message):
 
     Read from project Knowledge so future updates to the source are inherited.
     """
-    if not PRICE_INTENT.search(latest_message or ""):
+    latest = latest_message or ""
+    if not PRICE_INTENT.search(latest):
+        return None
+    # Maintenance alone is already a verified, separate ownership charge.
+    # "How much is maintenance?" is not a request for a current sales package.
+    if re.search(r"\b(?:maintenance|sinking\s+fund)\b", latest, re.IGNORECASE) and not re.search(
+        r"\b(?:price|pricing|rebate|package|loan|mortgage|financ(?:e|ing)|"
+        r"down\s*payment|instal?ments?|installments?|monthly\s+costs?|total\s+cost)\b",
+        latest, re.IGNORECASE,
+    ):
         return None
 
     package_path = KNOWLEDGE / "02_commercial/sales-package.md"
