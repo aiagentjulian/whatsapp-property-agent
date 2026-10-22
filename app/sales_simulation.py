@@ -238,6 +238,8 @@ def dry_run():
         user_context = json.loads(payload["input"][1]["content"][0]["text"])
         assert user_context["sales_workflow"]["stage"] == "PURPOSE"
         assert "lead_profile" in user_context and "relevant_project_knowledge" in user_context
+        assert user_context["golden_sales_examples"]["examples"]
+        assert len(user_context["golden_sales_examples"]["examples"]) <= 2
         captured["payload"] = payload
         response = {"status": "completed", "output_text": json.dumps({
             "action": "REPLY", "sales_move": "ANSWER", "buyer_signal": "QUESTION",
@@ -259,15 +261,24 @@ def dry_run():
             [{"direction": "INBOUND", "body": "Hi, saw the property ad. Can share more details?"}], [])
     assert decision["reply"] == "Fake transport validation only." and captured
     checks.append("real SalesAgent entrypoint accepts a fake HTTP response; no network call was made")
+    from .golden_cases import check_goldens
+    golden_result = check_goldens()
+    assert golden_result["status"] == "passed", golden_result["errors"]
+    assert captured["payload"]["input"][1]["content"][0]["text"]
+    checks.append("golden bank has matching workflow stages and passes zero-API validation")
     return {"status": "passed", "api_calls": 0, "checks": checks,
-            "phase_call_upper_bound": {"baseline": 12, "candidate": 12, "holdout": 5},
+            "phase_call_upper_bound": {"baseline": 12, "candidate": 12, "holdout": 5,
+                                       "golden_initial": 12, "golden_retest": 12,
+                                       "golden_holdout": 8},
             "hard_call_cap": MAX_CALLS, "whatsapp": "not used", "crm_sheets_database": "not used"}
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--phase", choices=("baseline", "candidate", "holdout"))
+    parser.add_argument("--phase", choices=(
+        "baseline", "candidate", "holdout",
+        "golden_initial", "golden_retest", "golden_holdout"))
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN)
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--continue-after-judge-failure", action="store_true",
@@ -288,6 +299,14 @@ def main(argv=None):
         "baseline": ("couple-own-stay", "small-family-own-stay", "rental-income-investor", "capital-gain-investor"),
         "candidate": ("couple-own-stay", "small-family-own-stay", "rental-income-investor", "capital-gain-investor"),
         "holdout": ("holdout-weekend-couple",),
+        # Golden Loop V1: no separate old-model A/B replay. The previous
+        # evaluation is the historical reference. Compare only targeted fixes
+        # against initial Golden-guided cases, then unseen holdouts.
+        "golden_initial": ("couple-own-stay", "small-family-own-stay",
+                           "rental-income-investor", "capital-gain-investor"),
+        "golden_retest": ("couple-own-stay", "small-family-own-stay",
+                          "rental-income-investor", "capital-gain-investor"),
+        "golden_holdout": ("holdout-weekend-couple", "holdout-commuter-couple"),
     }[args.phase]
     outputs = []
     for name in selected:
