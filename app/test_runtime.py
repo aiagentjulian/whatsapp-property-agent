@@ -231,6 +231,16 @@ class RuntimeTests(unittest.TestCase):
         known_primary = plan("own stay", "BOTH")
         self.assertEqual(known_primary["route"], "OWN_STAY")
 
+        location = plan("Where is the location?", "OWN_STAY", ("own stay",))
+        self.assertEqual(location["stage"], "DIRECT_QUESTION")
+        self.assertIn("ANSWER", location["allowed_moves"])
+        objection = plan("Seems too small", "OWN_STAY", ("own stay",))
+        self.assertEqual(objection["stage"], "OBJECTION")
+        self.assertIn("HANDLE", objection["allowed_moves"])
+        switched = plan("Actually this is for investment", "OWN_STAY", ("own stay",))
+        self.assertEqual(switched["route"], "INVESTMENT")
+        self.assertEqual(switched["stage"], "INVESTMENT_OBJECTIVE")
+
         financing = plan("What is the monthly instalment?", "OWN_STAY", ("own stay",))
         self.assertEqual(financing["stage"], "BUYING_CONSIDERATION")
         self.assertIn("financing or first-time buyer", financing["objective"])
