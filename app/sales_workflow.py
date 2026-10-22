@@ -112,6 +112,14 @@ def _objection(message):
     ))
 
 
+def _warm_interest(customer_turns):
+    # A material purchase enquiry or volunteered positive interest can justify
+    # inviting a viewing. A bare "own stay"/"investment" answer cannot.
+    return any(_buying_question(text) or _contains(text, (
+        r"\b(?:sounds\s+good|looks\s+good|i\s+like|interested\s+in|quite\s+interested)\b",
+    )) for text in customer_turns)
+
+
 def plan_sales_turn(latest_message, profile, history):
     """Direct the next sales turn without deciding the customer's exact words.
 
@@ -181,8 +189,9 @@ def plan_sales_turn(latest_message, profile, history):
                           "belongs in financing discussion when it matters."),
             "allowed_moves": ["ANSWER", "EXPLORE", "HANDLE", "GIVE_SPACE"],
         }
+    warm = _warm_interest(customer_turns)
     return {
-        "route": route, "stage": "PRESENT_VALUE",
+        "route": route, "stage": "WARM_INTEREST" if warm else "PRESENT_VALUE",
         "objective": ("The buyer has supplied a usable motivation or household "
                       "detail. Advance the sale: choose a truthful, specific property "
                       "benefit relevant to it, explain a realistic personal benefit, "
@@ -191,6 +200,11 @@ def plan_sales_turn(latest_message, profile, history):
                       "An 'upgrade' is not proof that 900 sqft offers more room. "
                       "A first-time buyer question is appropriate only when "
                       "financing is being considered. Respond to objections "
-                      "and customer questions directly."),
-        "allowed_moves": ["POSITION", "ANSWER", "HANDLE", "VIEWING", "GIVE_SPACE"],
+                      "and customer questions directly. "
+                      + ("Their engagement permits a low-pressure viewing invitation, "
+                         "not an assumed booking." if warm else
+                         "Their buying interest is not yet established; do not push "
+                         "a viewing simply because they disclosed a household or purpose.")),
+        "allowed_moves": (["POSITION", "ANSWER", "HANDLE", "VIEWING", "GIVE_SPACE"]
+                          if warm else ["POSITION", "ANSWER", "HANDLE", "GIVE_SPACE"]),
     }
