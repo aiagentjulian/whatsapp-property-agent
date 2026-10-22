@@ -205,6 +205,6 @@ def plan_sales_turn(latest_message, profile, history):
                          "not an assumed booking." if warm else
                          "Their buying interest is not yet established; do not push "
                          "a viewing simply because they disclosed a household or purpose.")),
-        "allowed_moves": (["POSITION", "ANSWER", "HANDLE", "VIEWING", "GIVE_SPACE"]
-                          if warm else ["POSITION", "ANSWER", "HANDLE", "GIVE_SPACE"]),
+        "allowed_moves": (["POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"]
+                          if warm else ["POSITION", "HANDLE", "GIVE_SPACE"]),
     }
