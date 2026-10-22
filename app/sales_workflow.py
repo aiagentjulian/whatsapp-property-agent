@@ -26,6 +26,11 @@ def _route(profile, customer_turns):
     # that value, ask about the current primary purpose instead.
     purpose = profile.get("purchase_purpose")
     latest = customer_turns[-1] if customer_turns else ""
+    simple_answer = latest.strip().lower().strip(".! ")
+    if simple_answer in ("own stay", "for own stay", "self stay"):
+        return "OWN_STAY"
+    if simple_answer in ("investment", "for investment", "invest"):
+        return "INVESTMENT"
     if _contains(latest, (r"\b(?:actually|instead|mainly|primarily|rather)\b",)):
         if _contains(latest, (r"\bown\s*stay\b", r"\blive\s+(?:there|in\s+it)\b")):
             return "OWN_STAY"
