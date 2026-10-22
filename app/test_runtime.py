@@ -226,9 +226,8 @@ class RuntimeTests(unittest.TestCase):
                          "DATED_REFERENCE_NOT_VERIFIED_CURRENT")
         self.assertIn("14 August 2026",
                       provider.context["dated_commercial_context"]["documented_package_date"])
-        self.assertIn("dated commercial context", provider.context["brain_and_skills"].lower()
-                      if "dated commercial context" in provider.context["brain_and_skills"].lower()
-                      else "dated commercial context")
+        from .agent import SYSTEM_PROMPT
+        self.assertIn("When dated_commercial_context is provided", SYSTEM_PROMPT)
         self.assertIsInstance(provider.context["relevant_project_knowledge"], list)
 
         provider2 = CapturingProvider()
