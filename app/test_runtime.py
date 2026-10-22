@@ -189,6 +189,28 @@ class RuntimeTests(unittest.TestCase):
             db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
         self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
 
+    def test_golden_conversation_bank_matches_workflow_without_model_calls(self):
+        from .golden_cases import load_goldens, check_goldens
+        corpus = load_goldens()
+        self.assertEqual(len(corpus["cases"]), 9)
+        self.assertEqual(corpus["status"], "DRAFT_FOR_HUMAN_REVIEW_NOT_LIVE_VALIDATED")
+        ids = {item["id"] for item in corpus["cases"]}
+        self.assertIn("G01_ad_to_own_stay", ids)
+        self.assertIn("G02_couple_warm_to_viewing", ids)
+        self.assertIn("G05_investment_rental", ids)
+        self.assertIn("G06_investment_capital_gain", ids)
+        self.assertIn("G08_nonfit_four_bedrooms", ids)
+        self.assertTrue(all(case["route"] in ("OWN_STAY", "INVESTMENT")
+                            for case in corpus["cases"]))
+        report = check_goldens()
+        self.assertEqual(report["status"], "passed", report["errors"])
+        self.assertEqual(report["api_calls"], 0)
+        self.assertEqual(report["beats"], 19)
+        self.assertEqual(report["stages"]["G01_ad_to_own_stay"],
+                         ["PURPOSE", "HOUSEHOLD", "PRESENT_VALUE"])
+        self.assertEqual(report["stages"]["G02_couple_warm_to_viewing"],
+                         ["BUYING_CONSIDERATION", "WARM_INTEREST", "VIEWING"])
+
     def test_two_route_sales_workflow_prioritizes_sales_progress(self):
         from .sales_workflow import plan_sales_turn
 
