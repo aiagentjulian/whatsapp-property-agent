@@ -53,7 +53,7 @@
       "goal": "Answer real ownership cost, detect warm interest, invite viewing and hand off only after accepted date.",
       "beats": [
         {
-          "buyer": "My wife and I are considering it for own stay. How much is the maintenance?",
+          "buyer": "My wife and I are considering it for own stay. How much is the maintenance fee?",
           "seller": "The published maintenance rate is RM0.18 per sq ft including sinking fund. On the standard 900 sq ft unit, that's about RM162 a month on that basis. That's separate from any loan instalment, and actual ownership costs and package details need checking.",
           "stage": "BUYING_CONSIDERATION",
           "profile": {
@@ -64,7 +64,7 @@
         {
           "buyer": "That sounds good. We're interested in seeing it.",
           "seller": "Good to hear. The next useful step may be a viewing so you can judge the actual unit and location for yourselves. Would a weekend visit suit you? Our team would still need to confirm a slot.",
-          "stage": "VIEWING",
+          "stage": "WARM_INTEREST",
           "profile": {
             "purchase_purpose": "OWN_STAY"
           },
@@ -164,7 +164,7 @@
         {
           "buyer": "Rental income mainly. I'm worried about vacancies.",
           "seller": "For a rental plan, I'd start with the holding costs and the actual tenant market, not promise a yield. Pearl Residences is freehold in established Seberang Jaya, and the published maintenance rate is RM0.18/sq ft including sinking fund. Those are useful inputs, but comparable rents and vacancy still need independent evidence before deciding if the numbers work.",
-          "stage": "PRESENT_VALUE",
+          "stage": "OBJECTION",
           "profile": {
             "purchase_purpose": "INVESTMENT",
             "purchase_reason": "rental income"
@@ -206,7 +206,7 @@
         {
           "buyer": "Are you saying the price will definitely rise?",
           "seller": "No. Freehold and location can be comparison factors, but they don't guarantee resale gains. I would only make a return estimate with credible market comparables and clear assumptions, and even then it would be uncertain.",
-          "stage": "PRESENT_VALUE",
+          "stage": "BUYING_CONSIDERATION",
           "profile": {
             "purchase_purpose": "INVESTMENT",
             "purchase_reason": "capital appreciation"
