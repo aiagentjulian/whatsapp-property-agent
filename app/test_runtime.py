@@ -189,6 +189,71 @@ class RuntimeTests(unittest.TestCase):
             db.execute("UPDATE messages SET created_at='2026-01-01T00:00:00+00:00' WHERE lead_id=?", (lead["lead_id"],))
         self.assertEqual([row["body"] for row in store.history(lead["lead_id"])], ["first", "reply", "second"])
 
+    def test_two_route_sales_workflow_prioritizes_sales_progress(self):
+        from .sales_workflow import plan_sales_turn
+
+        def plan(text, purpose=None, older=()):
+            profile = {"purchase_purpose": purpose} if purpose else {}
+            history = [{"direction": "INBOUND", "body": msg} for msg in older]
+            return plan_sales_turn(text, profile, history)
+
+        opening = plan("Hi, I saw your property ad. Can share more details?")
+        self.assertEqual((opening["route"], opening["stage"]), ("UNKNOWN", "PURPOSE"))
+        self.assertIn("EXPLORE", opening["allowed_moves"])
+
+        own_stay = plan("own stay")
+        self.assertEqual((own_stay["route"], own_stay["stage"]), ("OWN_STAY", "HOUSEHOLD"))
+        self.assertIn("who would actually live", own_stay["objective"])
+        self.assertIn("NOT ask first home versus upgrade", own_stay["objective"])
+
+        with_spouse = plan("just me and my wife", "OWN_STAY", ("own stay",))
+        self.assertEqual(with_spouse["stage"], "PRESENT_VALUE")
+        self.assertNotIn("EXPLORE", with_spouse["allowed_moves"])
+        self.assertIn("POSITION", with_spouse["allowed_moves"])
+
+        # The real failed conversation must not trigger another broad quiz.
+        upgrade = plan("upgrade", "OWN_STAY", ("own stay",))
+        self.assertEqual(upgrade["stage"], "PRESENT_VALUE")
+        self.assertNotIn("EXPLORE", upgrade["allowed_moves"])
+
+        investment = plan("investment")
+        self.assertEqual((investment["route"], investment["stage"]),
+                         ("INVESTMENT", "INVESTMENT_OBJECTIVE"))
+        self.assertIn("rental income or capital gain", investment["objective"])
+        rental = plan("mainly rental income", "INVESTMENT", ("investment",))
+        self.assertEqual(rental["stage"], "PRESENT_VALUE")
+        self.assertNotIn("EXPLORE", rental["allowed_moves"])
+        cap_gain = plan("capital gain", "INVESTMENT", ("investment",))
+        self.assertEqual(cap_gain["stage"], "PRESENT_VALUE")
+
+        legacy_both = plan("both", "BOTH")
+        self.assertEqual((legacy_both["route"], legacy_both["stage"]), ("UNKNOWN", "PURPOSE"))
+        known_primary = plan("own stay", "BOTH")
+        self.assertEqual(known_primary["route"], "OWN_STAY")
+
+        financing = plan("What is the monthly instalment?", "OWN_STAY", ("own stay",))
+        self.assertEqual(financing["stage"], "BUYING_CONSIDERATION")
+        self.assertIn("financing or first-time buyer", financing["objective"])
+        self.assertNotIn("EXPLORE", financing["allowed_moves"])
+
+        view = plan("Can I arrange a viewing?", "OWN_STAY", ("own stay",))
+        self.assertEqual(view["stage"], "VIEWING")
+        self.assertIn("VIEWING", view["allowed_moves"])
+        accepted = plan_sales_turn("Yes, sounds good", {"purchase_purpose": "OWN_STAY"}, [
+            {"direction": "OUTBOUND", "body": "Would you like to arrange a viewing?"},
+            {"direction": "INBOUND", "body": "Yes, sounds good"},
+        ])
+        self.assertEqual(accepted["stage"], "VIEWING")
+
+    def test_workflow_restricts_structured_move_options(self):
+        from .provider import agent_schema
+        schema = agent_schema(["ANSWER", "EXPLORE"])
+        self.assertEqual(schema["properties"]["sales_move"]["enum"], ["ANSWER", "EXPLORE"])
+        self.assertNotIn("BOTH", schema["properties"]["lead_updates"]
+                         ["properties"]["purchase_purpose"]["enum"])
+        with self.assertRaisesRegex(ValueError, "Invalid sales workflow move"):
+            agent_schema(["ANSWER", "HALLUCINATE"])
+
     def test_sales_agent_receives_extended_bidirectional_history(self):
         import json
         class CapturingProvider:
@@ -207,6 +272,9 @@ class RuntimeTests(unittest.TestCase):
         }, rows, [])
         self.assertEqual(provider.payload["lead_profile"], {"purchase_purpose": "OWN_STAY"})
         self.assertIn("optional_sales_angles", provider.payload["focused_sales_evidence"])
+        self.assertIn("sales_workflow", provider.payload)
+        self.assertEqual(provider.payload["sales_workflow"]["route"], "OWN_STAY")
+        self.assertIn("allowed_moves", provider.payload["sales_workflow"])
         self.assertNotIn("project_sales_context", provider.payload)
         recent = provider.payload["recent_conversation"]
         offering = provider.payload["current_project_unit_offering"]
@@ -273,7 +341,10 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("does **not** mean they care about room layout", context)
         self.assertIn("discovering who would live there or why they are considering a home", context)
         self.assertIn("Investment:", context)
-        self.assertIn("Both or undecided:", context)
+        self.assertIn("Undecided:", context)
+        self.assertNotIn("**Both or undecided:**", context)
+        self.assertIn("Do not proactively ask whether this is a first home, upgrade or relocation", context)
+        self.assertIn("Workflow discipline", context)
         self.assertIn("rental income, capital appreciation, or a mix", context)
         self.assertIn("what you would do differently with the answer", context)
         self.assertIn("sell the connection to the property before digging deeper", context)
