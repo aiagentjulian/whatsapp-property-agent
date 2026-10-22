@@ -42,6 +42,24 @@ Prospects can be reviewed and created locally. `create-prospect` only creates a 
 
 The core sales journey is `UNDERSTAND → QUALIFY → POSITION → HANDLE → INTENT → CLOSE`.
 
+## Golden Conversations V1 (draft, zero-API reference)
+
+The simplified sales guidance is at `brain/SALES_PLAYBOOK_V1.md` and
+nine annotated candidate dialogues are at `brain/golden_conversations_v1.json`.
+These are behavioral examples for offline review; they are **not** inserted
+into the production prompt or assumed to be proven sales techniques.
+
+```sh
+python -m app.golden_cases --check
+python -m unittest app.test_runtime
+```
+
+The first command verifies the bank's structure and expected sales-workflow
+stages using **zero API calls**, and the second runs existing local tests.
+See `docs/sales-workflow-v1-loop.md` for how to use the examples in a bounded
+simulation comparison against unseen holdout customers. Do not change
+`main`, send WhatsApp messages or reset real Leads to review the bank.
+
 ## Sales Core V2: local model evaluation and clean test sessions
 
 The Runtime loads a compact Sales Brain, verified factual Knowledge, recent
