@@ -249,6 +249,17 @@ class RuntimeTests(unittest.TestCase):
             "own stay", {"purchase_purpose": "OWN_STAY"}, [], [])
         self.assertIsNone(capture_off.payload["golden_sales_examples"])
 
+    def test_golden_simulation_dry_run_has_isolated_call_budget(self):
+        from .sales_simulation import dry_run, GOLDEN_RUN, DEFAULT_RUN
+        self.assertNotEqual(GOLDEN_RUN, DEFAULT_RUN)
+        report = dry_run()
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["api_calls"], 0)
+        self.assertEqual(report["phase_call_upper_bound"]["golden_initial"], 12)
+        self.assertEqual(report["phase_call_upper_bound"]["golden_retest"], 12)
+        self.assertEqual(report["phase_call_upper_bound"]["golden_holdout"], 8)
+        self.assertEqual(report["hard_call_cap"], 40)
+
     def test_golden_conversation_bank_matches_workflow_without_model_calls(self):
         from .golden_cases import load_goldens, check_goldens
         corpus = load_goldens()
