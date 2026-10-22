@@ -52,6 +52,26 @@ PERSONAS = {
         "opening": "My partner and I commute to Perai and are thinking of buying our own place. Could you explain the monthly costs first?",
         "private": "A different holdout combination: couple buying for own stay, both commute to Perai, monthly cost is the main concern, combined budget around RM360k. They want maintenance charges explained as one component, not presented as their full monthly payment. They may view after the agent answers and connects a relevant verified benefit.",
     },
+    "holdout-price-comparison-family": {
+        "route": "OWN_STAY",
+        "seller_turns": 4,
+        "opening": ("Hi, we're looking for own stay with one child and comparing a "
+                    "few Seberang Jaya projects. How much does Pearl Residences "
+                    "cost, and what would maintenance be?"),
+        "private": (
+            "Unseen holdout persona: couple with one school-age child, already "
+            "viewed another Penang Mainland project. Budget is around RM400k. "
+            "They need a usable ownership-cost comparison, and are skeptical "
+            "of packages presented without a date. After a useful reply, ask "
+            "about price/package validity or how the location and facilities "
+            "would help the family. If the salesperson answers responsibly "
+            "and proposes a low-pressure viewing, they may accept a weekend "
+            "visit, subject to slot confirmation. If it evades the price "
+            "question or hard-sells, express hesitation. Do not volunteer "
+            "viewing just to make the agent pass the test. Respond to each "
+            "real seller answer, not a memorized script."
+        ),
+    },
     "holdout-weekend-couple": {
         "route": "OWN_STAY",
         "seller_turns": 3,
@@ -273,7 +293,7 @@ def dry_run():
     return {"status": "passed", "api_calls": 0, "checks": checks,
             "phase_call_upper_bound": {"baseline": 12, "candidate": 12, "holdout": 5,
                                        "golden_initial": 12, "golden_retest": 12,
-                                       "golden_holdout": 8},
+                                       "golden_holdout": 15},
             "hard_call_cap": MAX_CALLS, "whatsapp": "not used", "crm_sheets_database": "not used"}
 
 
@@ -312,7 +332,8 @@ def main(argv=None):
                            "rental-income-investor", "capital-gain-investor"),
         "golden_retest": ("couple-own-stay", "small-family-own-stay",
                           "rental-income-investor", "capital-gain-investor"),
-        "golden_holdout": ("holdout-weekend-couple", "holdout-commuter-couple"),
+        "golden_holdout": ("holdout-weekend-couple", "holdout-commuter-couple",
+                           "holdout-price-comparison-family"),
     }[args.phase]
     outputs = []
     for name in selected:
