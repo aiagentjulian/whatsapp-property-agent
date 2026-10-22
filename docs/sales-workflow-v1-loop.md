@@ -24,12 +24,60 @@ python -m app.golden_cases --check
 python -m unittest app.test_runtime
 ```
 
-During the next authorized simulation, use the Golden bank to review whether
-Luna selected a commercially useful move, not whether it repeated sample text.
-Preserve an **unseen holdout** distinct from the Golden cases and compare the
-baseline and candidate at whole-conversation level. Do not claim the bank
-trained Luna. Only consider selective few-shot injection after observed
-holdout improvement and token-cost comparison.
+**Golden examples are now enabled on this TEST branch, not production main.**
+The test runtime selects at most two stage-matched fictional examples per turn
+through `app/golden_guidance.py` and presents their rationale alongside their
+illustrative reply. `GOLDEN_GUIDANCE_MODE=off` disables this for diagnosis;
+the default on the test branch is `on`. Do not treat the bank as validated
+real-life conversion results or repeat example wording mechanically.
+
+## Golden-guided improvement Loop — run directly (no fresh old-version A/B)
+
+The previous `d4eddeb` simulation report is the historical dissatisfied
+baseline; do **not** spend additional API calls reproducing it by default.
+Use the current Golden-guided candidate as the starting point:
+
+```sh
+python -m app.golden_cases --check
+python -m unittest app.test_runtime
+python -m app.sales_simulation --dry-run
+python -m app.sales_simulation --phase golden_initial
+```
+
+The last command makes real GPT-6 Luna / High seller calls and responsive
+fictional buyer calls. It stores data under ignored
+`sales_lab/reports/golden-loop-v1/` by default, **separate** from the exhausted
+earlier `closed-loop-v1` budget ledger. A new run can never reset or reuse
+the old ledger. Check the ledger before every further phase; never delete it
+to bypass the 40-request cap.
+
+1. Review **full** initial transcripts, with specific evidence of whether
+   tailored value, curiosity, genuine buying interest and viewing invitations
+   emerged. Avoid a judging system that rewards merely sounding friendly.
+2. Identify at most one or two recurring failure causes. Make the smallest
+   coherent fix, preferably in Golden example selection, sales workflow or
+   evidence relevance. Never overwrite approved knowledge or support/handoff
+   safeguards. Do not optimize by forcing an invitation after every question.
+3. If a candidate fix was needed, run
+   `python -m app.sales_simulation --phase golden_retest`.
+   Compare **the same personas** against `golden_initial`.
+   If no fix is warranted, skip `golden_retest` and record the decision.
+4. Run `python -m app.sales_simulation --phase golden_holdout`, including
+   both `holdout-weekend-couple` and `holdout-commuter-couple` (these
+   are not Golden examples). Report any weak buying signal, lack of invitation,
+   unwanted hard-sell or unsupported claim.
+5. Stop after one targeted retest cycle plus holdout, or when the **40 API
+   attempts** hard cap is reached, whichever comes first. No endless loops
+   and no silent retries. Report exact calls, known tokens, scenario outcomes,
+   remaining gaps and a KEEP/REVERT judgment. Retain known weaknesses honestly.
+
+The three phases require at most 12 + 12 + 8 = 32 seller/buyer requests when
+all scenarios use their declared turn counts; reserve any remaining calls
+for carefully justified independent reviews. That number is an upper-bound
+calculation, not a claim of completed runs. Use the separate ledger to confirm
+actual usage. Keep the old `main` branch, WhatsApp Runtime, contacts and CRM
+untouched. A new real WhatsApp acceptance test happens only after passing the
+offline gate and explicitly resetting the authorized TEST Lead.
 
 ## One bounded optimization loop
 
