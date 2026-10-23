@@ -1,0 +1,37 @@
+name: Offline sales regression
+on:
+  push:
+    branches:
+      - codex/v2-handoff-ack
+    paths:
+      - "app/**"
+      - "brain/**"
+      - "knowledge/**"
+      - ".github/workflows/offline-sales-regression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENAI_API_KEY: ""
+      GOLDEN_GUIDANCE_MODE: "on"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify source compiles
+        run: python -m compileall -q app
+      - name: Sales and CRM local tests
+        run: python -m unittest app.test_runtime app.test_evidence_priority app.test_crm app.test_webhook
+      - name: Golden example consistency
+        run: python -m app.golden_cases --check
+      - name: Simulated pipeline without API calls
+        run: python -m app.sales_simulation --dry-run
