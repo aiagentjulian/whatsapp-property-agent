@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RUN = ROOT / "sales_lab" / "reports" / "2026-10-22" / "closed-loop-v1"
 GOLDEN_RUN = ROOT / "sales_lab" / "reports" / "golden-loop-v2-price-viewing"
 PRICE_READY_RUN = ROOT / "sales_lab" / "reports" / "price-ready-sales-loop-v1"
+FINAL_RUN = ROOT / "sales_lab" / "reports" / "price-ready-final-acceptance-v1"
 
 # FIXTURE FOR OFFLINE SIMULATION ONLY. Never import this module into live
 # Runtime, Knowledge, CRM, Google Sheets or production support resolution.
@@ -428,7 +429,8 @@ def dry_run():
                                        "golden_holdout": 15,
                                        "price_ready_initial": 18,
                                        "price_ready_retest": 9,
-                                       "price_ready_holdout": 9},
+                                       "price_ready_holdout": 9,
+                                       "price_ready_final": 27},
             "hard_call_cap": MAX_CALLS, "whatsapp": "not used", "crm_sheets_database": "not used"}
 
 
@@ -438,7 +440,8 @@ def main(argv=None):
     parser.add_argument("--phase", choices=(
         "baseline", "candidate", "holdout",
         "golden_initial", "golden_retest", "golden_holdout",
-        "price_ready_initial", "price_ready_retest", "price_ready_holdout"))
+        "price_ready_initial", "price_ready_retest", "price_ready_holdout",
+        "price_ready_final"))
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN)
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--continue-after-judge-failure", action="store_true",
@@ -455,7 +458,9 @@ def main(argv=None):
         load_env_file(args.env_file)
     if args.phase.startswith("golden_") and args.run_dir == DEFAULT_RUN:
         args.run_dir = GOLDEN_RUN
-    if args.phase.startswith("price_ready_") and args.run_dir == DEFAULT_RUN:
+    if args.phase == "price_ready_final" and args.run_dir == DEFAULT_RUN:
+        args.run_dir = FINAL_RUN
+    elif args.phase.startswith("price_ready_") and args.run_dir == DEFAULT_RUN:
         args.run_dir = PRICE_READY_RUN
     ledger_path = args.run_dir / "api-ledger.json"
     ledger = _load_ledger(ledger_path, args.continue_after_judge_failure)
@@ -475,6 +480,9 @@ def main(argv=None):
         "price_ready_initial": ("price-ready-ownstay-couple", "price-ready-family"),
         "price_ready_retest": ("price-ready-ownstay-couple",),
         "price_ready_holdout": ("price-ready-investor-holdout",),
+        # One final acceptance pass. No old-A/B rerun, no tuning/retest.
+        "price_ready_final": ("price-ready-ownstay-couple", "price-ready-family",
+                              "price-ready-investor-holdout"),
     }[args.phase]
     outputs = []
     for name in selected:
