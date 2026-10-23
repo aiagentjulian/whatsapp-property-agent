@@ -20,7 +20,7 @@ ENUM_FIELDS = {
 STRING = {"type": ["string", "null"]}
 
 
-def agent_schema(allowed_moves=None):
+def agent_schema(allowed_moves=None, blocked_support_types=None):
     valid_moves = ["ANSWER", "EXPLORE", "POSITION", "HANDLE", "VIEWING", "GIVE_SPACE"]
     if allowed_moves is None:
         allowed_moves = valid_moves
@@ -38,7 +38,14 @@ def agent_schema(allowed_moves=None):
             updates[key] = STRING
     support = {key: {"type": "string"} for key in (
         "support_type", "requested_fact", "subject", "customer_need", "reason", "resume_stage", "resume_objective")}
-    support["support_type"]["enum"] = ["AVAILABILITY", "PRICING", "PACKAGE", "FINANCING", "LAYOUT", "TECHNICAL", "OTHER"]
+    supported_types = ["AVAILABILITY", "PRICING", "PACKAGE", "FINANCING", "LAYOUT", "TECHNICAL", "OTHER"]
+    blocked = set(blocked_support_types or [])
+    if blocked - set(supported_types):
+        raise ValueError("Unknown blocked support types")
+    allowed_types = [item for item in supported_types if item not in blocked]
+    if not allowed_types:
+        raise ValueError("No permitted support types remain")
+    support["support_type"]["enum"] = allowed_types
     return {
         "type": "object", "additionalProperties": False,
         "properties": {
@@ -64,7 +71,7 @@ class OpenAIProvider:
     def decide(self, system_prompt, user_prompt):
         # Restrict action categories at generation time, not merely in prose.
         workflow = json.loads(user_prompt).get("sales_workflow") or {}
-        schema = agent_schema(workflow.get("allowed_moves"))
+        schema = agent_schema(workflow.get("allowed_moves"), workflow.get("blocked_support_types"))
         payload = {
             "model": self.config["model"],
             "reasoning": {"effort": self.config["reasoning"]},
