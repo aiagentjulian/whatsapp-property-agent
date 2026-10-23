@@ -424,7 +424,8 @@ class RuntimeTests(unittest.TestCase):
 
         financing = plan("What is the monthly instalment?", "OWN_STAY", ("own stay",))
         self.assertEqual(financing["stage"], "BUYING_CONSIDERATION")
-        self.assertIn("financing or first-time buyer", financing["objective"])
+        self.assertIn("using verified facts and dated commercial context", financing["objective"])
+        self.assertIn("promise loan eligibility", financing["objective"])
         self.assertNotIn("EXPLORE", financing["allowed_moves"])
 
         view = plan("Can I arrange a viewing?", "OWN_STAY", ("own stay",))

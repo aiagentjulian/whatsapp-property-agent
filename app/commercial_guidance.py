@@ -42,7 +42,7 @@ def commercial_price_context(latest_message):
     dated = re.search(r"^Current package date:\s*(.+)$", package_text, re.MULTILINE)
     if not dated:
         raise ValueError("Sales package source must identify its document date")
-    date_label = dated.group(1).strip()
+    date_label = dated.group(1).strip().rstrip(".")
     base_values = [int(n) for n in re.findall(r"\bRM(\d+)k\s+base\b", base_text)]
     if not base_values:
         raise ValueError("Base pricing source has no usable historical figures")
