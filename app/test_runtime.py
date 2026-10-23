@@ -329,6 +329,74 @@ class RuntimeTests(unittest.TestCase):
             "own stay", {"purchase_purpose": "OWN_STAY"}, [], [])
         self.assertIsNone(capture_off.payload["golden_sales_examples"])
 
+    def test_price_ready_simulated_quote_is_resolved_and_offline_only(self):
+        import json
+        import inspect
+        from .sales_simulation import (
+            PRICE_READY_RUN, GOLDEN_RUN, DEFAULT_RUN, PERSONAS,
+            simulated_resolved_support, SIMULATED_NET_PRICE_RM,
+            SIMULATED_MAINTENANCE_RM, SIMULATED_MONTHLY_INSTALMENT_RM,
+        )
+        from .service import Runtime
+
+        self.assertEqual(SIMULATED_NET_PRICE_RM, 330000)
+        self.assertEqual(SIMULATED_MAINTENANCE_RM, 162)
+        self.assertEqual(SIMULATED_MONTHLY_INSTALMENT_RM, 1315)
+        self.assertNotEqual(PRICE_READY_RUN, GOLDEN_RUN)
+        self.assertNotEqual(PRICE_READY_RUN, DEFAULT_RUN)
+        own_support = simulated_resolved_support("OWN_STAY")
+        investor_support = simulated_resolved_support("INVESTMENT")
+        self.assertEqual(len(own_support), 1)
+        self.assertEqual(len(investor_support), 2)
+        self.assertEqual(own_support[0]["status"], "RESOLVED")
+        self.assertIn("RM330,000 NET", own_support[0]["support_result"])
+        self.assertIn("RM1,315/month", own_support[0]["support_result"])
+        self.assertTrue(all(x["simulation_only"] for x in investor_support))
+        self.assertEqual(PERSONAS["price-ready-ownstay-couple"]["seller_turns"], 5)
+        self.assertEqual(PERSONAS["price-ready-family"]["seller_turns"], 5)
+        self.assertEqual(PERSONAS["price-ready-investor-holdout"]["seller_turns"], 5)
+        # The real Runtime still calls SalesAgent with actual stored supports,
+        # never imported or synthesized from the offline simulation fixture.
+        self.assertNotIn("simulated_resolved_support", inspect.getsource(Runtime))
+
+        class CaptureProvider:
+            def __init__(self):
+                self.payload = None
+            def decide(self, system, user):
+                self.payload = json.loads(user)
+                return decision(reply="Test only."), {}
+
+        captured = CaptureProvider()
+        SalesAgent(self.config, captured).decide(
+            "What is the price?", {"purchase_purpose": "OWN_STAY"},
+            [{"direction": "INBOUND", "body": "What is the price?"}],
+            own_support,
+        )
+        self.assertEqual(
+            captured.payload["verified_support_results"][0]["support_result"],
+            own_support[0]["support_result"],
+        )
+        self.assertIn("If verified_support_results already contains a RESOLVED",
+                      __import__("app.agent", fromlist=["SYSTEM_PROMPT"]).SYSTEM_PROMPT)
+
+    def test_price_ready_fixtures_do_not_enter_normal_luna_calls(self):
+        import json
+
+        class CaptureProvider:
+            def __init__(self):
+                self.payload = None
+            def decide(self, system, user):
+                self.payload = json.loads(user)
+                return decision(reply="Test only."), {}
+
+        captured = CaptureProvider()
+        SalesAgent(self.config, captured).decide(
+            "How much?", {"purchase_purpose": "OWN_STAY"}, [], []
+        )
+        self.assertEqual(captured.payload["verified_support_results"], [])
+        self.assertNotIn("RM330,000 NET", json.dumps(captured.payload))
+        self.assertNotIn("simulation_only", json.dumps(captured.payload))
+
     def test_golden_simulation_dry_run_has_isolated_call_budget(self):
         from .sales_simulation import dry_run, GOLDEN_RUN, DEFAULT_RUN
         self.assertNotEqual(GOLDEN_RUN, DEFAULT_RUN)
@@ -338,6 +406,9 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(report["phase_call_upper_bound"]["golden_initial"], 12)
         self.assertEqual(report["phase_call_upper_bound"]["golden_retest"], 12)
         self.assertEqual(report["phase_call_upper_bound"]["golden_holdout"], 15)
+        self.assertEqual(report["phase_call_upper_bound"]["price_ready_initial"], 18)
+        self.assertEqual(report["phase_call_upper_bound"]["price_ready_retest"], 9)
+        self.assertEqual(report["phase_call_upper_bound"]["price_ready_holdout"], 9)
         self.assertEqual(report["hard_call_cap"], 40)
 
     def test_golden_conversation_bank_matches_workflow_without_model_calls(self):
