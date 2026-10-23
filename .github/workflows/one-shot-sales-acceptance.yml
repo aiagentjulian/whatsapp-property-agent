@@ -1,0 +1,57 @@
+name: One-shot offline sales acceptance
+on:
+  push:
+    branches:
+      - codex/v2-handoff-ack
+    paths:
+      - .github/workflows/one-shot-sales-acceptance.yml
+
+permissions:
+  contents: read
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: python -m pip install -r requirements.txt
+      - name: Zero-API regression gate
+        env:
+          OPENAI_API_KEY: ""
+          GOLDEN_GUIDANCE_MODE: "on"
+        run: |
+          python -m unittest app.test_runtime app.test_evidence_priority
+          python -m app.golden_cases --check
+          python -m app.sales_simulation --dry-run
+      - name: Check whether a restricted API testing secret exists
+        id: access
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -n "$OPENAI_API_KEY" ]; then
+            echo "available=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=no" >> "$GITHUB_OUTPUT"
+            echo "SKIPPED MODEL EVALUATION: no OPENAI_API_KEY GitHub Actions secret configured."
+          fi
+      - name: Final offline five-turn sales scenarios, single run
+        if: steps.access.outputs.available == 'yes'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOLDEN_GUIDANCE_MODE: "on"
+          RUNTIME_MODEL: "gpt-6-luna"
+          RUNTIME_REASONING: "high"
+        run: python -m app.sales_simulation --phase price_ready_final
+      - name: Retain private synthetic transcripts and ledger
+        if: always() && steps.access.outputs.available == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-ready-final-acceptance
+          path: sales_lab/reports/price-ready-final-acceptance-v1/
+          if-no-files-found: ignore
+          retention-days: 7
