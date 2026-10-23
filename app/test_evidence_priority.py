@@ -61,6 +61,11 @@ class EvidencePriorityTests(unittest.TestCase):
         ]
         for item in bad:
             self.assertIsNone(resolved_price_quote([item]), item)
+        old_confirmed = simulated_resolved_support()[0]
+        # The store supplies most recently updated support first.
+        self.assertIsNone(resolved_price_quote([bad[0], old_confirmed]))
+        self.assertIsNone(resolved_price_quote([bad[1], old_confirmed]))
+        self.assertIsNotNone(resolved_price_quote([old_confirmed, bad[0]]))
         data = self.context("Price?", [])
         self.assertIsNotNone(data["dated_commercial_context"])
         self.assertNotIn("commercial_evidence_state", data["sales_workflow"])
