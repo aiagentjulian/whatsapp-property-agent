@@ -108,6 +108,7 @@ def _viewing_request(message, history):
 def _specific_property_question(message):
     return _contains(message, (
         r"\b(?:where\s+is|location|address|how\s+far|how\s+near|which\s+area)\b",
+        r"\b(?:commut(?:e|ing)|how\s+long|travel\s+time|driving\s+time|drive\s+to)\b",
         r"\b(?:freehold|leasehold|tenure|facilities|facility|pool|gym|school|floor\s*plan|layout|balcony)\b",
         r"\b(?:how\s+big|sq\s*ft|sqft|rooms|bedrooms|car\s*park|parking|quality|developer)\b",
     ))
