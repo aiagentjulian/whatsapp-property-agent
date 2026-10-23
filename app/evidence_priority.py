@@ -32,16 +32,18 @@ _COMMUTE_QUERY = re.compile(
 
 def resolved_price_quote(support_results):
     """Find a positively confirmed price; reject tentative/cancelled records."""
-    for item in reversed(support_results or []):
-        if str(item.get("status", "")).upper() != "RESOLVED":
-            continue
+    # Runtime support_context returns newest entries first. An OPEN or an
+    # inconclusive newer price check must not be overridden by an older quote.
+    for item in support_results or []:
         if str(item.get("support_type", "")).upper() not in ("PRICING", "PACKAGE"):
             continue
+        if str(item.get("status", "")).upper() != "RESOLVED":
+            return None
         result = str(item.get("support_result") or "")
         if not (_MONEY.search(result) and _POSITIVE.search(result)):
-            continue
+            return None
         if _UNCONFIRMED_PRICE.search(result):
-            continue
+            return None
         return item
     return None
 
