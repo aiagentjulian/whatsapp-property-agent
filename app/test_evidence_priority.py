@@ -85,6 +85,17 @@ class EvidencePriorityTests(unittest.TestCase):
         self.assertIn("Do not invent drive times", flow["commute_answer_objective"])
         self.assertNotIn("VIEWING", flow["allowed_moves"])
 
+    def test_final_acceptance_is_isolated_and_cost_bounded(self):
+        from .sales_simulation import (
+            dry_run, FINAL_RUN, GOLDEN_RUN, PRICE_READY_RUN, DEFAULT_RUN, PERSONAS
+        )
+        self.assertEqual(len({str(FINAL_RUN), str(GOLDEN_RUN),
+                              str(PRICE_READY_RUN), str(DEFAULT_RUN)}), 4)
+        self.assertEqual(dry_run()["phase_call_upper_bound"]["price_ready_final"], 27)
+        for name in ("price-ready-ownstay-couple", "price-ready-family",
+                     "price-ready-investor-holdout"):
+            self.assertEqual(PERSONAS[name]["seller_turns"], 5)
+
     def test_no_simulation_price_in_unrelated_live_context(self):
         data = self.context("Can you tell me about the landscaped deck?")
         self.assertNotIn("RM330,000 NET", json.dumps(data))
