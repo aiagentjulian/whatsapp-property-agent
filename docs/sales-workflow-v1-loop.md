@@ -82,6 +82,63 @@ actual usage. Keep the old `main` branch, WhatsApp Runtime, contacts and CRM
 untouched. A new real WhatsApp acceptance test happens only after passing the
 offline gate and explicitly resetting the authorized TEST Lead.
 
+## Price-ready Sales Loop V1 — stop re-testing the missing quote
+
+**Purpose:** The project already has documented base pricing RM328k–RM362k,
+historical 5% / 8% rebate bands and RM0.18/sqft maintenance. Those real
+records remain unchanged. For OFFLINE fictional roleplay, remove the
+non-current-package bottleneck using an **assumed resolved net quote of
+RM330,000** for the example 900sqft / 3-bed / 2-bath unit. This is neither
+a verified developer quote nor a live promotion.
+
+The price-ready fixture exists ONLY in `app/sales_simulation.py`,
+never in `knowledge/`, live `app/service.py`, Google Sheets or CRM.
+It is passed to `SalesAgent.decide` as a synthetic **RESOLVED Support** result.
+It also provides an illustration, **not a bank offer**: 10% deposit
+(RM33,000), 90% mortgage (RM297,000), 35 years at 4% yearly, around
+RM1,315/month loan plus RM162/month published maintenance. Investor
+roleplay gets separately labelled **fictional** indicative rental comps,
+not verified achieved yields or guaranteed returns. Nothing in this fixture
+is authorized for real customer use.
+
+**Do NOT let the fictional customer repeatedly ask for developer pricing
+confirmation once Luna has already given the assumed RM330k net price.**
+The roleplay buyer still makes realistic independent choices and is free
+to object, compare, hesitate or reject a viewing.
+
+```sh
+python -m unittest app.test_runtime
+python -m app.sales_simulation --dry-run
+python -m app.sales_simulation --phase price_ready_initial
+# Optional: only if one focused fix is made after reviewing initial transcripts
+python -m app.sales_simulation --phase price_ready_retest
+python -m app.sales_simulation --phase price_ready_holdout
+```
+
+`price_ready_initial` has two **five-turn** responsive own-stay buyer cases;
+`price_ready_retest` repeats one case only if a targeted improvement was
+made; `price_ready_holdout` has one independent **five-turn** rental investor.
+Every seller reply uses real GPT-6 Luna / High. Buyer reactions remain
+responsive to each actual seller reply, not fixed lines. Stopping after
+handoff is allowed. Do not force buyer acceptance or label invitations as
+bookings.
+
+The isolated report directory is
+`sales_lab/reports/price-ready-sales-loop-v1/`; the prior 40, 21 and 27
+API-attempt ledgers must remain intact. Maximum calls are 18 initial,
+9 optional retest, 9 holdout = 36 potential model calls,
+plus **no more than 4** extra calls within the 40-attempt hard cap.
+Do not erase the new ledger to restart the same experiment.
+
+**Acceptance:** The seller answers the usable assumed price promptly
+and does not repeat a pricing Support Request. It uses relevant,
+accurate benefits, handles budget and monthly-cost concerns, and moves
+warm buyers toward a low-pressure viewing **without assuming interest
+or inventing a confirmed appointment**. The buyer can decline. Record
+whether an invitation was made, whether it was accepted, an appointment
+handoff occurred, or it still stalled; separate these events in reporting.
+The goal is SALES CONVERSION BEHAVIOR, not accuracy-check repetition.
+
 ## One bounded optimization loop
 
 1. **Baseline.** Inspect the current workflow and existing `app/eval_sales.py`. Run the deterministic unit suite. Simulate conversations with the real Luna seller and a simulated customer actor that responds **to the actual seller reply**, not an unrelated prewritten list. Use fictional personas only. Capture the workflow stage and sales move every turn.
