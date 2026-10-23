@@ -21,6 +21,60 @@ from .sales_workflow import plan_sales_turn
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RUN = ROOT / "sales_lab" / "reports" / "2026-10-22" / "closed-loop-v1"
 GOLDEN_RUN = ROOT / "sales_lab" / "reports" / "golden-loop-v2-price-viewing"
+PRICE_READY_RUN = ROOT / "sales_lab" / "reports" / "price-ready-sales-loop-v1"
+
+# FIXTURE FOR OFFLINE SIMULATION ONLY. Never import this module into live
+# Runtime, Knowledge, CRM, Google Sheets or production support resolution.
+# Based on the project having documented base prices around RM328k–RM362k;
+# RM330k is an ASSUMED NET QUOTE, not a verified current developer offer.
+SIMULATED_NET_PRICE_RM = 330000
+SIMULATED_MAINTENANCE_RM = 162
+
+def simulated_resolved_support(route="OWN_STAY"):
+    """Completed fictional commercial checks for isolated sales-roleplay.
+
+    Production SalesAgent receives these only via the explicit test harness;
+    the real Support/Knowledge pipeline and data are never mutated.
+    """
+    result = [{
+        "status": "RESOLVED",
+        "support_type": "PRICING",
+        "subject": "Price-ready sales simulation fixture — fictional confirmed quote",
+        "requested_fact": "Net package price for the illustrative 900 sqft unit",
+        "support_result": (
+            "OFFLINE ROLEPLAY FACT, NOT A REAL DEVELOPER QUOTE: For this test's "
+            "fictional customer, the applicable 900 sqft, 3-bedroom, 2-bathroom "
+            "Pearl Residences unit has an assumed CONFIRMED NET PRICE of "
+            "RM330,000 after the illustrative package. Treat this test price as "
+            "settled for the entire fictional conversation. Do NOT ask again "
+            "for a current package, rebate validity, or a new pricing check in "
+            "this simulation. RM162/month maintenance includes sinking fund "
+            "on the published RM0.18/sqft reference, separate from loan "
+            "instalments. Bank loan terms, available appointment slots and "
+            "real-life unit availability are NOT confirmed. Continue selling "
+            "around this known price and actual buyer motivations."
+        ),
+        "source": "OFFLINE_SYNTHETIC_FIXTURE_ONLY",
+        "simulation_only": True,
+    }]
+    if route == "INVESTMENT":
+        result.append({
+            "status": "RESOLVED",
+            "support_type": "OTHER",
+            "subject": "Synthetic market-comparable context for investor roleplay",
+            "requested_fact": "Illustrative nearby comparable rent",
+            "support_result": (
+                "OFFLINE ROLEPLAY ASSUMPTION ONLY: nearby comparable "
+                "apartments are being discussed at around RM1,400–RM1,600 "
+                "monthly rent in this fictional market. These are NOT real "
+                "verified rental comparables, guaranteed achievable rents, "
+                "or a prediction for an unfinished new development. Use "
+                "cautiously as a scenario, discuss vacancies and other costs."
+            ),
+            "source": "OFFLINE_SYNTHETIC_FIXTURE_ONLY",
+            "simulation_only": True,
+        })
+    return result
 MAX_CALLS = 40
 BUYER_MODEL = "gpt-6-luna"
 
@@ -79,6 +133,59 @@ PERSONAS = {
         "private": "An unseen couple persona, no children, budget around RM390k, wife works around Seberang Jaya, cautious about monthly outgoings. If the seller connects a verified benefit and asks or answers usefully, explain that they would want to compare the monthly charges and general price. If the seller offers a weekend viewing after that, Saturday would suit if a slot is available. If the seller ignores the need or pushes without answering costs, remain tentative and do not volunteer a viewing request. Never disclose this hidden plan or facts unrelated to the actual reply.",
     },
 }
+
+# Fresh personas created for price-ready sales conversion; the seller never
+# sees private motivations. Five turns permit an actual buying conversation
+# instead of stopping after the first price question.
+PERSONAS.update({
+    "price-ready-ownstay-couple": {
+        "route": "OWN_STAY",
+        "seller_turns": 5,
+        "opening": ("Hi, my wife and I are comparing homes near Seberang Jaya "
+                    "for own stay. What is your price and what makes this "
+                    "place different?"),
+        "private": (
+            "We are a couple who work around Penang Mainland, with a budget "
+            "around RM360k. Once a clear realistic price is known, stop "
+            "asking about missing developer packages. Consider whether the "
+            "location, facilities and 900sqft layout add value. If convinced "
+            "after a genuine two-way conversation and the agent offers a "
+            "low-pressure viewing, you may agree; otherwise hesitate. "
+            "Respond naturally and do not help the salesperson pass."
+        ),
+    },
+    "price-ready-family": {
+        "route": "OWN_STAY",
+        "seller_turns": 5,
+        "opening": ("We're a family of four and thinking of buying for own "
+                    "stay. Can you tell us the price and what the place "
+                    "would be like with two young kids?"),
+        "private": (
+            "Family of four, max budget RM380k, sensitive to monthly costs "
+            "and whether facilities benefit children. Do not assume the "
+            "planned school guarantees admission. Once a concrete offer "
+            "is stated, react to the actual property value, lifestyle and "
+            "an appropriate viewing invitation, not repeated price checks. "
+            "You may decline if the seller is irrelevant or pushy."
+        ),
+    },
+    "price-ready-investor-holdout": {
+        "route": "INVESTMENT",
+        "seller_turns": 5,
+        "opening": ("Considering this for long-term rental investment. "
+                    "What's the actual purchase price, and why would "
+                    "this area appeal to renters?"),
+        "private": (
+            "Cautious rental investor, budget RM350k. The seller has a "
+            "fictional resolved net quote and only illustrative, uncertain "
+            "nearby market-rent comparables. Once they explain those numbers, "
+            "evaluate vacancy, holding cost and building completion risk. "
+            "You might visit if there is a grounded investment reason; "
+            "do not accept unverified yields or guarantees. Don't make "
+            "the conversation stall over package validity in this roleplay."
+        ),
+    },
+})
 
 def _request(model, reasoning, system, prompt, max_output_tokens=1400):
     key = os.environ.get("OPENAI_API_KEY", "")
@@ -157,7 +264,7 @@ def _live_call(ledger_path, ledger, purpose, operation):
     return result, usage
 
 
-def _buyer_reply(ledger_path, ledger, name, transcript, interest):
+def _buyer_reply(ledger_path, ledger, name, transcript, interest, phase=None):
     persona = PERSONAS[name]
     system = (
         "You are role-playing one ordinary synthetic Malaysian property buyer in a private research simulation. "
@@ -168,21 +275,26 @@ def _buyer_reply(ledger_path, ledger, name, transcript, interest):
         "(string), interest (integer 1-5), and private_note (string). The private_note is not customer-facing."
     )
     prompt = json.dumps({"private_buyer_profile": persona["private"], "interest_before": interest,
+                         "fictional_price_ready_quote": (
+                             "In this simulation the seller can accurately quote RM330,000 net for one example unit; do not stall asking for package validity after they explain this. You may still have other legitimate objections and may decline a viewing." if phase and phase.startswith("price_ready_") else None),
                          "conversation": transcript, "task": "Respond to the salesperson's last reply."}, ensure_ascii=False)
     return _live_call(ledger_path, ledger, "buyer:" + name,
                       lambda: _request(BUYER_MODEL, "medium", system, prompt, 700))
 
 
-def _seller_turn(agent, latest, profile, history, ledger_path, ledger, label):
+def _seller_turn(agent, latest, profile, history, ledger_path, ledger, label, support_results=None):
     workflow_before = plan_sales_turn(latest, profile, history)
     def call():
-        return agent.decide(latest, profile, history, [] )
+        return agent.decide(latest, profile, history, support_results or [])
     decision, usage = _live_call(ledger_path, ledger, label, call)
     profile.update({key: value for key, value in decision["lead_updates"].items()
                     if key in PROFILE_FIELDS and value is not None})
     history.extend(({"direction": "INBOUND", "body": latest},
                     {"direction": "OUTBOUND", "body": decision["reply"]}))
     return {"customer": latest, "workflow": workflow_before,
+            "synthetic_support_used": bool(support_results),
+            "price_stall_despite_fixture": bool(support_results and decision.get("action") == "SUPPORT_REQUEST"
+                                          and (decision.get("support_request") or {}).get("support_type") in ("PRICING", "PACKAGE")),
             "decision": decision, "usage": usage}
 
 
@@ -194,6 +306,8 @@ def run_case(name, phase, run_dir, ledger_path, ledger):
     if phase.startswith("golden_") and config.get("golden_guidance_mode") != "on":
         raise RuntimeError("Golden Loop requires GOLDEN_GUIDANCE_MODE=on")
     agent = SalesAgent(config)
+    support_results = (simulated_resolved_support(persona["route"])
+                       if phase.startswith("price_ready_") else [])
     profile = {"purchase_purpose": "UNKNOWN"}
     history = []
     transcript = []
@@ -204,7 +318,7 @@ def run_case(name, phase, run_dir, ledger_path, ledger):
     terminal_action = None
     for turn_number in range(1, seller_turns + 1):
         seller = _seller_turn(agent, latest_customer, profile, history, ledger_path, ledger,
-                              "seller:%s:%s:%d" % (phase, name, turn_number))
+                              "seller:%s:%s:%d" % (phase, name, turn_number), support_results)
         transcript.append(seller)
         if seller["decision"]["action"] in ("APPOINTMENT_HANDOFF", "MANDATORY_HANDOFF"):
             terminal_action = seller["decision"]["action"]
@@ -216,7 +330,7 @@ def run_case(name, phase, run_dir, ledger_path, ledger):
         _save(artifact_path, partial)
         if turn_number == seller_turns:
             break
-        buyer, buyer_usage = _buyer_reply(ledger_path, ledger, name, transcript, current_interest)
+        buyer, buyer_usage = _buyer_reply(ledger_path, ledger, name, transcript, current_interest, phase)
         latest_customer = buyer.get("customer_message", "").strip()
         if not latest_customer or len(latest_customer) > 700:
             raise RuntimeError("Buyer simulator returned an invalid customer message")
@@ -228,7 +342,9 @@ def run_case(name, phase, run_dir, ledger_path, ledger):
     interest_after = current_interest
     artifact = {"phase": phase, "persona": name, "route": persona["route"], "model": config["model"],
                 "reasoning": config["reasoning"], "transcript": transcript,
-                "evaluation": {"status": "pending transcript review"},
+                "evaluation": {"status": "pending transcript review",
+                       "price_stall_despite_fixture": any(x.get("price_stall_despite_fixture", False)
+                                                        for x in transcript)},
                 "buyer_interest_before": initial_interest, "buyer_interest_after": interest_after,
                 "status": "complete", "terminal_action": terminal_action}
     _save(artifact_path, artifact)
@@ -302,7 +418,8 @@ def main(argv=None):
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--phase", choices=(
         "baseline", "candidate", "holdout",
-        "golden_initial", "golden_retest", "golden_holdout"))
+        "golden_initial", "golden_retest", "golden_holdout",
+        "price_ready_initial", "price_ready_holdout"))
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN)
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--continue-after-judge-failure", action="store_true",
@@ -319,6 +436,8 @@ def main(argv=None):
         load_env_file(args.env_file)
     if args.phase.startswith("golden_") and args.run_dir == DEFAULT_RUN:
         args.run_dir = GOLDEN_RUN
+    if args.phase.startswith("price_ready_") and args.run_dir == DEFAULT_RUN:
+        args.run_dir = PRICE_READY_RUN
     ledger_path = args.run_dir / "api-ledger.json"
     ledger = _load_ledger(ledger_path, args.continue_after_judge_failure)
     selected = {
@@ -334,6 +453,8 @@ def main(argv=None):
                           "rental-income-investor", "capital-gain-investor"),
         "golden_holdout": ("holdout-weekend-couple", "holdout-commuter-couple",
                            "holdout-price-comparison-family"),
+        "price_ready_initial": ("price-ready-ownstay-couple", "price-ready-family"),
+        "price_ready_holdout": ("price-ready-investor-holdout",),
     }[args.phase]
     outputs = []
     for name in selected:
