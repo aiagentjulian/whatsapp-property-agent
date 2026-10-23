@@ -29,6 +29,8 @@ PRICE_READY_RUN = ROOT / "sales_lab" / "reports" / "price-ready-sales-loop-v1"
 # RM330k is an ASSUMED NET QUOTE, not a verified current developer offer.
 SIMULATED_NET_PRICE_RM = 330000
 SIMULATED_MAINTENANCE_RM = 162
+SIMULATED_LOAN_AMOUNT_RM = 297000  # fictional 90% LTV
+SIMULATED_MONTHLY_INSTALMENT_RM = 1315  # 4% annual, 35 years; illustrative
 
 def simulated_resolved_support(route="OWN_STAY"):
     """Completed fictional commercial checks for isolated sales-roleplay.
@@ -42,17 +44,23 @@ def simulated_resolved_support(route="OWN_STAY"):
         "subject": "Price-ready sales simulation fixture — fictional confirmed quote",
         "requested_fact": "Net package price for the illustrative 900 sqft unit",
         "support_result": (
-            "OFFLINE ROLEPLAY FACT, NOT A REAL DEVELOPER QUOTE: For this test's "
-            "fictional customer, the applicable 900 sqft, 3-bedroom, 2-bathroom "
-            "Pearl Residences unit has an assumed CONFIRMED NET PRICE of "
-            "RM330,000 after the illustrative package. Treat this test price as "
-            "settled for the entire fictional conversation. Do NOT ask again "
-            "for a current package, rebate validity, or a new pricing check in "
-            "this simulation. RM162/month maintenance includes sinking fund "
-            "on the published RM0.18/sqft reference, separate from loan "
-            "instalments. Bank loan terms, available appointment slots and "
-            "real-life unit availability are NOT confirmed. Continue selling "
-            "around this known price and actual buyer motivations."
+            "CONFIRMED FOR THIS OFFLINE FICTIONAL SALES SCENARIO ONLY: "
+            "The customer's illustrative 900 sqft, 3-bedroom, 2-bathroom "
+            "unit is offered at RM330,000 NET after its fictional package. "
+            "The net price and package validity are already confirmed for "
+            "the roleplay, and need NO additional pricing/support check. "
+            "Talk naturally about RM330,000 as this fictional buyer's quoted "
+            "price; do not tell the fictional buyer that this is a test "
+            "unless asked. It is NOT a real developer quote and must NEVER "
+            "be used with real customers. Standard maintenance is RM162 "
+            "per month including sinking fund (900 sqft at RM0.18/sqft). "
+            "For an illustrative financing example only, assume 10% "
+            "down payment (RM33,000), 90% financing (RM297,000), 35 years "
+            "and 4% annual interest: roughly RM1,315/month for the loan "
+            "plus RM162/month maintenance, before other charges. "
+            "This is NOT a real bank offer or approval. The current "
+            "appointment slots and unit availability remain unconfirmed. "
+            "Continue the normal sale and address other genuine concerns."
         ),
         "source": "OFFLINE_SYNTHETIC_FIXTURE_ONLY",
         "simulation_only": True,
@@ -401,6 +409,14 @@ def dry_run():
             [{"direction": "INBOUND", "body": "Hi, saw the property ad. Can share more details?"}], [])
     assert decision["reply"] == "Fake transport validation only." and captured
     checks.append("real SalesAgent entrypoint accepts a fake HTTP response; no network call was made")
+    fixture = simulated_resolved_support("OWN_STAY")
+    investor_fixture = simulated_resolved_support("INVESTMENT")
+    assert len(fixture) == 1 and len(investor_fixture) == 2
+    assert fixture[0]["status"] == "RESOLVED"
+    assert "RM330,000 NET" in fixture[0]["support_result"]
+    assert "RM1,315/month" in fixture[0]["support_result"]
+    assert all(item.get("simulation_only") is True for item in investor_fixture)
+    checks.append("offline-only resolved quote and illustrative instalment remove price-check bottleneck")
     from .golden_cases import check_goldens
     golden_result = check_goldens()
     assert golden_result["status"] == "passed", golden_result["errors"]
@@ -409,7 +425,10 @@ def dry_run():
     return {"status": "passed", "api_calls": 0, "checks": checks,
             "phase_call_upper_bound": {"baseline": 12, "candidate": 12, "holdout": 5,
                                        "golden_initial": 12, "golden_retest": 12,
-                                       "golden_holdout": 15},
+                                       "golden_holdout": 15,
+                                       "price_ready_initial": 18,
+                                       "price_ready_retest": 9,
+                                       "price_ready_holdout": 9},
             "hard_call_cap": MAX_CALLS, "whatsapp": "not used", "crm_sheets_database": "not used"}
 
 
@@ -419,7 +438,7 @@ def main(argv=None):
     parser.add_argument("--phase", choices=(
         "baseline", "candidate", "holdout",
         "golden_initial", "golden_retest", "golden_holdout",
-        "price_ready_initial", "price_ready_holdout"))
+        "price_ready_initial", "price_ready_retest", "price_ready_holdout"))
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN)
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--continue-after-judge-failure", action="store_true",
@@ -454,6 +473,7 @@ def main(argv=None):
         "golden_holdout": ("holdout-weekend-couple", "holdout-commuter-couple",
                            "holdout-price-comparison-family"),
         "price_ready_initial": ("price-ready-ownstay-couple", "price-ready-family"),
+        "price_ready_retest": ("price-ready-ownstay-couple",),
         "price_ready_holdout": ("price-ready-investor-holdout",),
     }[args.phase]
     outputs = []
